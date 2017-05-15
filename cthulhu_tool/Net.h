@@ -34,7 +34,7 @@ public:
 
 	void init();	//初期化
 
-	void NetWork_Loop(int host_flag, FILER_S host_info);//ネット処理をするかのフラグ、ホストかのフラグ、ホスト情報を保存したファイルの読み込み
+	void NetWork_wait(int host_flag, FILER_S host_info);//ネット処理をするかのフラグ、ホストかのフラグ、ホスト情報を保存したファイルの読み込み
 	void NetListen(int host_flag, FILER_S host_info);//ホストするときに接続を受けられる状態にするかどうかの処理
 	void NetConnectionData();//接続状態を確認
 

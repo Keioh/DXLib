@@ -62,14 +62,14 @@ void NET_GAMING::NetConnectionData()
 	DrawFormatString(80, 240, GetColor(0, 0, 0), "Ú‘±ó‘Ô PC8 %d", connection[7]);
 }
 
-void NET_GAMING::NetWork_Loop(int host_flag, FILER_S host_info)
+void NET_GAMING::NetWork_wait(int host_flag, FILER_S host_info)
 {
 	while (ProcessMessage() == 0 && ScreenFlip() == 0 && ClearDrawScreen() == 0 && break_flag == true)
 	{
 		static float animation;//ƒ[ƒhƒAƒjƒ[ƒVƒ‡ƒ“—p•Ï”
 		DrawCircleAA(1280 - 30, 720 - 30, 20, 8, GetColor(animation, animation, animation), TRUE);//‘Ò‹@ƒAƒjƒ[ƒVƒ‡ƒ“
 		animation += 2.5;			//2.5‚¸‚Â‘‚â‚·B
-		if (animation >= 255) animation = 0;//ƒAƒjƒ[ƒVƒ‡ƒ“•Ï”‚ª255ˆÈã‚É‚È‚Á‚½‚ç‚É‚·‚é
+		if (animation >= 255) animation = 0;//ƒAƒjƒ[ƒVƒ‡ƒ“•Ï”‚ª255ˆÈã‚É‚È‚Á‚½‚ç0‚É‚·‚é
 
 		if (host_flag == 1)//ƒzƒXƒg‚Ì
 		{
@@ -77,7 +77,7 @@ void NET_GAMING::NetWork_Loop(int host_flag, FILER_S host_info)
 
 			net[count] = GetNewAcceptNetWork();			//V‚µ‚­Šm—§‚µ‚½ƒlƒbƒgƒ[ƒNƒnƒ“ƒhƒ‹‚ğ“¾‚éB
 			if (net[count] >= 0)count++;				//count‚ğ‰ñ‚·‚µ‚Ä‹ó‚É‚È‚Á‚Ä‚¢‚é•Ï”‚É‚·‚éB
-			if (count > host_info.member)count = 0;		//count‚ªÅ‘å‚Ü‚Ås‚Á‚½‚ç‰Šú‰»‚·‚éB
+			if (count > host_info.member)count = 0;		//count‚ªhost_info.menber‚Ü‚Ås‚Á‚½‚ç‰Šú‰»‚·‚éB
 
 			NetConnectionData();	//Ú‘±ó‘Ô‚ğ“¾‚éB
 
@@ -141,15 +141,15 @@ void NET_GAMING::NetWork_Loop(int host_flag, FILER_S host_info)
 
 void NET_GAMING::NetSendHost(int* data)//ƒzƒXƒg‚Ö‘—‚éˆ—
 {
-	NetWorkSend(host_handl, &data, GetNetWorkSendDataLength(host_handl));	//Host‚Éƒf[ƒ^‚ğ‘—‚é
+	NetWorkSend(host_handl, data, 2);	//Host‚Éƒf[ƒ^‚ğ‘—‚é
 }
 
 void NET_GAMING::NetSend(int* data, FILER_S host_info)//ƒzƒXƒg‘¤‚©‚ç‘—‚éˆ—
 {
 	//ƒvƒŒ[ƒ„[l”•ª‘—M‚·‚éB
-	for (int i = 0; i > host_info.member; i++)
+	for (int i = 0; i < host_info.member; i++)
 	{
-		NetWorkSend(net[i], &data, GetNetWorkSendDataLength(net[i]));	//‘¼‚ÌPC‚Éƒf[ƒ^‚ğ‘—‚é
+		NetWorkSend(net[i], data, 2);	//‘¼‚ÌPC‚Éƒf[ƒ^‚ğ‘—‚é
 	}
 }
 
@@ -158,11 +158,11 @@ int NET_GAMING::NetReadHost(int* data, FILER_S host_info)//ƒzƒXƒg‘¤‚Ì“Ç‚İ‚İˆ—
 	//ƒvƒŒ[ƒ„[l”•ªóM‚·‚éB
 	for (int i = 0; i < host_info.member; i++)
 	{
-		if (GetNetWorkDataLength(net[i]) >= 0) return NetWorkRecv(net[i], &data, GetNetWorkDataLength(net[i]));//óMƒf[ƒ^‚©‚çintƒoƒbƒtƒ@[‚Éƒf[ƒ^‚ğˆÚ‚·B
+		if (GetNetWorkDataLength(net[i]) >= 0) return NetWorkRecv(net[i], data, 2);//GetNetWorkDataLength(net[i]));//óMƒf[ƒ^‚©‚çintƒoƒbƒtƒ@[‚Éƒf[ƒ^‚ğˆÚ‚·B
 	}
 }
 
 int NET_GAMING::NetRead(int* data)//ƒzƒXƒg‚©‚ç‚Ì“Ç‚İ‚İˆ—
 {
-	if (GetNetWorkDataLength(host_handl) >= 0) return NetWorkRecv(host_handl, &data, GetNetWorkDataLength(host_handl));//óMƒf[ƒ^‚©‚çintƒoƒbƒtƒ@[‚Éƒf[ƒ^‚ğˆÚ‚·B
+	if (GetNetWorkDataLength(host_handl) >= 0) return NetWorkRecv(host_handl, data, 2);//GetNetWorkDataLength(host_handl));//óMƒf[ƒ^‚©‚çintƒoƒbƒtƒ@[‚Éƒf[ƒ^‚ğˆÚ‚·B
 }
