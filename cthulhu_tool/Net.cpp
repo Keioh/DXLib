@@ -39,7 +39,7 @@ void NET_GAMING::NetListen(int host_flag, FILER_S host_info)
 	}
 }
 
-void NET_GAMING::NetConnectionData()
+void NET_GAMING::NetConnectionData(int x, int y)
 {
 	//接続状態を得る。
 	connection[0] = GetNetWorkAcceptState(net[0]);
@@ -52,14 +52,14 @@ void NET_GAMING::NetConnectionData()
 	connection[7] = GetNetWorkAcceptState(net[7]);
 
 	//コネクション確認
-	DrawFormatString(80, 100, GetColor(0, 0, 0), "接続状態 PC1 %d", connection[0]);
-	DrawFormatString(80, 120, GetColor(0, 0, 0), "接続状態 PC2 %d", connection[1]);
-	DrawFormatString(80, 140, GetColor(0, 0, 0), "接続状態 PC3 %d", connection[2]);
-	DrawFormatString(80, 160, GetColor(0, 0, 0), "接続状態 PC4 %d", connection[3]);
-	DrawFormatString(80, 180, GetColor(0, 0, 0), "接続状態 PC5 %d", connection[4]);
-	DrawFormatString(80, 200, GetColor(0, 0, 0), "接続状態 PC6 %d", connection[5]);
-	DrawFormatString(80, 220, GetColor(0, 0, 0), "接続状態 PC7 %d", connection[6]);
-	DrawFormatString(80, 240, GetColor(0, 0, 0), "接続状態 PC8 %d", connection[7]);
+	DrawFormatString(x, y, GetColor(0, 0, 0), "接続状態 PC1 %d", connection[0]);
+	DrawFormatString(x, y + 20, GetColor(0, 0, 0), "接続状態 PC2 %d", connection[1]);
+	DrawFormatString(x, y + 40, GetColor(0, 0, 0), "接続状態 PC3 %d", connection[2]);
+	DrawFormatString(x, y + 60, GetColor(0, 0, 0), "接続状態 PC4 %d", connection[3]);
+	DrawFormatString(x, y + 80, GetColor(0, 0, 0), "接続状態 PC5 %d", connection[4]);
+	DrawFormatString(x, y + 100, GetColor(0, 0, 0), "接続状態 PC6 %d", connection[5]);
+	DrawFormatString(x, y + 120, GetColor(0, 0, 0), "接続状態 PC7 %d", connection[6]);
+	DrawFormatString(x, y + 140, GetColor(0, 0, 0), "接続状態 PC8 %d", connection[7]);
 }
 
 void NET_GAMING::NetWork_wait(int host_flag, FILER_S host_info)
@@ -79,7 +79,7 @@ void NET_GAMING::NetWork_wait(int host_flag, FILER_S host_info)
 			if (net[count] >= 0)count++;				//countを回すして空になっている変数にする。
 			if (count > host_info.member)count = 0;		//countがhost_info.menberまで行ったら初期化する。
 
-			NetConnectionData();	//接続状態を得る。
+			NetConnectionData(20,500);	//接続状態を得る。
 
 			//バッファーにデータがあるか調べたあとデーターが存在したら、データを読み込み表示する。
 			if (GetNetWorkDataLength(net[0]) >= 0)NetWorkRecv(net[0], char_buffer_00, 8);

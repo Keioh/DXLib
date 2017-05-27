@@ -16,7 +16,7 @@ public:
 	int host_connection;//ホストとの接続状態
 
 	int connection[16];		//接続状態
-	int net[128];			//ネットワークハンドル保存用
+	int net[32];			//ネットワークハンドル保存用
 
 	int int_buffer;//バッファー
 	bool bool_buffer;//バッファー
@@ -34,9 +34,9 @@ public:
 
 	void init();	//初期化
 
-	void NetWork_wait(int host_flag, FILER_S host_info);//ネット処理をするかのフラグ、ホストかのフラグ、ホスト情報を保存したファイルの読み込み
+	void NetWork_wait(int host_flag, FILER_S host_info);//ネット処理する際の接続受付や接続検索をする処理。
 	void NetListen(int host_flag, FILER_S host_info);//ホストするときに接続を受けられる状態にするかどうかの処理
-	void NetConnectionData();//接続状態を確認
+	void NetConnectionData(int x, int y);//接続状態を確認
 
 	void NetSendHost(int* data);//ホストへ送る処理
 	void NetSend(int* data, FILER_S host_info);//ホスト側から送る処理
