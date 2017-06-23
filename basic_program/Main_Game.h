@@ -8,9 +8,7 @@
 typedef class Main_Game
 {
 private:
-
-	Filer main_filer;
-	Collision main_collision;
+	Collision test_collision;
 
 public:
 	Main_Game();

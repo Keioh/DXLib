@@ -88,7 +88,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="FileInput.cpp" />
     <ClCompile Include="Input.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="Main_Game.cpp" />
     <ClCompile Include="Object_Base.cpp" />
     <ClCompile Include="Status.cpp" />

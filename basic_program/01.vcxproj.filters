@@ -37,24 +37,24 @@
     <Filter Include="ヘッダー ファイル\main_res\object_system">
       <UniqueIdentifier>{0be3f7f2-1915-43ca-ab36-935a07afd4d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\input">
+      <UniqueIdentifier>{3dce1262-16eb-44a1-8267-7d2b0f78cc9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\input">
+      <UniqueIdentifier>{e9b20738-5950-45ac-8e82-3ee34b45ecd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object">
+      <UniqueIdentifier>{2986c9d3-d8e9-413a-a46a-806ea72c2132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object">
+      <UniqueIdentifier>{fd789982-b82e-476b-a066-00d2ab041fa3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="System.cpp">
       <Filter>ソース ファイル\System</Filter>
     </ClCompile>
     <ClCompile Include="Main_Game.cpp">
-      <Filter>ソース ファイル\main_res</Filter>
-    </ClCompile>
-    <ClCompile Include="FileInput.cpp">
-      <Filter>ソース ファイル\main_res</Filter>
-    </ClCompile>
-    <ClCompile Include="Status.cpp">
-      <Filter>ソース ファイル\main_res</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
       <Filter>ソース ファイル\main_res</Filter>
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
@@ -65,6 +65,18 @@
     </ClCompile>
     <ClCompile Include="Object_Base.cpp">
       <Filter>ソース ファイル\main_res\object_system</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>ソース ファイル\main_res\input</Filter>
+    </ClCompile>
+    <ClCompile Include="FileInput.cpp">
+      <Filter>ソース ファイル\main_res\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Status.cpp">
+      <Filter>ソース ファイル\main_res\game_object</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,15 +89,6 @@
     <ClInclude Include="define.h">
       <Filter>ヘッダー ファイル\main_res</Filter>
     </ClInclude>
-    <ClInclude Include="FileInput.h">
-      <Filter>ヘッダー ファイル\main_res</Filter>
-    </ClInclude>
-    <ClInclude Include="Status.h">
-      <Filter>ヘッダー ファイル\main_res</Filter>
-    </ClInclude>
-    <ClInclude Include="Input.h">
-      <Filter>ヘッダー ファイル\main_res</Filter>
-    </ClInclude>
     <ClInclude Include="Vector3.h">
       <Filter>ヘッダー ファイル\main_res\vector</Filter>
     </ClInclude>
@@ -94,6 +97,15 @@
     </ClInclude>
     <ClInclude Include="Object_Base.h">
       <Filter>ヘッダー ファイル\main_res\object_system</Filter>
+    </ClInclude>
+    <ClInclude Include="FileInput.h">
+      <Filter>ヘッダー ファイル\main_res\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>ヘッダー ファイル\main_res\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>ヘッダー ファイル\main_res\game_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
