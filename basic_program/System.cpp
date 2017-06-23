@@ -1,18 +1,21 @@
-#ifndef _SYSTEM
-#define _SYSTEM
-
 //include
 #include "DxLib.h"
 #include "System.h"
 
-#endif
+System::System()
+{
+	window_size.x = 1280;
+	window_size.y = 720;
+	window_size.z = 32;
+
+}
 
 //DXLIB初期化
-void Dx_Init(bool w_mode, int r, int g, int b, char* name)
+void System::Dx_Init(bool w_mode, int r, int g, int b, char* name)
 {
 	//DXLIBより前に初期化する関数
 	ChangeWindowMode(w_mode);
-	SetGraphMode(Window::window_w, Window::window_h, Window::window_b);
+	SetGraphMode(window_size.x, window_size.y, window_size.z);
 	SetMainWindowText(name);
 	SetWindowSizeChangeEnableFlag(true);
 
@@ -27,13 +30,14 @@ void Dx_Init(bool w_mode, int r, int g, int b, char* name)
 	SetBackgroundColor(r, g, b);
 }
 
-bool Circle_Hit(int x, int y, float r, int x2, int y2, float r2)
+//円のあたり判定
+bool System::Circle_Hit(int x, int y, float r, int x2, int y2, float r2)
 {
 	return true;
 }
 
 //瞬間のクリック
-bool Mouse_Cilck(int MouseInput, int flag)
+/*bool System::Mouse_Cilck(int MouseInput, int flag)
 {
 	int Button, x, y;
 
@@ -49,7 +53,7 @@ bool Mouse_Cilck(int MouseInput, int flag)
 }
 
 //マウスの継続クリック
-bool Mouse_Input_Click(int mouseinput)
+bool System::Mouse_Input_Click(int mouseinput)
 {
 	if ((GetMouseInput() & mouseinput) != 0)
 	{
@@ -60,16 +64,17 @@ bool Mouse_Input_Click(int mouseinput)
 		return false;
 	}
 }
-	
+*/
+
 //カーソル画像ロード
 int Cursor_Graph[1];
-void Cursor_Load()
+void System::Cursor_Load()
 {
 	Cursor_Graph[0] = LoadGraph("res/graph/cursor/cursor.png");
 }
 
 //カーソル画像描写
-void Cursor_Draw(int& mouse_x, int& mouse_y)
+void System::Cursor_Draw(int& mouse_x, int& mouse_y)
 {
 		DrawGraph(mouse_x, mouse_y, Cursor_Graph[0], TRUE);
 }

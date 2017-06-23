@@ -25,6 +25,18 @@
     <Filter Include="ヘッダー ファイル\main_res">
       <UniqueIdentifier>{5053cae5-f2c2-4ca0-b0ac-dbc48518d9a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\vector">
+      <UniqueIdentifier>{84db99d8-0775-46da-bc80-8b3635cbbc38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\vector">
+      <UniqueIdentifier>{c57f77cd-e83e-4c08-a4a5-8f92a5fbe398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\main_res\object_system">
+      <UniqueIdentifier>{192e3b3d-79e5-40bf-b948-abc237a3bae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\object_system">
+      <UniqueIdentifier>{0be3f7f2-1915-43ca-ab36-935a07afd4d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,6 +51,21 @@
     <ClCompile Include="FileInput.cpp">
       <Filter>ソース ファイル\main_res</Filter>
     </ClCompile>
+    <ClCompile Include="Status.cpp">
+      <Filter>ソース ファイル\main_res</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>ソース ファイル\main_res</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>ソース ファイル\main_res\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>ソース ファイル\main_res\object_system</Filter>
+    </ClCompile>
+    <ClCompile Include="Object_Base.cpp">
+      <Filter>ソース ファイル\main_res\object_system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -52,6 +79,21 @@
     </ClInclude>
     <ClInclude Include="FileInput.h">
       <Filter>ヘッダー ファイル\main_res</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>ヘッダー ファイル\main_res</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>ヘッダー ファイル\main_res</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>ヘッダー ファイル\main_res\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>ヘッダー ファイル\main_res\object_system</Filter>
+    </ClInclude>
+    <ClInclude Include="Object_Base.h">
+      <Filter>ヘッダー ファイル\main_res\object_system</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

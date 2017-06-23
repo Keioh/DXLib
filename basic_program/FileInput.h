@@ -13,30 +13,18 @@ struct FILER_S//コンフィグ
 	int member;
 };
 
-struct FILER_E//プレーヤー
-{
-	int str;
-	int con;
-	int pow;
-	int dex;
-	int app;
-	int siz;
-	int inte;
-	int edu;
-};
 
 class Filer
 {
 private:
 
 public:
-	Filer();
+	Filer();		//コンストラクタ
+	~Filer(){};		//デストラクタ
 
 	FILE *fp;
 	FILER_S F_B;
-	FILER_E F_E;
 
 	void FileOpen_Config();//設定ファイル
-	void FileOpen_Explorer();//探索者ファイル
 
 };

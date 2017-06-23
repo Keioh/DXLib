@@ -85,16 +85,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="FileInput.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Main_Game.cpp" />
+    <ClCompile Include="Object_Base.cpp" />
+    <ClCompile Include="Status.cpp" />
     <ClCompile Include="System.cpp" />
+    <ClCompile Include="Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="FileInput.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Main_Game.h" />
+    <ClInclude Include="Object_Base.h" />
+    <ClInclude Include="Status.h" />
     <ClInclude Include="System.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

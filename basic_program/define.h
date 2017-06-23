@@ -1,1 +1,0 @@
-#define Scene_Tab_X 1280 / 2
