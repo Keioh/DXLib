@@ -1,12 +1,14 @@
-#include "Objet_Base.h"
+#pragma once
+#include "Object_Base.h"
 
 class Status : public ObjectBase
 {
 private:
 
 public:
+	Status();		//コンストラクタ
+	~Status(){};	//デストラクタ
 
-	//基本ステータス
 	int strength;			//筋力			1
 	int	agility;			//素早さ		2
 	int dexterity;			//器用さ		3
@@ -29,8 +31,6 @@ public:
 	int faction;			//善悪度		20
 	int magicpoint;			//MP			21
 	int height;				//身長			22
-
-	//拡張ステータス
 	int satiety;			//満腹度		23
 	int leg_vitality;		//脚疲労度		24
 	int arm_vitality;		//腕疲労度		25
@@ -55,5 +55,5 @@ public:
 	int courage;			//器量			44
 	int hotness;			//感情的暑さ	45
 	int body_temperature;	//体温			46
-
+	int friendliness;		//交友度		47
 };
