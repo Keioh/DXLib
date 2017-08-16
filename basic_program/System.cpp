@@ -14,6 +14,7 @@ System::System()
 void System::Dx_Init(bool w_mode, int r, int g, int b, char* name)
 {
 	//DXLIB‚æ‚è‘O‚É‰Šú‰»‚·‚éŠÖ”
+	SetOutApplicationLogValidFlag(FALSE);
 	ChangeWindowMode(w_mode);
 	SetGraphMode(window_size.x, window_size.y, window_size.z);
 	SetMainWindowText(name);
