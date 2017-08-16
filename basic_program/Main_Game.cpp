@@ -21,11 +21,11 @@ void Main_Game::Main_Init()
 void Main_Game::Main_Game_Loop()
 {
 	Main_Init();
-	//Main_Load();
+	Main_Load();
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		//test_collision.BoxCollider(10, 100, 10, 50, true);
-		test_collision.CircleCollider(300, 300, 25, true);
+		//test.BoxColliderMouse(50, 20, 50, 20, true);
+		//test.CircleColliderMouse(50, 50, 50, true);
 	}
 }

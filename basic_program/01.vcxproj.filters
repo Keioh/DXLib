@@ -49,6 +49,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object">
       <UniqueIdentifier>{fd789982-b82e-476b-a066-00d2ab041fa3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\net">
+      <UniqueIdentifier>{f6d64242-1cfa-4238-854d-179c91192b68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\net">
+      <UniqueIdentifier>{a9a0f222-e306-4880-9b62-16367cc7523b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -72,11 +78,11 @@
     <ClCompile Include="FileInput.cpp">
       <Filter>ソース ファイル\main_res\input</Filter>
     </ClCompile>
-    <ClCompile Include="Status.cpp">
-      <Filter>ソース ファイル\main_res\game_object</Filter>
-    </ClCompile>
     <ClCompile Include="WinMain.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="button_ui.cpp">
+      <Filter>ソース ファイル\main_res\game_object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,7 +110,7 @@
     <ClInclude Include="Input.h">
       <Filter>ヘッダー ファイル\main_res\input</Filter>
     </ClInclude>
-    <ClInclude Include="Status.h">
+    <ClInclude Include="button_ui.h">
       <Filter>ヘッダー ファイル\main_res\game_object</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,16 +5,20 @@
 
 #include "Collision.h"
 
+#include "button_ui.h"
+
+
 typedef class Main_Game
 {
 private:
-	Collision test_collision;
 
 public:
 	Main_Game();
 	~Main_Game(){};
 
 	System main_system;
+
+	Collision test;//コライダーテスト用
 
 	void Main_Load();
 	void Main_Init();

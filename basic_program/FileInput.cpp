@@ -21,4 +21,3 @@ void Filer::FileOpen_Config()
 	*/
 	fclose(fp);
 }
-
