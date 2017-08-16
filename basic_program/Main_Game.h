@@ -19,6 +19,8 @@ public:
 	System main_system;
 
 	Collision test;//コライダーテスト用
+	ButtonUI test_1;
+	ButtonUI test_2;
 
 	void Main_Load();
 	void Main_Init();

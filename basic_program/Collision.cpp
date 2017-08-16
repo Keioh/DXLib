@@ -7,7 +7,7 @@ Collision::Collision()
 
 bool Collision::BoxColliderMouse(int position_x, int size_x, int position_y, int size_y, bool wire)
 {
-	GetMousePoint(&x, &y);//現在のカーソル位置を習得
+	GetMousePoint(&x, &y);//現在のカーソル位置を取得
 
 	if (wire == true)
 	{
@@ -20,11 +20,21 @@ bool Collision::BoxColliderMouse(int position_x, int size_x, int position_y, int
 	if (position_x < x && position_x + size_x > x)
 	{
 		if ( position_y < y && position_y + size_y > y)
-		{
+		{	
+
 			red = 255;
 			blue = 0;
 			green = 0;
+
 			return true;
+		}
+		else
+		{
+			red = 0;
+			blue = 255;
+			green = 0;
+
+			return false;
 		}
 	}
 	else
@@ -32,6 +42,7 @@ bool Collision::BoxColliderMouse(int position_x, int size_x, int position_y, int
 		red = 0;
 		blue = 255;
 		green = 0;
+
 		return false;
 	}	
 }

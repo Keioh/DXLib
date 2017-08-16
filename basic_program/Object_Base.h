@@ -21,6 +21,11 @@ public:
 	int size_y;
 	int size_z;
 
+	//intα値
+	int red_a;
+	int green_a;
+	int blue_a;
+
 	//floatポジション
 	float xF;
 	float yF;

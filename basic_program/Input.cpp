@@ -6,14 +6,14 @@ Input::Input()
 }
 
 //瞬間のクリック
-bool Input::MouseCilck(int MouseInput, int flag)//若干挙動がおかしいかも
+bool Input::MouseCilck(int MouseInput)//若干挙動がおかしいかも
 {
 	//int Button, x, y;
 
 	// クリック情報を取得する
 	if (GetMouseInputLog(&button_buffer, &x_buffer, &y_buffer, TRUE) == 0)
 	{
-		if ((GetMouseInput() & button_buffer & MouseInput) != flag)
+		if ((GetMouseInput() & button_buffer & MouseInput) != 0)
 		{
 			return true;
 		}

@@ -10,7 +10,7 @@ public:
 	Input();		//コンストラクタ
 	~Input(){};		//デストラクタ
 
-	bool MouseCilck(int MouseInput, int flag);//瞬間のクリック
+	bool MouseCilck(int MouseInput);//瞬間のクリック
 	bool MouseInputClick(int mouseinput);//継続クリック
 		
 };
