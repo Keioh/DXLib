@@ -16,7 +16,7 @@ private:
 public:
 	int switch_flag;//スイッチフラグ
 
-	int Load(char* path);
+	void Load(char* path);
 	void Init();
 
 	int BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）

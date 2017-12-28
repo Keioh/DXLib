@@ -1,12 +1,9 @@
 #include "button_ui.h"
 
 
-int ButtonUI::Load(char* path)
+void ButtonUI::Load(char* path)
 {
 	graphics = LoadGraph(path);
-	GetGraphSize(graphics, &size_x, &size_y);//1画像サイズを習得
-
-	return graphics;//グラフィックハンドルを返す。
 }
 
 void ButtonUI::Init()
@@ -15,7 +12,9 @@ void ButtonUI::Init()
 }
 
 int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, int input, bool wire)
-{
+{	
+	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
+
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawExtendGraph(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
@@ -50,6 +49,8 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, i
 
 int ButtonUI::BoxUI_Button_Continuation(int pos_x, int pos_y, float scale_x, float scale_y, int input, bool wire)//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。)
 {
+	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
+
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawExtendGraph(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
@@ -84,6 +85,8 @@ int ButtonUI::BoxUI_Button_Continuation(int pos_x, int pos_y, float scale_x, flo
 
 int ButtonUI::BoxUI_Button_Switch(int pos_x, int pos_y, float scale_x, float scale_y, int input, bool wire)//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 {
+	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
+
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawExtendGraph(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
@@ -134,6 +137,8 @@ int ButtonUI::BoxUI_Button_Switch(int pos_x, int pos_y, float scale_x, float sca
 
 int ButtonUI::CircleUI_Button(int pos_x, int pos_y, int size_r, int input, bool wire)//(戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 {
+	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
+
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawExtendGraph(pos_x - (size_x/2), pos_y - (size_y/2), pos_x + (size_x / 2), pos_y + (size_y / 2), graphics, TRUE);//画像を縮小拡大表示
 

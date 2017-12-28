@@ -92,14 +92,18 @@
   <ItemGroup>
     <ClCompile Include="button_ui.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="Exit.cpp" />
     <ClCompile Include="FileInput.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="load.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="LoadingScene.cpp" />
     <ClCompile Include="logo.cpp" />
     <ClCompile Include="LogoScene.cpp" />
     <ClCompile Include="ObjectVector.cpp" />
+    <ClCompile Include="option.cpp" />
     <ClCompile Include="start.cpp" />
+    <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="Main_Game.cpp" />
     <ClCompile Include="Object_Base.cpp" />
@@ -109,8 +113,10 @@
     <ClInclude Include="button_ui.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="Exit.h" />
     <ClInclude Include="FileInput.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="load.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="LoadingScene.h" />
     <ClInclude Include="logo.h" />
@@ -118,7 +124,9 @@
     <ClInclude Include="Main_Game.h" />
     <ClInclude Include="ObjectVector.h" />
     <ClInclude Include="Object_Base.h" />
+    <ClInclude Include="option.h" />
     <ClInclude Include="start.h" />
+    <ClInclude Include="StartScene.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

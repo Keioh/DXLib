@@ -3,6 +3,8 @@
 #include "define.h"
 #include "LogoScene.h"
 #include "LoadingScene.h"
+#include "StartScene.h"
+
 
 typedef class Main_Game
 {
@@ -15,8 +17,10 @@ public:
 
 	System main_system;
 
-	LogoScene Logo_scene;
 	LoadingScene Loading_scene;
+	LogoScene Logo_scene;
+	StartScene Start_scene;
+
 
 	void Main_Load();
 	void Main_Init();

@@ -111,6 +111,18 @@
     <ClCompile Include="start.cpp">
       <Filter>ソース ファイル\main_res\game_object\title_object</Filter>
     </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>ソース ファイル\main_res\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Exit.cpp">
+      <Filter>ソース ファイル\main_res\game_object\title_object</Filter>
+    </ClCompile>
+    <ClCompile Include="load.cpp">
+      <Filter>ソース ファイル\main_res\game_object\title_object</Filter>
+    </ClCompile>
+    <ClCompile Include="option.cpp">
+      <Filter>ソース ファイル\main_res\game_object\title_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -153,6 +165,18 @@
       <Filter>ヘッダー ファイル\main_res\Scene</Filter>
     </ClInclude>
     <ClInclude Include="start.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\title_object</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>ヘッダー ファイル\main_res\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Exit.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\title_object</Filter>
+    </ClInclude>
+    <ClInclude Include="load.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\title_object</Filter>
+    </ClInclude>
+    <ClInclude Include="option.h">
       <Filter>ヘッダー ファイル\main_res\game_object\title_object</Filter>
     </ClInclude>
   </ItemGroup>

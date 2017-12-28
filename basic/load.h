@@ -1,15 +1,16 @@
 #pragma once
 #include "button_ui.h"
 
-class Start
+class Load
 {
 private:
 
 public:
-	ButtonUI start;
+	ButtonUI load;
 
 	void init();
 	void LoadGraphics();
 
-	int DrawStartButton(int x, int y, bool wire);
+	int DrawLoadButton(int x, int y, bool wire);
+
 };
