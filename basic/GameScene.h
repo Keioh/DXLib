@@ -4,7 +4,6 @@
 class GameScene
 {
 private:
-	int test_graphics;
 
 public:
 	int game_scene_flag;

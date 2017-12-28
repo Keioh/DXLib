@@ -99,10 +99,12 @@
     <ClCompile Include="load.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="LoadingScene.cpp" />
+    <ClCompile Include="LoadScene.cpp" />
     <ClCompile Include="logo.cpp" />
     <ClCompile Include="LogoScene.cpp" />
     <ClCompile Include="ObjectVector.cpp" />
     <ClCompile Include="option.cpp" />
+    <ClCompile Include="OptionScene.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="WinMain.cpp" />
@@ -121,12 +123,14 @@
     <ClInclude Include="load.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="LoadingScene.h" />
+    <ClInclude Include="LoadScene.h" />
     <ClInclude Include="logo.h" />
     <ClInclude Include="LogoScene.h" />
     <ClInclude Include="Main_Game.h" />
     <ClInclude Include="ObjectVector.h" />
     <ClInclude Include="Object_Base.h" />
     <ClInclude Include="option.h" />
+    <ClInclude Include="OptionScene.h" />
     <ClInclude Include="start.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="System.h" />

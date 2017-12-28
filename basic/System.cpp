@@ -34,18 +34,8 @@ void System::Dx_Init(bool w_mode, int r, int g, int b, char* name)
 	SetBackgroundColor(r, g, b);
 }
 
-//瞬間のクリック
-/*bool System::Mouse_Cilck(int MouseInput, int flag)
+//DXLIB終了処理
+void System::Dx_End()
 {
-	int Button, x, y;
-
-	// クリック情報を取得する
-	if (GetMouseInputLog(&Button, &x, &y, TRUE) == 0)
-	{
-		if ((GetMouseInput() & Button & MouseInput) != flag)
-		{
-			return true;
-		}
-	}
-	return false;
-}*/
+	DxLib_End();
+}
