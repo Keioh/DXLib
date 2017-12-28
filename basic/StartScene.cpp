@@ -11,6 +11,13 @@ void StartScene::LoadGraphics()
 void StartScene::Init()
 {
 	start_scene_flag = 0;
+
+	start_pos_x = -10;
+	load_pos_x = -15;
+	option_pos_x = -20;
+	exit_pos_x = -25;
+	anime_x = 1.0f;
+
 	start.init();
 	load.init();
 	option.init();
@@ -22,31 +29,69 @@ void StartScene::DrawStartScene(int window_x, int window_y, bool wire)
 	while (start_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		//ニューゲームボタン
-		if (start.DrawStartButton(window_x / 2 - 500, window_y / 2, wire) == 1)
+		if (start.DrawStartButton(125 + start_pos_x, window_y - 265, wire) == 1)
 		{
 			StartScene::Init();//初期化してから
 			start_scene_flag = 1;//ループを抜ける
 		}
 
 		//ロードボタン
-		if (load.DrawLoadButton(window_x / 2 - 475, window_y / 2 + 55, wire) == 1)
+		if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, wire) == 1)
 		{
 			StartScene::Init();//初期化してから
 			start_scene_flag = 2;//ループを抜ける
 		}
 
 		//オプションボタン
-		if (option.DrawOptionButton(window_x / 2 - 450, window_y / 2 + 110, wire) == 1)
+		if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, wire) == 1)
 		{
 			StartScene::Init();//初期化してから
 			start_scene_flag = 3;//ループを抜ける
 		}
 
 		//終了ボタン
-		if (exit.DrawExitButton(window_x / 2 - 425, window_y / 2 + 165, wire) == 1)
+		if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, wire) == 1)
 		{
 			StartScene::Init();//初期化してから
 			start_scene_flag = -1;//ループを抜ける
+		}
+
+
+		//各ボタンのスライドアニメーション
+		if (start_pos_x < 0)
+		{
+			start_pos_x += anime_x;
+			if (start_pos_x >= 0)
+			{
+				start_pos_x = 0;
+			}
+		}
+
+		if (load_pos_x < 0)
+		{
+			load_pos_x += anime_x;
+			if (load_pos_x >= 0)
+			{
+				load_pos_x = 0;
+			}
+		}
+
+		if (option_pos_x < 0)
+		{
+			option_pos_x += anime_x;
+			if (option_pos_x >= 0)
+			{
+				option_pos_x = 0;
+			}
+		}
+
+		if (exit_pos_x < 0)
+		{
+			exit_pos_x += anime_x;
+			if (exit_pos_x >= 0)
+			{
+				exit_pos_x = 0;
+			}
 		}
 	}
 }

@@ -67,6 +67,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\title_object">
       <UniqueIdentifier>{82b5f3bf-7819-4785-b118-522807e2f4ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_object">
+      <UniqueIdentifier>{3639bc15-613c-4ce3-9834-688f3b590ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_object">
+      <UniqueIdentifier>{0421fc5b-b534-416f-8849-784ee45f4c9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -123,6 +129,9 @@
     <ClCompile Include="option.cpp">
       <Filter>ソース ファイル\main_res\game_object\title_object</Filter>
     </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>ソース ファイル\main_res\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -178,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="option.h">
       <Filter>ヘッダー ファイル\main_res\game_object\title_object</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>ヘッダー ファイル\main_res\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

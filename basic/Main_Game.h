@@ -4,7 +4,7 @@
 #include "LogoScene.h"
 #include "LoadingScene.h"
 #include "StartScene.h"
-
+#include "GameScene.h"
 
 typedef class Main_Game
 {
@@ -20,7 +20,7 @@ public:
 	LoadingScene Loading_scene;
 	LogoScene Logo_scene;
 	StartScene Start_scene;
-
+	GameScene Game_scene;
 
 	void Main_Load();
 	void Main_Init();

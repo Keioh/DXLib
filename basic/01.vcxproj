@@ -94,6 +94,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Exit.cpp" />
     <ClCompile Include="FileInput.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="load.cpp" />
     <ClCompile Include="Loading.cpp" />
@@ -115,6 +116,7 @@
     <ClInclude Include="define.h" />
     <ClInclude Include="Exit.h" />
     <ClInclude Include="FileInput.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="load.h" />
     <ClInclude Include="Loading.h" />

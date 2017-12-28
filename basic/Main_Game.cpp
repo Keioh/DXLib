@@ -8,6 +8,7 @@ void Main_Game::Main_Load()
 	Logo_scene.LoadGraphics();//ロゴー画像を読み込む
 
 	Start_scene.LoadGraphics();
+	Game_scene.LoadGraphics();
 }
 
 void Main_Game::Main_Init()
@@ -16,6 +17,7 @@ void Main_Game::Main_Init()
 	Logo_scene.init();//ロゴ画面初期化
 
 	Start_scene.Init();
+	Game_scene.Init();
 }
 
 void Main_Game::Main_Game_Loop() 
@@ -32,5 +34,10 @@ void Main_Game::Main_Game_Loop()
 		Logo_scene.DrawLogoScene((main_system.size.x / 2) - 140, (main_system.size.y / 2) - 70);//ロゴ画面(2番目に書く)
 
 		Start_scene.DrawStartScene(main_system.size.x, main_system.size.y, wire_flag);//スタート画面
+
+		if (Start_scene.start_scene_flag == 1)//ゲーム画面へ
+		{
+			Game_scene.DrawGameScene(main_system.size.x, main_system.size.y, wire_flag);//ゲーム画面
+		}
 	}
 }
