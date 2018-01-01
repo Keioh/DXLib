@@ -1,5 +1,10 @@
 #include "load.h"
 
+Load::Load()
+{
+	Load::init();
+}
+
 void Load::init()
 {
 	load.Init();

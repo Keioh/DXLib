@@ -1,5 +1,10 @@
 #include "Exit.h"
 
+Exit::Exit()
+{
+	Exit::init();
+}
+
 void Exit::init()
 {
 	exit.Init();

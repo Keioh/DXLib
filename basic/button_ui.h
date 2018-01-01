@@ -14,6 +14,8 @@ private:
 	int click_flag;//クリックしたかどうかのフラグ
 
 public:
+	ButtonUI();
+
 	int switch_flag;//スイッチフラグ
 
 	void Load(char* path);

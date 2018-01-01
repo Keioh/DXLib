@@ -1,5 +1,10 @@
 #include "fade_out.h"
 
+FadeOut::FadeOut()
+{
+	FadeOut::init();
+}
+
 void FadeOut::init()
 {
 	flag = false;

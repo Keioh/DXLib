@@ -6,6 +6,7 @@ class LoadScene
 private:
 
 public:
+	LoadScene();
 
 	int load_scene_flag;
 

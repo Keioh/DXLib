@@ -1,5 +1,10 @@
 #include "LoadingScene.h"
 
+LoadingScene::LoadingScene()
+{
+	LoadingScene::Init();
+}
+
 void LoadingScene::Init()
 {
 	loading_scene_flag = 0;

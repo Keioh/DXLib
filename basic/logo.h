@@ -8,6 +8,8 @@ private:
 
 
 public:
+	Logo();
+
 	int timer;//アニメタイマー
 	float anime_pos_x = -anime_x;//アニメ初期開始位
 	float anime_x = 25.0f;//アニメのために座標ずらす分

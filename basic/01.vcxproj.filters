@@ -85,6 +85,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\effect_object">
       <UniqueIdentifier>{a0596ff9-ec66-4d62-91ac-c75e57d9607c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\load_object">
+      <UniqueIdentifier>{e3952396-700f-4d89-a6b8-09a195429339}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\load_object">
+      <UniqueIdentifier>{4fad663e-ea61-4249-bbcc-2c2e3636c989}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -159,6 +165,9 @@
     <ClCompile Include="fade_out.cpp">
       <Filter>ソース ファイル\main_res\game_object\effect_object</Filter>
     </ClCompile>
+    <ClCompile Include="sound_system.cpp">
+      <Filter>ソース ファイル\main_res\object_system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -232,6 +241,9 @@
     </ClInclude>
     <ClInclude Include="fade_out.h">
       <Filter>ヘッダー ファイル\main_res\game_object\effect_object</Filter>
+    </ClInclude>
+    <ClInclude Include="sound_system.h">
+      <Filter>ヘッダー ファイル\main_res\object_system</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

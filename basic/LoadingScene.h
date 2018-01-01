@@ -8,6 +8,8 @@ private:
 	Loading loading;
 
 public:
+	LoadingScene();
+
 	int loading_scene_flag;
 
 	void Init();

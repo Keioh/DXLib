@@ -12,6 +12,8 @@ private:
 	FadeOut fade_out;
 
 public:
+	LogoScene();
+
 	int logo_scene_flag;
 
 	int logo_sound_handl;

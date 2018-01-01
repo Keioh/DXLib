@@ -1,5 +1,10 @@
 #include "Main_Game.h"
 
+Main_Game::Main_Game()
+{
+	Main_Game::Main_Init();
+}
+
 void Main_Game::Main_Load()
 {
 	Loading_scene.LoadGraphics();//ローディング画像を読み込む

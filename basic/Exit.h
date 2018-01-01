@@ -6,6 +6,8 @@ class Exit
 private:
 
 public:
+	Exit();
+
 	ButtonUI exit;
 
 	void init();

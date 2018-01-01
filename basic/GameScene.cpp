@@ -1,5 +1,10 @@
 #include "GameScene.h"
 
+GameScene::GameScene()
+{
+	GameScene::Init();
+}
+
 void GameScene::Init()
 {
 	game_scene_flag = 0;

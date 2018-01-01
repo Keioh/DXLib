@@ -1,5 +1,9 @@
 #include "button_ui.h"
 
+ButtonUI::ButtonUI()
+{
+	ButtonUI::Init();
+}
 
 void ButtonUI::Load(char* path)
 {

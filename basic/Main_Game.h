@@ -20,6 +20,7 @@ typedef class Main_Game
 private:
 
 public:
+	Main_Game();
 	~Main_Game(){};
 
 	bool wire_flag;

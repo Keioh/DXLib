@@ -1,5 +1,10 @@
 #include "Loading.h"
 
+Loading::Loading()
+{
+	Loading::inti();
+}
+
 void Loading::inti()
 {
 	timer = 0;

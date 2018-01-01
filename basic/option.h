@@ -6,6 +6,8 @@ class Option
 private:
 
 public:
+	Option();
+
 	ButtonUI option;
 
 	void init();

@@ -1,5 +1,10 @@
 #include "fade_in.h"
 
+FadeIn::FadeIn()
+{
+	FadeIn::init();
+}
+
 void FadeIn::init()
 {
 	flag = false;

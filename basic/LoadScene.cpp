@@ -1,5 +1,10 @@
 #include "LoadScene.h"
 
+LoadScene::LoadScene()
+{
+	LoadScene::Init();
+}
+
 void LoadScene::LoadGraphics()
 {
 

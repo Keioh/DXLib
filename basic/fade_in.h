@@ -9,6 +9,8 @@ private:
 	int graphics_alph;//‰æ‘œ‚Ìƒ¿’l
 
 public:
+	FadeIn();
+
 	bool flag;
 
 	void init();

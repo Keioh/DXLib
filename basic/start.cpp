@@ -1,5 +1,10 @@
 #include "start.h"
 
+Start::Start()
+{
+	Start::init();
+}
+
 void Start::init()
 {
 	start.Init();

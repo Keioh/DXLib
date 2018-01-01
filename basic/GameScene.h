@@ -6,6 +6,8 @@ class GameScene
 private:
 
 public:
+	GameScene();
+
 	int game_scene_flag;
 
 	void Init();

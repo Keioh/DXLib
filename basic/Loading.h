@@ -10,6 +10,8 @@ private:
 
 
 public:
+	Loading();
+
 	int timer;
 
 	void inti();

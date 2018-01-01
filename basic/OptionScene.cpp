@@ -1,5 +1,10 @@
 #include "OptionScene.h"
 
+OptionScene::OptionScene()
+{
+	OptionScene::Init();
+}
+
 void OptionScene::LoadGraphics()
 {
 	fade_in.LoadGraphics();

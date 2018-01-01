@@ -13,6 +13,7 @@ private:
 	int flag;
 
 public:
+	StartScene();
 
 	FadeIn fade_in;
 	FadeOut fade_out;

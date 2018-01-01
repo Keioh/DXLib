@@ -6,6 +6,8 @@ class Start
 private:
 
 public:
+	Start();
+
 	ButtonUI start;
 
 	void init();

@@ -1,5 +1,10 @@
 #include "logo.h"
 
+Logo::Logo()
+{
+	Logo::Inti();
+}
+
 void Logo::LoadGraphics()
 {
 	logo_D = LoadGraph("pack/Logo/logo_D.png");

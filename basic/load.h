@@ -6,6 +6,8 @@ class Load
 private:
 
 public:
+	Load();
+
 	ButtonUI load;
 
 	void init();

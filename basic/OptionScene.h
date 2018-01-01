@@ -13,6 +13,8 @@ private:
 	bool flag;//ƒNƒŠƒbƒN”»’è•Û‘¶•Ï”
 
 public:
+	OptionScene();
+
 	FadeIn fade_in;
 	FadeOut fade_out;
 

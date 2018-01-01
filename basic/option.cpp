@@ -1,5 +1,10 @@
 #include "option.h"
 
+Option::Option()
+{
+	Option::init();
+}
+
 void Option::init()
 {
 	option.Init();

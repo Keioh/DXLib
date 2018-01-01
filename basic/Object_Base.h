@@ -34,12 +34,3 @@ public:
 
 
 };	
-
-struct SEQUENCE
-{
-	int title_screen;
-	int game_screen;
-	int load_screen;
-	int option_screen;
-	int exit_screen;
-};

@@ -1,5 +1,10 @@
 #include "save_and_return.h"
 
+SaveAndReturn::SaveAndReturn()
+{
+	SaveAndReturn::init();
+}
+
 void SaveAndReturn::init()
 {
 	save_and_return.Init();

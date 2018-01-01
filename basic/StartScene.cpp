@@ -1,5 +1,10 @@
 #include "StartScene.h"
 
+StartScene::StartScene()
+{
+	StartScene::Init();
+}
+
 void StartScene::LoadGraphics()
 {
 	fade_out.LoadGraphics();

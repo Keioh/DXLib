@@ -6,6 +6,7 @@ class SaveAndReturn
 private:
 
 public:
+	SaveAndReturn();
 
 	ButtonUI save_and_return;
 
