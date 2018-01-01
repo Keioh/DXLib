@@ -1,6 +1,8 @@
 #pragma once
+#include <iostream>
 
 //システム関連
+#include "DxLib.h"
 #include "System.h"
 #include "define.h"
 

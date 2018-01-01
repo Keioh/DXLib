@@ -22,7 +22,7 @@ bool Collision::BoxColliderMouse(int position_x, int size_x, int position_y, int
 			blue = 0;
 			green = 0;
 
-			return true;
+			return hit = true;
 		}
 		else
 		{
@@ -30,7 +30,7 @@ bool Collision::BoxColliderMouse(int position_x, int size_x, int position_y, int
 			blue = 255;
 			green = 0;
 
-			return false;
+			return hit = false;
 		}
 	}
 	else
@@ -39,7 +39,7 @@ bool Collision::BoxColliderMouse(int position_x, int size_x, int position_y, int
 		blue = 255;
 		green = 0;
 
-		return false;
+		return hit = false;
 	}	
 }
 
@@ -60,13 +60,13 @@ bool Collision::CircleColliderMouse(int position_x, int position_y, int size_r, 
 		red = 255;
 		blue = 0;
 		green = 0;
-		return true;
+		return hit = true;
 	}
 	else
 	{
 		red = 0;
 		blue = 255;
 		green = 0;
-		return false;
+		return hit = false;
 	}
 }

@@ -9,6 +9,7 @@ void ButtonUI::Load(char* path)
 void ButtonUI::Init()
 {
 	switch_flag = -1;
+	box_collision.hit = 0;
 }
 
 int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, int input, bool wire)

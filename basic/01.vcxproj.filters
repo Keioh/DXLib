@@ -73,6 +73,18 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\game_object">
       <UniqueIdentifier>{0421fc5b-b534-416f-8849-784ee45f4c9f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\option_object">
+      <UniqueIdentifier>{9ce5e5f3-2dd3-401c-9a70-d393d9fd2b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\option_object">
+      <UniqueIdentifier>{81ffab0d-e0cd-416d-8878-928e5bc34e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\effect_object">
+      <UniqueIdentifier>{f064a062-e489-43bc-bbbd-b923d8d90065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\effect_object">
+      <UniqueIdentifier>{a0596ff9-ec66-4d62-91ac-c75e57d9607c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -138,6 +150,15 @@
     <ClCompile Include="LoadScene.cpp">
       <Filter>ソース ファイル\main_res\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="save_and_return.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
+    <ClCompile Include="fade_in.cpp">
+      <Filter>ソース ファイル\main_res\game_object\effect_object</Filter>
+    </ClCompile>
+    <ClCompile Include="fade_out.cpp">
+      <Filter>ソース ファイル\main_res\game_object\effect_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -202,6 +223,15 @@
     </ClInclude>
     <ClInclude Include="LoadScene.h">
       <Filter>ヘッダー ファイル\main_res\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="save_and_return.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="fade_in.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\effect_object</Filter>
+    </ClInclude>
+    <ClInclude Include="fade_out.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\effect_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

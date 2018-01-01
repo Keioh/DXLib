@@ -12,6 +12,8 @@ private:
 public:
 	~Collision(){};
 
+	bool hit;
+
 	int size_x;
 	int size_y;
 	int size_r;

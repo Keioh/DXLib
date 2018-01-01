@@ -4,11 +4,19 @@
 #include "exit.h"
 #include "option.h"
 
+#include "fade_in.h"
+#include "fade_out.h"
+
 class StartScene
 {
 private:
+	int flag;
 
 public:
+
+	FadeIn fade_in;
+	FadeOut fade_out;
+
 	Start start;
 	Load load;
 	Option option;

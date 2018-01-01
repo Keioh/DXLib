@@ -93,6 +93,8 @@
     <ClCompile Include="button_ui.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Exit.cpp" />
+    <ClCompile Include="fade_in.cpp" />
+    <ClCompile Include="fade_out.cpp" />
     <ClCompile Include="FileInput.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -105,6 +107,7 @@
     <ClCompile Include="ObjectVector.cpp" />
     <ClCompile Include="option.cpp" />
     <ClCompile Include="OptionScene.cpp" />
+    <ClCompile Include="save_and_return.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="WinMain.cpp" />
@@ -117,6 +120,8 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="Exit.h" />
+    <ClInclude Include="fade_in.h" />
+    <ClInclude Include="fade_out.h" />
     <ClInclude Include="FileInput.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Input.h" />
@@ -131,6 +136,7 @@
     <ClInclude Include="Object_Base.h" />
     <ClInclude Include="option.h" />
     <ClInclude Include="OptionScene.h" />
+    <ClInclude Include="save_and_return.h" />
     <ClInclude Include="start.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="System.h" />
