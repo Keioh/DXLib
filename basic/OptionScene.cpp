@@ -2,6 +2,7 @@
 
 OptionScene::OptionScene()
 {
+	flag = false;
 	OptionScene::Init();
 }
 

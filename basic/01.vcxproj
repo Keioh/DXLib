@@ -107,6 +107,7 @@
     <ClCompile Include="ObjectVector.cpp" />
     <ClCompile Include="option.cpp" />
     <ClCompile Include="OptionScene.cpp" />
+    <ClCompile Include="return.cpp" />
     <ClCompile Include="save_and_return.cpp" />
     <ClCompile Include="sound_system.cpp" />
     <ClCompile Include="start.cpp" />
@@ -137,6 +138,7 @@
     <ClInclude Include="Object_Base.h" />
     <ClInclude Include="option.h" />
     <ClInclude Include="OptionScene.h" />
+    <ClInclude Include="return.h" />
     <ClInclude Include="save_and_return.h" />
     <ClInclude Include="sound_system.h" />
     <ClInclude Include="start.h" />

@@ -51,12 +51,16 @@ void Main_Game::Main_Game_Loop()
 			Game_scene.DrawGameScene(main_system.size.x, main_system.size.y, wire_flag);//ゲーム画面
 			Start_scene.Init();//スタート画面初期化
 			Game_scene.Init();//ゲーム画面初期化
+			Option_scene.Init();//オプション画面初期化
+			Load_scene.Init();//ロード画面を初期化
 		}
 
 		if (Start_scene.start_scene_flag == 2)//ロード画面へ
 		{
 			Load_scene.DrawLoadScene(main_system.size.x, main_system.size.y, wire_flag);//ロード画面
 			Start_scene.Init();//スタート画面初期化
+			Game_scene.Init();//ゲーム画面初期化
+			Option_scene.Init();//オプション画面初期化
 			Load_scene.Init();//ロード画面を初期化
 		}
 
@@ -64,7 +68,9 @@ void Main_Game::Main_Game_Loop()
 		{
 			Option_scene.DrawOptionScene(main_system.size.x, main_system.size.y, wire_flag);//オプション画面
 			Start_scene.Init();//スタート画面初期化
+			Game_scene.Init();//ゲーム画面初期化
 			Option_scene.Init();//オプション画面初期化
+			Load_scene.Init();//ロード画面を初期化
 		}
 	}
 }

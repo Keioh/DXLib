@@ -2,6 +2,7 @@
 
 StartScene::StartScene()
 {
+	flag = 0;
 	StartScene::Init();
 }
 
@@ -52,14 +53,13 @@ void StartScene::DrawStartScene(int window_x, int window_y, bool wire)
 			//ロードボタン
 			if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, wire) == 1)
 			{
-				StartScene::Init();//初期化してから
-				start_scene_flag = 2;//ループを抜ける
+				flag = 2;//フラグを2にする。
 			}
 
 			//オプションボタン
 			if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, wire) == 1)
 			{
-				flag = 3;//フラグを３にする。
+				flag = 3;//フラグを3にする。
 			}
 
 			//終了ボタン
@@ -67,6 +67,17 @@ void StartScene::DrawStartScene(int window_x, int window_y, bool wire)
 			{
 				StartScene::Init();//初期化してから
 				start_scene_flag = -1;//ループを抜ける
+			}
+
+			//ロード画面へ移動する際の処理
+			if (flag == 2)
+			{
+				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
+				{
+					StartScene::Init();//初期化してから
+					flag = 0;//フラグを０で初期化してから
+					start_scene_flag = 2;//ループを抜ける
+				}
 			}
 
 			//オプション画面へ移動する際の処理

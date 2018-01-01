@@ -168,6 +168,9 @@
     <ClCompile Include="sound_system.cpp">
       <Filter>ソース ファイル\main_res\object_system</Filter>
     </ClCompile>
+    <ClCompile Include="return.cpp">
+      <Filter>ソース ファイル\main_res\game_object\load_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="sound_system.h">
       <Filter>ヘッダー ファイル\main_res\object_system</Filter>
+    </ClInclude>
+    <ClInclude Include="return.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\load_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

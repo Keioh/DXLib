@@ -46,13 +46,13 @@ void LogoScene::DrawLogoScene(int x, int y)
 			{
 				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)//フェードイン
 				{
-					SetBackgroundColor(0, 0, 0);//背景色を黒に設定
 					LogoScene::init();//初期化
 					StopSoundMem(logo_sound_handl);
 					logo_scene_flag = 1;//フェードインが完了したらロゴシーンを抜ける
 				}
 			}
 		}
-	}
+	}		
+	SetBackgroundColor(0, 0, 0);//背景色を黒に設定
 	DeleteSoundMem(logo_sound_handl);
 }
