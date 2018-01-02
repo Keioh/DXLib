@@ -6,7 +6,7 @@ OptionScene::OptionScene()
 	OptionScene::Init();
 }
 
-void OptionScene::LoadGraphics()
+void OptionScene::Load()
 {
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();

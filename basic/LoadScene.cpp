@@ -6,7 +6,7 @@ LoadScene::LoadScene()
 	LoadScene::Init();
 }
 
-void LoadScene::LoadGraphics()
+void LoadScene::Load()
 {
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
@@ -28,7 +28,7 @@ void LoadScene::DrawLoadScene(int window_x, int window_y, bool wire)
 {
 	while (load_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)
+		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
 			DrawString(0, 0, "LoadScene", GetColor(0, 0, 0));
 

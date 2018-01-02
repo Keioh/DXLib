@@ -20,7 +20,7 @@ public:
 
 	int option_scene_flag;
 
-	void LoadGraphics();
+	void Load();
 	void Init();
 
 	void DrawOptionScene(int window_x, int window_y, bool wire);

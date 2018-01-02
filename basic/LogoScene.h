@@ -1,6 +1,10 @@
 #pragma once
 #include "DxLib.h"
+
 #include "logo.h"
+
+#include "sound_system.h"
+
 #include "fade_in.h"
 #include "fade_out.h"
 
@@ -8,19 +12,22 @@ class LogoScene
 {
 private:
 	Logo logo;//ロゴ表示関連
-	FadeIn fade_in;
-	FadeOut fade_out;
+
+	SoundSystem logo_sound;//ロゴを表示するときに鳴らす音
+
+	FadeIn fade_in;//フェードイン
+	FadeOut fade_out;//フェードアウト
 
 public:
-	LogoScene();
+	LogoScene();//コンストラクタ
 
 	int logo_scene_flag;
 
 	int logo_sound_handl;
 
-	void init();
+	void init();//初期化
 
-	void LoadGraphics();
-	void DrawLogoScene(int x, int y);
+	void Load();//読み込み
+	void DrawLogoScene(int x, int y);//描写
 
 };

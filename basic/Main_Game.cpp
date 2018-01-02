@@ -7,13 +7,13 @@ Main_Game::Main_Game()
 
 void Main_Game::Main_Load()
 {
-	Loading_scene.LoadGraphics();//ローディング画像を読み込む
-	Logo_scene.LoadGraphics();//ロゴー画像を読み込む
+	Loading_scene.Load();//ローディング画像を読み込む
+	Logo_scene.Load();//ロゴー画像を読み込む
 
-	Start_scene.LoadGraphics();//スタート画像を読み込む
-	Game_scene.LoadGraphics();//ゲーム画像を読み込む
-	Option_scene.LoadGraphics();//オプション画像を読み込む
-	Load_scene.LoadGraphics();//ロード画像を読み込む
+	Start_scene.Load();//スタート画像を読み込む
+	Game_scene.Load();//ゲーム画像を読み込む
+	Option_scene.Load();//オプション画像を読み込む
+	Load_scene.Load();//ロード画像を読み込む
 }
 
 void Main_Game::Main_Init()

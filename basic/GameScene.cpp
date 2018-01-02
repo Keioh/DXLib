@@ -10,7 +10,7 @@ void GameScene::Init()
 	game_scene_flag = 0;
 }
 
-void GameScene::LoadGraphics()
+void GameScene::Load()
 {
 }
 

@@ -11,7 +11,7 @@ void LoadingScene::Init()
 	loading.inti();
 }
 
-void LoadingScene::LoadGraphics()
+void LoadingScene::Load()
 {
 	loading.LoadGraphics();
 }

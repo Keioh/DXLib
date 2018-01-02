@@ -15,14 +15,14 @@ void LogoScene::init()
 	logo_scene_flag = 0;
 }
 
-void LogoScene::LoadGraphics()
+void LogoScene::Load()
 {
 	logo.LoadGraphics();
-
+	
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
 
-	logo_sound_handl = LoadSoundMem("pack/Logo/sound/logo_sound.wav");//音読み込み
+	logo_sound.LoadSound("pack/Logo/sound/logo_sound.wav");
 }
 
 void LogoScene::DrawLogoScene(int x, int y)
@@ -31,12 +31,12 @@ void LogoScene::DrawLogoScene(int x, int y)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
-			if (CheckSoundMem(logo_sound_handl) == 0)PlaySoundMem(logo_sound_handl, DX_PLAYTYPE_BACK);//音再生
+			logo_sound.Play(1.0f, DX_PLAYTYPE_BACK);//音を再生
 
 			if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0)//マウスを左クリックしたら
 			{
 				LogoScene::init();//初期化
-				StopSoundMem(logo_sound_handl);
+				logo_sound.Stop();//音を停止
 				logo_scene_flag = 1;//ロゴシーンを抜ける
 			}
 
@@ -47,12 +47,11 @@ void LogoScene::DrawLogoScene(int x, int y)
 				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)//フェードイン
 				{
 					LogoScene::init();//初期化
-					StopSoundMem(logo_sound_handl);
+					logo_sound.Stop();//音を停止
 					logo_scene_flag = 1;//フェードインが完了したらロゴシーンを抜ける
 				}
 			}
 		}
 	}		
 	SetBackgroundColor(0, 0, 0);//背景色を黒に設定
-	DeleteSoundMem(logo_sound_handl);
 }

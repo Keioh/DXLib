@@ -12,6 +12,8 @@ class StartScene
 private:
 	int flag;
 
+	int back_wall_graphics;//背景画像ハンドル
+
 public:
 	StartScene();
 
@@ -32,7 +34,7 @@ public:
 
 	int start_scene_flag;//-1でゲーム終了、0でスタート画面をループ、1でnew game、2でロード画面、3でオプション画面。
 
-	void LoadGraphics();
+	void Load();
 	void Init();
 
 	void DrawStartScene(int window_x, int window_y, bool wire);

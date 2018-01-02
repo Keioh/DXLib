@@ -11,7 +11,7 @@ public:
 	int game_scene_flag;
 
 	void Init();
-	void LoadGraphics();
+	void Load();
 
 	void DrawGameScene(int window_x, int window_y, bool wire);
 

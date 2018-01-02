@@ -6,8 +6,10 @@ StartScene::StartScene()
 	StartScene::Init();
 }
 
-void StartScene::LoadGraphics()
+void StartScene::Load()
 {
+	back_wall_graphics = LoadGraph("pack/UI/Title/back_wall.png");//背景画像をロード
+
 	fade_out.LoadGraphics();
 	fade_in.LoadGraphics();
 	
@@ -40,6 +42,9 @@ void StartScene::DrawStartScene(int window_x, int window_y, bool wire)
 {
 	while (start_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
+		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+		DrawGraph(0, 0, back_wall_graphics, TRUE);//背景画像を表示
+
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
 
@@ -126,7 +131,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, bool wire)
 				{
 					exit_pos_x = 0;
 				}
-			}
+			}	
 		}
 	}
 }
