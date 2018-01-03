@@ -6,6 +6,8 @@
 #include "fade_in.h"
 #include "fade_out.h"
 
+#include "button_ui.h"
+
 class OptionScene
 {
 private:
@@ -14,6 +16,8 @@ private:
 
 public:
 	OptionScene();
+
+	ButtonUI test;
 
 	FadeIn fade_in;
 	FadeOut fade_out;

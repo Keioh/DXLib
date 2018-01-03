@@ -251,5 +251,8 @@
     <ClInclude Include="return.h">
       <Filter>ヘッダー ファイル\main_res\game_object\load_object</Filter>
     </ClInclude>
+    <ClInclude Include="struct_set.h">
+      <Filter>ヘッダー ファイル\main_res</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
