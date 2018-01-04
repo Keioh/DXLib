@@ -55,7 +55,7 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, i
 	return click_flag;//クリック判定の結果を返す。
 }
 
-int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, unsigned char color, bool wire)//横方向へのスライダー
+int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, unsigned int color, bool wire)//横方向へのスライダー
 {
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
@@ -110,7 +110,7 @@ int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, unsigned char color, 
 	return click_flag;
 }
 
-int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, unsigned char color, bool wire)//バグあり
+int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, unsigned int color, bool wire)//バグあり
 {
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 

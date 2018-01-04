@@ -171,6 +171,12 @@
     <ClCompile Include="return.cpp">
       <Filter>ソース ファイル\main_res\game_object\load_object</Filter>
     </ClCompile>
+    <ClCompile Include="bgm_volume_slider.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
+    <ClCompile Include="se_volume_slider.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -253,6 +259,12 @@
     </ClInclude>
     <ClInclude Include="struct_set.h">
       <Filter>ヘッダー ファイル\main_res</Filter>
+    </ClInclude>
+    <ClInclude Include="bgm_volume_slider.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="se_volume_slider.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

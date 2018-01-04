@@ -10,22 +10,25 @@ void OptionScene::Load()
 {
 	back_wall_graphics = LoadGraph("pack/UI/option/option_back_wall.png");
 
+	bgm_volume.LoadGraphics();
+	se_volume.LoadGraphics();
+
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
 
 	save_and_return.LoadGraphics();
 
-	test.Load("pack/UI/ButtonUI/wheel_horizontal.png");
 }
 
 void OptionScene::Init()
 {
 	option_scene_flag = 0;
 
+	bgm_volume.init();
+	se_volume.init();
+
 	fade_in.init();
 	fade_out.init();
-
-	test.Init();
 
 	save_and_return.init();
 }
@@ -38,12 +41,11 @@ void OptionScene::DrawOptionScene(int window_x, int window_y, bool wire)
 		DrawGraph(0, 0, back_wall_graphics, TRUE);
 
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
-		{
+		{		
 
-			test.BoxUI_WheelHorizontal(200, 200, GetColor(100, 100, 255), wire);
+			bgm_volume.DrawBGMVolumeSlider(100, 200, GetColor(0, 0, 255), wire);//BGM音量調節
+			se_volume.DrawSEVolumeSlider(100, 250, GetColor(0, 0, 255), wire);//SE音量調節
 
-			DrawFormatString(200, 200, GetColor(255,255, 255), "%f", test.wheel_volume_buffer);
-#			
 			//設定をセーブしてからオプション画面から抜けるボタン
 			if (save_and_return.DrawSaveAndReturnButton(window_x - (10 + save_and_return.save_and_return.size_x), window_y - (10 + save_and_return.save_and_return.size_y), wire) == 1)
 			{

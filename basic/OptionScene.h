@@ -6,20 +6,23 @@
 #include "fade_in.h"
 #include "fade_out.h"
 
-#include "button_ui.h"
+#include "bgm_volume_slider.h"
+#include "se_volume_slider.h"
 
 class OptionScene
 {
 private:
+	BGMVolumeSlider bgm_volume;
+	SEVolumeSlider se_volume;
+
 	SaveAndReturn save_and_return;
+
 	bool flag;//クリック判定保存変数
 
 	int back_wall_graphics;//背景画像ハンドル保存用変数
 
 public:
 	OptionScene();
-
-	ButtonUI test;
 
 	FadeIn fade_in;
 	FadeOut fade_out;
