@@ -55,7 +55,7 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, i
 	return click_flag;//ƒNƒŠƒbƒN”»’è‚ÌŒ‹‰Ê‚ğ•Ô‚·B
 }
 
-int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire)//‰¡•ûŒü‚Ö‚ÌƒXƒ‰ƒCƒ_[
+int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, unsigned char color, bool wire)//‰¡•ûŒü‚Ö‚ÌƒXƒ‰ƒCƒ_[
 {
 	GetGraphSize(graphics, &size_x, &size_y);//‰æ‘œƒTƒCƒY‚ğK“¾
 
@@ -72,7 +72,7 @@ int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire)//‰¡•ûŒü‚Ö‚
 		wheel_volume_buffer = size_x;
 	}
 
-	DrawBox(pos_x + wheel_volume_buffer, pos_y, pos_x, pos_y + size_y, GetColor(0, 0, 150), TRUE);
+	DrawBox(pos_x + wheel_volume_buffer, pos_y, pos_x, pos_y + size_y, color, TRUE);
 
 	if (box_collision.BoxColliderMouse(pos_x, size_x, pos_y, size_y, wire) == true)//ƒRƒŠƒWƒ‡ƒ“ƒqƒbƒg”»’è
 	{
@@ -110,7 +110,7 @@ int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire)//‰¡•ûŒü‚Ö‚
 	return click_flag;
 }
 
-int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, bool wire)//ƒoƒO‚ ‚è
+int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, unsigned char color, bool wire)//ƒoƒO‚ ‚è
 {
 	GetGraphSize(graphics, &size_x, &size_y);//‰æ‘œƒTƒCƒY‚ğK“¾
 
@@ -127,7 +127,7 @@ int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, bool wire)//ƒoƒO‚ ‚è
 		wheel_volume_buffer = 0;
 	}
 
-	DrawBox(pos_x, pos_y + size_y + wheel_volume_buffer, pos_x, pos_y + size_y, GetColor(0, 0, 150), TRUE);
+	DrawBox(pos_x, pos_y + size_y + wheel_volume_buffer, pos_x, pos_y + size_y, color, TRUE);
 
 	if (box_collision.BoxColliderMouse(pos_x, size_x, pos_y, size_y, wire) == true)//ƒRƒŠƒWƒ‡ƒ“ƒqƒbƒg”»’è
 	{

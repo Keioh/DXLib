@@ -8,6 +8,8 @@ OptionScene::OptionScene()
 
 void OptionScene::Load()
 {
+	back_wall_graphics = LoadGraph("pack/UI/option/option_back_wall.png");
+
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
 
@@ -32,13 +34,15 @@ void OptionScene::DrawOptionScene(int window_x, int window_y, bool wire)
 {
 	while (option_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
+		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+		DrawGraph(0, 0, back_wall_graphics, TRUE);
+
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
-			DrawString(0, 0, "OptionScene", GetColor(0, 0, 0));
 
-			test.BoxUI_WheelHorizontal(200, 200, wire);
+			test.BoxUI_WheelHorizontal(200, 200, GetColor(100, 100, 255), wire);
 
-			DrawFormatString(0, 0, GetColor(255, 255, 255), "volume = %f", test.wheel_volume_buffer);
+			DrawFormatString(200, 200, GetColor(255,255, 255), "%f", test.wheel_volume_buffer);
 #			
 			//設定をセーブしてからオプション画面から抜けるボタン
 			if (save_and_return.DrawSaveAndReturnButton(window_x - (10 + save_and_return.save_and_return.size_x), window_y - (10 + save_and_return.save_and_return.size_y), wire) == 1)

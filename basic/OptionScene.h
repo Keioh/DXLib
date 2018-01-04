@@ -14,6 +14,8 @@ private:
 	SaveAndReturn save_and_return;
 	bool flag;//クリック判定保存変数
 
+	int back_wall_graphics;//背景画像ハンドル保存用変数
+
 public:
 	OptionScene();
 
