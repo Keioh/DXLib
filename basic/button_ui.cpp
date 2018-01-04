@@ -62,31 +62,31 @@ int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire)//‰¡•ûŒü‚Ö‚
 	SetDrawBright(red_a, green_a, blue_a);//ƒqƒbƒg‚µ‚Ä‚¢‚éê‡A‰æ‘œ‚Ì‹P“x‚ğ255‚É‚·‚éB(ƒqƒbƒg‚µ‚Ä‚¢‚È‚¢ê‡‚Í200)
 	DrawExtendGraph(pos_x, pos_y, pos_x + size_x, pos_y + size_y, graphics, TRUE);//‰æ‘œ‚ğk¬Šg‘å•\¦
 
-	if ((pos_x + size_x + wheel_volume_buffer) <= pos_x)
-	{
-		wheel_volume_buffer = size_x;
-	}
-
-	if ((pos_x + size_x + wheel_volume_buffer) >= pos_x + size_x)
+	if ((pos_x + wheel_volume_buffer) <= pos_x)
 	{
 		wheel_volume_buffer = 0;
 	}
 
-	DrawBox(pos_x + size_x, pos_y, pos_x + size_x + wheel_volume_buffer, pos_y + size_y, GetColor(0, 0, 150), TRUE);
+	if ((pos_x + wheel_volume_buffer) >= pos_x + size_x)
+	{
+		wheel_volume_buffer = size_x;
+	}
+
+	DrawBox(pos_x + wheel_volume_buffer, pos_y, pos_x, pos_y + size_y, GetColor(0, 0, 150), TRUE);
 
 	if (box_collision.BoxColliderMouse(pos_x, size_x, pos_y, size_y, wire) == true)//ƒRƒŠƒWƒ‡ƒ“ƒqƒbƒg”»’è
 	{
 		if (mouse_input.MouseClickContinuation(MOUSE_INPUT_LEFT) == 1)
 		{
 			GetMousePoint(&mouse_x, &mouse_y);
-			wheel_volume_buffer = (mouse_x - (size_x + pos_x));
+			wheel_volume_buffer = (mouse_x - pos_x);
 		}
 		red_a = 255;
 		green_a = 255;
 		blue_a = 255;
 		click_flag = 1;
 		wheel_volume = GetMouseWheelRotVol();
-		wheel_volume_buffer -= wheel_volume;
+		wheel_volume_buffer += wheel_volume;
 	}
 	else
 	{
@@ -110,7 +110,7 @@ int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire)//‰¡•ûŒü‚Ö‚
 	return click_flag;
 }
 
-int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, bool wire)
+int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, bool wire)//ƒoƒO‚ ‚è
 {
 	GetGraphSize(graphics, &size_x, &size_y);//‰æ‘œƒTƒCƒY‚ğK“¾
 
@@ -127,14 +127,14 @@ int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, bool wire)
 		wheel_volume_buffer = 0;
 	}
 
-	DrawBox(pos_x, pos_y + size_y + wheel_volume_buffer, pos_x + size_x, pos_y + size_y, GetColor(0, 0, 150), TRUE);
+	DrawBox(pos_x, pos_y + size_y + wheel_volume_buffer, pos_x, pos_y + size_y, GetColor(0, 0, 150), TRUE);
 
 	if (box_collision.BoxColliderMouse(pos_x, size_x, pos_y, size_y, wire) == true)//ƒRƒŠƒWƒ‡ƒ“ƒqƒbƒg”»’è
 	{
 		if (mouse_input.MouseClickContinuation(MOUSE_INPUT_LEFT) == 1)
 		{
 			GetMousePoint(&mouse_x, &mouse_y);
-			wheel_volume_buffer = (mouse_y - (size_y+pos_y));
+			wheel_volume_buffer = (mouse_y - (pos_y));
 		}
 		red_a = 255;
 		green_a = 255;

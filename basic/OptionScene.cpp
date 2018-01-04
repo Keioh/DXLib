@@ -38,6 +38,8 @@ void OptionScene::DrawOptionScene(int window_x, int window_y, bool wire)
 
 			test.BoxUI_WheelHorizontal(200, 200, wire);
 
+			DrawFormatString(0, 0, GetColor(255, 255, 255), "volume = %f", test.wheel_volume_buffer);
+#			
 			//設定をセーブしてからオプション画面から抜けるボタン
 			if (save_and_return.DrawSaveAndReturnButton(window_x - (10 + save_and_return.save_and_return.size_x), window_y - (10 + save_and_return.save_and_return.size_y), wire) == 1)
 			{

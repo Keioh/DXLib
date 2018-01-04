@@ -34,7 +34,7 @@ public:
 	int BoxUI_Button_Switch(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 
 	int BoxUI_WheelVertical(int pos_x, int pos_y, bool wire = false);//縦方向へのスライダー
-	int BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire = false);//横方向へのスライダー
+	int BoxUI_WheelHorizontal(int pos_x, int pos_y, bool wire = false);//横方向へのスライダー(バグあり)
 
 	int CircleUI_Button(int pos_x, int pos_y, int size_r, int input = MOUSE_INPUT_LEFT, bool wire = false);//戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 
