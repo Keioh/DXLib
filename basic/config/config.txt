@@ -1,0 +1,4 @@
+BGM_Volume=200
+SE_Volume=150
+BGM_Mute=1
+SE_Mute=1

@@ -5,6 +5,7 @@
 #include "DxLib.h"
 #include "System.h"
 #include "define.h"
+#include "FileInput.h"
 
 //シーン関連
 #include "LogoScene.h"
@@ -27,6 +28,7 @@ public:
 
 	//システム関連
 	System main_system;
+	Filer config_data;
 
 	//シーン関連
 	LoadingScene Loading_scene;

@@ -5,10 +5,11 @@
 class SEVolumeSlider
 {
 private:
-	ButtonUI se_volume_slider;
 
 public:
 	SEVolumeSlider();
+
+	ButtonUI se_volume_slider;
 
 	float volumeF;
 	int volume;

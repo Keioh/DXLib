@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "FileInput.h"
 
 #include "save_and_return.h"
 
@@ -36,6 +37,6 @@ public:
 	void Load();
 	void Init();
 
-	void DrawOptionScene(int window_x, int window_y, bool wire);
+	void DrawOptionScene(int window_x, int window_y, Filer config, bool wire);
 
 };

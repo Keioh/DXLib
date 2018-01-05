@@ -4,14 +4,8 @@
 #include <iostream>
 #include <fstream>
 #include "Dxlib.h"
+#include "struct_set.h"
 
-struct FILER_S//コンフィグ
-{
-	int host;
-	IPDATA ips;
-	int port;
-	int member;
-};
 
 
 class Filer
@@ -22,7 +16,8 @@ public:
 	~Filer(){};		//デストラクタ
 
 	FILE *fp;
-	FILER_S F_B;
+
+	SOUND_DATA sound_data;//音に関する設定
 
 	void FileOpen_Config();//設定ファイル
 

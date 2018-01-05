@@ -5,10 +5,11 @@
 class BGMVolumeSlider
 {
 private:
-	ButtonUI bgm_volume_slider;
 
 public:
 	BGMVolumeSlider();
+
+	ButtonUI bgm_volume_slider;
 
 	float volumeF;
 	int volume;

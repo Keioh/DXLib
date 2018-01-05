@@ -20,7 +20,6 @@ void OptionScene::Load()
 	fade_out.LoadGraphics();
 
 	save_and_return.LoadGraphics();
-
 }
 
 void OptionScene::Init()
@@ -39,8 +38,13 @@ void OptionScene::Init()
 	save_and_return.init();
 }
 
-void OptionScene::DrawOptionScene(int window_x, int window_y, bool wire)
-{
+void OptionScene::DrawOptionScene(int window_x, int window_y, Filer config, bool wire)
+{		
+	bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;//BGM音量を設定ファイルから設定する。
+	se_volume.se_volume_slider.wheel_volume_buffer = config.sound_data.se_volume;//SE音量を設定ファイルから設定する。
+	bgm_mute.bgm_mute.switch_flag = config.sound_data.bgm_mute;//BGMミュートを設定ファイルから設定する。
+	se_mute.se_mute.switch_flag = config.sound_data.se_mute;//SEミュートを設定ファイルから設定する。
+
 	while (option_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
@@ -56,7 +60,7 @@ void OptionScene::DrawOptionScene(int window_x, int window_y, bool wire)
 			se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
 
 			//設定をセーブしてからオプション画面から抜けるボタン
-			if (save_and_return.DrawSaveAndReturnButton(window_x - (10 + save_and_return.save_and_return.size_x), window_y - (10 + save_and_return.save_and_return.size_y), wire) == 1)
+			if (save_and_return.DrawSaveAndReturnButton(window_x - (50 + save_and_return.save_and_return.size_x), window_y - (50 + save_and_return.save_and_return.size_y), wire) == 1)
 			{
 				flag = true;
 			}

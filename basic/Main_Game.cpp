@@ -7,6 +7,8 @@ Main_Game::Main_Game()
 
 void Main_Game::Main_Load()
 {
+	config_data.FileOpen_Config();//設定ファイル読み込み
+
 	Loading_scene.Load();//ローディング画像を読み込む
 	Logo_scene.Load();//ロゴー画像を読み込む
 
@@ -66,7 +68,7 @@ void Main_Game::Main_Game_Loop()
 
 		if (Start_scene.start_scene_flag == 3)//オプション画面へ
 		{
-			Option_scene.DrawOptionScene(main_system.size.x, main_system.size.y, wire_flag);//オプション画面
+			Option_scene.DrawOptionScene(main_system.size.x, main_system.size.y, config_data, wire_flag);//オプション画面
 			Start_scene.Init();//スタート画面初期化
 			Game_scene.Init();//ゲーム画面初期化
 			Option_scene.Init();//オプション画面初期化
