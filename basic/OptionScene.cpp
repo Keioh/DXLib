@@ -13,6 +13,9 @@ void OptionScene::Load()
 	bgm_volume.LoadGraphics();
 	se_volume.LoadGraphics();
 
+	bgm_mute.LoadGraphics();
+	se_mute.LoadGraphics();
+
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
 
@@ -26,6 +29,9 @@ void OptionScene::Init()
 
 	bgm_volume.init();
 	se_volume.init();
+
+	bgm_mute.init();
+	se_mute.init();
 
 	fade_in.init();
 	fade_out.init();
@@ -43,8 +49,11 @@ void OptionScene::DrawOptionScene(int window_x, int window_y, bool wire)
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{		
 
-			bgm_volume.DrawBGMVolumeSlider(100, 200, GetColor(0, 0, 255), wire);//BGM音量調節
-			se_volume.DrawSEVolumeSlider(100, 250, GetColor(0, 0, 255), wire);//SE音量調節
+			bgm_volume.DrawBGMVolumeSlider(200, 200, GetColor(0, 0, 255), wire);//BGM音量調節
+			bgm_mute.DrawBGMMuteButton(200 + 255 + 20, 200 + 5, wire);//BGMミュート
+
+			se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), wire);//SE音量調節
+			se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
 
 			//設定をセーブしてからオプション画面から抜けるボタン
 			if (save_and_return.DrawSaveAndReturnButton(window_x - (10 + save_and_return.save_and_return.size_x), window_y - (10 + save_and_return.save_and_return.size_y), wire) == 1)

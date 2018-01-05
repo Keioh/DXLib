@@ -29,7 +29,7 @@ void Main_Game::Main_Init()
 
 void Main_Game::Main_Game_Loop() 
 {
-	wire_flag = true;
+	wire_flag = false;
 
 	Main_Init();
 	Main_Load();

@@ -8,12 +8,16 @@
 
 #include "bgm_volume_slider.h"
 #include "se_volume_slider.h"
+#include "bgm_mute.h"
+#include "se_mute.h"
 
 class OptionScene
 {
 private:
 	BGMVolumeSlider bgm_volume;
 	SEVolumeSlider se_volume;
+	BGMMute bgm_mute;
+	SEMute se_mute;
 
 	SaveAndReturn save_and_return;
 

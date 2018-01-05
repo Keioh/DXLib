@@ -149,6 +149,7 @@ int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, unsigned int color, bool
 		green_a = 200;
 		blue_a = 200;
 		click_flag = 0;
+		wheel_volume = 0;
 	}
 
 	if (wheel_volume != 0)//クリックされたときwireフラグがtrueだったらグリンーんワイヤーを表示
