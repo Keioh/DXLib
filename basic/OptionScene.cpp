@@ -10,6 +10,8 @@ void OptionScene::Load()
 {
 	back_wall_graphics = LoadGraph("pack/UI/option/option_back_wall.png");
 
+	bgm.LoadSound("pack/GameObject/bgm/01.wav");
+
 	bgm_volume.LoadGraphics();
 	se_volume.LoadGraphics();
 
@@ -19,6 +21,7 @@ void OptionScene::Load()
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
 
+	apply_button.LoadGraphics();
 	save_and_return.LoadGraphics();
 }
 
@@ -35,15 +38,12 @@ void OptionScene::Init()
 	fade_in.init();
 	fade_out.init();
 
+	apply_button.init();
 	save_and_return.init();
 }
 
 void OptionScene::DrawOptionScene(int window_x, int window_y, Filer config, bool wire)
 {		
-	bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;//BGM音量を設定ファイルから設定する。
-	se_volume.se_volume_slider.wheel_volume_buffer = config.sound_data.se_volume;//SE音量を設定ファイルから設定する。
-	bgm_mute.bgm_mute.switch_flag = config.sound_data.bgm_mute;//BGMミュートを設定ファイルから設定する。
-	se_mute.se_mute.switch_flag = config.sound_data.se_mute;//SEミュートを設定ファイルから設定する。
 
 	while (option_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
@@ -58,6 +58,8 @@ void OptionScene::DrawOptionScene(int window_x, int window_y, Filer config, bool
 
 			se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), wire);//SE音量調節
 			se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
+
+			apply_button.DrawApplyButton(window_x - (100 + apply_button.apply.size_x * 2), window_y - (50 + apply_button.apply.size_y), wire);
 
 			//設定をセーブしてからオプション画面から抜けるボタン
 			if (save_and_return.DrawSaveAndReturnButton(window_x - (50 + save_and_return.save_and_return.size_x), window_y - (50 + save_and_return.save_and_return.size_y), wire) == 1)

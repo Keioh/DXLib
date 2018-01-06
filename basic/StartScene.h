@@ -4,6 +4,8 @@
 #include "exit.h"
 #include "option.h"
 
+#include "FileInput.h"
+
 #include "fade_in.h"
 #include "fade_out.h"
 
@@ -37,6 +39,6 @@ public:
 	void Load();
 	void Init();
 
-	void DrawStartScene(int window_x, int window_y, bool wire);
+	void DrawStartScene(int window_x, int window_y, Filer config, bool wire);
 
 };

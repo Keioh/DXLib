@@ -183,6 +183,9 @@
     <ClCompile Include="se_mute.cpp">
       <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
     </ClCompile>
+    <ClCompile Include="apply.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -276,6 +279,9 @@
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
     <ClInclude Include="se_mute.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="apply.h">
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
   </ItemGroup>

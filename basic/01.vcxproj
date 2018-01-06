@@ -90,6 +90,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="apply.cpp" />
     <ClCompile Include="bgm_mute.cpp" />
     <ClCompile Include="bgm_volume_slider.cpp" />
     <ClCompile Include="button_ui.cpp" />
@@ -122,6 +123,7 @@
     <ClCompile Include="System.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="apply.h" />
     <ClInclude Include="bgm_mute.h" />
     <ClInclude Include="bgm_volume_slider.h" />
     <ClInclude Include="button_ui.h" />

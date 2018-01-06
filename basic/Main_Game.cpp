@@ -31,7 +31,7 @@ void Main_Game::Main_Init()
 
 void Main_Game::Main_Game_Loop() 
 {
-	wire_flag = false;
+	wire_flag = true;
 
 	Main_Init();
 	Main_Load();
@@ -45,7 +45,7 @@ void Main_Game::Main_Game_Loop()
 
 		if (Start_scene.start_scene_flag == 0)//タイトル画面
 		{
-			Start_scene.DrawStartScene(main_system.size.x, main_system.size.y, wire_flag);//スタート画面
+			Start_scene.DrawStartScene(main_system.size.x, main_system.size.y, config_data, wire_flag);//スタート画面
 		}
 
 		if (Start_scene.start_scene_flag == 1)//ゲーム画面へ
