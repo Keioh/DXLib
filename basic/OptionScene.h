@@ -3,7 +3,7 @@
 #include "FileInput.h"
 #include "sound_system.h"
 
-#include "save_and_return.h"
+#include "option_return.h"
 #include "apply.h"
 
 #include "fade_in.h"
@@ -21,13 +21,9 @@ private:
 	FadeIn fade_in;
 	FadeOut fade_out;
 
-	BGMVolumeSlider bgm_volume;
-	SEVolumeSlider se_volume;
-	BGMMute bgm_mute;
-	SEMute se_mute;
 
 	Apply apply_button;
-	SaveAndReturn save_and_return;
+	OptionReturn option_return;
 
 	bool flag;//クリック判定保存変数
 
@@ -38,12 +34,18 @@ public:
 
 	SoundSystem bgm;
 
+	BGMVolumeSlider bgm_volume;
+	SEVolumeSlider se_volume;
+	BGMMute bgm_mute;
+	SEMute se_mute;
+
+	bool back_flag;
 
 	int option_scene_flag;
 
 	void Load();
-	void Init();
+	void Init(Filer config);
 
-	void DrawOptionScene(int window_x, int window_y, Filer config, bool wire);//configは設定ファイルを突っ込む
+	bool DrawOptionScene(int window_x, int window_y, Filer& config, bool wire);//configは設定ファイルを突っ込む
 
 };

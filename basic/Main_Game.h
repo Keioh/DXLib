@@ -12,7 +12,6 @@
 #include "LoadingScene.h"
 #include "StartScene.h"
 #include "GameScene.h"
-#include "OptionScene.h"
 #include "LoadScene.h"
 
 
@@ -26,6 +25,8 @@ public:
 
 	bool wire_flag;
 
+	SoundSystem test;
+
 	//システム関連
 	System main_system;
 	Filer config_data;
@@ -35,7 +36,6 @@ public:
 	LogoScene Logo_scene;
 	StartScene Start_scene;
 	GameScene Game_scene;
-	OptionScene Option_scene;
 	LoadScene Load_scene;
 
 	void Main_Load();

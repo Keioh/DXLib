@@ -3,12 +3,16 @@
 StartScene::StartScene()
 {
 	flag = 0;
-	StartScene::Init();
+	//StartScene::Init();
 }
 
 void StartScene::Load()
 {
 	back_wall_graphics = LoadGraph("pack/UI/Title/back_wall.png");//背景画像をロード
+
+	bgm.LoadSound("pack/GameObject/bgm/01.wav");
+
+	option_scene.Load();
 
 	fade_out.LoadGraphics();
 	fade_in.LoadGraphics();
@@ -19,8 +23,10 @@ void StartScene::Load()
 	exit.LoadGraphics();
 }
 
-void StartScene::Init()
+void StartScene::Init(Filer config)
 {
+	option_scene.Init(config);
+
 	start_scene_flag = 0;
 
 	start_pos_x = -10;
@@ -40,9 +46,22 @@ void StartScene::Init()
 
 void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool wire)
 {
+	config.FileOpen_Config();//設定ファイルの読み込み
+	option_scene.bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;//設定ファイルの値を代入(BGM)
+	option_scene.bgm_mute.bgm_mute.switch_flag = config.sound_data.bgm_mute;//設定ファイルの値を代入(BGM_MUTE)
+
+	option_scene.se_volume.se_volume_slider.wheel_volume_buffer = config.sound_data.se_volume;//設定ファイルの値を代入(SE)
+	option_scene.se_mute.se_mute.switch_flag = config.sound_data.se_mute;//設定ファイルの値を代入(SE_MUTE)
+
+
 	while (start_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+
+		//設定値はconfigから必ずファイルから引っ張ってくる
+		bgm.sound_volume = config.sound_data.bgm_volume;
+		bgm.sound_volume *= -config.sound_data.bgm_mute;//ミュート値はマイナスを掛けてからじゃないと逆になる
+		bgm.Play(1.0f, DX_PLAYTYPE_LOOP);
 
 		DrawGraph(0, 0, back_wall_graphics, TRUE);//背景画像を表示
 
@@ -52,7 +71,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 			//ニューゲームボタン
 			if (start.DrawStartButton(125 + start_pos_x, window_y - 265, wire) == 1)
 			{
-				StartScene::Init();//初期化してから
+				StartScene::Init(config);//初期化してから
 				start_scene_flag = 1;//ループを抜ける
 			}
 
@@ -71,7 +90,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 			//終了ボタン
 			if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, wire) == 1)
 			{
-				StartScene::Init();//初期化してから
+				StartScene::Init(config);//初期化してから
 				start_scene_flag = -1;//ループを抜ける
 			}
 
@@ -80,20 +99,22 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 			{
 				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 				{
-					StartScene::Init();//初期化してから
+					StartScene::Init(config);//初期化してから
 					flag = 0;//フラグを０で初期化してから
 					start_scene_flag = 2;//ループを抜ける
 				}
 			}
 
-			//オプション画面へ移動する際の処理
+			//オプション画面へ移動する
 			if (flag == 3)
 			{
 				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 				{
-					StartScene::Init();//初期化してから
-					flag = 0;//フラグを０で初期化してから
-					start_scene_flag = 3;//ループを抜ける
+					if (option_scene.DrawOptionScene(window_x, window_y, config, wire) == true)
+					{
+						StartScene::Init(config);//初期化してから
+						flag = 0;
+					}
 				}
 			}
 

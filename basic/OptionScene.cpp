@@ -3,7 +3,7 @@
 OptionScene::OptionScene()
 {
 	flag = false;
-	OptionScene::Init();
+	//OptionScene::Init();
 }
 
 void OptionScene::Load()
@@ -22,59 +22,69 @@ void OptionScene::Load()
 	fade_out.LoadGraphics();
 
 	apply_button.LoadGraphics();
-	save_and_return.LoadGraphics();
+	option_return.LoadGraphics();
 }
 
-void OptionScene::Init()
+void OptionScene::Init(Filer config)
 {
+	back_flag = false;
+
 	option_scene_flag = 0;
 
-	bgm_volume.init();
-	se_volume.init();
-
-	bgm_mute.init();
-	se_mute.init();
+	//各種設定値をconfigから取得
+	bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;
+	bgm_mute.bgm_mute.switch_flag = config.sound_data.bgm_mute;
+	se_volume.se_volume_slider.wheel_volume_buffer = config.sound_data.se_volume;
+	se_mute.se_mute.switch_flag = config.sound_data.se_mute;
 
 	fade_in.init();
 	fade_out.init();
 
 	apply_button.init();
-	save_and_return.init();
+	option_return.init();
 }
 
-void OptionScene::DrawOptionScene(int window_x, int window_y, Filer config, bool wire)
-{		
+bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, bool wire)
+{
+	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
-	while (option_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
+	DrawGraph(0, 0, back_wall_graphics, TRUE);
+
+	if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 	{
-		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-		DrawGraph(0, 0, back_wall_graphics, TRUE);
+		//現在の値を設定ファイルの各変数に代入
+		config.sound_data.bgm_volume = bgm_volume.bgm_volume_slider.wheel_volume_buffer;
+		config.sound_data.bgm_mute = bgm_mute.bgm_mute.switch_flag;
+		config.sound_data.se_volume = se_volume.se_volume_slider.wheel_volume_buffer;
+		config.sound_data.se_mute = se_mute.se_mute.switch_flag;
 
-		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
-		{		
+		bgm_volume.DrawBGMVolumeSlider(200, 200, GetColor(0, 0, 255), wire);//BGM音量調節
+		bgm_mute.DrawBGMMuteButton(200 + 255 + 20, 200 + 5, wire);//BGMミュート
 
-			bgm_volume.DrawBGMVolumeSlider(200, 200, GetColor(0, 0, 255), wire);//BGM音量調節
-			bgm_mute.DrawBGMMuteButton(200 + 255 + 20, 200 + 5, wire);//BGMミュート
+		se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), wire);//SE音量調節
+		se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
 
-			se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), wire);//SE音量調節
-			se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
 
-			apply_button.DrawApplyButton(window_x - (100 + apply_button.apply.size_x * 2), window_y - (50 + apply_button.apply.size_y), wire);
+		if (apply_button.DrawApplyButton(window_x - (100 + apply_button.apply.size_x * 2), window_y - (50 + apply_button.apply.size_y), wire) == true)
+		{
+			config.FileWrite_Config();//設定ファイルに書き込み
+			config.FileOpen_Config();//設定ファイルを読み込む
+		}
 
-			//設定をセーブしてからオプション画面から抜けるボタン
-			if (save_and_return.DrawSaveAndReturnButton(window_x - (50 + save_and_return.save_and_return.size_x), window_y - (50 + save_and_return.save_and_return.size_y), wire) == 1)
+		//オプション画面から抜けるボタン
+		if (option_return.DrawOtpionReturnButton(window_x - (50 + option_return.option_return.size_x), window_y - (50 + option_return.option_return.size_y), wire) == 1)
+		{
+			flag = true;
+		}
+
+		if (flag == true)//フェードイン
+		{
+			if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 			{
-				flag = true;
-			}
-
-			if (flag == true)//フェードイン
-			{
-				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
-				{
-					OptionScene::Init();//初期化してから
-					flag = false;
-					option_scene_flag = 1;//ループを抜ける
-				}
+				config.FileOpen_Config();//設定ファイルを読み込む
+				OptionScene::Init(config);//初期化してから
+				flag = false;
+				return back_flag = true;
 			}
 		}
 	}

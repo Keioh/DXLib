@@ -6,6 +6,10 @@
 
 #include "FileInput.h"
 
+#include "sound_system.h"
+
+#include "OptionScene.h"
+
 #include "fade_in.h"
 #include "fade_out.h"
 
@@ -22,6 +26,10 @@ public:
 	FadeIn fade_in;
 	FadeOut fade_out;
 
+	SoundSystem bgm;
+
+	OptionScene option_scene;
+
 	Start start;
 	Load load;
 	Option option;
@@ -37,7 +45,7 @@ public:
 	int start_scene_flag;//-1でゲーム終了、0でスタート画面をループ、1でnew game、2でロード画面、3でオプション画面。
 
 	void Load();
-	void Init();
+	void Init(Filer config);//()の中は設定ファイル
 
 	void DrawStartScene(int window_x, int window_y, Filer config, bool wire);
 

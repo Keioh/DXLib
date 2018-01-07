@@ -156,9 +156,6 @@
     <ClCompile Include="LoadScene.cpp">
       <Filter>ソース ファイル\main_res\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="save_and_return.cpp">
-      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
-    </ClCompile>
     <ClCompile Include="fade_in.cpp">
       <Filter>ソース ファイル\main_res\game_object\effect_object</Filter>
     </ClCompile>
@@ -184,6 +181,9 @@
       <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
     </ClCompile>
     <ClCompile Include="apply.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
+    <ClCompile Include="option_return.cpp">
       <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
     </ClCompile>
   </ItemGroup>
@@ -251,9 +251,6 @@
     <ClInclude Include="LoadScene.h">
       <Filter>ヘッダー ファイル\main_res\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="save_and_return.h">
-      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
-    </ClInclude>
     <ClInclude Include="fade_in.h">
       <Filter>ヘッダー ファイル\main_res\game_object\effect_object</Filter>
     </ClInclude>
@@ -282,6 +279,9 @@
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
     <ClInclude Include="apply.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="option_return.h">
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
   </ItemGroup>
