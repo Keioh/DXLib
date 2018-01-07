@@ -47,6 +47,9 @@ public:
 	void Load();
 	void Init(Filer config);//()の中は設定ファイル
 
+	void OptionSeceneConfig(Filer config);//オプション画面のコンフィグ処理まとめ
+
 	void DrawStartScene(int window_x, int window_y, Filer config, bool wire);
 
+	void SoundStop();//音を停止
 };

@@ -5,6 +5,8 @@
 
 #include "option_return.h"
 #include "apply.h"
+#include "english.h"
+#include "japanese.h"
 
 #include "fade_in.h"
 #include "fade_out.h"
@@ -33,6 +35,9 @@ public:
 	OptionScene();
 
 	SoundSystem bgm;
+
+	Japanese japanese;
+	English english;
 
 	BGMVolumeSlider bgm_volume;
 	SEVolumeSlider se_volume;

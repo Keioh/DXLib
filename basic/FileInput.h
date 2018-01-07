@@ -18,6 +18,7 @@ public:
 	FILE *fp;
 
 	SOUND_DATA sound_data;//‰¹‚ÉŠÖ‚·‚éİ’è
+	LANGUAGE_DATA language_data;//Œ¾Œê‚ÉŠÖ‚·‚éİ’è
 
 	void FileOpen_Config();//İ’èƒtƒ@ƒCƒ‹“Ç‚İ‚İ
 

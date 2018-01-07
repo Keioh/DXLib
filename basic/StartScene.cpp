@@ -44,15 +44,27 @@ void StartScene::Init(Filer config)
 	exit.init();
 }
 
-void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool wire)
+void StartScene::SoundStop()//音を停止
 {
-	config.FileOpen_Config();//設定ファイルの読み込み
+	bgm.Stop();
+}
+
+void StartScene::OptionSeceneConfig(Filer config)//オプション画面のコンフィグ処理まとめ
+{
 	option_scene.bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;//設定ファイルの値を代入(BGM)
 	option_scene.bgm_mute.bgm_mute.switch_flag = config.sound_data.bgm_mute;//設定ファイルの値を代入(BGM_MUTE)
 
 	option_scene.se_volume.se_volume_slider.wheel_volume_buffer = config.sound_data.se_volume;//設定ファイルの値を代入(SE)
 	option_scene.se_mute.se_mute.switch_flag = config.sound_data.se_mute;//設定ファイルの値を代入(SE_MUTE)
 
+	option_scene.japanese.japanese.switch_flag = config.language_data.japanese_flag;//設定ファイルの値を代入(JAPANESE)
+	option_scene.english.english.switch_flag = config.language_data.english_flag;//設定ファイルの値を代入(ENGLISH)
+}
+
+void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool wire)
+{
+	config.FileOpen_Config();//設定ファイルの読み込み
+	OptionSeceneConfig(config);//設定
 
 	while (start_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{

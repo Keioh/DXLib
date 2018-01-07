@@ -186,6 +186,12 @@
     <ClCompile Include="option_return.cpp">
       <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
     </ClCompile>
+    <ClCompile Include="english.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
+    <ClCompile Include="japanese.cpp">
+      <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -282,6 +288,12 @@
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
     <ClInclude Include="option_return.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="english.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="japanese.h">
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
     </ClInclude>
   </ItemGroup>

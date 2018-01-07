@@ -21,6 +21,8 @@ void OptionScene::Load()
 	fade_in.LoadGraphics();
 	fade_out.LoadGraphics();
 
+	japanese.LoadGraphics();
+	english.LoadGraphics();
 	apply_button.LoadGraphics();
 	option_return.LoadGraphics();
 }
@@ -36,6 +38,10 @@ void OptionScene::Init(Filer config)
 	bgm_mute.bgm_mute.switch_flag = config.sound_data.bgm_mute;
 	se_volume.se_volume_slider.wheel_volume_buffer = config.sound_data.se_volume;
 	se_mute.se_mute.switch_flag = config.sound_data.se_mute;
+
+	japanese.japanese.switch_flag = config.language_data.japanese_flag;
+	english.english.switch_flag = config.language_data.english_flag;
+
 
 	fade_in.init();
 	fade_out.init();
@@ -57,6 +63,19 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 		config.sound_data.bgm_mute = bgm_mute.bgm_mute.switch_flag;
 		config.sound_data.se_volume = se_volume.se_volume_slider.wheel_volume_buffer;
 		config.sound_data.se_mute = se_mute.se_mute.switch_flag;
+
+		config.language_data.japanese_flag = japanese.japanese.switch_flag;
+		config.language_data.english_flag = english.english.switch_flag;
+
+
+		if (english.DrawEnglishButton(window_x - 200, window_y - 600, wire) == true)//英語を選択していたら
+		{
+			japanese.japanese.switch_flag = -1;//日本語をオフにする。
+		}
+		if (japanese.DrawJapaneseButton(window_x - 200, window_y - 500, wire) == true)//日本語を選択していたら
+		{
+			english.english.switch_flag = -1;//英語をオフにする。
+		}
 
 		bgm_volume.DrawBGMVolumeSlider(200, 200, GetColor(0, 0, 255), wire);//BGM音量調節
 		bgm_mute.DrawBGMMuteButton(200 + 255 + 20, 200 + 5, wire);//BGMミュート
