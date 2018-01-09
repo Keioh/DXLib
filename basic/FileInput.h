@@ -27,6 +27,8 @@ public:
 
 	void FileWrite_Config();//設定ファイル書き込み
 
+	void FileOpen_Window();//Windowファイル読み込み
+
 	void FileOpen_Japanese();//日本語ファイル読み込み
 	void FileOpen_English();//英語ファイル読み込み
 };

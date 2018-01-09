@@ -24,6 +24,6 @@ struct LANGUAGE_DATA
 //ˆês‚P‚Q‚W•¶š‚Ü‚Å
 struct STRING_DATA
 {
-	char ID_000[128];
-	char ID_001[128];
+	char bgm_volume[128];
+	char se_volume[128];
 };

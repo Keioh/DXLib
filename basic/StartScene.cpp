@@ -64,7 +64,7 @@ void StartScene::OptionSeceneConfig(Filer config)//ƒIƒvƒVƒ‡ƒ“‰æ–Ê‚ÌƒRƒ“ƒtƒBƒOˆ—
 void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool wire)
 {
 	config.FileOpen_Config();//İ’èƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
-	OptionSeceneConfig(config);//İ’è
+	StartScene::OptionSeceneConfig(config);//İ’è
 
 	while (start_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
