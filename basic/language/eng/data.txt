@@ -1,2 +1,6 @@
 BGM Volume
 SE Volume
+new game
+load game
+option
+exit

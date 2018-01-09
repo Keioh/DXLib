@@ -7,6 +7,7 @@ SoundSystem::SoundSystem()
 
 void SoundSystem::init()//初期化
 {
+	one_shot_flag = false;
 	sound_volume = 255;
 }
 
@@ -15,13 +16,60 @@ void SoundSystem::LoadSound(char* path)//音を読み込む
 	sound_handl = LoadSoundMem(path);
 }
 
-void SoundSystem::Play(float volume_scale, int PlayType)//音を再生する。(volume_scaleは1.0f~0.0fで設定。0.0fでボリューム0)
+void SoundSystem::LoadSoundCopy(int copy_handl)//同じ音を使う場合はこちらの関数を使うこと。
 {
-	ChangeVolumeSoundMem(sound_volume * volume_scale, sound_handl);//音量を設定。
+	sound_copy_handl = DuplicateSoundMem(copy_handl);
+}
 
-	if (CheckSoundMem(sound_handl) == 0)//再生されていないなら
+void SoundSystem::Play(float volume, int PlayType, bool copy_type)//音を再生する。
+{
+	ChangeVolumeSoundMem(volume, sound_handl);//音量を設定。
+	ChangeVolumeSoundMem(volume, sound_copy_handl);//音量を設定。
+
+	if (copy_type == false)
 	{
-		PlaySoundMem(sound_handl, PlayType, TRUE);//再生する。
+		if (CheckSoundMem(sound_handl) == 0)//再生されていないなら
+		{
+			PlaySoundMem(sound_handl, PlayType, TRUE);//再生する。
+		}
+	}
+	else if (copy_type == true)//ハンドルが複製の場合
+	{
+		if (CheckSoundMem(sound_copy_handl) == 0)//再生されていないなら
+		{
+			PlaySoundMem(sound_copy_handl, PlayType, TRUE);//再生する。
+		}
+	}
+}
+
+void SoundSystem::OneShotPlay(float volume, int PlayType, bool copy_type)//一回だけ再生したいときはこっち
+{
+	ChangeVolumeSoundMem(volume, sound_handl);//音量を設定。
+	ChangeVolumeSoundMem(volume, sound_copy_handl);//音量を設定。
+
+	if (copy_type == false)
+	{
+		if ((CheckSoundMem(sound_handl) == 0) && one_shot_flag == false)//再生されていないなら
+		{
+			PlaySoundMem(sound_handl, PlayType, TRUE);//再生する。
+			one_shot_flag = true;
+		}
+	}
+	else if (copy_type == true)
+	{
+		if ((CheckSoundMem(sound_copy_handl) == 0) && one_shot_flag == false)//再生されていないなら
+		{
+			PlaySoundMem(sound_copy_handl, PlayType, TRUE);//再生する。
+			one_shot_flag = true;
+		}
+	}
+}
+
+void SoundSystem::OneShotReset()//一回だけ再生した場合はこの関数で必ず初期化
+{
+	if (one_shot_flag = true)
+	{
+		one_shot_flag = false;
 	}
 }
 

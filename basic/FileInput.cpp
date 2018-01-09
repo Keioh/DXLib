@@ -77,8 +77,15 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 		exit(1);
 	}
 
+	//音量表記
 	fgets(string_data.bgm_volume, 128, fp);
 	fgets(string_data.se_volume, 128, fp);
+
+	//スタート(タイトル)画面表記
+	fgets(string_data.start_info_new_game, 128, fp);
+	fgets(string_data.start_info_load, 128, fp);
+	fgets(string_data.start_info_option, 128, fp);
+	fgets(string_data.start_info_exit, 128, fp);
 
 	//fscanf(fp, "%s\n", &string_data.ID_001);
 
@@ -93,8 +100,15 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 		exit(1);
 	}
 
+	//音量表記
 	fgets(string_data.bgm_volume, 128, fp);
 	fgets(string_data.se_volume, 128, fp);
+
+	//スタート(タイトル)画面表記
+	fgets(string_data.start_info_new_game, 128, fp);
+	fgets(string_data.start_info_load, 128, fp);
+	fgets(string_data.start_info_option, 128, fp);
+	fgets(string_data.start_info_exit, 128, fp);
 
 	//fscanf(fp, "%s", &string_data.ID_001);
 

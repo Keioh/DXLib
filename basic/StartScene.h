@@ -19,6 +19,7 @@ private:
 	int flag;
 
 	int back_wall_graphics;//”wŒi‰æ‘œƒnƒ“ƒhƒ‹
+	int info_graphics;//à–¾•¶š—ñ”wŒi‰æ‘œƒnƒ“ƒhƒ‹
 
 public:
 	StartScene();
@@ -27,6 +28,10 @@ public:
 	FadeOut fade_out;
 
 	SoundSystem bgm;
+	SoundSystem se_start;
+	SoundSystem se_load;
+	SoundSystem se_option;
+	SoundSystem se_exit;
 
 	OptionScene option_scene;
 

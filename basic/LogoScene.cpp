@@ -31,8 +31,7 @@ void LogoScene::DrawLogoScene(int x, int y, Filer config)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
-			logo_sound.sound_volume = config.sound_data.se_volume * -config.sound_data.se_mute;//音量を設定
-			logo_sound.Play(1.0f, DX_PLAYTYPE_BACK);//音を再生
+			logo_sound.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);//音を再生
 
 			if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0)//マウスを左クリックしたら
 			{

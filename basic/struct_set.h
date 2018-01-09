@@ -27,4 +27,8 @@ struct STRING_DATA
 {
 	char bgm_volume[128];
 	char se_volume[128];
+	char start_info_new_game[128];
+	char start_info_load[128];
+	char start_info_option[128];
+	char start_info_exit[128];
 };

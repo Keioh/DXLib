@@ -9,8 +9,13 @@ StartScene::StartScene()
 void StartScene::Load()
 {
 	back_wall_graphics = LoadGraph("pack/UI/Title/back_wall.png");//背景画像をロード
+	info_graphics = LoadGraph("pack/UI/Title/info.png");//背景画像をロード
 
 	bgm.LoadSound("pack/GameObject/bgm/01.wav");
+	se_start.LoadSound("pack/GameObject/se/cursor_hit.wav");
+	se_load.LoadSound("pack/GameObject/se/cursor_hit.wav");
+	se_option.LoadSound("pack/GameObject/se/cursor_hit.wav");
+	se_exit.LoadSound("pack/GameObject/se/cursor_hit.wav");
 
 	option_scene.Load();
 
@@ -71,11 +76,61 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
 		//設定値はconfigから必ずファイルから引っ張ってくる
-		bgm.sound_volume = config.sound_data.bgm_volume;
-		bgm.sound_volume *= -config.sound_data.bgm_mute;//ミュート値はマイナスを掛けてからじゃないと逆になる
-		bgm.Play(1.0f, DX_PLAYTYPE_LOOP);//BGM再生
+		//ミュート値はマイナスを掛けてからじゃないと逆になる
+		bgm.Play(config.sound_data.bgm_volume * -config.sound_data.bgm_mute, DX_PLAYTYPE_LOOP);//BGM再生
 
 		DrawGraph(0, 0, back_wall_graphics, TRUE);//背景画像を表示
+		DrawGraph(0, window_y - 32, info_graphics, TRUE);//背景画像を表示
+
+		//ボックスにヒットしたときの処理
+		//new gameの説明
+		if (start.start.box_collision.hit == true)
+		{	
+			se_start.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_new_game);
+		}
+		else
+		{
+			se_start.OneShotReset();//ワンショット再生を初期化
+		}
+
+		//loadの説明
+		if (load.load.box_collision.hit == true)
+		{
+			se_load.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_load);
+		}
+		else
+		{
+			se_load.OneShotReset();//ワンショット再生を初期化
+		}
+
+		//optionの説明
+		if (option.option.box_collision.hit == true)
+		{
+			se_option.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_option);
+		}
+		else
+		{
+			se_option.OneShotReset();//ワンショット再生を初期化
+		}
+
+		//exitの説明
+		if (exit.exit.box_collision.hit == true)
+		{
+			se_exit.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_exit);
+		}
+		else
+		{
+			se_exit.OneShotReset();//ワンショット再生を初期化
+		}
+
 
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
@@ -120,6 +175,12 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 			//オプション画面へ移動する
 			if (flag == 3)
 			{
+				//SE音を再生しない
+				se_start.Stop();
+				se_load.Stop();
+				se_option.Stop();
+				se_exit.Stop();
+
 				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 				{
 					if (option_scene.DrawOptionScene(window_x, window_y, config, wire) == true)
@@ -129,6 +190,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 					}
 				}
 			}
+
 
 			//各ボタンのスライドアニメーション
 			if (start_pos_x < 0)
@@ -165,7 +227,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 				{
 					exit_pos_x = 0;
 				}
-			}	
+			}
 		}
 	}
 }
