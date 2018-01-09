@@ -8,6 +8,7 @@ Main_Game::Main_Game()
 void Main_Game::Main_Load()
 {
 	config_data.FileOpen_Config();//設定ファイル読み込み
+	config_data.FileOpen_Language();//言語ファイル読み込み
 	main_system.size.x = config_data.window_data.windowX;//windowの大きさをmain_systemに代入
 	main_system.size.y = config_data.window_data.windowY;
 	main_system.size.bit = config_data.window_data.windowBit;

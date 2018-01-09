@@ -4,10 +4,10 @@
 void Input::init()
 {
 	click = false;
-	button_buffer = -1;
-	x_buffer = -1;
-	y_buffer = -1;
-	button_input_log_buffer = -1;
+	//button_buffer = -1;
+	//x_buffer = -1;
+	//y_buffer = -1;
+	//button_input_log_buffer = -1;
 }
 
 //uŠÔ‚ÌƒNƒŠƒbƒN

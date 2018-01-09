@@ -30,6 +30,7 @@ void OptionScene::Load()
 void OptionScene::Init(Filer config)
 {
 	back_flag = false;
+	language_change_flag = false;
 
 	option_scene_flag = 0;
 	anime_alph = 0;
@@ -80,10 +81,12 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 		//言語設定関連
 		if (english.DrawEnglishButton(window_x - 200, window_y - 600, wire) == true)//英語を選択していたら
 		{
+			language_change_flag = true;
 			japanese.japanese.switch_flag = -1;//日本語をオフにする。
 		}
 		if (japanese.DrawJapaneseButton(window_x - 200, window_y - 500, wire) == true)//日本語を選択していたら
 		{
+			language_change_flag = true;
 			english.english.switch_flag = -1;//英語をオフにする。
 		}
 
@@ -99,6 +102,12 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 		{
 			config.FileWrite_Config();//設定ファイルに書き込み
 			config.FileOpen_Config();//設定ファイルを読み込む
+
+			if (language_change_flag == true)
+			{
+				config.FileOpen_Language();//言語ファイルを読み込む
+				language_change_flag = false;
+			}
 		}
 
 		//オプション画面から抜けるボタン

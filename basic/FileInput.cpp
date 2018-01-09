@@ -18,24 +18,6 @@ void Filer::FileOpen_Config()//設定ファイル読み込み
 	fscanf(fp, "English=%d\n", &language_data.english_flag);//英語
 
 	fclose(fp);
-
-	//全て同じフラグが立っていたら
-	if ((language_data.japanese_flag == 1 && language_data.english_flag == 1) ||
-		(language_data.japanese_flag == 0 && language_data.english_flag == 0) ||
-		(language_data.japanese_flag == -1 && language_data.english_flag == -1))
-	{
-		Filer::FileOpen_English();//英語ファイルを読み込む
-	}
-
-	//言語設定フラグがどちらかがオンだったら
-	if (language_data.japanese_flag == 1)
-	{
-		Filer::FileOpen_Japanese();//日本語ファイルを読み込む
-	}
-	else if (language_data.english_flag == 1)
-	{
-		Filer::FileOpen_English();//英語ファイルを読み込む
-	}
 }
 
 void Filer::FileOpen_Window()//Windowファイル読み込み
@@ -68,6 +50,27 @@ void Filer::FileWrite_Config()//設定ファイル書き込み
 	fprintf(fp, "English=%d\n", language_data.english_flag);//英語
 
 	fclose(fp);
+}
+
+void Filer::FileOpen_Language()//言語ファイル読み込み
+{
+	//全て同じフラグが立っていたら
+	if ((language_data.japanese_flag == 1 && language_data.english_flag == 1) ||
+		(language_data.japanese_flag == 0 && language_data.english_flag == 0) ||
+		(language_data.japanese_flag == -1 && language_data.english_flag == -1))
+	{
+		Filer::FileOpen_English();//英語ファイルを読み込む
+	}
+
+	//言語設定フラグがどちらかがオンだったら
+	if (language_data.japanese_flag == 1)
+	{
+		Filer::FileOpen_Japanese();//日本語ファイルを読み込む
+	}
+	else if (language_data.english_flag == 1)
+	{
+		Filer::FileOpen_English();//英語ファイルを読み込む
+	}
 }
 
 void Filer::FileOpen_Japanese()//日本語ファイル読み込み

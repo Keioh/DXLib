@@ -28,6 +28,7 @@ private:
 	OptionReturn option_return;
 
 	bool flag;//クリック判定保存変数
+	bool language_change_flag;//言語変更フラグ
 
 	int anime_alph;
 	float anime_speed;

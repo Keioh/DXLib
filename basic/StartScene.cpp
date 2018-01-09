@@ -83,13 +83,13 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		DrawGraph(0, 0, back_wall_graphics, TRUE);//背景画像を表示
 		DrawGraph(0, window_y - 32, info_graphics, TRUE);//背景画像を表示
 
-		//ボックスにヒットしたときの処理
+		//ボックスコライダーにヒットしたときの処理
 		//new gameの説明
 		if (start.start.box_collision.hit == true)
 		{
 			se_start.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_new_game);
+			DrawFormatString(10, window_y - 24, GetColor(255, 255, 255), "%s", config.string_data.start_info_new_game);
 		}
 		else
 		{
@@ -101,7 +101,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		{
 			se_load.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_load);
+			DrawFormatString(10, window_y - 24, GetColor(255, 255, 255), "%s", config.string_data.start_info_load);
 		}
 		else
 		{
@@ -113,7 +113,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		{
 			se_option.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_option);
+			DrawFormatString(10, window_y - 24, GetColor(255, 255, 255), "%s", config.string_data.start_info_option);
 		}
 		else
 		{
@@ -125,7 +125,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		{
 			se_exit.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_exit);
+			DrawFormatString(10, window_y - 24, GetColor(255, 255, 255), "%s", config.string_data.start_info_exit);
 		}
 		else
 		{

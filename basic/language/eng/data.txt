@@ -1,6 +1,6 @@
 BGM Volume
 SE Volume
-new game
-load game
-option
-exit
+Start a new game.
+Start the game from the middle.
+Change settings.
+Finish the game.
