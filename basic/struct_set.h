@@ -14,7 +14,9 @@ struct LANGUAGE_DATA
 	int english_flag;
 };
 
+//ˆês‚P‚Q‚W•¶š‚Ü‚Å
 struct STRING_DATA
 {
+	char ID_000[128];
 	char ID_001[128];
 };

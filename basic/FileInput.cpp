@@ -60,7 +60,9 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 		exit(1);
 	}
 
+	fgets(string_data.ID_000, 128, fp);
 	fgets(string_data.ID_001, 128, fp);
+
 	//fscanf(fp, "%s\n", &string_data.ID_001);
 
 
@@ -74,7 +76,9 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 		exit(1);
 	}
 
+	fgets(string_data.ID_000, 128, fp);
 	fgets(string_data.ID_001, 128, fp);
+
 	//fscanf(fp, "%s", &string_data.ID_001);
 
 	fclose(fp);

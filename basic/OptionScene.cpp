@@ -58,7 +58,8 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 
 	if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 	{
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "%s", config.string_data.ID_001);	
+		DrawFormatString(0, 0, GetColor(255, 255, 255), "%s", config.string_data.ID_000);	
+		DrawFormatString(0, 20, GetColor(255, 255, 255), "%s", config.string_data.ID_001);
 
 		//現在の値を設定ファイルの各変数に代入
 		config.sound_data.bgm_volume = bgm_volume.bgm_volume_slider.wheel_volume_buffer;
