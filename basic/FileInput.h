@@ -20,8 +20,12 @@ public:
 	SOUND_DATA sound_data;//音に関する設定
 	LANGUAGE_DATA language_data;//言語に関する設定
 
+	STRING_DATA string_data;//会話などのデータ
+
 	void FileOpen_Config();//設定ファイル読み込み
 
 	void FileWrite_Config();//設定ファイル書き込み
 
+	void FileOpen_Japanese();//日本語ファイル読み込み
+	void FileOpen_English();//英語ファイル読み込み
 };

@@ -13,3 +13,8 @@ struct LANGUAGE_DATA
 	int japanese_flag;
 	int english_flag;
 };
+
+struct STRING_DATA
+{
+	char ID_001[128];
+};
