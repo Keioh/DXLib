@@ -25,12 +25,13 @@ void LogoScene::Load()
 	logo_sound.LoadSound("pack/Logo/sound/logo_sound.wav");
 }
 
-void LogoScene::DrawLogoScene(int x, int y)
+void LogoScene::DrawLogoScene(int x, int y, Filer config)
 {
 	while (logo_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
+			logo_sound.sound_volume = config.sound_data.se_volume * -config.sound_data.se_mute;//音量を設定
 			logo_sound.Play(1.0f, DX_PLAYTYPE_BACK);//音を再生
 
 			if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0)//マウスを左クリックしたら
@@ -53,5 +54,6 @@ void LogoScene::DrawLogoScene(int x, int y)
 			}
 		}
 	}		
+	logo_sound.SoundDelete();//ロゴサウンドを削除
 	SetBackgroundColor(0, 0, 0);//背景色を黒に設定
 }

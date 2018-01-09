@@ -29,6 +29,9 @@ private:
 
 	bool flag;//クリック判定保存変数
 
+	int anime_alph;
+	float anime_speed;
+
 	int back_wall_graphics;//背景画像ハンドル保存用変数
 
 public:

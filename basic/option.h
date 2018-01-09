@@ -4,6 +4,9 @@
 class Option
 {
 private:
+	int hit_buffer;
+
+	int anime_alph;
 
 public:
 	Option();
@@ -13,5 +16,5 @@ public:
 	void init();
 	void LoadGraphics();
 
-	int DrawOptionButton(int x, int y, bool wire);
+	int DrawOptionButton(int x, int y, float speed, bool wire);
 };

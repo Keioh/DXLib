@@ -1,6 +1,6 @@
 #pragma once
 #include "button_ui.h"
-
+#include "FileInput.h"
 
 class SEVolumeSlider
 {
@@ -17,6 +17,6 @@ public:
 	void init();
 	void LoadGraphics();
 
-	float DrawSEVolumeSlider(int x, int y, unsigned int color, bool wire);
+	float DrawSEVolumeSlider(int x, int y, unsigned int color, Filer data, bool wire);
 
 };

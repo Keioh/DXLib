@@ -1,3 +1,4 @@
-WindowX=1600
-WindowY=900
+WindowX=1280
+WindowY=720
 WindowBit=32
+FullScreen=1

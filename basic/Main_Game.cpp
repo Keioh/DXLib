@@ -11,6 +11,7 @@ void Main_Game::Main_Load()
 	main_system.size.x = config_data.window_data.windowX;//windowの大きさをmain_systemに代入
 	main_system.size.y = config_data.window_data.windowY;
 	main_system.size.bit = config_data.window_data.windowBit;
+	main_system.fullscreen = config_data.window_data.fullscreen;
 	SetGraphMode(main_system.size.x, main_system.size.y, main_system.size.bit);//設定ファイルで設定した大きさにwindowを変更
 
 	Loading_scene.Load();//ローディング画像を読み込む
@@ -42,7 +43,7 @@ void Main_Game::Main_Game_Loop()
 	while (Start_scene.start_scene_flag != -1 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		Loading_scene.DrawLoadingScene(main_system.size.x - 190, main_system.size.y - 60);//ロード画面(1番目に書く)
-		Logo_scene.DrawLogoScene((main_system.size.x / 2) - 140, (main_system.size.y / 2) - 70);//ロゴ画面(2番目に書く)
+		Logo_scene.DrawLogoScene((main_system.size.x / 2) - 140, (main_system.size.y / 2) - 70, config_data);//ロゴ画面(2番目に書く)
 
 
 		if (Start_scene.start_scene_flag == 0)//タイトル画面

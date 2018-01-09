@@ -4,6 +4,9 @@
 class Start
 {
 private:
+	int hit_buffer;
+
+	int anime_alph;
 
 public:
 	Start();
@@ -13,5 +16,5 @@ public:
 	void init();
 	void LoadGraphics();
 
-	int DrawStartButton(int x, int y, bool wire);
+	int DrawStartButton(int x, int y, float speed, bool wire);
 };

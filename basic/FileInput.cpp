@@ -48,6 +48,7 @@ void Filer::FileOpen_Window()//Windowƒtƒ@ƒCƒ‹“Ç‚İ‚İ
 	fscanf(fp, "WindowX=%d\n", &window_data.windowX);//‰pŒê
 	fscanf(fp, "WindowY=%d\n", &window_data.windowY);//‰pŒê
 	fscanf(fp, "WindowBit=%d\n", &window_data.windowBit);//‰pŒê
+	fscanf(fp, "FullScreen=%d\n", &window_data.fullscreen);//‰pŒê
 
 	fclose(fp);
 }

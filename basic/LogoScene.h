@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "FileInput.h"
 
 #include "logo.h"
 
@@ -28,6 +29,6 @@ public:
 	void init();//èâä˙âª
 
 	void Load();//ì«Ç›çûÇ›
-	void DrawLogoScene(int x, int y);//ï`é 
+	void DrawLogoScene(int x, int y, Filer config);//ï`é 
 
 };

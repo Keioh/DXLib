@@ -32,6 +32,8 @@ void OptionScene::Init(Filer config)
 	back_flag = false;
 
 	option_scene_flag = 0;
+	anime_alph = 0;
+	anime_speed = 35.0f;
 
 	//各種設定値をconfigから取得
 	bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;
@@ -58,6 +60,14 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 
 	if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 	{
+		//オブジェクトの透過処理
+		if(anime_alph > 255)
+		{
+			anime_alph = 255;
+		}
+		anime_alph += anime_speed;
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
+
 		//現在の値を設定ファイルの各変数に代入
 		config.sound_data.bgm_volume = bgm_volume.bgm_volume_slider.wheel_volume_buffer;
 		config.sound_data.bgm_mute = bgm_mute.bgm_mute.switch_flag;
@@ -81,7 +91,7 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 		bgm_volume.DrawBGMVolumeSlider(200, 200, GetColor(0, 0, 255), config, wire);//BGM音量調節
 		bgm_mute.DrawBGMMuteButton(200 + 255 + 20, 200 + 5, wire);//BGMミュート
 
-		se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), wire);//SE音量調節
+		se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), config, wire);//SE音量調節
 		se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
 
 
@@ -96,6 +106,8 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 		{
 			flag = true;
 		}
+
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);//透過処理をもどす
 
 		if (flag == true)//フェードイン
 		{

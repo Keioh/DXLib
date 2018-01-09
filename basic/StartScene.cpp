@@ -81,26 +81,26 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		{
 
 			//ニューゲームボタン
-			if (start.DrawStartButton(125 + start_pos_x, window_y - 265, wire) == 1)
+			if (start.DrawStartButton(125 + start_pos_x, window_y - 265, 10.0f, wire) == 1)
 			{
 				StartScene::Init(config);//初期化してから
 				start_scene_flag = 1;//ループを抜ける
 			}
 
 			//ロードボタン
-			if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, wire) == 1)
+			if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, 10.0f, wire) == 1)
 			{
 				flag = 2;//フラグを2にする。
 			}
 
 			//オプションボタン
-			if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, wire) == 1)
+			if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, 10.0f, wire) == 1)
 			{
 				flag = 3;//フラグを3にする。
 			}
 
 			//終了ボタン
-			if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, wire) == 1)
+			if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, 10.0f, wire) == 1)
 			{
 				StartScene::Init(config);//初期化してから
 				start_scene_flag = -1;//ループを抜ける

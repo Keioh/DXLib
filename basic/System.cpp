@@ -7,7 +7,7 @@ System::System()
 	size.x = 1280;
 	size.y = 720;
 	size.bit = 32;
-
+	fullscreen = -1;
 }
 
 //DXLIB初期化
@@ -27,6 +27,8 @@ void System::Dx_Init(bool w_mode, int r, int g, int b, char* name)
 	SetUseDXArchiveFlag(TRUE);//アーカイブ読み込み可能に変更
 	SetDXArchiveExtension("kou");//拡張子変更
 	SetDXArchiveKeyString("999");//アーカイブパスワードを指定
+	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//フォントタイプの変更
+	SetFontThickness(6);//フォントの太さを変更
 	SetCameraPositionAndTarget_UpVecY(VGet(0.0f, 0.0f, 0.0f), VGet(0.0f, 1.0f, 0.0f));
 	SetMouseDispFlag(TRUE);
 	SetUseASyncLoadFlag(TRUE);

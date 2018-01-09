@@ -17,6 +17,6 @@ public:
 	void init();
 	void LoadGraphics();
 
-	float DrawBGMVolumeSlider(int x, int y, unsigned int color, Filer data, bool wire);
+	float DrawBGMVolumeSlider(int x, int y, unsigned int color, Filer config, bool wire);
 
 };

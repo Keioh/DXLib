@@ -4,7 +4,10 @@
 class Exit
 {
 private:
+	int hit_buffer;
 
+	int anime_alph;
+	
 public:
 	Exit();
 
@@ -13,5 +16,5 @@ public:
 	void init();
 	void LoadGraphics();
 
-	int DrawExitButton(int x, int y, bool wire);
+	int DrawExitButton(int x, int y, float speed, bool wire);
 };

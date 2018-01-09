@@ -13,6 +13,7 @@ struct WINDOW_DATA
 	int windowX;
 	int windowY;
 	int windowBit;
+	int fullscreen;
 };
 
 struct LANGUAGE_DATA
