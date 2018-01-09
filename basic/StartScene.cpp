@@ -32,6 +32,7 @@ void StartScene::Init(Filer config)
 {
 	option_scene.Init(config);
 
+	flag = 0;
 	start_scene_flag = 0;
 
 	start_pos_x = -10;
@@ -85,7 +86,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		//ボックスにヒットしたときの処理
 		//new gameの説明
 		if (start.start.box_collision.hit == true)
-		{	
+		{
 			se_start.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 			DrawFormatString(10, window_y - 25, GetColor(255, 255, 255), "%s", config.string_data.start_info_new_game);
@@ -131,103 +132,102 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 			se_exit.OneShotReset();//ワンショット再生を初期化
 		}
 
+		//DrawFormatString(0, 0, GetColor(255, 255, 255), "flag = %d", flag);
 
-		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
+
+		if (flag == 0)//フラグが0のとき、タイトル画面を表示
 		{
-
-			//ニューゲームボタン
-			if (start.DrawStartButton(125 + start_pos_x, window_y - 265, 10.0f, wire) == 1)
+			if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 			{
-				StartScene::Init(config);//初期化してから
-				start_scene_flag = 1;//ループを抜ける
-			}
-
-			//ロードボタン
-			if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, 10.0f, wire) == 1)
-			{
-				flag = 2;//フラグを2にする。
-			}
-
-			//オプションボタン
-			if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, 10.0f, wire) == 1)
-			{
-				flag = 3;//フラグを3にする。
-			}
-
-			//終了ボタン
-			if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, 10.0f, wire) == 1)
-			{
-				StartScene::Init(config);//初期化してから
-				start_scene_flag = -1;//ループを抜ける
-			}
-
-			//ロード画面へ移動する際の処理
-			if (flag == 2)
-			{
-				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
+				//ニューゲームボタン
+				if (start.DrawStartButton(125 + start_pos_x, window_y - 265, 10.0f, wire) == 1)
 				{
 					StartScene::Init(config);//初期化してから
-					flag = 0;//フラグを０で初期化してから
-					start_scene_flag = 2;//ループを抜ける
+					start_scene_flag = 1;//ループを抜ける
 				}
-			}
 
-			//オプション画面へ移動する
-			if (flag == 3)
-			{
-				//SE音を再生しない
-				se_start.Stop();
-				se_load.Stop();
-				se_option.Stop();
-				se_exit.Stop();
-
-				if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
+				//ロードボタン
+				if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, 10.0f, wire) == 1)
 				{
-					if (option_scene.DrawOptionScene(window_x, window_y, config, wire) == true)
+					flag = 2;//フラグを2にする。
+				}
+
+				//オプションボタン
+				if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, 10.0f, wire) == 1)
+				{
+					flag = 3;//フラグを3にする。
+				}
+
+				//終了ボタン
+				if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, 10.0f, wire) == 1)
+				{
+					StartScene::Init(config);//初期化してから
+					start_scene_flag = -1;//ループを抜ける
+				}
+
+
+				//各ボタンのスライドアニメーション
+				if (start_pos_x < 0)
+				{
+					start_pos_x += anime_x;
+					if (start_pos_x >= 0)
 					{
-						StartScene::Init(config);//初期化してから
-						flag = 0;
+						start_pos_x = 0;
+					}
+				}
+
+				if (load_pos_x < 0)
+				{
+					load_pos_x += anime_x;
+					if (load_pos_x >= 0)
+					{
+						load_pos_x = 0;
+					}
+				}
+
+				if (option_pos_x < 0)
+				{
+					option_pos_x += anime_x;
+					if (option_pos_x >= 0)
+					{
+						option_pos_x = 0;
+					}
+				}
+
+				if (exit_pos_x < 0)
+				{
+					exit_pos_x += anime_x;
+					if (exit_pos_x >= 0)
+					{
+						exit_pos_x = 0;
 					}
 				}
 			}
+		}
 
-
-			//各ボタンのスライドアニメーション
-			if (start_pos_x < 0)
+		//フラグが2のとき、ロード画面へ移動する
+		if (flag == 2)
+		{
+			if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 			{
-				start_pos_x += anime_x;
-				if (start_pos_x >= 0)
-				{
-					start_pos_x = 0;
-				}
+				StartScene::Init(config);//初期化してから
+				flag = 0;//フラグを０で初期化してから
 			}
+		}
 
-			if (load_pos_x < 0)
+		//フラグが3のとき、オプション画面へ移動する
+		if (flag == 3)
+		{
+			if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 			{
-				load_pos_x += anime_x;
-				if (load_pos_x >= 0)
+				if (option_scene.DrawOptionScene(window_x, window_y, config, wire) == true)
 				{
-					load_pos_x = 0;
-				}
-			}
-
-			if (option_pos_x < 0)
-			{
-				option_pos_x += anime_x;
-				if (option_pos_x >= 0)
-				{
-					option_pos_x = 0;
-				}
-			}
-
-			if (exit_pos_x < 0)
-			{
-				exit_pos_x += anime_x;
-				if (exit_pos_x >= 0)
-				{
-					exit_pos_x = 0;
+					StartScene::Init(config);//初期化してから
+					flag = 0;
 				}
 			}
 		}
+
+
 	}
 }

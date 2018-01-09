@@ -8,7 +8,6 @@
 class ButtonUI : public ObjectBase
 {
 private:
-	Input mouse_input;
 
 	float wheel_volume;
 
@@ -22,6 +21,7 @@ public:
 
 	Collision box_collision;
 	Collision circle_collision;
+	Input mouse_input;
 
 	int switch_flag;//スイッチフラグ
 

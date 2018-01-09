@@ -12,6 +12,7 @@ void ButtonUI::Load(char* path)
 
 void ButtonUI::Init()
 {
+	mouse_input.init();
 	wheel_volume_buffer = 0;
 	wheel_volume = 0;
 	switch_flag = -1;
@@ -39,6 +40,8 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, i
 		red_a = 200;
 		green_a = 200;
 		blue_a = 200;
+
+		click_flag = false;
 	}
 
 	if (click_flag == 1)//クリックされたときwireフラグがtrueだったらグリンーんワイヤーを表示
@@ -186,6 +189,8 @@ int ButtonUI::BoxUI_Button_Continuation(int pos_x, int pos_y, float scale_x, flo
 		red_a = 200;
 		green_a = 200;
 		blue_a = 200;
+
+		click_flag = false;
 	}
 
 	if (click_flag == 1)//クリックされたときwireフラグがtrueだったらグリンーんワイヤーを表示
@@ -274,6 +279,8 @@ int ButtonUI::CircleUI_Button(int pos_x, int pos_y, int size_r, int input, bool 
 		red_a = 200;
 		green_a = 200;
 		blue_a = 200;
+
+		click_flag = false;
 	}
 
 	if (click_flag == 1)//クリックされたときwireフラグがtrueだったらグリンーんワイヤーを表示

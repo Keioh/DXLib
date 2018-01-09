@@ -9,6 +9,10 @@ private:
 public:
 	~Input(){};		//デストラクタ
 
+	bool click;
+
+	void init();
+
 	bool MouseCilck(int MouseInput);//瞬間のクリック
 	bool MouseClickContinuation(int mouseinput);//継続クリック
 		

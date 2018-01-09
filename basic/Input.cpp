@@ -1,6 +1,15 @@
 #include "Input.h"
 
 
+void Input::init()
+{
+	click = false;
+	button_buffer = -1;
+	x_buffer = -1;
+	y_buffer = -1;
+	button_input_log_buffer = -1;
+}
+
 //瞬間のクリック
 bool Input::MouseCilck(int MouseInput)//若干挙動がおかしいかも
 {
@@ -11,10 +20,10 @@ bool Input::MouseCilck(int MouseInput)//若干挙動がおかしいかも
 	{
 		if ((GetMouseInput() & button_buffer & MouseInput) != 0)
 		{
-			return true;
+			return click = true;
 		}
 	}
-	return false;
+	return click = false;
 }
 
 //マウスの継続クリック
@@ -22,10 +31,10 @@ bool Input::MouseClickContinuation(int mouseinput)
 {
 	if ((GetMouseInput() & mouseinput) != 0)
 	{
-		return true;
+		return  click = true;
 	}
 	else
 	{
-		return false;
+		return click = false;
 	}
 }
