@@ -73,7 +73,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		//設定値はconfigから必ずファイルから引っ張ってくる
 		bgm.sound_volume = config.sound_data.bgm_volume;
 		bgm.sound_volume *= -config.sound_data.bgm_mute;//ミュート値はマイナスを掛けてからじゃないと逆になる
-		bgm.Play(1.0f, DX_PLAYTYPE_LOOP);
+		bgm.Play(1.0f, DX_PLAYTYPE_LOOP);//BGM再生
 
 		DrawGraph(0, 0, back_wall_graphics, TRUE);//背景画像を表示
 

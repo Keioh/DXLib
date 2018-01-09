@@ -8,6 +8,10 @@ Main_Game::Main_Game()
 void Main_Game::Main_Load()
 {
 	config_data.FileOpen_Config();//設定ファイル読み込み
+	main_system.size.x = config_data.window_data.windowX;//windowの大きさをmain_systemに代入
+	main_system.size.y = config_data.window_data.windowY;
+	main_system.size.bit = config_data.window_data.windowBit;
+	SetGraphMode(main_system.size.x, main_system.size.y, main_system.size.bit);//設定ファイルで設定した大きさにwindowを変更
 
 	Loading_scene.Load();//ローディング画像を読み込む
 	Logo_scene.Load();//ロゴー画像を読み込む

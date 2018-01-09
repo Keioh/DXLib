@@ -4,8 +4,8 @@
 
 System::System()
 {
-	size.x = 1600;
-	size.y = 900;
+	size.x = 1280;
+	size.y = 720;
 	size.bit = 32;
 
 }

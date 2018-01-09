@@ -19,6 +19,7 @@ public:
 
 	SOUND_DATA sound_data;//音に関する設定
 	LANGUAGE_DATA language_data;//言語に関する設定
+	WINDOW_DATA window_data;//画面に関する設定
 
 	STRING_DATA string_data;//会話などのデータ
 

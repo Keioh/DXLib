@@ -1,6 +1,5 @@
 //include
 #include "DxLib.h"
-#include "System.h"
 #include "Main_Game.h"
 
 

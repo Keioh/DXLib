@@ -8,6 +8,13 @@ struct SOUND_DATA//‰¹‚ÉŠÖ‚·‚éî•ñ
 	int se_mute;
 };
 
+struct WINDOW_DATA
+{
+	int windowX;
+	int windowY;
+	int windowBit;
+};
+
 struct LANGUAGE_DATA
 {
 	int japanese_flag;

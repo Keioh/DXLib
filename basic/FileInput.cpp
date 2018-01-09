@@ -1,7 +1,7 @@
 #include "FileInput.h"
 
 
-void Filer::FileOpen_Config()
+void Filer::FileOpen_Config()//設定ファイル読み込み
 {
 	if ((fp = fopen("config/config.txt", "r")) == NULL)
 	{
@@ -14,6 +14,9 @@ void Filer::FileOpen_Config()
 	fscanf(fp, "SE_Mute=%d\n", &sound_data.se_mute);//SEミュート
 	fscanf(fp, "Japanese=%d\n", &language_data.japanese_flag);//日本語
 	fscanf(fp, "English=%d\n", &language_data.english_flag);//英語
+	fscanf(fp, "WindowX=%d\n", &window_data.windowX);//英語
+	fscanf(fp, "WindowY=%d\n", &window_data.windowY);//英語
+	fscanf(fp, "WindowBit=%d\n", &window_data.windowBit);//英語
 
 	fclose(fp);
 
