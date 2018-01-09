@@ -65,9 +65,6 @@ void Filer::FileWrite_Config()//設定ファイル書き込み
 	fprintf(fp, "SE_Mute=%d\n", sound_data.se_mute);//SEミュート
 	fprintf(fp, "Japanese=%d\n", language_data.japanese_flag);//日本語
 	fprintf(fp, "English=%d\n", language_data.english_flag);//英語
-	fprintf(fp, "WindowX=%d\n", &window_data.windowX);//英語
-	fprintf(fp, "WindowY=%d\n", &window_data.windowY);//英語
-	fprintf(fp, "WindowBit=%d\n", &window_data.windowBit);//英語
 
 	fclose(fp);
 }
