@@ -38,7 +38,10 @@ private:
 public:
 	OptionScene();
 
-	SoundSystem bgm;
+	SoundSystem se_apply,se_apply_click;
+	SoundSystem se_option_return, se_option_return_click;
+	SoundSystem se_bgm_volume;
+	SoundSystem se_se_volume;
 
 	Japanese japanese;
 	English english;

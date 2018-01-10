@@ -10,7 +10,12 @@ void OptionScene::Load()
 {
 	back_wall_graphics = LoadGraph("pack/UI/option/option_back_wall.png");
 
-	bgm.LoadSound("pack/GameObject/bgm/01.wav");
+	se_apply.LoadSound("pack/GameObject/se/cursor_hit.wav");
+	se_apply_click.LoadSound("pack/GameObject/se/click.wav");
+	se_option_return.LoadSound("pack/GameObject/se/cursor_hit.wav");
+	se_option_return_click.LoadSound("pack/GameObject/se/click.wav");
+	se_bgm_volume.LoadSound("pack/GameObject/se/cursor_hit.wav");
+	se_se_volume.LoadSound("pack/GameObject/se/cursor_hit.wav");
 
 	bgm_volume.LoadGraphics();
 	se_volume.LoadGraphics();
@@ -35,6 +40,13 @@ void OptionScene::Init(Filer config)
 	option_scene_flag = 0;
 	anime_alph = 0;
 	anime_speed = 35.0f;
+
+	se_apply.OneShotReset();
+	se_apply_click.OneShotReset();
+	se_option_return.OneShotReset();
+	se_option_return_click.OneShotReset();
+	se_bgm_volume.OneShotReset();
+	se_se_volume.OneShotReset();
 
 	//各種設定値をconfigから取得
 	bgm_volume.bgm_volume_slider.wheel_volume_buffer = config.sound_data.bgm_volume;
@@ -97,9 +109,28 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 		se_volume.DrawSEVolumeSlider(200, 250, GetColor(0, 0, 255), config, wire);//SE音量調節
 		se_mute.DrawSEMuteButton(200 + 255 + 20, 250 + 5, wire);//SEミュート
 
+		if (bgm_volume.bgm_volume_slider.box_collision.hit == true)
+		{
+			se_bgm_volume.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+		}
+		else
+		{
+			se_bgm_volume.OneShotReset();
+		}
+
+		if (se_volume.se_volume_slider.box_collision.hit == true)
+		{
+			se_se_volume.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+		}
+		else
+		{
+			se_se_volume.OneShotReset();
+		}
+
 
 		if (apply_button.DrawApplyButton(window_x - (100 + apply_button.apply.size_x * 2), window_y - (50 + apply_button.apply.size_y), wire) == true)
 		{
+			se_apply_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			config.FileWrite_Config();//設定ファイルに書き込み
 			config.FileOpen_Config();//設定ファイルを読み込む
 
@@ -109,11 +140,38 @@ bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, boo
 				language_change_flag = false;
 			}
 		}
+		else
+		{
+			se_apply_click.OneShotReset();
+		}
+
+		if (apply_button.apply.box_collision.hit == true)
+		{
+			se_apply.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+		}
+		else
+		{
+			se_apply.OneShotReset();
+		}
 
 		//オプション画面から抜けるボタン
 		if (option_return.DrawOtpionReturnButton(window_x - (50 + option_return.option_return.size_x), window_y - (50 + option_return.option_return.size_y), wire) == 1)
 		{
+			se_option_return_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 			flag = true;
+		}
+		else
+		{
+			se_option_return_click.OneShotReset();
+		}
+
+		if (option_return.option_return.box_collision.hit == true)
+		{
+			se_option_return.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+		}
+		else
+		{
+			se_option_return.OneShotReset();
 		}
 
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);//透過処理をもどす

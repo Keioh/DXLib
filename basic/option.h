@@ -4,6 +4,8 @@
 class Option
 {
 private:
+	int click_flag;
+
 	int hit_buffer;
 
 	int anime_alph;

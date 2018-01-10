@@ -11,11 +11,18 @@ void StartScene::Load()
 	back_wall_graphics = LoadGraph("pack/UI/Title/back_wall.png");//背景画像をロード
 	info_graphics = LoadGraph("pack/UI/Title/info.png");//背景画像をロード
 
+	//SEとBGMをロード
 	bgm.LoadSound("pack/GameObject/bgm/01.wav");
 	se_start.LoadSound("pack/GameObject/se/cursor_hit.wav");
 	se_load.LoadSound("pack/GameObject/se/cursor_hit.wav");
 	se_option.LoadSound("pack/GameObject/se/cursor_hit.wav");
 	se_exit.LoadSound("pack/GameObject/se/cursor_hit.wav");
+
+	se_start_click.LoadSound("pack/GameObject/se/click.wav");
+	se_load_click.LoadSound("pack/GameObject/se/click.wav");
+	se_option_click.LoadSound("pack/GameObject/se/click.wav");
+	se_exit_click.LoadSound("pack/GameObject/se/click.wav");
+
 
 	option_scene.Load();
 
@@ -31,6 +38,16 @@ void StartScene::Load()
 void StartScene::Init(Filer config)
 {
 	option_scene.Init(config);
+
+	//SEのワンショットフラグをリセットする。
+	se_start_click.OneShotReset();
+	se_load_click.OneShotReset();
+	se_option_click.OneShotReset();
+	se_exit_click.OneShotReset();
+	se_start.OneShotReset();
+	se_load.OneShotReset();
+	se_option.OneShotReset();
+	se_exit.OneShotReset();
 
 	flag = 0;
 	start_scene_flag = 0;
@@ -142,6 +159,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 				//ニューゲームボタン
 				if (start.DrawStartButton(125 + start_pos_x, window_y - 265, 10.0f, wire) == 1)
 				{
+					se_start_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 					StartScene::Init(config);//初期化してから
 					start_scene_flag = 1;//ループを抜ける
 				}
@@ -149,18 +167,21 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 				//ロードボタン
 				if (load.DrawLoadButton(150 + load_pos_x, window_y - 210, 10.0f, wire) == 1)
 				{
+					se_load_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 					flag = 2;//フラグを2にする。
 				}
 
 				//オプションボタン
 				if (option.DrawOptionButton(175 + option_pos_x, window_y - 155, 10.0f, wire) == 1)
-				{
+				{		
+					se_option_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 					flag = 3;//フラグを3にする。
 				}
 
 				//終了ボタン
 				if (exit.DrawExitButton(200 + exit_pos_x, window_y - 100, 10.0f, wire) == 1)
 				{
+					se_exit_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
 					StartScene::Init(config);//初期化してから
 					start_scene_flag = -1;//ループを抜ける
 				}
@@ -203,6 +224,13 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 					}
 				}
 			}
+		}
+		else
+		{
+			se_start_click.OneShotReset();
+			se_load_click.OneShotReset();
+			se_option_click.OneShotReset();
+			se_exit_click.OneShotReset();
 		}
 
 		//フラグが2のとき、ロード画面へ移動する

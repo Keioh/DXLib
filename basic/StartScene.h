@@ -28,10 +28,10 @@ public:
 	FadeOut fade_out;
 
 	SoundSystem bgm;
-	SoundSystem se_start;
-	SoundSystem se_load;
-	SoundSystem se_option;
-	SoundSystem se_exit;
+	SoundSystem se_start, se_start_click;
+	SoundSystem se_load, se_load_click;
+	SoundSystem se_option, se_option_click;
+	SoundSystem se_exit, se_exit_click;
 
 	OptionScene option_scene;
 
