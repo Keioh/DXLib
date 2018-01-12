@@ -13,5 +13,5 @@ void SwitchObject::Load()
 
 void SwitchObject::Draw(int pos_x, int pos_y, bool wire)
 {
-	object_switch_flag = switch_object.CircleUI_Button_Switch(pos_x, pos_y, 25, 1, wire);
+	object_switch_flag = switch_object.CircleUI_Button_Switch(pos_x, pos_y, 18, 1, wire);
 }

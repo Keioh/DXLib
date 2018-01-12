@@ -91,6 +91,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\load_object">
       <UniqueIdentifier>{4fad663e-ea61-4249-bbcc-2c2e3636c989}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_scene_object">
+      <UniqueIdentifier>{96f2316a-5e8a-488d-a735-0bd1fcf7b488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object">
+      <UniqueIdentifier>{7bf2d865-4398-491b-b3ce-7d451a3a9198}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -194,6 +200,9 @@
     </ClCompile>
     <ClCompile Include="switchObject.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
+    <ClCompile Include="Level01.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_scene_object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +310,9 @@
     </ClInclude>
     <ClInclude Include="switchObject.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="Level01.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_scene_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

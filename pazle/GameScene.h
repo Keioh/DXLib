@@ -1,6 +1,6 @@
 #pragma once
 #include "DxLib.h"
-#include "switchObject.h"
+#include "Level01.h"
 
 class GameScene
 {
@@ -12,7 +12,7 @@ public:
 	int game_scene_flag;
 
 
-	SwitchObject object[4];
+	Level01 level01;
 
 	void Init();
 	void Load();
