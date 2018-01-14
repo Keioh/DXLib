@@ -104,6 +104,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="japanese.cpp" />
     <ClCompile Include="Level01.cpp" />
+    <ClCompile Include="Level02.cpp" />
     <ClCompile Include="load.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="LoadingScene.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="japanese.h" />
     <ClInclude Include="Level01.h" />
+    <ClInclude Include="Level02.h" />
     <ClInclude Include="load.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="LoadingScene.h" />
