@@ -207,6 +207,9 @@
     <ClCompile Include="Level02.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_scene_object</Filter>
     </ClCompile>
+    <ClCompile Include="Level03.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_scene_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -320,5 +323,10 @@
     <ClInclude Include="Level02.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_scene_object</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Level03.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_scene_object</Filter>
+    </None>
   </ItemGroup>
 </Project>
