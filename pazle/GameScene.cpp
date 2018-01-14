@@ -25,6 +25,6 @@ void GameScene::DrawGameScene(int window_x, int window_y, bool wire)
 	{
 		DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
 
-		level01.Draw(200, 100, wire);
+		level01.Draw(window_x / 2 - 50, window_y / 2 - 100, wire);
 	}
 }

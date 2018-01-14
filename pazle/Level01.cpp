@@ -25,10 +25,10 @@ void Level01::Load()
 void Level01::Draw(int pos_x, int pos_y, bool wire)
 {
 	//描写
-	object[0].Draw(200, 150, wire);//上
-	object[1].Draw(150, 250, wire);//左
-	object[2].Draw(250, 250, wire);//右
-	object[3].Draw(200, 350, wire);//下
+	object[0].Draw(pos_x, pos_y, wire);//上
+	object[1].Draw(pos_x - 50, pos_y + 100, wire);//左
+	object[2].Draw(pos_x + 50, pos_y + 100, wire);//右
+	object[3].Draw(pos_x, pos_y + 200, wire);//下
 
 	//以下ボタン押したときの処理
 	//[0]をクリックした瞬間だけ処理する

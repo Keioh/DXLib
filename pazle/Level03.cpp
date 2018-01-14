@@ -14,9 +14,9 @@ void Level03::init()
 	object[8].init();
 
 	//もともとスイッチがオンになっているところを1にする。
-	object[1].switch_object.switch_flag = 1;
+	//object[1].switch_object.switch_flag = 1;
 	//object[2].switch_object.switch_flag = 1;
-	object[5].switch_object.switch_flag = 1;
+	//object[5].switch_object.switch_flag = 1;
 	object[7].switch_object.switch_flag = 1;
 	object[8].switch_object.switch_flag = 1;
 
@@ -39,18 +39,18 @@ void Level03::Load()
 void Level03::Draw(int pos_x, int pos_y, bool wire)
 {
 	//描写
-	object[0].Draw(200, 150, wire);//上
-	object[1].Draw(150, 250, wire);//中左
-	object[2].Draw(250, 250, wire);//中右
-	object[3].Draw(200, 350, wire);//下
+	object[0].Draw(pos_x, pos_y, wire);//上
+	object[1].Draw(pos_x - 50, pos_y + 100, wire);//左
+	object[2].Draw(pos_x + 50, pos_y + 100, wire);//右
+	object[3].Draw(pos_x, pos_y + 200, wire);//下
 
-								   //二列目
-	object[4].Draw(300, 150, wire);//上
-	object[5].Draw(350, 250, wire);//中
-	object[6].Draw(300, 350, wire);//下
+											 //二列目
+	object[4].Draw(pos_x + 100, pos_y, wire);//上
+	object[5].Draw(pos_x + 150, pos_y + 100, wire);//中
+	object[6].Draw(pos_x + 100, pos_y + 200, wire);//下
 
-	object[7].Draw(100, 350, wire);//下
-	object[8].Draw(400, 150, wire);//上
+	object[7].Draw(pos_x + 50, pos_y + 300, wire);//下
+	object[8].Draw(pos_x + 50, pos_y - 100, wire);//上
 
 								   //以下ボタン押したときの処理
 								   //[0]をクリックした瞬間だけ処理する
@@ -62,12 +62,14 @@ void Level03::Draw(int pos_x, int pos_y, bool wire)
 			object[1].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[4].switch_object.switch_flag *= -1;
+			object[8].switch_object.switch_flag *= -1;
 		}
 		else if (object[0].switch_object.switch_flag == -1)
 		{
 			object[1].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[4].switch_object.switch_flag *= -1;
+			object[8].switch_object.switch_flag *= -1;
 		}
 	}
 
@@ -80,14 +82,12 @@ void Level03::Draw(int pos_x, int pos_y, bool wire)
 			object[0].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[3].switch_object.switch_flag *= -1;
-			object[7].switch_object.switch_flag *= -1;
 		}
 		else if (object[1].switch_object.switch_flag == -1)
 		{
 			object[0].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[3].switch_object.switch_flag *= -1;
-			object[7].switch_object.switch_flag *= -1;
 		}
 	}
 
@@ -165,14 +165,12 @@ void Level03::Draw(int pos_x, int pos_y, bool wire)
 			object[4].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[6].switch_object.switch_flag *= -1;
-			object[8].switch_object.switch_flag *= -1;
 		}
 		else if (object[5].switch_object.switch_flag == -1)
 		{
 			object[4].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[6].switch_object.switch_flag *= -1;
-			object[8].switch_object.switch_flag *= -1;
 		}
 	}
 
@@ -185,12 +183,14 @@ void Level03::Draw(int pos_x, int pos_y, bool wire)
 			object[3].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[5].switch_object.switch_flag *= -1;
+			object[7].switch_object.switch_flag *= -1;
 		}
 		else if (object[6].switch_object.switch_flag == -1)
 		{
 			object[3].switch_object.switch_flag *= -1;
 			object[2].switch_object.switch_flag *= -1;
 			object[5].switch_object.switch_flag *= -1;
+			object[7].switch_object.switch_flag *= -1;
 		}
 	}
 
@@ -201,12 +201,12 @@ void Level03::Draw(int pos_x, int pos_y, bool wire)
 		if (object[7].switch_object.switch_flag == 1)
 		{
 			object[3].switch_object.switch_flag *= -1;
-			object[1].switch_object.switch_flag *= -1;
+			object[6].switch_object.switch_flag *= -1;
 		}
 		else if (object[7].switch_object.switch_flag == -1)
 		{
 			object[3].switch_object.switch_flag *= -1;
-			object[1].switch_object.switch_flag *= -1;
+			object[6].switch_object.switch_flag *= -1;
 		}
 	}
 
@@ -217,11 +217,11 @@ void Level03::Draw(int pos_x, int pos_y, bool wire)
 		if (object[8].switch_object.switch_flag == 1)
 		{
 			object[4].switch_object.switch_flag *= -1;
-			object[5].switch_object.switch_flag *= -1;
+			object[0].switch_object.switch_flag *= -1;
 		}
 		else if (object[8].switch_object.switch_flag == -1)
 		{
-			object[5].switch_object.switch_flag *= -1;
+			object[0].switch_object.switch_flag *= -1;
 			object[4].switch_object.switch_flag *= -1;
 		}
 	}

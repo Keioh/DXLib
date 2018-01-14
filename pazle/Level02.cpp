@@ -33,15 +33,15 @@ void Level02::Load()
 void Level02::Draw(int pos_x, int pos_y, bool wire)
 {
 	//描写
-	object[0].Draw(200, 150, wire);//上
-	object[1].Draw(150, 250, wire);//中左
-	object[2].Draw(250, 250, wire);//中右
-	object[3].Draw(200, 350, wire);//下
+	object[0].Draw(pos_x, pos_y, wire);//上
+	object[1].Draw(pos_x - 50, pos_y + 100, wire);//左
+	object[2].Draw(pos_x + 50, pos_y + 100, wire);//右
+	object[3].Draw(pos_x, pos_y + 200, wire);//下
 
 	//二列目
-	object[4].Draw(300, 150, wire);//上
-	object[5].Draw(350, 250, wire);//中
-	object[6].Draw(300, 350, wire);//下
+	object[4].Draw(pos_x + 100, pos_y, wire);//上
+	object[5].Draw(pos_x + 150, pos_y + 100, wire);//中
+	object[6].Draw(pos_x + 100, pos_y + 200, wire);//下
 
 								   //以下ボタン押したときの処理
 								   //[0]をクリックした瞬間だけ処理する
