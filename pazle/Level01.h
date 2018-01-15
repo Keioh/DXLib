@@ -4,7 +4,11 @@
 class Level01
 {
 private:
+	int rand_power;
+	int line_color[4];
 
+	void ClickEvent();
+	void HitEvent();
 
 public:
 
@@ -12,6 +16,6 @@ public:
 
 	void init();
 	void Load();
-	void Draw(int pos_x, int pos_y, bool wire);
+	void Draw(int pos_x, int pos_y, Filer config, bool wire);
 
 };

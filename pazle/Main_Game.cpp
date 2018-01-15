@@ -35,7 +35,7 @@ void Main_Game::Main_Init()
 
 void Main_Game::Main_Game_Loop() 
 {
-	wire_flag = true;
+	wire_flag = false;
 
 	Main_Init();
 	Main_Load();
@@ -54,7 +54,7 @@ void Main_Game::Main_Game_Loop()
 
 		if (Start_scene.start_scene_flag == 1)//ゲーム画面へ
 		{
-			Game_scene.DrawGameScene(main_system.size.x, main_system.size.y, wire_flag);//ゲーム画面
+			Game_scene.DrawGameScene(main_system.size.x, main_system.size.y, config_data, wire_flag);//ゲーム画面
 			Start_scene.Init(config_data);//スタート画面初期化
 			Game_scene.Init();//ゲーム画面初期化
 			Load_scene.Init();//ロード画面を初期化
