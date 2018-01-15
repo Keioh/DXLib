@@ -42,7 +42,6 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	}
 	else
 	{		
-
 		hit_se.Stop();//音を止める
 
 		r_buffer = 0;
@@ -73,7 +72,7 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		click_se.OneShotReset();//ワンショット再生をリセット
 	}
 
-	object_switch_flag = switch_object.CircleUI_Button_Switch(pos_x + rand_pos.x, pos_y + rand_pos.y, 18, 1, wire);
+	object_switch_flag = switch_object.CircleUI_Button_Switch(pos_x + rand_pos.x, pos_y + rand_pos.y, 18 + r, 1, wire);
 
 	//オブジェクトの位置を保存
 	pos.x = pos_x + rand_pos.x;

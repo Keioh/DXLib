@@ -2,7 +2,7 @@
 
 void Level01::init()
 {
-	rand_power = 1;
+	rand_power = 10;
 
 
 	//‰Šú‰»

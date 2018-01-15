@@ -2,6 +2,8 @@
 
 void Level03::init()
 {
+	rand_power = 10;
+
 	//初期化
 	object[0].init();
 	object[1].init();
@@ -14,9 +16,6 @@ void Level03::init()
 	object[8].init();
 
 	//もともとスイッチがオンになっているところを1にする。
-	//object[1].switch_object.switch_flag = 1;
-	//object[2].switch_object.switch_flag = 1;
-	//object[5].switch_object.switch_flag = 1;
 	object[7].switch_object.switch_flag = 1;
 	object[8].switch_object.switch_flag = 1;
 
@@ -36,24 +35,10 @@ void Level03::Load()
 
 }
 
-void Level03::Draw(int pos_x, int pos_y, Filer config, bool wire)
+void Level03::ClickEvent()
 {
-	//描写
-	object[0].Draw(pos_x, pos_y, config, wire);//上
-	object[1].Draw(pos_x - 50, pos_y + 100, config,  wire);//左
-	object[2].Draw(pos_x + 50, pos_y + 100, config, wire);//右
-	object[3].Draw(pos_x, pos_y + 200, config, wire);//下
-
-											 //二列目
-	object[4].Draw(pos_x + 100, pos_y, config, wire);//上
-	object[5].Draw(pos_x + 150, pos_y + 100, config, wire);//中
-	object[6].Draw(pos_x + 100, pos_y + 200, config, wire);//下
-
-	object[7].Draw(pos_x + 50, pos_y + 300, config, wire);//下
-	object[8].Draw(pos_x + 50, pos_y - 100, config, wire);//上
-
-								   //以下ボタン押したときの処理
-								   //[0]をクリックした瞬間だけ処理する
+	//以下ボタン押したときの処理
+	//[0]をクリックした瞬間だけ処理する
 	if (object[0].switch_object.mouse_input.click == true)
 	{
 		//[0]を押したときの処理
@@ -225,6 +210,195 @@ void Level03::Draw(int pos_x, int pos_y, Filer config, bool wire)
 			object[4].switch_object.switch_flag *= -1;
 		}
 	}
+}
+
+void Level03::HitEvent()
+{
+	//object[0]にヒットしたとき
+	if (object[0].switch_object.circle_collision.hit == true)
+	{
+		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[4].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[8].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[0].pos.x, object[0].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[0]++, line_color[0]++, line_color[0]++), 5);//[1]へ延びる線
+		DrawLineAA(object[0].pos.x, object[0].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[0]++, line_color[0]++, line_color[0]++), 5);//[2]へ延びる線
+		DrawLineAA(object[0].pos.x, object[0].pos.y, object[4].pos.x, object[4].pos.y, GetColor(line_color[0]++, line_color[0]++, line_color[0]++), 5);//[4]へ延びる線
+		DrawLineAA(object[0].pos.x, object[0].pos.y, object[8].pos.x, object[8].pos.y, GetColor(line_color[0]++, line_color[0]++, line_color[0]++), 5);//[4]へ延びる線
+	}
+	else
+	{
+		line_color[0] = 0;
+	}
+
+	//object[1]にヒットしたとき
+	if (object[1].switch_object.circle_collision.hit == true)
+	{
+		object[0].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[3].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[1].pos.x, object[1].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[1]++, line_color[1]++, line_color[1]++), 5);//[1]へ延びる線
+		DrawLineAA(object[1].pos.x, object[1].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[1]++, line_color[1]++, line_color[1]++), 5);//[2]へ延びる線
+		DrawLineAA(object[1].pos.x, object[1].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[1]++, line_color[1]++, line_color[1]++), 5);//[4]へ延びる線
+	}
+	else
+	{
+		line_color[1] = 0;
+	}
+
+	//object[2]にヒットしたとき
+	if (object[2].switch_object.circle_collision.hit == true)
+	{
+		object[0].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[4].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[5].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[6].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[3].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[1]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[4].pos.x, object[4].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[2]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[5].pos.x, object[5].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[4]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[6].pos.x, object[6].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[4]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[4]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[4]へ延びる線
+
+	}
+	else
+	{
+		line_color[2] = 0;
+	}
+
+	//object[3]にヒットしたとき
+	if (object[3].switch_object.circle_collision.hit == true)
+	{
+		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[6].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[7].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[3]++, line_color[3]++, line_color[3]++), 5);//[1]へ延びる線
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[3]++, line_color[3]++, line_color[3]++), 5);//[2]へ延びる線
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[6].pos.x, object[6].pos.y, GetColor(line_color[3]++, line_color[3]++, line_color[3]++), 5);//[4]へ延びる線
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[7].pos.x, object[7].pos.y, GetColor(line_color[3]++, line_color[3]++, line_color[3]++), 5);//[4]へ延びる線
+
+	}
+	else
+	{
+		line_color[3] = 0;
+	}
+
+
+	//object[4]にヒットしたとき
+	if (object[4].switch_object.circle_collision.hit == true)
+	{
+		object[8].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[0].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[5].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[4].pos.x, object[4].pos.y, object[8].pos.x, object[8].pos.y, GetColor(line_color[4]++, line_color[4]++, line_color[4]++), 5);//[1]へ延びる線
+		DrawLineAA(object[4].pos.x, object[4].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[4]++, line_color[4]++, line_color[4]++), 5);//[2]へ延びる線
+		DrawLineAA(object[4].pos.x, object[4].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[4]++, line_color[4]++, line_color[4]++), 5);//[4]へ延びる線
+		DrawLineAA(object[4].pos.x, object[4].pos.y, object[5].pos.x, object[5].pos.y, GetColor(line_color[4]++, line_color[4]++, line_color[4]++), 5);//[4]へ延びる線
+
+	}
+	else
+	{
+		line_color[4] = 0;
+	}
+
+	//object[5]にヒットしたとき
+	if (object[5].switch_object.circle_collision.hit == true)
+	{
+		object[4].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[6].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[5].pos.x, object[5].pos.y, object[4].pos.x, object[4].pos.y, GetColor(line_color[5]++, line_color[5]++, line_color[5]++), 5);//[1]へ延びる線
+		DrawLineAA(object[5].pos.x, object[5].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[5]++, line_color[5]++, line_color[5]++), 5);//[2]へ延びる線
+		DrawLineAA(object[5].pos.x, object[5].pos.y, object[6].pos.x, object[6].pos.y, GetColor(line_color[5]++, line_color[5]++, line_color[5]++), 5);//[4]へ延びる線
+
+	}
+	else
+	{
+		line_color[5] = 0;
+	}
+
+	//object[6]にヒットしたとき
+	if (object[6].switch_object.circle_collision.hit == true)
+	{
+		object[5].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[3].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[7].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[6].pos.x, object[6].pos.y, object[5].pos.x, object[5].pos.y, GetColor(line_color[6]++, line_color[6]++, line_color[6]++), 5);//[1]へ延びる線
+		DrawLineAA(object[6].pos.x, object[6].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[6]++, line_color[6]++, line_color[6]++), 5);//[2]へ延びる線
+		DrawLineAA(object[6].pos.x, object[6].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[6]++, line_color[6]++, line_color[6]++), 5);//[4]へ延びる線
+		DrawLineAA(object[6].pos.x, object[6].pos.y, object[7].pos.x, object[7].pos.y, GetColor(line_color[6]++, line_color[6]++, line_color[6]++), 5);//[4]へ延びる線
+
+	}
+	else
+	{
+		line_color[6] = 0;
+	}
+
+	//object[7]にヒットしたとき
+	if (object[7].switch_object.circle_collision.hit == true)
+	{
+		object[3].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[6].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[7].pos.x, object[7].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[7]++, line_color[7]++, line_color[7]++), 5);//[1]へ延びる線
+		DrawLineAA(object[7].pos.x, object[7].pos.y, object[6].pos.x, object[6].pos.y, GetColor(line_color[7]++, line_color[7]++, line_color[7]++), 5);//[2]へ延びる線
+
+	}
+	else
+	{
+		line_color[7] = 0;
+	}
+
+	//object[8]にヒットしたとき
+	if (object[8].switch_object.circle_collision.hit == true)
+	{
+		object[0].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+		object[4].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
+
+		DrawLineAA(object[8].pos.x, object[8].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[8]++, line_color[8]++, line_color[8]++), 5);//[1]へ延びる線
+		DrawLineAA(object[8].pos.x, object[8].pos.y, object[4].pos.x, object[4].pos.y, GetColor(line_color[8]++, line_color[8]++, line_color[8]++), 5);//[2]へ延びる線
+
+	}
+	else
+	{
+		line_color[8] = 0;
+	}
+
+}
+
+void Level03::Draw(int pos_x, int pos_y, Filer config, bool wire)
+{
+	//ヒットしたときの処理
+	Level03::HitEvent();
+
+	//クリックしたときの処理
+	Level03::ClickEvent();
+
+	//描写
+	object[0].Draw(pos_x, pos_y, config, wire);//上
+	object[1].Draw(pos_x - 50, pos_y + 100, config,  wire);//左
+	object[2].Draw(pos_x + 50, pos_y + 100, config, wire);//右
+	object[3].Draw(pos_x, pos_y + 200, config, wire);//下
+
+											 //二列目
+	object[4].Draw(pos_x + 100, pos_y, config, wire);//上
+	object[5].Draw(pos_x + 150, pos_y + 100, config, wire);//中
+	object[6].Draw(pos_x + 100, pos_y + 200, config, wire);//下
+
+	object[7].Draw(pos_x + 50, pos_y + 300, config, wire);//下
+	object[8].Draw(pos_x + 50, pos_y - 100, config, wire);//上
 
 
 	if ((object[0].object_switch_flag == -1) && (object[1].object_switch_flag == -1) && (object[2].object_switch_flag == -1) && (object[3].object_switch_flag == -1) &&

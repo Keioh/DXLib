@@ -4,6 +4,11 @@
 class Level03
 {
 private:
+	int rand_power;
+	int line_color[9];
+
+	void ClickEvent();
+	void HitEvent();
 
 
 public:
