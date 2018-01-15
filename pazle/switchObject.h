@@ -8,7 +8,7 @@ class SwitchObject
 private:
 	SoundSystem hit_se, click_se;
 
-	float r_buffer;
+	float r_buffer, click_r;
 
 	int red;
 	int blue;

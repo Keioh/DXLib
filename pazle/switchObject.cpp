@@ -7,6 +7,7 @@ void SwitchObject::init()
 	green = 0;
 	r = 0;
 	r_buffer = 0;
+	click_r = 0;
 
 	rand_pos = { 0,0,0 };
 
@@ -26,7 +27,7 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
 	//円を表示
-	DrawCircleAA(pos_x + rand_pos.x, pos_y + rand_pos.y, 18 + r, 256, GetColor(red, green, blue), TRUE);
+	DrawCircleAA(pos_x + rand_pos.x, pos_y + rand_pos.y, 18 + r + click_r, 256, GetColor(red, green, blue), TRUE);
 
 	//コリジョンにヒットしたら
 	if (switch_object.circle_collision.hit == true)
@@ -65,14 +66,20 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	//クリックしたら
 	if (switch_object.mouse_input.click == true)
 	{
+		click_r = 15;
 		click_se.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);//ワンショット再生
 	}
 	else
 	{	
+		//クリックしたときに円を大きくする
+		if (click_r < 0)click_r = 0;
+		click_r--;
+
+
 		click_se.OneShotReset();//ワンショット再生をリセット
 	}
 
-	object_switch_flag = switch_object.CircleUI_Button_Switch(pos_x + rand_pos.x, pos_y + rand_pos.y, 18 + r, 1, wire);
+	object_switch_flag = switch_object.CircleUI_Button_Switch(pos_x + rand_pos.x, pos_y + rand_pos.y, 18 + r + click_r, 1, wire);
 
 	//オブジェクトの位置を保存
 	pos.x = pos_x + rand_pos.x;
