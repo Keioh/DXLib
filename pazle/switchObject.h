@@ -8,11 +8,20 @@ class SwitchObject
 private:
 	SoundSystem hit_se, click_se;
 
+	bool blue_light;
+	bool green_light;
+	bool orange_light;
+	bool purple_light;
+
 	float r_buffer, click_r;
 
 	int red;
 	int blue;
 	int green;
+
+	int light_grahics_blue, light_grahics_green	,light_grahics_orange, light_grahics_purple;
+	
+	int light_grahics_blue_alph, light_grahics_green_alph, light_grahics_orange_alph, light_grahics_purple_alph;
 
 	float r;
 
