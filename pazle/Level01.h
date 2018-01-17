@@ -7,6 +7,8 @@ private:
 	int rand_power;
 	int line_color[4];
 
+	Vector3 random_pos[4];
+
 	void ClickEvent();
 	void HitEvent();
 

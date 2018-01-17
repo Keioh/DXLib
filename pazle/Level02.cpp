@@ -4,6 +4,10 @@ void Level02::init()
 {
 	rand_power = 10;
 
+	for (int n = 0; n < 7; n++)
+	{
+		random_pos[n] = { GetRand(80),GetRand(80),0 };
+	}
 	//‰Šú‰»
 	object[0].init();
 	object[1].init();
@@ -300,6 +304,22 @@ void Level02::HitEvent()
 
 void Level02::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
+	for (int n = 0; n < 7; n++)
+	{
+		random_pos[n].x -= 5;
+		random_pos[n].y -= 5;
+		random_pos[n].z = 0;
+
+		if (random_pos[n].x < 0)
+		{
+			random_pos[n].x = 0;
+		}
+		if (random_pos[n].y < 0)
+		{
+			random_pos[n].y = 0;
+		}
+	}
+
 	//ƒqƒbƒg‚µ‚½‚Æ‚«‚Ìˆ—
 	Level02::HitEvent();
 
@@ -307,15 +327,15 @@ void Level02::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	Level02::ClickEvent();
 
 	//•`ŽÊ
-	object[0].Draw(pos_x, pos_y, config, wire);//ã
-	object[1].Draw(pos_x - 50, pos_y + 100, config, wire);//¶
-	object[2].Draw(pos_x + 50, pos_y + 100, config, wire);//‰E
-	object[3].Draw(pos_x, pos_y + 200, config, wire);//‰º
+	object[0].Draw(pos_x + random_pos[0].x, pos_y + random_pos[0].y, config, wire);//ã
+	object[1].Draw(pos_x - 50 + random_pos[1].x, pos_y + 100 + random_pos[1].y, config, wire);//¶
+	object[2].Draw(pos_x + 50 + random_pos[2].x, pos_y + 100 + random_pos[2].y, config, wire);//‰E
+	object[3].Draw(pos_x + random_pos[3].x, pos_y + 200 + random_pos[3].y, config, wire);//‰º
 
 	//“ñ—ñ–Ú
-	object[4].Draw(pos_x + 100, pos_y, config, wire);//ã
-	object[5].Draw(pos_x + 150, pos_y + 100, config, wire);//’†
-	object[6].Draw(pos_x + 100, pos_y + 200, config, wire);//‰º
+	object[4].Draw(pos_x + 100 + random_pos[4].x, pos_y + random_pos[4].y, config, wire);//ã
+	object[5].Draw(pos_x + 150 + random_pos[5].x, pos_y + 100 + random_pos[5].y, config, wire);//’†
+	object[6].Draw(pos_x + 100 + random_pos[6].x, pos_y + 200 + random_pos[6].y, config, wire);//‰º
 
 	if ((object[0].object_switch_flag == -1) && (object[1].object_switch_flag == -1) && (object[2].object_switch_flag == -1) && (object[3].object_switch_flag == -1) &&
 		(object[4].object_switch_flag == -1) && (object[5].object_switch_flag == -1) && (object[6].object_switch_flag == -1))

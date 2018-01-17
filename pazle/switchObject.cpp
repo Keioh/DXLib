@@ -7,6 +7,8 @@ void SwitchObject::init()
 	orange_light = false;
 	purple_light = false;
 
+	draw_alph = 0;
+	alph_double = 0.0f;
 
 	light_grahics_blue_alph = 0;
 	light_grahics_green_alph = 255;
@@ -46,25 +48,40 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	pos.x = pos_x + rand_pos.x;
 	pos.y = pos_y + rand_pos.y;
 
+	if (alph_double > 1.0f)
+	{
+		alph_double = 1.0f;
+	}
+
+	if (draw_alph > 255)
+	{
+		draw_alph = 255;
+	}
+
+	draw_alph += 5;
+	alph_double += 0.01f;
+
 	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
 	//円を表示
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, draw_alph);//オブジェクト全体の透過処理
 	DrawCircleAA(pos.x, pos.y, 18 + r + click_r, 256, GetColor(red, green, blue), TRUE);
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 	//オブジェクトの光を描写
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_blue_alph);
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_blue_alph * alph_double);
 	DrawGraph(pos.x - (32 / 2), pos.y - (32 / 2), light_grahics_blue, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_green_alph);
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_green_alph * alph_double);
 	DrawGraph(pos.x - (32 / 2), pos.y - (32 / 2), light_grahics_green, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_orange_alph);
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_orange_alph * alph_double);
 	DrawGraph(pos.x - (32 / 2), pos.y - (32 / 2), light_grahics_orange, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_purple_alph);
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_grahics_purple_alph * alph_double);
 	DrawGraph(pos.x - (32 / 2), pos.y - (32 / 2), light_grahics_purple, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
@@ -217,7 +234,9 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		click_se.OneShotReset();//ワンショット再生をリセット
 	}
 
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, draw_alph);//オブジェクト全体の透過処理
 	object_switch_flag = switch_object.CircleUI_Button_Switch(pos.x, pos.y, 18 + r + click_r, 1, wire);
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 
 	//拡散光
@@ -239,8 +258,7 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		light_white_alph++;
 	}
 
-	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_white_alph);
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_white_alph * alph_double);
 	DrawGraph(pos.x - (64 / 2), pos.y - (64 / 2), light_white, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
 }

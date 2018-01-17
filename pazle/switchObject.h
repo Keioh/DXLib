@@ -15,10 +15,13 @@ private:
 	bool white_light;
 
 	float r_buffer, click_r;
+	float alph_double;
 
 	int red;
 	int blue;
 	int green;
+
+	int draw_alph;
 
 	int light_grahics_blue, light_grahics_green	,light_grahics_orange, light_grahics_purple;
 	int light_white;
