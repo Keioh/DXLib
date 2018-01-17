@@ -9,6 +9,7 @@ void GameScene::Init()
 {
 	game_scene_flag = 0;
 
+
 	level01.init();
 }
 
@@ -24,5 +25,6 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 	{
 		DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
 		level01.Draw(window_x / 2 - 50, window_y / 2 - 100, config, wire);
+
 	}
 }

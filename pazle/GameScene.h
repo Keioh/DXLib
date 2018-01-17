@@ -9,8 +9,7 @@ private:
 public:
 	GameScene();
 
-	int game_scene_flag;
-
+	int game_scene_flag;	
 
 	Level03 level01;
 
