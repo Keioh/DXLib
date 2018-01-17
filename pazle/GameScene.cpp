@@ -19,7 +19,7 @@ void GameScene::Load()
 
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
 {
-	SetBackgroundColor(255, 255, 255);
+	SetBackgroundColor(0, 0, 0);
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		DrawString(0, 0, "GameScene", GetColor(0, 0, 0));

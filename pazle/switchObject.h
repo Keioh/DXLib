@@ -12,6 +12,7 @@ private:
 	bool green_light;
 	bool orange_light;
 	bool purple_light;
+	bool white_light;
 
 	float r_buffer, click_r;
 
@@ -20,8 +21,10 @@ private:
 	int green;
 
 	int light_grahics_blue, light_grahics_green	,light_grahics_orange, light_grahics_purple;
+	int light_white;
 	
 	int light_grahics_blue_alph, light_grahics_green_alph, light_grahics_orange_alph, light_grahics_purple_alph;
+	int light_white_alph;
 
 	float r;
 

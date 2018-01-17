@@ -33,6 +33,8 @@ void SwitchObject::Load()
 	light_grahics_orange = LoadGraph("pack/GameObject/orange.png");
 	light_grahics_purple = LoadGraph("pack/GameObject/purple.png");
 
+	light_white = LoadGraph("pack/GameObject/light.png");
+
 	click_se.LoadSound("pack/GameObject/se/GameObjectSE/click.wav");
 	hit_se.LoadSound("pack/GameObject/se/GameObjectSE/hit.wav");
 	switch_object.Load("pack/GameObject/on.png", "pack/GameObject/off.png");
@@ -66,6 +68,7 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	DrawGraph(pos.x - (32 / 2), pos.y - (32 / 2), light_grahics_purple, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
+	/*
 	DrawFormatString(0, 20, GetColor(0, 0, 0), "blue %d", light_grahics_blue_alph);
 	DrawFormatString(0, 40, GetColor(0, 0, 0), "green %d", light_grahics_green_alph);
 	DrawFormatString(0, 60, GetColor(0, 0, 0), "orange %d", light_grahics_orange_alph);
@@ -75,6 +78,7 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	DrawFormatString(0, 120, GetColor(0, 0, 0), "green %d", green_light);
 	DrawFormatString(0, 140, GetColor(0, 0, 0), "orange %d", orange_light);
 	DrawFormatString(0, 160, GetColor(0, 0, 0), "purple %d", purple_light);
+	*/
 
 	//‰æ‘œ‚ð•Ï‚¦‚éˆ—
 	if (blue_light == true)
@@ -214,5 +218,29 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	}
 
 	object_switch_flag = switch_object.CircleUI_Button_Switch(pos.x, pos.y, 18 + r + click_r, 1, wire);
+
+
+	//ŠgŽUŒõ
+	if (light_white_alph > 255)
+	{
+		white_light = true;
+	}
+	else if (light_white_alph < 0)
+	{
+		white_light = false;
+	}
+
+	if (white_light == true)
+	{
+		light_white_alph--;
+	}
+	else
+	{
+		light_white_alph++;
+	}
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, light_white_alph);
+	DrawGraph(pos.x - (64 / 2), pos.y - (64 / 2), light_white, TRUE);
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 }
