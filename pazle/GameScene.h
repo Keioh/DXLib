@@ -1,5 +1,9 @@
 #pragma once
 #include "DxLib.h"
+#include "LevelSwitch.h"
+
+#include "Level01.h"
+#include "Level02.h"
 #include "Level03.h"
 
 class GameScene
@@ -11,7 +15,10 @@ public:
 
 	int game_scene_flag;	
 
-	Level03 level01;
+	LevelSwitch level_switch;
+	Level01 level01;
+	Level02 level02;
+	Level03 level03;
 
 	void Init();
 	void Load();

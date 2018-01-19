@@ -20,6 +20,8 @@ private:
 public:
 	ButtonUI();
 
+	unsigned int color;
+
 	Collision box_collision;
 	Collision circle_collision;
 	Input mouse_input;
@@ -34,6 +36,8 @@ public:
 	int BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 	int BoxUI_Button_Continuation(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 	int BoxUI_Button_Switch(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
+
+	int BoxUI_Button_BOX(int pos_x, int pos_y, float Size_x, float Size_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 
 	int BoxUI_WheelVertical(int pos_x, int pos_y, unsigned int color, bool wire = false);//縦方向へのスライダー
 	int BoxUI_WheelHorizontal(int pos_x, int pos_y, unsigned int color, bool wire = false);//横方向へのスライダー(バグあり)

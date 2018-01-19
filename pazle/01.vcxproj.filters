@@ -219,6 +219,9 @@
     <ClCompile Include="Line3D.cpp">
       <Filter>ソース ファイル\main_res\game_object\3D</Filter>
     </ClCompile>
+    <ClCompile Include="LevelSwitch.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_scene_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -334,6 +337,9 @@
     </ClInclude>
     <ClInclude Include="Line3D.h">
       <Filter>ヘッダー ファイル\main_res\game_object\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelSwitch.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_scene_object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
