@@ -2,6 +2,9 @@
 #include "DxLib.h"
 #include "LevelSwitch.h"
 
+#include "fade_in.h"
+#include "fade_out.h"
+
 #include "Level01.h"
 #include "Level02.h"
 #include "Level03.h"
@@ -14,6 +17,9 @@ public:
 	GameScene();
 
 	int game_scene_flag;	
+
+	FadeIn fade_in;
+	FadeOut fade_out;
 
 	LevelSwitch level_switch;
 	Level01 level01;

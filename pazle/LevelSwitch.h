@@ -12,9 +12,11 @@ private:
 
 public:
 
+	int anime_alph;
 	int select_level;//現在選択しているレベル
 
 	void init();
+	void AnimtionInit();
 	void Load();
 	void Draw(int pos_x, int pos_y, bool wire);//レベルセレクトボタン
 	void ResetButtonDraw(int pos_x, int pos_y, bool wire);//switch_levelを0にするボタン
