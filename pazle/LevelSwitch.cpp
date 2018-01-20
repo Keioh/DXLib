@@ -36,11 +36,13 @@ void LevelSwitch::AnimtionInit()
 {
 	//オブジェクトのα値を0で初期化
 	anime_alph = 0;
+	anime_sin = 0;
 }
 
 void LevelSwitch::Draw(int pos_x, int pos_y, bool wire)
 {
 	anime_alph += 25;
+	anime_sin += 0.1f;
 
 	if (anime_alph > 255)
 	{
@@ -49,17 +51,17 @@ void LevelSwitch::Draw(int pos_x, int pos_y, bool wire)
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
 
-	if (level01_switch.BoxUI_Button_BOX(pos_x, pos_y, 100, 100, 1, wire) == true)
+	if (level01_switch.BoxUI_Button_BOX(pos_x, pos_y, 50 + sin(anime_sin) * 10, 50 + sin(anime_sin) * 10, 1, wire) == true)
 	{
 		select_level = 1;
 	}
 	
-	if (level02_switch.BoxUI_Button_BOX(pos_x + 150, pos_y, 100, 100, 1, wire) == true)
+	if (level02_switch.BoxUI_Button_BOX(pos_x + 50 + sin(anime_sin) * 10, pos_y, 100, 100, 1, wire) == true)
 	{
 		select_level = 2;
 	}
 
-	if (level03_switch.BoxUI_Button_BOX(pos_x + 150 * 2, pos_y, 100, 100, 1, wire) == true)
+	if (level03_switch.BoxUI_Button_BOX(pos_x + 150 + sin(anime_sin) * 10, pos_y, 100, 100, 1, wire) == true)
 	{
 		select_level = 3;
 	}	
@@ -72,6 +74,7 @@ void LevelSwitch::ResetButtonDraw(int pos_x, int pos_y, bool wire)
 	if (level_reset_switch.BoxUI_Button_BOX(pos_x, pos_y, 100, 100, 1, wire) == true)
 	{
 		anime_alph = 0;
+		anime_sin = 0;
 		select_level = 0;
 	}
 }

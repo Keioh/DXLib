@@ -10,6 +10,8 @@ private:
 	ButtonUI level02_switch;
 	ButtonUI level03_switch;
 
+	float anime_sin;
+
 public:
 
 	int anime_alph;
