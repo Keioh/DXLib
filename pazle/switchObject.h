@@ -39,6 +39,7 @@ public:
 	int object_switch_flag;
 
 	void init();
+	void SoundReset();
 
 	void Load();
 

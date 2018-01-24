@@ -3,8 +3,10 @@
 void Level01::init()
 {
 	clear_flag = false;
-
+	anime_alph = 255;
 	rand_power = 10;
+
+	timer = 0;
 
 	for (int n = 0; n < 4; n++)
 	{
@@ -195,15 +197,20 @@ bool Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	//クリックしたときの処理
 	Level01::ClickEvent();
 
+
 	//描写
+	//SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
 	object[0].Draw(pos_x + random_pos[0].x, pos_y + -random_pos[0].y, config, wire);//上
 	object[1].Draw(pos_x - 50 + random_pos[1].x, pos_y + 100 + random_pos[1].y, config, wire);//左
 	object[2].Draw(pos_x + 50 + random_pos[2].x, pos_y + 100 + random_pos[2].y, config, wire);//右
 	object[3].Draw(pos_x + random_pos[3].x, pos_y + 200 + random_pos[3].y, config, wire);//下
+	//SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-	if ((object[0].object_switch_flag == -1) && (object[1].object_switch_flag == -1) && (object[2].object_switch_flag == -1) && (object[3].object_switch_flag == -1))
+	if ((object[0].object_switch_flag == -1) &&
+		(object[1].object_switch_flag == -1) &&
+		(object[2].object_switch_flag == -1) &&
+		(object[3].object_switch_flag == -1))
 	{
-		DrawString(0, 20, "Clear", GetColor(0, 0, 0));
 		return clear_flag = true;
 	}
 }

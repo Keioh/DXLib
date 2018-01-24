@@ -24,6 +24,8 @@ void SwitchObject::init()
 
 	rand_pos = { 0,0,0 };
 
+	SwitchObject::SoundReset();
+
 	object_switch_flag = 0;
 	switch_object.Init();
 }
@@ -40,6 +42,13 @@ void SwitchObject::Load()
 	click_se.LoadSound("pack/GameObject/se/GameObjectSE/click.wav");
 	hit_se.LoadSound("pack/GameObject/se/GameObjectSE/hit.wav");
 	switch_object.Load("pack/GameObject/on.png", "pack/GameObject/off.png");
+}
+
+void SwitchObject::SoundReset()
+{
+	hit_se.Stop();//‰¹‚ðŽ~‚ß‚é
+	click_se.OneShotReset();
+	hit_se.OneShotReset();
 }
 
 void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)

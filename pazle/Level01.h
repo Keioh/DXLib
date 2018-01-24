@@ -5,7 +5,9 @@ class Level01
 {
 private:
 	int rand_power;
+	int anime_alph;
 	int line_color[4];
+	int timer;
 
 	Vector3 random_pos[4];
 
