@@ -16,8 +16,10 @@ public:
 
 	SwitchObject object[4];
 
+	bool clear_flag;//ステージクリアフラグ
+
 	void init();
 	void Load();
-	void Draw(int pos_x, int pos_y, Filer config, bool wire);
+	bool Draw(int pos_x, int pos_y, Filer config, bool wire);
 
 };

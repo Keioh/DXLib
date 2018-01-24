@@ -2,6 +2,8 @@
 
 void Level01::init()
 {
+	clear_flag = false;
+
 	rand_power = 10;
 
 	for (int n = 0; n < 4; n++)
@@ -169,7 +171,7 @@ void Level01::HitEvent()
 
 }
 
-void Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
+bool Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	for (int n = 0; n < 4; n++)
 	{
@@ -202,5 +204,6 @@ void Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	if ((object[0].object_switch_flag == -1) && (object[1].object_switch_flag == -1) && (object[2].object_switch_flag == -1) && (object[3].object_switch_flag == -1))
 	{
 		DrawString(0, 20, "Clear", GetColor(0, 0, 0));
+		return clear_flag = true;
 	}
 }

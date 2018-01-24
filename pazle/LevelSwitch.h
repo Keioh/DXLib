@@ -1,9 +1,12 @@
 #pragma once
 #include "button_ui.h"
+#include "fade_in.h"
 
 class LevelSwitch
 {
 private:
+	FadeIn fade_in;
+
 	ButtonUI level_reset_switch;
 
 	ButtonUI level01_switch;

@@ -2,6 +2,8 @@
 
 void LevelSwitch::Load()
 {
+	fade_in.LoadGraphics();
+
 	level_reset_switch.Load("");
 
 	level01_switch.Load("pack/GameObject/number/01.png");
@@ -12,6 +14,8 @@ void LevelSwitch::Load()
 
 void LevelSwitch::init()
 {
+	fade_in.init();
+
 	//オブジェクトのα値を0で初期化
 	anime_alph = 0;
 
@@ -51,7 +55,6 @@ void LevelSwitch::Draw(int pos_x, int pos_y, bool wire)
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
 
-
 	if (level01_switch.CircleUI_Button(pos_x + 32, pos_y + 32, 18, 1, wire) == true)
 	{
 		select_level = 1;
@@ -74,8 +77,7 @@ void LevelSwitch::ResetButtonDraw(int pos_x, int pos_y, bool wire)
 {
 	if (level_reset_switch.BoxUI_Button_BOX(pos_x, pos_y, 100, 100, 1, wire) == true)
 	{
-		anime_alph = 0;
-		anime_sin = 0;
+		LevelSwitch::AnimtionInit();
 		select_level = 0;
 	}
 }

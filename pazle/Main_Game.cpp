@@ -33,7 +33,7 @@ void Main_Game::Main_Init()
 	Load_scene.Init();//ƒ[ƒh‰æ–Ê‚ğ‰Šú‰»
 }
 
-void Main_Game::Main_Game_Loop() 
+void Main_Game::Main_Game_Loop()
 {
 	wire_flag = false;
 
