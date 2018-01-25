@@ -302,7 +302,7 @@ void Level02::HitEvent()
 
 }
 
-void Level02::Draw(int pos_x, int pos_y, Filer config, bool wire)
+bool Level02::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	for (int n = 0; n < 7; n++)
 	{
@@ -337,9 +337,14 @@ void Level02::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	object[5].Draw(pos_x + 150 + random_pos[5].x, pos_y + 100 + random_pos[5].y, config, wire);//’†
 	object[6].Draw(pos_x + 100 + random_pos[6].x, pos_y + 200 + random_pos[6].y, config, wire);//‰º
 
-	if ((object[0].object_switch_flag == -1) && (object[1].object_switch_flag == -1) && (object[2].object_switch_flag == -1) && (object[3].object_switch_flag == -1) &&
-		(object[4].object_switch_flag == -1) && (object[5].object_switch_flag == -1) && (object[6].object_switch_flag == -1))
+	if ((object[0].object_switch_flag == -1) && 
+		(object[1].object_switch_flag == -1) && 
+		(object[2].object_switch_flag == -1) &&
+		(object[3].object_switch_flag == -1) &&
+		(object[4].object_switch_flag == -1) &&
+		(object[5].object_switch_flag == -1) && 
+		(object[6].object_switch_flag == -1))	
 	{
-		DrawString(0, 20, "Clear", GetColor(0, 0, 0));
+		return clear_flag = true;
 	}
 }

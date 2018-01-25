@@ -62,7 +62,11 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			}
 			else if (level_switch.select_level == 2)//レベル2
 			{
-				level02.Draw(window_x / 2 - 50, window_y / 2 - 100, config, wire);
+				if (level02.Draw(window_x / 2 - 50, window_y / 2 - 100, config, wire) == true)
+				{
+					level02.init();
+					level_switch.select_level = 3;//level02がクリアできたらselect_levelを3にする
+				}
 				level_switch.ResetButtonDraw(window_x - 100, window_y - 100, wire);//レベル選択に戻るボタン
 			}
 			else if (level_switch.select_level == 3)//レベル3
