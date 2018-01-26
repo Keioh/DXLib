@@ -4,6 +4,11 @@ void LevelSwitch::Load()
 {
 	fade_in.LoadGraphics();
 
+	for (int n = 0; n < 4; n++)
+	{
+		hit_se[n].LoadSound("pack/GameObject/se/cursor_hit.wav");
+	}
+
 	level_reset_switch.Load("");
 
 	level01_switch.Load("pack/GameObject/number/01.png");
@@ -15,6 +20,11 @@ void LevelSwitch::Load()
 void LevelSwitch::init()
 {
 	fade_in.init();
+
+	for (int n = 0; n > 4; n++)
+	{
+		hit_se[n].init();
+	}
 
 	//オブジェクトのα値を0で初期化
 	anime_alph = 0;
@@ -43,7 +53,42 @@ void LevelSwitch::AnimtionInit()
 	anime_sin = 0.0f;
 }
 
-void LevelSwitch::Draw(int pos_x, int pos_y, bool wire)
+void LevelSwitch::PlaySE(Filer config)
+{
+	//コライダーにヒットしたときに音を鳴らす処理
+	//レベル１
+	if (level01_switch.circle_collision.hit == true)
+	{
+		hit_se[0].OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+	}
+	else
+	{
+		hit_se[0].OneShotReset();
+	}
+
+	//レベル２
+	if (level02_switch.circle_collision.hit == true)
+	{
+		hit_se[1].OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+	}
+	else
+	{
+		hit_se[1].OneShotReset();
+	}
+
+	//レベル3
+	if (level03_switch.circle_collision.hit == true)
+	{
+		hit_se[2].OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+	}
+	else
+	{
+		hit_se[2].OneShotReset();
+	}
+
+}
+
+void LevelSwitch::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	anime_alph += 20;
 	anime_sin += 0.05f;
@@ -52,6 +97,8 @@ void LevelSwitch::Draw(int pos_x, int pos_y, bool wire)
 	{
 		anime_alph = 255;
 	}
+
+	LevelSwitch::PlaySE(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
 

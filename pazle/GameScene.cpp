@@ -43,7 +43,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			//レベル選択
 			if (level_switch.select_level == 0)
 			{
-				level_switch.Draw(0, 0, wire);
+				level_switch.Draw(0, 0, config, wire);
 
 				//各レベルのオブジェクトを初期化
 				level01.init();
