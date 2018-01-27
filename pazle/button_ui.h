@@ -15,10 +15,11 @@ private:
 
 	int graphics;
 	int switch_graphics;
-	int click_flag;//クリックしたかどうかのフラグ
+	int click_flag;//クリックしたかどうかのフラグ()
 
 public:
 	ButtonUI();
+
 
 	unsigned int color;
 

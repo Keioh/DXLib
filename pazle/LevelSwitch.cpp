@@ -53,7 +53,7 @@ void LevelSwitch::AnimtionInit()
 	anime_sin = 0.0f;
 }
 
-void LevelSwitch::PlaySE(Filer config)
+void LevelSwitch::PlayHitSE(Filer config)
 {
 	//コライダーにヒットしたときに音を鳴らす処理
 	//レベル１
@@ -98,7 +98,7 @@ void LevelSwitch::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		anime_alph = 255;
 	}
 
-	LevelSwitch::PlaySE(config);
+	LevelSwitch::PlayHitSE(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "FileInput.h"
 #include "LevelSwitch.h"
 
 #include "fade_in.h"
@@ -12,6 +13,7 @@
 class GameScene
 {
 private:
+	Filer config;
 
 public:
 	GameScene();
@@ -29,6 +31,8 @@ public:
 	void Init();
 	void Load();
 
-	void DrawGameScene(int window_x, int window_y, Filer config, bool wire);
+	void Config();
+
+	void DrawGameScene(int window_x, int window_y, bool wire);
 
 };

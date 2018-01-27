@@ -7,6 +7,7 @@ Main_Game::Main_Game()
 
 void Main_Game::Main_Load()
 {
+	config_data.FileOpen_Window();//Windowsファイル読み込み
 	config_data.FileOpen_Config();//設定ファイル読み込み
 	config_data.FileOpen_Language();//言語ファイル読み込み
 	main_system.size.x = config_data.window_data.windowX;//windowの大きさをmain_systemに代入
@@ -54,7 +55,7 @@ void Main_Game::Main_Game_Loop()
 
 		if (Start_scene.start_scene_flag == 1)//ゲーム画面へ
 		{
-			Game_scene.DrawGameScene(main_system.size.x, main_system.size.y, config_data, wire_flag);//ゲーム画面
+			Game_scene.DrawGameScene(main_system.size.x, main_system.size.y, wire_flag);//ゲーム画面
 			Start_scene.Init(config_data);//スタート画面初期化
 			Game_scene.Init();//ゲーム画面初期化
 			Load_scene.Init();//ロード画面を初期化

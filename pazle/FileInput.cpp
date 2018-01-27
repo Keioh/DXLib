@@ -3,7 +3,7 @@
 
 void Filer::FileOpen_Config()//設定ファイル読み込み
 {
-	Filer::FileOpen_Window();//windowファイル読み込み
+	//Filer::FileOpen_Window();//windowファイル読み込み
 
 	if ((fp = fopen("config/config.txt", "r")) == NULL)
 	{

@@ -19,7 +19,7 @@ private:
 
 	float anime_sin;
 
-	void PlaySE(Filer config);
+	void PlayHitSE(Filer config);
 
 public:
 
