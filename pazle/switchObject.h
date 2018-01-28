@@ -14,6 +14,10 @@ private:
 	bool purple_light;
 	bool white_light;
 
+	bool red_color_flag;
+	bool green_color_flag;
+	bool blue_color_flag;
+
 	float r_buffer, click_r;
 	float alph_double;
 

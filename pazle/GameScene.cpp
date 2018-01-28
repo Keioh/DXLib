@@ -35,7 +35,6 @@ void GameScene::Load()
 void GameScene::Config()
 {
 	config.FileOpen_Config();
-
 }
 
 void GameScene::DrawGameScene(int window_x, int window_y,  bool wire)

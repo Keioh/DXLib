@@ -7,6 +7,10 @@ void SwitchObject::init()
 	orange_light = false;
 	purple_light = false;
 
+	green_color_flag = false;
+	red_color_flag = false;
+	blue_color_flag = false;
+
 	draw_alph = 0;
 	alph_double = 0.0f;
 
@@ -201,9 +205,67 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		r_buffer += 0.1f;
 		r = sin(r_buffer) * 4;
 
-		red += 3;
-		green += 4;
-		blue += 5;
+		//円の色を変更
+		if (red_color_flag == false)
+		{
+			red += 3;
+		}
+		else
+		{
+			red -= 3;
+		}
+
+		if (green_color_flag == false)
+		{
+			green += 4;
+		}
+		else
+		{
+			green -= 4;
+		}
+
+		if (blue_color_flag == false)
+		{
+			blue += 5;
+		}
+		else
+		{
+			blue -= 5;
+		}
+
+		//各色が上限超えたらフラグを変える
+		if (red > 255)
+		{
+			red = 255;//上限値で初期化してから
+			red_color_flag = true;
+		}
+		else if (red < 0)
+		{
+			red = 0;//上限値で初期化してから
+			red_color_flag = false;
+		}
+
+		if (green > 255)
+		{
+			green = 255;//上限値で初期化してから
+			green_color_flag = true;
+		}
+		else if (green < 0)
+		{
+			green = 0;//上限値で初期化してから
+			green_color_flag = false;
+		}
+
+		if (blue > 255)
+		{
+			blue = 255;//上限値で初期化してから
+			blue_color_flag = true;
+		}
+		else if(blue < 0)
+		{
+			blue = 0;//上限値で初期化してから
+			blue_color_flag = false;
+		}
 	}
 	else
 	{		
