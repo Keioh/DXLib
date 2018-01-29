@@ -9,6 +9,8 @@ private:
 	int line_color[4];
 	int timer;
 
+	bool line_color_flag;
+
 	Vector3 random_pos[4];
 
 	void ClickEvent();

@@ -2,6 +2,7 @@
 
 void Level01::init()
 {
+	line_color_flag = false;
 	clear_flag = false;
 	anime_alph = 255;
 	rand_power = 10;
@@ -107,19 +108,51 @@ void Level01::ClickEvent()
 
 void Level01::HitEvent()
 {
+
+	//色の上限値を設定して、それを超えないように処理
+	for (int n = 0; n < 4; n++)
+	{
+		if (line_color[n] > 250)
+		{
+			line_color[n] = 250;
+			line_color_flag = true;
+		}
+		else if (line_color[n] < 5)
+		{
+			line_color[n] = 5;
+			line_color_flag = false;
+		}
+	}
+
+	//色を変える処理
+	if (line_color_flag == false)
+	{
+		for (int n = 0; n < 4; n++)
+		{
+			line_color[n] += 5;
+		}
+	}
+	else if (line_color_flag == true)
+	{
+		for (int n = 0; n < 4; n++)
+		{
+			line_color[n] -= 5;
+		}
+	}
+
 	//object[0]にヒットしたとき
 	if (object[0].switch_object.circle_collision.hit == true)
 	{
 		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 
-		DrawLineAA(object[0].pos.x, object[0].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[0]++, line_color[0]++, line_color[0]++), 5);//[1]へ延びる線
-		DrawLineAA(object[0].pos.x, object[0].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[0]++, line_color[0]++, line_color[0]++), 5);//[2]へ延びる線
+		DrawLineAA(object[0].pos.x, object[0].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[0], line_color[0], line_color[0]), 5);//[1]へ延びる線
+		DrawLineAA(object[0].pos.x, object[0].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[0], line_color[0], line_color[0]), 5);//[2]へ延びる線
 
 	}
 	else
 	{
-		line_color[0] = 0;
+		line_color[0] = 0;//色を0で処理
 	}
 
 	//object[1]にヒットしたとき
@@ -129,9 +162,9 @@ void Level01::HitEvent()
 		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 		object[3].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 
-		DrawLineAA(object[1].pos.x, object[1].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[1]++, line_color[1]++, line_color[1]++), 5);//[2]へ延びる線
-		DrawLineAA(object[1].pos.x, object[1].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[1]++, line_color[1]++, line_color[1]++), 5);//[3]へ延びる線
-		DrawLineAA(object[1].pos.x, object[1].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[1]++, line_color[1]++, line_color[1]++), 5);//[0]へ延びる線
+		DrawLineAA(object[1].pos.x, object[1].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[1], line_color[1], line_color[1]), 5);//[2]へ延びる線
+		DrawLineAA(object[1].pos.x, object[1].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[1], line_color[1], line_color[1]), 5);//[3]へ延びる線
+		DrawLineAA(object[1].pos.x, object[1].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[1], line_color[1], line_color[1]), 5);//[0]へ延びる線
 
 	}
 	else
@@ -146,9 +179,9 @@ void Level01::HitEvent()
 		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 		object[3].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 
-		DrawLineAA(object[2].pos.x, object[2].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[0]へ延びる線
-		DrawLineAA(object[2].pos.x, object[2].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[1]へ延びる線
-		DrawLineAA(object[2].pos.x, object[2].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[2]++, line_color[2]++, line_color[2]++), 5);//[3]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[0].pos.x, object[0].pos.y, GetColor(line_color[2], line_color[2], line_color[2]), 5);//[0]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[2], line_color[2], line_color[2]), 5);//[1]へ延びる線
+		DrawLineAA(object[2].pos.x, object[2].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[2], line_color[2], line_color[2]), 5);//[3]へ延びる線
 
 	}
 	else
@@ -162,8 +195,8 @@ void Level01::HitEvent()
 		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 
-		DrawLineAA(object[3].pos.x, object[3].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[3]++, line_color[3]++, line_color[3]++), 5);//[1]へ延びる線
-		DrawLineAA(object[3].pos.x, object[3].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[3]++, line_color[3]++, line_color[3]++), 5);//[2]へ延びる線
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[3]++, line_color[3], line_color[3]), 5);//[1]へ延びる線
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[3]++, line_color[3], line_color[3]), 5);//[2]へ延びる線
 
 	}
 	else
