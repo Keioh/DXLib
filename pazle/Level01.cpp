@@ -112,12 +112,12 @@ void Level01::HitEvent()
 	//F‚ÌãŒÀ’l‚ğİ’è‚µ‚ÄA‚»‚ê‚ğ’´‚¦‚È‚¢‚æ‚¤‚Éˆ—
 	for (int n = 0; n < 4; n++)
 	{
-		if (line_color[n] > 250)
+		if (line_color[n] >= 250)
 		{
 			line_color[n] = 250;
 			line_color_flag = true;
 		}
-		else if (line_color[n] < 5)
+		else if (line_color[n] <= 5)
 		{
 			line_color[n] = 5;
 			line_color_flag = false;
@@ -195,8 +195,8 @@ void Level01::HitEvent()
 		object[1].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 		object[2].rand_pos = { GetRand(rand_power),GetRand(rand_power),GetRand(rand_power) };
 
-		DrawLineAA(object[3].pos.x, object[3].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[3]++, line_color[3], line_color[3]), 5);//[1]‚Ö‰„‚Ñ‚éü
-		DrawLineAA(object[3].pos.x, object[3].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[3]++, line_color[3], line_color[3]), 5);//[2]‚Ö‰„‚Ñ‚éü
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[3], line_color[3], line_color[3]), 5);//[1]‚Ö‰„‚Ñ‚éü
+		DrawLineAA(object[3].pos.x, object[3].pos.y, object[2].pos.x, object[2].pos.y, GetColor(line_color[3], line_color[3], line_color[3]), 5);//[2]‚Ö‰„‚Ñ‚éü
 
 	}
 	else
