@@ -1,10 +1,12 @@
 #pragma once
 #include "button_ui.h"
+#include "FileInput.h"
+#include "sound_system.h"
 
 class Option
 {
 private:
-	int click_flag;
+	//int click_flag;
 
 	int hit_buffer;
 
@@ -14,9 +16,12 @@ public:
 	Option();
 
 	ButtonUI option;
+	SoundSystem se_option, se_option_click;
 
 	void init();
-	void LoadGraphics();
+	void Load();
 
-	int DrawOptionButton(int x, int y, float speed, bool wire);
+	void CollisionHit(Filer config);
+
+	int DrawOptionButton(int x, int y, float speed, Filer config, bool wire);
 };
