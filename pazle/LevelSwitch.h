@@ -10,6 +10,7 @@ private:
 	FadeIn fade_in;
 
 	SoundSystem hit_se[4];
+	SoundSystem click_se[4];
 
 	ButtonUI level_reset_switch;
 
@@ -20,6 +21,7 @@ private:
 	float anime_sin;
 
 	void PlayHitSE(Filer config);
+	void PlayClickSE(Filer config);
 
 public:
 

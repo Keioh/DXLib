@@ -7,6 +7,7 @@ void LevelSwitch::Load()
 	for (int n = 0; n < 4; n++)
 	{
 		hit_se[n].LoadSound("pack/GameObject/se/cursor_hit.wav");
+		click_se[n].LoadSound("pack/GameObject/se/click.wav");
 	}
 
 	level_reset_switch.Load("");
@@ -21,9 +22,10 @@ void LevelSwitch::init()
 {
 	fade_in.init();
 
-	for (int n = 0; n > 4; n++)
-	{
+	for (int n = 0; n < 4; n++)
+	{	
 		hit_se[n].init();
+		click_se[n].init();
 	}
 
 	//オブジェクトのα値を0で初期化
@@ -88,6 +90,39 @@ void LevelSwitch::PlayHitSE(Filer config)
 
 }
 
+void LevelSwitch::PlayClickSE(Filer config)
+{
+	//レベル1
+	if (level01_switch.mouse_input.click == true)
+	{
+		click_se[0].OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+	}
+	else
+	{
+		click_se[0].OneShotReset();
+	}
+
+	//レベル2
+	if (level02_switch.mouse_input.click == true)
+	{
+		click_se[1].OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+	}
+	else
+	{
+		click_se[1].OneShotReset();
+	}
+
+	//レベル3
+	if (level03_switch.mouse_input.click == true)
+	{
+		click_se[2].OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);
+	}
+	else
+	{
+		click_se[2].OneShotReset();
+	}
+}
+
 void LevelSwitch::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	anime_alph += 20;
@@ -98,10 +133,9 @@ void LevelSwitch::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		anime_alph = 255;
 	}
 
-	LevelSwitch::PlayHitSE(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
-
+	
 	if (level01_switch.CircleUI_Button(pos_x + 32, pos_y + 32, 18, 1, wire) == true)
 	{
 		select_level = 1;
@@ -116,6 +150,9 @@ void LevelSwitch::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	{
 		select_level = 3;
 	}	
+
+	LevelSwitch::PlayHitSE(config);
+	LevelSwitch::PlayClickSE(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 }
