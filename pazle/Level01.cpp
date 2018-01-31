@@ -11,14 +11,11 @@ void Level01::init()
 
 	for (int n = 0; n < 4; n++)
 	{
-		random_pos[n] = { GetRand(80),GetRand(80),0 };
-	}
+		random_pos[n] = { GetRand(80),GetRand(80), 0 };
 
-	//初期化
-	object[0].init();
-	object[1].init();
-	object[2].init();
-	object[3].init();
+		//初期化
+		object[n].init();
+	}
 
 	//もともとスイッチがオンになっているところを1にする。
 	object[1].switch_object.switch_flag = 1;
@@ -28,10 +25,10 @@ void Level01::init()
 
 void Level01::Load()
 {
-	object[0].Load();
-	object[1].Load();
-	object[2].Load();
-	object[3].Load();
+	for (int n = 0; n < 4; n++)
+	{
+		object[n].Load();
+	}
 }
 
 void Level01::ClickEvent()
