@@ -6,7 +6,7 @@ void Level01::init()
 	clear_flag = false;
 	anime_alph = 255;
 	rand_power = 10;
-
+	line_anime = 0;
 	timer = 0;
 
 	for (int n = 0; n < 4; n++)
@@ -15,7 +15,10 @@ void Level01::init()
 
 		//初期化
 		object[n].init();
+		box_number[n] = 0;
 	}
+
+	triangle_number = 3;
 
 	//もともとスイッチがオンになっているところを1にする。
 	object[1].switch_object.switch_flag = 1;
@@ -180,6 +183,7 @@ void Level01::HitEvent()
 		DrawLineAA(object[2].pos.x, object[2].pos.y, object[1].pos.x, object[1].pos.y, GetColor(line_color[2], line_color[2], line_color[2]), 5);//[1]へ延びる線
 		DrawLineAA(object[2].pos.x, object[2].pos.y, object[3].pos.x, object[3].pos.y, GetColor(line_color[2], line_color[2], line_color[2]), 5);//[3]へ延びる線
 
+		
 	}
 	else
 	{
@@ -221,11 +225,60 @@ bool Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		}
 	}
 
+	//三角へとつながる線
+	if ((box_number[0] + box_number[1] + box_number[2]) == triangle_number)
+	{
+		line_anime++;
+		if (line_anime > 75)//線が三角へとつながったら
+		{
+			line_anime = 75;
+		}
+		DrawLineAA(pos_x + 200, pos_y + 100, pos_x + (200 + line_anime), pos_y + 100, GetColor(80, 80, 255), 6);
+	}
+	else
+	{
+		line_anime--;
+		if (line_anime < 0)
+		{
+			line_anime = 0;
+		}
+	}
+
+	//四角へとつながる線
+	DrawLineAA(object[0].pos.x + random_pos[0].x, object[0].pos.y + -random_pos[0].y, pos_x - 16 + 150, pos_y, GetColor(255, 50, 50), 4);
+	DrawLineAA(object[2].pos.x + random_pos[2].x, object[2].pos.y + -random_pos[2].y, pos_x - 16 + 150, pos_y + 100, GetColor(255, 50, 50), 4);
+	DrawLineAA(object[3].pos.x + random_pos[3].x, object[3].pos.y + -random_pos[3].y, pos_x - 16 + 150, pos_y + 200, GetColor(255, 50, 50), 4);
+	DrawLineAA(object[2].pos.x + random_pos[2].x, object[2].pos.y + -random_pos[2].y, object[1].pos.x + random_pos[1].x, object[1].pos.y + -random_pos[1].y, GetColor(255, 50, 50), 4);
+
+	DrawLineAA(pos_x + 150, pos_y, pos_x + 200, pos_y, GetColor(255, 50, 50), 4);
+	DrawLineAA(pos_x + 150, pos_y + 100, pos_x + 200, pos_y + 100, GetColor(255, 50, 50), 4);
+	DrawLineAA(pos_x + 150, pos_y + 200, pos_x + 200, pos_y + 200, GetColor(255, 50, 50), 4);
+	DrawLineAA(pos_x + 198, pos_y, pos_x + 198, pos_y + 200, GetColor(255, 50, 50), 4);
+
+	//三角描写と文字描写
+	DrawTriangleAA(pos_x + 300, pos_y + 75, pos_x + 300, pos_y + 125, pos_x + 265, pos_y + 100, GetColor(50, 200, 50), TRUE);
+	DrawFormatString(pos_x + 285, pos_y + 92, GetColor(255, 255, 255), "%d", triangle_number);
+
+
 	//ヒットしたときの処理
 	Level01::HitEvent();
 
 	//クリックしたときの処理
 	Level01::ClickEvent();
+
+	//四角(横の合計と四角描写と数字描写の処理)
+	box_number[0] = object[0].number;
+	box_number[1] = object[1].number + object[2].number;
+	box_number[2] = object[3].number;
+
+	DrawBox(pos_x - 16 + 150, pos_y - 16, pos_x + 16 + 150, pos_y + 16, GetColor(150, 150, 150), TRUE);
+	DrawFormatString(pos_x + 150 - 4, pos_y - 8, GetColor(255, 255, 255), "%d", box_number[0]);
+
+	DrawBox(pos_x - 16 + 150, pos_y - 16 + 100, pos_x + 16 + 150, pos_y + 16 + 100, GetColor(150, 150, 150), TRUE);
+	DrawFormatString(pos_x + 150 - 4, pos_y - 8 + 100, GetColor(255, 255, 255), "%d", box_number[1]);
+
+	DrawBox(pos_x - 16 + 150, pos_y - 16 + 200, pos_x + 16 + 150, pos_y + 16 + 200, GetColor(150, 150, 150), TRUE);
+	DrawFormatString(pos_x + 150 - 4, pos_y - 8 + 200, GetColor(255, 255, 255), "%d", box_number[2]);
 
 
 	//描写
@@ -236,11 +289,16 @@ bool Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	object[3].Draw(pos_x + random_pos[3].x, pos_y + 200 + random_pos[3].y, config, wire);//下
 	//SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
+
+	//全部黒だったらクリアフラグを立てる
 	if ((object[0].object_switch_flag == -1) &&
 		(object[1].object_switch_flag == -1) &&
 		(object[2].object_switch_flag == -1) &&
 		(object[3].object_switch_flag == -1))
 	{
-		return clear_flag = true;
+		if (line_anime == 75)//線が三角形につながっていたら
+		{
+			return clear_flag = true;
+		}
 	}
 }

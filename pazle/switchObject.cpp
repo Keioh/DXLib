@@ -14,6 +14,8 @@ void SwitchObject::init()
 	draw_alph = 0;
 	alph_double = 0.0f;
 
+	number = 0;
+
 	light_grahics_blue_alph = 0;
 	light_grahics_green_alph = 255;
 	light_grahics_orange_alph = 255;
@@ -293,6 +295,14 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	if (switch_object.mouse_input.click == true)
 	{
 		click_r = 15;
+
+		number += 1;//数字を増やす
+
+		if (number > 1)//2を超えたら-1にする
+		{
+			number = -1;
+		}
+
 		click_se.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);//ワンショット再生
 	}
 	else
@@ -307,6 +317,7 @@ void SwitchObject::Draw(int pos_x, int pos_y, Filer config, bool wire)
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, draw_alph);//オブジェクト全体の透過処理
 	object_switch_flag = switch_object.CircleUI_Button_Switch(pos.x, pos.y, 18 + r + click_r, 1, wire);
+	DrawFormatString(pos.x - 3, pos.y - 6, GetColor(0, 0, 0), "%d", number);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 

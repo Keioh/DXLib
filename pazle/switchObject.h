@@ -42,6 +42,8 @@ public:
 
 	int object_switch_flag;
 
+	int number;//Œ»İ‚Ì”š(-1 ` 1)
+
 	void init();
 	void SoundReset();
 

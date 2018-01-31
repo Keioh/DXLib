@@ -9,9 +9,14 @@ private:
 	int line_color[4];
 	int timer;
 
+	int line_anime;
+
 	bool line_color_flag;
 
 	Vector3 random_pos[4];
+
+	int box_number[4];
+	int triangle_number;
 
 	void ClickEvent();
 	void HitEvent();
