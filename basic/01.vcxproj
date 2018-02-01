@@ -103,6 +103,7 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="japanese.cpp" />
+    <ClCompile Include="Line3D.cpp" />
     <ClCompile Include="load.cpp" />
     <ClCompile Include="Loading.cpp" />
     <ClCompile Include="LoadingScene.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="japanese.h" />
+    <ClInclude Include="Line3D.h" />
     <ClInclude Include="load.h" />
     <ClInclude Include="Loading.h" />
     <ClInclude Include="LoadingScene.h" />

@@ -91,6 +91,18 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\load_object">
       <UniqueIdentifier>{4fad663e-ea61-4249-bbcc-2c2e3636c989}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_scene_object">
+      <UniqueIdentifier>{96f2316a-5e8a-488d-a735-0bd1fcf7b488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object">
+      <UniqueIdentifier>{7bf2d865-4398-491b-b3ce-7d451a3a9198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\3D">
+      <UniqueIdentifier>{18a7aa14-498d-4e7a-9266-5d712bb5b14a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\3D">
+      <UniqueIdentifier>{efd75e90-dfd7-4251-af54-0625ec4b1eb1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -191,6 +203,9 @@
     </ClCompile>
     <ClCompile Include="japanese.cpp">
       <Filter>ソース ファイル\main_res\game_object\option_object</Filter>
+    </ClCompile>
+    <ClCompile Include="Line3D.cpp">
+      <Filter>ソース ファイル\main_res\game_object\3D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +310,9 @@
     </ClInclude>
     <ClInclude Include="japanese.h">
       <Filter>ヘッダー ファイル\main_res\game_object\option_object</Filter>
+    </ClInclude>
+    <ClInclude Include="Line3D.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\3D</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,5 +1,7 @@
 #pragma once
 #include "button_ui.h"
+#include "FileInput.h"
+#include "sound_system.h"
 
 class Load
 {
@@ -11,11 +13,15 @@ private:
 public:
 	Load();
 
-	ButtonUI load;
+	ButtonUI load;	
+	SoundSystem se_load, se_load_click;
+
 
 	void init();
-	void LoadGraphics();
+	void LoadData();
 
-	int DrawLoadButton(int x, int y, float speed, bool wire);
+	void CollisionHit(Filer config);
+
+	int DrawLoadButton(int x, int y, float speed, Filer config, bool wire);
 
 };

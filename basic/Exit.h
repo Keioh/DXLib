@@ -1,5 +1,7 @@
 #pragma once
 #include "button_ui.h"
+#include "FileInput.h"
+#include "sound_system.h"
 
 class Exit
 {
@@ -12,9 +14,12 @@ public:
 	Exit();
 
 	ButtonUI exit;
+	SoundSystem se_exit, se_exit_click;
 
 	void init();
-	void LoadGraphics();
+	void Load();
 
-	int DrawExitButton(int x, int y, float speed, bool wire);
+	void CollisionHit(Filer config);
+
+	int DrawExitButton(int x, int y, float speed, Filer config, bool wire);
 };

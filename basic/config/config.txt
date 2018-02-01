@@ -1,5 +1,5 @@
 BGM_Volume=100
-SE_Volume=100
+SE_Volume=255
 BGM_Mute=1
 SE_Mute=-1
 Japanese=1

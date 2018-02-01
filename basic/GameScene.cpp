@@ -8,17 +8,32 @@ GameScene::GameScene()
 void GameScene::Init()
 {
 	game_scene_flag = 0;
+
+	fade_out.init();
+
 }
 
 void GameScene::Load()
 {
+	fade_out.LoadGraphics();
+
 }
 
-void GameScene::DrawGameScene(int window_x, int window_y, bool wire)
+//コンフィグデータ読み込み
+void GameScene::Config()
 {
+	config.FileOpen_Config();
+}
+
+void GameScene::DrawGameScene(int window_x, int window_y,  bool wire)
+{
+	SetBackgroundColor(50, 50, 50);
+	GameScene::Config();
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
-
+		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
+		{
+			DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
+		}
 	}
 }
