@@ -226,23 +226,7 @@ bool Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	}
 
 	//OŠp‚Ö‚Æ‚Â‚È‚ª‚éü
-	if ((box_number[0] + box_number[1] + box_number[2]) == triangle_number)
-	{
-		line_anime++;
-		if (line_anime > 75)//ü‚ªOŠp‚Ö‚Æ‚Â‚È‚ª‚Á‚½‚ç
-		{
-			line_anime = 75;
-		}
-		DrawLineAA(pos_x + 200, pos_y + 100, pos_x + (200 + line_anime), pos_y + 100, GetColor(80, 80, 255), 6);
-	}
-	else
-	{
-		line_anime--;
-		if (line_anime < 0)
-		{
-			line_anime = 0;
-		}
-	}
+	DrawLineAA(pos_x + 200, pos_y + 100, pos_x + (200 + line_anime), pos_y + 100, GetColor(80, 80, 255), 6);
 
 	//lŠp‚Ö‚Æ‚Â‚È‚ª‚éü
 	DrawLineAA(object[0].pos.x + random_pos[0].x, object[0].pos.y + -random_pos[0].y, pos_x - 16 + 150, pos_y, GetColor(255, 50, 50), 4);
@@ -294,11 +278,27 @@ bool Level01::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	if ((object[0].object_switch_flag == -1) &&
 		(object[1].object_switch_flag == -1) &&
 		(object[2].object_switch_flag == -1) &&
-		(object[3].object_switch_flag == -1))
+		(object[3].object_switch_flag == -1) &&
+		(box_number[0] + box_number[1] + box_number[2]) == triangle_number)
 	{
-		if (line_anime == 75)//ü‚ªOŠpŒ`‚É‚Â‚È‚ª‚Á‚Ä‚¢‚½‚ç
+		//OŠp‚Ö‚Æ‚Â‚È‚ª‚éü
+		line_anime++;
+		if (line_anime > 75)//ü‚ªOŠp‚Ö‚Æ‚Â‚È‚ª‚Á‚½‚ç
 		{
+			line_anime = 75;
 			return clear_flag = true;
+		}
+		else
+		{
+			return clear_flag = false;
+		}
+	}
+	else
+	{
+		line_anime--;
+		if (line_anime < 0)
+		{
+			line_anime = 0;
 		}
 	}
 }
