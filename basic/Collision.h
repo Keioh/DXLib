@@ -13,6 +13,7 @@ public:
 	~Collision(){};
 
 	bool hit;
+	bool active = true;//コライダーをon、offする変数
 
 	int size_x;
 	int size_y;
