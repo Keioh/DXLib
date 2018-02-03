@@ -193,7 +193,7 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 		{
 			if (fade_in.DrawFadeIn(0, 0, 15.0f) == true)
 			{
-				if (option_scene.DrawOptionScene(window_x, window_y, config, wire) == true)
+				if (option_scene.DrawOptionScene(window_x, window_y, config, wire) == true)//ブラックアウトしたら
 				{
 					StartScene::Init(config);//初期化してから
 					flag = 0;
