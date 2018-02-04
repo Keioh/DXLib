@@ -97,6 +97,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\3D">
       <UniqueIdentifier>{efd75e90-dfd7-4251-af54-0625ec4b1eb1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_scene_object">
+      <UniqueIdentifier>{1f97aa51-ca95-4b8d-946d-83213b401cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object">
+      <UniqueIdentifier>{42c94e61-092d-4bfd-a5ec-b7fd5fd62403}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">

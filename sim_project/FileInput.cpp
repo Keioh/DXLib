@@ -94,7 +94,8 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 
 	fclose(fp);	
 	
-	Filer::CharacterNameJPN();
+	Filer::CharacterNameJPN();//キャラクターの名前を読み込む
+	Filer::CharacterDescriptionJPN();//キャラクターの説明を読み込む
 }
 
 void Filer::FileOpen_English()//英語ファイル読み込み
@@ -118,7 +119,8 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 
 	fclose(fp);	
 
-	Filer::CharacterNameENG();
+	Filer::CharacterNameENG();//キャラクターの名前を読み込む
+	Filer::CharacterDescriptionENG();//キャラクターの説明を読み込む
 }
 
 void Filer::CharacterNameJPN()
@@ -148,6 +150,36 @@ void Filer::CharacterNameENG()
 	fgets(character_name.charcter_name_1, 128, fp);
 	fgets(character_name.charcter_name_2, 128, fp);
 	fgets(character_name.charcter_name_3, 128, fp);
+
+	fclose(fp);
+}
+
+void Filer::CharacterDescriptionJPN()
+{
+	if ((fp = fopen("language/jpn/character1/CharacterDescriptionJPN.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(character_description.charcter_0, 256, fp);
+	fgets(character_description.charcter_1, 256, fp);
+	fgets(character_description.charcter_2, 256, fp);
+	fgets(character_description.charcter_3, 256, fp);
+
+	fclose(fp);
+}
+
+void Filer::CharacterDescriptionENG()
+{
+	if ((fp = fopen("language/eng/character1/CharacterDescriptionENG.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(character_description.charcter_0, 256, fp);
+	fgets(character_description.charcter_1, 256, fp);
+	fgets(character_description.charcter_2, 256, fp);
+	fgets(character_description.charcter_3, 256, fp);
 
 	fclose(fp);
 }

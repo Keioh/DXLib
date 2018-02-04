@@ -21,8 +21,15 @@ public:
 	LANGUAGE_DATA language_data;//言語に関する設定
 	WINDOW_DATA window_data;//画面に関する設定
 
-	STRING_DATA string_data;//会話などのデータ
+
+	//文字列ファイル関連
+	STRING_DATA string_data;//タイトル画面とオプション画面などのデータ
+
 	STRING_DATA_CHARACTER_NAME character_name;//キャラクターの名前
+
+	STRING_DATA_CHARACTER_DESCRIPTION character_description;//キャラクター説明
+
+
 
 	void FileOpen_Config();//設定ファイル読み込み
 
@@ -34,6 +41,10 @@ public:
 	void FileOpen_Japanese();//日本語ファイル読み込み
 	void FileOpen_English();//英語ファイル読み込み
 
-	void CharacterNameJPN();
-	void CharacterNameENG();
+	void CharacterNameJPN();//日本語ファイル読み込み(キャラクタの名前)
+	void CharacterNameENG();//英語ファイル読み込み(キャラクタの説明)
+
+	void CharacterDescriptionJPN();//日本語ファイル読み込み(キャラクタの説明)
+	void CharacterDescriptionENG();//英語ファイル読み込み(キャラクタの説明)
+
 };

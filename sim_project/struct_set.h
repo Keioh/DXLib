@@ -1,4 +1,7 @@
 #pragma once
+#include <string.h>
+
+using namespace std;
 
 struct SOUND_DATA//音に関する情報
 {
@@ -22,7 +25,7 @@ struct LANGUAGE_DATA
 	int english_flag;
 };
 
-//一行１２８文字まで
+//一行１２８文字まで(タイトル画面、オプション画面の説明)
 struct STRING_DATA
 {
 	char bgm_volume[128];
@@ -33,11 +36,20 @@ struct STRING_DATA
 	char start_info_exit[128];
 };
 
-//一行１２８文字まで
+//一行１２８文字まで(キャラクタの名前)
 struct STRING_DATA_CHARACTER_NAME
 {
 	char charcter_name_0[128];
 	char charcter_name_1[128];
 	char charcter_name_2[128];
 	char charcter_name_3[128];
+};
+
+//一行256文字まで(キャラクタ説明)
+struct STRING_DATA_CHARACTER_DESCRIPTION
+{
+	char charcter_0[256];
+	char charcter_1[256];
+	char charcter_2[256];
+	char charcter_3[256];	
 };
