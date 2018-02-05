@@ -103,6 +103,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object">
       <UniqueIdentifier>{42c94e61-092d-4bfd-a5ec-b7fd5fd62403}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\basic\camera">
+      <UniqueIdentifier>{17ee4483-2464-4737-9abd-546b6606e287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\basic\camera">
+      <UniqueIdentifier>{354d2094-7350-42f3-ad60-717650a91118}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -208,7 +214,10 @@
       <Filter>ソース ファイル\main_res\game_object\3D</Filter>
     </ClCompile>
     <ClCompile Include="character_selection.cpp">
-      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+      <Filter>ソース ファイル\main_res\game_object\game_scene_object</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera3D.cpp">
+      <Filter>ソース ファイル\main_res\game_object\basic\camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -318,7 +327,10 @@
       <Filter>ヘッダー ファイル\main_res\game_object\3D</Filter>
     </ClInclude>
     <ClInclude Include="character_selection.h">
-      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+      <Filter>ヘッダー ファイル\main_res\game_object\game_scene_object</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera3D.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\basic\camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

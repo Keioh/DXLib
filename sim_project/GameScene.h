@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "FileInput.h"
+#include "Camera3D.h"
 
 #include "character_selection.h"
 
@@ -10,6 +11,7 @@
 class GameScene
 {
 private:
+	Camera3D camera;
 	CharacterSelection CS;
 
 public:

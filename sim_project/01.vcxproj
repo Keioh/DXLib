@@ -94,6 +94,7 @@
     <ClCompile Include="bgm_mute.cpp" />
     <ClCompile Include="bgm_volume_slider.cpp" />
     <ClCompile Include="button_ui.cpp" />
+    <ClCompile Include="Camera3D.cpp" />
     <ClCompile Include="character_selection.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="english.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="bgm_mute.h" />
     <ClInclude Include="bgm_volume_slider.h" />
     <ClInclude Include="button_ui.h" />
+    <ClInclude Include="Camera3D.h" />
     <ClInclude Include="character_selection.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="define.h" />
