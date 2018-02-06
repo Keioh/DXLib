@@ -15,7 +15,8 @@ void GameScene::Init()
 
 	CS.init();
 
-	
+	camera.Init();
+
 }
 
 void GameScene::Load()
@@ -25,7 +26,7 @@ void GameScene::Load()
 
 	CS.Load();
 
-	box3D = MV1LoadModel("pack/GameObject/models/box.x");
+	box3D = MV1LoadModel("pack/GameObject/models/terrein.x");
 }
 
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
@@ -41,6 +42,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 		config.FileOpen_English();
 	}
 
+	camera.Init();//カメラを初期化
+
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
@@ -54,13 +57,11 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{	
-				MV1SetPosition(box3D, VGet(0, 0, 100));
+				MV1SetPosition(box3D, VGet(0, 0, 1.0f));
 
-				camera.Set(VGet(0.0f, 0.0f, 0.0f));
+				camera.Set(VGet(0.0f, 5.0f, 0.0f));
 				MV1DrawModel(box3D);
-				//DrawSphere3D(VGet(0.0f, 0.0f, 500.f), 100.f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
-				//DrawCone3D(VGet(0.0f, 100.0f, 500.0f), VGet(0.0f, -100.0f, 500.0f), 100.0f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
-				//DrawTriangle3D(VGet(0.0f, 100.0f, 500.0f), VGet(100.0f, -100.0f, 500.0f), VGet(-100.0f, -100.0f, 500.0f), GetColor(255, 0, 0),TRUE);
+
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{
