@@ -12,7 +12,10 @@ void GameScene::Init()
 	fade_out.init();
 	fade_in.init();
 
+
 	CS.init();
+
+	
 }
 
 void GameScene::Load()
@@ -49,9 +52,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{
-				camera.Set(VGet(config.window_data.windowX, config.window_data.windowY, 0.0f));
-				DrawSphere3D(VGet(0.f, 0.f, 0.f), 250.f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
-
+				camera.Set(VGet(0.0f, 0.0f, 0.0f));
+				DrawSphere3D(VGet(0.0f, 0.0f, 500.f), 100.f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{
