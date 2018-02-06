@@ -59,9 +59,9 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			{	
 				MV1SetPosition(box3D, VGet(0, 0, 1.0f));
 
-				camera.Set(VGet(0.0f, 5.0f, 0.0f));
 				MV1DrawModel(box3D);
 
+				camera.Set(window_x, window_y, VGet(0.0f, 5.0f, 0.0f), wire);//カメラ
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{

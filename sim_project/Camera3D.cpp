@@ -7,20 +7,32 @@ void Camera3D::Init()
 	MV1SetLoadModelUsePhysicsMode(DX_LOADMODEL_PHYSICS_REALTIME);//ï®óùââéZÇÃédï˚ÇéwíË
 }
 
-void Camera3D::Set(VECTOR pos)
+void Camera3D::Set(int window_x, int window_y, VECTOR pos, bool wire)
 {
-	//åªç›ÇÃà íuÇï€ë∂
-	xF = pos.x;
-	yF = pos.y;
-	zF = pos.z;
-
-	Camera3D::Move(0.1f);
+	Camera3D::Move(window_x, window_y, 0.1f, wire);
 
 	SetCameraPositionAndAngle(VAdd(pos, moved_pos), 45 * (DX_PI_F / 180), 0.0f, 0.0f);
 }
 
-void Camera3D::Move(float speed)
+void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 {
+	if (cursol_move_up.BoxColliderMouse(0, window_x, 0, 5, wire) == true)
+	{
+		moved_pos.z += speed;
+	}
+	if (cursol_move_down.BoxColliderMouse(0, window_x, window_y - 5, 5, wire) == true)
+	{
+		moved_pos.z -= speed;
+	}
+	if (cursol_move_left.BoxColliderMouse(0, 5, 0, window_y, wire) == true)
+	{
+		moved_pos.x -= speed;
+	}
+	if (cursol_move_right.BoxColliderMouse(window_x - 5, 5, 0, window_y, wire) == true)
+	{
+		moved_pos.x += speed;
+	}
+
 	if (CheckHitKey(KEY_INPUT_W) == 1)
 	{
 		moved_pos.z += speed;
