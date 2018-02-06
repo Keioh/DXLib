@@ -14,6 +14,8 @@ private:
 	Camera3D camera;
 	CharacterSelection CS;
 
+	int box3D;
+
 public:
 	GameScene();
 

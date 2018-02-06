@@ -24,6 +24,8 @@ void GameScene::Load()
 	fade_in.LoadGraphics();
 
 	CS.Load();
+
+	box3D = MV1LoadModel("pack/GameObject/models/box.x");
 }
 
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
@@ -51,9 +53,14 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				CS.Draw(window_x, window_y, config, wire);
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
-			{
+			{	
+				MV1SetPosition(box3D, VGet(0, 0, 100));
+
 				camera.Set(VGet(0.0f, 0.0f, 0.0f));
-				DrawSphere3D(VGet(0.0f, 0.0f, 500.f), 100.f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
+				MV1DrawModel(box3D);
+				//DrawSphere3D(VGet(0.0f, 0.0f, 500.f), 100.f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
+				//DrawCone3D(VGet(0.0f, 100.0f, 500.0f), VGet(0.0f, -100.0f, 500.0f), 100.0f, 128, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
+				//DrawTriangle3D(VGet(0.0f, 100.0f, 500.0f), VGet(100.0f, -100.0f, 500.0f), VGet(-100.0f, -100.0f, 500.0f), GetColor(255, 0, 0),TRUE);
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{
