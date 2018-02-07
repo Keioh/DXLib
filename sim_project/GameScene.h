@@ -3,6 +3,8 @@
 #include "FileInput.h"
 #include "Camera3D.h"
 
+#include "faction_information.h"
+
 #include "character_selection.h"
 
 #include "fade_in.h"
@@ -13,6 +15,8 @@ class GameScene
 private:
 	Camera3D camera;
 	CharacterSelection CS;
+
+	FactionInformation faction_tab;
 
 	int box3D;
 

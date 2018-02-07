@@ -99,6 +99,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="english.cpp" />
     <ClCompile Include="Exit.cpp" />
+    <ClCompile Include="faction_information.cpp" />
     <ClCompile Include="fade_in.cpp" />
     <ClCompile Include="fade_out.cpp" />
     <ClCompile Include="FileInput.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="define.h" />
     <ClInclude Include="english.h" />
     <ClInclude Include="Exit.h" />
+    <ClInclude Include="faction_information.h" />
     <ClInclude Include="fade_in.h" />
     <ClInclude Include="fade_out.h" />
     <ClInclude Include="FileInput.h" />

@@ -219,6 +219,9 @@
     <ClCompile Include="Camera3D.cpp">
       <Filter>ソース ファイル\main_res\game_object\basic\camera</Filter>
     </ClCompile>
+    <ClCompile Include="faction_information.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -331,6 +334,9 @@
     </ClInclude>
     <ClInclude Include="Camera3D.h">
       <Filter>ヘッダー ファイル\main_res\game_object\basic\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="faction_information.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

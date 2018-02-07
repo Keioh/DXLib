@@ -14,6 +14,7 @@ void GameScene::Init()
 
 
 	CS.init();
+	faction_tab.Init();
 
 	camera.Init();
 
@@ -25,6 +26,7 @@ void GameScene::Load()
 	fade_in.LoadGraphics();
 
 	CS.Load();
+	faction_tab.Load();
 
 	box3D = MV1LoadModel("pack/GameObject/models/terrein.x");
 }
@@ -61,7 +63,12 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 				MV1DrawModel(box3D);
 
+
+
 				camera.Set(window_x, window_y, VGet(0.0f, 5.0f, 0.0f), wire);//カメラ
+
+				faction_tab.Draw(120, 120, wire);
+
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{
