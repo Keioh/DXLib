@@ -58,7 +58,7 @@ struct STRING_DATA_CHARACTER_DESCRIPTION
 struct STRING_DATA_FACTION_INFOMAITON
 {
 	char main_title[128];//ƒ^ƒu‚Ì–¼‘O
-	char charcter_1[128];
-	char charcter_2[128];
-	char charcter_3[128];
+	char branch_point[128];
+	char laboratory[128];
+	char money[128];
 };

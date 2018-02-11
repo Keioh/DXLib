@@ -195,9 +195,9 @@ void Filer::FactionInfomaitonBasicJPN()
 	}
 
 	fgets(faction_infomaiton_basic.main_title, 128, fp);
-	fgets(faction_infomaiton_basic.charcter_1, 128, fp);
-	fgets(faction_infomaiton_basic.charcter_2, 128, fp);
-	fgets(faction_infomaiton_basic.charcter_3, 128, fp);
+	fgets(faction_infomaiton_basic.branch_point, 128, fp);
+	fgets(faction_infomaiton_basic.laboratory, 128, fp);
+	fgets(faction_infomaiton_basic.money, 128, fp);
 
 	fclose(fp);
 }
@@ -210,9 +210,9 @@ void Filer::FactionInfomaitonBasicENG()
 	}
 
 	fgets(faction_infomaiton_basic.main_title, 128, fp);
-	fgets(faction_infomaiton_basic.charcter_1, 128, fp);
-	fgets(faction_infomaiton_basic.charcter_2, 128, fp);
-	fgets(faction_infomaiton_basic.charcter_3, 128, fp);
+	fgets(faction_infomaiton_basic.branch_point, 128, fp);
+	fgets(faction_infomaiton_basic.laboratory, 128, fp);
+	fgets(faction_infomaiton_basic.money, 128, fp);
 
 	fclose(fp);
 }

@@ -29,7 +29,19 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 
 		//情報パネルの背景
 		DrawBox(config.window_data.windowX / 5, config.window_data.windowY / 6, config.window_data.windowX - config.window_data.windowX / 5, config.window_data.windowY - config.window_data.windowY / 6, GetColor(200, 200, 200), TRUE);
+
+		//タブのタイトル文字列を表示
 		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 10, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.main_title);
+
+		//タブの支拠点文字列を表示
+		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 60, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.branch_point);
+
+		//タブの研究所文字列を表示
+		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 130, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.laboratory);
+
+		//タブの資金文字列を表示
+		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 200, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.money);
+
 		//情報パネルを閉じるボタン
 		if (infomation_tab_close.BoxUI_Button_BOX(config.window_data.windowX - config.window_data.windowX / 5 - 32, config.window_data.windowY / 6, 32, 32, 1, wire) == true)
 		{
@@ -41,4 +53,5 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 void FactionInformation::CollisionOff()
 {
 	faction_circle.circle_collision.active = false;
+	infomation_tab_close.box_collision.active = false;
 }
