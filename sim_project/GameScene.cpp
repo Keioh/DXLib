@@ -59,16 +59,13 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{	
-				MV1SetPosition(box3D, VGet(0, 0, 1.0f));
+				MV1SetPosition(box3D, VGet(0, 0, 1.0f));//モデルの位置
 
-				MV1DrawModel(box3D);
+				MV1DrawModel(box3D);//モデルの描写
 
-
+				faction_tab.Draw(120, 120, config, wire);//キャラクタ情報ボタン
 
 				camera.Set(window_x, window_y, VGet(0.0f, 5.0f, 0.0f), wire);//カメラ
-
-				faction_tab.Draw(120, 120, wire);
-
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{

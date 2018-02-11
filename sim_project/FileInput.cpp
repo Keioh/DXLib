@@ -75,7 +75,7 @@ void Filer::FileOpen_Language()//言語ファイル読み込み
 
 void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 {
-	if ((fp = fopen("language/jpn/data.txt", "r")) == NULL)
+	if ((fp = fopen("language/jpn/TitleAndOption.txt", "r")) == NULL)
 	{
 		exit(1);
 	}
@@ -96,11 +96,12 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 	
 	Filer::CharacterNameJPN();//キャラクターの名前を読み込む
 	Filer::CharacterDescriptionJPN();//キャラクターの説明を読み込む
+	Filer::FactionInfomaitonBasicJPN();//基本的なファクション情報を読み込む
 }
 
 void Filer::FileOpen_English()//英語ファイル読み込み
 {
-	if ((fp = fopen("language/eng/data.txt", "r")) == NULL)
+	if ((fp = fopen("language/eng/TitleAndOption.txt", "r")) == NULL)
 	{
 		exit(1);
 	}
@@ -121,7 +122,9 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 
 	Filer::CharacterNameENG();//キャラクターの名前を読み込む
 	Filer::CharacterDescriptionENG();//キャラクターの説明を読み込む
+	Filer::FactionInfomaitonBasicENG();//基本的なファクション情報を読み込む
 }
+
 
 void Filer::CharacterNameJPN()
 {
@@ -180,6 +183,36 @@ void Filer::CharacterDescriptionENG()
 	fgets(character_description.charcter_1, 256, fp);
 	fgets(character_description.charcter_2, 256, fp);
 	fgets(character_description.charcter_3, 256, fp);
+
+	fclose(fp);
+}
+
+void Filer::FactionInfomaitonBasicJPN()
+{
+	if ((fp = fopen("language/jpn/basic/FactionInfoBbasicJPN.txt.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(faction_infomaiton_basic.main_title, 128, fp);
+	fgets(faction_infomaiton_basic.charcter_1, 128, fp);
+	fgets(faction_infomaiton_basic.charcter_2, 128, fp);
+	fgets(faction_infomaiton_basic.charcter_3, 128, fp);
+
+	fclose(fp);
+}
+
+void Filer::FactionInfomaitonBasicENG()
+{
+	if ((fp = fopen("language/eng/basic/FactionInfoBbasicENG.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(faction_infomaiton_basic.main_title, 128, fp);
+	fgets(faction_infomaiton_basic.charcter_1, 128, fp);
+	fgets(faction_infomaiton_basic.charcter_2, 128, fp);
+	fgets(faction_infomaiton_basic.charcter_3, 128, fp);
 
 	fclose(fp);
 }

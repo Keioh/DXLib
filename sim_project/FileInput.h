@@ -30,6 +30,8 @@ public:
 	STRING_DATA_CHARACTER_DESCRIPTION character_description;//キャラクター説明
 
 
+	STRING_DATA_FACTION_INFOMAITON faction_infomaiton_basic;//全キャラクター共通のファクション説明
+
 
 	void FileOpen_Config();//設定ファイル読み込み
 
@@ -47,4 +49,6 @@ public:
 	void CharacterDescriptionJPN();//日本語ファイル読み込み(キャラクタの説明)
 	void CharacterDescriptionENG();//英語ファイル読み込み(キャラクタの説明)
 
+	void FactionInfomaitonBasicJPN();//日本語ファイル読み込み(全キャラクター共通のファクション説明)
+	void FactionInfomaitonBasicENG();//英語ファイル読み込み(全キャラクター共通のファクション説明)
 };
