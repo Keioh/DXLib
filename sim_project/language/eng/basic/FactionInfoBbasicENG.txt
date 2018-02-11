@@ -2,3 +2,12 @@ Faction Infomaiton
 BranchPoint
 Labolatry
 Funds
+Research
+Study
+Season
+SmallSeason
+Years
+Hostility
+Friendship
+Alliance
+Transaction

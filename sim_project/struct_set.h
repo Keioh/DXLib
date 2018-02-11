@@ -61,4 +61,13 @@ struct STRING_DATA_FACTION_INFOMAITON
 	char branch_point[128];
 	char laboratory[128];
 	char money[128];
+	char research[128];//Œ¤‹†’†
+	char study[128];//•×‹­’†
+	char seasons[128];//‹Gß
+	char small_seasons[128];//ß‹G
+	char years[128];
+	char hostility[128];//“G‘Î
+	char friendship[128];//—FD
+	char alliance[128];//“¯–¿
+	char transaction[128];//æˆø
 };

@@ -194,10 +194,26 @@ void Filer::FactionInfomaitonBasicJPN()
 		exit(1);
 	}
 
+	//É^ÉCÉgÉã
 	fgets(faction_infomaiton_basic.main_title, 128, fp);
+
+	//
 	fgets(faction_infomaiton_basic.branch_point, 128, fp);
 	fgets(faction_infomaiton_basic.laboratory, 128, fp);
 	fgets(faction_infomaiton_basic.money, 128, fp);
+	fgets(faction_infomaiton_basic.research, 128, fp);
+	fgets(faction_infomaiton_basic.study, 128, fp);
+
+	//îNçÜÇ…ä÷åWÇ∑ÇÈÇ±Ç∆
+	fgets(faction_infomaiton_basic.seasons, 128, fp);
+	fgets(faction_infomaiton_basic.small_seasons, 128, fp);
+	fgets(faction_infomaiton_basic.years, 128, fp);
+
+	//óFçDä÷åWÇ…ä÷Ç∑ÇÈÇ±Ç∆
+	fgets(faction_infomaiton_basic.hostility, 128, fp);
+	fgets(faction_infomaiton_basic.friendship, 128, fp);
+	fgets(faction_infomaiton_basic.alliance, 128, fp);
+	fgets(faction_infomaiton_basic.transaction, 128, fp);
 
 	fclose(fp);
 }
@@ -209,10 +225,26 @@ void Filer::FactionInfomaitonBasicENG()
 		exit(1);
 	}
 
+	//É^ÉCÉgÉã
 	fgets(faction_infomaiton_basic.main_title, 128, fp);
+
+	//
 	fgets(faction_infomaiton_basic.branch_point, 128, fp);
 	fgets(faction_infomaiton_basic.laboratory, 128, fp);
 	fgets(faction_infomaiton_basic.money, 128, fp);
+	fgets(faction_infomaiton_basic.research, 128, fp);
+	fgets(faction_infomaiton_basic.study, 128, fp);
+
+	//îNçÜÇ…ä÷åWÇ∑ÇÈÇ±Ç∆
+	fgets(faction_infomaiton_basic.seasons, 128, fp);
+	fgets(faction_infomaiton_basic.small_seasons, 128, fp);
+	fgets(faction_infomaiton_basic.years, 128, fp);
+
+	//óFçDä÷åWÇ…ä÷Ç∑ÇÈÇ±Ç∆
+	fgets(faction_infomaiton_basic.hostility, 128, fp);
+	fgets(faction_infomaiton_basic.friendship, 128, fp);
+	fgets(faction_infomaiton_basic.alliance, 128, fp);
+	fgets(faction_infomaiton_basic.transaction, 128, fp);
 
 	fclose(fp);
 }
