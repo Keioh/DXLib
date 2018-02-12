@@ -1,10 +1,13 @@
 #pragma once
 #include "button_ui.h"
+#include "Input.h"
 #include "FileInput.h"
 
 class FactionInformation
 {
 private:
+	Input Key;
+
 	int infomation_tab_active_flag = -1;
 
 	void DrawFactionStrings(Filer config);

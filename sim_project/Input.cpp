@@ -3,11 +3,27 @@
 
 void Input::init()
 {
+	key_press = false;
 	click = false;
 	//button_buffer = -1;
 	//x_buffer = -1;
 	//y_buffer = -1;
 	//button_input_log_buffer = -1;
+}
+
+int Input::GetKeyFrame()//キーフレームを習得
+{
+	GetHitKeyStateAll(key); // 全てのキーの入力状態を得る
+
+	for (int n = 0; n < 256; n++) {
+		if (key[n] != 0) { // n番のキーコードに対応するキーが押されていたら
+			frame[n]++;     // 加算
+		}
+		else {              // 押されていなければ
+			frame[n] = 0;   // 0にする
+		}
+	}
+	return 0;
 }
 
 //瞬間のクリック
@@ -36,5 +52,31 @@ bool Input::MouseClickContinuation(int mouseinput)
 	else
 	{
 		return click = false;
+	}
+}
+
+//キーの瞬間のクリック
+bool Input::KeyCilick(int keyInput)
+{
+	if (frame[keyInput] == 1)
+	{
+		return key_press = true;
+	}
+	else
+	{
+		return key_press = false;
+	}
+}
+
+//キーの継続クリック
+bool Input::KeyCilickContinuation(int keyInput)
+{
+	if (key[keyInput] != 0)
+	{
+		return key_press = true;
+	}
+	else
+	{
+		return key_press = false;
 	}
 }

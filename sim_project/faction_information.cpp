@@ -2,6 +2,7 @@
 
 void FactionInformation::Init()
 {
+	Key.init();
 	faction_circle.Init();
 	infomation_tab_close.Init();
 
@@ -17,6 +18,13 @@ void FactionInformation::Load()
 void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+	Key.GetKeyFrame();//キーの入力を可能にする処理。
+
+	//Fキーを押したらタブをオンにする。
+	if (Key.KeyCilick(KEY_INPUT_F) == true)
+	{
+		infomation_tab_active_flag *= -1;
+	}
 
 	if (faction_circle.CircleUI_Button(pos_x, pos_y, 115, 1, wire) == true)
 	{
