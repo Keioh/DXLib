@@ -24,6 +24,7 @@ void System::Dx_Init(bool w_mode, int r, int g, int b, char* name)
 	DxLib_Init();
 
 	//DXLIBの後に初期化する関数	
+	SetDrawScreen(DX_SCREEN_BACK);
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
 	SetUseDXArchiveFlag(TRUE);//アーカイブ読み込み可能に変更
