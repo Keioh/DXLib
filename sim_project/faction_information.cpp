@@ -30,6 +30,18 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		//情報パネルの背景
 		DrawBox(config.window_data.windowX / 5, config.window_data.windowY / 6, config.window_data.windowX - config.window_data.windowX / 5, config.window_data.windowY - config.window_data.windowY / 6, GetColor(200, 200, 200), TRUE);
 
+		FactionInformation::DrawFactionStrings(config);//文字の表示
+
+		//情報パネルを閉じるボタン
+		if (infomation_tab_close.BoxUI_Button_BOX(config.window_data.windowX - config.window_data.windowX / 5 - 32, config.window_data.windowY / 6, 32, 32, 1, wire) == true)
+		{
+			infomation_tab_active_flag *= -1;
+		}
+	}
+}
+
+void FactionInformation::DrawFactionStrings(Filer config)
+{
 		//一列目
 		//タブのタイトル文字列を表示
 		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 10, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.main_title);
@@ -77,17 +89,18 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 
 		//タブの取引文字列を表示
 		DrawFormatString(config.window_data.windowX / 5 + 500, config.window_data.windowY / 6 + 500, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.transaction);
-
-		//情報パネルを閉じるボタン
-		if (infomation_tab_close.BoxUI_Button_BOX(config.window_data.windowX - config.window_data.windowX / 5 - 32, config.window_data.windowY / 6, 32, 32, 1, wire) == true)
-		{
-			infomation_tab_active_flag *= -1;
-		}
-	}
 }
 
 void FactionInformation::CollisionOff()
 {
 	faction_circle.circle_collision.active = false;
 	infomation_tab_close.box_collision.active = false;
+}
+
+void FactionInformation::FactionInfomationTabOff()
+{
+	if (infomation_tab_active_flag == 1)
+	{
+		infomation_tab_active_flag *= -1;
+	}
 }
