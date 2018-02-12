@@ -26,7 +26,7 @@ struct LANGUAGE_DATA
 };
 
 //一行１２８文字まで(タイトル画面、オプション画面の説明)
-struct STRING_DATA
+struct STRING_DATA_TITLE_AND_OPTION
 {
 	char bgm_volume[128];
 	char se_volume[128];

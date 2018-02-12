@@ -104,6 +104,7 @@
     <ClCompile Include="fade_out.cpp" />
     <ClCompile Include="FileInput.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="headquarters.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="japanese.cpp" />
     <ClCompile Include="Line3D.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="fade_out.h" />
     <ClInclude Include="FileInput.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="headquarters.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="japanese.h" />
     <ClInclude Include="Line3D.h" />

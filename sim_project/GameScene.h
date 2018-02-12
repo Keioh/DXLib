@@ -4,6 +4,7 @@
 #include "Camera3D.h"
 
 #include "faction_information.h"
+#include "headquarters.h"
 
 #include "character_selection.h"
 
@@ -17,6 +18,7 @@ private:
 	CharacterSelection CS;
 
 	FactionInformation faction_tab;
+	Headquarters headquarters;
 
 	int box3D;
 

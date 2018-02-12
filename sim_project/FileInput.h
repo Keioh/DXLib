@@ -23,14 +23,14 @@ public:
 
 
 	//文字列ファイル関連
-	STRING_DATA string_data;//タイトル画面とオプション画面などのデータ
+	STRING_DATA_TITLE_AND_OPTION string_data;//タイトル画面とオプション画面などのデータ
 
 	STRING_DATA_CHARACTER_NAME character_name;//キャラクターの名前
 
 	STRING_DATA_CHARACTER_DESCRIPTION character_description;//キャラクター説明
 
 
-	STRING_DATA_FACTION_INFOMAITON faction_infomaiton_basic;//全キャラクター共通のファクション説明
+	STRING_DATA_FACTION_INFOMAITON faction_infomaiton_basic;//全キャラクター共通のファクションタブ内の説明
 
 
 	void FileOpen_Config();//設定ファイル読み込み

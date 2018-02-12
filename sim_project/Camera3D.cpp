@@ -2,6 +2,7 @@
 
 void Camera3D::Init()
 {
+	key.init();
 	SetCameraNearFar(0.1f, 10000.0f);//奥行設定
 	//SetLightDirection(VGet(0.0f, 0.5f, 0.5f));//ディレクションライトの方向を設定
 	MV1SetLoadModelUsePhysicsMode(DX_LOADMODEL_PHYSICS_REALTIME);//物理演算の仕方を指定
@@ -9,6 +10,7 @@ void Camera3D::Init()
 
 void Camera3D::Set(int window_x, int window_y, VECTOR pos, bool wire)
 {
+	key.GetKeyFrame();
 	Camera3D::Move(window_x, window_y, 0.1f, wire);
 
 	SetCameraPositionAndAngle(VAdd(pos, moved_pos), 45 * (DX_PI_F / 180), 0.0f, 0.0f);
@@ -35,7 +37,7 @@ void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 		moved_pos.x += speed;
 	}
 
-	if (CheckHitKey(KEY_INPUT_W) == 1)
+	if (key.KeyCilickContinuation(KEY_INPUT_W) == true)
 	{
 		moved_pos.z += speed;
 	}
@@ -44,7 +46,7 @@ void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 		moved_pos.z += 0.0f;
 	}
 
-	if (CheckHitKey(KEY_INPUT_S) == 1)
+	if (key.KeyCilickContinuation(KEY_INPUT_S) == true)
 	{
 		moved_pos.z -= speed;
 	}
@@ -53,7 +55,7 @@ void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 		moved_pos.z += 0.0f;
 	}
 
-	if (CheckHitKey(KEY_INPUT_D) == 1)
+	if (key.KeyCilickContinuation(KEY_INPUT_D) == true)
 	{
 		moved_pos.x += speed;
 
@@ -63,7 +65,7 @@ void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 		moved_pos.x += 0.0f;
 	}
 
-	if (CheckHitKey(KEY_INPUT_A) == 1)
+	if (key.KeyCilickContinuation(KEY_INPUT_A) == true)
 	{
 		moved_pos.x -= speed;
 	}

@@ -18,7 +18,7 @@ void FactionInformation::Load()
 void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-	Key.GetKeyFrame();//キーの入力を可能にする処理。
+	Key.GetKeyFrame();//キーの精密な入力を可能にする処理。
 
 	//Fキーを押したらタブをオンにする。
 	if (Key.KeyCilick(KEY_INPUT_F) == true)

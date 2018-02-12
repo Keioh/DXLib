@@ -1,11 +1,14 @@
 #pragma once
 #include <math.h>
 //#include "Object_Base.h"
+#include "Input.h"
 #include "Collision.h"
 
 class Camera3D
 {
 private:
+	Input key;
+
 	Collision cursol_move_up;
 	Collision cursol_move_down;
 	Collision cursol_move_left;

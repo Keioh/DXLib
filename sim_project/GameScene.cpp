@@ -9,12 +9,15 @@ void GameScene::Init()
 {
 	game_scene_flag = 0;
 
+
+
 	fade_out.init();
 	fade_in.init();
 
 
 	CS.init();
 	faction_tab.Init();
+	headquarters.Init();
 
 	camera.Init();
 
@@ -27,6 +30,7 @@ void GameScene::Load()
 
 	CS.Load();
 	faction_tab.Load();
+	headquarters.Load();
 
 	box3D = MV1LoadModel("pack/GameObject/models/terrein.x");
 }
@@ -58,14 +62,16 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				CS.Draw(window_x, window_y, config, wire);
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
-			{	
+			{
 				MV1SetPosition(box3D, VGet(0, 0, 1.0f));//モデルの位置
 
 				MV1DrawModel(box3D);//モデルの描写
 
+				camera.Set(window_x, window_y, VGet(0.0f, 5.0f, 0.0f), wire);//カメラ
+
+				headquarters.Draw(800, 500, config, wire);//test
 				faction_tab.Draw(120, 120, config, wire);//キャラクタ情報ボタン
 
-				camera.Set(window_x, window_y, VGet(0.0f, 5.0f, 0.0f), wire);//カメラ
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{
