@@ -49,6 +49,12 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		//タブの勉強中文字列を表示
 		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 340, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.study);
 
+		//タブの特性文字列を表示
+		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 420, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.characteristic);
+
+		//タブの取引ブロック文字列を表示
+		DrawFormatString(config.window_data.windowX / 5 + 10, config.window_data.windowY / 6 + 500, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.block);
+
 
 		//二列目
 		//タブの季節文字列を表示

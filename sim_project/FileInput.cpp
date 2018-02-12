@@ -215,6 +215,12 @@ void Filer::FactionInfomaitonBasicJPN()
 	fgets(faction_infomaiton_basic.alliance, 128, fp);
 	fgets(faction_infomaiton_basic.transaction, 128, fp);
 
+	//特性
+	fgets(faction_infomaiton_basic.characteristic, 128, fp);
+
+	//取引ブロック
+	fgets(faction_infomaiton_basic.block, 128, fp);
+
 	fclose(fp);
 }
 
@@ -245,6 +251,12 @@ void Filer::FactionInfomaitonBasicENG()
 	fgets(faction_infomaiton_basic.friendship, 128, fp);
 	fgets(faction_infomaiton_basic.alliance, 128, fp);
 	fgets(faction_infomaiton_basic.transaction, 128, fp);
+
+	//特性
+	fgets(faction_infomaiton_basic.characteristic, 128, fp);
+	
+	//取引ブロック
+	fgets(faction_infomaiton_basic.block, 128, fp);
 
 	fclose(fp);
 }

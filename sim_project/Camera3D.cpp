@@ -16,6 +16,8 @@ void Camera3D::Set(int window_x, int window_y, VECTOR pos, bool wire)
 
 void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 {
+	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+
 	if (cursol_move_up.BoxColliderMouse(0, window_x, 0, 5, wire) == true)
 	{
 		moved_pos.z += speed;

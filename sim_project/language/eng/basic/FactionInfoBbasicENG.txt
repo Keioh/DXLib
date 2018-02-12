@@ -11,3 +11,5 @@ Hostility
 Friendship
 Alliance
 Transaction
+Characteristic
+Block

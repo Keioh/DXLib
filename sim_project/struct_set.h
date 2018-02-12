@@ -70,4 +70,6 @@ struct STRING_DATA_FACTION_INFOMAITON
 	char friendship[128];//友好
 	char alliance[128];//同盟
 	char transaction[128];//取引
+	char characteristic[128];
+	char block[128];//取引ブロック
 };
