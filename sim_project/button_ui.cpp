@@ -26,7 +26,7 @@ int ButtonUI::BoxUI_Button_BOX(int pos_x, int pos_y, float Size_x, float Size_y,
 {
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawBox(pos_x, pos_y, pos_x + Size_x, pos_y + Size_y, color, TRUE);
-	DrawExtendGraph(pos_x, pos_y, (pos_x + Size_x), (pos_y + Size_y), graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, (pos_x + Size_x), (pos_y + Size_y), graphics, TRUE);//画像を縮小拡大表示
 
 	if (box_collision.BoxColliderMouse(pos_x, Size_x, pos_y, Size_y, wire) == true)//コリジョンヒット判定
 	{
@@ -64,7 +64,7 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, i
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraph(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
 	if (box_collision.BoxColliderMouse(pos_x * scale_x, size_x * scale_x, pos_y * scale_y, size_y * scale_y, wire) == true)//コリジョンヒット判定
 	{
@@ -102,7 +102,7 @@ int ButtonUI:: BoxUI_WheelHorizontal(int pos_x, int pos_y, unsigned int color, b
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraph(pos_x, pos_y, pos_x + size_x, pos_y + size_y, graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, pos_x + size_x, pos_y + size_y, graphics, TRUE);//画像を縮小拡大表示
 
 	if ((pos_x + wheel_volume_buffer) <= pos_x)
 	{
@@ -157,7 +157,7 @@ int ButtonUI::BoxUI_WheelVertical(int pos_x, int pos_y, unsigned int color, bool
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraph(pos_x, pos_y, pos_x + size_x, pos_y + size_y, graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, pos_x + size_x, pos_y + size_y, graphics, TRUE);//画像を縮小拡大表示
 
 	if ((pos_y + size_y + wheel_volume_buffer) <= pos_y)
 	{
@@ -213,7 +213,7 @@ int ButtonUI::BoxUI_Button_Continuation(int pos_x, int pos_y, float scale_x, flo
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraph(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
 	if (box_collision.BoxColliderMouse(pos_x, size_x * scale_x, pos_y, size_y * scale_y, wire) == true)//コリジョンヒット判定
 	{
@@ -251,7 +251,7 @@ int ButtonUI::BoxUI_Button_Switch(int pos_x, int pos_y, float scale_x, float sca
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraph(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
 	if (box_collision.BoxColliderMouse(pos_x, size_x * scale_x, pos_y, size_y * scale_y, wire) == true)//コリジョンヒット判定
 	{
@@ -303,7 +303,7 @@ int ButtonUI::CircleUI_Button(int pos_x, int pos_y, int size_r, int input, bool 
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraph(pos_x - (size_x/2), pos_y - (size_y/2), pos_x + (size_x / 2), pos_y + (size_y / 2), graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x - (size_x/2), pos_y - (size_y/2), pos_x + (size_x / 2), pos_y + (size_y / 2), graphics, TRUE);//画像を縮小拡大表示
 
 	if (circle_collision.CircleColliderMouse(pos_x, pos_y, size_r, wire) == true)//コリジョンヒット判定
 	{
@@ -372,14 +372,14 @@ int ButtonUI::CircleUI_Button_Switch(int pos_x, int pos_y, int size_r, int input
 
 	if (switch_flag == 1)
 	{
-		DrawExtendGraph(pos_x - (size_x / 2), pos_y - (size_y / 2), pos_x + (size_x / 2), pos_y + (size_y / 2), graphics, TRUE);//画像を縮小拡大表示
+		DrawExtendGraphF(pos_x - (size_x / 2), pos_y - (size_y / 2), pos_x + (size_x / 2), pos_y + (size_y / 2), graphics, TRUE);//画像を縮小拡大表示
 		red_a = 255;
 		green_a = 255;
 		blue_a = 255;
 	}
 	else
 	{
-		DrawExtendGraph(pos_x - (size_x / 2), pos_y - (size_y / 2), pos_x + (size_x / 2), pos_y + (size_y / 2), switch_graphics, TRUE);//画像を縮小拡大表示
+		DrawExtendGraphF(pos_x - (size_x / 2), pos_y - (size_y / 2), pos_x + (size_x / 2), pos_y + (size_y / 2), switch_graphics, TRUE);//画像を縮小拡大表示
 		red_a = 200;
 		green_a = 200;
 		blue_a = 200;

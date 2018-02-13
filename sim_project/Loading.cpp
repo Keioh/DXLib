@@ -23,14 +23,14 @@ void Loading::DrawLoading(int x, int y)
 		timer++;
 		if (timer >= 30)
 		{
-			DrawGraph(x + 150, y + 30, loading_point_graphics, TRUE);
+			DrawGraphF(x + 150, y + 30, loading_point_graphics, TRUE);
 
 			if (timer >= 60)
 			{
-				DrawGraph(x + 175, y + 30, loading_point_graphics, TRUE);
+				DrawGraphF(x + 175, y + 30, loading_point_graphics, TRUE);
 				if (timer >= 90)
 				{
-					DrawGraph(x + 200, y + 30, loading_point_graphics, TRUE);
+					DrawGraphF(x + 200, y + 30, loading_point_graphics, TRUE);
 					if (timer >= 120)
 					{
 						timer = 0;
@@ -40,5 +40,5 @@ void Loading::DrawLoading(int x, int y)
 		}
 	}
 
-	DrawGraph(x, y, loading_graphics, TRUE);
+	DrawGraphF(x, y, loading_graphics, TRUE);
 }

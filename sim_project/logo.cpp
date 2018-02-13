@@ -49,13 +49,13 @@ void Logo::DrawLogo(int x, int y)
 	}
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alph_graphics);
-	DrawGraph(x + anime_pos_x, y, logo_D, TRUE);
-	DrawGraph(x + 40 + anime_pos_x, y - 5, logo_i, TRUE);
-	DrawGraph(x + 60 + anime_pos_x, y + 25, logo_p, TRUE);
-	DrawGraph(x + 85 + anime_pos_x, y - 5, logo_l, TRUE);
-	DrawGraph(x + 120 + anime_pos_x, y - 5, logo_o, TRUE);
-	DrawGraph(x + 145 + anime_pos_x, y - 5, logo_i, TRUE);
-	DrawGraph(x + 180 + anime_pos_x, y, logo_d, TRUE);
+	DrawGraphF(x + anime_pos_x, y, logo_D, TRUE);
+	DrawGraphF(x + 40 + anime_pos_x, y - 5, logo_i, TRUE);
+	DrawGraphF(x + 60 + anime_pos_x, y + 25, logo_p, TRUE);
+	DrawGraphF(x + 85 + anime_pos_x, y - 5, logo_l, TRUE);
+	DrawGraphF(x + 120 + anime_pos_x, y - 5, logo_o, TRUE);
+	DrawGraphF(x + 145 + anime_pos_x, y - 5, logo_i, TRUE);
+	DrawGraphF(x + 180 + anime_pos_x, y, logo_d, TRUE);
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
 }

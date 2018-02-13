@@ -225,6 +225,9 @@
     <ClCompile Include="headquarters.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
     </ClCompile>
+    <ClCompile Include="Box3D.cpp">
+      <Filter>ソース ファイル\main_res\game_object\3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -343,6 +346,9 @@
     </ClInclude>
     <ClInclude Include="headquarters.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="Box3D.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\3D</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

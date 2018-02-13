@@ -22,7 +22,6 @@ void GameScene::Init()
 	headquarters.Init();
 
 	camera.Init();
-
 }
 
 void GameScene::Load()
@@ -34,7 +33,7 @@ void GameScene::Load()
 	faction_tab.Load();
 	headquarters.Load();
 
-	box3D = MV1LoadModel("pack/GameObject/models/terrein.x");
+	test.Load("pack/GameObject/models/terrein.png");
 }
 
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
@@ -54,12 +53,13 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	camera.Init();//カメラを初期化
 
+	test.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
+
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
 			//DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
-
 
 			if (CS.character_number == 0)//キャラクタが選択されていなければ
 			{
@@ -67,15 +67,11 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{
-				MV1SetPosition(box3D, VGet(0, 0, 1.0f));//モデルの位置
-
-				MV1DrawModel(box3D);//モデルの描写
-
-				camera.Set(window_x, window_y, VGet(0.0f, 5.0f, 0.0f), wire);//カメラ
+				test.Draw();//3D空間に画像表示
+				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 				headquarters.Draw(800, 500, config, wire);//test
 				faction_tab.Draw(120, 120, config, wire);//キャラクタ情報ボタン
-
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{

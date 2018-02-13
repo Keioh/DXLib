@@ -11,6 +11,8 @@
 #include "fade_in.h"
 #include "fade_out.h"
 
+#include "Box3D.h"
+
 class GameScene
 {
 private:
@@ -20,7 +22,9 @@ private:
 	FactionInformation faction_tab;
 	Headquarters headquarters;
 
-	int box3D;
+	Box3D test;
+
+	int test_textur;
 
 public:
 	GameScene();
