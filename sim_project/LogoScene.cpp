@@ -27,6 +27,8 @@ void LogoScene::Load()
 
 void LogoScene::DrawLogoScene(int x, int y, Filer config)
 {
+	SetDrawScreen(DX_SCREEN_BACK);//裏画面に描写
+
 	while (logo_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト

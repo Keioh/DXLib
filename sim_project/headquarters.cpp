@@ -41,6 +41,7 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	if (headquarters_tab_active == 1)
 	{
 		DrawBox(0, config.window_data.windowY / 4, config.window_data.windowX / 5, config.window_data.windowY, GetColor(200, 200, 200), TRUE);
+		DrawFormatString(10, config.window_data.windowY / 4 + 10, GetColor(0, 0, 0), "%s", config.headquarters_infomation_basic.main_title);
 
 		if (headquarters_tab_close.BoxUI_Button_BOX(config.window_data.windowX / 5 - 32, config.window_data.windowY / 4, 32, 32, 1, wire) == true)
 		{

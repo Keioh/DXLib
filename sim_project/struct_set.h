@@ -54,7 +54,7 @@ struct STRING_DATA_CHARACTER_DESCRIPTION
 	char charcter_3[256];	
 };
 
-//一行128文字まで(//全キャラクター共通のファクション説明)
+//一行128文字まで(全キャラクター共通のファクション説明)
 struct STRING_DATA_FACTION_INFOMAITON
 {
 	char main_title[128];//タブの名前
@@ -72,4 +72,11 @@ struct STRING_DATA_FACTION_INFOMAITON
 	char transaction[128];//取引
 	char characteristic[128];
 	char block[128];//取引ブロック
+};
+
+//一行128文字まで(全キャラクター共通の本拠地説明)
+struct STRING_DATA_HEADQUARTERS_INFOMAITON
+{
+	char main_title[128];
+	
 };

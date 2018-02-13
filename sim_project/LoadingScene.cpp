@@ -18,6 +18,8 @@ void LoadingScene::Load()
 
 void LoadingScene::DrawLoadingScene(int x, int y)
 {
+	SetDrawScreen(DX_SCREEN_BACK);//— ‰æ–Ê‚É•`Ê
+
 	while (loading_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		SetBackgroundColor(0, 0, 0);//”wŒiF‚ğ•‚Éİ’è

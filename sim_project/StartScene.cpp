@@ -66,6 +66,8 @@ void StartScene::OptionSeceneConfig(Filer config)//ƒIƒvƒVƒ‡ƒ“‰æ–Ê‚ÌƒRƒ“ƒtƒBƒOˆ—
 
 void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool wire)
 {
+	SetDrawScreen(DX_SCREEN_BACK);//— ‰æ–Ê‚É•`Ê
+
 	config.FileOpen_Config();//İ’èƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
 	StartScene::OptionSeceneConfig(config);//İ’è
 

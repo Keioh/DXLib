@@ -31,7 +31,7 @@ public:
 
 
 	STRING_DATA_FACTION_INFOMAITON faction_infomaiton_basic;//全キャラクター共通のファクションタブ内の説明
-
+	STRING_DATA_HEADQUARTERS_INFOMAITON headquarters_infomation_basic;//全キャラクター共通のフ本拠地説明
 
 	void FileOpen_Config();//設定ファイル読み込み
 
@@ -51,4 +51,8 @@ public:
 
 	void FactionInfomaitonBasicJPN();//日本語ファイル読み込み(全キャラクター共通のファクション説明)
 	void FactionInfomaitonBasicENG();//英語ファイル読み込み(全キャラクター共通のファクション説明)
+
+	void HeadquartersInfomaitonBasicJPN();//日本語ファイル読み込み(全キャラクター共通のフ本拠地説明)
+	void HeadquartersInfomaitonBasicENG();//日本語ファイル読み込み(全キャラクター共通のフ本拠地説明)
+
 };

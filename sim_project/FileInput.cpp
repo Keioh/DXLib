@@ -97,6 +97,7 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 	Filer::CharacterNameJPN();//キャラクターの名前を読み込む
 	Filer::CharacterDescriptionJPN();//キャラクターの説明を読み込む
 	Filer::FactionInfomaitonBasicJPN();//基本的なファクション情報を読み込む
+	Filer::HeadquartersInfomaitonBasicJPN();//基本的な本拠地情報を読み込む
 }
 
 void Filer::FileOpen_English()//英語ファイル読み込み
@@ -123,6 +124,7 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 	Filer::CharacterNameENG();//キャラクターの名前を読み込む
 	Filer::CharacterDescriptionENG();//キャラクターの説明を読み込む
 	Filer::FactionInfomaitonBasicENG();//基本的なファクション情報を読み込む
+	Filer::HeadquartersInfomaitonBasicENG();//基本的な本拠地情報を読み込む
 }
 
 
@@ -189,7 +191,7 @@ void Filer::CharacterDescriptionENG()
 
 void Filer::FactionInfomaitonBasicJPN()
 {
-	if ((fp = fopen("language/jpn/basic/FactionInfoBbasicJPN.txt.txt", "r")) == NULL)
+	if ((fp = fopen("language/jpn/basic/FactionInfoBasicJPN.txt.txt", "r")) == NULL)
 	{
 		exit(1);
 	}
@@ -226,7 +228,7 @@ void Filer::FactionInfomaitonBasicJPN()
 
 void Filer::FactionInfomaitonBasicENG()
 {
-	if ((fp = fopen("language/eng/basic/FactionInfoBbasicENG.txt", "r")) == NULL)
+	if ((fp = fopen("language/eng/basic/FactionInfoBasicENG.txt", "r")) == NULL)
 	{
 		exit(1);
 	}
@@ -257,6 +259,32 @@ void Filer::FactionInfomaitonBasicENG()
 	
 	//取引ブロック
 	fgets(faction_infomaiton_basic.block, 128, fp);
+
+	fclose(fp);
+}
+
+void Filer::HeadquartersInfomaitonBasicJPN()
+{
+	if ((fp = fopen("language/jpn/basic/HeadquartersInfomationBasicJPN.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(headquarters_infomation_basic.main_title, 128, fp);
+
+
+	fclose(fp);
+}
+
+void Filer::HeadquartersInfomaitonBasicENG()
+{
+	if ((fp = fopen("language/eng/basic/HeadquartersInfomationBasicENG.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(headquarters_infomation_basic.main_title, 128, fp);
+
 
 	fclose(fp);
 }

@@ -26,7 +26,6 @@ void Main_Game::Main_Load()
 
 void Main_Game::Main_Init()
 {	
-
 	Loading_scene.Init();//ローディング画面初期化
 	Logo_scene.init();//ロゴ画面初期化
 

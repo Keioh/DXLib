@@ -26,6 +26,8 @@ void LoadScene::Init()
 
 void LoadScene::DrawLoadScene(int window_x, int window_y, bool wire)
 {
+	SetDrawScreen(DX_SCREEN_BACK);//裏画面に描写
+
 	while (load_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト

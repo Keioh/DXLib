@@ -6,7 +6,9 @@ GameScene::GameScene()
 }
 
 void GameScene::Init()
-{
+{	
+	
+
 	game_scene_flag = 0;
 
 
@@ -47,6 +49,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 	{
 		config.FileOpen_English();
 	}
+
+	SetDrawScreen(DX_SCREEN_BACK);//— ‰æ–Ê‚É•`Ê
 
 	camera.Init();//ƒJƒƒ‰‚ğ‰Šú‰»
 
