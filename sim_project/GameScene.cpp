@@ -54,9 +54,12 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 	camera.Init();//カメラを初期化
 
 	test.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
+	headquarters.headquarters_button.Transform(VGet(0.5, 0.5, 0.5), 0,0,0,VGet(0, 0.5,0));
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
+		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
+
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
 			//DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
@@ -66,12 +69,15 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				CS.Draw(window_x, window_y, config, wire);
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
-			{
+			{			
+
 				test.Draw();//3D空間に画像表示
+
+				headquarters.Draw(800, 500,config, wire);//本拠地
+				faction_tab.Draw(120, 120, config, wire);//キャラクタ情報ボタン		
+
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
-				headquarters.Draw(800, 500, config, wire);//test
-				faction_tab.Draw(120, 120, config, wire);//キャラクタ情報ボタン
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{

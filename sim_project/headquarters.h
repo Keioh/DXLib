@@ -2,15 +2,18 @@
 #include "Input.h"
 #include "button_ui.h"
 #include "FileInput.h"
+#include "button_ui3D.h"
 
 class Headquarters
 {
 private:
 	Input key;
-	ButtonUI headquarters_button;
+
 	ButtonUI headquarters_tab_close;
 
+
 public:
+	ButtonUI3D headquarters_button;
 
 	int headquarters_tab_active = -1;
 

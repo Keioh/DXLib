@@ -95,6 +95,7 @@
     <ClCompile Include="bgm_volume_slider.cpp" />
     <ClCompile Include="Box3D.cpp" />
     <ClCompile Include="button_ui.cpp" />
+    <ClCompile Include="button_ui3D.cpp" />
     <ClCompile Include="Camera3D.cpp" />
     <ClCompile Include="character_selection.cpp" />
     <ClCompile Include="Collision.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="bgm_volume_slider.h" />
     <ClInclude Include="Box3D.h" />
     <ClInclude Include="button_ui.h" />
+    <ClInclude Include="button_ui3D.h" />
     <ClInclude Include="Camera3D.h" />
     <ClInclude Include="character_selection.h" />
     <ClInclude Include="Collision.h" />

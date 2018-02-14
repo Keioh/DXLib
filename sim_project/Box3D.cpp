@@ -61,8 +61,8 @@ void Box3D::Load(char* path)
 
 void Box3D::Draw()
 {
-	DrawPolygon3D(vertex, 2, graphic_handle, FALSE);	
-	DrawFormatString(500, 100, GetColor(255, 255, 255), "%f", vertex[0].pos.x);
+	DrawPolygon3D(vertex, 2, graphic_handle, TRUE);	
+	//DrawFormatString(500, 100, GetColor(255, 255, 255), "%f", vertex[0].pos.x);
 }
 
 void Box3D::Transform(VECTOR scale, float rotate_x, float rotate_y, float rotate_z, VECTOR trans)

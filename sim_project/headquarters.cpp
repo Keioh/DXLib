@@ -6,14 +6,14 @@ void Headquarters::Init()
 	headquarters_tab_close.color = GetColor(255, 150, 150);
 	key.init();
 
-	headquarters_button.Init();
 	headquarters_tab_close.Init();
+	headquarters_button.Init();
 }
 
 void Headquarters::Load()
 {
-	headquarters_button.Load("");
 	headquarters_tab_close.Load("");
+	headquarters_button.Load("pack/GameObject/models/test.png");
 }
 
 void Headquarters::DrawModel(VECTOR pos)//3Dƒ‚ƒfƒ‹‚Ì•`ŽÊ
@@ -29,7 +29,7 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		headquarters_tab_active *= -1;
 	}
 
-	if (headquarters_button.CircleUI_Button(pos_x, pos_y, 25, 1, wire) == true)
+	if (headquarters_button.DrawButtonBox3D(wire) == true)
 	{
 		headquarters_tab_active *= -1;
 	}

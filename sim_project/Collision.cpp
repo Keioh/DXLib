@@ -84,3 +84,34 @@ bool Collision::CircleColliderMouse(int position_x, int position_y, int size_r, 
 		return hit = false;
 	}
 }
+
+bool Collision::TriangleColliderMouse3D(VERTEX3D triangle_vertex_1, VERTEX3D triangle_vertex_2, VERTEX3D triangle_vertex_3, bool wire)
+{
+	if (active == true)
+	{
+		GetMousePoint(&x, &y);//現在のカーソル位置を習得
+
+		mouse_pos_world_near = ConvScreenPosToWorldPos(VGet(x, y, 0.0f));//手前
+		mouse_pos_world_far = ConvScreenPosToWorldPos(VGet(x, y, 1.0f));//奥
+
+		hit3D = HitCheck_Line_Triangle(mouse_pos_world_near, mouse_pos_world_far, triangle_vertex_1.pos, triangle_vertex_2.pos, triangle_vertex_3.pos);
+
+		if (wire == true)
+		{
+			if (hit3D.HitFlag == 1)
+			{
+				DrawTriangle3D(triangle_vertex_1.pos, triangle_vertex_2.pos, triangle_vertex_3.pos, GetColor(255, 0, 0), FALSE);
+			}
+			else
+			{
+				DrawTriangle3D(triangle_vertex_1.pos, triangle_vertex_2.pos, triangle_vertex_3.pos, GetColor(0, 0, 255), FALSE);
+			}
+		}
+
+		return hit = hit3D.HitFlag;
+	}
+	else
+	{
+		return hit = hit3D.HitFlag;
+	}
+}

@@ -228,6 +228,9 @@
     <ClCompile Include="Box3D.cpp">
       <Filter>ソース ファイル\main_res\game_object\3D</Filter>
     </ClCompile>
+    <ClCompile Include="button_ui3D.cpp">
+      <Filter>ソース ファイル\main_res\object_system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -349,6 +352,9 @@
     </ClInclude>
     <ClInclude Include="Box3D.h">
       <Filter>ヘッダー ファイル\main_res\game_object\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="button_ui3D.h">
+      <Filter>ヘッダー ファイル\main_res\object_system</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
