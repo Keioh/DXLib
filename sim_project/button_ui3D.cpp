@@ -7,6 +7,7 @@ ButtonUI3D::ButtonUI3D()
 
 void ButtonUI3D::Init()
 {
+	box.Transform();
 }
 
 void ButtonUI3D::Load(char* path)

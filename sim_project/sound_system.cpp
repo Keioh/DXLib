@@ -53,7 +53,8 @@ void SoundSystem::Play3D(VECTOR pos, float volume, int PlayType, bool wire, bool
 
 	if (wire == true)
 	{
-		DrawSphere3D(pos, 1.0f, 64, GetColor(150, 150, 150), GetColor(150, 150, 150), TRUE);
+		DrawSphere3D(pos, 1.0f, 64, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
+		DrawSphere3D(pos, sound_r, 64, GetColor(0, 255, 0), GetColor(0, 255, 0), FALSE);
 	}
 
 	if (copy_type == false)
@@ -104,7 +105,8 @@ void SoundSystem::OneShotPlay3D(VECTOR pos, float volume, int PlayType, bool wir
 
 	if (wire == true)
 	{
-		DrawSphere3D(pos, 1.0f, 64, GetColor(150, 150, 150), GetColor(150, 150, 150), TRUE);
+		DrawSphere3D(pos, 1.0f, 64, GetColor(255, 255, 255), GetColor(255, 255, 255), TRUE);
+		DrawSphere3D(pos, sound_r, 64, GetColor(0, 255, 0), GetColor(0, 255, 0), FALSE);
 	}
 
 	if (copy_type == false)

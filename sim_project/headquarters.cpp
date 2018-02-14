@@ -16,8 +16,9 @@ void Headquarters::Load()
 	headquarters_button.Load("pack/GameObject/models/test.png");
 }
 
-void Headquarters::DrawModel(VECTOR pos)//3Dモデルの描写
+void Headquarters::Transform(VECTOR scale, float rotate_x, float rotate_y, float rotate_z, VECTOR trans)//3Dモデルの描写
 {
+	headquarters_button.Transform(scale, rotate_x, rotate_y, rotate_z, trans);
 }
 
 void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
@@ -29,13 +30,12 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		headquarters_tab_active *= -1;
 	}
 
-	if (headquarters_button.DrawButtonBox3D(wire) == true)
+	if (headquarters_button.DrawButtonBox3D(wire) == true)//オブジェクト表示とクリック判定
 	{
 		headquarters_tab_active *= -1;
 	}
-	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
-	Headquarters::DrawModel(VGet(0.0f, 0.0f, 0.0f));
+	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
 	//タブがオンの時
 	if (headquarters_tab_active == 1)

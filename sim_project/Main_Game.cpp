@@ -14,7 +14,16 @@ void Main_Game::Main_Load()
 	main_system.size.y = config_data.window_data.windowY;
 	main_system.size.bit = config_data.window_data.windowBit;
 	main_system.fullscreen = config_data.window_data.fullscreen;
+	if (main_system.fullscreen == 1)
+	{
+		ChangeWindowMode(FALSE);
+	}
+	else
+	{
+		ChangeWindowMode(TRUE);
+	}
 	SetGraphMode(main_system.size.x, main_system.size.y, main_system.size.bit);//設定ファイルで設定した大きさにwindowを変更
+	SetMouseDispFlag(TRUE);//マウス表示
 
 	Loading_scene.Load();//ローディング画像を読み込む
 	Logo_scene.Load();//ロゴー画像を読み込む

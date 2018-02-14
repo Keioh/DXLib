@@ -2,6 +2,10 @@
 
 void Camera3D::Init()
 {
+	//Zバッファ関連
+	SetUseZBuffer3D(TRUE);
+	SetWriteZBuffer3D(TRUE);
+
 	key.init();
 	SetCameraNearFar(0.1f, 10000.0f);//奥行設定
 	//SetLightDirection(VGet(0.0f, 0.5f, 0.5f));//ディレクションライトの方向を設定
@@ -20,19 +24,19 @@ void Camera3D::Move(int window_x, int window_y, float speed, bool wire)
 {
 	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
-	if (cursol_move_up.BoxColliderMouse(0, window_x, 0, 5, wire) == true)
+	if (cursol_move_up.BoxColliderMouse(0, window_x, -5, 10, wire) == true)
 	{
 		moved_pos.z += speed;
 	}
-	if (cursol_move_down.BoxColliderMouse(0, window_x, window_y - 5, 5, wire) == true)
+	if (cursol_move_down.BoxColliderMouse(0, window_x, window_y - 5, 10, wire) == true)
 	{
 		moved_pos.z -= speed;
 	}
-	if (cursol_move_left.BoxColliderMouse(0, 5, 0, window_y, wire) == true)
+	if (cursol_move_left.BoxColliderMouse(-5, 10, 0, window_y, wire) == true)
 	{
 		moved_pos.x -= speed;
 	}
-	if (cursol_move_right.BoxColliderMouse(window_x - 5, 5, 0, window_y, wire) == true)
+	if (cursol_move_right.BoxColliderMouse(window_x - 5, 10, 0, window_y, wire) == true)
 	{
 		moved_pos.x += speed;
 	}

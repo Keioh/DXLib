@@ -49,7 +49,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 	camera.Init();//カメラを初期化
 
 	test.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
-	headquarters.headquarters_button.Transform(VGet(0.5, 0.5, 0.5), 0,0,0,VGet(0, 0.5,0));//本拠地の位置
+	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0,0,0,VGet(0, 0.1,0));//本拠地の位置
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
