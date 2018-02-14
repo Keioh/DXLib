@@ -13,7 +13,7 @@ private:
 	void DrawFactionStrings(Filer config);
 
 public:
-	ButtonUI faction_circle;
+	ButtonUI faction_box;
 	ButtonUI infomation_tab_close;
 
 	void Init();
@@ -22,5 +22,6 @@ public:
 
 	void FactionInfomationTabOff();//タブをオフにする。
 	void CollisionOff();//ヒットボックスをオフにする。
+	void CollisionOn();//ヒットボックスをオンにする。
 
 };

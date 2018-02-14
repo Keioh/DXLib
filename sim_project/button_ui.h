@@ -20,6 +20,7 @@ private:
 public:
 	ButtonUI();
 
+	float scale_x = 1.0f, scale_y = 1.0f;
 
 	unsigned int color;
 
@@ -34,7 +35,10 @@ public:
 	void Load(char* path, char* switch_path = 0);
 	void Init();
 
-	int BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
+	void ColliderOff();
+	void ColliderOn();
+
+	int BoxUI_Button(int pos_x, int pos_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 	int BoxUI_Button_Continuation(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 	int BoxUI_Button_Switch(int pos_x, int pos_y, float scale_x, float scale_y, int input = MOUSE_INPUT_LEFT, bool wire = false);//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 

@@ -44,7 +44,7 @@ int Start::DrawStartButton(int x, int y, float speed, Filer config, bool wire)
 	Start::CollisionHit(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
-	if (start.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire) == true)
+	if (start.BoxUI_Button(x, y, 1, wire) == true)
 	{
 		hit_buffer = true;
 

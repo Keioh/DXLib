@@ -46,7 +46,7 @@ int Load::DrawLoadButton(int x, int y, float speed, Filer config, bool wire)
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
 
-	if (load.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire) == true)
+	if (load.BoxUI_Button(x, y, 1, wire) == true)
 	{
 		hit_buffer = true;	
 		se_load_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);

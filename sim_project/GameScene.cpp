@@ -69,7 +69,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				test.Draw();//3D空間に画像表示
 
 				headquarters.Draw(800, 500,config, wire);//本拠地
-				faction_tab.Draw(120, 120, config, wire);//キャラクタ情報ボタン		
+				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
 
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 

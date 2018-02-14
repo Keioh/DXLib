@@ -17,5 +17,5 @@ void ReturnButton::LoadGraphics()
 
 int ReturnButton::DrawReturnButton(int x, int y, bool wire)
 {
-	return return_button.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire);
+	return return_button.BoxUI_Button(x, y, 1, wire);
 }

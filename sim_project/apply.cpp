@@ -18,5 +18,5 @@ void Apply::LoadGraphics()
 int Apply::DrawApplyButton(int x, int y, bool wire)
 {
 
-	return apply.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire);
+	return apply.BoxUI_Button(x, y, 1, wire);
 }

@@ -44,7 +44,7 @@ int Exit::DrawExitButton(int x, int y, float speed, Filer config, bool wire)
 	Exit::CollisionHit(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
-	if (exit.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire) == true)
+	if (exit.BoxUI_Button(x, y, 1, wire) == true)
 	{
 		hit_buffer = true;
 		se_exit_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);

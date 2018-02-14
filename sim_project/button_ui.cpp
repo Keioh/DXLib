@@ -22,11 +22,23 @@ void ButtonUI::Init()
 	circle_collision.hit = 0;
 }
 
+void ButtonUI::ColliderOff()
+{
+	box_collision.active = false;
+	circle_collision.active = false;
+}
+
+void ButtonUI::ColliderOn()
+{
+	box_collision.active = true;
+	circle_collision.active = true;
+}
+
 int ButtonUI::BoxUI_Button_BOX(int pos_x, int pos_y, float Size_x, float Size_y, int input, bool wire)//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 {
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawBox(pos_x, pos_y, pos_x + Size_x, pos_y + Size_y, color, TRUE);
-	DrawExtendGraphF(pos_x, pos_y, (pos_x + Size_x), (pos_y + Size_y), graphics, TRUE);//画像を縮小拡大表示
+	DrawExtendGraphF(pos_x, pos_y, (pos_x + Size_x) * scale_x, (pos_y + Size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
 
 	if (box_collision.BoxColliderMouse(pos_x, Size_x, pos_y, Size_y, wire) == true)//コリジョンヒット判定
 	{
@@ -59,7 +71,7 @@ int ButtonUI::BoxUI_Button_BOX(int pos_x, int pos_y, float Size_x, float Size_y,
 	return click_flag;//クリック判定の結果を返す。
 }
 
-int ButtonUI::BoxUI_Button(int pos_x, int pos_y, float scale_x, float scale_y, int input, bool wire)
+int ButtonUI::BoxUI_Button(int pos_x, int pos_y, int input, bool wire)
 {
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 

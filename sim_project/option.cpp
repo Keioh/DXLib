@@ -44,7 +44,7 @@ int Option::DrawOptionButton(int x, int y, float speed, Filer config, bool wire)
 	Option::CollisionHit(config);
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, anime_alph);
-	if (option.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire) == true)
+	if (option.BoxUI_Button(x, y, 1, wire) == true)
 	{
 		hit_buffer = true;
 		se_option_click.OneShotPlay(config.sound_data.se_volume * -config.sound_data.se_mute, DX_PLAYTYPE_BACK);

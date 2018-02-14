@@ -20,6 +20,8 @@ public:
 	void Init();
 	void Load(char* path);
 	void Transform(VECTOR scale = { 0.0f,0.0f,0.0f }, float rotate_x = 0.0f, float rotate_y = 0.0f, float rotate_z = 0.0f, VECTOR trans = { 0.0f,0.0f,0.0f });
+	void ColliderOff();
+	void ColliderOn();
 
 	bool DrawButtonBox3D(bool wire);
 };

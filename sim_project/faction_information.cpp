@@ -3,7 +3,7 @@
 void FactionInformation::Init()
 {
 	Key.init();
-	faction_circle.Init();
+	faction_box.Init();
 	infomation_tab_close.Init();
 
 	infomation_tab_close.color = GetColor(255, 150, 150);
@@ -11,7 +11,7 @@ void FactionInformation::Init()
 
 void FactionInformation::Load()
 {
-	faction_circle.Load("pack/GameObject/faction/blue_faction.png");
+	faction_box.Load("pack/GameObject/faction/blue_faction.png");
 	infomation_tab_close.Load("");
 }
 
@@ -26,7 +26,7 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		infomation_tab_active_flag *= -1;
 	}
 
-	if (faction_circle.CircleUI_Button(pos_x, pos_y, 115, 1, wire) == true)
+	if (faction_box.BoxUI_Button(pos_x, pos_y, 1, wire) == true)
 	{
 		infomation_tab_active_flag *= -1;
 	}
@@ -34,7 +34,6 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	if (infomation_tab_active_flag == 1)
 	{
 		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-
 		//情報パネルの背景
 		DrawBox(config.window_data.windowX / 5, config.window_data.windowY / 6, config.window_data.windowX - config.window_data.windowX / 5, config.window_data.windowY - config.window_data.windowY / 6, GetColor(200, 200, 200), TRUE);
 
@@ -101,8 +100,14 @@ void FactionInformation::DrawFactionStrings(Filer config)
 
 void FactionInformation::CollisionOff()
 {
-	faction_circle.circle_collision.active = false;
-	infomation_tab_close.box_collision.active = false;
+	faction_box.ColliderOff();
+	infomation_tab_close.ColliderOff();
+}
+
+void FactionInformation::CollisionOn()
+{
+	faction_box.ColliderOn();
+	infomation_tab_close.ColliderOn();
 }
 
 void FactionInformation::FactionInfomationTabOff()

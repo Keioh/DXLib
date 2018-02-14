@@ -17,5 +17,5 @@ void OptionReturn::LoadGraphics()
 
 int OptionReturn::DrawOtpionReturnButton(int x, int y, bool wire)
 {
-	return option_return.BoxUI_Button(x, y, 1.0f, 1.0f, 1, wire);
+	return option_return.BoxUI_Button(x, y, 1, wire);
 }

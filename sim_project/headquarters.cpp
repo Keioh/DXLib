@@ -16,6 +16,16 @@ void Headquarters::Load()
 	headquarters_button.Load("pack/GameObject/models/test.png");
 }
 
+void Headquarters::ColliderOff()
+{
+	headquarters_button.ColliderOff();
+}
+
+void Headquarters::ColliderOn()
+{
+	headquarters_button.ColliderOn();
+}
+
 void Headquarters::Transform(VECTOR scale, float rotate_x, float rotate_y, float rotate_z, VECTOR trans)//3Dƒ‚ƒfƒ‹‚Ì•`ŽÊ
 {
 	headquarters_button.Transform(scale, rotate_x, rotate_y, rotate_z, trans);
@@ -48,6 +58,4 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 			headquarters_tab_active *= -1;
 		}
 	}
-
-
 }
