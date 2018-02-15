@@ -53,8 +53,6 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
 			//DrawString(0, 0, "GameScene", GetColor(0, 0, 0));

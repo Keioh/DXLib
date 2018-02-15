@@ -20,7 +20,8 @@ private:
 public:
 	ButtonUI();
 
-	float scale_x = 1.0f, scale_y = 1.0f;
+	float scale_x = 1.0f, scale_y = 1.0f, rotate = 0.0f;
+	int graph_turn = FALSE;
 
 	unsigned int color;
 

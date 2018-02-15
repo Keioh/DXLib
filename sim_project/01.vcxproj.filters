@@ -109,6 +109,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\basic\camera">
       <UniqueIdentifier>{354d2094-7350-42f3-ad60-717650a91118}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\basic\in_game_window">
+      <UniqueIdentifier>{8e2072e2-f476-40b1-b8e8-83997e2d128d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\basic\in_game_window">
+      <UniqueIdentifier>{1408d4f4-fd47-4b76-bd97-908942052f97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="System.cpp">
@@ -230,6 +236,9 @@
     </ClCompile>
     <ClCompile Include="button_ui3D.cpp">
       <Filter>ソース ファイル\main_res\object_system</Filter>
+    </ClCompile>
+    <ClCompile Include="game_window.cpp">
+      <Filter>ソース ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -355,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="button_ui3D.h">
       <Filter>ヘッダー ファイル\main_res\object_system</Filter>
+    </ClInclude>
+    <ClInclude Include="game_window.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

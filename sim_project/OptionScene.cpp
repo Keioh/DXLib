@@ -67,8 +67,6 @@ void OptionScene::Init(Filer config)
 
 bool OptionScene::DrawOptionScene(int window_x, int window_y, Filer& config, bool wire)
 {
-	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-
 	DrawGraph(0, 0, back_wall_graphics, TRUE);
 
 	if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト

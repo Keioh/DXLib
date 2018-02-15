@@ -76,7 +76,8 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, int input, bool wire)
 	GetGraphSize(graphics, &size_x, &size_y);//画像サイズを習得
 
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
-	DrawExtendGraphF(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
+	//DrawExtendGraphF(pos_x, pos_y, (pos_x + size_x) * scale_x, (pos_y + size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示
+	DrawRotaGraph3(pos_x + size_x/2, pos_y + size_y/2, size_x/2, size_y/2, scale_x, scale_y, rotate * DX_PI_F / 180, graphics, TRUE, graph_turn);//画像を縮小拡大表示
 
 	if (box_collision.BoxColliderMouse(pos_x * scale_x, size_x * scale_x, pos_y * scale_y, size_y * scale_y, wire) == true)//コリジョンヒット判定
 	{
@@ -105,6 +106,8 @@ int ButtonUI::BoxUI_Button(int pos_x, int pos_y, int input, bool wire)
 			}
 		}
 	}
+
+	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
 	return click_flag;//クリック判定の結果を返す。
 }

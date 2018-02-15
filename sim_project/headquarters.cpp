@@ -6,24 +6,26 @@ void Headquarters::Init()
 	headquarters_tab_close.color = GetColor(255, 150, 150);
 	key.init();
 
-	headquarters_tab_close.Init();
+	headquarters_tab.Init();
 	headquarters_button.Init();
 }
 
 void Headquarters::Load()
 {
-	headquarters_tab_close.Load("");
+	headquarters_tab.Load("pack/GameObject/GameUI/HQ_window/HQ_back_wall.png");
 	headquarters_button.Load("pack/GameObject/models/test.png");
 }
 
 void Headquarters::ColliderOff()
 {
 	headquarters_button.ColliderOff();
+	headquarters_tab.infomation_tab_close.ColliderOff();
 }
 
 void Headquarters::ColliderOn()
 {
 	headquarters_button.ColliderOn();
+	headquarters_tab.infomation_tab_close.ColliderOn();
 }
 
 void Headquarters::Transform(VECTOR scale, float rotate_x, float rotate_y, float rotate_z, VECTOR trans)//3Dモデルの描写
@@ -45,17 +47,16 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		headquarters_tab_active *= -1;
 	}
 
-	SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
-
 	//タブがオンの時
 	if (headquarters_tab_active == 1)
 	{
-		DrawBox(0, config.window_data.windowY / 4, config.window_data.windowX / 5, config.window_data.windowY, GetColor(200, 200, 200), TRUE);
-		DrawFormatString(10, config.window_data.windowY / 4 + 10, GetColor(0, 0, 0), "%s", config.headquarters_infomation_basic.main_title);
-
-		if (headquarters_tab_close.BoxUI_Button_BOX(config.window_data.windowX / 5 - 32, config.window_data.windowY / 4, 32, 32, 1, wire) == true)
+		if (headquarters_tab.Draw(0, config.window_data.windowY - headquarters_tab.graphics_size_y, wire) == true)
 		{
 			headquarters_tab_active *= -1;
 		}
+		//DrawBox(0, config.window_data.windowY / 4, config.window_data.windowX / 5, config.window_data.windowY, GetColor(200, 200, 200), TRUE);
+		DrawFormatString(20, config.window_data.windowY - headquarters_tab.graphics_size_y + 20, GetColor(0, 0, 0), "%s", config.headquarters_infomation_basic.main_title);
+
+
 	}
 }

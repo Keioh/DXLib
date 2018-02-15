@@ -73,7 +73,6 @@ void StartScene::DrawStartScene(int window_x, int window_y, Filer config, bool w
 
 	while (start_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
-		SetDrawBright(255, 255, 255);//この処理を入れないと画像表示がバグります。(画面輝度を最大に設定)
 
 		//設定値はconfigから必ずファイルから引っ張ってくる
 		//ミュート値はマイナスを掛けてからじゃないと逆になる

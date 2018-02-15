@@ -2,6 +2,7 @@
 #include "button_ui.h"
 #include "Input.h"
 #include "FileInput.h"
+#include "game_window.h"
 
 class FactionInformation
 {
@@ -14,7 +15,8 @@ private:
 
 public:
 	ButtonUI faction_box;
-	ButtonUI infomation_tab_close;
+
+	InGameWindow faction_tab;
 
 	void Init();
 	void Load();

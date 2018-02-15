@@ -1,6 +1,7 @@
 #pragma once
 #include "Input.h"
 #include "button_ui.h"
+#include "game_window.h"
 #include "FileInput.h"
 #include "button_ui3D.h"
 
@@ -14,6 +15,7 @@ private:
 
 public:
 	ButtonUI3D headquarters_button;
+	InGameWindow headquarters_tab;
 
 	int headquarters_tab_active = -1;
 
