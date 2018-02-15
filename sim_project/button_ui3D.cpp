@@ -62,5 +62,4 @@ bool ButtonUI3D::DrawButtonBox3D(bool wire)
 	{
 		return click = false;
 	}
-
 }

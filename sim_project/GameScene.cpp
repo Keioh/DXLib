@@ -31,6 +31,8 @@ void GameScene::Load()
 	headquarters.Load();
 
 	terrain.Load("pack/GameObject/models/terrein.png");
+
+	test_textur = LoadGraph("pack/GameObject/GameUI/time/years.png");
 }
 
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
@@ -70,7 +72,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 				headquarters.Draw(800, 500,config, wire);//本拠地
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
-				timer.Draw(window_x - 200, 100, wire);//時間を進めるボタン
+				DrawGraph(window_x - 256, 0, test_textur, TRUE);
+				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 			}

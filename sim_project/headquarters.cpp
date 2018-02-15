@@ -57,6 +57,5 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 		//DrawBox(0, config.window_data.windowY / 4, config.window_data.windowX / 5, config.window_data.windowY, GetColor(200, 200, 200), TRUE);
 		DrawFormatString(20, config.window_data.windowY - headquarters_tab.graphics_size_y + 20, GetColor(0, 0, 0), "%s", config.headquarters_infomation_basic.main_title);
 
-
 	}
 }
