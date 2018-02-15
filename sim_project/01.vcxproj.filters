@@ -240,6 +240,9 @@
     <ClCompile Include="game_window.cpp">
       <Filter>ソース ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClCompile>
+    <ClCompile Include="game_timer.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -367,6 +370,9 @@
     </ClInclude>
     <ClInclude Include="game_window.h">
       <Filter>ヘッダー ファイル\main_res\game_object\basic\in_game_window</Filter>
+    </ClInclude>
+    <ClInclude Include="game_timer.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

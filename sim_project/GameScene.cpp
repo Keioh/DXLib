@@ -17,6 +17,7 @@ void GameScene::Init()
 	headquarters.Init();
 
 	camera.Init();
+	timer.Init();
 }
 
 void GameScene::Load()
@@ -25,10 +26,11 @@ void GameScene::Load()
 	fade_in.LoadGraphics();
 
 	CS.Load();
+	timer.Load();
 	faction_tab.Load();
 	headquarters.Load();
 
-	test.Load("pack/GameObject/models/terrein.png");
+	terrain.Load("pack/GameObject/models/terrein.png");
 }
 
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
@@ -48,7 +50,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	camera.Init();//カメラを初期化
 
-	test.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
+	terrain.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0,0,0,VGet(0, 0.1,0));//本拠地の位置
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
@@ -64,11 +66,11 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{			
 
-				test.Draw();//3D空間に画像表示
+				terrain.Draw();//3D空間に画像表示
 
 				headquarters.Draw(800, 500,config, wire);//本拠地
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
-
+				timer.Draw(window_x - 200, 100, wire);//時間を進めるボタン
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 			}

@@ -13,16 +13,21 @@
 
 #include "Box3D.h"
 
+#include "game_timer.h"
+
+
 class GameScene
 {
 private:
 	Camera3D camera;
 	CharacterSelection CS;
 
+	GameTimer timer;
+
 	FactionInformation faction_tab;
 	Headquarters headquarters;
 
-	Box3D test;
+	Box3D terrain;
 
 	int test_textur;
 
