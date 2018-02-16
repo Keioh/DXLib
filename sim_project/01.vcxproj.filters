@@ -243,6 +243,9 @@
     <ClCompile Include="game_timer.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
     </ClCompile>
+    <ClCompile Include="fps.cpp">
+      <Filter>ソース ファイル\main_res\game_object\basic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -373,6 +376,9 @@
     </ClInclude>
     <ClInclude Include="game_timer.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="fps.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\basic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

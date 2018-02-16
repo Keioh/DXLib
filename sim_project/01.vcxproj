@@ -105,6 +105,7 @@
     <ClCompile Include="fade_in.cpp" />
     <ClCompile Include="fade_out.cpp" />
     <ClCompile Include="FileInput.cpp" />
+    <ClCompile Include="fps.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="game_timer.cpp" />
     <ClCompile Include="game_window.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="fade_in.h" />
     <ClInclude Include="fade_out.h" />
     <ClInclude Include="FileInput.h" />
+    <ClInclude Include="fps.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="game_timer.h" />
     <ClInclude Include="game_window.h" />
