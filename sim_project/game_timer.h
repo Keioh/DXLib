@@ -11,7 +11,7 @@ private:
 
 public:
 	int play_type;//0‚ªˆê’â~
-	int seconds, minute, hour, day, month, year;//ŠÔ‚ğ•Û‘¶‚·‚é•Ï”
+	int count, seconds, minute, hour, day, month, year;//ŠÔ‚ğ•Û‘¶‚·‚é•Ï”
 
 	void Init();
 	void Load();

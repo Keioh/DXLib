@@ -47,14 +47,14 @@ void GameTimer::Draw(int pos_x, int pos_y, bool wire)//•`Ê
 	{
 		DrawGraph(pos_x + 16, pos_y, play_graphics, TRUE);
 
-		seconds += 1;
+		count += 1;
 	}
 	else if (play_type == 2)
 	{
 		DrawGraph(pos_x + 8, pos_y, play_graphics, TRUE);
 		DrawGraph(pos_x + 24, pos_y, play_graphics, TRUE);
 
-		seconds += 3;
+		count += 6;
 	}
 	else if (play_type == 3)
 	{
@@ -62,7 +62,7 @@ void GameTimer::Draw(int pos_x, int pos_y, bool wire)//•`Ê
 		DrawGraph(pos_x + 16, pos_y, play_graphics, TRUE);
 		DrawGraph(pos_x + 32, pos_y, play_graphics, TRUE);
 
-		seconds += 6;
+		count += 30;
 	}
 	else if (play_type > 3)
 	{
@@ -82,6 +82,14 @@ void GameTimer::Draw(int pos_x, int pos_y, bool wire)//•`Ê
 		DrawFormatString(10, 80, GetColor(255, 255, 255), "day %d", day);
 		DrawFormatString(10, 100, GetColor(255, 255, 255), "month %d", month);
 		DrawFormatString(10, 120, GetColor(255, 255, 255), "year %d", year);
+		DrawFormatString(10, 140, GetColor(255, 255, 255), "count %d", count);
+	}
+
+	//•b‚És‚­‚½‚ß‚ÌƒJƒEƒ“ƒg
+	if (count >= 60)
+	{
+		minute++;
+		count = 0;
 	}
 
 	//•b
