@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "FileInput.h"
+#include "fps.h"
 #include "Camera3D.h"
 
 #include "faction_information.h"
@@ -19,6 +20,7 @@
 class GameScene
 {
 private:
+	FPS fps_counter;
 	Camera3D camera;
 	CharacterSelection CS;
 

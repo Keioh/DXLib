@@ -8,6 +8,7 @@ GameScene::GameScene()
 void GameScene::Init()
 {	
 	game_scene_flag = 0;
+	fps_counter.fps = 60;
 
 	fade_out.init();
 	fade_in.init();
@@ -54,9 +55,10 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	terrain.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0,0,0,VGet(0, 0.1,0));//本拠地の位置
-
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
+		fps_counter.Update();
+
 		if (fade_out.DrawFadeOut(0, 0, 15.0f) == true)//フェードアウト
 		{
 			//DrawString(0, 0, "GameScene", GetColor(0, 0, 0));
@@ -76,6 +78,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
+				fps_counter.Draw(10, 10);
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{
@@ -88,5 +91,6 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 			}
 		}
+		fps_counter.Wait();
 	}
 }

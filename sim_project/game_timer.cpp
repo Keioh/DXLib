@@ -5,6 +5,8 @@ void GameTimer::Init()//‰Šú‰»
 	play_type = 0;
 	timer.Init();
 	key.init();
+
+	seconds = minute = hour = year = day = month = 0;
 }
 
 void GameTimer::Load()//“Ç‚Ýž‚Ý
@@ -45,18 +47,22 @@ void GameTimer::Draw(int pos_x, int pos_y, bool wire)//•`ŽÊ
 	{
 		DrawGraph(pos_x + 16, pos_y, play_graphics, TRUE);
 
+		seconds += 1;
 	}
 	else if (play_type == 2)
 	{
 		DrawGraph(pos_x + 8, pos_y, play_graphics, TRUE);
 		DrawGraph(pos_x + 24, pos_y, play_graphics, TRUE);
 
+		seconds += 3;
 	}
 	else if (play_type == 3)
 	{
 		DrawGraph(pos_x, pos_y, play_graphics, TRUE);
 		DrawGraph(pos_x + 16, pos_y, play_graphics, TRUE);
 		DrawGraph(pos_x + 32, pos_y, play_graphics, TRUE);
+
+		seconds += 6;
 	}
 	else if (play_type > 3)
 	{
@@ -66,6 +72,51 @@ void GameTimer::Draw(int pos_x, int pos_y, bool wire)//•`ŽÊ
 	{
 		DrawGraph(pos_x + 16, pos_y, pause_graphics, TRUE);
 		play_type = 0;
+	}
+
+	if (wire == true)
+	{
+		DrawFormatString(10, 20, GetColor(255, 255, 255), "second %d", seconds);
+		DrawFormatString(10, 40, GetColor(255, 255, 255), "minute %d", minute);
+		DrawFormatString(10, 60, GetColor(255, 255, 255), "hour %d", hour);
+		DrawFormatString(10, 80, GetColor(255, 255, 255), "day %d", day);
+		DrawFormatString(10, 100, GetColor(255, 255, 255), "month %d", month);
+		DrawFormatString(10, 120, GetColor(255, 255, 255), "year %d", year);
+	}
+
+	//•b
+	if (seconds >= 60)
+	{
+		minute++;
+		seconds = 0;
+	}
+
+	//•ª
+	if (minute >= 60)
+	{
+		hour++;
+		minute = 0;
+	}
+
+	//Žž
+	if (hour >= 24)
+	{
+		day++;
+		hour = 0;
+	}
+
+	//“ú(“ñ\“úŽüŠú)
+	if (day >= 20)
+	{
+		month++;
+		day = 0;
+	}
+
+	//ŒŽ(12ƒ–ŒŽŽüŠú)
+	if (month >= 20)
+	{
+		year++;
+		month = 0;
 	}
 }
 
