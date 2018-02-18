@@ -26,6 +26,15 @@ bool InGameWindow::Draw(int pos_x, int pos_y, bool wire)
 	DrawRotaGraph3(pos_x + 32, pos_y + graphics_size_y - 32, 32, 32, 1.0f, 1.0f, 180.0f * DX_PI_F / 180, window_tab_edge_graphics, TRUE, FALSE);
 	DrawRotaGraph3(pos_x + graphics_size_x - 32, pos_y + graphics_size_y - 32, 32, 32, 1.0f, 1.0f, 180.0f * DX_PI_F / 180, window_tab_edge_graphics, TRUE, TRUE);
 
+	if (window.BoxColliderMouse(pos_x, graphics_size_x, pos_y, graphics_size_y, wire) == true)
+	{
+		hit = true;
+	}
+	else
+	{
+		hit = false;
+	}
+
 	if (click == true)
 	{
 		return true;

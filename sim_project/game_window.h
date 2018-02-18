@@ -1,4 +1,5 @@
 #pragma once
+#include "Collision.h"
 #include "button_ui.h"
 
 class InGameWindow
@@ -8,8 +9,10 @@ private:
 
 public:
 	ButtonUI infomation_tab_close;
+	Collision window;
 
 	int click;
+	bool hit = false;
 	int graphics_size_x, graphics_size_y;
 
 	void Init();
