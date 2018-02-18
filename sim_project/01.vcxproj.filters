@@ -249,6 +249,12 @@
     <ClCompile Include="research.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
     </ClCompile>
+    <ClCompile Include="study.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
+    <ClCompile Include="diplomacy.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -384,6 +390,12 @@
       <Filter>ヘッダー ファイル\main_res\game_object\basic</Filter>
     </ClInclude>
     <ClInclude Include="research.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="study.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="diplomacy.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
   </ItemGroup>

@@ -99,6 +99,7 @@
     <ClCompile Include="Camera3D.cpp" />
     <ClCompile Include="character_selection.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="diplomacy.cpp" />
     <ClCompile Include="english.cpp" />
     <ClCompile Include="Exit.cpp" />
     <ClCompile Include="faction_information.cpp" />
@@ -130,6 +131,7 @@
     <ClCompile Include="sound_system.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="StartScene.cpp" />
+    <ClCompile Include="study.cpp" />
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="Main_Game.cpp" />
     <ClCompile Include="Object_Base.cpp" />
@@ -146,6 +148,7 @@
     <ClInclude Include="character_selection.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="diplomacy.h" />
     <ClInclude Include="english.h" />
     <ClInclude Include="Exit.h" />
     <ClInclude Include="faction_information.h" />
@@ -180,6 +183,7 @@
     <ClInclude Include="start.h" />
     <ClInclude Include="StartScene.h" />
     <ClInclude Include="struct_set.h" />
+    <ClInclude Include="study.h" />
     <ClInclude Include="System.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -13,6 +13,10 @@ void GameScene::Init()
 	fade_out.init();
 	fade_in.init();
 
+	research.Init();
+	study.Init();
+	diplomacy.Init();
+
 	CS.init();
 	faction_tab.Init();
 	headquarters.Init();
@@ -27,6 +31,8 @@ void GameScene::Load()
 	fade_in.LoadGraphics();
 
 	research.Load();
+	study.Load();
+	diplomacy.Load();
 
 	CS.Load();
 	timer.Load();
@@ -79,6 +85,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				DrawGraph(window_x - 256, 0, test_textur, TRUE);
 				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
 				research.Draw(window_x - 300, 0, wire);//研究ボタン
+				study.Draw(window_x - 332, 0, wire);//勉強ボタン
+				diplomacy.Draw(window_x - 364, 0, wire);//外交ボタン
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 				fps_counter.Draw(10, 10);

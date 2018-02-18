@@ -7,6 +7,8 @@
 #include "faction_information.h"
 #include "headquarters.h"
 #include "research.h"
+#include "study.h"
+#include "diplomacy.h"
 
 #include "character_selection.h"
 
@@ -28,6 +30,8 @@ private:
 	GameTimer timer;
 
 	Research research;
+	Study study;
+	Diplomacy diplomacy;
 
 	FactionInformation faction_tab;
 	Headquarters headquarters;
