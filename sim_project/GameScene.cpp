@@ -26,6 +26,8 @@ void GameScene::Load()
 	fade_out.LoadGraphics();
 	fade_in.LoadGraphics();
 
+	research.Load();
+
 	CS.Load();
 	timer.Load();
 	faction_tab.Load();
@@ -76,6 +78,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
 				DrawGraph(window_x - 256, 0, test_textur, TRUE);
 				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
+				research.Draw(window_x - 300, 0, wire);//研究ボタン
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 				fps_counter.Draw(10, 10);

@@ -122,6 +122,7 @@
     <ClCompile Include="ObjectVector.cpp" />
     <ClCompile Include="option.cpp" />
     <ClCompile Include="OptionScene.cpp" />
+    <ClCompile Include="research.cpp" />
     <ClCompile Include="return.cpp" />
     <ClCompile Include="option_return.cpp" />
     <ClCompile Include="se_mute.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Object_Base.h" />
     <ClInclude Include="option.h" />
     <ClInclude Include="OptionScene.h" />
+    <ClInclude Include="research.h" />
     <ClInclude Include="return.h" />
     <ClInclude Include="option_return.h" />
     <ClInclude Include="se_mute.h" />

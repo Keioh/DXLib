@@ -6,6 +6,7 @@
 
 #include "faction_information.h"
 #include "headquarters.h"
+#include "research.h"
 
 #include "character_selection.h"
 
@@ -25,6 +26,8 @@ private:
 	CharacterSelection CS;
 
 	GameTimer timer;
+
+	Research research;
 
 	FactionInformation faction_tab;
 	Headquarters headquarters;
