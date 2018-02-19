@@ -120,6 +120,7 @@
     <ClCompile Include="LoadScene.cpp" />
     <ClCompile Include="logo.cpp" />
     <ClCompile Include="LogoScene.cpp" />
+    <ClCompile Include="money.cpp" />
     <ClCompile Include="ObjectVector.cpp" />
     <ClCompile Include="option.cpp" />
     <ClCompile Include="OptionScene.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="logo.h" />
     <ClInclude Include="LogoScene.h" />
     <ClInclude Include="Main_Game.h" />
+    <ClInclude Include="money.h" />
     <ClInclude Include="ObjectVector.h" />
     <ClInclude Include="Object_Base.h" />
     <ClInclude Include="option.h" />

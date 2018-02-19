@@ -255,6 +255,9 @@
     <ClCompile Include="diplomacy.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
     </ClCompile>
+    <ClCompile Include="money.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -396,6 +399,9 @@
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
     <ClInclude Include="diplomacy.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="money.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
   </ItemGroup>
