@@ -4,6 +4,9 @@
 #include "fps.h"
 #include "Camera3D.h"
 
+#include "infomation_bar.h"
+#include "money.h"
+
 #include "faction_information.h"
 #include "headquarters.h"
 #include "research.h"
@@ -28,6 +31,9 @@ private:
 	CharacterSelection CS;
 
 	GameTimer timer;
+
+	InfomationBar infomation_bar;
+	Money money;
 
 	Research research;
 	Study study;

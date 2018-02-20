@@ -111,6 +111,7 @@
     <ClCompile Include="game_timer.cpp" />
     <ClCompile Include="game_window.cpp" />
     <ClCompile Include="headquarters.cpp" />
+    <ClCompile Include="infomation_bar.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="japanese.cpp" />
     <ClCompile Include="Line3D.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="game_timer.h" />
     <ClInclude Include="game_window.h" />
     <ClInclude Include="headquarters.h" />
+    <ClInclude Include="infomation_bar.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="japanese.h" />
     <ClInclude Include="Line3D.h" />

@@ -13,6 +13,8 @@ void GameScene::Init()
 	fade_out.init();
 	fade_in.init();
 
+	infomation_bar.Init();
+
 	research.Init();
 	study.Init();
 	diplomacy.Init();
@@ -29,6 +31,8 @@ void GameScene::Load()
 {
 	fade_out.LoadGraphics();
 	fade_in.LoadGraphics();
+
+	infomation_bar.Load();
 
 	research.Load();
 	study.Load();
@@ -63,6 +67,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	terrain.Transform(VGet(10.0f, 5.0f, 0.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0,0,0,VGet(0, 0.1,0));//本拠地の位置
+
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		fps_counter.Update();
@@ -84,9 +89,11 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
 				DrawGraph(window_x - 256, 0, test_textur, TRUE);
 				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
-				research.Draw(window_x - 300, 0, wire);//研究ボタン
-				study.Draw(window_x - 332, 0, wire);//勉強ボタン
-				diplomacy.Draw(window_x - 364, 0, wire);//外交ボタン
+				research.Draw(window_x - (256 + 32), 24, wire);//研究ボタン
+				study.Draw(window_x - (256 + 64), 24, wire);//勉強ボタン
+				diplomacy.Draw(window_x - (256 + 96), 24, wire);//外交ボタン
+				infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
+				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 				fps_counter.Draw(10, 10);

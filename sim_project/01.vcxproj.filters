@@ -258,6 +258,9 @@
     <ClCompile Include="money.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
     </ClCompile>
+    <ClCompile Include="infomation_bar.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="System.h">
@@ -402,6 +405,9 @@
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
     <ClInclude Include="money.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="infomation_bar.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
     </ClInclude>
   </ItemGroup>
