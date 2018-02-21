@@ -80,3 +80,11 @@ struct STRING_DATA_HEADQUARTERS_INFOMAITON
 	char main_title[128];
 	
 };
+
+//一行64文字まで(全キャラクター共通のファクションの詳細説明)
+struct STRING_DATA_FACTION_TAB_INSTRUCTIONS
+{
+	char branch_point[64];
+	char laboratory[64];
+
+};

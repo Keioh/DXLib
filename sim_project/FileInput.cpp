@@ -98,6 +98,8 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 	Filer::CharacterDescriptionJPN();//キャラクターの説明を読み込む
 	Filer::FactionInfomaitonBasicJPN();//基本的なファクション情報を読み込む
 	Filer::HeadquartersInfomaitonBasicJPN();//基本的な本拠地情報を読み込む
+
+	Filer::FactionTabInstructionsJPN();
 }
 
 void Filer::FileOpen_English()//英語ファイル読み込み
@@ -125,6 +127,8 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 	Filer::CharacterDescriptionENG();//キャラクターの説明を読み込む
 	Filer::FactionInfomaitonBasicENG();//基本的なファクション情報を読み込む
 	Filer::HeadquartersInfomaitonBasicENG();//基本的な本拠地情報を読み込む
+
+	Filer::FactionTabInstructionsENG();
 }
 
 
@@ -284,6 +288,34 @@ void Filer::HeadquartersInfomaitonBasicENG()
 	}
 
 	fgets(headquarters_infomation_basic.main_title, 128, fp);
+
+
+	fclose(fp);
+}
+
+void Filer::FactionTabInstructionsJPN()
+{
+	if ((fp = fopen("language/jpn/basic/FactionTabInstructionsJPN.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(faction_tab_instructions.branch_point, 64, fp);
+	fgets(faction_tab_instructions.laboratory, 64, fp);
+
+
+	fclose(fp);
+}
+
+void Filer::FactionTabInstructionsENG()
+{
+	if ((fp = fopen("language/eng/basic/FactionTabInstructionsENG.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(faction_tab_instructions.branch_point, 64, fp);
+	fgets(faction_tab_instructions.laboratory, 64, fp);
 
 
 	fclose(fp);
