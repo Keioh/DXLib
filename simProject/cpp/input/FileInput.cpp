@@ -302,6 +302,11 @@ void Filer::FactionTabInstructionsJPN()
 
 	fgets(faction_tab_instructions.branch_point, 64, fp);
 	fgets(faction_tab_instructions.laboratory, 64, fp);
+	fgets(faction_tab_instructions.money, 64, fp);
+	fgets(faction_tab_instructions.research, 64, fp);
+	fgets(faction_tab_instructions.study, 64, fp);
+	fgets(faction_tab_instructions.characteristic, 64, fp);
+	fgets(faction_tab_instructions.block, 64, fp);
 
 
 	fclose(fp);
@@ -316,6 +321,11 @@ void Filer::FactionTabInstructionsENG()
 
 	fgets(faction_tab_instructions.branch_point, 64, fp);
 	fgets(faction_tab_instructions.laboratory, 64, fp);
+	fgets(faction_tab_instructions.money, 64, fp);
+	fgets(faction_tab_instructions.research, 64, fp);
+	fgets(faction_tab_instructions.study, 64, fp);
+	fgets(faction_tab_instructions.characteristic, 64, fp);
+	fgets(faction_tab_instructions.block, 64, fp);
 
 
 	fclose(fp);

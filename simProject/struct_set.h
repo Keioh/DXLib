@@ -86,5 +86,10 @@ struct STRING_DATA_FACTION_TAB_INSTRUCTIONS
 {
 	char branch_point[64];
 	char laboratory[64];
+	char money[64];
+	char research[64];
+	char study[64];
+	char characteristic[64];
+	char block[64];
 
 };

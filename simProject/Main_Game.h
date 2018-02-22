@@ -3,16 +3,16 @@
 
 //システム関連
 #include "DxLib.h"
-#include "System.h"
+#include "System/System.h"
 #include "define.h"
-#include "FileInput.h"
+#include "input/FileInput.h"
 
 //シーン関連
-#include "LogoScene.h"
-#include "LoadingScene.h"
-#include "StartScene.h"
-#include "GameScene.h"
-#include "LoadScene.h"
+#include "Scene/LogoScene.h"
+#include "Scene/LoadingScene.h"
+#include "Scene/StartScene.h"
+#include "Scene/GameScene.h"
+#include "Scene/LoadScene.h"
 
 
 typedef class Main_Game
@@ -25,7 +25,7 @@ public:
 
 	bool wire_flag;
 
-	SoundSystem test;
+	//SoundSystem test;
 
 	//システム関連
 	System main_system;

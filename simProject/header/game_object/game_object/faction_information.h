@@ -17,6 +17,11 @@ private:
 public:
 	Collision branch_point_collision;//x‹’“_‚Ìà–¾
 	Collision laboratory_collision;//Œ¤‹†Š‚Ìà–¾
+	Collision money_collision;//‘‹à‚Ìà–¾
+	Collision research_collision;//Œ¤‹†’†‚Ìà–¾
+	Collision study_collision;//•×‹­’†‚Ìà–¾
+	Collision characteristic_collision;//“Á«‚Ìà–¾
+	Collision block_collision;//æˆø’â~‚Ìà–¾
 
 	ButtonUI faction_box;
 

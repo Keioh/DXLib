@@ -12,6 +12,7 @@
 #include "research.h"
 #include "study.h"
 #include "diplomacy.h"
+#include "game_timer.h"
 
 #include "character_selection.h"
 
@@ -20,7 +21,6 @@
 
 #include "Box3D.h"
 
-#include "game_timer.h"
 
 
 class GameScene
