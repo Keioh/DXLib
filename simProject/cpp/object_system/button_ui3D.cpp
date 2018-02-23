@@ -36,7 +36,10 @@ bool ButtonUI3D::DrawButtonBox3D(bool wire)
 {
 	box.Draw();
 
-	if (triangle3D_collision_1.TriangleColliderMouse3D(box.vertex[0], box.vertex[1], box.vertex[2], wire) == true)
+	hit1 = triangle3D_collision_1.TriangleColliderMouse3D(box.vertex[0], box.vertex[1], box.vertex[2], wire);
+	hit2 = triangle3D_collision_1.TriangleColliderMouse3D(box.vertex[3], box.vertex[4], box.vertex[5], wire);
+
+	if (hit1 == true)
 	{
 		if (triangle3D_collision_1.active == true)
 		{
@@ -47,7 +50,7 @@ bool ButtonUI3D::DrawButtonBox3D(bool wire)
 		}
 	}
 
-	if (triangle3D_collision_1.TriangleColliderMouse3D(box.vertex[3], box.vertex[4], box.vertex[5], wire) == true)
+	if (hit2 == true)
 	{
 		if (triangle3D_collision_2.active == true)
 		{

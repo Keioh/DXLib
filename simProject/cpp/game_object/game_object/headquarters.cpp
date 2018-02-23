@@ -13,7 +13,7 @@ void Headquarters::Init()
 void Headquarters::Load()
 {
 	headquarters_tab.Load("pack/GameObject/GameUI/HQ_window/HQ_back_wall.png");
-	headquarters_button.Load("pack/GameObject/models/test.png");
+	headquarters_button.Load("pack/GameObject/models/hq.png");
 }
 
 void Headquarters::ColliderOff()

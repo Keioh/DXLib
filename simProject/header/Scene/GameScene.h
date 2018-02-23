@@ -8,6 +8,7 @@
 #include "money.h"
 
 #include "faction_information.h"
+#include "building.h"
 #include "headquarters.h"
 #include "research.h"
 #include "study.h"
@@ -15,6 +16,7 @@
 #include "game_timer.h"
 
 #include "character_selection.h"
+#include "connection_mode.h"
 
 #include "fade_in.h"
 #include "fade_out.h"
@@ -29,6 +31,7 @@ private:
 	FPS fps_counter;
 	Camera3D camera;
 	CharacterSelection CS;
+	ConnectionMode CN_MODE;
 
 	GameTimer timer;
 
@@ -40,7 +43,9 @@ private:
 	Diplomacy diplomacy;
 
 	FactionInformation faction_tab;
+
 	Headquarters headquarters;
+	Building building;
 
 	Box3D terrain;
 

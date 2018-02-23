@@ -20,7 +20,10 @@ void GameScene::Init()
 	diplomacy.Init();
 
 	CS.init();
+	CN_MODE.Init();
 	faction_tab.Init();
+
+	building.Init();
 	headquarters.Init();
 
 	camera.Init();
@@ -39,8 +42,11 @@ void GameScene::Load()
 	diplomacy.Load();
 
 	CS.Load();
+	CN_MODE.Load();
 	timer.Load();
 	faction_tab.Load();
+
+	building.Load();
 	headquarters.Load();
 
 	terrain.Load("pack/GameObject/models/terrein.png");
@@ -65,8 +71,9 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	camera.Init();//カメラを初期化
 
-	terrain.Transform(VGet(1.0f, 1.0f, 1.0f), 90, 0, 0, VGet(0, 0, 0));//３D空間に画像を表示
-	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0,0,0,VGet(0, 0.1,0));//本拠地の位置
+	terrain.Transform(VGet(1.0f, 1.0f, 1.0f), 90.0f, 0.0f, 0.0f, VGet(0.0f, 0.0f, 0.0f));//３D空間に画像を表示
+	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.0f, 0.1f, 0.0f));//本拠地の位置
+	building.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
@@ -86,6 +93,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				terrain.Draw();//3D空間に画像表示
 
 				headquarters.Draw(800, 500,config, wire);//本拠地
+				building.Draw(wire);
+
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
 				DrawGraph(window_x - 256, 0, test_textur, TRUE);
 				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
@@ -94,6 +103,9 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				diplomacy.Draw(window_x - (256 + 96), 24, wire);//外交ボタン
 				infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
 				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
+
+				CN_MODE.Draw(window_x / 2 - 128, 100, wire);
+
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
 				fps_counter.Draw(10, 10);
