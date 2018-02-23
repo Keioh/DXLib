@@ -85,6 +85,76 @@ void FactionInformation::Instructions(int pos_x, int pos_y, Filer config, bool w
 		DrawFormatString(block_collision.x + 20, block_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.block);
 	}
 
+	//ãGêﬂ
+	if (seasons_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.seasons) * 8, pos_y + 60, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(seasons_collision.x + 10, seasons_collision.y + 10, seasons_collision.x + strlen(config.faction_tab_instructions.seasons) * 9, seasons_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(seasons_collision.x + 20, seasons_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.seasons);
+	}
+
+	//êﬂãG
+	if (small_seasons_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.small_seasons) * 8, pos_y + 130, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(small_seasons_collision.x + 10, small_seasons_collision.y + 10, small_seasons_collision.x + strlen(config.faction_tab_instructions.small_seasons) * 9, small_seasons_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(small_seasons_collision.x + 20, small_seasons_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.small_seasons);
+	}
+
+	//îNåéì˙
+	if (years_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.years) * 8, pos_y + 200, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(years_collision.x + 10, years_collision.y + 10, years_collision.x + strlen(config.faction_tab_instructions.years) * 9, years_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(years_collision.x + 20, years_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.years);
+	}
+
+	//ìGëŒ
+	if (hostility_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.hostility) * 8, pos_y + 270, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(hostility_collision.x + 10, hostility_collision.y + 10, hostility_collision.x + strlen(config.faction_tab_instructions.hostility) * 9, hostility_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(hostility_collision.x + 20, hostility_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.hostility);
+	}
+
+	//óFçD
+	if (friendship_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.friendship) * 8, pos_y + 340, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(friendship_collision.x + 10, friendship_collision.y + 10, friendship_collision.x + strlen(config.faction_tab_instructions.friendship) * 9, friendship_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(friendship_collision.x + 20, friendship_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.friendship);
+	}
+
+	//ìØñø
+	if (alliance_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.alliance) * 8, pos_y + 420, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(alliance_collision.x + 10, alliance_collision.y + 10, alliance_collision.x + strlen(config.faction_tab_instructions.alliance) * 9, alliance_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(alliance_collision.x + 20, alliance_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.alliance);
+	}
+
+	//éÊà¯
+	if (transaction_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.transaction) * 8, pos_y + 500, 20, wire) == true)
+	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
+		DrawBox(transaction_collision.x + 10, transaction_collision.y + 10, transaction_collision.x + strlen(config.faction_tab_instructions.transaction) * 9, transaction_collision.y + 50, GetColor(100, 100, 100), TRUE);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+
+		DrawFormatString(transaction_collision.x + 20, transaction_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.transaction);
+	}
+
 }
 
 void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)

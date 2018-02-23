@@ -23,6 +23,15 @@ public:
 	Collision characteristic_collision;//“Á«‚Ìà–¾
 	Collision block_collision;//æˆø’â~‚Ìà–¾
 
+	Collision seasons_collision;//‹Gß‚Ìà–¾
+	Collision small_seasons_collision;//ß‹G‚Ìà–¾
+	Collision years_collision;//”NŒ“ú‚Ìà–¾
+	Collision hostility_collision;//“G‘Î‚Ìà–¾
+	Collision friendship_collision;//—FD‚Ìà–¾
+	Collision alliance_collision;//“¯–¿‚Ìà–¾
+	Collision transaction_collision;//æˆø‚Ìà–¾
+
+
 	ButtonUI faction_box;
 
 	InGameWindow faction_tab;

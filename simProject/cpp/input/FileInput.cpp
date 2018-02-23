@@ -307,6 +307,13 @@ void Filer::FactionTabInstructionsJPN()
 	fgets(faction_tab_instructions.study, 64, fp);
 	fgets(faction_tab_instructions.characteristic, 64, fp);
 	fgets(faction_tab_instructions.block, 64, fp);
+	fgets(faction_tab_instructions.seasons, 64, fp);
+	fgets(faction_tab_instructions.small_seasons, 64, fp);
+	fgets(faction_tab_instructions.years, 64, fp);
+	fgets(faction_tab_instructions.hostility, 64, fp);
+	fgets(faction_tab_instructions.friendship, 64, fp);
+	fgets(faction_tab_instructions.alliance, 64, fp);
+	fgets(faction_tab_instructions.transaction, 64, fp);
 
 
 	fclose(fp);
@@ -326,6 +333,13 @@ void Filer::FactionTabInstructionsENG()
 	fgets(faction_tab_instructions.study, 64, fp);
 	fgets(faction_tab_instructions.characteristic, 64, fp);
 	fgets(faction_tab_instructions.block, 64, fp);
+	fgets(faction_tab_instructions.seasons, 64, fp);
+	fgets(faction_tab_instructions.small_seasons, 64, fp);
+	fgets(faction_tab_instructions.years, 64, fp);
+	fgets(faction_tab_instructions.hostility, 64, fp);
+	fgets(faction_tab_instructions.friendship, 64, fp);
+	fgets(faction_tab_instructions.alliance, 64, fp);
+	fgets(faction_tab_instructions.transaction, 64, fp);
 
 
 	fclose(fp);
