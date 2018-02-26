@@ -76,9 +76,6 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 			infomation_tab_active_flag *= -1;
 		}
 
-
-		FactionInformation::DrawFactionStrings(pos_x, pos_y, config);//文字の表示
-
 		FactionInformation::Instructions(pos_x, pos_y, config, wire);//カーソルを合わせた際の詳細説明表示
 	}
 
@@ -92,57 +89,6 @@ void FactionInformation::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	{
 		infomation_tab_active_flag *= -1;
 	}
-}
-
-void FactionInformation::DrawFactionStrings(int pos_x, int pos_y, Filer config)
-{
-		//一列目
-		//タブのタイトル文字列を表示
-		DrawFormatString(pos_x + 150, pos_y + 20, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.main_title);
-
-		//タブの支拠点文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 150, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.branch_point);
-
-		//タブの研究所文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 210, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.laboratory);
-
-		//タブの資金文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 270, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.money);
-
-		//タブの研究中文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 330, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.research);
-
-		//タブの勉強中文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 390, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.study);
-
-		//タブの特性文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 450, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.characteristic);
-
-		//タブの取引ブロック文字列を表示
-		DrawFormatString(pos_x + 10, pos_y + 510, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.block);
-
-
-		//二列目
-		//タブの季節文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 60, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.seasons);
-
-		//タブの節季文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 130, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.small_seasons);
-
-		//タブの年月日文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 200, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.years);
-
-		//タブの敵対文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 270, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.hostility);
-
-		//タブの友好文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 340, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.friendship);
-
-		//タブの同盟文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 420, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.alliance);
-
-		//タブの取引文字列を表示
-		DrawFormatString(pos_x + 500, pos_y + 500, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.transaction);
 }
 
 void FactionInformation::CollisionOff()

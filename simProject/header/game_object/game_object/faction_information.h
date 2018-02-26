@@ -11,12 +11,6 @@ class FactionInformation
 private:
 	Input Key;
 
-	int infomation_tab_active_flag = -1;
-
-	void DrawFactionStrings(int pos_x, int pos_y, Filer config);
-
-public:
-
 	GameWindowCursor branch_point_window;
 	GameWindowCursor laboratory_window;
 	GameWindowCursor money_window;
@@ -32,6 +26,11 @@ public:
 	GameWindowCursor friendship_window;
 	GameWindowCursor alliance_window;
 	GameWindowCursor transaction_window;
+
+	int infomation_tab_active_flag = -1;
+
+public:
+
 
 	ButtonUI faction_box;
 
