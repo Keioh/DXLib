@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "FileInput.h"
 #include "game_window.h"
+#include "game_window_cursor.h"
 
 class FactionInformation
 {
@@ -15,22 +16,22 @@ private:
 	void DrawFactionStrings(int pos_x, int pos_y, Filer config);
 
 public:
-	Collision branch_point_collision;//x‹’“_‚Ìà–¾
-	Collision laboratory_collision;//Œ¤‹†Š‚Ìà–¾
-	Collision money_collision;//‘‹à‚Ìà–¾
-	Collision research_collision;//Œ¤‹†’†‚Ìà–¾
-	Collision study_collision;//•×‹­’†‚Ìà–¾
-	Collision characteristic_collision;//“Á«‚Ìà–¾
-	Collision block_collision;//æˆø’â~‚Ìà–¾
 
-	Collision seasons_collision;//‹Gß‚Ìà–¾
-	Collision small_seasons_collision;//ß‹G‚Ìà–¾
-	Collision years_collision;//”NŒ“ú‚Ìà–¾
-	Collision hostility_collision;//“G‘Î‚Ìà–¾
-	Collision friendship_collision;//—FD‚Ìà–¾
-	Collision alliance_collision;//“¯–¿‚Ìà–¾
-	Collision transaction_collision;//æˆø‚Ìà–¾
+	GameWindowCursor branch_point_window;
+	GameWindowCursor laboratory_window;
+	GameWindowCursor money_window;
+	GameWindowCursor research_window;
+	GameWindowCursor study_window;
+	GameWindowCursor characteristic_window;
+	GameWindowCursor block_window;
 
+	GameWindowCursor seasons_window;
+	GameWindowCursor small_seasons_window;
+	GameWindowCursor years_window;
+	GameWindowCursor hostility_window;
+	GameWindowCursor friendship_window;
+	GameWindowCursor alliance_window;
+	GameWindowCursor transaction_window;
 
 	ButtonUI faction_box;
 

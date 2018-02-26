@@ -15,4 +15,6 @@ public:
 	void Init();
 	void Load();
 	void Draw(int pos_x, int pos_y, char* strings_hitbox, char* strings, bool wire = false);//(x位置､y位置､ヒットボックス内の文字､カーソルウィンドウ内の文字､ワイヤー表示)
+	void ColliderOff();
+	void ColliderOn();
 };

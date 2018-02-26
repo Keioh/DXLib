@@ -42,12 +42,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\GameProject\simProject;C:\GameProject\simProject\header\game_object\basic;C:\GameProject\simProject\header\System;C:\GameProject\simProject\header\Scene;C:\GameProject\simProject\header\object_system;C:\GameProject\simProject\header\net;C:\GameProject\simProject\header\input;C:\GameProject\simProject\header\game_object\title_object;C:\GameProject\simProject\header\game_object\option_object;C:\GameProject\simProject\header\game_object\load_object;C:\GameProject\simProject\header\game_object\game_scene_object;C:\GameProject\simProject\header\game_object\game_object;C:\GameProject\simProject\header\game_object\effect_object;C:\GameProject\simProject\header\game_object\basic\in_game_window;C:\GameProject\simProject\header\game_object\basic\camera;C:\GameProject\simProject\header\game_object\3D;C:\GameProject\simProject\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(IncludePath)</IncludePath>
+    <IncludePath>C:\GameProject\simProject\header\game_object\game_scene_object\UI;C:\GameProject\simProject\header\game_object\game_scene_object\connection_mode;C:\GameProject\simProject;C:\GameProject\simProject\header\game_object\basic;C:\GameProject\simProject\header\System;C:\GameProject\simProject\header\Scene;C:\GameProject\simProject\header\object_system;C:\GameProject\simProject\header\net;C:\GameProject\simProject\header\input;C:\GameProject\simProject\header\game_object\title_object;C:\GameProject\simProject\header\game_object\option_object;C:\GameProject\simProject\header\game_object\load_object;C:\GameProject\simProject\header\game_object\game_scene_object;C:\GameProject\simProject\header\game_object\game_object;C:\GameProject\simProject\header\game_object\effect_object;C:\GameProject\simProject\header\game_object\basic\in_game_window;C:\GameProject\simProject\header\game_object\basic\camera;C:\GameProject\simProject\header\game_object\3D;C:\GameProject\simProject\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(IncludePath)</IncludePath>
     <LibraryPath>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(IncludePath)</IncludePath>
+    <IncludePath>C:\GameProject\simProject\header\game_object\game_scene_object\UI;C:\GameProject\simProject\header\game_object\game_scene_object\connection_mode;C:\GameProject\simProject;C:\GameProject\simProject\header\System;C:\GameProject\simProject\header\Scene;C:\GameProject\simProject\header\object_system;C:\GameProject\simProject\header\net;C:\GameProject\simProject\header\input;C:\GameProject\simProject\header\game_object\title_object;C:\GameProject\simProject\header\game_object\option_object;C:\GameProject\simProject\header\game_object\load_object;C:\GameProject\simProject\header\game_object\game_scene_object;C:\GameProject\simProject\header\game_object\game_object;C:\GameProject\simProject\header\game_object\effect_object;C:\GameProject\simProject\header\game_object\basic;C:\GameProject\simProject\header\game_object\basic\in_game_window;C:\GameProject\simProject\header\game_object\basic\camera;C:\GameProject\simProject\header\game_object\3D;C:\GameProject\simProject\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(IncludePath)</IncludePath>
     <LibraryPath>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -59,7 +59,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\GameProject\simProject;C:\GameProject\simProject\header\System;C:\GameProject\simProject\header\Scene;C:\GameProject\simProject\header\object_system;C:\GameProject\simProject\header\net;C:\GameProject\simProject\header\input;C:\GameProject\simProject\header\game_object\title_object;C:\GameProject\simProject\header\game_object\option_object;C:\GameProject\simProject\header\game_object\load_object;C:\GameProject\simProject\header\game_object\game_scene_object;C:\GameProject\simProject\header\game_object\game_object;C:\GameProject\simProject\header\game_object\effect_object;C:\GameProject\simProject\header\game_object\basic;C:\GameProject\simProject\header\game_object\basic\in_game_window;C:\GameProject\simProject\header\game_object\basic\camera;C:\GameProject\simProject\header\game_object\3D;C:\GameProject\simProject\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameProject\simProject\header\game_object\game_scene_object\UI;C:\GameProject\simProject\header\game_object\game_scene_object\connection_mode;C:\GameProject\simProject;C:\GameProject\simProject\header\System;C:\GameProject\simProject\header\Scene;C:\GameProject\simProject\header\object_system;C:\GameProject\simProject\header\net;C:\GameProject\simProject\header\input;C:\GameProject\simProject\header\game_object\title_object;C:\GameProject\simProject\header\game_object\option_object;C:\GameProject\simProject\header\game_object\load_object;C:\GameProject\simProject\header\game_object\game_scene_object;C:\GameProject\simProject\header\game_object\game_object;C:\GameProject\simProject\header\game_object\effect_object;C:\GameProject\simProject\header\game_object\basic;C:\GameProject\simProject\header\game_object\basic\in_game_window;C:\GameProject\simProject\header\game_object\basic\camera;C:\GameProject\simProject\header\game_object\3D;C:\GameProject\simProject\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -78,7 +78,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameProject\simProject\header\game_object\game_scene_object\UI;C:\GameProject\simProject\header\game_object\game_scene_object\connection_mode;C:\GameProject\simProject;C:\GameProject\simProject\header\System;C:\GameProject\simProject\header\Scene;C:\GameProject\simProject\header\object_system;C:\GameProject\simProject\header\net;C:\GameProject\simProject\header\input;C:\GameProject\simProject\header\game_object\title_object;C:\GameProject\simProject\header\game_object\option_object;C:\GameProject\simProject\header\game_object\load_object;C:\GameProject\simProject\header\game_object\game_scene_object;C:\GameProject\simProject\header\game_object\game_object;C:\GameProject\simProject\header\game_object\effect_object;C:\GameProject\simProject\header\game_object\basic\in_game_window;C:\GameProject\simProject\header\game_object\basic\camera;C:\GameProject\simProject\header\game_object\3D;C:\GameProject\simProject\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -95,10 +95,12 @@
     <ClCompile Include="cpp\game_object\basic\camera\Camera3D.cpp" />
     <ClCompile Include="cpp\game_object\basic\fps.cpp" />
     <ClCompile Include="cpp\game_object\basic\in_game_window\game_window.cpp" />
+    <ClCompile Include="cpp\game_object\basic\in_game_window\game_window_cursor.cpp" />
     <ClCompile Include="cpp\game_object\basic\Loading.cpp" />
     <ClCompile Include="cpp\game_object\basic\logo.cpp" />
     <ClCompile Include="cpp\game_object\effect_object\fade_in.cpp" />
     <ClCompile Include="cpp\game_object\effect_object\fade_out.cpp" />
+    <ClCompile Include="cpp\game_object\game_object\building.cpp" />
     <ClCompile Include="cpp\game_object\game_object\diplomacy.cpp" />
     <ClCompile Include="cpp\game_object\game_object\faction_information.cpp" />
     <ClCompile Include="cpp\game_object\game_object\game_timer.cpp" />
@@ -108,6 +110,7 @@
     <ClCompile Include="cpp\game_object\game_object\research.cpp" />
     <ClCompile Include="cpp\game_object\game_object\study.cpp" />
     <ClCompile Include="cpp\game_object\game_scene_object\character_selection.cpp" />
+    <ClCompile Include="cpp\game_object\game_scene_object\connection_mode\connection_mode.cpp" />
     <ClCompile Include="cpp\game_object\load_object\return.cpp" />
     <ClCompile Include="cpp\game_object\option_object\apply.cpp" />
     <ClCompile Include="cpp\game_object\option_object\bgm_mute.cpp" />
@@ -146,10 +149,12 @@
     <ClInclude Include="header\game_object\basic\camera\Camera3D.h" />
     <ClInclude Include="header\game_object\basic\fps.h" />
     <ClInclude Include="header\game_object\basic\in_game_window\game_window.h" />
+    <ClInclude Include="header\game_object\basic\in_game_window\game_window_cursor.h" />
     <ClInclude Include="header\game_object\basic\Loading.h" />
     <ClInclude Include="header\game_object\basic\logo.h" />
     <ClInclude Include="header\game_object\effect_object\fade_in.h" />
     <ClInclude Include="header\game_object\effect_object\fade_out.h" />
+    <ClInclude Include="header\game_object\game_object\building.h" />
     <ClInclude Include="header\game_object\game_object\diplomacy.h" />
     <ClInclude Include="header\game_object\game_object\faction_information.h" />
     <ClInclude Include="header\game_object\game_object\game_timer.h" />
@@ -159,6 +164,7 @@
     <ClInclude Include="header\game_object\game_object\research.h" />
     <ClInclude Include="header\game_object\game_object\study.h" />
     <ClInclude Include="header\game_object\game_scene_object\character_selection.h" />
+    <ClInclude Include="header\game_object\game_scene_object\connection_mode\connection_mode.h" />
     <ClInclude Include="header\game_object\load_object\return.h" />
     <ClInclude Include="header\game_object\option_object\apply.h" />
     <ClInclude Include="header\game_object\option_object\bgm_mute.h" />

@@ -16,144 +16,46 @@ void FactionInformation::Load()
 void FactionInformation::Instructions(int pos_x, int pos_y, Filer config, bool wire)
 {
 	//éxãíì_
-	if (branch_point_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.branch_point) * 8, pos_y + 150, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(branch_point_collision.x + 10, branch_point_collision.y + 10, branch_point_collision.x + strlen(config.faction_tab_instructions.branch_point) * 9, branch_point_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(branch_point_collision.x + 20, branch_point_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.branch_point);
-	}
+	branch_point_window.Draw(pos_x + 10, pos_y + 150, config.faction_infomaiton_basic.branch_point, config.faction_tab_instructions.branch_point, wire);
 
 	//å§ãÜèä
-	if (laboratory_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.branch_point) * 8, pos_y + 210, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(laboratory_collision.x + 10, laboratory_collision.y + 10, laboratory_collision.x + strlen(config.faction_tab_instructions.laboratory) * 9, laboratory_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	laboratory_window.Draw(pos_x + 10, pos_y + 210, config.faction_infomaiton_basic.laboratory, config.faction_tab_instructions.laboratory, wire);
 
-		DrawFormatString(laboratory_collision.x + 20, laboratory_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.laboratory);
-	}
-
-	//éëã‡
-	if (money_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.money) * 8, pos_y + 270, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(money_collision.x + 10, money_collision.y + 10, money_collision.x + strlen(config.faction_tab_instructions.money) * 9, money_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(money_collision.x + 20, money_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.money);
-	}
+	//Ç®ã‡
+	money_window.Draw(pos_x + 10, pos_y + 270, config.faction_infomaiton_basic.money, config.faction_tab_instructions.money, wire);
 
 	//å§ãÜíÜ
-	if (research_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.research) * 8, pos_y + 330, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(research_collision.x + 10, research_collision.y + 10, research_collision.x + strlen(config.faction_tab_instructions.research) * 9, research_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(research_collision.x + 20, research_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.research);
-	}
+	research_window.Draw(pos_x + 10, pos_y + 330, config.faction_infomaiton_basic.research, config.faction_tab_instructions.research, wire);
 
 	//ï◊ã≠íÜ
-	if (study_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.study) * 8, pos_y + 390, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(study_collision.x + 10, study_collision.y + 10, study_collision.x + strlen(config.faction_tab_instructions.study) * 9, study_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(study_collision.x + 20, study_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.study);
-	}
+	study_window.Draw(pos_x + 10, pos_y + 390, config.faction_infomaiton_basic.study, config.faction_tab_instructions.study, wire);
 
 	//ì¡ê´
-	if (characteristic_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.characteristic) * 8, pos_y + 450, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(characteristic_collision.x + 10, characteristic_collision.y + 10, characteristic_collision.x + strlen(config.faction_tab_instructions.characteristic) * 9, characteristic_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(characteristic_collision.x + 20, characteristic_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.characteristic);
-	}
+	characteristic_window.Draw(pos_x + 10, pos_y + 450, config.faction_infomaiton_basic.characteristic, config.faction_tab_instructions.characteristic, wire);
 
 	//éÊà¯í‚é~
-	if (block_collision.BoxColliderMouse(pos_x + 10, strlen(config.faction_infomaiton_basic.block) * 8, pos_y + 510, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(block_collision.x + 10, block_collision.y + 10, block_collision.x + strlen(config.faction_tab_instructions.block) * 9, block_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(block_collision.x + 20, block_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.block);
-	}
+	block_window.Draw(pos_x + 10, pos_y + 510, config.faction_infomaiton_basic.block, config.faction_tab_instructions.block, wire);
 
 	//ãGêﬂ
-	if (seasons_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.seasons) * 8, pos_y + 60, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(seasons_collision.x + 10, seasons_collision.y + 10, seasons_collision.x + strlen(config.faction_tab_instructions.seasons) * 9, seasons_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(seasons_collision.x + 20, seasons_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.seasons);
-	}
+	seasons_window.Draw(pos_x + 500, pos_y + 60, config.faction_infomaiton_basic.seasons, config.faction_tab_instructions.seasons, wire);
 
 	//êﬂãG
-	if (small_seasons_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.small_seasons) * 8, pos_y + 130, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(small_seasons_collision.x + 10, small_seasons_collision.y + 10, small_seasons_collision.x + strlen(config.faction_tab_instructions.small_seasons) * 9, small_seasons_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(small_seasons_collision.x + 20, small_seasons_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.small_seasons);
-	}
+	small_seasons_window.Draw(pos_x + 500, pos_y + 130, config.faction_infomaiton_basic.small_seasons, config.faction_tab_instructions.small_seasons, wire);
 
 	//îNåéì˙
-	if (years_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.years) * 8, pos_y + 200, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(years_collision.x + 10, years_collision.y + 10, years_collision.x + strlen(config.faction_tab_instructions.years) * 9, years_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(years_collision.x + 20, years_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.years);
-	}
+	years_window.Draw(pos_x + 500, pos_y + 200, config.faction_infomaiton_basic.years, config.faction_tab_instructions.years, wire);
 
 	//ìGëŒ
-	if (hostility_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.hostility) * 8, pos_y + 270, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(hostility_collision.x + 10, hostility_collision.y + 10, hostility_collision.x + strlen(config.faction_tab_instructions.hostility) * 9, hostility_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(hostility_collision.x + 20, hostility_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.hostility);
-	}
+	hostility_window.Draw(pos_x + 500, pos_y + 270, config.faction_infomaiton_basic.hostility, config.faction_tab_instructions.hostility, wire);
 
 	//óFçD
-	if (friendship_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.friendship) * 8, pos_y + 340, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(friendship_collision.x + 10, friendship_collision.y + 10, friendship_collision.x + strlen(config.faction_tab_instructions.friendship) * 9, friendship_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+	friendship_window.Draw(pos_x + 500, pos_y + 340, config.faction_infomaiton_basic.friendship, config.faction_tab_instructions.friendship, wire);
 
-		DrawFormatString(friendship_collision.x + 20, friendship_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.friendship);
-	}
-
-	//ìØñø
-	if (alliance_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.alliance) * 8, pos_y + 420, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(alliance_collision.x + 10, alliance_collision.y + 10, alliance_collision.x + strlen(config.faction_tab_instructions.alliance) * 9, alliance_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(alliance_collision.x + 20, alliance_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.alliance);
-	}
+	//óFçD
+	alliance_window.Draw(pos_x + 500, pos_y + 420, config.faction_infomaiton_basic.alliance, config.faction_tab_instructions.alliance, wire);
 
 	//éÊà¯
-	if (transaction_collision.BoxColliderMouse(pos_x + 500, strlen(config.faction_infomaiton_basic.transaction) * 8, pos_y + 500, 20, wire) == true)
-	{
-		SetDrawBlendMode(DX_BLENDMODE_ALPHA, 150);
-		DrawBox(transaction_collision.x + 10, transaction_collision.y + 10, transaction_collision.x + strlen(config.faction_tab_instructions.transaction) * 9, transaction_collision.y + 50, GetColor(100, 100, 100), TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
-		DrawFormatString(transaction_collision.x + 20, transaction_collision.y + 20, GetColor(0, 0, 0), "%s", config.faction_tab_instructions.transaction);
-	}
+	transaction_window.Draw(pos_x + 500, pos_y + 500, config.faction_infomaiton_basic.transaction, config.faction_tab_instructions.transaction, wire);
 
 }
 
@@ -247,12 +149,44 @@ void FactionInformation::CollisionOff()
 {
 	faction_box.ColliderOff();
 	faction_tab.infomation_tab_close.ColliderOff();
+
+	branch_point_window.ColliderOff();
+	laboratory_window.ColliderOff();
+	money_window.ColliderOff();
+	research_window.ColliderOff();
+	study_window.ColliderOff();
+	characteristic_window.ColliderOff();
+	block_window.ColliderOff();
+
+	seasons_window.ColliderOff();
+	small_seasons_window.ColliderOff();
+	years_window.ColliderOff();
+	hostility_window.ColliderOff();
+	friendship_window.ColliderOff();
+	alliance_window.ColliderOff();
+	transaction_window.ColliderOff();
 }
 
 void FactionInformation::CollisionOn()
 {
 	faction_box.ColliderOn();
 	faction_tab.infomation_tab_close.ColliderOn();
+
+	branch_point_window.ColliderOn();
+	laboratory_window.ColliderOn();
+	money_window.ColliderOn();
+	research_window.ColliderOn();
+	study_window.ColliderOn();
+	characteristic_window.ColliderOn();
+	block_window.ColliderOn();
+
+	seasons_window.ColliderOn();
+	small_seasons_window.ColliderOn();
+	years_window.ColliderOn();
+	hostility_window.ColliderOn();
+	friendship_window.ColliderOn();
+	alliance_window.ColliderOn();
+	transaction_window.ColliderOn();
 }
 
 void FactionInformation::FactionInfomationTabOff()

@@ -91,5 +91,12 @@ struct STRING_DATA_FACTION_TAB_INSTRUCTIONS
 	char study[64];
 	char characteristic[64];
 	char block[64];
+	char seasons[64];
+	char small_seasons[64];
+	char years[64];
+	char hostility[64];
+	char friendship[64];
+	char alliance[64];
+	char transaction[64];
 
 };

@@ -115,6 +115,18 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\basic\in_game_window">
       <UniqueIdentifier>{1408d4f4-fd47-4b76-bd97-908942052f97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object\connection_mode">
+      <UniqueIdentifier>{51431122-95f9-4125-896e-374fd75c52a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_scene_object\connection_mode">
+      <UniqueIdentifier>{7d006186-6bf9-4291-8ce0-02c6bc0a3a25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_scene_object\UI">
+      <UniqueIdentifier>{6e192b32-a2a3-429e-b0e4-d87413595f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object\UI">
+      <UniqueIdentifier>{a857ae8b-075e-42a3-bb4a-1a5283511a12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main_Game.cpp">
@@ -260,6 +272,15 @@
     </ClCompile>
     <ClCompile Include="cpp\System\System.cpp">
       <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\game_object\game_object\building.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\game_object\game_scene_object\connection_mode\connection_mode.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_scene_object\connection_mode</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\game_object\basic\in_game_window\game_window_cursor.cpp">
+      <Filter>ソース ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -409,6 +430,15 @@
     </ClInclude>
     <ClInclude Include="header\System\System.h">
       <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game_object\game_object\building.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game_object\game_scene_object\connection_mode\connection_mode.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_scene_object\connection_mode</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game_object\basic\in_game_window\game_window_cursor.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
