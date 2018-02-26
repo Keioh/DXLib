@@ -33,7 +33,7 @@ void Headquarters::Transform(VECTOR scale, float rotate_x, float rotate_y, float
 	headquarters_button.Transform(scale, rotate_x, rotate_y, rotate_z, trans);
 }
 
-void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
+void Headquarters::ObjectDraw(int pos_x, int pos_y, Filer config, bool wire)
 {
 	key.GetKeyFrame();
 
@@ -46,7 +46,10 @@ void Headquarters::Draw(int pos_x, int pos_y, Filer config, bool wire)
 	{
 		headquarters_tab_active *= -1;
 	}
+}
 
+void Headquarters::TabDraw(Filer config, bool wire)
+{
 	//ƒ^ƒu‚ªƒIƒ“‚ÌŽž
 	if (headquarters_tab_active == 1)
 	{

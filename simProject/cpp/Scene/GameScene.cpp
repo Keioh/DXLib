@@ -92,7 +92,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 				terrain.Draw();//3D空間に画像表示
 
-				headquarters.Draw(800, 500,config, wire);//本拠地
+				headquarters.ObjectDraw(800, 500,config, wire);//本拠地
 				building.Draw(wire);
 
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
@@ -103,6 +103,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				diplomacy.Draw(window_x - (256 + 96), 24, wire);//外交ボタン
 				infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
 				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
+				headquarters.TabDraw(config, wire);//本拠地のタブ
 
 				CN_MODE.Draw(window_x / 2 - 128, 100, wire);
 
