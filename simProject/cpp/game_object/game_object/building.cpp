@@ -20,6 +20,10 @@ void Building::Draw(bool wire)
 {
 	bulidng_object.DrawButtonBox3D(wire);
 
+}
+
+void Building::DrawUI()
+{
 	//どちらかのコライダーにマウスがヒットしていたら
 	if ((bulidng_object.hit1 == true) || (bulidng_object.hit2 == true))
 	{
@@ -27,6 +31,4 @@ void Building::Draw(bool wire)
 
 		DrawBox(mouse_x + 15, mouse_y + 10, mouse_x + 115, mouse_y + 60, GetColor(150, 150, 150), TRUE);
 	}
-
-
-}
+	}

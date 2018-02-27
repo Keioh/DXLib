@@ -12,5 +12,6 @@ public:
 	void Init();
 	void Load();
 	void Draw(bool wire = false);
+	void DrawUI();
 	void Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos);
 };

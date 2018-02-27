@@ -46,6 +46,7 @@ private:
 
 	Headquarters headquarters;
 	Building building;
+	Building building1;
 
 	Box3D terrain;
 

@@ -24,6 +24,7 @@ void GameScene::Init()
 	faction_tab.Init();
 
 	building.Init();
+	building1.Init();
 	headquarters.Init();
 
 	camera.Init();
@@ -47,6 +48,7 @@ void GameScene::Load()
 	faction_tab.Load();
 
 	building.Load();
+	building1.Load();
 	headquarters.Load();
 
 	terrain.Load("pack/GameObject/models/terrein.png");
@@ -74,6 +76,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 	terrain.Transform(VGet(1.0f, 1.0f, 1.0f), 90.0f, 0.0f, 0.0f, VGet(0.0f, 0.0f, 0.0f));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.0f, 0.1f, 0.0f));//本拠地の位置
 	building.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
+	building1.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, -0.5f));
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
@@ -94,6 +97,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 				headquarters.ObjectDraw(800, 500,config, wire);//本拠地
 				building.Draw(wire);
+				building1.Draw(wire);
 
 				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
 				DrawGraph(window_x - 256, 0, test_textur, TRUE);
@@ -104,6 +108,8 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
 				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
 				headquarters.TabDraw(config, wire);//本拠地のタブ
+				building.DrawUI();
+				building1.DrawUI();
 
 				CN_MODE.Draw(window_x / 2 - 128, 100, wire);
 
