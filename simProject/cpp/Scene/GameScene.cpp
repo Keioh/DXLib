@@ -76,7 +76,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 	terrain.Transform(VGet(1.0f, 1.0f, 1.0f), 90.0f, 0.0f, 0.0f, VGet(0.0f, 0.0f, 0.0f));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.0f, 0.1f, 0.0f));//本拠地の位置
 	building.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
-	building1.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, -0.5f));
+	building1.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.5f));
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
@@ -92,6 +92,10 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			}
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{			
+
+				mode.connection_mode = CN_MODE.connection_mode_flag;//モードフラグを代入
+				building.Mode(mode);//buildingのモードチェンジ
+				building1.Mode(mode);
 
 				terrain.Draw();//3D空間に画像表示
 
@@ -109,7 +113,6 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
 				headquarters.TabDraw(config, wire);//本拠地のタブ
 				building.DrawUI();
-				building1.DrawUI();
 
 				CN_MODE.Draw(window_x / 2 - 128, 100, wire);
 

@@ -1,4 +1,5 @@
 #pragma once
+#include "struct_set.h"
 #include "DxLib.h"
 #include "FileInput.h"
 #include "fps.h"
@@ -28,6 +29,8 @@
 class GameScene
 {
 private:
+	MODE mode;
+
 	FPS fps_counter;
 	Camera3D camera;
 	CharacterSelection CS;
@@ -45,8 +48,7 @@ private:
 	FactionInformation faction_tab;
 
 	Headquarters headquarters;
-	Building building;
-	Building building1;
+	Building building, building1;
 
 	Box3D terrain;
 
