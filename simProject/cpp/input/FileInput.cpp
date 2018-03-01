@@ -100,6 +100,7 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 	Filer::HeadquartersInfomaitonBasicJPN();//基本的な本拠地情報を読み込む
 
 	Filer::FactionTabInstructionsJPN();
+	Filer::ConnectionModeInfomationJPN();
 }
 
 void Filer::FileOpen_English()//英語ファイル読み込み
@@ -129,6 +130,7 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 	Filer::HeadquartersInfomaitonBasicENG();//基本的な本拠地情報を読み込む
 
 	Filer::FactionTabInstructionsENG();
+	Filer::ConnectionModeInfomationENG();
 }
 
 
@@ -341,6 +343,30 @@ void Filer::FactionTabInstructionsENG()
 	fgets(faction_tab_instructions.alliance, 64, fp);
 	fgets(faction_tab_instructions.transaction, 64, fp);
 
+
+	fclose(fp);
+}
+
+void Filer::ConnectionModeInfomationJPN()
+{
+	if ((fp = fopen("language/jpn/basic/ConnectionModeInfomationJPN.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(connection_mode_infomation.main_title, 64, fp);
+
+	fclose(fp);
+}
+
+void Filer::ConnectionModeInfomationENG()
+{
+	if ((fp = fopen("language/eng/basic/ConnectionModeInfomationENG.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(connection_mode_infomation.main_title, 64, fp);
 
 	fclose(fp);
 }

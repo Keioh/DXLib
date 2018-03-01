@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "Input.h"
+#include "FileInput.h"
 
 class ConnectionMode
 {
@@ -14,5 +15,5 @@ public:
 
 	void Init();
 	void Load();
-	void Draw(int pos_x, int pos_y, bool wire = false);
+	void Draw(int pos_x, int pos_y, Filer config, bool wire = false);
 };

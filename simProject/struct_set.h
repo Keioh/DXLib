@@ -3,6 +3,11 @@
 
 using namespace std;
 
+struct MODE
+{
+	int connection_mode = -1;
+};
+
 struct SOUND_DATA//音に関する情報
 {
 	int bgm_volume;
@@ -98,5 +103,11 @@ struct STRING_DATA_FACTION_TAB_INSTRUCTIONS
 	char friendship[64];
 	char alliance[64];
 	char transaction[64];
+};
+
+//一行64文字まで(全キャラクター共通のコネクトモード説明)
+struct STRING_DATA_CONNECTION_MODE_INFOMAITON
+{
+	char main_title[64];
 
 };

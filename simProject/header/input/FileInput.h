@@ -29,6 +29,7 @@ public:
 
 	STRING_DATA_CHARACTER_DESCRIPTION character_description;//キャラクター説明
 
+	STRING_DATA_CONNECTION_MODE_INFOMAITON connection_mode_infomation;//接続モードの説明
 
 	STRING_DATA_FACTION_INFOMAITON faction_infomaiton_basic;//全キャラクター共通のファクションタブ内の説明
 	STRING_DATA_FACTION_TAB_INSTRUCTIONS faction_tab_instructions;//全キャラクター共通のファクションタブ内の詳細説明
@@ -56,7 +57,10 @@ public:
 	void FactionTabInstructionsJPN();//日本語ファイル読み込み(全キャラクター共通のファクションの詳細説明)
 	void FactionTabInstructionsENG();//英語ファイル読み込み(全キャラクター共通のファクションの詳細説明)
 
-	void HeadquartersInfomaitonBasicJPN();//日本語ファイル読み込み(全キャラクター共通のフ本拠地説明)
-	void HeadquartersInfomaitonBasicENG();//英語ファイル読み込み(全キャラクター共通のフ本拠地説明)
+	void HeadquartersInfomaitonBasicJPN();//日本語ファイル読み込み(全キャラクター共通の本拠地説明)
+	void HeadquartersInfomaitonBasicENG();//英語ファイル読み込み(全キャラクター共通の本拠地説明)
+
+	void ConnectionModeInfomationJPN();//日本語ファイル読み込み(全キャラクター共通の接続モード説明)
+	void ConnectionModeInfomationENG();//英語ファイル読み込み(全キャラクター共通の接続モード説明)
 
 };

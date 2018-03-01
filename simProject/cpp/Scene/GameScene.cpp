@@ -114,7 +114,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				headquarters.TabDraw(config, wire);//本拠地のタブ
 				building.DrawUI();
 
-				CN_MODE.Draw(window_x / 2 - 128, 100, wire);
+				CN_MODE.Draw(window_x / 2 - 128, 100, config, wire);
 
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
