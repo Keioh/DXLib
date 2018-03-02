@@ -56,6 +56,24 @@ void GameScene::Load()
 	test_textur = LoadGraph("pack/GameObject/GameUI/time/years.png");
 }
 
+void GameScene::DrawUI(int window_x, int window_y, Filer config, bool wire)
+{
+				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
+				DrawGraph(window_x - 256, 0, test_textur, TRUE);
+				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
+				research.Draw(window_x - (256 + 32), 24, wire);//研究ボタン
+				study.Draw(window_x - (256 + 64), 24, wire);//勉強ボタン
+				diplomacy.Draw(window_x - (256 + 96), 24, wire);//外交ボタン
+				infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
+				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
+				headquarters.TabDraw(config, wire);//本拠地のタブ
+				building.DrawUI();
+
+				CN_MODE.Draw(window_x / 2 - 128, 100, config, wire);
+
+				fps_counter.Draw(10, 10);
+}
+
 void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wire)
 {
 	//設定ファイル関連を読み込む
@@ -103,22 +121,10 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 				building.Draw(wire);
 				building1.Draw(wire);
 
-				faction_tab.Draw(0, 0, config, wire);//キャラクタ情報ボタン		
-				DrawGraph(window_x - 256, 0, test_textur, TRUE);
-				timer.Draw(window_x - 48, 128, wire);//時間を進めるボタン
-				research.Draw(window_x - (256 + 32), 24, wire);//研究ボタン
-				study.Draw(window_x - (256 + 64), 24, wire);//勉強ボタン
-				diplomacy.Draw(window_x - (256 + 96), 24, wire);//外交ボタン
-				infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
-				money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
-				headquarters.TabDraw(config, wire);//本拠地のタブ
-				building.DrawUI();
-
-				CN_MODE.Draw(window_x / 2 - 128, 100, config, wire);
 
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 
-				fps_counter.Draw(10, 10);
+				GameScene::DrawUI(window_x, window_y, config, wire);//UI描写
 			}
 			else if (CS.character_number < 0)//マイナスの値を取っていたら０で初期化。
 			{

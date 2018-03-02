@@ -54,6 +54,8 @@ private:
 
 	int test_textur;
 
+	void DrawUI(int window_x, int window_y, Filer config, bool wire = false);
+
 public:
 	GameScene();
 
@@ -65,6 +67,6 @@ public:
 	void Init();
 	void Load();
 
-	void DrawGameScene(int window_x, int window_y, Filer config, bool wire);
+	void DrawGameScene(int window_x, int window_y, Filer config, bool wire = false);
 
 };
