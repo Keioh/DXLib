@@ -52,7 +52,7 @@ private:
 
 	Box3D terrain;
 
-	int test_textur;
+	int timer_back_wall_textur;
 
 	void DrawUI(int window_x, int window_y, Filer config, bool wire = false);
 
