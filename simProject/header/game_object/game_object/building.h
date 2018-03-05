@@ -17,6 +17,6 @@ public:
 	void Load();
 	void Mode(MODE mode_flag);
 	void Draw(bool wire = false);
-	void DrawUI();
+	void DrawUI(int pos_x, int pos_y, bool wire = false);
 	void Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos);
 };

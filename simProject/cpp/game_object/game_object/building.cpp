@@ -54,7 +54,7 @@ void Building::Draw(bool wire)
 
 }
 
-void Building::DrawUI()
+void Building::DrawUI(int pos_x, int pos_y, bool wire)
 {
 	//どちらかのコライダーにマウスがヒットしていたら
 	if ((bulidng_object.hit1 == true) || (bulidng_object.hit2 == true))
