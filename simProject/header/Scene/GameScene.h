@@ -34,7 +34,7 @@ private:
 	FPS fps_counter;
 	Camera3D camera;
 	CharacterSelection CS;
-	ConnectionMode CN_MODE;
+	ConnectionMode Connection_MODE;
 
 	GameTimer timer;
 

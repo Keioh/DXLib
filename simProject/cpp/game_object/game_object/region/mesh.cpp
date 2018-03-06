@@ -11,7 +11,9 @@ void MeshRegion::Load()
 }
 
 void MeshRegion::Draw(VECTOR pos, bool wire)
-{
+{	
+	building.Mode(MeshRegion::mode);
+
 	building.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, pos);
 	building.Draw(wire);
 }

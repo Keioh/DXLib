@@ -7,11 +7,11 @@ class Building
 private:
 	int mouse_x, mouse_y;
 	int graphics_alph = 255;
-	bool object_click;
 	MODE flag;//ƒNƒŠƒbƒN‚µ‚½‚Æ‚«‚Ì”»’è
 
 public:
 	ButtonUI3D bulidng_object;
+	bool object_click;
 
 	void Init();
 	void Load();

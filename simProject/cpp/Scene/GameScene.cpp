@@ -111,7 +111,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			else if (CS.character_number > 0)//キャラクタが選択されていたら
 			{			
 
-				mode.connection_mode = CN_MODE.connection_mode_flag;//モードフラグを代入
+				mode.connection_mode = Connection_MODE.connection_mode_flag;//モードフラグを代入
 				building.Mode(mode);//buildingのモードチェンジ
 				building1.Mode(mode);
 
