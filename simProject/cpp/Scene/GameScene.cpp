@@ -20,11 +20,10 @@ void GameScene::Init()
 	diplomacy.Init();
 
 	CS.init();
-	CN_MODE.Init();
+	Connection_MODE.Init();
 	faction_tab.Init();
 
-	building.Init();
-	building1.Init();
+	mesh_region.Init();
 	headquarters.Init();
 
 	camera.Init();
@@ -43,13 +42,13 @@ void GameScene::Load()
 	diplomacy.Load();
 
 	CS.Load();
-	CN_MODE.Load();
+	Connection_MODE.Load();
 	timer.Load();
 	faction_tab.Load();
 
-	building.Load();
-	building1.Load();
 	headquarters.Load();
+
+	mesh_region.Load();
 
 	terrain.Load("pack/GameObject/models/terrein.png");
 
@@ -67,9 +66,10 @@ void GameScene::DrawUI(int window_x, int window_y, Filer config, bool wire)
 	infomation_bar.Draw(window_x - (512 + 256), 0, wire);//情報バー
 	money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
 	headquarters.TabDraw(config, wire);//本拠地のタブ
-	building.DrawUI();
 
-	CN_MODE.Draw(window_x / 2 - 128, 100, config, wire);
+	mesh_region.DrawUI(0, 0, wire);
+
+	Connection_MODE.Draw(window_x / 2 - 128, 100, config, wire);
 
 	fps_counter.Draw(10, 10);
 }
@@ -93,8 +93,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	terrain.Transform(VGet(1.0f, 1.0f, 1.0f), 90.0f, 0.0f, 0.0f, VGet(0.0f, 0.0f, 0.0f));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.0f, 0.1f, 0.0f));//本拠地の位置
-	building.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
-	building1.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.5f));
+	mesh_region.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
@@ -112,15 +111,12 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 			{			
 
 				mode.connection_mode = Connection_MODE.connection_mode_flag;//モードフラグを代入
-				building.Mode(mode);//buildingのモードチェンジ
-				building1.Mode(mode);
 
 				terrain.Draw();//3D空間に画像表示
 
 				headquarters.ObjectDraw(800, 500,config, wire);//本拠地
-				building.Draw(wire);
-				building1.Draw(wire);
 
+				mesh_region.Draw(mode, wire);
 
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 

@@ -8,10 +8,10 @@ private:
 
 public:
 	Building building;
-	MODE mode;
 
 	void Init();
 	void Load();
-	void Draw(VECTOR pos, bool wire = false);
+	void Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos);
+	void Draw(MODE mode, bool wire = false);
 	void DrawUI(int pos_x, int pos_y, bool wire = false);
 };

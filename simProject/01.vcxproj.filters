@@ -127,6 +127,12 @@
     <Filter Include="ヘッダー ファイル\main_res\game_object\game_scene_object\UI">
       <UniqueIdentifier>{a857ae8b-075e-42a3-bb4a-1a5283511a12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\main_res\game_object\game_object\region">
+      <UniqueIdentifier>{b25e5e43-a5a3-4902-ac38-d71e2a009a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\main_res\game_object\game_object\region">
+      <UniqueIdentifier>{a1b6363d-1923-47e3-a4d1-c3f19b92442b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main_Game.cpp">
@@ -281,6 +287,9 @@
     </ClCompile>
     <ClCompile Include="cpp\game_object\basic\in_game_window\game_window_cursor.cpp">
       <Filter>ソース ファイル\main_res\game_object\basic\in_game_window</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\game_object\game_object\region\mesh.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object\region</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -439,6 +448,9 @@
     </ClInclude>
     <ClInclude Include="header\game_object\basic\in_game_window\game_window_cursor.h">
       <Filter>ヘッダー ファイル\main_res\game_object\basic\in_game_window</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game_object\game_object\region\mesh.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object\region</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

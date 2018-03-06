@@ -15,6 +15,8 @@ void FactionInformation::Load()
 
 void FactionInformation::Instructions(int pos_x, int pos_y, Filer config, bool wire)
 {
+	DrawFormatString(pos_x + 150, pos_y + 20, GetColor(0, 0, 0), "%s", config.faction_infomaiton_basic.main_title);
+
 	//Žx‹’“_
 	branch_point_window.Draw(pos_x + 10, pos_y + 150, config.faction_infomaiton_basic.branch_point, config.faction_tab_instructions.branch_point, wire);
 

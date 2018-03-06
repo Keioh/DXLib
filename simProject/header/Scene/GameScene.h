@@ -24,6 +24,8 @@
 
 #include "Box3D.h"
 
+#include "mesh.h"
+
 
 
 class GameScene
@@ -49,6 +51,8 @@ private:
 
 	Headquarters headquarters;
 	Building building, building1;
+
+	MeshRegion mesh_region;
 
 	Box3D terrain;
 
