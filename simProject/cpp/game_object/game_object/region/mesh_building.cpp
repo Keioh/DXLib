@@ -15,6 +15,11 @@ void MeshBuilding::Transform(VECTOR scale, float rote_x, float rote_y, float rot
 	building.Transform(scale, rote_x, rote_y, rote_z, pos);
 }
 
+void MeshBuilding::Updata()
+{
+
+}
+
 void MeshBuilding::Draw(MODE mode, bool wire)
 {	
 	building.Mode(mode);
