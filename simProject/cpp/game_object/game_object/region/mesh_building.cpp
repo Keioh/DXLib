@@ -27,7 +27,13 @@ void MeshBuilding::Draw(MODE mode, bool wire)
 	building.Draw(wire);
 }
 
-void MeshBuilding::DrawUI(int pos_x, int pos_y, bool wire)
+void MeshBuilding::DrawUI(int pos_x, int pos_y, MODE mode, bool wire)
 {
 	building.DrawUI(pos_x, pos_y, wire);
+
+	//接続モードがオンの時のUI表示
+	if (mode.connection_mode == 1)
+	{
+
+	}
 }
