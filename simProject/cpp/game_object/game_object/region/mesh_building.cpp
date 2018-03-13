@@ -5,13 +5,14 @@ void MeshBuilding::Init()
 	building0.Init();
 	building1.Init();
 	building2.Init();
+	building_type = 2;
 }
 
 void MeshBuilding::Load()
 {
-	building0.Load("pack/GameObject/models/buliding.png");
-	building1.Load("pack/GameObject/models/buliding.png");
-	building2.Load("pack/GameObject/models/buliding.png");
+	building0.Load("pack/GameObject/models/empty_lot.png");
+	building1.Load("pack/GameObject/models/market_place.png");
+	building2.Load("pack/GameObject/models/laboratory.png");
 }
 
 void MeshBuilding::Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos)
