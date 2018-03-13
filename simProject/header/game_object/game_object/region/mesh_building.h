@@ -7,10 +7,10 @@ class MeshBuilding
 private:
 
 public:
-	Building building;
+	Building building0, building1, building2;//0=更地オブジェクト、1=交易所オブジェクト、2=研究所オブジェクト
 
 	int affiliation_faction = 0;//所属しているファクション(0で無所属)
-	int building_type = 0;//建物の種類
+	int building_type = 0;//建物の種類(0=更地、1=交易所、2=研究所)
 
 	void Init();
 	void Load();

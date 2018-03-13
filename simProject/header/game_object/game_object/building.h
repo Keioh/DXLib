@@ -14,7 +14,7 @@ public:
 	bool object_click;
 
 	void Init();
-	void Load();
+	void Load(char* path);
 	void Mode(MODE mode_flag);
 	void Draw(bool wire = false);
 	void DrawUI(int pos_x, int pos_y, bool wire = false);

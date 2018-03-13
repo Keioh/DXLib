@@ -6,9 +6,9 @@ void Building::Init()
 	bulidng_object.Init();
 }
 
-void Building::Load()
+void Building::Load(char* path)
 {
-	bulidng_object.Load("pack/GameObject/models/buliding.png");
+	bulidng_object.Load(path);
 }
 
 void Building::Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos)
