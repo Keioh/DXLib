@@ -1,10 +1,13 @@
 #pragma once
 #include "building.h"
+#include "game_window.h"
 #include "struct_set.h"
 
 class MeshBuilding
 {
 private:
+	InGameWindow window;
+	int window_flag = -1;//ウィンドウを表示するかしないかのフラグ
 
 public:
 	Building building0, building1, building2;//0=更地オブジェクト、1=交易所オブジェクト、2=研究所オブジェクト
@@ -17,5 +20,7 @@ public:
 	void Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos);
 	void Updata();
 	void Draw(MODE mode, bool wire = false);
-	void DrawUI(int pos_x, int pos_y, MODE mode, bool wire = false);
+	void DrawUI(int window_x, int window_y, MODE mode, bool wire = false);
+	void ColliderOff();
+	void ColliderOn();
 };
