@@ -11,7 +11,7 @@ private:
 	int window_flag = -1;//ウィンドウを表示するかしないかのフラグ
 
 public:
-	ButtonUI market_place_button;
+	ButtonUI market_place_button, laboratory_button, empty_lot_button;
 	Building building0, building1, building2;//0=更地オブジェクト、1=交易所オブジェクト、2=研究所オブジェクト
 
 	int affiliation_faction = 0;//所属しているファクション(0で無所属)

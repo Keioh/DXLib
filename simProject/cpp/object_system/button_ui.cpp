@@ -67,6 +67,7 @@ int ButtonUI::BoxUI_Button_BOX(int pos_x, int pos_y, float Size_x, float Size_y,
 			}
 		}
 	}
+	SetDrawBright(255, 255, 255);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 
 	return click_flag;//クリック判定の結果を返す。
 }

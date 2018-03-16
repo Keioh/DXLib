@@ -7,6 +7,11 @@ void MeshBuilding::Init()
 	building1.Init();
 	building2.Init();
 	building_type = 2;
+
+	//test
+	market_place_button.color = GetColor(255, 100, 100);
+	laboratory_button.color = GetColor(100, 100, 255);
+	empty_lot_button.color = GetColor(100, 100, 100);
 }
 
 void MeshBuilding::Load()
@@ -85,6 +90,25 @@ void MeshBuilding::DrawUI(int window_x, int window_y, MODE mode, bool wire)
 		{
 			window_flag *= -1;
 		}
+
+		//交易所にするボタン
+		if (market_place_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 20, 100, 50, 1, wire) == 1)
+		{
+			building_type = 1;
+		}
+
+		//研究所にするボタン
+		if (laboratory_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 120, 100, 50, 1, wire) == 1)
+		{
+			building_type = 2;
+		}
+
+		//更地にするボタン
+		if (empty_lot_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 220, 100, 50, 1, wire) == 1)
+		{
+			building_type = 0;
+		}
+
 	}
 
 	//接続モードがオンの時のUI表示
