@@ -79,6 +79,16 @@ struct STRING_DATA_FACTION_INFOMAITON
 	char block[128];//取引ブロック
 };
 
+//一行32文字まで(全キャラクター共通のコネクトモード説明)
+struct STRING_DATA_BUILDING_INFOMAITON
+{
+	char main_title[32];
+	char construction[32];
+	char market_place[32];
+	char labolatry[32];
+	char empty_lot[32];
+};
+
 //一行128文字まで(全キャラクター共通の本拠地説明)
 struct STRING_DATA_HEADQUARTERS_INFOMAITON
 {

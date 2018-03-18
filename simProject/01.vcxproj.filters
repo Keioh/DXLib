@@ -288,7 +288,10 @@
     <ClCompile Include="cpp\game_object\basic\in_game_window\game_window_cursor.cpp">
       <Filter>ソース ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\game_object\game_object\region\mesh.cpp">
+    <ClCompile Include="cpp\game_object\game_object\region\mesh_building.cpp">
+      <Filter>ソース ファイル\main_res\game_object\game_object\region</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\game_object\game_object\region\world.cpp">
       <Filter>ソース ファイル\main_res\game_object\game_object\region</Filter>
     </ClCompile>
   </ItemGroup>
@@ -449,7 +452,10 @@
     <ClInclude Include="header\game_object\basic\in_game_window\game_window_cursor.h">
       <Filter>ヘッダー ファイル\main_res\game_object\basic\in_game_window</Filter>
     </ClInclude>
-    <ClInclude Include="header\game_object\game_object\region\mesh.h">
+    <ClInclude Include="header\game_object\game_object\region\mesh_building.h">
+      <Filter>ヘッダー ファイル\main_res\game_object\game_object\region</Filter>
+    </ClInclude>
+    <ClInclude Include="header\game_object\game_object\region\world.h">
       <Filter>ヘッダー ファイル\main_res\game_object\game_object\region</Filter>
     </ClInclude>
   </ItemGroup>
