@@ -67,7 +67,7 @@ void GameScene::DrawUI(int window_x, int window_y, Filer config, bool wire)
 	money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
 	headquarters.TabDraw(config, wire);//本拠地のタブ
 
-	mesh_region.DrawUI(window_x, window_y, mode, wire);
+	mesh_region.DrawUI(window_x, window_y, mode, config, wire);
 
 	Connection_MODE.Draw(window_x / 2 - 128, 100, config, wire);
 

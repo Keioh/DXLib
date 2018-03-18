@@ -34,6 +34,7 @@ public:
 	STRING_DATA_FACTION_INFOMAITON faction_infomaiton_basic;//全キャラクター共通のファクションタブ内の説明
 	STRING_DATA_FACTION_TAB_INSTRUCTIONS faction_tab_instructions;//全キャラクター共通のファクションタブ内の詳細説明
 	STRING_DATA_HEADQUARTERS_INFOMAITON headquarters_infomation_basic;//全キャラクター共通のフ本拠地説明
+	STRING_DATA_BUILDING_INFOMAITON building_infomaiton_basic;//全キャラ共通の建物情報
 
 	void FileOpen_Config();//設定ファイル読み込み
 
@@ -62,5 +63,8 @@ public:
 
 	void ConnectionModeInfomationJPN();//日本語ファイル読み込み(全キャラクター共通の接続モード説明)
 	void ConnectionModeInfomationENG();//英語ファイル読み込み(全キャラクター共通の接続モード説明)
+
+	void BiludingInfomationJPN();//日本語ファイル読み込み(全キャラクター共通の建物情報説明)
+	void BiludingInfomationENG();//英語ファイル読み込み(全キャラクター共通の建物情報説明)
 
 };

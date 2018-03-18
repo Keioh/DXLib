@@ -1,4 +1,5 @@
 #pragma once
+#include "FileInput.h"
 #include "button_ui.h"
 #include "building.h"
 #include "game_window.h"
@@ -9,6 +10,9 @@ class MeshBuilding
 private:
 	InGameWindow window;
 	int window_flag = -1;//ウィンドウを表示するかしないかのフラグ
+	int lock_graphics;
+
+	void DrawStirngUI(int window_x, int window_y, Filer config);
 
 public:
 	ButtonUI market_place_button, laboratory_button, empty_lot_button;
@@ -22,7 +26,7 @@ public:
 	void Transform(VECTOR scale, float rote_x, float rote_y, float rote_z, VECTOR pos);
 	void Updata();
 	void Draw(MODE mode, bool wire = false);
-	void DrawUI(int window_x, int window_y, MODE mode, bool wire = false);
+	void DrawUI(int window_x, int window_y, MODE mode, Filer config, bool wire = false);
 	void ColliderOff();
 	void ColliderOn();
 };

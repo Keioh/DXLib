@@ -36,6 +36,8 @@ void ButtonUI::ColliderOn()
 
 int ButtonUI::BoxUI_Button_BOX(int pos_x, int pos_y, float Size_x, float Size_y, int input, bool wire)//バグにつきスケールの値は1.0fで使うこと。（戻り値はクリックフラグが返る。1でクリック、0でクリックしていない。）
 {
+	SetDrawBright(255, 255, 255);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
+
 	SetDrawBright(red_a, green_a, blue_a);//ヒットしている場合、画像の輝度を255にする。(ヒットしていない場合は200)
 	DrawBox(pos_x, pos_y, pos_x + Size_x, pos_y + Size_y, color, TRUE);
 	DrawExtendGraphF(pos_x, pos_y, (pos_x + Size_x) * scale_x, (pos_y + Size_y) * scale_y, graphics, TRUE);//画像を縮小拡大表示

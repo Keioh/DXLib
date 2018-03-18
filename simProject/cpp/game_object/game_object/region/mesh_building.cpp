@@ -6,7 +6,7 @@ void MeshBuilding::Init()
 	building0.Init();
 	building1.Init();
 	building2.Init();
-	building_type = 2;
+	building_type = 0;
 
 	//test
 	market_place_button.color = GetColor(255, 100, 100);
@@ -16,6 +16,7 @@ void MeshBuilding::Init()
 
 void MeshBuilding::Load()
 {
+	lock_graphics = LoadGraph("pack/GameObject/GameUI/sub/lock.png");
 	window.Load("pack/GameObject/GameUI/building_window/window.png");
 	building0.Load("pack/GameObject/models/empty_lot.png");
 	building1.Load("pack/GameObject/models/market_place.png");
@@ -68,7 +69,7 @@ void MeshBuilding::Draw(MODE mode, bool wire)
 	}
 }
 
-void MeshBuilding::DrawUI(int window_x, int window_y, MODE mode, bool wire)
+void MeshBuilding::DrawUI(int window_x, int window_y, MODE mode, Filer config, bool wire)
 {	
 	if (building_type == 0)//建物タイプが更地(0)なら
 	{
@@ -92,23 +93,29 @@ void MeshBuilding::DrawUI(int window_x, int window_y, MODE mode, bool wire)
 		}
 
 		//交易所にするボタン
-		if (market_place_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 20, 100, 50, 1, wire) == 1)
+		if ((market_place_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 50, 100, 50, 1, wire) == 1) && (building_type != 1))
 		{
 			building_type = 1;
 		}
 
 		//研究所にするボタン
-		if (laboratory_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 120, 100, 50, 1, wire) == 1)
+		if ((laboratory_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 150, 100, 50, 1, wire) == 1) && (building_type != 2))
 		{
 			building_type = 2;
 		}
 
 		//更地にするボタン
-		if (empty_lot_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 220, 100, 50, 1, wire) == 1)
+		if ((empty_lot_button.BoxUI_Button_BOX(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 250, 100, 50, 1, wire) == 1) && (building_type != 0))
 		{
 			building_type = 0;
 		}
 
+		//建物が建っていたらLOCK画像を表示
+		if (building_type == 1)DrawGraph(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 50, lock_graphics, TRUE);
+		if (building_type == 2)DrawGraph(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 150, lock_graphics, TRUE);
+		if (building_type == 0)DrawGraph(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 250, lock_graphics, TRUE);
+
+		DrawStirngUI(window_x, window_y, config);//文字を表示
 	}
 
 	//接続モードがオンの時のUI表示
@@ -116,6 +123,16 @@ void MeshBuilding::DrawUI(int window_x, int window_y, MODE mode, bool wire)
 	{
 
 	}
+}
+
+void MeshBuilding::DrawStirngUI(int window_x, int window_y, Filer config)
+{
+	DrawFormatString(window_x - window.graphics_size_x + 100, window_y - window.graphics_size_y + 10, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.main_title);
+
+	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 30, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.construction);
+	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 50, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.market_place);
+	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 150, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.labolatry);
+	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 250, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.empty_lot);
 }
 
 void MeshBuilding::ColliderOff()

@@ -98,6 +98,7 @@ void Filer::FileOpen_Japanese()//日本語ファイル読み込み
 	Filer::CharacterDescriptionJPN();//キャラクターの説明を読み込む
 	Filer::FactionInfomaitonBasicJPN();//基本的なファクション情報を読み込む
 	Filer::HeadquartersInfomaitonBasicJPN();//基本的な本拠地情報を読み込む
+	Filer::BiludingInfomationJPN();//基本的な建物情報を読み込む
 
 	Filer::FactionTabInstructionsJPN();
 	Filer::ConnectionModeInfomationJPN();
@@ -128,6 +129,7 @@ void Filer::FileOpen_English()//英語ファイル読み込み
 	Filer::CharacterDescriptionENG();//キャラクターの説明を読み込む
 	Filer::FactionInfomaitonBasicENG();//基本的なファクション情報を読み込む
 	Filer::HeadquartersInfomaitonBasicENG();//基本的な本拠地情報を読み込む
+	Filer::BiludingInfomationENG();//基本的な建物情報を読み込む
 
 	Filer::FactionTabInstructionsENG();
 	Filer::ConnectionModeInfomationENG();
@@ -367,6 +369,38 @@ void Filer::ConnectionModeInfomationENG()
 	}
 
 	fgets(connection_mode_infomation.main_title, 64, fp);
+
+	fclose(fp);
+}
+
+void Filer::BiludingInfomationJPN()
+{
+	if ((fp = fopen("language/jpn/basic/buildingInfoBasicJPN.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(building_infomaiton_basic.main_title, 32, fp);
+	fgets(building_infomaiton_basic.construction, 32, fp);
+	fgets(building_infomaiton_basic.market_place, 32, fp);
+	fgets(building_infomaiton_basic.labolatry, 32, fp);
+	fgets(building_infomaiton_basic.empty_lot, 32, fp);
+
+	fclose(fp);
+}
+
+void Filer::BiludingInfomationENG()
+{
+	if ((fp = fopen("language/eng/basic/buildingInfoBasicENG.txt", "r")) == NULL)
+	{
+		exit(1);
+	}
+
+	fgets(building_infomaiton_basic.main_title, 32, fp);
+	fgets(building_infomaiton_basic.construction, 32, fp);
+	fgets(building_infomaiton_basic.market_place, 32, fp);
+	fgets(building_infomaiton_basic.labolatry, 32, fp);
+	fgets(building_infomaiton_basic.empty_lot, 32, fp);
 
 	fclose(fp);
 }
