@@ -127,12 +127,25 @@ void MeshBuilding::DrawUI(int window_x, int window_y, MODE mode, Filer config, b
 
 void MeshBuilding::DrawStirngUI(int window_x, int window_y, Filer config)
 {
+	//タブ情報
 	DrawFormatString(window_x - window.graphics_size_x + 100, window_y - window.graphics_size_y + 10, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.main_title);
 
+	//建設ボタン関連
 	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 30, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.construction);
 	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 50, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.market_place);
 	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 150, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.labolatry);
 	DrawFormatString(window_x - window.graphics_size_x + 20, window_y - window.graphics_size_y + 250, GetColor(0, 0, 0), "%s", config.building_infomaiton_basic.empty_lot);
+
+	//建設にかかるお金と時間
+	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 50, GetColor(0, 0, 0), "%d cash", building0_money);
+	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 80, GetColor(0, 0, 0), "%d day", building0_time);
+
+	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 150, GetColor(0, 0, 0), "%d cash", building1_money);
+	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 180, GetColor(0, 0, 0), "%d day", building1_time);
+
+	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 250, GetColor(0, 0, 0), "%d cash", building2_money);
+	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 280, GetColor(0, 0, 0), "%d day", building2_time);
+
 }
 
 void MeshBuilding::ColliderOff()

@@ -18,6 +18,9 @@ public:
 	ButtonUI market_place_button, laboratory_button, empty_lot_button;
 	Building building0, building1, building2;//0=更地オブジェクト、1=交易所オブジェクト、2=研究所オブジェクト
 
+	int building0_money, building1_money, building2_money;//建設にかかるお金
+	int building0_time, building1_time, building2_time;//建設にかかる時間
+
 	int affiliation_faction = 0;//所属しているファクション(0で無所属)
 	int building_type = 0;//建物の種類(0=更地、1=交易所、2=研究所)
 
