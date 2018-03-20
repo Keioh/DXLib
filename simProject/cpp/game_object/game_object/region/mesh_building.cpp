@@ -9,6 +9,8 @@ void MeshBuilding::Init()
 	building_type = 0;
 
 	//test
+	building0_money = building1_money = building2_money = 1000;
+	building0_time = building1_time = building2_time = 7;
 	market_place_button.color = GetColor(255, 100, 100);
 	laboratory_button.color = GetColor(100, 100, 255);
 	empty_lot_button.color = GetColor(100, 100, 100);
@@ -145,7 +147,6 @@ void MeshBuilding::DrawStirngUI(int window_x, int window_y, Filer config)
 
 	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 250, GetColor(0, 0, 0), "%d cash", building2_money);
 	DrawFormatString(window_x - window.graphics_size_x + 130, window_y - window.graphics_size_y + 280, GetColor(0, 0, 0), "%d day", building2_time);
-
 }
 
 void MeshBuilding::ColliderOff()
