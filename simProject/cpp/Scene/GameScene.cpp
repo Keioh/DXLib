@@ -23,7 +23,7 @@ void GameScene::Init()
 	Connection_MODE.Init();
 	faction_tab.Init();
 
-	mesh_region.Init();
+	world.Init();
 	headquarters.Init();
 
 	camera.Init();
@@ -48,7 +48,7 @@ void GameScene::Load()
 
 	headquarters.Load();
 
-	mesh_region.Load();
+	world.Load();
 
 	terrain.Load("pack/GameObject/models/terrein.png");
 
@@ -67,7 +67,7 @@ void GameScene::DrawUI(int window_x, int window_y, Filer config, bool wire)
 	money.Draw(window_x - (256 + 128), 8, wire);//お金の表示
 	headquarters.TabDraw(config, wire);//本拠地のタブ
 
-	mesh_region.DrawUI(window_x, window_y, mode, config, wire);
+	world.DrawUI(window_x, window_y, mode, config, wire);
 
 	Connection_MODE.Draw(window_x / 2 - 128, 100, config, wire);
 
@@ -93,7 +93,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 	terrain.Transform(VGet(1.0f, 1.0f, 1.0f), 90.0f, 0.0f, 0.0f, VGet(0.0f, 0.0f, 0.0f));//３D空間に画像を表示
 	headquarters.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.0f, 0.1f, 0.0f));//本拠地の位置
-	mesh_region.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
+	world.Transform(VGet(0.1f, 0.1f, 0.1f), 0.0f, 0.0f, 0.0f, VGet(0.5f, 0.1f, 0.0f));
 
 	while (game_scene_flag == 0 && ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
@@ -116,7 +116,7 @@ void GameScene::DrawGameScene(int window_x, int window_y, Filer config, bool wir
 
 				headquarters.ObjectDraw(800, 500,config, wire);//本拠地
 
-				mesh_region.Draw(mode, wire);
+				world.Draw(mode, wire);
 
 				camera.Set(window_x, window_y, VGet(0.0f, 2.0f, -1.0f), wire);//カメラ
 

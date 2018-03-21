@@ -24,7 +24,7 @@
 
 #include "Box3D.h"
 
-#include "mesh_building.h"
+#include "world.h"
 
 
 
@@ -52,7 +52,7 @@ private:
 	Headquarters headquarters;
 	Building building, building1;
 
-	MeshBuilding mesh_region;
+	World world;
 
 	Box3D terrain;
 

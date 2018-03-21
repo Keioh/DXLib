@@ -47,6 +47,11 @@ void MeshBuilding::Draw(MODE mode, bool wire)
 		if (building0.object_click == true)
 		{
 			window_flag *= -1;
+			object_click = 1;
+		}
+		else
+		{
+			object_click = 0;
 		}
 	}
 	else if (building_type == 1)//建物タイプが交易所(1)なら
@@ -57,6 +62,11 @@ void MeshBuilding::Draw(MODE mode, bool wire)
 		if (building1.object_click == true)
 		{
 			window_flag *= -1;
+			object_click = 1;
+		}
+		else
+		{
+			object_click = 0;
 		}
 	}
 	else if (building_type == 2)//建物タイプが研究所(2)なら
@@ -67,6 +77,11 @@ void MeshBuilding::Draw(MODE mode, bool wire)
 		if (building2.object_click == true)
 		{
 			window_flag *= -1;
+			object_click = 1;
+		}
+		else
+		{
+			object_click = 0;
 		}
 	}
 }
