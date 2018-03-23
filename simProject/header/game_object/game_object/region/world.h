@@ -12,6 +12,8 @@ private:
 public:
 	MeshBuilding test1;
 	MeshBuilding test2;
+	MeshBuilding test3;
+	MeshBuilding test4;
 
 	void Init();
 	void Load();
