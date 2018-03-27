@@ -8,7 +8,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Main_Game* MG = new Main_Game();
 
 	//ライブラリ初期化
-	MG->main_system.Dx_Init(TRUE, 255, 255, 255, "sim Project ver0.05");
+	MG->main_system.Dx_Init(TRUE, 255, 255, 255, "SProject ver0.01");
 	
 	//ゲームループ
 	MG->Main_Game_Loop();

@@ -33,7 +33,6 @@ void World::Draw(MODE mode, bool wire)
 	test2.Draw(mode, wire);
 	test3.Draw(mode, wire);
 	test4.Draw(mode, wire);
-
 }
 
 void World::DrawUI(int window_x, int window_y, MODE mode, Filer config, bool wire)
@@ -53,6 +52,8 @@ void World::DrawUI(int window_x, int window_y, MODE mode, Filer config, bool wir
 		test2.window_flag = -1;//上記以外のUIを閉じる
 		test3.window_flag = -1;//上記以外のUIを閉じる
 		test4.window_flag = -1;//上記以外のUIを閉じる
+
+
 		break;
 
 	case 2:
