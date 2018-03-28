@@ -7,6 +7,8 @@ void World::Init()
 	test3.Init();
 	test4.Init();
 
+	test1.building0_money = 200;
+	test1.building0_time = 1;
 }
 
 void World::Load()
