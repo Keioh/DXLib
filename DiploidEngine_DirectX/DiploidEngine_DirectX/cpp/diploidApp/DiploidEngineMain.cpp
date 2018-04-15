@@ -1,5 +1,6 @@
 #include "diploidApp\DiploidEngineMain.h"
 
+
 VECTOR DiploidEngineMain::WindowSize()
 {
 	VECTOR window_size;

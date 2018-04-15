@@ -130,12 +130,18 @@
   <ItemGroup>
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidCircle.cpp" />
+    <ClCompile Include="cpp\diploidLayer\DiploidEngineLayer.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
+    <ClInclude Include="header\diploidGraphics\diploidCircle.h" />
+    <ClInclude Include="header\diploidLayer\DiploidEngineLayer.h" />
+    <ClInclude Include="header\diploidObject\DiploidEngineObject.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
