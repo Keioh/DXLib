@@ -1,6 +1,0 @@
-BGM Volume
-SE Volume
-Start a new game.
-Start the game from the middle.
-Change settings.
-Finish the game.

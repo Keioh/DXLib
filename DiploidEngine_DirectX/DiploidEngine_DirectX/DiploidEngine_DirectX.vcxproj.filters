@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp">
+      <UniqueIdentifier>{95293bbd-0cd7-4c7d-91f7-c25212defee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header">
+      <UniqueIdentifier>{2fbe62cc-100c-4cf4-baf5-029b61f9cd3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\system">
+      <UniqueIdentifier>{9679aa3b-e392-4e3e-a74c-48d4c5f9f741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\system">
+      <UniqueIdentifier>{ddf8e91f-92d5-4fcb-9182-8a0ece1db950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidApp">
+      <UniqueIdentifier>{70493e8b-c14e-4c9f-b7a5-2994e30dbd4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidApp">
+      <UniqueIdentifier>{019371b4-c05e-4e24-96e9-ed46ce6efc9b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WindowsMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp">
+      <Filter>ソース ファイル\cpp\system</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp">
+      <Filter>ソース ファイル\cpp\diploidApp</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp">
+      <Filter>ソース ファイル\cpp\diploidApp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\system\DiploidEngineSetting.h">
+      <Filter>ヘッダー ファイル\header\system</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidApp\DiploidEngineApp.h">
+      <Filter>ヘッダー ファイル\header\diploidApp</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidApp\DiploidEngineMain.h">
+      <Filter>ヘッダー ファイル\header\diploidApp</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
