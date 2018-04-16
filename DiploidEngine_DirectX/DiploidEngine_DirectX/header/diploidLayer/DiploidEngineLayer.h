@@ -29,10 +29,17 @@ public:
 	void PushBackMidObject_simple(DiploidEngineObject object);//MIDレイヤーにオブジェクトを追加
 	void PushBackBotObject_simple(DiploidEngineObject object);//BOTレイヤーにオブジェクトを追加
 
+
 	//円オブジェクトプッシュ
 	void PushBackTopObject_circle(DiploidCircle object);//TOPレイヤーにオブジェクトを追加
 	void PushBackMidObject_circle(DiploidCircle object);//MIDレイヤーにオブジェクトを追加
 	void PushBackBotObject_circle(DiploidCircle object);//BOTレイヤーにオブジェクトを追加
+
+	//円オブジェクトポップ
+	void PopBackTopObject_circle(int object_number);//TOPレイヤーからオブジェクトを削除(object_numberは消したい要素へのイテレーター)
+	void PopBackMidObject_circle(int object_number);//MIDレイヤーからオブジェクトを削除(object_numberは消したい要素へのイテレーター)
+	void PopBackBotObject_circle(int object_number);//BOTレイヤーからオブジェクトを削除(object_numberは消したい要素へのイテレーター)
+
 
 	//抽象オブジェクトのアップデートと描写
 	void UpdateLayerObject_simple();//レイヤーに追加したオブジェクトをアップデート

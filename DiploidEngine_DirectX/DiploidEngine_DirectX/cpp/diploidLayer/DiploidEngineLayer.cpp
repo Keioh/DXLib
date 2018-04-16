@@ -108,6 +108,21 @@ void DiploidEngineLayer::PushBackBotObject_circle(DiploidCircle object)
 	layer_bot_object_circle.push_back(object);//レイヤーにオブジェクトを追加
 }
 
+//円ポップ
+void DiploidEngineLayer::PopBackTopObject_circle(int object_number)
+{
+	layer_top_object_circle.erase(layer_top_object_circle.begin() + (object_number));//レイヤーからオブジェクトを削除
+}
+
+void DiploidEngineLayer::PopBackMidObject_circle(int object_number)
+{
+	layer_mid_object_circle.erase(layer_mid_object_circle.begin() + (object_number));//レイヤーからオブジェクトを削除
+}
+
+void DiploidEngineLayer::PopBackBotObject_circle(int object_number)
+{
+	layer_bot_object_circle.erase(layer_bot_object_circle.begin() + (object_number));//レイヤーからオブジェクトを削除
+}
 
 //抽象アプデ
 void DiploidEngineLayer::UpdateLayerObject_simple()

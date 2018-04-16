@@ -12,7 +12,6 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 		object.thickness = 15;
 		diploidEngineLayer.PushBackTopObject_circle(object);
 	}
-
 }
 
 void DiploidEngineApp::Update()//アニメーションなど連続して行いたい処理。
