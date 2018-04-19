@@ -49,6 +49,12 @@
     <Filter Include="ヘッダー ファイル\header\diploidObject">
       <UniqueIdentifier>{b615a929-d185-46a4-95c5-3cd87f153b6e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidImpact">
+      <UniqueIdentifier>{5ea4dcf0-619f-4570-8a34-27199e114283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidImpact">
+      <UniqueIdentifier>{6df016b3-1233-4ae7-aa62-c0dcbd163510}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -72,6 +78,9 @@
     <ClCompile Include="cpp\diploidGraphics\diploidCircle.cpp">
       <Filter>ソース ファイル\cpp\diploidGraphics</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidImpact\DiploidEngineImpact.cpp">
+      <Filter>ソース ファイル\cpp\diploidImpact</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -91,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidGraphics\diploidCircle.h">
       <Filter>ヘッダー ファイル\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidImpact\DiploidEngineImpact.h">
+      <Filter>ヘッダー ファイル\header\diploidImpact</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,9 +5,14 @@
 class DiploidCircle : public DiploidEngineObject
 {
 private:
+	VECTOR center_position;//オブジェクトの中心の値
+	float origin_size;//元々の大きさ
 
-public:
-	void Init();
-	void Update();
-	void Draw();
+public:		
+	VECTOR anime_position;//アニメーションをするときの移動量を保存する変数。
+	float anime_size;//アニメーションをするときのサイズを保存する変数。
+
+	void Init(VECTOR position, float size);
+	void Update(VECTOR move_speed, float move_size);
+	void Draw(bool wire = true);
 };
