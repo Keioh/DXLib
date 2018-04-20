@@ -9,7 +9,7 @@
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidCircle object;
+	DiploidCircle circle;
 	
 
 public:
