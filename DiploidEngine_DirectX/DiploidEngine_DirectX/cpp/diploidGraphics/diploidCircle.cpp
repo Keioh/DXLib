@@ -6,19 +6,27 @@ void DiploidCircle::Init(VECTOR position, float size)
 	origin_size = size;
 }
 
-void DiploidCircle::Update(VECTOR move_speed, float move_size)
+void DiploidCircle::Update(VECTOR move_speed, float move_size, bool mouse_point)
 {
-	anime_position = VAdd(anime_position, move_speed);//アニメーションで移動した分を保存
-	position = VAdd(center_position, anime_position);//オブジェクトを描写した位置と移動した分を保存
+	if (mouse_point == false)
+	{
+		anime_position = VAdd(anime_position, move_speed);//アニメーションで移動した分を保存
+		position = VAdd(center_position, anime_position);//オブジェクトを描写した位置と移動した分を保存
 
-	anime_size += move_size;
-	size.z = anime_size + origin_size;
+		anime_size += move_size;
+		size.z = anime_size + origin_size;
+	}
+	else
+	{
+		GetMousePoint(&mouse_position_x, &mouse_position_y);
+		size.z = origin_size;
+	}
 }
 
 void DiploidCircle::Draw(bool wire)
 {
 	if (wire == true)
 	{
-		DrawCircleAA(position.x, position.y, size.z, 64, color, fill, thickness);
+		DrawCircleAA(position.x + mouse_position_x, position.y + mouse_position_y, size.z, 64, color, fill, thickness);
 	}
 }

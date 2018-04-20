@@ -13,6 +13,6 @@ public:
 	float anime_size;//アニメーションをするときのサイズを保存する変数。
 
 	void Init(VECTOR position, float size);
-	void Update(VECTOR move_speed, float move_size);
+	void Update(VECTOR move_speed, float move_size, bool mouse_point = false);
 	void Draw(bool wire = true);
 };

@@ -25,15 +25,15 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {
+	SetOutApplicationLogValidFlag(FALSE);//ログ出力関連
 	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
 	ChangeWindowMode(window_mode);//ウィンドウモード変更
-	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
 	SetMainWindowText(window_name);//アプリケーションの名前を変更
 }
 
 void DiploidEngineSetting::SetEnd()
 {
-
+	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
 }
 
 void DiploidEngineSetting::End()

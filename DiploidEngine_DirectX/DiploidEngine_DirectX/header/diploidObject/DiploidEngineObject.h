@@ -6,6 +6,7 @@ class DiploidEngineObject
 private:
 
 public:
+	int mouse_position_x, mouse_position_y;
 	VECTOR position;//ˆÊ’u
 	VECTOR size;//‘å‚«‚³(z‚Í‰~‚Ì”¼Œa)
 	unsigned int color;//F

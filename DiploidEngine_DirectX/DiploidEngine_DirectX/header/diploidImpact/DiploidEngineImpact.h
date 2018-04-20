@@ -3,6 +3,7 @@
 #include "diploidObject\DiploidEngineObject.h"
 
 #include "diploidGraphics\diploidCircle.h"
+#include "diploidGraphics\diploidPoint.h"
 
 class DiploidEngineImpact
 {
