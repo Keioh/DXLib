@@ -10,7 +10,7 @@ class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidCircle circle;
-	
+	DiploidPoint point;
 
 public:
 	void Init();//Å‰‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB

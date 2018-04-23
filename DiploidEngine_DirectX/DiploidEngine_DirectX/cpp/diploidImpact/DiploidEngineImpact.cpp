@@ -28,45 +28,63 @@ void DiploidEngineImpact::PopBackPoint()
 
 void DiploidEngineImpact::ImpactCirclePoint()//円と点の当たり判定処理
 {
-	for (size_t circle = 0; circle != circle_vector.size(); ++circle)
+	if (!point_vector.empty() && !circle_vector.empty())
 	{
-		circle_vector[circle].Update();
-	}
+		for (size_t circle = 0; circle != circle_vector.size(); ++circle)
+		{
+			for (size_t point = 0; point != point_vector.size(); ++point)
+			{
+				float x = 0, y = 0;
+				x = (circle_vector[circle].position.x - point_vector[point].position.x);
+				y = (circle_vector[circle].position.y - point_vector[point].position.y);
 
-	for (size_t point = 0; point != point_vector.size(); ++point)
-	{
-		point_vector[point].Update();
+				if (std::powf(x, 2) + std::powf(y, 2) <= std::powf(circle_vector[circle].size.z, 2))
+				{
+					circle_vector[circle].color = GetColor(255, 0, 0);
+					point_vector[point].color = GetColor(255, 0, 0);
+
+					circle_vector[circle].impacted = true;
+					point_vector[point].impacted = true;
+				}
+				else
+				{
+					circle_vector[circle].color = GetColor(0, 0, 255);
+					point_vector[point].color = GetColor(0, 0, 255);
+
+					circle_vector[circle].impacted = false;
+					point_vector[point].impacted = false;
+				}
+			}
+		}
 	}
 }
 
-void DiploidEngineImpact::CircleAnime(float anime_position_x, float anime_position_y, VECTOR size)
+void DiploidEngineImpact::AnimeUpdata()
 {
-	for (size_t circle = 0; circle != circle_vector.size(); ++circle)
-	{
-		circle_vector[circle].move_speed.x = anime_position_x;
-		circle_vector[circle].move_speed.y = anime_position_y;
-		circle_vector[circle].move_size = size.z;
-	}
-}
 
-void DiploidEngineImpact::PointAnime(float anime_position_x, float anime_position_y)
-{
-	for (size_t point = 0; point != point_vector.size(); ++point)
-	{
-		point_vector[point].move_speed.x = anime_position_x;
-		point_vector[point].move_speed.y = anime_position_y;
-	}
-}
-
-void DiploidEngineImpact::AnimeUpdata(float anime_position_x, float anime_position_y, VECTOR size)
-{
-	CircleAnime(anime_position_x, anime_position_y, size);
-	PointAnime(anime_position_x, anime_position_y);
 }
 
 void DiploidEngineImpact::ImpactUpdata()
 {
-	ImpactCirclePoint();
+	ImpactCirclePoint();//円と点の衝突計算
+
+	//円の更新処理
+	if (!circle_vector.empty())
+	{
+		for (size_t circle = 0; circle != circle_vector.size(); ++circle)
+		{	
+			circle_vector[circle].Update();//アニメアプデ
+		}
+	}
+
+	//点の更新処理
+	if (!point_vector.empty())
+	{
+		for (size_t point = 0; point != point_vector.size(); ++point)
+		{	
+			point_vector[point].Update();//アニメアプデ
+		}
+	}
 }
 
 void DiploidEngineImpact::Draw(bool wire)
