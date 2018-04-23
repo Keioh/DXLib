@@ -14,8 +14,12 @@ public:
 	int fill;//“h‚è‚Â‚Ô‚µ
 	int thickness;//‘¾‚³
 
+	//ÀÛ‚É“®‚©‚·‚Æ‚«‚É•ÏX‚·‚é•Ï”
 	VECTOR move_speed;
 	float move_size;
+
+	//Impact‚µ‚½‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
+	bool impacted = false;
 
 	virtual void Init() {};
 	virtual void Update() {};
