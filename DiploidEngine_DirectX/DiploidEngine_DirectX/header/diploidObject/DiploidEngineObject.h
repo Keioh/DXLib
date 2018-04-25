@@ -20,6 +20,7 @@ public:
 
 	//Impact‚µ‚½‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
 	bool impacted = false;
+	bool destory = false;
 
 	virtual void Init() {};
 	virtual void Update() {};

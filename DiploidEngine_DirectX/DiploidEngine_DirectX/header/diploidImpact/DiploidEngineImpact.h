@@ -12,17 +12,19 @@ private:
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 
 	void ImpactCirclePoint();//円と点の当たり判定処理
+	void ImpactCircleCircle();//円と円の当たり判定処理
 
 public:
 
 	void PushCircle(DiploidCircle circle);//円を円配列にプッシュします。
-	void PushPoint(DiploidPoint point);//点を点配列にプッシュします。
+	void PushPoint(DiploidPoint point);//点を点配列にプッシュします。(点は主にマウスポイントに使用してください)
 
 	void PopBackCircle();//円を一番後ろの配列から削除します。
 	void PopBackPoint();//点を一番後ろの配列から削除します。
 
-	void AnimeUpdata();//アニメーションをすべての更新処理
-	void ImpactUpdata();//衝突判定処理
+	void DestoryCircle();//円がヒットしていたら円配列から削除
+
+	void Updata();//衝突判定処理
 
 	void Draw(bool wire = true);//描写
 };
