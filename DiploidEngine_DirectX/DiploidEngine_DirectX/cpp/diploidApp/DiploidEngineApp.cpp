@@ -7,10 +7,10 @@ void DiploidEngineApp::Init()//Å‰‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	point.mouse_point_move_flag = true;
 	diploidEngineImpact.PushPoint(point);
 
-	for (int n = 0; n < 50; n++)
+	for (int n = 0; n < 500; n++)
 	{
 		circle.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), GetRand(30) + 10);
-		circle.move_size = 0.5f;
+		circle.move_size = 0.1f;
 		//circle.mouse_point_move_flag = false;
 		circle.destory = false;
 		diploidEngineImpact.PushCircle(circle);

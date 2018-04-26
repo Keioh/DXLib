@@ -27,17 +27,18 @@ void DiploidEngineImpact::PopBackPoint()
 }
 
 void DiploidEngineImpact::DestoryCircle()
-{
+{	
 	if (!circle_vector.empty())
 	{
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
-			if (circle->impacted == true && circle->destory == true)
-			{				
+			if ((circle->impacted == true) && (circle->destory == true))
+			{
 				circle_vector.erase(circle);
+				circle = circle_vector.begin();
 			}
 		}
-	}	
+	}
 }
 
 void DiploidEngineImpact::ImpactCirclePoint()
@@ -75,7 +76,6 @@ void DiploidEngineImpact::ImpactCircleCircle()
 
 				if (circle_one == circle_two)//“¯‚¶’l‚È‚çŒvŽZ‚µ‚È‚¢
 				{
-					//circle_two++;
 					x = 0;
 					y = 0;
 					r = 0;

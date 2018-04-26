@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <list>
+#include <algorithm>
 #include "diploidObject\DiploidEngineObject.h"
 
 #include "diploidGraphics\diploidCircle.h"
