@@ -14,7 +14,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ProcessMessage() == 0)
 	{
+		diploid_engine_app.diploidEngineImpact.Init();
 		ClearDrawScreen();
+
 		diploid_engine_app.Update();
 
 		diploid_engine_app.Draw();

@@ -3,23 +3,25 @@
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {
 	//マウスオブジェクト
-	circle.Init(VGet(0, 0, 0), 30);
-	circle.mouse_point_move_flag = true;
-	//diploidEngineImpact.PushCircle(circle);
+	point.Init(VGet(0, 0, 0));
+	point.mouse_point_move_flag = true;
+	diploidEngineImpact.PushPoint(point);
 
-	for (int n = 0; n < 5; n++)
+	for (int n = 0; n < 50; n++)
 	{
-		circle.Init(VGet(WindowSize().x / 2 + n * 50, WindowSize().y / 2, 0), 30);
-		circle.mouse_point_move_flag = false;
-		//circle.destory = true;
+		circle.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), GetRand(30) + 10);
+		circle.move_size = 0.5f;
+		//circle.mouse_point_move_flag = false;
+		circle.destory = false;
 		diploidEngineImpact.PushCircle(circle);
 	}
 }
 
 void DiploidEngineApp::Update()//アニメーションなど連続して行いたい処理。
-{
-	//diploidEngineImpact.DestoryCircle();
+{	
 	diploidEngineImpact.Updata();
+
+	diploidEngineImpact.DestoryCircle();
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理

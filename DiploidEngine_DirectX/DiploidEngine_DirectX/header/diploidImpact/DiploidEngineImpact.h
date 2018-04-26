@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <list>
 #include "diploidObject\DiploidEngineObject.h"
 
 #include "diploidGraphics\diploidCircle.h"
@@ -23,6 +24,8 @@ public:
 	void PopBackPoint();//点を一番後ろの配列から削除します。
 
 	void DestoryCircle();//円がヒットしていたら円配列から削除
+
+	void Init();//初期化
 
 	void Updata();//衝突判定処理
 
