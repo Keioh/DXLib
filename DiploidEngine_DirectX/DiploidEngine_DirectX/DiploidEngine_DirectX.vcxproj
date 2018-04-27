@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidCircle.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidPoint.cpp" />
     <ClCompile Include="cpp\diploidImpact\DiploidEngineImpact.cpp" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
+    <ClInclude Include="header\diploidGraphics\diploidBox.h" />
     <ClInclude Include="header\diploidGraphics\diploidCircle.h" />
     <ClInclude Include="header\diploidGraphics\diploidPoint.h" />
     <ClInclude Include="header\diploidImpact\DiploidEngineImpact.h" />
