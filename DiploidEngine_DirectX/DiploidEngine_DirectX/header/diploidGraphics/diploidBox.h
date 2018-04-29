@@ -7,8 +7,9 @@ class DiploidBox : public DiploidEngineObject
 private:
 
 public:
+	VECTOR position_center;//四角の真ん中
 
-	void Init(VECTOR position);//マウスに追従させる場合は{0,0,0}を代入
+	void Init(VECTOR position, VECTOR size);//マウスに追従させる場合は{0,0,0}を代入
 	void Update();
 	void Draw(bool wire = true);
 
