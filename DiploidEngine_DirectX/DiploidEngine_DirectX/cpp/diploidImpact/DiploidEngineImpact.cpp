@@ -50,7 +50,7 @@ void DiploidEngineImpact::ImpactCirclePoint()
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
 				float x = 0, y = 0;
-				
+
 				x = (circle->position.x - point->position.x);
 				y = (circle->position.y - point->position.y);
 
@@ -80,7 +80,7 @@ void DiploidEngineImpact::ImpactCircleCircle()
 					y = 0;
 					r = 0;
 				}
-				else
+				else if(circle_vector[circle_one].impacted == false)
 				{
 					x = (circle_vector[circle_one].position.x - circle_vector[circle_two].position.x);
 					y = (circle_vector[circle_one].position.y - circle_vector[circle_two].position.y);
@@ -89,7 +89,7 @@ void DiploidEngineImpact::ImpactCircleCircle()
 					if ((std::pow(x, 2) + std::pow(y, 2)) <= std::pow(r, 2))
 					{
 						circle_vector[circle_one].impacted = true;
-						circle_vector[circle_two].impacted = true;
+						//circle_vector[circle_two].impacted = true;
 					}
 				}
 			}

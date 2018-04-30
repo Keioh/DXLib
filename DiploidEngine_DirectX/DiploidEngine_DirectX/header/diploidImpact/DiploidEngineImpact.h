@@ -12,8 +12,6 @@ private:
 	std::vector<DiploidCircle> circle_vector;//円を保存しておく配列
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 
-	void ImpactCirclePoint();//円と点の当たり判定処理
-	void ImpactCircleCircle();//円と円の当たり判定処理
 
 public:
 
@@ -28,6 +26,10 @@ public:
 	void Init();//初期化
 
 	void Updata();//衝突判定処理
+
+	//Updata()を使って処理をする場合は以下の関数を使用してはいけない。
+	void ImpactCirclePoint();//円と点の当たり判定処理
+	void ImpactCircleCircle();//円と円の当たり判定処理
 
 	void Draw(bool wire = true);//描写
 };
