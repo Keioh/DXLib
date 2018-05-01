@@ -13,4 +13,6 @@ public:
 	void Update();
 	void Draw(bool wire = true);
 
+	void Destory() { impacted = destory = true; };
+
 };

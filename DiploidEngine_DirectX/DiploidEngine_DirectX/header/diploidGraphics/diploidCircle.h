@@ -15,4 +15,6 @@ public:
 	void Init(VECTOR position, float size);
 	void Update();
 	void Draw(bool wire = true);
+
+	void Destory() { impacted = destory = true; };
 };

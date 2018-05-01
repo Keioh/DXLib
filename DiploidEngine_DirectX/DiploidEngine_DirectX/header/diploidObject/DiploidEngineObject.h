@@ -25,4 +25,6 @@ public:
 	virtual void Init() {};
 	virtual void Update() {};
 	virtual void Draw() {};
+
+	virtual void Destory() { impacted = destory = true; };
 };
