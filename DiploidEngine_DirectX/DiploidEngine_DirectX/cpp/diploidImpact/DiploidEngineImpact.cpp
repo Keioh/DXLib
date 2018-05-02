@@ -10,6 +10,11 @@ void DiploidEngineImpact::PushPoint(DiploidPoint point)
 	point_vector.push_back(point);
 }
 
+void DiploidEngineImpact::PushBox(DiploidBox box)
+{
+	box_vector.push_back(box);
+}
+
 void DiploidEngineImpact::PopBackCircle()
 {
 	if (!circle_vector.empty())
@@ -23,6 +28,14 @@ void DiploidEngineImpact::PopBackPoint()
 	if (!point_vector.empty())
 	{
 		point_vector.pop_back();
+	}
+}
+
+void DiploidEngineImpact::PopBackBox()
+{
+	if (!box_vector.empty())
+	{
+		box_vector.pop_back();
 	}
 }
 
@@ -76,9 +89,9 @@ void DiploidEngineImpact::ImpactCircleCircle()
 
 				if (circle_one == circle_two)//“¯‚¶’l‚È‚çŒvŽZ‚µ‚È‚¢
 				{
-					x = 0;
-					y = 0;
-					r = 0;
+					//x = 0;
+					//y = 0;
+					//r = 0;
 				}
 				else if(circle_vector[circle_one].impacted == false)
 				{
@@ -89,9 +102,22 @@ void DiploidEngineImpact::ImpactCircleCircle()
 					if ((std::pow(x, 2) + std::pow(y, 2)) <= std::pow(r, 2))
 					{
 						circle_vector[circle_one].impacted = true;
-						//circle_vector[circle_two].impacted = true;
 					}
 				}
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::ImpactBoxPoint()
+{
+	if (!point_vector.empty() && !box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+			{
+
 			}
 		}
 	}
@@ -117,8 +143,18 @@ void DiploidEngineImpact::Updata()
 		}
 	}
 
+	//ŽlŠp‚ÌXVˆ—
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			box->Update();//ƒAƒjƒƒAƒvƒf
+		}
+	}
+
 	ImpactCirclePoint();//‰~‚Æ“_‚ÌÕ“ËŒvŽZ
 	ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvŽZ
+	ImpactBoxPoint();//ŽlŠp‚Æ“_‚ÌÕ“ËŒvŽZ
 }
 
 void DiploidEngineImpact::Init()
@@ -143,6 +179,18 @@ void DiploidEngineImpact::Init()
 			if (point->impacted == true)
 			{
 				point->impacted = false;
+			}
+		}
+	}
+
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			//ŽlŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			if (box->impacted == true)
+			{
+				box->impacted = false;
 			}
 		}
 	}
@@ -183,6 +231,24 @@ void DiploidEngineImpact::Draw(bool wire)
 			}	
 			
 			point->Draw(wire);
+		}
+	}
+
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			//ŽlŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			if (box->impacted == true)
+			{
+				box->color = GetColor(255, 0, 0);
+			}
+			else
+			{
+				box->color = GetColor(0, 0, 255);
+			}
+
+			box->Draw(wire);
 		}
 	}
 }

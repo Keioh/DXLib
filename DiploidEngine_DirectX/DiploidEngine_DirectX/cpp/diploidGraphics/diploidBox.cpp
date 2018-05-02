@@ -5,12 +5,21 @@ void DiploidBox::Init(VECTOR position, VECTOR size)
 	DiploidBox::position = position;
 	DiploidBox::size = size;
 
-	position_center = VAdd(VScale(DiploidBox::size, 0.5f), DiploidBox::position);
+	center_position = VAdd(VScale(DiploidBox::size, 0.5f), DiploidBox::position);
 }
 
 void DiploidBox::Update()
 {
-	position_center = VAdd(VScale(size, 0.5f), position);
+	//center_position = VAdd(VScale(size, 0.5f), position);
+
+	if (mouse_point_move_flag == false)
+	{
+
+	}
+	else
+	{
+
+	}
 }
 
 void DiploidBox::Draw(bool wire)
