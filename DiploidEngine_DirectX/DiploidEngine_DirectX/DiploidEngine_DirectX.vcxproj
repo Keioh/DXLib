@@ -136,6 +136,7 @@
     <ClCompile Include="cpp\diploidImpact\DiploidEngineImpact.cpp" />
     <ClCompile Include="cpp\diploidLayer\DiploidEngineLayer.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidEngineObjectInformation.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
@@ -148,6 +149,7 @@
     <ClInclude Include="header\diploidImpact\DiploidEngineImpact.h" />
     <ClInclude Include="header\diploidLayer\DiploidEngineLayer.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineObject.h" />
+    <ClInclude Include="header\diploidObject\DiploidEngineObjectInformation.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -72,9 +72,6 @@
     <ClCompile Include="cpp\diploidLayer\DiploidEngineLayer.cpp">
       <Filter>ソース ファイル\cpp\diploidLayer</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp">
-      <Filter>ソース ファイル\cpp\diploidObject</Filter>
-    </ClCompile>
     <ClCompile Include="cpp\diploidGraphics\diploidCircle.cpp">
       <Filter>ソース ファイル\cpp\diploidGraphics</Filter>
     </ClCompile>
@@ -86,6 +83,12 @@
     </ClCompile>
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp">
       <Filter>ソース ファイル\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidObject\DiploidEngineObjectInformation.cpp">
+      <Filter>ソース ファイル\cpp\diploidObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp">
+      <Filter>ソース ファイル\cpp\diploidObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,9 +104,6 @@
     <ClInclude Include="header\diploidLayer\DiploidEngineLayer.h">
       <Filter>ヘッダー ファイル\header\diploidLayer</Filter>
     </ClInclude>
-    <ClInclude Include="header\diploidObject\DiploidEngineObject.h">
-      <Filter>ヘッダー ファイル\header\diploidObject</Filter>
-    </ClInclude>
     <ClInclude Include="header\diploidGraphics\diploidCircle.h">
       <Filter>ヘッダー ファイル\header\diploidGraphics</Filter>
     </ClInclude>
@@ -115,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="header\diploidGraphics\diploidBox.h">
       <Filter>ヘッダー ファイル\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidObject\DiploidEngineObjectInformation.h">
+      <Filter>ヘッダー ファイル\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidObject\DiploidEngineObject.h">
+      <Filter>ヘッダー ファイル\header\diploidObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

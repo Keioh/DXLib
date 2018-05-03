@@ -1,9 +1,9 @@
 #pragma once
 #include "DxLib.h"
-#include "diploidObject\DiploidEngineObject.h"
+#include "diploidObject\DiploidEngineObjectInformation.h"
 
 //ImpactèàóùÇÕUIÇ…ÇÃÇ›égóp
-class DiploidBox : public DiploidEngineObject
+class DiploidBox : public DiploidEngineObjectInformation
 {
 private:
 

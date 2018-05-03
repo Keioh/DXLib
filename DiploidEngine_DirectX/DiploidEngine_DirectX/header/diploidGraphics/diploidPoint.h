@@ -1,8 +1,8 @@
 #pragma once
 #include "DxLib.h"
-#include "diploidObject\DiploidEngineObject.h"
+#include "diploidObject\DiploidEngineObjectInformation.h"
 
-class DiploidPoint : public DiploidEngineObject
+class DiploidPoint : public DiploidEngineObjectInformation
 {
 private:
 	VECTOR center_position;//オブジェクトの中心の値
