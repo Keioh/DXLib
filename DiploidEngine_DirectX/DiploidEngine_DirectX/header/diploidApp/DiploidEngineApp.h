@@ -5,12 +5,14 @@
 #include "diploidApp\DiploidEngineMain.h"
 #include "diploidObject\DiploidEngineObject.h"
 #include "diploidGraphics\diploidCircle.h"
+#include "diploidGraphics\diploidBox.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidCircle circle;
 	DiploidPoint point;
+	DiploidBox box;
 
 public:
 	void Init();//Å‰‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB

@@ -9,8 +9,8 @@ private:
 
 public:		
 	VECTOR anime_position;//アニメーションをするときの移動量を保存する変数。
-	float anime_size;//アニメーションをするときのサイズを保存する変数。
-	float origin_size;//元々の大きさ
+	VECTOR anime_size;//アニメーションをするときのサイズを保存する変数。
+	VECTOR origin_size;//元々の大きさ
 
 	void Init(VECTOR position, float size);
 	void Update();

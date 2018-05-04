@@ -16,7 +16,7 @@ public:
 
 	//ÀÛ‚É“®‚©‚·‚Æ‚«‚É•ÏX‚·‚é•Ï”
 	VECTOR move_speed;
-	float move_size;
+	VECTOR move_size;
 
 	//Impact‚µ‚½‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
 	bool impacted = false;
