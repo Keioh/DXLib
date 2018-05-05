@@ -117,6 +117,27 @@ void DiploidEngineImpact::ImpactBoxPoint()
 		{
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
+				if ((box->position.x <= point->position.x) && ((box->position.x + box->size.x) >= point->position.x))
+				{
+					if ((box->position.y <= point->position.y) && ((box->position.y + box->size.y) >= point->position.y))
+					{
+						point->impacted = true;
+						box->impacted = true;
+					}
+				}
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::ImpactBoxBox()
+{
+	if (!box_vector.empty())
+	{
+		for (auto box_one = box_vector.begin(); box_one != box_vector.end(); ++box_one)
+		{
+			for (auto box_two = box_vector.begin(); box_two != box_vector.end(); ++box_two)
+			{
 
 			}
 		}

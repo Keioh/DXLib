@@ -14,7 +14,6 @@ private:
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
 
-
 public:
 
 	void PushCircle(DiploidCircle circle);//円を円配列にプッシュします。
@@ -36,6 +35,7 @@ public:
 	void ImpactCirclePoint();//円と点の当たり判定処理
 	void ImpactCircleCircle();//円と円の当たり判定処理
 	void ImpactBoxPoint();//四角と点の当たり判定処理
+	void ImpactBoxBox();//四角と四角の当たり判定処理
 
 	void Draw(bool wire = true);//描写
 };

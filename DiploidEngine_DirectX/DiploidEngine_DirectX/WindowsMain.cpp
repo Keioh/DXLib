@@ -17,7 +17,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app.diploidEngineImpact.Init();
 		ClearDrawScreen();
 
+		//diploid_engine_app.diploidEngineImpact.
 		diploid_engine_app.Update();
+		//diploid_engine_app.diploidEngineImpact.Updata();
 
 		diploid_engine_app.Draw();
 		ScreenFlip();//•\‰æ–Ê‚Ö•`ŽÊ
