@@ -136,7 +136,7 @@ void DiploidEngineImpact::ImpactBoxBox()
 	{
 		for (auto box_one = box_vector.begin(); box_one != box_vector.end(); ++box_one)
 		{
-			for (auto box_two = box_vector.begin(); box_two != box_vector.end(); ++box_two)
+			for (auto box_two = box_vector.begin() + 1; box_two != box_vector.end(); ++box_two)
 			{
 
 			}
@@ -176,6 +176,7 @@ void DiploidEngineImpact::Updata()
 	ImpactCirclePoint();//‰~‚Æ“_‚ÌÕ“ËŒvZ
 	ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvZ
 	ImpactBoxPoint();//lŠp‚Æ“_‚ÌÕ“ËŒvZ
+	ImpactBoxBox();//lŠp‚ÆlŠp‚ÌÕ“ËŒvZ
 }
 
 void DiploidEngineImpact::Init()
