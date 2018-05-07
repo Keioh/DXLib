@@ -55,6 +55,12 @@
     <Filter Include="ヘッダー ファイル\header\diploidImpact">
       <UniqueIdentifier>{6df016b3-1233-4ae7-aa62-c0dcbd163510}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidNetwork">
+      <UniqueIdentifier>{fb2615df-9f43-48e2-a3e3-91329d771384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidNetwork">
+      <UniqueIdentifier>{90900d79-f74b-490c-b4e7-5258f42d47db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -90,6 +96,9 @@
     <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp">
       <Filter>ソース ファイル\cpp\diploidObject</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidNetwork\DiploidEngineNetwork.cpp">
+      <Filter>ソース ファイル\cpp\diploidNetwork</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -121,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidObject\DiploidEngineObject.h">
       <Filter>ヘッダー ファイル\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidNetwork\DiploidEngineNetwork.h">
+      <Filter>ヘッダー ファイル\header\diploidNetwork</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
