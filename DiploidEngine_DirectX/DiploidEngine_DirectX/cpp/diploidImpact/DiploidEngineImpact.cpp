@@ -1,5 +1,16 @@
 #include "diploidImpact\DiploidEngineImpact.h"
 
+void DiploidEngineImpact::GetSize()
+{
+	circle_size = circle_vector.size();
+	point_size = point_vector.size();
+	box_size = box_vector.size();	
+	
+	circle_byte = circle_size * sizeof(DiploidCircle);
+	point_byte = point_size * sizeof(DiploidPoint);
+	box_byte = box_size * sizeof(DiploidBox);
+}
+
 void DiploidEngineImpact::PushCircle(DiploidCircle circle)
 {
 	circle_vector.push_back(circle);
@@ -220,6 +231,8 @@ void DiploidEngineImpact::Init()
 
 void DiploidEngineImpact::Draw(bool wire)
 {
+	GetSize();//Še”z—ñ‚Ì‘å‚«‚³‚ðŽæ“¾
+
 	if (!circle_vector.empty())
 	{
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
@@ -273,4 +286,8 @@ void DiploidEngineImpact::Draw(bool wire)
 			box->Draw(wire);
 		}
 	}
+
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "circle vector size : %.6f MB   objects : %d", circle_byte / 1000000, circle_size);
+	DrawFormatString(0, 20, GetColor(255, 255, 255), "point vector size : %.6f MB   objects : %d", point_byte / 1000000, point_size);
+	DrawFormatString(0, 40, GetColor(255, 255, 255), "box vector size : %.6f MB   objects ; %d", box_byte / 1000000, box_size);
 }

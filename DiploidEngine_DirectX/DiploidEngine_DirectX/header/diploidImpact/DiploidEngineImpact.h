@@ -14,7 +14,16 @@ private:
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
 
+	float circle_byte;
+	float point_byte;
+	float box_byte;
+	int circle_size;
+	int point_size;
+	int box_size;
+
 public:
+
+	void GetSize();//各配列の大きさを取得
 
 	void PushCircle(DiploidCircle circle);//円を円配列にプッシュします。
 	void PushPoint(DiploidPoint point);//点を点配列にプッシュします。(点は主にマウスポイントに使用してください)
