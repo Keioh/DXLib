@@ -34,7 +34,7 @@ public:
 	void PopBackBox();//四角を一番後ろの配列から削除します。
 
 	void DestoryCircle();//円がヒットしていたら円配列から削除
-	//void DestoryBox();//四角がヒットしていたら円配列から削除
+	//void DestoryBox();//四角がヒットしていたら四角配列から削除
 
 	void Init();//初期化
 
@@ -44,7 +44,7 @@ public:
 	void ImpactCirclePoint();//円と点の当たり判定処理
 	void ImpactCircleCircle();//円と円の当たり判定処理
 	void ImpactBoxPoint();//四角と点の当たり判定処理
-	void ImpactBoxBox();//四角と四角の当たり判定処理
+	void ImpactBoxBox();//四角と四角の当たり判定処理(未実装)
 
 	void Draw(bool wire = true);//描写
 };

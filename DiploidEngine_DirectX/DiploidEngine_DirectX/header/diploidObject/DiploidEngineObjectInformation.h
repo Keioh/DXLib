@@ -6,6 +6,8 @@ class DiploidEngineObjectInformation
 private:
 
 public:
+	int name_tag;//enum NAME‚Å“o˜^‚µ‚½‚à‚Ì‚ð‘ã“ü
+
 	bool mouse_point_move_flag = false;
 	VECTOR position;//ˆÊ’u
 	VECTOR size;//‘å‚«‚³(z‚Í‰~‚Ì”¼Œa)	

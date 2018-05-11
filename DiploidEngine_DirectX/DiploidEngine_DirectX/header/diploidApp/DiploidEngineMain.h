@@ -3,6 +3,7 @@
 #pragma once
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
+#include "diploidObject\DiploidEngineTag.h"
 #include "diploidImpact\DiploidEngineImpact.h"
 #include "diploidLayer\DiploidEngineLayer.h"
 #include "diploidNetwork\DiploidEngineNetwork.h"
@@ -11,7 +12,10 @@ class DiploidEngineMain
 {
 private:
 
-public:
+public:	
+
+	DiploidEngineTag diploidEngineTag;//タグ名で使用
+
 	DiploidEngineSetting diploidEngineSetting;//エンジン初期化や設定などの処理。
 	DiploidEngineLayer diploidEngineLayer;//レイヤーシステム処理
 	DiploidEngineImpact diploidEngineImpact;//衝突処理

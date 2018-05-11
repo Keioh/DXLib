@@ -1,0 +1,47 @@
+diploidEngineApp			各処理をまとめるクラス。一言でいうとループ
+	･Init();				最初に一回だけ初期化したい処理を記述。
+	･Updata();			アニメーションなど連続して行いたい処理。つまりループ処理。
+	･Draw();				結果を描写する処理。
+
+diploidEngineTag			オブジェクトの名前を登録するクラス。
+	･enum NAME			クラス内にあるenumに名前を追加していってください。
+
+diploidEngineObjectInformaiton	オブジェクトの基本クラス
+	･int name_tag;			diploidEngineTagのNAMEにある使いたい名前を代入。
+	･bool mouse_point_move_flag = false; trueにするとマウスポインタに追従します。
+	･VECTOR position;			位置
+	･VECTOR size;			大きさ(zは円の半径)
+	･int mouse_position_x		マウスのX座標位置
+	･int mouse_position_y		マウスのY座標位置
+	･unsigned int color;		DxLibのGetColor()を使用して代入
+	･int fill;				trueで塗りつぶす。
+	･int thickness;			太さ。1以上を指定を推奨。
+	･VECTOR move_speed;		実際に動かす量。(位置変更)
+	･VECTOR move_size;		実際に大きくする量。(大きさ変更)
+	･bool impacted = false;		他のオブジェクトに当たってるかどうか。trueにすると強制的にヒットしている状態にします。	
+	･bool destory = false;		trueにするとimpactedがtrueになったときにオブジェクトが削除されます。
+
+DiploidEngineObject		点、円、四角、画像などのオブジェクトを一つにまとめたクラス
+	･DiploidBox box;			四角を描写するための変数。
+	･DiploidCircle circle;		円を描写するための変数。
+	･DiploidPoint point;		点を描写するための変数。
+
+diploidEngineImpact		衝突関連のクラス
+	･ImpactCirclePoint();		点と円の当たり判定の処理
+	･ImpactCircleCircle();		円と円の当たり判定の処理
+	･ImpactBoxPoint();			四角と点の当たり判定の処理
+	･PushCircle(DiploidCircle circle);	円をvectorにプッシュバックします。
+	･PushPoint(DiploidPoint point);	点をvectorにプッシュバックします。
+	･PushBox(DiploidBox box);		四角をvectorにプッシュバックします。
+	･DestoryCircle();			destoryがtrueの場合かつ、impacted(衝突)している円を削除。
+	･Init();				初期化処理(処理は特にない)
+	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。
+	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量とオブジェクト数を表示しない。
+
+diploidEngineNetwork		ネットワーク関連のクラス(仮)
+	･int tcp_port = 6600;		TCP通信する際のポートを指定。
+	･int udp_port = 6666;		UDP通信する際のポートを指定。
+	･Init();				初期化(特になし)
+	･Updata();			通信します。
+	･End();				プログラムを終了するときに呼ばれます。
+	･Draw(bool debug = true);		falseにするとネットワーク状態を非表示にします。

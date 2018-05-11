@@ -99,6 +99,9 @@
     <ClCompile Include="cpp\diploidNetwork\DiploidEngineNetwork.cpp">
       <Filter>ソース ファイル\cpp\diploidNetwork</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidObject\DiploidEngineTag.cpp">
+      <Filter>ソース ファイル\cpp\diploidObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -133,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidNetwork\DiploidEngineNetwork.h">
       <Filter>ヘッダー ファイル\header\diploidNetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidObject\DiploidEngineTag.h">
+      <Filter>ヘッダー ファイル\header\diploidObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
