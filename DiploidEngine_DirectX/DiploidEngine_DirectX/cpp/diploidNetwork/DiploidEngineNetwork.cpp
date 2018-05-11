@@ -43,6 +43,7 @@ void DiploidEngineNetwork::Update()
 
 void DiploidEngineNetwork::End()
 {
+	//TCP
 	if (StopListenNetWork() == 1)
 	{
 		if (!tcp_network_handl.empty())
@@ -56,6 +57,15 @@ void DiploidEngineNetwork::End()
 	else
 	{
 		StopListenNetWork();
+	}
+
+	//UDP
+	if (!udp_network_handl.empty())
+	{
+		for (auto handl = udp_network_handl.begin(); handl != udp_network_handl.end(); ++handl)
+		{
+			DeleteUDPSocket(*handl);//Ú‘±‚ğ’f‚Â
+		}
 	}
 }
 
