@@ -61,6 +61,12 @@
     <Filter Include="ヘッダー ファイル\header\diploidNetwork">
       <UniqueIdentifier>{90900d79-f74b-490c-b4e7-5258f42d47db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidSound">
+      <UniqueIdentifier>{8f2307d9-7812-480c-a1ab-53fcc4c7bfc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidSound">
+      <UniqueIdentifier>{919290ee-b614-46ef-92d6-91240564df8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -102,6 +108,9 @@
     <ClCompile Include="cpp\diploidObject\DiploidEngineTag.cpp">
       <Filter>ソース ファイル\cpp\diploidObject</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp">
+      <Filter>ソース ファイル\cpp\diploidSound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -139,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidObject\DiploidEngineTag.h">
       <Filter>ヘッダー ファイル\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidSound\diploidEnigneSound.h">
+      <Filter>ヘッダー ファイル\header\diploidSound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
