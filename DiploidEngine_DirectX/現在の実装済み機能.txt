@@ -8,12 +8,12 @@ diploidEngineTag			オブジェクトの名前を登録するクラス。
 
 diploidEngineObjectInformaiton	オブジェクトの基本クラス
 	･int name_tag;			diploidEngineTagのNAMEにある使いたい名前を代入。
-	･bool mouse_point_move_flag = false; trueにするとマウスポインタに追従します。
+	･bool mouse_point_move_flag = false; 	trueにするとマウスポインタに追従します。
 	･VECTOR position;			位置
 	･VECTOR size;			大きさ(zは円の半径)
 	･int mouse_position_x		マウスのX座標位置
 	･int mouse_position_y		マウスのY座標位置
-	･unsigned int color;		DxLibのGetColor()を使用して代入
+	･unsigned int color;			DxLibのGetColor()を使用して代入
 	･int fill;				trueで塗りつぶす。
 	･int thickness;			太さ。1以上を指定を推奨。
 	･VECTOR move_speed;		実際に動かす量。(位置変更)
@@ -21,12 +21,12 @@ diploidEngineObjectInformaiton	オブジェクトの基本クラス
 	･bool impacted = false;		他のオブジェクトに当たってるかどうか。trueにすると強制的にヒットしている状態にします。	
 	･bool destory = false;		trueにするとimpactedがtrueになったときにオブジェクトが削除されます。
 
-DiploidEngineObject		点、円、四角、画像などのオブジェクトを一つにまとめたクラス
+DiploidEngineObject			点、円、四角、画像などのオブジェクトを一つにまとめたクラス
 	･DiploidBox box;			四角を描写するための変数。
-	･DiploidCircle circle;		円を描写するための変数。
-	･DiploidPoint point;		点を描写するための変数。
+	･DiploidCircle circle;			円を描写するための変数。
+	･DiploidPoint point;			点を描写するための変数。
 
-diploidEngineImpact		衝突関連のクラス
+diploidEngineImpact			衝突関連のクラス
 	･ImpactCirclePoint();		点と円の当たり判定の処理
 	･ImpactCircleCircle();		円と円の当たり判定の処理
 	･ImpactBoxPoint();			四角と点の当たり判定の処理
@@ -37,6 +37,10 @@ diploidEngineImpact		衝突関連のクラス
 	･Init();				初期化処理(処理は特にない)
 	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。
 	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量とオブジェクト数を表示しない。
+
+diploidEngineSound			サウンド関連のクラス
+	･Load(const char* path);		サウンドハンドルをvector<handl>にプッシュします。pathにデータがある相対パスを指定。
+	･Play(int play_type = 0);		読み込んだ音を再生します。基本、無指定でワンショット再生をします。
 
 diploidEngineNetwork		ネットワーク関連のクラス(仮)
 	･int tcp_port = 6600;		TCP通信する際のポートを指定。
