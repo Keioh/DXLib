@@ -10,6 +10,10 @@ private:
 
 public:
 
+	VECTOR position;//ˆÊ’u
+	bool play = true;//Ä¶‚·‚é‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO(true‚ÅÄ¶)
+
 	void Load(const char* path);
-	void Play(int play_type = 0);
+	void Play(int play_type = DX_PLAYTYPE_BACK);
+	void End();
 };

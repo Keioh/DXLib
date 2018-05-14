@@ -7,6 +7,7 @@
 #include "diploidImpact\DiploidEngineImpact.h"
 #include "diploidLayer\DiploidEngineLayer.h"
 #include "diploidNetwork\DiploidEngineNetwork.h"
+#include "diploidSound\diploidEnigneSound.h"
 
 class DiploidEngineMain
 {
@@ -15,6 +16,8 @@ private:
 public:	
 
 	DiploidEngineTag diploidEngineTag;//タグ名で使用
+
+	DiploidEngineSound diploidEngineSound;//音関連
 
 	DiploidEngineSetting diploidEngineSetting;//エンジン初期化や設定などの処理。
 	DiploidEngineLayer diploidEngineLayer;//レイヤーシステム処理
