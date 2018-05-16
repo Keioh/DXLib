@@ -111,6 +111,9 @@
     <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp">
       <Filter>ソース ファイル\cpp\diploidSound</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidGraphics\diploidImage.cpp">
+      <Filter>ソース ファイル\cpp\diploidGraphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -151,6 +154,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidSound\diploidEnigneSound.h">
       <Filter>ヘッダー ファイル\header\diploidSound</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidGraphics\diploidImage.h">
+      <Filter>ヘッダー ファイル\header\diploidGraphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
