@@ -6,6 +6,7 @@
 #include "diploidObject\DiploidEngineObject.h"
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidBox.h"
+#include "diploidGraphics\diploidImage.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
@@ -13,6 +14,8 @@ private:
 	DiploidCircle circle;
 	DiploidPoint point;
 	DiploidBox box;
+
+	DiploidImage image;
 
 public:
 	void Init();//Å‰‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB

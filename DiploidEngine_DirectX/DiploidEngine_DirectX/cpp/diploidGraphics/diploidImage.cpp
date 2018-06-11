@@ -1,11 +1,16 @@
 #include "diploidGraphics\diploidImage.h"
 
-void DiploidEngineImage::Load(const char* path)
+void DiploidImage::Load(const char* path)
 {
 	handl = LoadGraph(path);
 }
 
-void DiploidEngineImage::Draw(bool draw = true)
+void DiploidImage::Updata()
+{
+
+}
+
+void DiploidImage::Draw(bool draw)
 {
 	if (draw == true)
 	{

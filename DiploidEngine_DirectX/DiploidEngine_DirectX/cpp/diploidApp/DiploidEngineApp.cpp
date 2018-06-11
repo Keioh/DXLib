@@ -2,7 +2,7 @@
 
 void DiploidEngineApp::Init()//Å‰‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	for (int n = 0; n < 1000; ++n)
+	for (int n = 0; n < 500; ++n)
 	{
 		circle.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), GetRand(30) + 10);
 		point.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0));
