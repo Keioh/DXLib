@@ -5,6 +5,11 @@ void DiploidImage::Load(const char* path)
 	handl = LoadGraph(path);
 }
 
+void DiploidImage::Init(VECTOR pos)
+{
+	position = pos;//ƒ|ƒWƒVƒ‡ƒ“‚ğpos‚Å‰Šú‰»
+}
+
 void DiploidImage::Updata()
 {
 
