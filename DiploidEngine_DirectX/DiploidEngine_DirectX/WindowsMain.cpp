@@ -12,7 +12,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app.Init();//エンジン初期化後一回だけ初期化する処理
 
-	diploid_engine_app.diploidEngineNetwork.Init();//ネット処理書s帰化
+	diploid_engine_app.Load();//ゲーム起動時にデータを読み込む処理
+
+	diploid_engine_app.diploidEngineNetwork.Init();//ネット処理初期化
 
 	while (ProcessMessage() == 0)
 	{
@@ -22,10 +24,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();//画面に描写されているものを削除
 
 		//diploid_engine_app.diploidEngineImpact.
+		//diploid_engine_app.diploidEngineLayer.Updata();
 
 		diploid_engine_app.Update();//メインループ
 
 		//diploid_engine_app.diploidEngineImpact.Updata();
+		//diploid_engine_app.diploidEngineLayer.Draw();
 
 		diploid_engine_app.Draw();//メイン描写
 
@@ -34,6 +38,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app.diploidEngineSound.End();//メモリにあるサウンドをすべて削除
 	diploid_engine_app.diploidEngineNetwork.End();//ネット処理の終了
+	InitGraph();//メモリ上にある画像データをすべて削除
 	diploid_engine_app.diploidEngineSetting.End();//エンジンの終了
 
 	return 0;

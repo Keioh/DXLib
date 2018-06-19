@@ -18,6 +18,7 @@ private:
 	DiploidImage image;
 
 public:
+	void Load();//ゲーム起動時にロードするデータ
 	void Init();//最初に一回だけ初期化したい処理を記述。
 	void Update();//アニメーションなど連続して行いたい処理。
 	void Draw();//結果を描写する処理.

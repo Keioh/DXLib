@@ -1,4 +1,5 @@
 diploidEngineApp			各処理をまとめるクラス。一言でいうとループ
+	･Load();				ゲーム起動時にロードするデータを記述。
 	･Init();				最初に一回だけ初期化したい処理を記述。
 	･Updata();			アニメーションなど連続して行いたい処理。つまりループ処理。
 	･Draw();				結果を描写する処理。
@@ -20,6 +21,18 @@ diploidEngineObjectInformaiton	オブジェクトの基本クラス
 	･VECTOR move_size;		実際に大きくする量。(大きさ変更)
 	･bool impacted = false;		他のオブジェクトに当たってるかどうか。trueにすると強制的にヒットしている状態にします。	
 	･bool destory = false;		trueにするとimpactedがtrueになったときにオブジェクトが削除されます。
+
+DiploidEngineImage			画像オブジェクトを表示する基本クラス
+	･int handl;			画像ハンドル
+	･double move_angle;		画像の回転アニメーション。(ラジアン)
+	･double move_size;			画像の拡大縮小アニメーション。(1.0fで等倍)
+	･double scale = 1.0f;		画像の大きさを指定。(1.0fで等倍表示)
+	･double angle = 0.0f;		画像の中心からの回転度(ラジアン)
+	･VECTOR move_speed;		実際に動かす量。(位置変更)
+	･int revers_x = FALSE;		X軸に対しての画像反転(TRUEで反転)
+	･int revers_y = FALSE;		Y軸に対しての画像反転(TRUEで反転)
+	･int GRAPHICS_SIZE_X;		読み込んだ画像の現在のX方向の大きさ(ドット数)
+	･int GRAPHICS_SIZE_Y;		読み込んだ画像の現座のY方向の大きさ(ドット数)
 
 DiploidEngineObject			点、円、四角、画像などのオブジェクトを一つにまとめたクラス
 	･DiploidBox box;			四角を描写するための変数。
