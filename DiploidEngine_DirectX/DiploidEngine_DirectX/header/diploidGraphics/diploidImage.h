@@ -11,6 +11,7 @@ public:
 	int mouse_x, mouse_y;
 	double scale = 1.0f;
 	double angle = 0.0f;
+	int alph = 255;
 	int revers_x = FALSE;
 	int revers_y = FALSE;
 	int GRAPHICS_SIZE_X, GRAPHICS_SIZE_Y;

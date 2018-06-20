@@ -1,5 +1,5 @@
 diploidEngineApp			各処理をまとめるクラス。一言でいうとループ
-	･Load();				ゲーム起動時にロードするデータを記述。
+	･Load();				ゲーム起動時にロードするデータを記述。(Init処理より前に呼ばれます)
 	･Init();				最初に一回だけ初期化したい処理を記述。
 	･Updata();			アニメーションなど連続して行いたい処理。つまりループ処理。
 	･Draw();				結果を描写する処理。
@@ -26,8 +26,6 @@ DiploidEngineImage			画像オブジェクトを表示する基本クラス
 	･int handl;			画像ハンドル
 	･double move_angle;		画像の回転アニメーション。(ラジアン)
 	･double move_size;			画像の拡大縮小アニメーション。(1.0fで等倍)
-	･double scale = 1.0f;		画像の大きさを指定。(1.0fで等倍表示)
-	･double angle = 0.0f;		画像の中心からの回転度(ラジアン)
 	･VECTOR move_speed;		実際に動かす量。(位置変更)
 	･int revers_x = FALSE;		X軸に対しての画像反転(TRUEで反転)
 	･int revers_y = FALSE;		Y軸に対しての画像反転(TRUEで反転)

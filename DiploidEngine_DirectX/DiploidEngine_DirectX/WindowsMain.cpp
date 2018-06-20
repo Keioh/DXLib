@@ -10,9 +10,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app.diploidEngineSetting.Init();//エンジン初期化
 
-	diploid_engine_app.Init();//エンジン初期化後一回だけ初期化する処理
-
 	diploid_engine_app.Load();//ゲーム起動時にデータを読み込む処理
+
+	diploid_engine_app.Init();//エンジン初期化後一回だけ初期化する処理
 
 	diploid_engine_app.diploidEngineNetwork.Init();//ネット処理初期化
 
@@ -26,7 +26,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//diploid_engine_app.diploidEngineImpact.
 		//diploid_engine_app.diploidEngineLayer.Updata();
 
-		diploid_engine_app.Update();//メインループ
+		diploid_engine_app.Updata();//メインループ
 
 		//diploid_engine_app.diploidEngineImpact.Updata();
 		//diploid_engine_app.diploidEngineLayer.Draw();
