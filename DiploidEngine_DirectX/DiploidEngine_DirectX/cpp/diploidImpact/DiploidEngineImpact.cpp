@@ -65,6 +65,36 @@ void DiploidEngineImpact::DestoryCircle()
 	}
 }
 
+void DiploidEngineImpact::DestoryPoint()
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if ((point->impacted == true) && (point->destory == true))
+			{
+				point_vector.erase(point);
+				point = point_vector.begin();
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::DestoryBox()
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if ((box->impacted == true) && (box->destory == true))
+			{
+				box_vector.erase(box);
+				box = box_vector.begin();
+			}
+		}
+	}
+}
+
 void DiploidEngineImpact::ImpactCirclePoint()
 {
 	if (!point_vector.empty() && !circle_vector.empty())
@@ -292,4 +322,11 @@ void DiploidEngineImpact::Draw(bool wire)
 	DrawFormatString(0, 40, GetColor(255, 255, 255), "box vector size : %.6f MB   objects ; %d", box_byte / 1000000, box_size);
 	DrawFormatString(0, 60, GetColor(255, 255, 255), "all vector size : %.6f MB   all object ; %d", (box_byte + point_byte + circle_byte) / 1000000, box_size + point_size + circle_size);
 
+}
+
+void DiploidEngineImpact::Destory()
+{
+	DestoryCircle();//円がヒットしていたら円配列から削除
+	DestoryPoint();//点がヒットしていたら点配列から削除
+	DestoryBox();//四角がヒットしていたら四角配列から削除
 }

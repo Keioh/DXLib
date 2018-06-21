@@ -19,6 +19,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	while (ProcessMessage() == 0)
 	{
 		diploid_engine_app.diploidEngineNetwork.Update();//ネット処理の更新
+		diploid_engine_app.diploidEngineImpact.Destory();//衝突しているものを削除
 		diploid_engine_app.diploidEngineImpact.Init();//衝突処理の初期化
 
 		ClearDrawScreen();//画面に描写されているものを削除

@@ -34,7 +34,10 @@ public:
 	void PopBackBox();//四角を一番後ろの配列から削除します。
 
 	void DestoryCircle();//円がヒットしていたら円配列から削除
-	//void DestoryBox();//四角がヒットしていたら四角配列から削除
+	void DestoryPoint();//点がヒットしていたら点配列から削除
+	void DestoryBox();//四角がヒットしていたら四角配列から削除
+
+	void Destory();//配列から削除
 
 	void Init();//初期化
 

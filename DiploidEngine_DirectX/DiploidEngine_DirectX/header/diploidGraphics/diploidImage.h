@@ -18,8 +18,6 @@ public:
 	int revers_y = FALSE;
 	int GRAPHICS_SIZE_X, GRAPHICS_SIZE_Y;
 
-	bool destory = false;
-
 	VECTOR anime_position;
 	VECTOR origin_position;
 	VECTOR center_position;

@@ -47,7 +47,12 @@ void DiploidImage::Updata()
 	}
 
 	//Šp“x‚ª360“x‚ð’´‚¦‚½‚ç0“x‚Å‰Šú‰»
-	if (angle >= (2 * DX_PI))
+	if (angle > (2 * DX_PI))
+	{
+		angle = anime_angle = 0;
+	}
+
+	if (angle < -(2 * DX_PI))
 	{
 		angle = anime_angle = 0;
 	}
@@ -57,7 +62,8 @@ void DiploidImage::Updata()
 	{
 		blend_volume = 255;
 	}
-	else if (blend_volume < 0)
+
+	if (blend_volume < 0)
 	{
 		blend_volume = 0;
 	}
