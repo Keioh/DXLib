@@ -22,17 +22,26 @@ diploidEngineObjectInformaiton	オブジェクトの基本クラス
 	･bool impacted = false;		他のオブジェクトに当たってるかどうか。trueにすると強制的にヒットしている状態にします。	
 	･bool destory = false;		trueにするとimpactedがtrueになったときにオブジェクトが削除されます。
 
-DiploidEngineImage			画像オブジェクトを表示する基本クラス
+DiploidEngineImage			イメージ画像オブジェクトを表示する基本クラス
 	･int handl;			画像ハンドル
-	･double move_angle;		画像の回転アニメーション。(ラジアン)
+	･double move_angle;		画像の回転アニメーション。(ラジアン指定、プラス値で右回転)
 	･double move_size;			画像の拡大縮小アニメーション。(1.0fで等倍)
 	･VECTOR move_speed;		実際に動かす量。(位置変更)
+	･float blend_volume = 255;		ブレンドする量を指定(初期値は255)
+	･float blend_speed = 0;		ブレンドアニメーションの量
 	･int revers_x = FALSE;		X軸に対しての画像反転(TRUEで反転)
 	･int revers_y = FALSE;		Y軸に対しての画像反転(TRUEで反転)
 	･int GRAPHICS_SIZE_X;		読み込んだ画像の現在のX方向の大きさ(ドット数)
 	･int GRAPHICS_SIZE_Y;		読み込んだ画像の現座のY方向の大きさ(ドット数)
+	･bool destory = false;		削除フラグ(trueを指定した場合、対象を削除します。主にLayerシステムで使用してください。)
+	･void Load(const char* path);		画像データを読み込みます。
+	･void Init(VECTOR pos = {0.0f,0.0f,0.0f}, 
+		double size_scale = 1.0f, 
+		double angle_scale = 0.0f);	初期化処理です。
+	･void Updata();			アニメーションなどの連続した処理。
+	･void Draw(bool draw = true);	結果を描写
 
-DiploidEngineObject			点、円、四角、画像などのオブジェクトを一つにまとめたクラス
+DiploidEngineObject			点、円、四角、イメージ画像などのオブジェクトを一つにまとめたクラス
 	･DiploidBox box;			四角を描写するための変数。
 	･DiploidCircle circle;			円を描写するための変数。
 	･DiploidPoint point;			点を描写するための変数。
@@ -49,6 +58,13 @@ diploidEngineImpact			衝突関連のクラス
 	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。
 	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量とオブジェクト数を表示しない。
 
+diploidEngineLayer			イメージ画像表示管理関連のクラス
+	･void PushTopGrahics(DiploidImage image);	一番手前に表示したい画像を配列(image_top_vector)にプッシュします。
+	･void PushMidGrahics(DiploidImage image);	中間に表示したい画像を配列(image_mid_vector)にプッシュします。
+	･void PushBotGrahics(DiploidImage image);	一番後ろに表示したい画像を配列(image_bot_vector)にプッシュします。
+	･void Updata();				アニメーションなど連続した処理を実行します。
+	･void Draw(bool draw = true);		レイヤー配列にあるイメージ画像を描写します。(drawをfalseにするとイメージ画像を表示しません)
+
 diploidEngineSound			サウンド関連のクラス
 	･Load(const char* path);		サウンドハンドルをvector<handl>にプッシュします。pathにデータがある相対パスを指定。
 	･Play(int play_type = 0);		読み込んだ音を再生します。基本、無指定でワンショット再生をします。
@@ -56,7 +72,7 @@ diploidEngineSound			サウンド関連のクラス
 diploidEngineNetwork		ネットワーク関連のクラス(仮)
 	･int tcp_port = 6600;		TCP通信する際のポートを指定。
 	･int udp_port = 6666;		UDP通信する際のポートを指定。
-	･Init();				初期化(特になし)
+	･Init();				初期化(今のところ中身なし。)
 	･Updata();			通信します。
 	･End();				プログラムを終了するときに呼ばれます。
 	･Draw(bool debug = true);		falseにするとネットワーク状態を非表示にします。

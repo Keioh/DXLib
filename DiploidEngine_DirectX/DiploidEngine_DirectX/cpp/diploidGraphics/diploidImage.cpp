@@ -27,6 +27,8 @@ void DiploidImage::Updata()
 
 		anime_size = anime_size + move_size;
 		scale = anime_size + origin_size;
+
+		blend_volume += blend_speed;
 	}
 	else
 	{
@@ -40,6 +42,8 @@ void DiploidImage::Updata()
 
 		anime_size = anime_size + move_size;
 		scale = anime_size + origin_size;
+
+		blend_volume += blend_speed;
 	}
 
 	//角度が360度を超えたら0度で初期化
@@ -48,12 +52,23 @@ void DiploidImage::Updata()
 		angle = anime_angle = 0;
 	}
 
+	//最大値を超えたら255で初期化
+	if (blend_volume > 255)
+	{
+		blend_volume = 255;
+	}
+	else if (blend_volume < 0)
+	{
+		blend_volume = 0;
+	}
 }
 
 void DiploidImage::Draw(bool draw)
 {
 	if (draw == true)
 	{
+		SetDrawBlendMode(blend_mode, blend_volume);
 		DrawRotaGraph(position.x, position.y, scale, angle, handl, TRUE, revers_x, revers_y);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 	}
 }

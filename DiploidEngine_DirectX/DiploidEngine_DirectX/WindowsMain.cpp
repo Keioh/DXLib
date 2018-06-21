@@ -23,13 +23,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		ClearDrawScreen();//画面に描写されているものを削除
 
-		//diploid_engine_app.diploidEngineImpact.
-		//diploid_engine_app.diploidEngineLayer.Updata();
+		diploid_engine_app.diploidEngineImpact.Updata();//衝突判定
+		diploid_engine_app.diploidEngineLayer.Updata();//レイヤー画像をアップデート
 
 		diploid_engine_app.Updata();//メインループ
 
-		//diploid_engine_app.diploidEngineImpact.Updata();
-		//diploid_engine_app.diploidEngineLayer.Draw();
+		diploid_engine_app.diploidEngineLayer.Draw();//レイヤー画像を表示
+		diploid_engine_app.diploidEngineImpact.Draw();//衝突範囲を描写
 
 		diploid_engine_app.Draw();//メイン描写
 
