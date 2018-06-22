@@ -19,7 +19,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	while (ProcessMessage() == 0)
 	{
 		diploid_engine_app.diploidEngineNetwork.Update();//ネット処理の更新
+
+		diploid_engine_app.diploidEngineLayer.Destory();//destory変数がtrueのものを削除(Impact処理より前に記述)
 		diploid_engine_app.diploidEngineImpact.Destory();//衝突しているものを削除
+
 		diploid_engine_app.diploidEngineImpact.Init();//衝突処理の初期化
 
 		ClearDrawScreen();//画面に描写されているものを削除
@@ -29,7 +32,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		diploid_engine_app.Updata();//メインループ
 
-		diploid_engine_app.diploidEngineLayer.Draw();//レイヤー画像を表示
+		diploid_engine_app.diploidEngineLayer.Draw(true);//レイヤー画像を表示
 		diploid_engine_app.diploidEngineImpact.Draw();//衝突範囲を描写
 
 		diploid_engine_app.Draw();//メイン描写
