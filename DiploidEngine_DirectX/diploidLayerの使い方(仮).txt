@@ -1,0 +1,33 @@
+//DiploidEngineApp.cpp
+#include "diploidApp\DiploidEngineApp.h"
+
+void DiploidEngineApp::Load()
+{
+	image.Load("texter/test.png");//読み込みたい画像パス
+}
+
+void DiploidEngineApp::Init()
+{
+	//1000個オブジェクトを作成してレイヤーにプッシュ
+	for (int n = 0; n < 1000; n++)
+	{	
+		//いろいろ初期化していから
+		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0),0.1f);
+		image.move_angle = DX_PI / 180 * (GetRand(4)+1);//フレーム毎に何度回転させるか。
+		image.destory = GetRand(1);//デストロイ変数が1(TRUE)の時、要素を削除。
+		
+		//レイヤーにイメージ画像をプッシュ。
+		diploidEngineLayer.PushTopGraphics(image);
+	}
+}
+
+void DiploidEngineApp::Updata()
+{	
+	//自動でUpdata()が呼ばれるので明示して記述をしないでください。
+
+}
+
+void DiploidEngineApp::Draw()
+{
+	//上記同様。
+}
