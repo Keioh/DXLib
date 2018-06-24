@@ -9,8 +9,8 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {
 	for (int n = 0; n < 1000; n++)
 	{	
-		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0),0.3f);
-		image.move_angle = DX_PI / 180 * (GetRand(2)+1);
+		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0),0.1f);
+		image.move_angle = DX_PI / 180 * (GetRand(4)+1);
 		image.destory = GetRand(1);
 
 		diploidEngineLayer.PushTopGraphics(image);
@@ -18,8 +18,8 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 
 	for (int n = 0; n < 1000; n++)
 	{
-		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), 0.3f);
-		image.move_angle = DX_PI / 180 * (GetRand(2) + 1);
+		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), 0.2f);
+		image.move_angle = DX_PI / 180 * (GetRand(4) + 1);
 		image.destory = GetRand(1);
 
 		diploidEngineLayer.PushMidGraphics(image);
@@ -28,7 +28,7 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	for (int n = 0; n < 1000; n++)
 	{
 		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), 0.3f);
-		image.move_angle = DX_PI / 180 * (GetRand(2) + 1);
+		image.move_angle = DX_PI / 180 * (GetRand(4) + 1);
 		image.destory = GetRand(1);
 
 		diploidEngineLayer.PushBotGraphics(image);
