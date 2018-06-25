@@ -7,31 +7,26 @@ void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {
-	for (int n = 0; n < 1000; n++)
+
+	point.mouse_point_move_flag = true;
+	diploidEngineImpact.PushPoint(point);
+
+
+	for (int n = 0; n < 10; n++)
 	{	
-		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0),0.1f);
-		image.move_angle = DX_PI / 180 * (GetRand(4)+1);
-		image.destory = GetRand(1);
+		VECTOR pos;
+		pos.x = GetRand(WindowSize().x);
+		pos.y = GetRand(WindowSize().y);
+		pos.z = 0;
 
+		//VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0),0.3f
+		image.Init(pos, 0.3f);
+		box.Init(VGet(pos.x - (150 * 0.3f), pos.y - (150 * 0.3f), 0), VGet(300 * 0.3f, 300 * 0.3f, 0));
+		image.number += 1;
+		box.number += 1;
+
+		diploidEngineImpact.PushBox(box);
 		diploidEngineLayer.PushTopGraphics(image);
-	}
-
-	for (int n = 0; n < 1000; n++)
-	{
-		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), 0.2f);
-		image.move_angle = DX_PI / 180 * (GetRand(4) + 1);
-		image.destory = GetRand(1);
-
-		diploidEngineLayer.PushMidGraphics(image);
-	}
-
-	for (int n = 0; n < 1000; n++)
-	{
-		image.Init(VGet(GetRand(WindowSize().x), GetRand(WindowSize().y), 0), 0.3f);
-		image.move_angle = DX_PI / 180 * (GetRand(4) + 1);
-		image.destory = GetRand(1);
-
-		diploidEngineLayer.PushBotGraphics(image);
 	}
 }
 

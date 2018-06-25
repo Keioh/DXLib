@@ -24,6 +24,8 @@ public:
 	bool impacted = false;
 	bool destory = false;
 
+	unsigned int number;//VisualStudioの場合、4Byte(0～4294967295)までのオブジェクト番号を登録可能
+
 	virtual void Init() {};
 	virtual void Update() {};
 	virtual void Draw() {};

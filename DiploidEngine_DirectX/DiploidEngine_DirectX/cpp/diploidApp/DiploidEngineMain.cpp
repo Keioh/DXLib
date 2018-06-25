@@ -11,3 +11,9 @@ VECTOR DiploidEngineMain::WindowSize()
 
 	return window_size;
 }
+
+
+void DiploidEngineMain::ImpactAndLayerDestorySync()//Õ“Ëˆ—‚ÆƒŒƒCƒ„[ˆ—‚Ìíœ“¯Šúˆ—
+{
+
+}
