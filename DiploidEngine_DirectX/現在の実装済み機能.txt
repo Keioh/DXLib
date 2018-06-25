@@ -7,7 +7,7 @@ diploidEngineApp			各処理をまとめるクラス。一言でいうとループ
 diploidEngineTag			オブジェクトの名前を登録するクラス。
 	･enum NAME			クラス内にあるenumに名前を追加していってください。
 
-diploidEngineObjectInformaiton	オブジェクトの基本クラス
+diploidEngineObjectInformaiton	オブジェクトの基本クラス(基本的に使わないと思います)
 	･int name_tag;			diploidEngineTagのNAMEにある使いたい名前を代入。
 	･bool mouse_point_move_flag = false; 	trueにするとマウスポインタに追従します。
 	･VECTOR position;			位置
@@ -56,7 +56,7 @@ diploidEngineImpact			衝突関連のクラス
 	･DestoryCircle();			destoryがtrueの場合かつ、impacted(衝突)している円を削除。
 	･Init();				初期化処理(処理は特にない)
 	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。
-	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量とオブジェクト数を表示しない。
+	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量(おおざっぱ)とオブジェクト数を表示しない。
 
 diploidEngineLayer			イメージ画像表示管理関連のクラス
 	･void PushTopGrahics(DiploidImage image);	一番手前に表示したい画像を配列(image_top_vector)にプッシュします。

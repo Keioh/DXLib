@@ -12,7 +12,7 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	diploidEngineImpact.PushPoint(point);
 
 
-	//サイズ変更は仮実装
+	//サイズ変更は仮実装なので使うとずれが生じます
 	for (int n = 0; n < 100; n++)
 	{	
 		VECTOR pos;
@@ -21,13 +21,16 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 		pos.z = 0;
 
 		image.Init(pos, 0.3f);
+		//画像は画像の中央を原点にしているので
+		//画像XYを代入すると1/2のずれがでます。
+		//なので当たり判定を画像につける場合は元画像の1/2の値をpositonに入れてください。
 		box.Init(VGet(pos.x - (150 * 0.3f), pos.y - (150 * 0.3f), 0), VGet(300 * 0.3f, 300 * 0.3f, 0));
 
 		//番号は同じのをなるべく使用しない。(オブジェクトを削除するときに同じ番号だといっしょに消えます)
 		image.number += 1;
 		box.number += 1;
 
-		image.destory = box.destory = true;
+		image.destory = box.destory = true;//削除フラグをtrueに
 
 		diploidEngineImpact.PushBox(box);
 		diploidEngineLayer.PushTopGraphics(image);

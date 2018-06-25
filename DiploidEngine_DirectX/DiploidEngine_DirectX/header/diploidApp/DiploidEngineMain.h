@@ -13,6 +13,8 @@ class DiploidEngineMain
 {
 private:
 
+	void LayerTOP_ImapctBOX_Sync();
+
 public:	
 
 	DiploidEngineTag diploidEngineTag;//タグ名で使用
@@ -27,5 +29,5 @@ public:
 	//以下、よく使う変数を関数として登録
 	VECTOR WindowSize();//windowサイズを取得(z値はBIT)
 
-	void ImpactAndLayerDestorySync();//仮:衝突処理とレイヤー処理の削除同期処理(なくなる関数かもしれない)
+	void DestorySync();//仮:衝突処理とレイヤー処理の削除同期処理(なくなる関数かもしれない)
 };

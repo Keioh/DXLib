@@ -10,9 +10,6 @@
 class DiploidEngineImpact
 {
 private:
-	std::vector<DiploidCircle> circle_vector;//円を保存しておく配列
-	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
-	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
 
 	float circle_byte;
 	float point_byte;
@@ -22,6 +19,9 @@ private:
 	int box_size;
 
 public:
+	std::vector<DiploidCircle> circle_vector;//円を保存しておく配列
+	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
+	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
 
 	void GetSize();//各配列の大きさを取得
 

@@ -20,8 +20,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		diploid_engine_app.diploidEngineNetwork.Update();//ネット処理の更新
 
-		diploid_engine_app.diploidEngineLayer.Destory();//destory変数がtrueのものを削除(Impact処理より前に記述)
-		diploid_engine_app.diploidEngineImpact.Destory();//衝突しているものを削除
+		diploid_engine_app.DestorySync();//デストロイ処理を同期(同期対象：Impact Layer)
+		//diploid_engine_app.diploidEngineLayer.Destory();//destory変数がtrueのものを削除(Impact処理より前に記述)
+		//diploid_engine_app.diploidEngineImpact.Destory();//衝突しているものを削除
 
 		diploid_engine_app.diploidEngineImpact.Init();//衝突処理の初期化
 

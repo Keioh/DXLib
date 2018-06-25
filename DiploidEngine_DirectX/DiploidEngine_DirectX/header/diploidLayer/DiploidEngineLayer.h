@@ -8,9 +8,6 @@
 class DiploidEngineLayer
 {
 private:
-	std::vector<DiploidImage> image_top_vector;
-	std::vector<DiploidImage> image_mid_vector;
-	std::vector<DiploidImage> image_bot_vector;
 
 	float top_byte;
 	float mid_byte;
@@ -20,6 +17,9 @@ private:
 	int bot_size;
 
 public:
+	std::vector<DiploidImage> image_top_vector;
+	std::vector<DiploidImage> image_mid_vector;
+	std::vector<DiploidImage> image_bot_vector;
 
 	void GetSize();//Še”z—ñ‚Ì‘å‚«‚³‚ðŽæ“¾
 

@@ -23,7 +23,7 @@ void DiploidEngineApp::Init()
 
 void DiploidEngineApp::Updata()
 {	
-	//自動でUpdata()が呼ばれるので明示して記述をしないでください。
+	//自動でUpdata()が呼ばれるのでdiploidLayerのUpdata()を記述しないでください。
 
 }
 
