@@ -13,7 +13,9 @@ class DiploidEngineMain
 {
 private:
 
-	void LayerTOP_ImapctBOX_Sync();
+	void LayerTOP_ImapctBOX_Sync();//四角とレイヤーTOPの処理
+	void LayerMID_ImapctBOX_Sync();//四角とレイヤーMIDの処理
+	void LayerBOT_ImapctBOX_Sync();//四角とレイヤーBOTの処理
 
 public:	
 
