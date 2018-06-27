@@ -17,6 +17,10 @@ private:
 	void LayerMID_ImapctBOX_Sync();//四角とレイヤーMIDの処理
 	void LayerBOT_ImapctBOX_Sync();//四角とレイヤーBOTの処理
 
+	void LayerTOP_ImapctCIRCLE_Sync();//円とレイヤーTOPの処理
+	void LayerMID_ImapctCIRCLE_Sync();//円とレイヤーMIDの処理
+	void LayerBOT_ImapctCIRCLE_Sync();//円とレイヤーBOTの処理
+
 public:	
 
 	DiploidEngineTag diploidEngineTag;//タグ名で使用
