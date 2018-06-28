@@ -13,7 +13,7 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 
 
 	//サイズ変更は仮実装
-	for (int n = 0; n < 10; n++)
+	for (int n = 0; n < 50; n++)
 	{	
 		VECTOR pos;
 		pos.x = GetRand(WindowSize().x);
@@ -36,7 +36,7 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	//番号の引継ぎ
 	circle.number = box.number;
 	
-	for (int n = 0; n < 10; n++)
+	for (int n = 0; n < 50; n++)
 	{
 		VECTOR pos;
 		pos.x = GetRand(WindowSize().x);
