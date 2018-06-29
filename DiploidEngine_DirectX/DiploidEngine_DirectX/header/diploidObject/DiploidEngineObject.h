@@ -5,6 +5,7 @@
 #include "diploidGraphics\diploidBox.h"
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidPoint.h"
+#include "diploidGraphics\diploidImage.h"
 
 class DiploidObject
 {
@@ -13,6 +14,12 @@ private:
 	DiploidCircle circle;//‰~
 	DiploidPoint point;//“_
 
+	DiploidImage image;//‰æ‘œ
+
 public:
+
+	void Init();
+	void Updata();
+	void Draw(bool debug = true);
 
 };
