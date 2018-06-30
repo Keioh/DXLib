@@ -140,6 +140,7 @@
     <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineObjectInformation.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineTag.cpp" />
+    <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp" />
     <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="header\diploidObject\DiploidEngineObject.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineObjectInformation.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineTag.h" />
+    <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h" />
     <ClInclude Include="header\diploidSound\diploidEnigneSound.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
     <ClInclude Include="resource.h" />
