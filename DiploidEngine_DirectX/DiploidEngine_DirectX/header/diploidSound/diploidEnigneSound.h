@@ -6,9 +6,9 @@ class DiploidEngineSound
 {
 private:
 
-	std::vector<int> handl;//ハンドル
-
 public:
+
+	int handl;
 
 	VECTOR position;//位置
 	bool play = true;//再生するかどうかのフラグ(trueで再生)

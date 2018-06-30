@@ -3,10 +3,11 @@
 #pragma once
 #include "DxLib.h"
 #include "diploidApp\DiploidEngineMain.h"
-#include "diploidObject\DiploidEngineObject.h"
+//#include "diploidObject\DiploidEngineObject.h"
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidBox.h"
 #include "diploidGraphics\diploidImage.h"
+#include "diploidSound\diploidEnigneSound.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
@@ -16,6 +17,8 @@ private:
 	DiploidBox box;
 
 	DiploidImage image;
+
+	DiploidEngineSound sound;
 
 public:
 	void Load();//ゲーム起動時にロードするデータ
