@@ -41,9 +41,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();//表画面へ描写
 	}
 
-	diploid_engine_app.diploidEngineSound.End();//メモリにあるサウンドをすべて削除
+	//diploid_engine_app.diploidEngineSound.End();//メモリにあるサウンドをすべて削除
 	diploid_engine_app.diploidEngineNetwork.End();//ネット処理の終了
 	InitGraph();//メモリ上にある画像データをすべて削除
+	InitSoundMem();//メモリにあるサウンドをすべて削除
 	diploid_engine_app.diploidEngineSetting.End();//エンジンの終了
 
 	return 0;
