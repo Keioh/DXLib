@@ -17,6 +17,12 @@ public:
 	int revers_x = FALSE;
 	int revers_y = FALSE;
 	int GRAPHICS_SIZE_X, GRAPHICS_SIZE_Y;
+	int red_bright = 255;
+	int green_bright = 255;
+	int blue_bright = 255;//‰æ‘œ‚Ì–¾‚é‚³
+	float red_bright_speed = 0.0f;
+	float green_bright_speed = 0.0f;
+	float blue_bright_speed = 0.0f;
 
 	VECTOR anime_position;
 	VECTOR origin_position;

@@ -29,6 +29,10 @@ void DiploidImage::Updata()
 		scale = anime_size + origin_size;
 
 		blend_volume += blend_speed;
+
+		red_bright += red_bright_speed;
+		green_bright += green_bright_speed;
+		blue_bright += blue_bright_speed;
 	}
 	else
 	{
@@ -44,6 +48,38 @@ void DiploidImage::Updata()
 		scale = anime_size + origin_size;
 
 		blend_volume += blend_speed;
+
+		red_bright += red_bright_speed;
+		green_bright += green_bright_speed;
+		blue_bright += blue_bright_speed;
+	}
+
+	//画像の明るさの値が一定値を超えた場合、超過しないように処理。
+	if (red_bright > 255)
+	{
+		red_bright = 255;
+	}
+	if (red_bright < 0)
+	{
+		red_bright = 0;
+	}
+
+	if (green_bright > 255)
+	{
+		green_bright = 255;
+	}
+	if (green_bright < 0)
+	{
+		green_bright = 0;
+	}
+
+	if (blue_bright > 255)
+	{
+		blue_bright = 255;
+	}
+	if (blue_bright < 0)
+	{
+		blue_bright = 0;
 	}
 
 	//角度が360度を超えたら0度で初期化
@@ -73,8 +109,10 @@ void DiploidImage::Draw(bool draw)
 {
 	if (draw == true)
 	{
+		SetDrawBright(red_bright, green_bright, blue_bright);
 		SetDrawBlendMode(blend_mode, blend_volume);
 		DrawRotaGraph(position.x, position.y, scale, angle, handl, TRUE, revers_x, revers_y);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+		SetDrawBright(255, 255, 255);
 	}
 }
