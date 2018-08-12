@@ -62,7 +62,7 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
 {	
-	sound.Play();
+	//sound.Play();
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理

@@ -67,6 +67,12 @@
     <Filter Include="ソース ファイル\cpp\diploidSound">
       <UniqueIdentifier>{919290ee-b614-46ef-92d6-91240564df8b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidScreen">
+      <UniqueIdentifier>{0e2ea269-1018-42af-90e9-2dc7f02a8801}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidScreen">
+      <UniqueIdentifier>{b9b85ee9-8820-4671-995c-54a51c253424}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -117,6 +123,9 @@
     <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp">
       <Filter>ソース ファイル\cpp\diploidSound</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidScreen\diploidScreen.cpp">
+      <Filter>ソース ファイル\cpp\diploidScreen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -166,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h">
       <Filter>ヘッダー ファイル\header\diploidSound</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidScreen\diploidScreen.h">
+      <Filter>ヘッダー ファイル\header\diploidScreen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

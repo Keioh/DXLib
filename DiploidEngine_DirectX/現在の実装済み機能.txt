@@ -7,6 +7,9 @@ diploidEngineApp			各処理をまとめるクラス。一言でいうとループ
 diploidEngineTag			オブジェクトの名前を登録するクラス。
 	･enum NAME			クラス内にあるenumに名前を追加していってください。
 
+diploidScreen			フレームレートなどフレームに関するクラス
+	
+
 diploidEngineObjectInformaiton	オブジェクトの基本クラス(基本的に使わないと思います)
 	･int name_tag;			diploidEngineTagのNAMEにある使いたい名前を代入。
 	･bool mouse_point_move_flag = false; 	trueにするとマウスポインタに追従します。
