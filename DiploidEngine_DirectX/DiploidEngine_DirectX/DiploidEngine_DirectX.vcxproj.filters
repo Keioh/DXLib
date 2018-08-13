@@ -123,7 +123,7 @@
     <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp">
       <Filter>ソース ファイル\cpp\diploidSound</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\diploidScreen\diploidScreen.cpp">
+    <ClCompile Include="cpp\diploidScreen\DiploidEngineScreen.cpp">
       <Filter>ソース ファイル\cpp\diploidScreen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -176,7 +176,7 @@
     <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h">
       <Filter>ヘッダー ファイル\header\diploidSound</Filter>
     </ClInclude>
-    <ClInclude Include="header\diploidScreen\diploidScreen.h">
+    <ClInclude Include="header\diploidScreen\DiploidEngineScreen.h">
       <Filter>ヘッダー ファイル\header\diploidScreen</Filter>
     </ClInclude>
   </ItemGroup>

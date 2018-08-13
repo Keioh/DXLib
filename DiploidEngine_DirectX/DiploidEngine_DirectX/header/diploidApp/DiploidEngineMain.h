@@ -8,6 +8,7 @@
 #include "diploidLayer\DiploidEngineLayer.h"
 #include "diploidNetwork\DiploidEngineNetwork.h"
 #include "diploidSound\diploidEnigneSound.h"
+#include "diploidScreen\DiploidEngineScreen.h"
 
 class DiploidEngineMain
 {
@@ -30,6 +31,8 @@ public:
 	DiploidEngineTag diploidEngineTag;//タグ名で使用
 
 	DiploidEngineSound diploidEngineSound;//音関連
+
+	DiploidEngineScreen diploidEngineScreen;//FPSカウンタｰなどフレーム関連
 
 	DiploidEngineSetting diploidEngineSetting;//エンジン初期化や設定などの処理。
 	DiploidEngineLayer diploidEngineLayer;//レイヤーシステム処理

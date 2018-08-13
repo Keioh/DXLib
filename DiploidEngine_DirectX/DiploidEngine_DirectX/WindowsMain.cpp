@@ -18,6 +18,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ProcessMessage() == 0)
 	{
+		diploid_engine_app.diploidEngineScreen.Init();//FPS初期化
+
 		diploid_engine_app.diploidEngineNetwork.Update();//ネット処理の更新
 
 		diploid_engine_app.DestorySync();//デストロイ処理を同期(同期対象：Impact / Layer)
@@ -38,7 +40,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		diploid_engine_app.Draw();//メイン描写
 
+		diploid_engine_app.diploidEngineScreen.Update();//FPSをアップデート
+
+		diploid_engine_app.diploidEngineScreen.Draw(800,0,true);//FPSを表示
+
 		ScreenFlip();//表画面へ描写
+
+		diploid_engine_app.diploidEngineScreen.Wait();//FPS待機
 	}
 
 	//diploid_engine_app.diploidEngineSound.End();//メモリにあるサウンドをすべて削除
