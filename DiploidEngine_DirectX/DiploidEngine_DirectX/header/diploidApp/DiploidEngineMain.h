@@ -9,6 +9,7 @@
 #include "diploidNetwork\DiploidEngineNetwork.h"
 #include "diploidSound\diploidEnigneSound.h"
 #include "diploidScreen\DiploidEngineScreen.h"
+#include "diploidInput\DiploidEngineInput.h"
 
 class DiploidEngineMain
 {
@@ -31,6 +32,8 @@ public:
 	DiploidEngineTag diploidEngineTag;//タグ名で使用
 
 	DiploidEngineSound diploidEngineSound;//音関連
+
+	DiploidEngineInput diploidEngineInput;//キー入力とマウス入力とジョイパット入力関連
 
 	DiploidEngineScreen diploidEngineScreen;//FPSカウンタｰなどフレーム関連
 

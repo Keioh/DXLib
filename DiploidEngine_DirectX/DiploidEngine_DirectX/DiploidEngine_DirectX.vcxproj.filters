@@ -73,6 +73,12 @@
     <Filter Include="ヘッダー ファイル\header\diploidScreen">
       <UniqueIdentifier>{b9b85ee9-8820-4671-995c-54a51c253424}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidInput">
+      <UniqueIdentifier>{829d7b67-4b2d-4ceb-b3c8-4f3d56c6d2da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidInput">
+      <UniqueIdentifier>{54c4c5e0-a7b4-42cd-8df0-e00ad3b49a09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -126,6 +132,9 @@
     <ClCompile Include="cpp\diploidScreen\DiploidEngineScreen.cpp">
       <Filter>ソース ファイル\cpp\diploidScreen</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidInput\DiploidEngineInput.cpp">
+      <Filter>ソース ファイル\cpp\diploidInput</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -178,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidScreen\DiploidEngineScreen.h">
       <Filter>ヘッダー ファイル\header\diploidScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidInput\DiploidEngineInput.h">
+      <Filter>ヘッダー ファイル\header\diploidInput</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

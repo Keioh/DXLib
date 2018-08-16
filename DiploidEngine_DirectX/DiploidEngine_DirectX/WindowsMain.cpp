@@ -16,6 +16,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app.diploidEngineNetwork.Init();//ネット処理初期化
 
+	diploid_engine_app.diploidEngineInput.Init();//入力機器初期化
+
 	while (ProcessMessage() == 0)
 	{
 		diploid_engine_app.diploidEngineScreen.Init();//FPS初期化
@@ -33,6 +35,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app.diploidEngineImpact.Updata();//衝突判定
 		diploid_engine_app.diploidEngineLayer.Updata();//レイヤー画像をアップデート
 
+		diploid_engine_app.diploidEngineInput.Update();//入力機器アップデート
+
 		diploid_engine_app.Updata();//メインループ
 
 		diploid_engine_app.diploidEngineLayer.Draw(true);//レイヤー画像を表示
@@ -49,7 +53,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app.diploidEngineScreen.Wait();//FPS待機
 	}
 
-	//diploid_engine_app.diploidEngineSound.End();//メモリにあるサウンドをすべて削除
 	diploid_engine_app.diploidEngineNetwork.End();//ネット処理の終了
 	InitGraph();//メモリ上にある画像データをすべて削除
 	InitSoundMem();//メモリにあるサウンドをすべて削除
