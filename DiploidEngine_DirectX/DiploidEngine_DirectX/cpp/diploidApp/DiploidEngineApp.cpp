@@ -4,7 +4,7 @@ void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 {	
 	image.Load("texter/test.png");
 
-	sound.Load("sound/01.wav");
+	//sound.Load("sound/01.wav");
 }
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
@@ -59,14 +59,16 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	}
 	
 }
+	int test;
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
 {	
 	//sound.Play();
-	diploidEngineInput.GetMouse(MOUSE_INPUT_LEFT);
+	test = diploidEngineInput.GetReleaseMouse(MOUSE_INPUT_LEFT);
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
+	//DrawFormatStringF(0, 500, GetColor(255, 255, 255), "press mouse = %d", test);
 
 }
