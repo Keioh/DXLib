@@ -7,6 +7,8 @@ class DiploidEngineInput
 {
 
 private:
+	int release_key_flag = -1;
+
 
 	int press_time = 0;//‰Ÿ‚µ‚Ä‚¢‚éŠÔ
 	int release_time = 0;//—£‚µ‚Ä‚¢‚éŠÔ

@@ -74,10 +74,42 @@ bool DiploidEngineInput::GetKey(int DXLIB_KEY_CODE)
 
 bool DiploidEngineInput::GetPressKey(int DXLIB_KEY_CODE)
 {
+	if (Key[DXLIB_KEY_CODE] != 0)
+	{
+		press_time++;//押しているフレームを数える。
+
+		if (press_time <= 1)
+		{
+			return true;//キーが押されていたらtrueを返す。
+		}
+		else if (press_time >= 2)
+		{
+			return false;
+		}
+	}
+	else
+	{
+		press_time = 0;
+	}
+
 	return false;
 }
 
 bool DiploidEngineInput::GetReleaseKey(int DXLIB_KEY_CODE)
 {
+	if (GetKey(DXLIB_KEY_CODE) == true)
+	{
+		release_key_flag = 1;
+	}
+
+	if (release_key_flag == 1)
+	{
+		if (GetKey(DXLIB_KEY_CODE) == false)
+		{
+			release_key_flag = -1;
+			return true;
+		}
+	}
+
 	return false;
 }
