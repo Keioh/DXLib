@@ -24,7 +24,12 @@ public:
 	bool impacted = false;
 	bool destory = false;
 
-	unsigned int number;//VisualStudioの場合、4Byte(0～4294967295)までのオブジェクト番号を登録可能
+
+	//例)1-29　→　識別番号 - オブジェクト番号
+	//識別番号はUIなのかゲームオブジェクトなのかなどを判別するための変数。
+	//識別番号の中で何個目のオブジェクトなのかの判別するための変数。
+	int number;//オブジェクト番号
+	int layer_number;//識別番号
 
 	virtual void Init() {};
 	virtual void Update() {};

@@ -41,18 +41,22 @@ void DiploidEngineMain::LayerTOP_ImapctPOINT_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_top_vector.erase(image);
-								diploidEngineImpact.point_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_top_vector.erase(image);
+									diploidEngineImpact.point_vector.erase(impact);
 
-								image = diploidEngineLayer.image_top_vector.begin();
-								impact = diploidEngineImpact.point_vector.begin();
+									image = diploidEngineLayer.image_top_vector.begin();
+									impact = diploidEngineImpact.point_vector.begin();
+								}
 							}
 						}
 					}
@@ -75,18 +79,22 @@ void DiploidEngineMain::LayerMID_ImapctPOINT_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.point_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_mid_vector.erase(image);
-								diploidEngineImpact.point_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_mid_vector.erase(image);
+									diploidEngineImpact.point_vector.erase(impact);
 
-								image = diploidEngineLayer.image_mid_vector.begin();
-								impact = diploidEngineImpact.point_vector.begin();
+									image = diploidEngineLayer.image_mid_vector.begin();
+									impact = diploidEngineImpact.point_vector.begin();
+								}
 							}
 						}
 					}
@@ -109,18 +117,22 @@ void DiploidEngineMain::LayerBOT_ImapctPOINT_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.point_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_bot_vector.erase(image);
-								diploidEngineImpact.point_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_bot_vector.erase(image);
+									diploidEngineImpact.point_vector.erase(impact);
 
-								image = diploidEngineLayer.image_bot_vector.begin();
-								impact = diploidEngineImpact.point_vector.begin();
+									image = diploidEngineLayer.image_bot_vector.begin();
+									impact = diploidEngineImpact.point_vector.begin();
+								}
 							}
 						}
 					}
@@ -143,18 +155,22 @@ void DiploidEngineMain::LayerTOP_ImapctCIRCLE_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_top_vector.erase(image);
-								diploidEngineImpact.circle_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_top_vector.erase(image);
+									diploidEngineImpact.circle_vector.erase(impact);
 
-								image = diploidEngineLayer.image_top_vector.begin();
-								impact = diploidEngineImpact.circle_vector.begin();
+									image = diploidEngineLayer.image_top_vector.begin();
+									impact = diploidEngineImpact.circle_vector.begin();
+								}
 							}
 						}
 					}
@@ -177,18 +193,22 @@ void DiploidEngineMain::LayerMID_ImapctCIRCLE_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_mid_vector.erase(image);
-								diploidEngineImpact.circle_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_mid_vector.erase(image);
+									diploidEngineImpact.circle_vector.erase(impact);
 
-								image = diploidEngineLayer.image_mid_vector.begin();
-								impact = diploidEngineImpact.circle_vector.begin();
+									image = diploidEngineLayer.image_mid_vector.begin();
+									impact = diploidEngineImpact.circle_vector.begin();
+								}
 							}
 						}
 					}
@@ -211,18 +231,22 @@ void DiploidEngineMain::LayerBOT_ImapctCIRCLE_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_bot_vector.erase(image);
-								diploidEngineImpact.circle_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_bot_vector.erase(image);
+									diploidEngineImpact.circle_vector.erase(impact);
 
-								image = diploidEngineLayer.image_bot_vector.begin();
-								impact = diploidEngineImpact.circle_vector.begin();
+									image = diploidEngineLayer.image_bot_vector.begin();
+									impact = diploidEngineImpact.circle_vector.begin();
+								}
 							}
 						}
 					}
@@ -245,18 +269,22 @@ void DiploidEngineMain::LayerTOP_ImapctBOX_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_top_vector.erase(image);
-								diploidEngineImpact.box_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_top_vector.erase(image);
+									diploidEngineImpact.box_vector.erase(impact);
 
-								image = diploidEngineLayer.image_top_vector.begin();
-								impact = diploidEngineImpact.box_vector.begin();
+									image = diploidEngineLayer.image_top_vector.begin();
+									impact = diploidEngineImpact.box_vector.begin();
+								}
 							}
 						}
 					}
@@ -279,18 +307,22 @@ void DiploidEngineMain::LayerMID_ImapctBOX_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_mid_vector.erase(image);
-								diploidEngineImpact.box_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_mid_vector.erase(image);
+									diploidEngineImpact.box_vector.erase(impact);
 
-								image = diploidEngineLayer.image_mid_vector.begin();
-								impact = diploidEngineImpact.box_vector.begin();
+									image = diploidEngineLayer.image_mid_vector.begin();
+									impact = diploidEngineImpact.box_vector.begin();
+								}
 							}
 						}
 					}
@@ -313,18 +345,22 @@ void DiploidEngineMain::LayerBOT_ImapctBOX_Sync()
 				//エラー回避のための処理
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
-					if ((image->number == impact->number))
+					//識別番号が同じなら
+					if (image->layer_number == impact->layer_number)
 					{
-						if (impact->impacted == true)
+						//最初：トップ配列画像オブジェクト番号と衝突配列四角オブジェクト番号が一緒　かつ　最後：四角オブジェクトにヒットしていたら
+						if ((image->number == impact->number))
 						{
-							if ((impact->destory == true) && (image->destory == true))
+							if (impact->impacted == true)
 							{
-								diploidEngineLayer.image_bot_vector.erase(image);
-								diploidEngineImpact.box_vector.erase(impact);
+								if ((impact->destory == true) && (image->destory == true))
+								{
+									diploidEngineLayer.image_bot_vector.erase(image);
+									diploidEngineImpact.box_vector.erase(impact);
 
-								image = diploidEngineLayer.image_bot_vector.begin();
-								impact = diploidEngineImpact.box_vector.begin();
+									image = diploidEngineLayer.image_bot_vector.begin();
+									impact = diploidEngineImpact.box_vector.begin();
+								}
 							}
 						}
 					}

@@ -13,22 +13,20 @@ void DiploidEngineInput::Update()
 
 	GetMousePoint(&mouse_pos_adr_x, &mouse_pos_adr_y);//現在のマウス座標を取得
 
-	//if (Check_Mouse == 0)
+	//押したときの座標
+	if (LOG_TYPE == MOUSE_INPUT_LOG_DOWN)
 	{
-		//押したときの座標
-		if (LOG_TYPE == MOUSE_INPUT_LOG_DOWN)
-		{
-			press_click_position_x = CLICK_X;
-			press_click_position_y = CLICK_Y;
-		}
-
-		//離したときの座標
-		if (LOG_TYPE == MOUSE_INPUT_LOG_UP)
-		{
-			release_click_position_x = CLICK_X;
-			release_click_position_y = CLICK_Y;
-		}
+		press_click_position_x = CLICK_X;
+		press_click_position_y = CLICK_Y;
 	}
+
+	//離したときの座標
+	if (LOG_TYPE == MOUSE_INPUT_LOG_UP)
+	{
+		release_click_position_x = CLICK_X;
+		release_click_position_y = CLICK_Y;
+	}
+
 }
 
 void DiploidEngineInput::Draw(int x, int y ,bool debug)
@@ -136,7 +134,7 @@ bool DiploidEngineInput::GetReleaseKey(int DXLIB_KEY_CODE)
 
 VECTOR DiploidEngineInput::GetMousePressPosition()
 {
-	static VECTOR pos;
+	VECTOR pos;
 
 	pos.x = press_click_position_x;
 	pos.y = press_click_position_y;
@@ -147,7 +145,7 @@ VECTOR DiploidEngineInput::GetMousePressPosition()
 
 VECTOR DiploidEngineInput::GetMouseReleasePosition()
 {
-	static VECTOR pos;
+	VECTOR pos;
 
 	pos.x = release_click_position_x;
 	pos.y = release_click_position_y;
