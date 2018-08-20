@@ -2,14 +2,17 @@
 
 void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 {	
-	image.Load("texter/test.png");
+	//image.Load("texter/test.png");
 
 	//sound.Load("sound/01.wav");
 }
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {	
+	/*
+	
 	point.mouse_point_move_flag = true;
+	point.layer_number = DIPLOID_ENGINE_UI;
 	diploidEngineImpact.PushPoint(point);
 	
 	for (int n = 0; n < 50; n++)
@@ -23,10 +26,10 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 		circle.Init(pos, 150 * 0.3f);
 
 		//番号は同じのをなるべく使用しない。(オブジェクトを削除するときに同じ番号だといっしょに消えます)
-		image.layer_number = 0;
+		image.layer_number = DIPLOID_ENGINE_UI;
 		image.number += 1;
 
-		circle.layer_number = 1;
+		circle.layer_number = DIPLOID_ENGINE_UI;
 		circle.number += 1;
 
 		image.destory = circle.destory = true;
@@ -34,7 +37,13 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 		diploidEngineImpact.PushCircle(circle);
 		diploidEngineLayer.PushMidGraphics(image);
 	}
-	
+	*/
+
+
+	//DiploidObjectを使用した場合
+	object.box.Init(VGet(300, 300, 0), VGet(100,100,0));
+	diploidEngineImpact.PushBox(object.box);
+
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。

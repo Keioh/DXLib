@@ -6,17 +6,20 @@
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidPoint.h"
 #include "diploidGraphics\diploidImage.h"
+#include "diploidSound\diploidEnigneSound.h"
 
 class DiploidObject
 {
 private:
+
+public:
 	DiploidBox box;//ŽlŠp
 	DiploidCircle circle;//‰~
 	DiploidPoint point;//“_
 
 	DiploidImage image;//‰æ‘œ
 
-public:
+	DiploidEngineSound sound;//‰¹
 
 	void Init();
 	void Updata();
