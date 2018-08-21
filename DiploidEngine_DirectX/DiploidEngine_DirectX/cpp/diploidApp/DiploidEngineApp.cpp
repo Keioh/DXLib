@@ -57,3 +57,27 @@ void DiploidEngineApp::Draw()//結果を描写する処理
 {
 
 }
+
+DiploidObject DiploidEngineApp::FindObject(int layer_number, int number)//指定番号からオブジェクトを取得(オブジェクトを検索)
+{
+	DiploidObject diploid_object;
+
+
+	return diploid_object;
+}
+
+DiploidEngineImpact DiploidEngineApp::FindImpact(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
+{
+	DiploidEngineImpact diploid_impact;
+
+
+	return diploid_impact;
+}
+
+DiploidEngineLayer DiploidEngineApp::FindImage(int layer_number, int number)//指定番号からオブジェクトを取得(画像を検索)
+{
+	DiploidEngineLayer diploid_layer;
+
+
+	return diploid_layer;
+}

@@ -10,6 +10,8 @@
 #include "diploidSound\diploidEnigneSound.h"
 #include "diploidScreen\DiploidEngineScreen.h"
 #include "diploidInput\DiploidEngineInput.h"
+#include "diploidInput\DiploidEnigneFile.h"
+
 
 class DiploidEngineMain
 {
@@ -41,6 +43,8 @@ public:
 	DiploidEngineLayer diploidEngineLayer;//レイヤーシステム処理
 	DiploidEngineImpact diploidEngineImpact;//衝突処理
 	DiploidEngineNetwork diploidEngineNetwork;//ネットワーク機能処理
+
+	DiploidEngineFile diploidEngineFile;//ファイル入出力
 
 	//以下、よく使う変数を関数として登録
 	VECTOR WindowSize();//windowサイズを取得(z値はBIT)

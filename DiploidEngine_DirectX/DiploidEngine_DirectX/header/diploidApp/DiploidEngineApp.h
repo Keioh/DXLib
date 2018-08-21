@@ -26,5 +26,10 @@ public:
 	void Load();//ゲーム起動時にロードするデータ
 	void Init();//最初に一回だけ初期化したい処理を記述。
 	void Updata();//アニメーションなど連続して行いたい処理。
-	void Draw();//結果を描写する処理.
+	void Draw();//結果を描写する処理
+
+	DiploidObject FindObject(int layer_number, int number);//指定番号からオブジェクトを取得(オブジェクトを検索)
+	DiploidEngineImpact FindImpact(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
+	DiploidEngineLayer FindImage(int layer_number, int number);//指定番号からオブジェクトを取得(画像を検索)
+
 };

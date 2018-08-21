@@ -135,6 +135,9 @@
     <ClCompile Include="cpp\diploidInput\DiploidEngineInput.cpp">
       <Filter>ソース ファイル\cpp\diploidInput</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidInput\DiploidEnigneFile.cpp">
+      <Filter>ソース ファイル\cpp\diploidInput</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -189,6 +192,9 @@
       <Filter>ヘッダー ファイル\header\diploidScreen</Filter>
     </ClInclude>
     <ClInclude Include="header\diploidInput\DiploidEngineInput.h">
+      <Filter>ヘッダー ファイル\header\diploidInput</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidInput\DiploidEnigneFile.h">
       <Filter>ヘッダー ファイル\header\diploidInput</Filter>
     </ClInclude>
   </ItemGroup>
