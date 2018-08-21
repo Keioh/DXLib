@@ -7,6 +7,7 @@
 #include "diploidGraphics\diploidPoint.h"
 #include "diploidGraphics\diploidImage.h"
 #include "diploidSound\diploidEnigneSound.h"
+#include "diploidInput\DiploidEngineInput.h"
 
 class DiploidObject
 {
@@ -20,6 +21,8 @@ public:
 	DiploidImage image;//画像
 
 	DiploidEngineSound sound;//音
+
+	DiploidEngineInput input;//入力(Appのほうで使ったほうが無駄なメモリを消費しないですむ。シングルトン実装しなければ)
 
 	void Init();
 	void Updata();
