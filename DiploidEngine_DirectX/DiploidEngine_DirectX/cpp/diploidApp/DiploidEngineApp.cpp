@@ -41,9 +41,9 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 
 
 	//DiploidObjectを使用した場合
-	object.box.Init(VGet(300, 300, 0), VGet(100,100,0));
-	diploidEngineImpact.PushBox(object.box);
 
+	object.circle.Init(VGet(WindowSize().x / 2, 300, 0), 25);
+	diploidEngineImpact.PushCircle(object.circle);
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
@@ -66,7 +66,7 @@ DiploidObject DiploidEngineApp::FindObject(int layer_number, int number)//指定番
 	return diploid_object;
 }
 
-DiploidEngineImpact DiploidEngineApp::FindImpact(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
+DiploidEngineImpact DiploidEngineApp::FindImpactBOX(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
 {
 	DiploidEngineImpact diploid_impact;
 
@@ -74,7 +74,39 @@ DiploidEngineImpact DiploidEngineApp::FindImpact(int layer_number, int number)//
 	return diploid_impact;
 }
 
-DiploidEngineLayer DiploidEngineApp::FindImage(int layer_number, int number)//指定番号からオブジェクトを取得(画像を検索)
+DiploidEngineImpact DiploidEngineApp::FindImpactCIRCLE(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
+{
+	DiploidEngineImpact diploid_impact;
+
+
+	return diploid_impact;
+}
+
+DiploidEngineImpact DiploidEngineApp::FindImpactPOINT(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
+{
+	DiploidEngineImpact diploid_impact;
+
+
+	return diploid_impact;
+}
+
+DiploidEngineLayer DiploidEngineApp::FindImageTOP(int layer_number, int number)//指定番号からオブジェクトを取得(画像を検索)
+{
+	DiploidEngineLayer diploid_layer;
+
+
+	return diploid_layer;
+}
+
+DiploidEngineLayer DiploidEngineApp::FindImageMID(int layer_number, int number)//指定番号からオブジェクトを取得(画像を検索)
+{
+	DiploidEngineLayer diploid_layer;
+
+
+	return diploid_layer;
+}
+
+DiploidEngineLayer DiploidEngineApp::FindImageBOT(int layer_number, int number)//指定番号からオブジェクトを取得(画像を検索)
 {
 	DiploidEngineLayer diploid_layer;
 

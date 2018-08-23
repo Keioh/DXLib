@@ -29,7 +29,11 @@ public:
 	void Draw();//結果を描写する処理
 
 	DiploidObject FindObject(int layer_number, int number);//指定番号からオブジェクトを取得(オブジェクトを検索)
-	DiploidEngineImpact FindImpact(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
-	DiploidEngineLayer FindImage(int layer_number, int number);//指定番号からオブジェクトを取得(画像を検索)
+	DiploidEngineImpact FindImpactBOX(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
+	DiploidEngineImpact FindImpactCIRCLE(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
+	DiploidEngineImpact FindImpactPOINT(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
+	DiploidEngineLayer FindImageTOP(int layer_number, int number);//指定番号からオブジェクトを取得(画像を検索)
+	DiploidEngineLayer FindImageMID(int layer_number, int number);//指定番号からオブジェクトを取得(画像を検索)
+	DiploidEngineLayer FindImageBOT(int layer_number, int number);//指定番号からオブジェクトを取得(画像を検索)
 
 };
