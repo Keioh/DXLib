@@ -47,7 +47,8 @@ public:
 	void ImpactCirclePoint();//円と点の当たり判定処理
 	void ImpactCircleCircle();//円と円の当たり判定処理
 	void ImpactBoxPoint();//四角と点の当たり判定処理
-	void ImpactBoxBox();//四角と四角の当たり判定処理(未実装)
+	void ImpactBoxBox();//四角と四角の当たり判定処理
+	void ImpactBoxCircle();//四角と円の当たり判定処理(未実装)
 
 	void Draw(bool wire = true);//描写
 };

@@ -11,12 +11,12 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {	
 
 	//マウス追従設定のBOXオブジェクトを一つ作成
-	object.box.Init(VGet(0, 0, 0), VGet(50, 50, 0));
-	object.box.layer_number = DIPLOID_ENGINE_GAMEOBJECT;//判定したい識別番号を代入
-	object.box.mouse_point_move_flag = true;//マウスに追従するように設定
-	diploidEngineImpact.PushBox(object.box);//衝突判定を行うBOX配列にBOXオブジェクトをプッシュ
+	object.circle.Init(VGet(0, 0, 0), 25);
+	object.circle.layer_number = DIPLOID_ENGINE_GAMEOBJECT;//判定したい識別番号を代入
+	object.circle.mouse_point_move_flag = true;//マウスに追従するように設定
+	diploidEngineImpact.PushCircle(object.circle);//衝突判定を行うBOX配列にBOXオブジェクトをプッシュ
 
-	//BOXに画像を付け、それを50個作成
+	//BOXに画像を付け、それを50個ランダムな位置に作成
 	for (int count = 0; count < 50; ++count)
 	{
 		VECTOR pos;

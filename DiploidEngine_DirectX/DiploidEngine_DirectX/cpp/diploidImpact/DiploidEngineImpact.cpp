@@ -218,6 +218,111 @@ void DiploidEngineImpact::ImpactBoxBox()
 	}
 }
 
+void DiploidEngineImpact::ImpactBoxCircle()
+{	
+	if (!box_vector.empty() || !circle_vector.empty())
+	{
+
+		//BOX
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			//Circle
+			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+			{
+				//y方向への面積計算(A)
+				if ((circle->position.x > box->position.x) &&
+					(circle->position.x < (box->position.x + box->size.x)) &&
+					(circle->position.y > (box->position.y - circle->size.z)) &&
+					(circle->position.y < ((box->position.y + box->size.y) + circle->size.z)))
+				{
+					if (circle->impacted == false)
+					{
+						circle->impacted = true;
+					}
+
+					if (box->impacted == false)
+					{
+						box->impacted = true;
+					}
+				}
+
+				//X方向への面積計算(B)
+				if ((circle->position.x > (box->position.x - circle->size.z)) &&
+					(circle->position.x < ((box->position.x + box->size.x) + circle->size.z) &&
+					(circle->position.y > box->position.y) &&
+						(circle->position.y < (box->position.y + box->size.y))))
+				{
+					if (circle->impacted == false)
+					{
+						circle->impacted = true;
+					}
+
+					if (box->impacted == false)
+					{
+						box->impacted = true;
+					}
+				}
+
+				//BOX左上の面積計算(C)
+				if ((std::pow((box->position.x - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
+				{
+					if (circle->impacted == false)
+					{
+						circle->impacted = true;
+					}
+
+					if (box->impacted == false)
+					{
+						box->impacted = true;
+					}
+				}
+
+				//BOX右上の面積計算(D)
+				if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
+				{
+					if (circle->impacted == false)
+					{
+						circle->impacted = true;
+					}
+
+					if (box->impacted == false)
+					{
+						box->impacted = true;
+					}
+				}
+
+				//BOX右下の面積計算(E)
+				if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
+				{
+					if (circle->impacted == false)
+					{
+						circle->impacted = true;
+					}
+
+					if (box->impacted == false)
+					{
+						box->impacted = true;
+					}
+				}
+
+				//BOX左下の面積計算(F)
+				if ((std::pow((box->position.x - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
+				{
+					if (circle->impacted == false)
+					{
+						circle->impacted = true;
+					}
+
+					if (box->impacted == false)
+					{
+						box->impacted = true;
+					}
+				}
+			}
+		}
+	}
+}
+
 void DiploidEngineImpact::Updata()
 {
 	//円の更新処理
@@ -256,6 +361,7 @@ void DiploidEngineImpact::Updata()
 
 	//四角
 	ImpactBoxBox();//四角と四角の衝突計算
+	ImpactBoxCircle();//四角と円の衝突計算
 }
 
 void DiploidEngineImpact::Init()
