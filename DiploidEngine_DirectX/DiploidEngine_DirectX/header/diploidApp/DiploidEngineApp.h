@@ -12,14 +12,6 @@
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	//DiploidCircle circle;
-	//DiploidPoint point;
-	//DiploidBox box;
-
-	//DiploidImage image;
-
-	//DiploidEngineSound sound;
-
 	DiploidObject object;
 
 public:

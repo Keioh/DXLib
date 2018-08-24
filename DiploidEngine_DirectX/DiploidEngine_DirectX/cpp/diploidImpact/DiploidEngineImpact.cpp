@@ -150,7 +150,7 @@ void DiploidEngineImpact::ImpactCircleCircle()
 						if (circle_vector[circle_one].layer_number == circle_vector[circle_two].layer_number)
 						{
 							circle_vector[circle_one].impacted = true;
-							//circle_vector[circle_two].impacted = true;
+							circle_vector[circle_two].impacted = true;
 						}
 					}
 				}
@@ -193,9 +193,25 @@ void DiploidEngineImpact::ImpactBoxBox()
 			for (auto box_two = box_vector.begin() + 1; box_two != box_vector.end(); ++box_two)
 			{
 				//識別番号が同じなら
-				//if (circle->layer_number == point->layer_number)
+				if (box_one->layer_number == box_two->layer_number)
 				{
+					if (box_one == box_two)//同じ値なら計算しない
+					{
 
+					}
+					else
+					{
+						//one
+						if (box_one->position.x < (box_two->position.x + box_two->size.x) && box_one->position.y < (box_two->position.y + box_two->size.y))
+						{
+							//two
+							if (box_two->position.x < (box_one->position.x + box_one->size.x) && box_two->position.y < (box_one->position.y + box_one->size.y))
+							{
+								box_two->impacted = true;
+								box_one->impacted = true;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -231,9 +247,14 @@ void DiploidEngineImpact::Updata()
 		}
 	}
 
+	//点
 	ImpactCirclePoint();//円と点の衝突計算
-	ImpactCircleCircle();//円と円の衝突計算
 	ImpactBoxPoint();//四角と点の衝突計算
+
+	//円
+	ImpactCircleCircle();//円と円の衝突計算
+
+	//四角
 	ImpactBoxBox();//四角と四角の衝突計算
 }
 
