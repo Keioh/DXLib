@@ -127,7 +127,7 @@ void DiploidEngineImpact::DestoryLine()
 
 void DiploidEngineImpact::ImpactCirclePoint()
 {
-	if (!point_vector.empty() && !circle_vector.empty())
+	if (!point_vector.empty() || !circle_vector.empty())
 	{
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
@@ -220,7 +220,7 @@ void DiploidEngineImpact::ImpactBoxBox()
 	{
 		for (auto box_one = box_vector.begin(); box_one != box_vector.end(); ++box_one)
 		{
-			for (auto box_two = box_vector.begin() + 1; box_two != box_vector.end(); ++box_two)
+			for (auto box_two = box_vector.begin(); box_two != box_vector.end(); ++box_two)
 			{
 				//識別番号が同じなら
 				if (box_one->layer_number == box_two->layer_number)
@@ -249,7 +249,7 @@ void DiploidEngineImpact::ImpactBoxBox()
 }
 
 void DiploidEngineImpact::ImpactBoxCircle()
-{	
+{
 	if (!box_vector.empty() || !circle_vector.empty())
 	{
 		//BOX
@@ -258,93 +258,97 @@ void DiploidEngineImpact::ImpactBoxCircle()
 			//Circle
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
-				//y方向への面積計算(A)
-				if ((circle->position.x > box->position.x) &&
-					(circle->position.x < (box->position.x + box->size.x)) &&
-					(circle->position.y > (box->position.y - circle->size.z)) &&
-					(circle->position.y < ((box->position.y + box->size.y) + circle->size.z)))
+				//識別番号が同じなら
+				if (box->layer_number == circle->layer_number)
 				{
-					if (circle->impacted == false)
+					//y方向への面積計算(A)
+					if ((circle->position.x > box->position.x) &&
+						(circle->position.x < (box->position.x + box->size.x)) &&
+						(circle->position.y > (box->position.y - circle->size.z)) &&
+						(circle->position.y < ((box->position.y + box->size.y) + circle->size.z)))
 					{
-						circle->impacted = true;
+						if (circle->impacted == false)
+						{
+							circle->impacted = true;
+						}
+
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
 					}
 
-					if (box->impacted == false)
+					//X方向への面積計算(B)
+					if ((circle->position.x > (box->position.x - circle->size.z)) &&
+						(circle->position.x < ((box->position.x + box->size.x) + circle->size.z) &&
+						(circle->position.y > box->position.y) &&
+							(circle->position.y < (box->position.y + box->size.y))))
 					{
-						box->impacted = true;
-					}
-				}
+						if (circle->impacted == false)
+						{
+							circle->impacted = true;
+						}
 
-				//X方向への面積計算(B)
-				if ((circle->position.x > (box->position.x - circle->size.z)) &&
-					(circle->position.x < ((box->position.x + box->size.x) + circle->size.z) &&
-					(circle->position.y > box->position.y) &&
-						(circle->position.y < (box->position.y + box->size.y))))
-				{
-					if (circle->impacted == false)
-					{
-						circle->impacted = true;
-					}
-
-					if (box->impacted == false)
-					{
-						box->impacted = true;
-					}
-				}
-
-				//BOX左上の面積計算(C)
-				if ((std::pow((box->position.x - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
-				{
-					if (circle->impacted == false)
-					{
-						circle->impacted = true;
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
 					}
 
-					if (box->impacted == false)
+					//BOX左上の面積計算(C)
+					if ((std::pow((box->position.x - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
-						box->impacted = true;
-					}
-				}
+						if (circle->impacted == false)
+						{
+							circle->impacted = true;
+						}
 
-				//BOX右上の面積計算(D)
-				if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
-				{
-					if (circle->impacted == false)
-					{
-						circle->impacted = true;
-					}
-
-					if (box->impacted == false)
-					{
-						box->impacted = true;
-					}
-				}
-
-				//BOX右下の面積計算(E)
-				if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
-				{
-					if (circle->impacted == false)
-					{
-						circle->impacted = true;
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
 					}
 
-					if (box->impacted == false)
+					//BOX右上の面積計算(D)
+					if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
-						box->impacted = true;
-					}
-				}
+						if (circle->impacted == false)
+						{
+							circle->impacted = true;
+						}
 
-				//BOX左下の面積計算(F)
-				if ((std::pow((box->position.x - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
-				{
-					if (circle->impacted == false)
-					{
-						circle->impacted = true;
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
 					}
 
-					if (box->impacted == false)
+					//BOX右下の面積計算(E)
+					if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
-						box->impacted = true;
+						if (circle->impacted == false)
+						{
+							circle->impacted = true;
+						}
+
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
+					}
+
+					//BOX左下の面積計算(F)
+					if ((std::pow((box->position.x - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
+					{
+						if (circle->impacted == false)
+						{
+							circle->impacted = true;
+						}
+
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
 					}
 				}
 			}
@@ -389,11 +393,112 @@ void DiploidEngineImpact::ImpactPointLine()
 				//識別番号が同じなら
 				if (point->layer_number == line->layer_number)
 				{
-					if (Segment_Point_MinLength(line->Position_one, line->Position_two, point->position) < 1)
+					if (Segment_Point_MinLength(line->Position_one, line->Position_two, point->position) < 2)
 					{
 						line->impacted = true;
 						point->impacted = true;
 					}
+				}
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::ImpactLineLine()
+{
+	if (!line_vector.empty())
+	{
+		for (auto line_one = line_vector.begin(); line_one != line_vector.end(); ++line_one)
+		{
+			for (auto line_two = line_vector.begin(); line_two != line_vector.end(); ++line_two)
+			{
+				float x = 0, y = 0, r = 0;
+
+				if (line_one == line_two)//同じ値なら計算しない
+				{
+					//x = 0;
+					//y = 0;
+					//r = 0;
+				}
+				else if (Segment_Segment_MinLength(line_one->Position_one, line_one->Position_two, line_two->Position_one, line_two->Position_two) < 1)
+				{
+					//識別番号が同じなら
+					if (line_one->layer_number == line_two->layer_number)
+					{
+						line_one->impacted = true;
+						line_two->impacted = true;
+					}
+				}
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::ImpactLineBox()
+{
+	if (!line_vector.empty() || !box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+			{
+				//識別番号が同じなら
+				if (box->layer_number == line->layer_number)
+				{
+					float hit_a, hit_b;
+
+					VECTOR pos_a, pos_b, pos_c, pos_d;
+
+					//左上
+					pos_a.x = box->position.x;
+					pos_a.y = box->position.y;
+					pos_a.z = 0.0f;
+
+					//左下
+					pos_b.x = box->position.x;
+					pos_b.y = box->position.y + box->size.y;
+					pos_b.z = 0.0f;
+
+					//右上
+					pos_c.x = box->position.x + box->size.x;
+					pos_c.y = box->position.y;
+					pos_c.z = 0.0f;
+
+					//右下
+					pos_d.x = box->position.x + box->size.x;
+					pos_d.y = box->position.y + box->size.y;
+					pos_d.z = 0.0f;
+
+					//当たり判定
+					hit_a = Segment_Triangle_MinLength(line->Position_one, line->Position_two, pos_a, pos_b, pos_c);
+					hit_b = Segment_Triangle_MinLength(line->Position_one, line->Position_two, pos_d, pos_b, pos_c);
+
+
+					if (hit_a < 1)
+					{
+						if (line->impacted == false)
+						{
+							line->impacted = true;
+						}
+
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
+					}
+					
+					if (hit_b < 1)
+					{
+						if (line->impacted == false)
+						{
+							line->impacted = true;
+						}
+
+						if (box->impacted == false)
+						{
+							box->impacted = true;
+						}
+					}					
 				}
 			}
 		}
@@ -446,6 +551,8 @@ void DiploidEngineImpact::Updata()
 
 	ImpactPointLine();//点と線分の衝突判定
 	ImpactCircleLine();//円と線分の衝突判定
+	ImpactLineLine();//線分と線分の衝突判定
+	ImpactLineBox();//線分と四角の衝突判定
 }
 
 void DiploidEngineImpact::Init()

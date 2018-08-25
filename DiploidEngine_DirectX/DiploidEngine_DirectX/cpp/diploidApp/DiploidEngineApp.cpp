@@ -39,18 +39,21 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	}
 	*/
 
-	for (int count = 0; count < 500; ++count)
+	object.box.Init(VGet(250, 250, 0), VGet(100, 100, 0));
+	object.box.destory = false;
+	object.box.mouse_point_move_flag = true;
+	object.box.layer_number = 0;
+	diploidEngineImpact.PushBox(object.box);
+
+	for (int count = 0; count < 200; ++count)
 	{
-		object.line.Init(VGet(200 + count, 200, 0), VGet(400 + count, 500, 0));
-		object.line.destory = true;
+		object.line.Init(VGet(100 + count * 4, 100 + count * 2, 0), VGet(300 + count * 4, 300 + count * 2, 0));
+		object.line.destory = false;
+		object.line.mouse_point_move_flag = false;
+		object.line.layer_number = 0;
+
 		diploidEngineImpact.PushLine(object.line);
 	}
-
-	object.circle.Init(VGet(0, 0, 0), 25);
-	object.circle.mouse_point_move_flag = true;
-
-	diploidEngineImpact.PushCircle(object.circle);
-
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。

@@ -61,6 +61,8 @@ public:
 	void ImpactBoxCircle();//lŠp‚Æ‰~‚Ì“–‚½‚è”»’èˆ—
 	void ImpactCircleLine();//‰~‚Æü•ª‚Ì“–‚½‚è”»’èˆ—
 	void ImpactPointLine();//“_‚Æü•ª‚Ì“–‚½‚è”»’èˆ—
+	void ImpactLineLine();//ü•ª‚Æü•ª‚Ì“–‚½‚è”»’èˆ—
+	void ImpactLineBox();//ü•ª‚Æ” ‚Ì“–‚½‚è”»’èˆ—
 
 	void Draw(bool wire = true);//•`Ê
 };
