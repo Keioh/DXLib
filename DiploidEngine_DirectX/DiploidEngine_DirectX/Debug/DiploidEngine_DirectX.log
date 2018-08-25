@@ -1,8 +1,0 @@
-﻿  DiploidEngineMath.cpp
-c:\gameproject\diploidengine_directx\diploidengine_directx\cpp\systme\diploidenginemath.cpp(43): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\diploidengine_directx\diploidengine_directx\cpp\systme\diploidenginemath.cpp(45): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
-  DiploidEngineApp.cpp
-  コードを生成中...
-  スキップ中... (関連する変更は検出されませんでした)
-  WindowsMain.cpp
-  DiploidEngine_DirectX.vcxproj -> C:\GameProject\DiploidEngine_DirectX\Debug\DiploidEngine_DirectX.exe
