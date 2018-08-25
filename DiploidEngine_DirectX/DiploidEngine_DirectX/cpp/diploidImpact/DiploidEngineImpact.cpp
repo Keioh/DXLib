@@ -362,7 +362,39 @@ void DiploidEngineImpact::ImpactCircleLine()
 			//Circle
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
+				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				if (line->layer_number == circle->layer_number)
+				{
+					if (HitCheck_Line_Sphere(line->Position_one, line->Position_two, circle->position, circle->size.z) == true)
+					{
+						line->impacted = true;
+						circle->impacted = true;
+					}
+				}
+			}
+		}
+	}
+}
 
+void DiploidEngineImpact::ImpactPointLine()
+{
+	if (!line_vector.empty() || !point_vector.empty())
+	{
+		//LINE
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			//POINT
+			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+			{
+				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				if (point->layer_number == line->layer_number)
+				{
+					if (Segment_Point_MinLength(line->Position_one, line->Position_two, point->position) < 1)
+					{
+						line->impacted = true;
+						point->impacted = true;
+					}
+				}
 			}
 		}
 	}
@@ -411,6 +443,9 @@ void DiploidEngineImpact::Updata()
 	ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvZ
 	ImpactBoxBox();//lŠp‚ÆlŠp‚ÌÕ“ËŒvZ
 	ImpactBoxCircle();//lŠp‚Æ‰~‚ÌÕ“ËŒvZ
+
+	ImpactPointLine();//“_‚Æü•ª‚ÌÕ“Ë”»’è
+	ImpactCircleLine();//‰~‚Æü•ª‚ÌÕ“Ë”»’è
 }
 
 void DiploidEngineImpact::Init()

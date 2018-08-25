@@ -5,6 +5,7 @@
 #include "diploidGraphics\diploidBox.h"
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidPoint.h"
+#include "diploidGraphics\diploidLine.h"
 #include "diploidGraphics\diploidImage.h"
 #include "diploidSound\diploidEnigneSound.h"
 #include "diploidInput\DiploidEngineInput.h"
@@ -17,6 +18,7 @@ public:
 	DiploidBox box;//lŠp
 	DiploidCircle circle;//‰~
 	DiploidPoint point;//“_
+	DiploidLine line;//ü•ª
 
 	DiploidImage image;//‰æ‘œ
 

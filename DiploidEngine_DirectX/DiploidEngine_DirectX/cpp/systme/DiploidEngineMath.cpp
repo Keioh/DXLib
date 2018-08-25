@@ -1,39 +1,47 @@
 #include "system\DiploidEngineMath.h"
 
-Vector2 DiploidEngineMath::VectorAdd(Vector2 one, Vector2 two)
+float DiploidEngineMath::VectorAdd(float a, float b)
 {
-	Vector2 vec2 = { 0,0 };
+	float vec = 0.0f;
 
-	vec2.x = one.x + two.x;
-	vec2.y = one.y + two.y;
+	vec = a + b;
 
-	return vec2;
+	return vec;
 }
 
-Vector2 DiploidEngineMath::VectorSub(Vector2 one, Vector2 two)
+float DiploidEngineMath::VectorSub(float a, float b)
 {
-	Vector2 vec2 = { 0,0 };
+	float vec = 0.0f;
 
-	vec2.x = one.x - two.x;
-	vec2.y = one.y - two.y;
+	vec = a - b;
 
-	return vec2;
+	return vec;
 }
 
-float DiploidEngineMath::DotProduct(float a, float b)
+float DiploidEngineMath::DotProduct(float a, float b, float angle)
 {
-	float vec1 = 0.0f;
+	float A = 0.0f, B = 0.0f;
 
-	vec1 = a * b * (b / a);
+	A = a * cos(angle);
+	B = A * b;
 
-	return vec1;
+	return B;
 }
 
 float DiploidEngineMath::CrossProduct(float a, float b)
 {
-	float vec1 = 0.0f;
+	float vec = 0.0f;
 
-	return vec1;
+	return vec;
+}
+
+float DiploidEngineMath::DotProduct(Vector2 a, Vector2 b)
+{
+	float vec = 0.0f;
+
+	vec = (a.x * b.x) + (a.y * b.y);
+
+	return vec;
 }
 
 float DiploidEngineMath::ThreeSquares(float a, float b)
@@ -45,4 +53,31 @@ float DiploidEngineMath::ThreeSquares(float a, float b)
 	c = sqrt(C);
 
 	return c;
+}
+
+float DiploidEngineMath::DotProductPointAndLine(VECTOR point, VECTOR a, float angle)
+{
+	float ans = 0.0f;
+	float X = 0.0f, Y = 0.0f;
+	float B = 0.0f;
+	float vec = 0.0f;//aì_Ç©ÇÁpointÇ…êLÇ—ÇÈí∑Ç≥
+
+	X = point.x - a.x;
+	Y = point.y - a.y;
+
+	B = pow(X, 2) + pow(Y, 2);
+	vec = sqrt(B);
+
+	ans = vec * cos(angle);
+
+	return ans;
+}
+
+float DiploidEngineMath::ToDegree(float angle)
+{
+	float ans = 0.0f;
+
+	ans = angle * (180 / DX_PI);
+
+	return ans;
 }

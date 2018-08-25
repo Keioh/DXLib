@@ -14,10 +14,6 @@ class DiploidEngineApp : public DiploidEngineMain
 private:
 	DiploidObject object;
 
-	DiploidLine line;
-
-	DiploidEngineMath math;
-
 public:
 	void Load();//ゲーム起動時にロードするデータ
 	void Init();//最初に一回だけ初期化したい処理を記述。

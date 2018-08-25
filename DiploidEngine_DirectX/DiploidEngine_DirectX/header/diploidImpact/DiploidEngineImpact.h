@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include "diploidObject\DiploidEngineObject.h"
+#include "system\DiploidEngineMath.h"
 
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidPoint.h"
@@ -11,6 +12,7 @@
 class DiploidEngineImpact
 {
 private:
+	DiploidEngineMath math;
 
 	float circle_byte;
 	float point_byte;
@@ -58,6 +60,7 @@ public:
 	void ImpactBoxBox();//lŠp‚ÆlŠp‚Ì“–‚½‚è”»’èˆ—
 	void ImpactBoxCircle();//lŠp‚Æ‰~‚Ì“–‚½‚è”»’èˆ—
 	void ImpactCircleLine();//‰~‚Æü•ª‚Ì“–‚½‚è”»’èˆ—
+	void ImpactPointLine();//“_‚Æü•ª‚Ì“–‚½‚è”»’èˆ—
 
 	void Draw(bool wire = true);//•`Ê
 };

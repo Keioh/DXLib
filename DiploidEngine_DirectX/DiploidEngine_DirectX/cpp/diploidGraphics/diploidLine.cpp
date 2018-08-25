@@ -23,7 +23,7 @@ void DiploidLine::Draw(bool wire)
 {
 	if (wire == true)
 	{
-		DrawLineAA(Position_one.x, Position_one.y, Position_two.x, Position_two.y, color, thickness);
+		DrawLine(Position_one.x, Position_one.y, Position_two.x, Position_two.y, color, thickness);
 	}
 }
 
