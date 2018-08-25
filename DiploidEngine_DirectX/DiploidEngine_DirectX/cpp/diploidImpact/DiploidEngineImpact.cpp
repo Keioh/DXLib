@@ -5,10 +5,12 @@ void DiploidEngineImpact::GetSize()
 	circle_size = circle_vector.size();
 	point_size = point_vector.size();
 	box_size = box_vector.size();	
-	
+	line_size = line_vector.size();
+
 	circle_byte = circle_size * sizeof(DiploidCircle);
 	point_byte = point_size * sizeof(DiploidPoint);
 	box_byte = box_size * sizeof(DiploidBox);
+	line_byte = line_size * sizeof(DiploidLine);
 }
 
 void DiploidEngineImpact::PushCircle(DiploidCircle circle)
@@ -24,6 +26,11 @@ void DiploidEngineImpact::PushPoint(DiploidPoint point)
 void DiploidEngineImpact::PushBox(DiploidBox box)
 {
 	box_vector.push_back(box);
+}
+
+void DiploidEngineImpact::PushLine(DiploidLine line)
+{
+	line_vector.push_back(line);
 }
 
 void DiploidEngineImpact::PopBackCircle()
@@ -47,6 +54,14 @@ void DiploidEngineImpact::PopBackBox()
 	if (!box_vector.empty())
 	{
 		box_vector.pop_back();
+	}
+}
+
+void DiploidEngineImpact::PopBackLine()
+{
+	if (!line_vector.empty())
+	{
+		line_vector.pop_back();
 	}
 }
 
@@ -90,6 +105,21 @@ void DiploidEngineImpact::DestoryBox()
 			{
 				box_vector.erase(box);
 				box = box_vector.begin();
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::DestoryLine()
+{
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			if ((line->impacted == true) && (line->destory == true))
+			{
+				line_vector.erase(line);
+				line = line_vector.begin();
 			}
 		}
 	}
@@ -222,7 +252,6 @@ void DiploidEngineImpact::ImpactBoxCircle()
 {	
 	if (!box_vector.empty() || !circle_vector.empty())
 	{
-
 		//BOX
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
@@ -323,6 +352,22 @@ void DiploidEngineImpact::ImpactBoxCircle()
 	}
 }
 
+void DiploidEngineImpact::ImpactCircleLine()
+{
+	if (!line_vector.empty() || !circle_vector.empty())
+	{
+		//LINE
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			//Circle
+			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+			{
+
+			}
+		}
+	}
+}
+
 void DiploidEngineImpact::Updata()
 {
 	//円の更新処理
@@ -352,14 +397,18 @@ void DiploidEngineImpact::Updata()
 		}
 	}
 
-	//点
+	//線分の更新処理
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			line->Update();//アニメアプデ
+		}
+	}
+
 	ImpactCirclePoint();//円と点の衝突計算
 	ImpactBoxPoint();//四角と点の衝突計算
-
-	//円
 	ImpactCircleCircle();//円と円の衝突計算
-
-	//四角
 	ImpactBoxBox();//四角と四角の衝突計算
 	ImpactBoxCircle();//四角と円の衝突計算
 }
@@ -398,6 +447,18 @@ void DiploidEngineImpact::Init()
 			if (box->impacted == true)
 			{
 				box->impacted = false;
+			}
+		}
+	}
+
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			//線分がヒットしていたら
+			if (line->impacted == true)
+			{
+				line->impacted = false;
 			}
 		}
 	}
@@ -461,10 +522,29 @@ void DiploidEngineImpact::Draw(bool wire)
 		}
 	}
 
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			//線分がヒットしていたら
+			if (line->impacted == true)
+			{
+				line->color = GetColor(255, 0, 0);
+			}
+			else
+			{
+				line->color = GetColor(0, 0, 255);
+			}
+
+			line->Draw(wire);
+		}
+	}
+
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "circle vector size : %.6f MB   objects : %d", circle_byte / 1000000, circle_size);
 	DrawFormatString(0, 20, GetColor(255, 255, 255), "point vector size : %.6f MB   objects : %d", point_byte / 1000000, point_size);
 	DrawFormatString(0, 40, GetColor(255, 255, 255), "box vector size : %.6f MB   objects ; %d", box_byte / 1000000, box_size);
-	DrawFormatString(0, 60, GetColor(255, 255, 255), "all vector size : %.6f MB   all object ; %d", (box_byte + point_byte + circle_byte) / 1000000, box_size + point_size + circle_size);
+	DrawFormatString(0, 60, GetColor(255, 255, 255), "line vector size : %.6f MB   objects ; %d", line_byte / 1000000, line_size);
+	DrawFormatString(0, 80, GetColor(255, 255, 255), "all vector size : %.6f MB   all object ; %d", (box_byte + point_byte + circle_byte + line_byte) / 1000000, box_size + point_size + circle_size + line_size);
 }
 
 void DiploidEngineImpact::Destory()
@@ -472,4 +552,5 @@ void DiploidEngineImpact::Destory()
 	DestoryCircle();//円がヒットしていたら円配列から削除
 	DestoryPoint();//点がヒットしていたら点配列から削除
 	DestoryBox();//四角がヒットしていたら四角配列から削除
+	DestoryLine();//線分がヒットしていたら線分配列から削除
 }

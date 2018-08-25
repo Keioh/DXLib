@@ -141,6 +141,12 @@
     <ClCompile Include="cpp\diploidScreen\DiploidEngineScene.cpp">
       <Filter>ソース ファイル\cpp\diploidScreen</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidGraphics\diploidLine.cpp">
+      <Filter>ソース ファイル\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\systme\DiploidEngineMath.cpp">
+      <Filter>ソース ファイル\cpp\system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -202,6 +208,12 @@
     </ClInclude>
     <ClInclude Include="header\diploidScreen\DiploidEngineScene.h">
       <Filter>ヘッダー ファイル\header\diploidScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidGraphics\diploidLine.h">
+      <Filter>ヘッダー ファイル\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\system\DiploidEngineMath.h">
+      <Filter>ヘッダー ファイル\header\system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

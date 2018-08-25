@@ -9,7 +9,7 @@ void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {	
-
+/*
 	//マウス追従設定のBOXオブジェクトを一つ作成
 	object.circle.Init(VGet(0, 0, 0), 25);
 	object.circle.layer_number = DIPLOID_ENGINE_GAMEOBJECT;//判定したい識別番号を代入
@@ -37,17 +37,18 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 		diploidEngineLayer.PushTopGraphics(object.image);//表示レイヤーのトップ(一番上)にイメージをプッシュ
 		diploidEngineImpact.PushBox(object.box);//衝突判定を行うBOX配列にBOXオブジェクトをプッシュ
 	}
+	*/
 
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
-{	
+{
 
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
-
+	//DrawFormatStringF(0, 500, GetColor(255, 255, 255), "test = %.2f", math.DotProduct(20, 2));
 }
 
 

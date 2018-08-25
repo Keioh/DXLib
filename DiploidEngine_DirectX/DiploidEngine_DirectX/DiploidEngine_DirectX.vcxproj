@@ -133,6 +133,7 @@
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidCircle.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidImage.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidLine.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidPoint.cpp" />
     <ClCompile Include="cpp\diploidImpact\DiploidEngineImpact.cpp" />
     <ClCompile Include="cpp\diploidInput\DiploidEngineInput.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="cpp\diploidScreen\DiploidEngineScreen.cpp" />
     <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp" />
     <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp" />
+    <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
@@ -155,6 +157,7 @@
     <ClInclude Include="header\diploidGraphics\diploidBox.h" />
     <ClInclude Include="header\diploidGraphics\diploidCircle.h" />
     <ClInclude Include="header\diploidGraphics\diploidImage.h" />
+    <ClInclude Include="header\diploidGraphics\diploidLine.h" />
     <ClInclude Include="header\diploidGraphics\diploidPoint.h" />
     <ClInclude Include="header\diploidImpact\DiploidEngineImpact.h" />
     <ClInclude Include="header\diploidInput\DiploidEngineInput.h" />
@@ -168,6 +171,7 @@
     <ClInclude Include="header\diploidScreen\DiploidEngineScreen.h" />
     <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h" />
     <ClInclude Include="header\diploidSound\diploidEnigneSound.h" />
+    <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>

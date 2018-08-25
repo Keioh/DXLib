@@ -84,10 +84,10 @@ void DiploidEngineLayer::Draw(bool debug, bool draw)
 	//デバッグ情報
 	if (debug == true)
 	{
-		DrawFormatString(0, 80, GetColor(255, 255, 255), "top layer vector size : %.6f MB   objects : %d", top_byte / 1000000, top_size);
-		DrawFormatString(0, 100, GetColor(255, 255, 255), "mid layer vector size : %.6f MB   objects : %d", mid_byte / 1000000, mid_size);
-		DrawFormatString(0, 120, GetColor(255, 255, 255), "bot layer vector size : %.6f MB   objects ; %d", bot_byte / 1000000, bot_size);
-		DrawFormatString(0, 140, GetColor(255, 255, 255), "all layer vector size : %.6f MB   all object ; %d", (top_byte + mid_byte + bot_byte) / 1000000, top_size + mid_size + bot_size);
+		DrawFormatString(0, 100, GetColor(255, 255, 255), "top layer vector size : %.6f MB   objects : %d", top_byte / 1000000, top_size);
+		DrawFormatString(0, 120, GetColor(255, 255, 255), "mid layer vector size : %.6f MB   objects : %d", mid_byte / 1000000, mid_size);
+		DrawFormatString(0, 140, GetColor(255, 255, 255), "bot layer vector size : %.6f MB   objects ; %d", bot_byte / 1000000, bot_size);
+		DrawFormatString(0, 160, GetColor(255, 255, 255), "all layer vector size : %.6f MB   all object ; %d", (top_byte + mid_byte + bot_byte) / 1000000, top_size + mid_size + bot_size);
 	}
 }
 

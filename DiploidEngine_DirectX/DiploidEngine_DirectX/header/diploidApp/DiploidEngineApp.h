@@ -4,15 +4,19 @@
 #include "DxLib.h"
 #include "diploidApp\DiploidEngineMain.h"
 #include "diploidObject\DiploidEngineObject.h"
-#include "diploidGraphics\diploidCircle.h"
-#include "diploidGraphics\diploidBox.h"
-#include "diploidGraphics\diploidImage.h"
-#include "diploidSound\diploidEnigneSound.h"
+
+#include "system\DiploidEngineMath.h"
+
+#include "diploidGraphics\diploidLine.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidObject object;
+
+	DiploidLine line;
+
+	DiploidEngineMath math;
 
 public:
 	void Load();//ゲーム起動時にロードするデータ
