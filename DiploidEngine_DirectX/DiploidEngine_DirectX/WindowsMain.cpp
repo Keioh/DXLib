@@ -9,6 +9,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	DiploidEngineApp diploid_engine_app;//ループなどの処理もろもろ
 
 	diploid_engine_app.diploidEngineSetting.Init();//エンジン初期化
+	
+	diploid_engine_app.FileCreate();//ゲーム起動時にファイルを作成
 
 	diploid_engine_app.Load();//ゲーム起動時にデータを読み込む処理
 

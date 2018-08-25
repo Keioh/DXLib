@@ -548,7 +548,6 @@ void DiploidEngineImpact::Updata()
 	ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvZ
 	ImpactBoxBox();//lŠp‚ÆlŠp‚ÌÕ“ËŒvZ
 	ImpactBoxCircle();//lŠp‚Æ‰~‚ÌÕ“ËŒvZ
-
 	ImpactPointLine();//“_‚Æü•ª‚ÌÕ“Ë”»’è
 	ImpactCircleLine();//‰~‚Æü•ª‚ÌÕ“Ë”»’è
 	ImpactLineLine();//ü•ª‚Æü•ª‚ÌÕ“Ë”»’è

@@ -9,6 +9,7 @@
 #include "diploidGraphics\diploidImage.h"
 #include "diploidSound\diploidEnigneSound.h"
 #include "diploidInput\DiploidEngineInput.h"
+#include "diploidInput\DiploidEnigneFile.h"
 
 class DiploidObject
 {
@@ -23,8 +24,10 @@ public:
 	DiploidImage image;//画像
 
 	DiploidEngineSound sound;//音
+	
+	DiploidEngineFile file;//ファイル入出力
 
-	DiploidEngineInput input;//入力(Appのほうで使ったほうが無駄なメモリを消費しないですむ。シングルトン実装しなければ)
+	DiploidEngineInput input;//入力機器キーボードやマウス、パッドなど(Appのほうで使ったほうが無駄なメモリを消費しないですむ。シングルトン実装しなければ)
 
 	void Init();
 	void Updata();

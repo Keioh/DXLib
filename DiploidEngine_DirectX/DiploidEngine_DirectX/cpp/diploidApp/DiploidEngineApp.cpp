@@ -1,10 +1,15 @@
 #include "diploidApp\DiploidEngineApp.h"
 
+void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイルを作る処理。
+{
+	object.file.Craete("text/test.txt");//ファイルを作成
+}
+
 void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 {	
+	object.file.Load("text/test.txt");//ファイルを読み込む
 
 	object.image.Load("texter/test.png");//テクスチャを読み込む
-
 }
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
