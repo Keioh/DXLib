@@ -1,0 +1,5 @@
+test=256
+test1=512
+test2=1024
+test3=2.56
+test4=5.12

@@ -29,7 +29,38 @@ int DiploidEngineFile::Load(const char* path)
 	return 0;
 }
 
-int DiploidEngineFile::Write(const char* path)
+int DiploidEngineFile::WriteINT(const char* path, const char* name, int data)
 {
-	return 0;
+	output_file.open(path, std::ios::app);//追記モードでファイルを開く
+
+	if (output_file)
+	{
+		output_file << name << '=' << data << std::endl;	
+		
+		output_file.close();
+
+		return data;
+	}
+
+	output_file.close();
+
+	return data;
+}
+
+float DiploidEngineFile::WriteFLOAT(const char* path, const char* name, float data)
+{
+	output_file.open(path, std::ios::app);//追記モードでファイルを開く
+
+	if (output_file)
+	{
+		output_file << name << '=' << data << std::endl;
+
+		output_file.close();
+
+		return data;
+	}
+
+	output_file.close();
+
+	return data;
 }
