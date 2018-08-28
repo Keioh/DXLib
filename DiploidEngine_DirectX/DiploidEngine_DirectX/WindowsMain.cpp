@@ -58,6 +58,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	diploid_engine_app.diploidEngineNetwork.End();//ネット処理の終了
+	InitSoftImage();//メモリ上にあるソフトウェア画像をすべて削除
 	InitGraph();//メモリ上にある画像データをすべて削除
 	InitSoundMem();//メモリにあるサウンドをすべて削除
 	diploid_engine_app.diploidEngineSetting.End();//エンジンの終了

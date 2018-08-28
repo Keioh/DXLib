@@ -2,73 +2,69 @@
 
 void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイルを作る処理。
 {
-	object.file.Craete("text/test.txt");//ファイルを作成
+
 }
 
 void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 {	
-	object.file.Load("text/test.txt");//ファイルを読み込む
-
-	object.image.Load("texter/test.png");//テクスチャを読み込む
+	object.map.Load("texter/MAP/test_map.png", 256, 256);
 }
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
-{	
-/*
-	//マウス追従設定のBOXオブジェクトを一つ作成
-	object.circle.Init(VGet(0, 0, 0), 25);
-	object.circle.layer_number = DIPLOID_ENGINE_GAMEOBJECT;//判定したい識別番号を代入
-	object.circle.mouse_point_move_flag = true;//マウスに追従するように設定
-	diploidEngineImpact.PushCircle(object.circle);//衝突判定を行うBOX配列にBOXオブジェクトをプッシュ
+{
+	object.map.SetMapChipSize(10);
+	//object.map.SetPosition(100.0f, 0.0f);
+	object.map.Create();
 
-	//BOXに画像を付け、それを50個ランダムな位置に作成
-	for (int count = 0; count < 50; ++count)
-	{
-		VECTOR pos;
-		pos.x = GetRand(WindowSize().x);//ランダム値取得
-		pos.y = GetRand(WindowSize().y);
-
-		object.box.Init(VGet(pos.x, pos.y, 0), VGet(50, 50, 0));
-		object.box.layer_number = DIPLOID_ENGINE_GAMEOBJECT;//識別番号をゲームオブジェクトに設定
-		object.box.number += 1;//BOXオブジェクトに１ループにつき+1オブジェクト番号を付与
-		object.box.mouse_point_move_flag = false;//For文の前でtrueにしているのでfalseに設定
-		object.box.destory = true;//ヒット判定があった場合、対象を削除するフラグをセット
-
-		object.image.Init(VGet(pos.x, pos.y, 0), 0.2f);
-		object.image.layer_number = DIPLOID_ENGINE_GAMEOBJECT;//BOXと同じ識別番号を指定
-		object.image.number += 1;//BOXオブジェクトと同じ番号を付与
-		object.image.destory = true;//ヒット判定があった場合、対象を削除
-
-		diploidEngineLayer.PushTopGraphics(object.image);//表示レイヤーのトップ(一番上)にイメージをプッシュ
-		diploidEngineImpact.PushBox(object.box);//衝突判定を行うBOX配列にBOXオブジェクトをプッシュ
-	}
-	*/
-
-	object.box.Init(VGet(250, 250, 0), VGet(100, 100, 0));
-	object.box.destory = false;
-	object.box.mouse_point_move_flag = true;
-	object.box.layer_number = 0;
+	object.box.Init(VGet(WindowSize().x / 2, (WindowSize().y / 2), 0), VGet(40, 80, 0));
+	object.box.layer_number = DIPLOID_ENGINE_GAMEOBJECT;
+	object.box.number = DIPLOID_ENGINE_PLAYER;
 	diploidEngineImpact.PushBox(object.box);
 
-	for (int count = 0; count < 200; ++count)
-	{
-		object.line.Init(VGet(100 + count * 4, 100 + count * 2, 0), VGet(300 + count * 4, 300 + count * 2, 0));
-		object.line.destory = false;
-		object.line.mouse_point_move_flag = false;
-		object.line.layer_number = 0;
 
-		diploidEngineImpact.PushLine(object.line);
+
+	for (auto count = object.map.MAP.begin(); count != object.map.MAP.end(); ++count)
+	{
+		if ((count->red == 0) && (count->green == 0) && (count->blue == 0) && (count->alph == 255))
+		{
+			object.box.Init(VGet((count->x) * count->size, (count->y) * count->size, 0), VGet(count->size, count->size, 0));
+			object.box.layer_number = DIPLOID_ENGINE_GAMEOBJECT;
+			object.box.number = DIPLOID_ENGINE_MAP_CHIP_001;
+			diploidEngineImpact.PushBox(object.box);
+		}
 	}
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
 {
+	for (auto count = diploidEngineImpact.box_vector.begin(); count != diploidEngineImpact.box_vector.end(); ++count)
+	{
+		if (count->number == DIPLOID_ENGINE_PLAYER)
+		{
+			if (count->impacted == true)
+			{
+				count->anime_position.y -= 1;
+			}
+			else
+			{
+				count->anime_position.y += 1;
+			}
 
+			if (diploidEngineInput.GetKey(KEY_INPUT_D) == true)
+			{
+				count->anime_position.x += 10;
+			}
+			else if (diploidEngineInput.GetKey(KEY_INPUT_A) == true)
+			{
+				count->anime_position.x -= 10;
+			}
+		}
+	}
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
-	//DrawFormatStringF(0, 500, GetColor(255, 255, 255), "test = %.2f", math.DotProduct(20, 2));
+	//object.map.Draw(true);
 }
 
 
@@ -81,12 +77,26 @@ DiploidObject DiploidEngineApp::FindObject(int layer_number, int number)//指定番
 	return diploid_object;
 }
 
-DiploidEngineImpact DiploidEngineApp::FindImpactBOX(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
+DiploidBox DiploidEngineApp::FindImpactBOX(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)
 {
-	DiploidEngineImpact diploid_impact;
+	DiploidBox diploid_box;
 
+	for (auto box = diploidEngineImpact.box_vector.begin(); box != diploidEngineImpact.box_vector.end(); box++)
+	{
+		if (box->layer_number == layer_number)
+		{
+			if (box->number == number)
+			{
+				diploid_box.position = box->position;
+				diploid_box.layer_number = box->layer_number;
+				diploid_box.number = box->number;
+				diploid_box.anime_position = box->anime_position;
+				diploid_box.anime_size = box->anime_size;
+			}
+		}
+	}
 
-	return diploid_impact;
+	return diploid_box;
 }
 
 DiploidEngineImpact DiploidEngineApp::FindImpactCIRCLE(int layer_number, int number)//指定番号からオブジェクトを取得(衝突を検索)

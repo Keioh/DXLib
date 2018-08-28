@@ -54,10 +54,10 @@ public:
 	void Updata();//衝突判定処理
 
 	//Updata()を使って処理をする場合は以下の関数を使用しない。
-	void ImpactCirclePoint();//円と点の当たり判定処理
+	void ImpactCirclePoint();//円と点の当たり判定処理(画面外の判定は行わない処理を実装ずみ){要バグ確認}
 	void ImpactCircleCircle();//円と円の当たり判定処理
-	void ImpactBoxPoint();//四角と点の当たり判定処理
-	void ImpactBoxBox();//四角と四角の当たり判定処理
+	void ImpactBoxPoint();//四角と点の当たり判定処理(画面外の判定は行わない処理を実装ずみ)
+	void ImpactBoxBox();//四角と四角の当たり判定処理(画面外の判定は行わない処理を実装ずみ)
 	void ImpactBoxCircle();//四角と円の当たり判定処理
 	void ImpactCircleLine();//円と線分の当たり判定処理
 	void ImpactPointLine();//点と線分の当たり判定処理

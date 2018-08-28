@@ -1,0 +1,42 @@
+#include "diploidApp\DiploidEngineApp.h"
+
+void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイルを作る処理。
+{
+
+}
+
+void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
+{	
+	object.map.Load("texter/MAP/test_map.png", 128, 128);
+}
+
+void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
+{	
+	object.map.SetMapChipSize(100);
+	object.map.Create();
+
+	
+	object.point.mouse_point_move_flag = true;
+	diploidEngineImpact.PushPoint(object.point);
+
+	for (auto count = object.map.MAP.begin(); count != object.map.MAP.end(); ++count)
+	{
+		if ((count->red == 0) && (count->green == 0) && (count->blue == 0) && (count->alph == 255))
+		{
+			object.box.Init(VGet(count->x * count->size, count->y * count->size, 0), VGet(count->size, count->size, 0));
+			object.box.layer_number = 0;
+			object.box.number += 1;
+			diploidEngineImpact.PushBox(object.box);
+		}
+	}	
+}
+
+void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
+{
+
+}
+
+void DiploidEngineApp::Draw()//結果を描写する処理
+{
+
+}

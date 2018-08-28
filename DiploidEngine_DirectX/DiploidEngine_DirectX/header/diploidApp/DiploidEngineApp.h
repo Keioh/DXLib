@@ -14,6 +14,8 @@ class DiploidEngineApp : public DiploidEngineMain
 private:
 	DiploidObject object;
 
+	int player_x, player_y;
+
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ
@@ -22,7 +24,7 @@ public:
 	void Draw();//結果を描写する処理
 
 	DiploidObject FindObject(int layer_number, int number);//指定番号からオブジェクトを取得(オブジェクトを検索)
-	DiploidEngineImpact FindImpactBOX(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
+	DiploidBox FindImpactBOX(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
 	DiploidEngineImpact FindImpactCIRCLE(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
 	DiploidEngineImpact FindImpactPOINT(int layer_number, int number);//指定番号からオブジェクトを取得(衝突を検索)
 	DiploidEngineLayer FindImageTOP(int layer_number, int number);//指定番号からオブジェクトを取得(画像を検索)

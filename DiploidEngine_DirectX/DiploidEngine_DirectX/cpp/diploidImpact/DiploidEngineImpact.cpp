@@ -133,18 +133,26 @@ void DiploidEngineImpact::ImpactCirclePoint()
 		{
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
-				float x = 0, y = 0;
-
-				x = (circle->position.x - point->position.x);
-				y = (circle->position.y - point->position.y);
-
-				if (std::pow(x, 2) + std::pow(y, 2) <= std::pow(circle->size.z, 2))
+				//‰~‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+				if ((circle->position.x >= 0 - circle->position.x) && (circle->position.y >= 0 - circle->position.y) && (circle->position.x <= 1920 + circle->position.x) && (circle->position.y <= 1080 + circle->position.y))
 				{
-					//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
-					if (circle->layer_number == point->layer_number)
+					//“_‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+					if ((point->position.x >= 0) && (point->position.y >= 0) && (point->position.x <= 1920) && (point->position.y <= 1080))
 					{
-						circle->impacted = true;
-						point->impacted = true;
+						float x = 0, y = 0;
+
+						x = (circle->position.x - point->position.x);
+						y = (circle->position.y - point->position.y);
+
+						if (std::pow(x, 2) + std::pow(y, 2) <= std::pow(circle->size.z, 2))
+						{
+							//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+							if (circle->layer_number == point->layer_number)
+							{
+								circle->impacted = true;
+								point->impacted = true;
+							}
+						}
 					}
 				}
 			}
@@ -197,15 +205,24 @@ void DiploidEngineImpact::ImpactBoxPoint()
 		{
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
-				if ((box->position.x <= point->position.x) && ((box->position.x + box->size.x) >= point->position.x))
+				//box‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+				if ((box->position.x >= 0) && (box->position.y >= 0) && (box->position.x + box->size.x <= 1920) && (box->position.y + box->size.y <= 1080))
 				{
-					if ((box->position.y <= point->position.y) && ((box->position.y + box->size.y) >= point->position.y))
+					//point‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+					if ((point->position.x >= 0) && (point->position.y >= 0) && (point->position.x <= 1920) && (point->position.y <= 1080))
 					{
-						//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
-						if (point->layer_number == box->layer_number)
+
+						if ((box->position.x <= point->position.x) && ((box->position.x + box->size.x) >= point->position.x))
 						{
-							point->impacted = true;
-							box->impacted = true;
+							if ((box->position.y <= point->position.y) && ((box->position.y + box->size.y) >= point->position.y))
+							{
+								//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+								if (point->layer_number == box->layer_number)
+								{
+									point->impacted = true;
+									box->impacted = true;
+								}
+							}
 						}
 					}
 				}
@@ -231,14 +248,22 @@ void DiploidEngineImpact::ImpactBoxBox()
 					}
 					else
 					{
-						//one
-						if (box_one->position.x < (box_two->position.x + box_two->size.x) && box_one->position.y < (box_two->position.y + box_two->size.y))
+						//one‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+						if ((box_one->position.x >= 0) && (box_one->position.y >= 0) && (box_one->position.x + box_one->size.x <= 1920) && (box_one->position.y + box_one->size.y <= 1080))
 						{
-							//two
-							if (box_two->position.x < (box_one->position.x + box_one->size.x) && box_two->position.y < (box_one->position.y + box_one->size.y))
+							//two‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+							if ((box_two->position.x >= 0) && (box_two->position.y >= 0) && (box_two->position.x + box_two->size.x <= 1920) && (box_two->position.y + box_two->size.y <= 1080))
 							{
-								box_two->impacted = true;
-								box_one->impacted = true;
+								//one
+								if (box_one->position.x < (box_two->position.x + box_two->size.x) && box_one->position.y < (box_two->position.y + box_two->size.y))
+								{
+									//two
+									if (box_two->position.x < (box_one->position.x + box_one->size.x) && box_two->position.y < (box_one->position.y + box_one->size.y))
+									{
+										box_two->impacted = true;
+										box_one->impacted = true;
+									}
+								}
 							}
 						}
 					}

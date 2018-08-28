@@ -25,6 +25,7 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {
+	SetBackgroundColor(100, 100, 100);
 	SetOutApplicationLogValidFlag(FALSE);//ログ出力関連
 	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
 	ChangeWindowMode(window_mode);//ウィンドウモード変更
