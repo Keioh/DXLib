@@ -1,0 +1,1 @@
+#include "diploidObject\DiploidMap.h"

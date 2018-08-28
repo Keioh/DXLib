@@ -10,6 +10,7 @@
 #include "diploidSound\diploidEnigneSound.h"
 #include "diploidInput\DiploidEngineInput.h"
 #include "diploidInput\DiploidEnigneFile.h"
+#include "diploidObject\DiploidMap.h"
 
 class DiploidObject
 {
@@ -26,6 +27,7 @@ public:
 	DiploidEngineSound sound;//音
 	
 	DiploidEngineFile file;//ファイル入出力
+	DiploidMap map;//マップ作製
 
 	DiploidEngineInput input;//入力機器キーボードやマウス、パッドなど(Appのほうで使ったほうが無駄なメモリを消費しないですむ。シングルトン実装しなければ)
 

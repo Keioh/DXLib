@@ -147,6 +147,9 @@
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp">
       <Filter>ソース ファイル\cpp\system</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidObject\DiploidMap.cpp">
+      <Filter>ソース ファイル\cpp\diploidObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -214,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="header\system\DiploidEngineMath.h">
       <Filter>ヘッダー ファイル\header\system</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidObject\DiploidMap.h">
+      <Filter>ヘッダー ファイル\header\diploidObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ int DiploidEngineFile::Load(const char* path)
 {
 	file_handl = FileRead_open(path, TRUE);//ファイルを読み込む
 
-	FileRead_close(file_handl);//ファイルを閉じる
+	//FileRead_close(file_handl);//ファイルを閉じる
 
 	if (file_handl > 0)
 	{
@@ -63,4 +63,14 @@ float DiploidEngineFile::WriteFLOAT(const char* path, const char* name, float da
 	output_file.close();
 
 	return data;
+}
+
+void DiploidEngineFile::Read(int handl)
+{
+	FileRead_gets(strings, 256, handl);
+}
+
+void DiploidEngineFile::Close(int handl)
+{
+	FileRead_close(handl);
 }
