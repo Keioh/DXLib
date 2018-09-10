@@ -31,6 +31,9 @@ public:
 	int number;//オブジェクト番号
 	int layer_number;//識別番号
 
+	bool Selected = false;//オブジェクトを選択しているかどうか
+
+
 	virtual void Init() {};
 	virtual void Update() {};
 	virtual void Draw() {};

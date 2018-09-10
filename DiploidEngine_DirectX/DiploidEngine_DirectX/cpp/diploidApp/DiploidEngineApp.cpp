@@ -33,6 +33,7 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 			diploidEngineImpact.PushBox(object.box);
 		}
 	}
+
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
@@ -41,22 +42,24 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
 	{
 		if (count->number == DIPLOID_ENGINE_PLAYER)
 		{
-			if (count->impacted == true)
-			{
-				count->anime_position.y -= 1;
-			}
-			else
-			{
-				count->anime_position.y += 1;
-			}
-
 			if (diploidEngineInput.GetKey(KEY_INPUT_D) == true)
 			{
 				count->anime_position.x += 10;
 			}
-			else if (diploidEngineInput.GetKey(KEY_INPUT_A) == true)
+
+			if (diploidEngineInput.GetKey(KEY_INPUT_A) == true)
 			{
 				count->anime_position.x -= 10;
+			}
+
+			if (diploidEngineInput.GetKey(KEY_INPUT_W) == true)
+			{
+				count->anime_position.y -= 10;
+			}
+
+			if (diploidEngineInput.GetKey(KEY_INPUT_S) == true)
+			{
+				count->anime_position.y += 10;
 			}
 		}
 	}

@@ -18,19 +18,24 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	diploidEngineImpact.PushPoint(mouse);
 
 	//オブジェクト追加
-	test.Init(VGet(100,100,0));
-	diploidEngineImpact.PushBox(test.region_01.GetBox());
-	diploidEngineLayer.PushBotGraphics(test.region_01.GetImage());
+	test.Init(VGet(1280 / 2,720/2,0));
+	test.Push(diploidEngineImpact, diploidEngineLayer);
+	//diploidEngineImpact.PushBox(test.region_01.GetBox());
+	//diploidEngineLayer.PushBotGraphics(test.region_01.GetImage());
+
+	//diploidEngineImpact.PushBox(test.region_02.GetBox());
+	//diploidEngineLayer.PushBotGraphics(test.region_02.GetImage());
+
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
 {
-	test.Updata(diploidEngineImpact, diploidEngineLayer);
+	test.Updata(diploidEngineImpact, diploidEngineLayer, diploidEngineInput);
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
-
+	test.Draw();
 }
 
 

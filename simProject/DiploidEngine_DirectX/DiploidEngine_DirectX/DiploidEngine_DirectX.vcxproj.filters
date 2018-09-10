@@ -91,6 +91,12 @@
     <Filter Include="ヘッダー ファイル\game_header\region">
       <UniqueIdentifier>{9198980b-d97c-44d4-9b48-17ed0a798409}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\game_header\lule">
+      <UniqueIdentifier>{20e3c920-b7e2-4963-8703-4682a79d7f99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game_cpp\lule">
+      <UniqueIdentifier>{ae9ef018-2230-42bc-a973-572b9fa686a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -168,6 +174,12 @@
     <ClCompile Include="game_res\cpp\region\world.cpp">
       <Filter>ソース ファイル\game_cpp\region</Filter>
     </ClCompile>
+    <ClCompile Include="game_res\cpp\lule\region_lule.cpp">
+      <Filter>ソース ファイル\game_cpp\lule</Filter>
+    </ClCompile>
+    <ClCompile Include="game_res\cpp\lule\world_map_lule.cpp">
+      <Filter>ソース ファイル\game_cpp\lule</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -244,6 +256,12 @@
     </ClInclude>
     <ClInclude Include="game_res\header\region\world.h">
       <Filter>ヘッダー ファイル\game_header\region</Filter>
+    </ClInclude>
+    <ClInclude Include="game_res\header\lule\region_lule.h">
+      <Filter>ヘッダー ファイル\game_header\lule</Filter>
+    </ClInclude>
+    <ClInclude Include="game_res\header\lule\world_map_lule.h">
+      <Filter>ヘッダー ファイル\game_header\lule</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

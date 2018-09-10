@@ -41,10 +41,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		
 		diploid_engine_app.diploidEngineInput.Update();//入力機器アップデート
 
-		diploid_engine_app.diploidEngineLayer.Draw(true);//レイヤー画像を表示
+		diploid_engine_app.Draw();//メイン描写
+
+		diploid_engine_app.diploidEngineLayer.Draw();//レイヤー画像を表示
 		diploid_engine_app.diploidEngineImpact.Draw();//衝突範囲を描写
 
-		diploid_engine_app.Draw();//メイン描写
 
 		diploid_engine_app.diploidEngineInput.Draw(1000, 0, true);//入力判定の表示
 
