@@ -29,8 +29,11 @@ private:
 
 	void InputUpadata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input);//インプットアップデートまとめ
 	bool TerritoryMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//領土マップを表示するための処理
+	bool PopulationMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//人口マップを表示するための処理
+	bool NormalMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//平常マップ
 
 	void SetTerritory();//各地域の領土占有状態をセット
+	void SetPopulation();//各地域の人口をセット
 
 public:
 

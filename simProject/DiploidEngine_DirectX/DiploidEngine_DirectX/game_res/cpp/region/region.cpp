@@ -10,6 +10,8 @@ void Region::SetLayerNumber(int layer_number)
 	DiploidObject::image.layer_number = DiploidObject::box.layer_number = DiploidObject::circle.layer_number = layer_number;
 }
 
+
+
 void Region::LoadTexter(const char* path)
 {
 	DiploidObject::image.Load(path);
@@ -31,6 +33,8 @@ void Region::Draw()
 {
 	DiploidObject::image.Draw();
 }
+
+
 
 void Region::BoxAndBotImageUpdata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input)
 {
@@ -124,6 +128,8 @@ void Region::InputUpadata(DiploidEngineImpact& impact, DiploidEngineLayer& layer
 		}
 	}
 }
+
+
 
 DiploidImage Region::GetImage()
 {

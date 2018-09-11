@@ -36,11 +36,29 @@ void World::SetTerritory()
 	region_12.region_lule.player_or_enemy = UNEXPLORED;
 }
 
+void World::SetPopulation()
+{
+	region_01.region_lule.population = 1000;
+	region_02.region_lule.population = 0;
+	region_03.region_lule.population = 0;
+	region_04.region_lule.population = 5000;
+	region_05.region_lule.population = 0;
+	region_06.region_lule.population = 0;
+	region_07.region_lule.population = 0;
+	region_08.region_lule.population = 1000;
+	region_09.region_lule.population = 0;
+	region_10.region_lule.population = 0;
+	region_11.region_lule.population = 6000;
+	region_12.region_lule.population = 0;
+
+}
+
 void World::Init(VECTOR position)
 {
 	back_map.image.Init(position, 8);
 
 	SetTerritory();
+	SetPopulation();
 
 	region_01.SetLayerNumber(DIPLOID_ENGINE_GAMEOBJECT);
 	region_01.SetObjectNumber(REGION_01);
@@ -147,29 +165,127 @@ void World::Push(DiploidEngineImpact& impact, DiploidEngineLayer& layer)
 void World::InputUpadata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input)
 {
 	TerritoryMap(layer, input);
+	PopulationMap(layer, input);
+	NormalMap(layer, input);
+}
+
+bool World::PopulationMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
+{
+	//人口マップがオフの時
+
+	if (input.GetPressKey(KEY_INPUT_P))
+	{
+		world_map_lule.population_map = true;//人口マップ
+		world_map_lule.territory_map = false;//領土マップ
+	}
+
+	//人口マップがオンの時
+	if (world_map_lule.population_map == true)
+	{
+
+		for (auto layer_count = layer.image_mid_vector.begin(); layer_count != layer.image_mid_vector.end(); ++layer_count)
+		{
+			//人口が0でないとき、緑に表示する
+			if ((layer_count->number == REGION_01) && (region_01.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_01.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_02) && (region_02.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_02.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_03) && (region_03.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_03.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_04) && (region_04.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_04.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_05) && (region_05.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_05.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_06) && (region_06.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_06.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_07) && (region_07.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_07.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_08) && (region_08.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_08.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_09) && (region_09.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_09.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_10) && (region_10.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_10.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_11) && (region_11.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_11.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+
+			if ((layer_count->number == REGION_12) && (region_12.region_lule.population != 0))
+			{
+				layer_count->red_bright *= 0;
+				layer_count->green_bright *= region_12.region_lule.population * 0.0001;
+				layer_count->blue_bright *= 0;
+			}
+		}
+
+		return true;
+	}
 }
 
 bool World::TerritoryMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 {
-	//領土マップがオフの時
-	if (world_map_lule.territory_map == false)
-	{
-		if (input.GetPressKey(KEY_INPUT_P))
-		{
-			world_map_lule.territory_map = true;
-		}
-
-		return false;
+	if (input.GetPressKey(KEY_INPUT_T))
+	{	
+		world_map_lule.territory_map = true;//領土マップ
+		world_map_lule.population_map = false;//人口マップ
 	}
 
 	//領土マップがオンの時
-	if (world_map_lule.territory_map == true)
+	if (world_map_lule.territory_map == 1)
 	{
-		if (input.GetPressKey(KEY_INPUT_P))
-		{
-			world_map_lule.territory_map = false;
-		}
-
 		for (auto layer_count = layer.image_mid_vector.begin(); layer_count != layer.image_mid_vector.end(); ++layer_count)
 		{
 
@@ -432,6 +548,24 @@ bool World::TerritoryMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 
 		return true;
 	}
+
+	return false;
+}
+
+bool World::NormalMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
+{
+	if (input.GetPressKey(KEY_INPUT_N))
+	{
+		world_map_lule.territory_map = false;//領土マップ
+		world_map_lule.population_map = false;//人口マップ
+	}
+
+	if (world_map_lule.GetAllStateFalse() == true)
+	{
+		return true;
+	}
+
+	return false;
 }
 
 void World::Updata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input)

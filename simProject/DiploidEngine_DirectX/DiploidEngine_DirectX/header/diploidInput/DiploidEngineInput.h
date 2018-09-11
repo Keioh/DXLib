@@ -26,7 +26,8 @@ private:
 	int release_time = 0;//—£‚µ‚Ä‚¢‚éŽžŠÔ
 
 public:	
-	char Key[256];
+	char key[256];
+	//char buffer[256];
 
 	int Check_Mouse;
 	int MOUSE_BUTTON = 0;
