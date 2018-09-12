@@ -12,6 +12,9 @@ public:
 	int network_level = 0;//0でネットワークなし
 	int development_level = 0;//０で未開地や廃墟、１以上で開拓された土地
 
+	int productivity = 0;//0で生産力なし
+	int economics = 0;//0で経済力なし
+
 	int population = 0;//0で人口0人
 
 };

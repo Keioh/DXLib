@@ -12,7 +12,7 @@ void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {
-	//マウス設定
+	//マウスオブジェクト追加
 	mouse.layer_number = DIPLOID_ENGINE_GAMEOBJECT;
 	mouse.mouse_point_move_flag = true;
 	diploidEngineImpact.PushPoint(mouse);
