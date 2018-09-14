@@ -33,6 +33,7 @@ private:
 	bool NetworkMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//ネットワークマップを表示するための処理
 	bool ProductivityMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//生産力マップを表示するための処理
 	bool EconomicsMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//経済力マップを表示するための処理
+	bool ConfusionMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//混乱度マップを表示するための処理
 
 	bool NormalMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//平常マップを表示するための処理
 
@@ -41,6 +42,7 @@ private:
 	void SetNetworkLevel();//各地域のネットワークレベルをセット
 	void SetProductivity();//各地域の生産力をセット
 	void SetEconomics();//各地域の経済力をセット
+	void SetConfusion();//各地域の混乱度をセット
 
 
 public:

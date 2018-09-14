@@ -101,6 +101,23 @@ void World::SetEconomics()
 	region_12.region_lule.economics = 0;
 }
 
+void World::SetConfusion()
+{
+	region_01.region_lule.confusion_level = 100;
+	region_02.region_lule.confusion_level = 0;
+	region_03.region_lule.confusion_level = 0;
+	region_04.region_lule.confusion_level = 0;
+	region_05.region_lule.confusion_level = 0;
+	region_06.region_lule.confusion_level = 0;
+	region_07.region_lule.confusion_level = 0;
+	region_08.region_lule.confusion_level = 100;
+	region_09.region_lule.confusion_level = 0;
+	region_10.region_lule.confusion_level = 0;
+	region_11.region_lule.confusion_level = 0;
+	region_12.region_lule.confusion_level = 0;
+
+}
+
 void World::Init(VECTOR position)
 {
 	back_map.image.Init(position, 8);
@@ -110,6 +127,7 @@ void World::Init(VECTOR position)
 	SetNetworkLevel();
 	SetProductivity();
 	SetEconomics();
+	SetConfusion();
 
 	region_01.SetLayerNumber(DIPLOID_ENGINE_GAMEOBJECT);
 	region_01.SetObjectNumber(REGION_01);
@@ -220,7 +238,117 @@ void World::InputUpadata(DiploidEngineImpact& impact, DiploidEngineLayer& layer,
 	NetworkMap(layer, input);
 	ProductivityMap(layer, input);
 	EconomicsMap(layer, input);
+	ConfusionMap(layer, input);
 	NormalMap(layer, input);
+}
+
+bool World::ConfusionMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
+{
+	//混乱度マップがオフの時
+	if (input.GetPressKey(KEY_INPUT_C))
+	{
+		world_map_lule.confusion_map = true;//混乱度マップ
+		world_map_lule.economics_map = false;//経済力マップ
+		world_map_lule.productivity_map = false;//生産力マップ
+		world_map_lule.network_map = false;//ネットワークマップ
+		world_map_lule.population_map = false;//人口マップ
+		world_map_lule.territory_map = false;//領土マップ
+	}
+
+	//混乱度マップがオンの時
+	if (world_map_lule.confusion_map == true)
+	{
+		for (auto layer_count = layer.image_mid_vector.begin(); layer_count != layer.image_mid_vector.end(); ++layer_count)
+		{
+			//混乱度が0でないとき、紫に表示する
+			if ((layer_count->number == REGION_01) && (region_01.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_01.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_01.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_01.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_02) && (region_02.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_02.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_02.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_02.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_03) && (region_03.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_03.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_03.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_03.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_04) && (region_04.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_04.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_04.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_04.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_05) && (region_05.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_05.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_05.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_05.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_06) && (region_06.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_06.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_06.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_06.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_07) && (region_07.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_07.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_07.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_07.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_08) && (region_08.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_08.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_08.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_08.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_09) && (region_09.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_09.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_09.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_09.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_10) && (region_10.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_10.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_10.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_10.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_11) && (region_11.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_11.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_11.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_11.region_lule.confusion_level * 0.001;
+			}
+
+			if ((layer_count->number == REGION_12) && (region_12.region_lule.confusion_level != 0))
+			{
+				layer_count->red_bright *= region_12.region_lule.confusion_level * 0.0005;
+				layer_count->green_bright *= region_12.region_lule.confusion_level * 0.0005;
+				layer_count->blue_bright *= region_12.region_lule.confusion_level * 0.001;
+			}
+		}
+
+		return true;
+	}
+
 }
 
 bool World::EconomicsMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
@@ -233,6 +361,7 @@ bool World::EconomicsMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 		world_map_lule.network_map = false;//ネットワークマップ
 		world_map_lule.population_map = false;//人口マップ
 		world_map_lule.territory_map = false;//領土マップ
+		world_map_lule.confusion_map = false;//混乱度マップ
 	}
 
 	//経済力マップがオンの時
@@ -341,6 +470,7 @@ bool World::ProductivityMap(DiploidEngineLayer& layer, DiploidEngineInput& input
 		world_map_lule.population_map = false;//人口マップ
 		world_map_lule.territory_map = false;//領土マップ
 		world_map_lule.economics_map = false;//経済力マップ
+		world_map_lule.confusion_map = false;//混乱度マップ
 	}
 
 	//生産力マップがオンの時
@@ -448,6 +578,7 @@ bool World::NetworkMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 		world_map_lule.population_map = false;//人口マップ
 		world_map_lule.territory_map = false;//領土マップ
 		world_map_lule.economics_map = false;//経済力マップ
+		world_map_lule.confusion_map = false;//混乱度マップ
 	}
 
 	//ネットワークマップがオンの時
@@ -555,6 +686,7 @@ bool World::PopulationMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 		world_map_lule.territory_map = false;//領土マップ
 		world_map_lule.network_map = false;//ネットワークマップ
 		world_map_lule.economics_map = false;//経済力マップ
+		world_map_lule.confusion_map = false;//混乱度マップ
 	}
 
 	//人口マップがオンの時
@@ -661,6 +793,7 @@ bool World::TerritoryMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 		world_map_lule.population_map = false;//人口マップ
 		world_map_lule.network_map = false;//ネットワークマップ
 		world_map_lule.economics_map = false;//経済力マップ
+		world_map_lule.confusion_map = false;//混乱度マップ
 	}
 
 	//領土マップがオンの時
@@ -936,6 +1069,7 @@ bool World::NormalMap(DiploidEngineLayer& layer, DiploidEngineInput& input)
 {
 	if (input.GetPressKey(KEY_INPUT_N))
 	{
+		world_map_lule.confusion_map = false;//混乱度マップ
 		world_map_lule.territory_map = false;//領土マップ
 		world_map_lule.population_map = false;//人口マップ
 		world_map_lule.network_map = false;//ネットワークマップ
