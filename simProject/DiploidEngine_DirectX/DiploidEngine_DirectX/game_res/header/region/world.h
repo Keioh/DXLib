@@ -14,6 +14,7 @@ private:
 
 	DiploidObject back_map;
 
+	//配列使えばよかった。。。
 	Region region_01;
 	Region region_02;
 	Region region_03;
@@ -28,14 +29,16 @@ private:
 	Region region_12;
 
 	void InputUpadata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input);//インプットアップデートまとめ
+
 	bool TerritoryMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//領土マップを表示するための処理
 	bool PopulationMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//人口マップを表示するための処理
 	bool NetworkMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//ネットワークマップを表示するための処理
 	bool ProductivityMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//生産力マップを表示するための処理
 	bool EconomicsMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//経済力マップを表示するための処理
 	bool ConfusionMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//混乱度マップを表示するための処理
-
+	bool HappinessMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//幸福度マップを表示するための処理
 	bool NormalMap(DiploidEngineLayer& layer, DiploidEngineInput& input);//平常マップを表示するための処理
+
 
 	void SetTerritory();//各地域の領土占有状態をセット
 	void SetPopulation();//各地域の人口をセット
@@ -43,6 +46,7 @@ private:
 	void SetProductivity();//各地域の生産力をセット
 	void SetEconomics();//各地域の経済力をセット
 	void SetConfusion();//各地域の混乱度をセット
+	void SetHappiness();//各地域の幸福度をセット
 
 
 public:

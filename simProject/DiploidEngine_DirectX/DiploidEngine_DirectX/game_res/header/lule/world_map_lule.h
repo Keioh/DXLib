@@ -13,6 +13,7 @@ public:
 	bool productivity_map = false;//生産力マップ
 	bool economics_map = false;//経済力マップ
 	bool confusion_map = false;//混乱度マップ
+	bool happiness_map = false;//幸福度マップ
 
 	bool GetAllStateFalse();//全てのフラグがfalseならfalseを変えす。
 };
