@@ -100,13 +100,22 @@ void Region::SelectRegion(DiploidEngineImpact& impact, DiploidEngineLayer& layer
 		//レイヤー情報を検索(botレイヤー)
 		for (auto layer_count = layer.image_mid_vector.begin(); layer_count != layer.image_mid_vector.end(); ++layer_count)
 		{
-			if (impact_count->Selected == true)
+			//レイヤー番号が同じなら
+			if (impact_count->layer_number == layer_count->layer_number)
 			{
-				if (layer_count->Selected == true)
+				//オブジェクト番号も同じなら
+				if (impact_count->number == layer_count->number)
 				{
-					layer_count->red_bright = 255;
-					layer_count->green_bright = 255;
-					layer_count->blue_bright = 255;
+
+					if (impact_count->Selected == true)
+					{
+						if (layer_count->Selected == true)
+						{
+							layer_count->red_bright = 255;
+							layer_count->green_bright = 255;
+							layer_count->blue_bright = 255;
+						}
+					}
 				}
 			}
 		}

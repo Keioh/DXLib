@@ -61,6 +61,4 @@ public:
 
 	void Draw();
 
-	//DiploidImage GetImage();//imageî•ñ‚ğ•Ô‚µ‚Ü‚·B
-
 };

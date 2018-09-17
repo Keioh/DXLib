@@ -97,6 +97,12 @@
     <Filter Include="ソース ファイル\game_cpp\lule">
       <UniqueIdentifier>{ae9ef018-2230-42bc-a973-572b9fa686a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\game_cpp\law">
+      <UniqueIdentifier>{428a15f7-38b7-4a76-b1c3-0a1f30b613b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\game_header\law">
+      <UniqueIdentifier>{0034cf86-49b3-4c04-9806-49df9db3b945}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -180,6 +186,9 @@
     <ClCompile Include="game_res\cpp\lule\world_map_lule.cpp">
       <Filter>ソース ファイル\game_cpp\lule</Filter>
     </ClCompile>
+    <ClCompile Include="game_res\cpp\law\law_button.cpp">
+      <Filter>ソース ファイル\game_cpp\law</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -262,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="game_res\header\lule\world_map_lule.h">
       <Filter>ヘッダー ファイル\game_header\lule</Filter>
+    </ClInclude>
+    <ClInclude Include="game_res\header\law\law_button.h">
+      <Filter>ヘッダー ファイル\game_header\law</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

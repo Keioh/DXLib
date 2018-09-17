@@ -150,6 +150,7 @@
     <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
+    <ClCompile Include="game_res\cpp\law\law_button.cpp" />
     <ClCompile Include="game_res\cpp\lule\region_lule.cpp" />
     <ClCompile Include="game_res\cpp\lule\world_map_lule.cpp" />
     <ClCompile Include="game_res\cpp\region\region.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game_res\header\law\law_button.h" />
     <ClInclude Include="game_res\header\lule\region_lule.h" />
     <ClInclude Include="game_res\header\lule\world_map_lule.h" />
     <ClInclude Include="game_res\header\region\region.h" />
