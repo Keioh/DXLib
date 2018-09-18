@@ -24,8 +24,6 @@ void Region::LoadSound(const char* path)
 
 void Region::Updata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input)
 {
-	BoxAndBotImageUpdata(impact, layer, input);
-	SelectRegion(impact, layer);
 	InputUpadata(impact, layer, input);
 }
 
@@ -45,7 +43,7 @@ void Region::BoxAndBotImageUpdata(DiploidEngineImpact& impact, DiploidEngineLaye
 		for (auto layer_count = layer.image_mid_vector.begin(); layer_count != layer.image_mid_vector.end(); ++layer_count)
 		{	
 			//レイヤー番号が同じなら
-			if (impact_count->layer_number == layer_count->layer_number)
+			if ((impact_count->layer_number && layer_count->layer_number) == DIPLOID_ENGINE_GAMEOBJECT)
 			{
 				//オブジェクト番号も同じなら
 				if (impact_count->number == layer_count->number)
@@ -101,7 +99,7 @@ void Region::SelectRegion(DiploidEngineImpact& impact, DiploidEngineLayer& layer
 		for (auto layer_count = layer.image_mid_vector.begin(); layer_count != layer.image_mid_vector.end(); ++layer_count)
 		{
 			//レイヤー番号が同じなら
-			if (impact_count->layer_number == layer_count->layer_number)
+			if ((impact_count->layer_number && layer_count->layer_number) == DIPLOID_ENGINE_GAMEOBJECT)
 			{
 				//オブジェクト番号も同じなら
 				if (impact_count->number == layer_count->number)
@@ -123,7 +121,10 @@ void Region::SelectRegion(DiploidEngineImpact& impact, DiploidEngineLayer& layer
 }
 
 void Region::InputUpadata(DiploidEngineImpact& impact, DiploidEngineLayer& layer, DiploidEngineInput& input)
-{
+{	
+	BoxAndBotImageUpdata(impact, layer, input);
+	SelectRegion(impact, layer);
+
 	//右クリックをしたらすべての選択を解除
 	if (input.GetPressMouse(MOUSE_INPUT_RIGHT) == true)
 	{

@@ -17,6 +17,10 @@ void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 	mouse.mouse_point_move_flag = true;
 	diploidEngineImpact.PushPoint(mouse);
 
+	mouse.layer_number = DIPLOID_ENGINE_UI;
+	mouse.mouse_point_move_flag = true;
+	diploidEngineImpact.PushPoint(mouse);
+
 	//オブジェクト追加
 	test.Init(VGet(1280 / 2, 720/2, 0));
 	test.Push(diploidEngineImpact, diploidEngineLayer);

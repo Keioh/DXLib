@@ -1,7 +1,7 @@
 #pragma once
 //#include "DxLib.h"
 #include "lule\region_lule.h"
-
+#include "diploidObject\DiploidEngineTag.h"
 #include "diploidImpact\DiploidEngineImpact.h"
 #include "diploidLayer\DiploidEngineLayer.h"
 #include "diploidObject\DiploidEngineObject.h"
