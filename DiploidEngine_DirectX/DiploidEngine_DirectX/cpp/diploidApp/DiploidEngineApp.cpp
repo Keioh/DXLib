@@ -7,67 +7,22 @@ void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイルを作る処理。
 
 void DiploidEngineApp::Load()//ゲーム起動時にロードするデータ
 {	
-	object.map.Load("texter/MAP/test_map.png", 256, 256);
+
 }
 
 void DiploidEngineApp::Init()//最初に一回だけ初期化したい処理を記述。
 {
-	object.map.SetMapChipSize(10);
-	//object.map.SetPosition(100.0f, 0.0f);
-	object.map.Create();
-
-	object.box.Init(VGet(WindowSize().x / 2, (WindowSize().y / 2), 0), VGet(40, 80, 0));
-	object.box.layer_number = DIPLOID_ENGINE_GAMEOBJECT;
-	object.box.number = DIPLOID_ENGINE_PLAYER;
-	diploidEngineImpact.PushBox(object.box);
-
-
-
-	for (auto count = object.map.MAP.begin(); count != object.map.MAP.end(); ++count)
-	{
-		if ((count->red == 0) && (count->green == 0) && (count->blue == 0) && (count->alph == 255))
-		{
-			object.box.Init(VGet((count->x) * count->size, (count->y) * count->size, 0), VGet(count->size, count->size, 0));
-			object.box.layer_number = DIPLOID_ENGINE_GAMEOBJECT;
-			object.box.number = DIPLOID_ENGINE_MAP_CHIP_001;
-			diploidEngineImpact.PushBox(object.box);
-		}
-	}
 
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。
 {
-	for (auto count = diploidEngineImpact.box_vector.begin(); count != diploidEngineImpact.box_vector.end(); ++count)
-	{
-		if (count->number == DIPLOID_ENGINE_PLAYER)
-		{
-			if (diploidEngineInput.GetKey(KEY_INPUT_D) == true)
-			{
-				count->anime_position.x += 10;
-			}
 
-			if (diploidEngineInput.GetKey(KEY_INPUT_A) == true)
-			{
-				count->anime_position.x -= 10;
-			}
-
-			if (diploidEngineInput.GetKey(KEY_INPUT_W) == true)
-			{
-				count->anime_position.y -= 10;
-			}
-
-			if (diploidEngineInput.GetKey(KEY_INPUT_S) == true)
-			{
-				count->anime_position.y += 10;
-			}
-		}
-	}
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
-	//object.map.Draw(true);
+
 }
 
 

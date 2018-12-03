@@ -14,8 +14,6 @@ class DiploidEngineApp : public DiploidEngineMain
 private:
 	DiploidObject object;
 
-	int player_x, player_y;
-
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ
