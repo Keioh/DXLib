@@ -3,7 +3,7 @@
 #include "system\DiploidEngineSetting.h"
 #include "diploidApp\DiploidEngineApp.h"
 
-
+//debug情報ありと書かれている物はリリースするときにfalseにすること。
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	DiploidEngineApp diploid_engine_app;//ループなどの処理もろもろ
@@ -41,16 +41,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		
 		diploid_engine_app.diploidEngineInput.Update();//入力機器アップデート
 
-		diploid_engine_app.diploidEngineLayer.Draw(true);//レイヤー画像を表示
-		diploid_engine_app.diploidEngineImpact.Draw();//衝突範囲を描写
+		diploid_engine_app.diploidEngineLayer.Draw(false);//レイヤー画像を表示(debug情報あり)
+		diploid_engine_app.diploidEngineImpact.Draw(false,false);//衝突範囲を描写(debug情報あり)
 
 		diploid_engine_app.Draw();//メイン描写
 
-		diploid_engine_app.diploidEngineInput.Draw(1000, 0, true);//入力判定の表示
+		diploid_engine_app.diploidEngineInput.Draw(1000, 0, true);//入力判定の表示(debug情報あり)
 
 		diploid_engine_app.diploidEngineScreen.Update();//FPSをアップデート
 
-		diploid_engine_app.diploidEngineScreen.Draw(800,0,true);//FPSを表示
+		diploid_engine_app.diploidEngineScreen.Draw(800,0,true);//FPSを表示(debug情報あり)
 
 		ScreenFlip();//表画面へ描写
 

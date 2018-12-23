@@ -79,6 +79,24 @@
     <Filter Include="ヘッダー ファイル\header\diploidInput">
       <UniqueIdentifier>{54c4c5e0-a7b4-42cd-8df0-e00ad3b49a09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidStandalone">
+      <UniqueIdentifier>{237e7cb8-3255-49ea-a0f1-89f36ff0d081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidStandalone">
+      <UniqueIdentifier>{9947298a-e930-4068-9d8e-33aaf5111251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidStandalone\impact">
+      <UniqueIdentifier>{4c87d8c6-5f81-41e1-b904-8b416c3507c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidStandalone\impact">
+      <UniqueIdentifier>{2cf9273c-b891-4649-bfdc-5a49810f4863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidStandalone\graphics">
+      <UniqueIdentifier>{fb469fed-1c05-4de9-b1ca-669561b322bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidStandalone\graphics">
+      <UniqueIdentifier>{f0ddf1b6-3b56-4d69-bdd1-cfb0f557ce31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">

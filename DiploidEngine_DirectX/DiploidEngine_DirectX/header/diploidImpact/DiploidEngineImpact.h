@@ -64,5 +64,5 @@ public:
 	void ImpactLineLine();//ü•ª‚Æü•ª‚Ì“–‚½‚è”»’èˆ—
 	void ImpactLineBox();//ü•ª‚Æ” ‚Ì“–‚½‚è”»’èˆ—
 
-	void Draw(bool wire = true);//•`Ê
+	void Draw(bool wire = true, bool debug = false);//•`Ê
 };
