@@ -168,6 +168,12 @@
     <ClCompile Include="cpp\diploidObject\DiploidMap.cpp">
       <Filter>ソース ファイル\cpp\diploidObject</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidStandalone\graphics\diploidGraphicsSA.cpp">
+      <Filter>ソース ファイル\cpp\diploidStandalone\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidStandalone\impact\diploidImpactSA.cpp">
+      <Filter>ソース ファイル\cpp\diploidStandalone\impact</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -238,6 +244,12 @@
     </ClInclude>
     <ClInclude Include="header\diploidObject\DiploidMap.h">
       <Filter>ヘッダー ファイル\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidStandalone\graphics\diploidGraphicsSA.h">
+      <Filter>ヘッダー ファイル\header\diploidStandalone\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidStandalone\impact\diploidImpactSA.h">
+      <Filter>ヘッダー ファイル\header\diploidStandalone\impact</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

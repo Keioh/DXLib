@@ -22,6 +22,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ProcessMessage() == 0)
 	{
+		
 		diploid_engine_app.diploidEngineScreen.Init();//FPS初期化
 
 		diploid_engine_app.diploidEngineNetwork.Update();//ネット処理の更新
@@ -55,6 +56,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();//表画面へ描写
 
 		diploid_engine_app.diploidEngineScreen.Wait();//FPS待機
+
 	}
 
 	diploid_engine_app.diploidEngineNetwork.End();//ネット処理の終了

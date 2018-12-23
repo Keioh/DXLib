@@ -12,7 +12,7 @@
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObject object;
+
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
