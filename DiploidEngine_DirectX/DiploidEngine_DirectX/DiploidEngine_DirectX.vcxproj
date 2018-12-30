@@ -148,6 +148,7 @@
     <ClCompile Include="cpp\diploidScreen\DiploidEngineScreen.cpp" />
     <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp" />
     <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp" />
+    <ClCompile Include="cpp\diploidStandalone\base_standalone.cpp" />
     <ClCompile Include="cpp\diploidStandalone\graphics\diploidGraphicsSA.cpp" />
     <ClCompile Include="cpp\diploidStandalone\impact\diploidImpactSA.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
@@ -175,8 +176,10 @@
     <ClInclude Include="header\diploidScreen\DiploidEngineScreen.h" />
     <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h" />
     <ClInclude Include="header\diploidSound\diploidEnigneSound.h" />
+    <ClInclude Include="header\diploidStandalone\base_standalone.h" />
     <ClInclude Include="header\diploidStandalone\graphics\diploidGraphicsSA.h" />
     <ClInclude Include="header\diploidStandalone\impact\diploidImpactSA.h" />
+    <ClInclude Include="header\diploidStandalone\standalone.h" />
     <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
     <ClInclude Include="resource.h" />

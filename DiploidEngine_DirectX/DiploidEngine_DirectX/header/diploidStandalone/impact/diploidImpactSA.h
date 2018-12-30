@@ -1,6 +1,8 @@
+#pragma once
 #include "DxLib.h"
+#include "diploidStandalone\base_standalone.h"
 
-class DiploidImpactStandalone
+class DiploidImpactStandalone : public BaseStandalone
 {
 private:
 

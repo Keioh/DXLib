@@ -9,10 +9,14 @@
 #include "diploidInput\DiploidEnigneFile.h"
 
 
+//スタンドアローン関連
+#include "diploidStandalone\standalone.h"
+
+
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-
+	DiploidObject test;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

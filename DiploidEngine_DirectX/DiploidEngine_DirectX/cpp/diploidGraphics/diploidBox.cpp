@@ -1,5 +1,16 @@
 #include "diploidGraphics\diploidBox.h"
 
+DiploidBox::DiploidBox()
+{
+	DiploidBox::mouse_point_move_flag = false;
+	DiploidBox::center_position_draw_flag = true;//マウス追従の場合は無効
+}
+
+DiploidBox::~DiploidBox()
+{
+
+}
+
 void DiploidBox::Init(VECTOR position, VECTOR size)
 {
 	DiploidBox::position = origin_position = position;
@@ -21,10 +32,10 @@ void DiploidBox::Update()
 	}
 	else
 	{
-		GetMousePoint(&mouse_x, &mouse_y);
+		GetMousePoint(&mouse_position_x, &mouse_position_y);
 
-		position.x = mouse_x - (size.x / 2);
-		position.y = mouse_y - (size.y / 2);
+		position.x = mouse_position_x - (size.x / 2);
+		position.y = mouse_position_y - (size.y / 2);
 
 		anime_size = VAdd(anime_size, move_size);
 		size = VAdd(anime_size, origin_size);
@@ -36,5 +47,73 @@ void DiploidBox::Draw(bool wire)
 	if (wire == true)
 	{
 		DrawBox(position.x, position.y, position.x + size.x, position.y + size.y, color, fill);
+
+		if (DiploidBox::center_position_draw_flag == true)
+		{
+			DrawCircle(center_position.x, center_position.y, 2, color);
+		}
 	}
+}
+
+VECTOR DiploidBox::SetCenterPosition(VECTOR new_center_position)
+{
+	center_position = new_center_position;
+
+	return new_center_position;
+}
+
+VECTOR DiploidBox::GetSize()
+{
+	return DiploidBox::size;
+}
+
+VECTOR DiploidBox::GetPosition(VECTOR get_pos)
+{
+	VECTOR buffer;
+
+	//左上
+	if ((get_pos.x == 0) && (get_pos.y == 0))
+	{
+		buffer = DiploidBox::position;
+
+		return buffer;
+	}
+
+	//右上
+	if ((get_pos.x == 1) && (get_pos.y == 0))
+	{
+		buffer.x = DiploidBox::position.x + DiploidBox::size.x;
+		buffer.y = DiploidBox::position.y;
+		buffer.z = DiploidBox::position.z;
+
+
+		return buffer;
+	}
+
+	//左下
+	if ((get_pos.x == 0) && (get_pos.y == 1))
+	{
+		buffer.x = DiploidBox::position.x;
+		buffer.y = DiploidBox::position.y + DiploidBox::size.y;
+		buffer.z = DiploidBox::position.z;
+
+
+		return buffer;
+	}
+
+	//右下
+	if ((get_pos.x == 1) && (get_pos.y == 1))
+	{
+		buffer.x = DiploidBox::position.x + DiploidBox::size.x;
+		buffer.y = DiploidBox::position.y + DiploidBox::size.y;
+		buffer.z = DiploidBox::position.z;
+
+
+		return buffer;
+	}
+}
+
+VECTOR DiploidBox::GetCenterPosition()
+{
+	return center_position;
 }

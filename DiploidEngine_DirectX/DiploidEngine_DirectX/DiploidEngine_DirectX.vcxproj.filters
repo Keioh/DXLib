@@ -174,6 +174,9 @@
     <ClCompile Include="cpp\diploidStandalone\impact\diploidImpactSA.cpp">
       <Filter>ソース ファイル\cpp\diploidStandalone\impact</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidStandalone\base_standalone.cpp">
+      <Filter>ソース ファイル\cpp\diploidStandalone</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -250,6 +253,12 @@
     </ClInclude>
     <ClInclude Include="header\diploidStandalone\impact\diploidImpactSA.h">
       <Filter>ヘッダー ファイル\header\diploidStandalone\impact</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidStandalone\base_standalone.h">
+      <Filter>ヘッダー ファイル\header\diploidStandalone</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidStandalone\standalone.h">
+      <Filter>ヘッダー ファイル\header\diploidStandalone</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

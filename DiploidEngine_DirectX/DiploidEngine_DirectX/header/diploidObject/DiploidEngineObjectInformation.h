@@ -8,21 +8,22 @@ private:
 public:
 	int name_tag;//enum NAMEで登録したものを代入
 
-	bool mouse_point_move_flag = false;
+	bool mouse_point_move_flag = false;//trueにするとマウスに追従
+	bool center_position_draw_flag = false;//trueにすると中央に設定されている場所に点が表示される(マウス追従の場合は無効)
 	VECTOR position;//位置
 	VECTOR size;//大きさ(zは円の半径)	
-	int mouse_position_x, mouse_position_y;
+	int mouse_position_x, mouse_position_y;//マウスの現在の位置
 	unsigned int color;//色
 	int fill;//塗りつぶし
 	int thickness;//太さ
 
 	//実際に動かすときに変更する変数
-	VECTOR move_speed;
-	VECTOR move_size;
+	VECTOR move_speed;//移動速度
+	VECTOR move_size;//大きさ変更
 
 	//Impactしたかどうかのフラグ
-	bool impacted = false;
-	bool destory = false;
+	bool impacted = false;//trueで当たっている
+	bool destory = false;//trueで削除
 
 
 	//例)1-29　→　識別番号 - オブジェクト番号
@@ -31,9 +32,13 @@ public:
 	int number;//オブジェクト番号
 	int layer_number;//識別番号
 
+	//仮追加(エラーが出る場合は削除)
+	DiploidEngineObjectInformation();//コンストラクタ
+	~DiploidEngineObjectInformation();//デストラクタ
+
 	virtual void Init() {};
 	virtual void Update() {};
 	virtual void Draw() {};
 
-	virtual void Destory() { impacted = destory = true; };
+	virtual void Destory() { impacted = destory = true; };//オブジェクト削除関数
 };
