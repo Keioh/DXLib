@@ -60,6 +60,8 @@ diploidEngineImpact			衝突関連のクラス
 	･Init();				初期化処理(処理は特にない)
 	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。
 	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量(おおざっぱ)とオブジェクト数を表示しない。
+	･SetBoxAnimation(int number, VECTOR move_speed = { 0,0,0 }, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけてアニメーション値を変更する。
+
 
 diploidEngineLayer			イメージ画像表示管理関連のクラス
 	･void PushTopGrahics(DiploidImage image);	一番手前に表示したい画像を配列(image_top_vector)にプッシュします。

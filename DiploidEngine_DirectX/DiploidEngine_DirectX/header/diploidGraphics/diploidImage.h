@@ -5,6 +5,15 @@
 class DiploidImage : public DiploidEngineObjectInformation
 {
 private:
+	VECTOR anime_position;
+	VECTOR origin_position;
+	VECTOR center_position;
+	double anime_size;
+	double move_size;	
+	double move_angle;
+	double anime_angle;
+	double origin_angle;
+	double origin_size;//z軸を使用
 
 public:
 	int handl;
@@ -24,15 +33,6 @@ public:
 	float green_bright_speed = 0.0f;
 	float blue_bright_speed = 0.0f;
 
-	VECTOR anime_position;
-	VECTOR origin_position;
-	VECTOR center_position;
-	double anime_size;
-	double move_size;	
-	double move_angle;
-	double anime_angle;
-	double origin_angle;
-	double origin_size;//z軸を使用
 
 
 	void Load(const char* path);//画像読み込み

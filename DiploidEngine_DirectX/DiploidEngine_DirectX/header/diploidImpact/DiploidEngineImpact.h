@@ -65,4 +65,6 @@ public:
 	void ImpactLineBox();//線分と箱の当たり判定処理
 
 	void Draw(bool wire = true, bool debug = false);//描写
+
+	void SetBoxAnimation(int number, VECTOR move_speed = { 0,0,0 }, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
 };

@@ -1,5 +1,17 @@
 #include "diploidGraphics\diploidCircle.h"
 
+DiploidCircle::DiploidCircle()
+{
+	DiploidCircle::center_position_draw_flag = true;
+	DiploidCircle::mouse_point_move_flag = false;
+
+}
+
+DiploidCircle::~DiploidCircle()
+{
+
+}
+
 void DiploidCircle::Init(VECTOR position, float size)
 {
 	center_position = position;
@@ -30,5 +42,20 @@ void DiploidCircle::Draw(bool wire)
 	if (wire == true)
 	{
 		DrawCircleAA(position.x, position.y, size.z, 64, color, fill, thickness);
+
+		if (center_position_draw_flag == true)
+		{
+			DrawCircle(position.x, position.y, 2, color);
+		}
 	}
+}
+
+float DiploidCircle::GetSize()
+{
+	return size.z;
+}
+
+VECTOR DiploidCircle::GetCenterPosition()
+{
+	return position;
 }

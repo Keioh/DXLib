@@ -3,7 +3,7 @@
 DiploidBox::DiploidBox()
 {
 	DiploidBox::mouse_point_move_flag = false;
-	DiploidBox::center_position_draw_flag = true;//マウス追従の場合は無効
+	DiploidBox::center_position_draw_flag = false;//マウス追従の場合は無効
 }
 
 DiploidBox::~DiploidBox()

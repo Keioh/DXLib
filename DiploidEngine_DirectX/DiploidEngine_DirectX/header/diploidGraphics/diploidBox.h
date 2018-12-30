@@ -9,7 +9,6 @@ private:
 	VECTOR center_position;//四角の中心点の座標
 	VECTOR anime_position, anime_size;//アニメーション用バッファ
 	VECTOR origin_position, origin_size;//オリジナルの大きさ
-	//int mouse_x, mouse_y;
 
 public:
 

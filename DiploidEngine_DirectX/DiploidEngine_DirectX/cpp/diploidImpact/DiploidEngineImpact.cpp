@@ -723,3 +723,18 @@ void DiploidEngineImpact::Destory()
 	DestoryBox();//ŽlŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çŽlŠp”z—ñ‚©‚çíœ
 	DestoryLine();//ü•ª‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çü•ª”z—ñ‚©‚çíœ
 }
+
+void DiploidEngineImpact::SetBoxAnimation(int number, VECTOR move_speed, VECTOR move_size)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{							  
+				box->move_speed = move_speed;
+				box->move_size = move_size;
+			}
+		}
+	}
+}
