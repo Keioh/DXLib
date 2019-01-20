@@ -530,6 +530,7 @@ void DiploidEngineImpact::ImpactLineBox()
 	}
 }
 
+
 void DiploidEngineImpact::Updata()
 {
 	//円の更新処理
@@ -724,6 +725,7 @@ void DiploidEngineImpact::Destory()
 	DestoryLine();//線分がヒットしていたら線分配列から削除
 }
 
+
 void DiploidEngineImpact::SetBoxAnimation(int number, VECTOR move_speed, VECTOR move_size)
 {
 	if (!box_vector.empty())
@@ -737,4 +739,240 @@ void DiploidEngineImpact::SetBoxAnimation(int number, VECTOR move_speed, VECTOR 
 			}
 		}
 	}
+}
+
+void DiploidEngineImpact::SetCircleAnimation(int number, VECTOR move_speed, float move_size)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				circle->move_speed = move_speed;
+				circle->move_size.z = move_size;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetPointAnimation(int number, VECTOR move_speed)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->number == number)
+			{
+				point->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+
+int DiploidEngineImpact::GetEndBoxNumber()
+{
+	if (!box_vector.empty())
+	{
+		return box_vector.size();
+	}
+
+	return -1;
+}
+
+int DiploidEngineImpact::GetEndCircleNumber()
+{
+	if (!circle_vector.empty())
+	{
+		return circle_vector.size();
+	}
+
+	return -1;
+}
+
+int DiploidEngineImpact::GetEndPointNumber()
+{
+	if (!point_vector.empty())
+	{
+		return point_vector.size();
+	}
+
+	return -1;
+}
+
+int DiploidEngineImpact::GetEndLineNumber()
+{
+	if (!line_vector.empty())
+	{
+		return line_vector.size();
+	}
+
+	return -1;
+}
+
+
+int DiploidEngineImpact::GetMaxBoxNumber()
+{
+	size_t point_buffer = -1;
+	size_t circle_buffer = -1;
+	size_t line_buffer = -1;
+
+	//box配列基準
+	if (!box_vector.empty())
+	{
+		if (box_vector.size() > point_vector.size())//点配列
+		{
+			point_buffer = box_vector.size();
+		}
+
+		if (box_vector.size() > circle_vector.size())//円配列
+		{
+			circle_buffer = box_vector.size();
+		}
+
+		if (box_vector.size() > line_vector.size())//線配列
+		{
+			line_buffer = box_vector.size();
+		}
+
+		//点配列と円配列で比べた場合
+		if (line_buffer && point_buffer && circle_buffer)
+		{
+			return box_vector.size() - 1;
+		}
+	}
+
+	return -1;
+}
+
+int DiploidEngineImpact::GetMaxPointNumber()
+{
+	size_t box_buffer = -1;
+	size_t circle_buffer = -1;
+	size_t line_buffer = -1;
+
+	//point配列基準
+	if (!point_vector.empty())
+	{
+		if (point_vector.size() > box_vector.size())//箱配列
+		{
+			box_buffer = point_vector.size();
+		}
+
+		if (point_vector.size() > circle_vector.size())//円配列
+		{
+			circle_buffer = point_vector.size();
+		}
+
+		if (point_vector.size() > line_vector.size())//線配列
+		{
+			line_buffer = point_vector.size();
+		}
+
+		//点配列と円配列で比べた場合
+		if (line_buffer && box_buffer && circle_buffer)
+		{
+			return point_vector.size() - 1;
+		}
+	}
+	return -1;
+}
+
+int DiploidEngineImpact::GetMaxCircleNumber()
+{
+	size_t box_buffer = -1;
+	size_t point_buffer = -1;
+	size_t line_buffer = -1;
+
+	//point配列基準
+	//if (!point_vector.empty())
+	{
+		if (circle_vector.size() > box_vector.size())//箱配列
+		{
+			box_buffer = circle_vector.size();
+		}
+
+		if (circle_vector.size() > point_vector.size())//点配列
+		{
+			point_buffer = circle_vector.size();
+		}
+
+		if (circle_vector.size() > line_vector.size())//線配列
+		{
+			line_buffer = circle_vector.size();
+		}
+
+		//点配列と円配列で比べた場合
+		if (line_buffer && box_buffer && point_buffer)
+		{
+			return circle_vector.size() - 1;
+		}
+	}
+
+	return -1;
+}
+
+int DiploidEngineImpact::GetMaxLineNumber()
+{
+	size_t box_buffer = -1;
+	size_t point_buffer = -1;
+	size_t circle_buffer = -1;
+
+	//point配列基準
+	//if (!point_vector.empty())
+	{
+		if (line_vector.size() > box_vector.size())//箱配列
+		{
+			box_buffer = line_vector.size();
+		}
+
+		if (line_vector.size() > point_vector.size())//点配列
+		{
+			point_buffer = line_vector.size();
+		}
+
+		if (line_vector.size() > circle_vector.size())//円配列
+		{
+			circle_buffer = line_vector.size();
+		}
+
+		//点配列と円配列で比べた場合
+		if (circle_buffer && box_buffer && point_buffer)
+		{
+			return circle_vector.size() - 1;
+		}
+	}
+
+	return -1;
+}
+
+
+int DiploidEngineImpact::GetMaxArrayNumber()
+{
+	//box基準
+	if ((GetMaxBoxNumber() > GetMaxPointNumber()) && (GetMaxBoxNumber() > GetMaxCircleNumber()) && (GetMaxBoxNumber() > GetMaxLineNumber()))
+	{
+		return GetMaxBoxNumber();
+	}
+
+	//circle基準
+	if ((GetMaxCircleNumber() > GetMaxBoxNumber()) && (GetMaxCircleNumber() > GetMaxPointNumber()) && (GetMaxCircleNumber() > GetMaxLineNumber()))
+	{
+		return GetMaxCircleNumber();
+	}
+
+	//point基準
+	if ((GetMaxPointNumber() > GetMaxBoxNumber()) && (GetMaxPointNumber() > GetMaxCircleNumber()) && (GetMaxPointNumber() > GetMaxLineNumber()))
+	{
+		return GetMaxPointNumber();
+	}
+
+	//line基準
+	if ((GetMaxLineNumber() > GetMaxBoxNumber()) && (GetMaxLineNumber() > GetMaxCircleNumber()) && (GetMaxLineNumber() > GetMaxPointNumber()))
+	{
+		return GetMaxLineNumber();
+	}
+
+	return -1;
 }

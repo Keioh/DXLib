@@ -67,4 +67,18 @@ public:
 	void Draw(bool wire = true, bool debug = false);//描写
 
 	void SetBoxAnimation(int number, VECTOR move_speed = { 0,0,0 }, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
+	void SetCircleAnimation(int number, VECTOR move_speed = { 0,0,0 }, float move_size = 0.0f);//circle配列から特定のcircleを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
+	void SetPointAnimation(int number, VECTOR move_speed = { 0,0,0 });//point配列から特定のpointを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
+
+	int GetEndBoxNumber();//box配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+	int GetEndCircleNumber();//circle配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+	int GetEndPointNumber();//point配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+	int GetEndLineNumber();//line配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+
+	int GetMaxBoxNumber();//box配列を基準に、一番大きい値を返す。つまり、box以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxPointNumber();//point配列を基準に、一番大きい値を返す。つまり、point以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxCircleNumber();//circle配列を基準に、一番大きい値を返す。つまり、circle以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxLineNumber();//line配列を基準に、一番大きい値を返す。つまり、line以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
+
+	int GetMaxArrayNumber();//box.point.circle.line配列をそれぞれ比べて一番大きい要素数を返す。
 };
