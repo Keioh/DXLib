@@ -53,7 +53,7 @@ public:
 
 	void Updata();//衝突判定処理
 
-	//Updata()を使って処理をする場合は以下の関数を使用しない。
+	//Updata()を使って処理をする場合は以下のImpact~関数を使用しない。
 	void ImpactCirclePoint();//円と点の当たり判定処理(画面外の判定は行わない処理を実装ずみ){要バグ確認}
 	void ImpactCircleCircle();//円と円の当たり判定処理
 	void ImpactBoxPoint();//四角と点の当たり判定処理(画面外の判定は行わない処理を実装ずみ)
@@ -66,19 +66,29 @@ public:
 
 	void Draw(bool wire = true, bool debug = false);//描写
 
+	//アニメーション値を変更する関数。
 	void SetBoxAnimation(int number, VECTOR move_speed = { 0,0,0 }, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
 	void SetCircleAnimation(int number, VECTOR move_speed = { 0,0,0 }, float move_size = 0.0f);//circle配列から特定のcircleを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
 	void SetPointAnimation(int number, VECTOR move_speed = { 0,0,0 });//point配列から特定のpointを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
+    
+	//各配列の大きさを得る関数
+	int GetEndBox();//box配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+	int GetEndCircle();//circle配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+	int GetEndPoint();//point配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
+	int GetEndLine();//line配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
 
-	int GetEndBoxNumber();//box配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
-	int GetEndCircleNumber();//circle配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
-	int GetEndPointNumber();//point配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
-	int GetEndLineNumber();//line配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
-
+	//どれかの配列を基準に他の配列と大きさを比較して大きければ基準の配列の大きさを返す。
 	int GetMaxBoxNumber();//box配列を基準に、一番大きい値を返す。つまり、box以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
 	int GetMaxPointNumber();//point配列を基準に、一番大きい値を返す。つまり、point以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
 	int GetMaxCircleNumber();//circle配列を基準に、一番大きい値を返す。つまり、circle以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
 	int GetMaxLineNumber();//line配列を基準に、一番大きい値を返す。つまり、line以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
 
 	int GetMaxArrayNumber();//box.point.circle.line配列をそれぞれ比べて一番大きい要素数を返す。
+
+	//オブジェクト番号を調べる関数。
+	int GetBoxNumber(int target);//box配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	int GetPointNumber(int target);//point配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	int GetCircleNumber(int target);//circle配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	int GetLineNumber(int target);//line配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+
 };

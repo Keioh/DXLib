@@ -771,7 +771,7 @@ void DiploidEngineImpact::SetPointAnimation(int number, VECTOR move_speed)
 }
 
 
-int DiploidEngineImpact::GetEndBoxNumber()
+int DiploidEngineImpact::GetEndBox()
 {
 	if (!box_vector.empty())
 	{
@@ -781,7 +781,7 @@ int DiploidEngineImpact::GetEndBoxNumber()
 	return -1;
 }
 
-int DiploidEngineImpact::GetEndCircleNumber()
+int DiploidEngineImpact::GetEndCircle()
 {
 	if (!circle_vector.empty())
 	{
@@ -791,7 +791,7 @@ int DiploidEngineImpact::GetEndCircleNumber()
 	return -1;
 }
 
-int DiploidEngineImpact::GetEndPointNumber()
+int DiploidEngineImpact::GetEndPoint()
 {
 	if (!point_vector.empty())
 	{
@@ -801,7 +801,7 @@ int DiploidEngineImpact::GetEndPointNumber()
 	return -1;
 }
 
-int DiploidEngineImpact::GetEndLineNumber()
+int DiploidEngineImpact::GetEndLine()
 {
 	if (!line_vector.empty())
 	{
@@ -975,4 +975,45 @@ int DiploidEngineImpact::GetMaxArrayNumber()
 	}
 
 	return -1;
+}
+
+
+int DiploidEngineImpact::GetBoxNumber(int target)
+{
+	std::vector<DiploidBox>::iterator box_begin = box_vector.begin() + target;
+
+	if (!box_vector.empty())
+	{
+		return box_begin->number;
+	}
+}
+
+int DiploidEngineImpact::GetPointNumber(int target)
+{
+	std::vector<DiploidPoint>::iterator point_begin = point_vector.begin() + target;
+
+	if (!point_vector.empty())
+	{
+		return point_begin->number;
+	}
+}
+
+int DiploidEngineImpact::GetCircleNumber(int target)
+{
+	std::vector<DiploidCircle>::iterator circle_begin = circle_vector.begin() + target;
+
+	if (!circle_vector.empty())
+	{
+		return circle_begin->number;
+	}
+}
+
+int DiploidEngineImpact::GetLineNumber(int target)
+{
+	std::vector<DiploidLine>::iterator line_begin = line_vector.begin() + target;
+
+	if (!line_vector.empty())
+	{
+		return line_begin->number;
+	}
 }
