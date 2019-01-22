@@ -1,16 +1,15 @@
 //中枢です。
-
 #pragma once
-#include "DxLib.h"
-#include "diploidApp\DiploidEngineMain.h"
-#include "diploidObject\DiploidEngineObject.h"
-#include "system\DiploidEngineMath.h"
+#include "DxLib.h"//Dxlib本体
+#include "diploidApp\DiploidEngineMain.h"//心臓部分(必ず呼ぶ)
+#include "diploidObject\DiploidEngineObject.h"//円や四角や画像や音など、オブジェクト全般
+#include "system\DiploidEngineMath.h"//数学式関連(DxLibもしくはC++標準もしくはその他の数学ライブラリを推奨)
 
-#include "diploidInput\DiploidEnigneFile.h"
+#include "diploidInput\DiploidEnigneFile.h"//ファイル関連
 
 
 //スタンドアローン関連
-#include "diploidStandalone\standalone.h"
+#include "diploidStandalone\standalone.h"//未実装
 
 
 class DiploidEngineApp : public DiploidEngineMain

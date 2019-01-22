@@ -11,6 +11,7 @@ void DiploidEngineLayer::GetSize()
 	bot_byte = bot_size * sizeof(DiploidImage);
 }
 
+
 void DiploidEngineLayer::PushTopGraphics(DiploidImage image)
 {
 	image_top_vector.push_back(image);
@@ -25,6 +26,7 @@ void DiploidEngineLayer::PushBotGraphics(DiploidImage image)
 {
 	image_bot_vector.push_back(image);
 }
+
 
 void DiploidEngineLayer::Updata()
 {
@@ -91,6 +93,7 @@ void DiploidEngineLayer::Draw(bool debug, bool draw)
 	}
 }
 
+
 void DiploidEngineLayer::Destory()
 {
 	DestoryTop();//top配列から要素を削除
@@ -141,4 +144,196 @@ void DiploidEngineLayer::DestoryBot()
 			}
 		}
 	}
+}
+
+
+void DiploidEngineLayer::SetTOPAnimationPosition(int number, VECTOR move_speed)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetMIDAnimationPosition(int number, VECTOR move_speed)
+{
+	if (!image_mid_vector.empty())
+	{
+		for (auto mid = image_mid_vector.begin(); mid != image_mid_vector.end(); ++mid)
+		{
+			if (mid->number == number)
+			{
+				mid->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetBOTAnimationPosition(int number, VECTOR move_speed)
+{
+	if (!image_bot_vector.empty())
+	{
+		for (auto bot = image_bot_vector.begin(); bot != image_bot_vector.end(); ++bot)
+		{
+			if (bot->number == number)
+			{
+				bot->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+
+void DiploidEngineLayer::SetTOPAnimationAngle(int number, float angle)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->move_angle = angle;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetMIDAnimationAngle(int number, float angle)
+{
+	if (!image_mid_vector.empty())
+	{
+		for (auto mid = image_mid_vector.begin(); mid != image_mid_vector.end(); ++mid)
+		{
+			if (mid->number == number)
+			{
+				mid->move_angle = angle;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetBOTAnimationAngle(int number, float angle)
+{
+	if (!image_bot_vector.empty())
+	{
+		for (auto bot = image_bot_vector.begin(); bot != image_bot_vector.end(); ++bot)
+		{
+			if (bot->number == number)
+			{
+				bot->move_angle = angle;
+			}
+		}
+	}
+}
+
+
+int DiploidEngineLayer::GetTOPNumber(int target)
+{
+	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target;
+
+	if (!image_top_vector.empty())
+	{
+		return itr->number;
+	}
+}
+
+int DiploidEngineLayer::GetMIDNumber(int target)
+{
+	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target;
+
+	if (!image_mid_vector.empty())
+	{
+		return itr->number;
+	}
+}
+
+int DiploidEngineLayer::GetBOTNumber(int target)
+{
+	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target;
+
+	if (!image_bot_vector.empty())
+	{
+		return itr->number;
+	}
+}
+
+
+void DiploidEngineLayer::SetTOPNumber(int target_number, int set_number)
+{
+	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target_number;//topイテレータ
+
+	itr->number = set_number;//新しい値を代入
+}
+
+void DiploidEngineLayer::SetMIDNumber(int target_number, int set_number)
+{
+	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target_number;//midイテレータ
+
+	itr->number = set_number;//新しい値を代入
+}
+
+void DiploidEngineLayer::SetBOTNumber(int target_number, int set_number)
+{
+	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target_number;//botイテレータ
+
+	itr->number = set_number;//新しい値を代入
+}
+
+
+int DiploidEngineLayer::GetTOPLayerNumber(int target)
+{
+	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target;
+
+	if (!image_top_vector.empty())
+	{
+		return itr->layer_number;
+	}
+}
+
+int DiploidEngineLayer::GetMIDLayerNumber(int target)
+{
+	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target;
+
+	if (!image_mid_vector.empty())
+	{
+		return itr->layer_number;
+	}
+}
+
+int DiploidEngineLayer::GetBOTLayerNumber(int target)
+{
+	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target;
+
+	if (!image_bot_vector.empty())
+	{
+		return itr->layer_number;
+	}
+}
+
+
+void DiploidEngineLayer::SetTOPLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target_number;//topイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
+}
+
+void DiploidEngineLayer::SetMIDLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target_number;//topイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
+}
+
+void DiploidEngineLayer::SetBOTLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target_number;//topイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
 }

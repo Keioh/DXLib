@@ -10,6 +10,8 @@ void DiploidImage::Init(VECTOR pos, double size_scale, double angle_scale)
 	position = origin_position = pos;//ポジションをposで初期化
 	scale = origin_size = size_scale;//大きさを指定。
 	angle = origin_angle = angle_scale;//角度を指定。
+
+	GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//画像の大きさを取得
 }
 
 void DiploidImage::Updata()
@@ -25,7 +27,7 @@ void DiploidImage::Updata()
 		anime_angle = anime_angle + move_angle;
 		angle = anime_angle + origin_angle;
 
-		anime_size = anime_size + move_size;
+		anime_size = anime_size + move_size_private;
 		scale = anime_size + origin_size;
 
 		blend_volume += blend_speed;
@@ -44,7 +46,7 @@ void DiploidImage::Updata()
 		anime_angle = anime_angle + move_angle;
 		angle = anime_angle + origin_angle;
 
-		anime_size = anime_size + move_size;
+		anime_size = anime_size + move_size_private;
 		scale = anime_size + origin_size;
 
 		blend_volume += blend_speed;
@@ -115,4 +117,15 @@ void DiploidImage::Draw(bool draw)
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 		SetDrawBright(255, 255, 255);
 	}
+}
+
+
+int DiploidImage::GetGraphicsSizeX()
+{
+	return GRAPHICS_SIZE_X;
+}
+
+int DiploidImage::GetGraphicsSizeY()
+{
+	return GRAPHICS_SIZE_Y;
 }

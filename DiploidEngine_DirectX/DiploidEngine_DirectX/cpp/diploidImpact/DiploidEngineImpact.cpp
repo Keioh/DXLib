@@ -1,5 +1,16 @@
 #include "diploidImpact\DiploidEngineImpact.h"
 
+DiploidEngineImpact::DiploidEngineImpact()
+{
+
+}
+
+DiploidEngineImpact::~DiploidEngineImpact()
+{
+
+}
+
+
 void DiploidEngineImpact::GetSize()
 {
 	circle_size = circle_vector.size();
@@ -580,6 +591,50 @@ void DiploidEngineImpact::Updata()
 	ImpactLineBox();//線分と四角の衝突判定
 }
 
+void DiploidEngineImpact::AutoNumber()
+{
+	//各配列のカウント数を保存する変数
+	int box_count = 0;
+	int point_count = 0;
+	int circle_count = 0;
+	int line_count = 0;
+
+	//box
+	for (auto count = box_vector.begin(); count != box_vector.end(); ++count)
+	{
+		count->number = box_count;//オブジェクト番号を変更
+		box_count += 1;//オブジェクト番号を足す。
+	}
+
+	point_count = box_count;//box_countの値をpoint_countに引き継ぐ
+
+	//point
+	for (auto count = point_vector.begin(); count != point_vector.end(); ++count)
+	{
+		count->number = point_count;//オブジェクト番号を変更
+		point_count += 1;//オブジェクト番号を足す。
+	}
+
+	circle_count = point_count;//point_countの値をcircle_countに引き継ぐ
+
+	//circle
+	for (auto count = circle_vector.begin(); count != circle_vector.end(); ++count)
+	{
+		count->number = circle_count;//オブジェクト番号を変更
+		circle_count += 1;//オブジェクト番号を足す。
+	}
+
+	line_count = circle_count;//point_countの値をcircle_countに引き継ぐ
+
+	//line
+	for (auto count = line_vector.begin(); count != line_vector.end(); ++count)
+	{
+		count->number = line_count;//オブジェクト番号を変更
+		line_count += 1;//オブジェクト番号を足す。
+	}
+
+}
+
 void DiploidEngineImpact::Init()
 {
 	if (!circle_vector.empty())
@@ -726,7 +781,7 @@ void DiploidEngineImpact::Destory()
 }
 
 
-void DiploidEngineImpact::SetBoxAnimation(int number, VECTOR move_speed, VECTOR move_size)
+void DiploidEngineImpact::SetBoxPositionAnimation(int number, VECTOR move_speed)
 {
 	if (!box_vector.empty())
 	{
@@ -735,13 +790,12 @@ void DiploidEngineImpact::SetBoxAnimation(int number, VECTOR move_speed, VECTOR 
 			if (box->number == number)
 			{							  
 				box->move_speed = move_speed;
-				box->move_size = move_size;
 			}
 		}
 	}
 }
 
-void DiploidEngineImpact::SetCircleAnimation(int number, VECTOR move_speed, float move_size)
+void DiploidEngineImpact::SetCirclePositionAnimation(int number, VECTOR move_speed)
 {
 	if (!circle_vector.empty())
 	{
@@ -750,13 +804,12 @@ void DiploidEngineImpact::SetCircleAnimation(int number, VECTOR move_speed, floa
 			if (circle->number == number)
 			{
 				circle->move_speed = move_speed;
-				circle->move_size.z = move_size;
 			}
 		}
 	}
 }
 
-void DiploidEngineImpact::SetPointAnimation(int number, VECTOR move_speed)
+void DiploidEngineImpact::SetPointPositionAnimation(int number, VECTOR move_speed)
 {
 	if (!point_vector.empty())
 	{
@@ -765,6 +818,35 @@ void DiploidEngineImpact::SetPointAnimation(int number, VECTOR move_speed)
 			if (point->number == number)
 			{
 				point->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+
+void DiploidEngineImpact::SetBoxSizeAnimation(int number, VECTOR move_size)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->move_size = move_size;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetCircleSizeAnimation(int number, float move_size)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				circle->move_size.z = move_size;
 			}
 		}
 	}
@@ -839,7 +921,7 @@ int DiploidEngineImpact::GetMaxBoxNumber()
 		//点配列と円配列で比べた場合
 		if (line_buffer && point_buffer && circle_buffer)
 		{
-			return box_vector.size() - 1;
+			return box_vector.size();
 		}
 	}
 
@@ -873,7 +955,7 @@ int DiploidEngineImpact::GetMaxPointNumber()
 		//点配列と円配列で比べた場合
 		if (line_buffer && box_buffer && circle_buffer)
 		{
-			return point_vector.size() - 1;
+			return point_vector.size();
 		}
 	}
 	return -1;
@@ -906,7 +988,7 @@ int DiploidEngineImpact::GetMaxCircleNumber()
 		//点配列と円配列で比べた場合
 		if (line_buffer && box_buffer && point_buffer)
 		{
-			return circle_vector.size() - 1;
+			return circle_vector.size();
 		}
 	}
 
@@ -940,7 +1022,7 @@ int DiploidEngineImpact::GetMaxLineNumber()
 		//点配列と円配列で比べた場合
 		if (circle_buffer && box_buffer && point_buffer)
 		{
-			return circle_vector.size() - 1;
+			return circle_vector.size();
 		}
 	}
 
@@ -975,6 +1057,11 @@ int DiploidEngineImpact::GetMaxArrayNumber()
 	}
 
 	return -1;
+}
+
+int DiploidEngineImpact::GetAllArraySize()
+{
+	return box_vector.size() + point_vector.size() + circle_vector.size() + line_vector.size();
 }
 
 
@@ -1016,4 +1103,109 @@ int DiploidEngineImpact::GetLineNumber(int target)
 	{
 		return line_begin->number;
 	}
+}
+
+
+void DiploidEngineImpact::SetBoxNumber(int target_number, int set_number)
+{
+	std::vector<DiploidBox>::iterator itr = box_vector.begin() + target_number;//boxイテレータ
+	
+	itr->number = set_number;//新しい値を代入
+}
+
+void DiploidEngineImpact::SetCircleNumber(int target_number, int set_number)
+{
+	std::vector<DiploidCircle>::iterator itr = circle_vector.begin() + target_number;//circleイテレータ
+
+	itr->number = set_number;//新しい値を代入
+}
+
+void DiploidEngineImpact::SetPointNumber(int target_number, int set_number)
+{
+	std::vector<DiploidPoint>::iterator itr = point_vector.begin() + target_number;//pointイテレータ
+
+	itr->number = set_number;//新しい値を代入
+}
+
+void DiploidEngineImpact::SetLineNumber(int target_number, int set_number)
+{
+	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineイテレータ
+
+	itr->number = set_number;//新しい値を代入
+}
+
+void DiploidEngineImpact::SetNumber(int number)
+{
+
+}
+
+
+int DiploidEngineImpact::GetBoxLayerNumber(int target)
+{
+	std::vector<DiploidBox>::iterator box_begin = box_vector.begin() + target;
+
+	if (!box_vector.empty())
+	{
+		return box_begin->layer_number;
+	}
+}
+
+int DiploidEngineImpact::GetPointLayerNumber(int target)
+{
+	std::vector<DiploidPoint>::iterator point_begin = point_vector.begin() + target;
+
+	if (!point_vector.empty())
+	{
+		return point_begin->layer_number;
+	}
+}
+
+int DiploidEngineImpact::GetCircleLayerNumber(int target)
+{
+	std::vector<DiploidCircle>::iterator circle_begin = circle_vector.begin() + target;
+
+	if (!circle_vector.empty())
+	{
+		return circle_begin->layer_number;
+	}
+}
+
+int DiploidEngineImpact::GetLineLayerNumber(int target)
+{
+	std::vector<DiploidLine>::iterator line_begin = line_vector.begin() + target;
+
+	if (!line_vector.empty())
+	{
+		return line_begin->layer_number;
+	}
+}
+
+
+void DiploidEngineImpact::SetBoxLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidBox>::iterator itr = box_vector.begin() + target_number;//boxイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
+}
+
+void DiploidEngineImpact::SetCircleLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidCircle>::iterator itr = circle_vector.begin() + target_number;//circleイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
+
+}
+
+void DiploidEngineImpact::SetPointLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidPoint>::iterator itr = point_vector.begin() + target_number;//pointイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
+}
+
+void DiploidEngineImpact::SetLineLayerNumber(int target_number, int set_number)
+{
+	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineイテレータ
+
+	itr->layer_number = set_number;//新しい値を代入
 }

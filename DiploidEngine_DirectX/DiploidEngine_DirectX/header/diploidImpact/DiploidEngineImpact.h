@@ -25,6 +25,9 @@ private:
 	int line_size;
 
 public:
+	DiploidEngineImpact();//コンストラクタ
+	~DiploidEngineImpact();//デストラクタ
+
 	std::vector<DiploidCircle> circle_vector;//円を保存しておく配列
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
@@ -53,6 +56,10 @@ public:
 
 	void Updata();//衝突判定処理
 
+	void AutoNumber();//オブジェクト番号を付けるのがめんどいときの自動オブジェクト番号付与処理。(全てのオブジェクトは番号が異なるようになる。ループ処理に組み込むと動作が重くなるかも)
+
+	void Draw(bool wire = true, bool debug = false);//描写
+
 	//Updata()を使って処理をする場合は以下のImpact~関数を使用しない。
 	void ImpactCirclePoint();//円と点の当たり判定処理(画面外の判定は行わない処理を実装ずみ){要バグ確認}
 	void ImpactCircleCircle();//円と円の当たり判定処理
@@ -64,13 +71,14 @@ public:
 	void ImpactLineLine();//線分と線分の当たり判定処理
 	void ImpactLineBox();//線分と箱の当たり判定処理
 
-	void Draw(bool wire = true, bool debug = false);//描写
-
 	//アニメーション値を変更する関数。
-	void SetBoxAnimation(int number, VECTOR move_speed = { 0,0,0 }, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
-	void SetCircleAnimation(int number, VECTOR move_speed = { 0,0,0 }, float move_size = 0.0f);//circle配列から特定のcircleを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
-	void SetPointAnimation(int number, VECTOR move_speed = { 0,0,0 });//point配列から特定のpointを見つけてアニメーション値を変更する。(配列に追加した後に数値を変更したい場合に使用)
+	void SetBoxPositionAnimation(int number, VECTOR move_speed = { 0,0,0 });//box配列から特定のboxを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetCirclePositionAnimation(int number, VECTOR move_speed = { 0,0,0 });//circle配列から特定のcircleを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetPointPositionAnimation(int number, VECTOR move_speed = { 0,0,0 });//point配列から特定のpointを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
     
+	void SetBoxSizeAnimation(int number, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetCircleSizeAnimation(int number, float move_size = 0.0f);//circle配列から特定のcircleを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
 	//各配列の大きさを得る関数
 	int GetEndBox();//box配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
 	int GetEndCircle();//circle配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
@@ -78,17 +86,39 @@ public:
 	int GetEndLine();//line配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
 
 	//どれかの配列を基準に他の配列と大きさを比較して大きければ基準の配列の大きさを返す。
-	int GetMaxBoxNumber();//box配列を基準に、一番大きい値を返す。つまり、box以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
-	int GetMaxPointNumber();//point配列を基準に、一番大きい値を返す。つまり、point以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
-	int GetMaxCircleNumber();//circle配列を基準に、一番大きい値を返す。つまり、circle以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
-	int GetMaxLineNumber();//line配列を基準に、一番大きい値を返す。つまり、line以外のオブジェクトと比較して一番大きい数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxBoxNumber();//box配列を基準に、一番大きい値を返す。つまり、box以外のオブジェクトと比較して大きければ最大数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxPointNumber();//point配列を基準に、一番大きい値を返す。つまり、point以外のオブジェクトと比較して大きければ最大数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxCircleNumber();//circle配列を基準に、一番大きい値を返す。つまり、circle以外のオブジェクトと比較して大きければ最大数を返す。(配列になにもなければ-1を返す。)
+	int GetMaxLineNumber();//line配列を基準に、一番大きい値を返す。つまり、line以外のオブジェクトと比較して大きければ最大数を返す。(配列になにもなければ-1を返す。)
 
 	int GetMaxArrayNumber();//box.point.circle.line配列をそれぞれ比べて一番大きい要素数を返す。
+
+	int GetAllArraySize();//全ての配列のサイズの合計を返す。
 
 	//オブジェクト番号を調べる関数。
 	int GetBoxNumber(int target);//box配列の最初から数えてｘ番目のオブジェクト番号を取得する。
 	int GetPointNumber(int target);//point配列の最初から数えてｘ番目のオブジェクト番号を取得する。
 	int GetCircleNumber(int target);//circle配列の最初から数えてｘ番目のオブジェクト番号を取得する。
 	int GetLineNumber(int target);//line配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+
+	//指定のオブジェクト番号を変更する関数。(要検証)
+	void SetBoxNumber(int target_number, int set_number);//box配列の指定データのオブジェクト番号(number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+	void SetCircleNumber(int target_number, int set_number);//circle配列の指定データのオブジェクト番号(number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+	void SetPointNumber(int target_number, int set_number);//point配列の指定データのオブジェクト番号(number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+	void SetLineNumber(int target_number, int set_number);//line配列の指定データのオブジェクト番号(number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+
+	void SetNumber(int number);//未実装
+
+	//レイヤー番号を調べる関数。
+	int GetBoxLayerNumber(int target);//box配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	int GetPointLayerNumber(int target);//point配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	int GetCircleLayerNumber(int target);//circle配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	int GetLineLayerNumber(int target);//line配列の最初から数えてｘ番目のレイヤー番号を取得する。
+
+	//指定のレイヤー番号を変更する関数。(要検証)
+	void SetBoxLayerNumber(int target_number, int set_number);//box配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+	void SetCircleLayerNumber(int target_number, int set_number);//circle配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+	void SetPointLayerNumber(int target_number, int set_number);//point配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+	void SetLineLayerNumber(int target_number, int set_number);//line配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
 
 };

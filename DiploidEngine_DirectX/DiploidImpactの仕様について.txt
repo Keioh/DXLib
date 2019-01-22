@@ -1,0 +1,12 @@
+衝突判定に動的配列を使用しています。
+また、特に指定が無い場合は自動的にオブジェクト番号(number変数)に番号が振り分けられます。
+この振り分けは確保した配列順に数字が割り当てられます。
+
+例) DiploidBoxを先に5個確保して後からDiploidCircleを2個追加した場合。
+	先にBoxに０の数字から割り当てられそのあとにCricleに数字が割り当てられます。
+	Box0,Box1,Box2,Box3,Box4,Circle5,Circle6なります。
+		DiploidCircleを先に確保した場合は
+		Circle0, Circle1, Box2, Box3, Box4, Box5, Box6となります。
+
+意図的にオブジェクト番号(number変数)を変更したい場合は
+同クラス内のSet○○Number()関数を使用するかSetNumber()関数を使用してください。

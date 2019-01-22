@@ -151,6 +151,7 @@
     <ClCompile Include="cpp\diploidStandalone\base_standalone.cpp" />
     <ClCompile Include="cpp\diploidStandalone\graphics\diploidGraphicsSA.cpp" />
     <ClCompile Include="cpp\diploidStandalone\impact\diploidImpactSA.cpp" />
+    <ClCompile Include="cpp\diploidUI\diploidUI.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="header\diploidStandalone\graphics\diploidGraphicsSA.h" />
     <ClInclude Include="header\diploidStandalone\impact\diploidImpactSA.h" />
     <ClInclude Include="header\diploidStandalone\standalone.h" />
+    <ClInclude Include="header\diploidUI\diploidUI.h" />
     <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
     <ClInclude Include="resource.h" />
