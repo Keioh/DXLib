@@ -13,6 +13,11 @@ void DiploidEngineSound::Play(int play_type)
 	}
 }
 
+void DiploidEngineSound::Stop()
+{
+
+}
+
 void DiploidEngineSound::End()
 {
 	InitSoundMem();

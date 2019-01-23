@@ -44,6 +44,14 @@ public:
 	void SetMIDAnimationAngle(int number, float angle = 0.0f);//mid配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。
 	void SetBOTAnimationAngle(int number, float angle = 0.0f);//bot配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。
 
+	void SetTOPAnimationSize(int number, VECTOR size = { 0,0,0 });//top配列の指定のオブジェクト番号の画像の大きさアニメーション値を変更する。
+	void SetMIDAnimationSize(int number, VECTOR size = { 0,0,0 });//mid配列の指定のオブジェクト番号の画像の大きさアニメーション値を変更する。
+	void SetBOTAnimationSize(int number, VECTOR size = { 0,0,0 });//bot配列の指定のオブジェクト番号の画像の大きさアニメーション値を変更する。
+
+	void SetTOPAnimationScale(int number, float scale = 0.0f);//top配列の指定のオブジェクト番号の画像の拡大縮小アニメーション値を変更する。(使用非推奨。サイズ変更する場合は上記のSize()関数を使うこと)
+	void SetMIDAnimationScale(int number, float scale = 0.0f);//mid配列の指定のオブジェクト番号の画像の拡大縮小アニメーション値を変更する。(使用非推奨。サイズ変更する場合は上記のSize()関数を使うこと)
+	void SetBOTAnimationScale(int number, float scale = 0.0f);//bot配列の指定のオブジェクト番号の画像の拡大縮小アニメーション値を変更する。(使用非推奨。サイズ変更する場合は上記のSize()関数を使うこと)
+
 
 	//オブジェクト番号を調べる関数。
 	int GetTOPNumber(int target);//top配列の最初から数えてｘ番目のオブジェクト番号を取得する。

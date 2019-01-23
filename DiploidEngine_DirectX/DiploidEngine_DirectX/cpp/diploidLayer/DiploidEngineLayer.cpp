@@ -233,6 +233,92 @@ void DiploidEngineLayer::SetBOTAnimationAngle(int number, float angle)
 }
 
 
+void DiploidEngineLayer::SetTOPAnimationSize(int number, VECTOR size)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->move_size = size;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetMIDAnimationSize(int number, VECTOR size)
+{
+	if (!image_mid_vector.empty())
+	{
+		for (auto mid = image_mid_vector.begin(); mid != image_mid_vector.end(); ++mid)
+		{
+			if (mid->number == number)
+			{
+				mid->move_size = size;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetBOTAnimationSize(int number, VECTOR size)
+{
+	if (!image_bot_vector.empty())
+	{
+		for (auto bot = image_bot_vector.begin(); bot != image_bot_vector.end(); ++bot)
+		{
+			if (bot->number == number)
+			{
+				bot->move_size = size;
+			}
+		}
+	}
+}
+
+
+void DiploidEngineLayer::SetTOPAnimationScale(int number, float scale)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->scale = scale;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetMIDAnimationScale(int number, float scale)
+{
+	if (!image_mid_vector.empty())
+	{
+		for (auto mid = image_mid_vector.begin(); mid != image_mid_vector.end(); ++mid)
+		{
+			if (mid->number == number)
+			{
+				mid->scale = scale;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetBOTAnimationScale(int number, float scale)
+{
+	if (!image_bot_vector.empty())
+	{
+		for (auto bot = image_bot_vector.begin(); bot != image_bot_vector.end(); ++bot)
+		{
+			if (bot->number == number)
+			{
+				bot->scale = scale;
+			}
+		}
+	}
+}
+
+
 int DiploidEngineLayer::GetTOPNumber(int target)
 {
 	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target;

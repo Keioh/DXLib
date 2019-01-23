@@ -15,5 +15,6 @@ public:
 
 	void Load(const char* path);
 	void Play(int play_type = DX_PLAYTYPE_BACK);
+	void Stop();//–¢ŽÀ‘•
 	void End();
 };

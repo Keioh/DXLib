@@ -28,6 +28,9 @@ public:
 	DiploidEngineImpact();//コンストラクタ
 	~DiploidEngineImpact();//デストラクタ
 
+	int screen_size_x = 1280 + 200;
+	int screen_size_y = 720 + 200;
+
 	std::vector<DiploidCircle> circle_vector;//円を保存しておく配列
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
@@ -79,6 +82,14 @@ public:
 	void SetBoxSizeAnimation(int number, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetCircleSizeAnimation(int number, float move_size = 0.0f);//circle配列から特定のcircleを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 
+	void SetBoxPositionAdd(int number, VECTOR position = { 0,0,0 });//box配列から特定のboxを見つけて元ある座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetCirclePositionAdd(int number, VECTOR position = { 0,0,0 });//circle配列から特定のcircleを見つけて元ある座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetPointPositionAdd(int number, VECTOR position = { 0,0,0 });//point配列から特定のpointを見つけて元ある座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+	VECTOR GetBoxCenterPosition(int number);//box配列から特定のboxを見つけてそのboxの中心点の座標を得ます。
+	VECTOR GetCircleCenterPosition(int number);//circle配列から特定のcircleを見つけてそのcircleの中心点の座標を得ます。
+	VECTOR GetPointPosition(int number);//point配列から特定のpointを見つけてそのpointの座標を得ます。
+
 	//各配列の大きさを得る関数
 	int GetEndBox();//box配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
 	int GetEndCircle();//circle配列の現在の一番最後の数を取得。(配列になにもなければ-1を返す。)
@@ -120,5 +131,12 @@ public:
 	void SetCircleLayerNumber(int target_number, int set_number);//circle配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
 	void SetPointLayerNumber(int target_number, int set_number);//point配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
 	void SetLineLayerNumber(int target_number, int set_number);//line配列の指定データのレイヤー番号(layer_number変数)を変更します。(target_numberには配列頭から数えて何番目の値を変えるのかを指定、set_numberには実際に変え値)
+
+
+	//オブジェクトが衝突しているか調べる関数。
+	int GetBoxImpactFlag(int number);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	int GetPointImpactFlag(int number);//point配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	int GetCircleImpactFlag(int number);//circle配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	int GetLineImpactFlag(int number);//line配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
 
 };

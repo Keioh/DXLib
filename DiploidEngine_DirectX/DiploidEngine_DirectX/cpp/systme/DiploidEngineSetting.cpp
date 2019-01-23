@@ -8,7 +8,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "DiploidEngine ver0.02";
+	window_name = "DiploidEngine ver0.03";
 }
 
 void DiploidEngineSetting::Init()
@@ -34,6 +34,8 @@ void DiploidEngineSetting::SetBegin()
 	SetUseASyncLoadFlag(TRUE);//非同期読み込み
 	SetUseDXArchiveFlag(TRUE);//DXアーカイブ読み込み
 	SetAlwaysRunFlag(TRUE);//ウィンドウ非アクティブで処理を実行
+
+	SetFullScreenScalingMode(DX_FSSCALINGMODE_NEAREST);//画像補間の変更
 }
 
 void DiploidEngineSetting::SetEnd()

@@ -136,6 +136,7 @@ void DiploidEngineImpact::DestoryLine()
 	}
 }
 
+
 void DiploidEngineImpact::ImpactCirclePoint()
 {
 	if (!point_vector.empty() || !circle_vector.empty())
@@ -145,10 +146,10 @@ void DiploidEngineImpact::ImpactCirclePoint()
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
 				//円が画面内にあったら
-				if ((circle->position.x >= 0 - circle->position.x) && (circle->position.y >= 0 - circle->position.y) && (circle->position.x <= 1920 + circle->position.x) && (circle->position.y <= 1080 + circle->position.y))
+				if ((circle->position.x >= -200 - circle->position.x) && (circle->position.y >= -200 - circle->position.y) && (circle->position.x <= screen_size_x + circle->position.x) && (circle->position.y <= screen_size_y + circle->position.y))
 				{
 					//点が画面内にあったら
-					if ((point->position.x >= 0) && (point->position.y >= 0) && (point->position.x <= 1920) && (point->position.y <= 1080))
+					if ((point->position.x >= -200) && (point->position.y >= -200) && (point->position.x <= screen_size_x) && (point->position.y <= screen_size_y))
 					{
 						float x = 0, y = 0;
 
@@ -217,10 +218,10 @@ void DiploidEngineImpact::ImpactBoxPoint()
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
 				//boxが画面内にあったら
-				if ((box->position.x >= 0) && (box->position.y >= 0) && (box->position.x + box->size.x <= 1920) && (box->position.y + box->size.y <= 1080))
+				if ((box->position.x >= -200) && (box->position.y >= -200) && (box->position.x + box->size.x <= screen_size_x) && (box->position.y + box->size.y <= screen_size_y))
 				{
 					//pointが画面内にあったら
-					if ((point->position.x >= 0) && (point->position.y >= 0) && (point->position.x <= 1920) && (point->position.y <= 1080))
+					if ((point->position.x >= -200) && (point->position.y >= -200) && (point->position.x <= screen_size_x) && (point->position.y <= screen_size_y))
 					{
 
 						if ((box->position.x <= point->position.x) && ((box->position.x + box->size.x) >= point->position.x))
@@ -260,10 +261,10 @@ void DiploidEngineImpact::ImpactBoxBox()
 					else
 					{
 						//oneが画面内にあったら
-						if ((box_one->position.x >= 0) && (box_one->position.y >= 0) && (box_one->position.x + box_one->size.x <= 1920) && (box_one->position.y + box_one->size.y <= 1080))
+						if ((box_one->position.x >= -200) && (box_one->position.y >= -200) && (box_one->position.x + box_one->size.x <= screen_size_x) && (box_one->position.y + box_one->size.y <= screen_size_y))
 						{
 							//twoが画面内にあったら
-							if ((box_two->position.x >= 0) && (box_two->position.y >= 0) && (box_two->position.x + box_two->size.x <= 1920) && (box_two->position.y + box_two->size.y <= 1080))
+							if ((box_two->position.x >= -200) && (box_two->position.y >= -200) && (box_two->position.x + box_two->size.x <= screen_size_x) && (box_two->position.y + box_two->size.y <= screen_size_y))
 							{
 								//one
 								if (box_one->position.x < (box_two->position.x + box_two->size.x) && box_one->position.y < (box_two->position.y + box_two->size.y))
@@ -853,6 +854,98 @@ void DiploidEngineImpact::SetCircleSizeAnimation(int number, float move_size)
 }
 
 
+void DiploidEngineImpact::SetBoxPositionAdd(int number, VECTOR position)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->position.x += position.x;
+				box->position.y += position.y;
+				box->position.z += position.z;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetCirclePositionAdd(int number, VECTOR position)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				circle->position.x += position.x;
+				circle->position.y += position.y;
+				circle->position.z += position.z;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetPointPositionAdd(int number, VECTOR position)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->number == number)
+			{
+				point->position.x += position.x;
+				point->position.y += position.y;
+				point->position.z += position.z;
+			}
+		}
+	}
+}
+
+
+VECTOR DiploidEngineImpact::GetBoxCenterPosition(int number)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->GetCenterPosition();
+			}
+		}
+	}
+}
+
+VECTOR DiploidEngineImpact::GetCircleCenterPosition(int number)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				return circle->GetCenterPosition();
+			}
+		}
+	}
+}
+
+VECTOR DiploidEngineImpact::GetPointPosition(int number)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->number == number)
+			{
+				return point->position;
+			}
+		}
+	}
+}
+
+
 int DiploidEngineImpact::GetEndBox()
 {
 	if (!box_vector.empty())
@@ -1208,4 +1301,69 @@ void DiploidEngineImpact::SetLineLayerNumber(int target_number, int set_number)
 	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineイテレータ
 
 	itr->layer_number = set_number;//新しい値を代入
+}
+
+
+int DiploidEngineImpact::GetBoxImpactFlag(int number)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				return box->impacted;
+			}
+		}
+	}
+
+	return 0;
+}
+
+int DiploidEngineImpact::GetPointImpactFlag(int number)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->number == number)
+			{
+				return point->impacted;
+			}
+		}
+	}
+
+	return 0;
+}
+
+int DiploidEngineImpact::GetCircleImpactFlag(int number)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				return circle->impacted;
+			}
+		}
+	}
+
+	return 0;
+}
+
+int DiploidEngineImpact::GetLineImpactFlag(int number)
+{
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			if (line->number == number)
+			{
+				return line->impacted;
+			}
+		}
+	}
+
+	return 0;
 }
