@@ -10,6 +10,8 @@ private:
 	VECTOR anime_size;//アニメーションをするときのサイズを保存する変数。
 	VECTOR origin_size;//元々の大きさ
 
+	void DrawNameTag();
+
 public:	
 
 	DiploidCircle();
@@ -23,4 +25,7 @@ public:
 	VECTOR GetCenterPosition();//中央の位置を返します。
 
 	void Destory() { impacted = destory = true; };
+
+	int SetDrawNameTagFlag(int flag = TRUE);//TRUEでname_tagを表示。
+
 };

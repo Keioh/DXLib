@@ -116,6 +116,11 @@ void DiploidImage::Draw(bool draw)
 		DrawRotaGraph(position.x, position.y, scale, angle, handl, TRUE, revers_x, revers_y);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 		SetDrawBright(255, 255, 255);
+
+		if (SetDrawNameTagFlag() == TRUE)
+		{
+			DrawNameTag();
+		}
 	}
 }
 
@@ -128,4 +133,18 @@ int DiploidImage::GetGraphicsSizeX()
 int DiploidImage::GetGraphicsSizeY()
 {
 	return GRAPHICS_SIZE_Y;
+}
+
+
+void DiploidImage::DrawNameTag()
+{
+	for (int count = 0; count != 1; ++count)
+	{
+		DrawString(position.x + (count * 20), position.y, &name_tag[count], GetColor(255, 255, 255));
+	}
+}
+
+int DiploidImage::SetDrawNameTagFlag(int flag)
+{
+	return name_tag_flag = flag;
 }

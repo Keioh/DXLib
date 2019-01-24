@@ -11,6 +11,7 @@ DiploidBox::~DiploidBox()
 
 }
 
+
 void DiploidBox::Init(VECTOR position, VECTOR size)
 {
 	DiploidBox::position = origin_position = position;
@@ -51,9 +52,15 @@ void DiploidBox::Draw(bool wire)
 		if (DiploidBox::center_position_draw_flag == true)
 		{
 			DrawCircle(center_position.x, center_position.y, 2, color);
+		}	
+
+		if (SetDrawNameTagFlag() == TRUE)
+		{
+			DrawNameTag();
 		}
 	}
 }
+
 
 VECTOR DiploidBox::SetCenterPosition(VECTOR new_center_position)
 {
@@ -116,4 +123,18 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 VECTOR DiploidBox::GetCenterPosition()
 {
 	return center_position;
+}
+
+
+void DiploidBox::DrawNameTag()
+{
+	for (int count = 0; count != 1; ++count)
+	{
+		DrawString(GetPosition().x + (count * 20), GetPosition().y, &name_tag[count], GetColor(255, 255, 255));
+	}
+}
+
+int DiploidBox::SetDrawNameTagFlag(int flag)
+{
+	return name_tag_flag = flag;
 }

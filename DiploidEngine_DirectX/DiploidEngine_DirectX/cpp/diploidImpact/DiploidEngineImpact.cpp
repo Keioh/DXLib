@@ -911,7 +911,7 @@ VECTOR DiploidEngineImpact::GetBoxCenterPosition(int number)
 		{
 			if (box->number == number)
 			{
-				box->GetCenterPosition();
+				return box->GetCenterPosition();
 			}
 		}
 	}

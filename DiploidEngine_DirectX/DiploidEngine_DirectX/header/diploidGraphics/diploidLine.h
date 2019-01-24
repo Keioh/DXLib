@@ -13,6 +13,8 @@ private:
 	VECTOR anime_size;//アニメーションをするときのサイズを保存する変数。
 	VECTOR origin_size;//元々の大きさ
 
+	void DrawNameTag();
+
 public:
 
 	VECTOR Position_one, Position_two;
@@ -24,5 +26,7 @@ public:
 	void Destory() { impacted = destory = true; };
 
 	double GetAngle();//線分の傾きを取得
+
+	int SetDrawNameTagFlag(int flag = TRUE);//TRUEでname_tagを表示。
 
 };

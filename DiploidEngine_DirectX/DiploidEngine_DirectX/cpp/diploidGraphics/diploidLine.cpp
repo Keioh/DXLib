@@ -4,7 +4,6 @@ void DiploidLine::Init(VECTOR position_one, VECTOR position_two)
 {
 	POSITION_ONE = position_one;
 	POSITION_TWO = position_two;
-
 }
 
 void DiploidLine::Update()
@@ -34,6 +33,11 @@ void DiploidLine::Draw(bool wire)
 	if (wire == true)
 	{
 		DrawLine(Position_one.x, Position_one.y, Position_two.x, Position_two.y, color, thickness);
+
+		if (SetDrawNameTagFlag() == TRUE)
+		{
+			DrawNameTag();
+		}
 	}
 }
 
@@ -44,4 +48,18 @@ double DiploidLine::GetAngle()
 	angle = atan2(Position_two.y - Position_one.y, Position_two.x - Position_one.x);
 
 	return angle;
+}
+
+
+void DiploidLine::DrawNameTag()
+{
+	for (int count = 0; count != 1; ++count)
+	{
+		DrawString(POSITION_ONE.x + (count * 20), POSITION_ONE.y, &name_tag[count], GetColor(255, 255, 255));
+	}
+}
+
+int DiploidLine::SetDrawNameTagFlag(int flag)
+{
+	return name_tag_flag = flag;
 }

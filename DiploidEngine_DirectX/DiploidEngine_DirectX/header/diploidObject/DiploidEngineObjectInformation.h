@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #include "DxLib.h"
 
 class DiploidEngineObjectInformation
@@ -6,7 +7,7 @@ class DiploidEngineObjectInformation
 private:
 
 public:
-	int name_tag;//enum NAMEで登録したものを代入
+	std::string name_tag = "no_name";//付けたい名前を入れる。型はstring型です。
 
 	bool mouse_point_move_flag = false;//trueにするとマウスに追従
 	bool center_position_draw_flag = false;//trueにすると中央に設定されている場所に点が表示される(マウス追従の場合は無効)
@@ -24,6 +25,8 @@ public:
 	//Impactしたかどうかのフラグ
 	bool impacted = false;//trueで当たっている
 	bool destory = false;//trueで削除
+
+	int name_tag_flag;//name_tagの表示フラグ
 
 
 	//例)1-29　→　識別番号 - オブジェクト番号

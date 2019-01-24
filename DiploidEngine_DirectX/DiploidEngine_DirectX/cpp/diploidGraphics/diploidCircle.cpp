@@ -47,6 +47,11 @@ void DiploidCircle::Draw(bool wire)
 		{
 			DrawCircle(position.x, position.y, 2, color);
 		}
+
+		if (SetDrawNameTagFlag() == TRUE)
+		{
+			DrawNameTag();
+		}
 	}
 }
 
@@ -58,4 +63,17 @@ float DiploidCircle::GetSize()
 VECTOR DiploidCircle::GetCenterPosition()
 {
 	return position;
+}
+
+void DiploidCircle::DrawNameTag()
+{
+	for (int count = 0; count != 1; ++count)
+	{
+		DrawString(GetCenterPosition().x + (count * 20), GetCenterPosition().y, &name_tag[count], GetColor(255, 255, 255));
+	}
+}
+
+int DiploidCircle::SetDrawNameTagFlag(int flag)
+{
+	return name_tag_flag = flag;
 }

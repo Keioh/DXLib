@@ -80,9 +80,6 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 			}
 		}
 	}
-
-
-
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理

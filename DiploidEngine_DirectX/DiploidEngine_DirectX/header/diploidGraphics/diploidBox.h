@@ -10,6 +10,8 @@ private:
 	VECTOR anime_position, anime_size;//アニメーション用バッファ
 	VECTOR origin_position, origin_size;//オリジナルの大きさ
 
+	void DrawNameTag();
+
 public:
 
 	DiploidBox();
@@ -23,8 +25,10 @@ public:
 	VECTOR SetCenterPosition(VECTOR new_center_position);//中央ポジションを任意の数値に変更する。(戻り値はnew_center_positionを返す)
 
 	VECTOR GetSize();//縦と横の大きさを返します。
-	VECTOR GetPosition(VECTOR get_pos = { 0,0,0 });//指定した場所の位置を返します。例)get_posに{1,0,0}を代入→四角の右上のポジションを指定→位置をVECTOR型で返す。
+	VECTOR GetPosition(VECTOR get_pos = { 0,0,0 });//指定した場所の位置を返します。例)get_posに{1,0,0}を代入→四角の右上のポジションを指定→位置をVECTOR型で返す。{0,0,0}で左上
 	VECTOR GetCenterPosition();//中央の位置を返します。
 
 	void Destory() { impacted = destory = true; };//削除します。
+
+	int SetDrawNameTagFlag(int flag = TRUE);//TRUEでname_tagを表示。
 };

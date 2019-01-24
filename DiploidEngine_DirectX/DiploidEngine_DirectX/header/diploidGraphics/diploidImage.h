@@ -14,6 +14,8 @@ private:
 	double origin_angle;
 	double origin_size;//z軸を使用
 
+	void DrawNameTag();
+
 public:
 	int handl;
 	int mouse_x, mouse_y;
@@ -42,4 +44,7 @@ public:
 
 	int GetGraphicsSizeX();//読み込んだ画像のXの大きさを取得します。
 	int GetGraphicsSizeY();//読み込んだ画像のYの大きさを取得します。
+
+	int SetDrawNameTagFlag(int flag = FALSE);//TRUEでname_tagを表示。
+
 };
