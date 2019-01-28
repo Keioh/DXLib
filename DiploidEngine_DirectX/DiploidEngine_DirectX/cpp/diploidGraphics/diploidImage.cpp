@@ -148,3 +148,8 @@ int DiploidImage::SetDrawNameTagFlag(int flag)
 {
 	return name_tag_flag = flag;
 }
+
+std::string DiploidImage::GetNameTag()
+{
+	return name_tag;
+}

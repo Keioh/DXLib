@@ -15,4 +15,7 @@ public:
 	void Draw(bool wire = true);
 
 	void Destory() { impacted = destory = true; };
+
+	std::string GetNameTag();//name_tag‚Éİ’è‚³‚ê‚Ä‚¢‚é–¼‘O‚ğ•Ô‚µ‚Ü‚·B
+
 };

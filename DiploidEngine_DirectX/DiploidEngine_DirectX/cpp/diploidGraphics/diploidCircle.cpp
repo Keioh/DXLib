@@ -12,6 +12,7 @@ DiploidCircle::~DiploidCircle()
 
 }
 
+
 void DiploidCircle::Init(VECTOR position, float size)
 {
 	center_position = position;
@@ -55,6 +56,7 @@ void DiploidCircle::Draw(bool wire)
 	}
 }
 
+
 float DiploidCircle::GetSize()
 {
 	return size.z;
@@ -73,7 +75,13 @@ void DiploidCircle::DrawNameTag()
 	}
 }
 
+
 int DiploidCircle::SetDrawNameTagFlag(int flag)
 {
 	return name_tag_flag = flag;
+}
+
+std::string DiploidCircle::GetNameTag()
+{
+	return name_tag;
 }

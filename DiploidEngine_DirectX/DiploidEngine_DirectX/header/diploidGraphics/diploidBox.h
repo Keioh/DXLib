@@ -31,4 +31,5 @@ public:
 	void Destory() { impacted = destory = true; };//削除します。
 
 	int SetDrawNameTagFlag(int flag = TRUE);//TRUEでname_tagを表示。
+	std::string GetNameTag();//name_tagに設定されている名前を返します。
 };

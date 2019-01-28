@@ -144,6 +144,7 @@
     <ClCompile Include="cpp\diploidObject\DiploidEngineObjectInformation.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineTag.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidMap.cpp" />
+    <ClCompile Include="cpp\diploidPhysics\diploidPhysics.cpp" />
     <ClCompile Include="cpp\diploidScreen\DiploidEngineScene.cpp" />
     <ClCompile Include="cpp\diploidScreen\DiploidEngineScreen.cpp" />
     <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp" />
@@ -173,6 +174,7 @@
     <ClInclude Include="header\diploidObject\DiploidEngineObjectInformation.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineTag.h" />
     <ClInclude Include="header\diploidObject\DiploidMap.h" />
+    <ClInclude Include="header\diploidPhysics\diploidPhysics.h" />
     <ClInclude Include="header\diploidScreen\DiploidEngineScene.h" />
     <ClInclude Include="header\diploidScreen\DiploidEngineScreen.h" />
     <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h" />

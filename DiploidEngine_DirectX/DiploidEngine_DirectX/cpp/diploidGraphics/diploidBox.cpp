@@ -138,3 +138,8 @@ int DiploidBox::SetDrawNameTagFlag(int flag)
 {
 	return name_tag_flag = flag;
 }
+
+std::string DiploidBox::GetNameTag()
+{
+	return name_tag;
+}

@@ -28,5 +28,6 @@ public:
 	double GetAngle();//線分の傾きを取得
 
 	int SetDrawNameTagFlag(int flag = TRUE);//TRUEでname_tagを表示。
+	std::string GetNameTag();//name_tagに設定されている名前を返します。
 
 };

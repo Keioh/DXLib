@@ -11,6 +11,7 @@
 #include "diploidInput\DiploidEngineInput.h"
 #include "diploidInput\DiploidEnigneFile.h"
 #include "diploidObject\DiploidMap.h"
+#include "diploidPhysics/diploidPhysics.h"//重力などの物理計算
 
 class DiploidObject
 {
@@ -30,6 +31,8 @@ public:
 	DiploidMap map;//マップ作製
 
 	DiploidEngineInput input;//入力機器キーボードやマウス、パッドなど(Appのほうで使ったほうが無駄なメモリを消費しないですむ。シングルトン実装しなければ)
+
+	DiploidPhysics physics;//物理計算
 
 	void Init();
 	void Updata();

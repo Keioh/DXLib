@@ -63,3 +63,9 @@ int DiploidLine::SetDrawNameTagFlag(int flag)
 {
 	return name_tag_flag = flag;
 }
+
+
+std::string DiploidLine::GetNameTag()
+{
+	return name_tag;
+}

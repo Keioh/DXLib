@@ -25,3 +25,8 @@ void DiploidPoint::Draw(bool wire)
 {
 	DrawPixel(position.x, position.y, color);
 }
+
+std::string DiploidPoint::GetNameTag()
+{
+	return name_tag;
+}

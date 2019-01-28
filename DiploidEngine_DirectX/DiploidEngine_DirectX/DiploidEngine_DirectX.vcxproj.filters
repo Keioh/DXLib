@@ -103,6 +103,12 @@
     <Filter Include="ヘッダー ファイル\header\diploidUI">
       <UniqueIdentifier>{e53cc8a5-f473-47e0-b434-4607261782fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidPhysics">
+      <UniqueIdentifier>{a7fb32d9-dd34-4149-a0a0-74aead30d1c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidPhysics">
+      <UniqueIdentifier>{b0b3cec7-b674-4c46-a07b-a0c7e1fb1abd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -185,6 +191,9 @@
     </ClCompile>
     <ClCompile Include="cpp\diploidUI\diploidUI.cpp">
       <Filter>ソース ファイル\cpp\diploidUI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidPhysics\diploidPhysics.cpp">
+      <Filter>ソース ファイル\cpp\diploidPhysics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -271,6 +280,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidUI\diploidUI.h">
       <Filter>ヘッダー ファイル\header\diploidUI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidPhysics\diploidPhysics.h">
+      <Filter>ヘッダー ファイル\header\diploidPhysics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

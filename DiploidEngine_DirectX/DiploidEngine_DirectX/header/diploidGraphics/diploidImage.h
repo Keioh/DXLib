@@ -46,5 +46,6 @@ public:
 	int GetGraphicsSizeY();//読み込んだ画像のYの大きさを取得します。
 
 	int SetDrawNameTagFlag(int flag = FALSE);//TRUEでname_tagを表示。
+	std::string GetNameTag();//name_tagに設定されている名前を返します。
 
 };
