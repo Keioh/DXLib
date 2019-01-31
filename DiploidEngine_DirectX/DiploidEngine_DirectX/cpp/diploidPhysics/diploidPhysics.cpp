@@ -1,28 +1,46 @@
 #include "diploidPhysics/diploidPhysics.h"
 
-float DiploidPhysics::Gravity(float fall_speed, float fall_max, float jump_max)
+void DiploidPhysics::SetGravitySize(float size)
 {
-	if (gravity > fall_max)
+	gravity = size;
+}
+
+float DiploidPhysics::Gravity(float fall_max)
+{
+	if (gravity_buffer > fall_max)
 	{
-		gravity = fall_max;
+		gravity_buffer = fall_max;
 	}
 
-	gravity = fall_speed + gravity;
+	gravity_buffer = gravity + gravity_buffer;
 
-	return -gravity;
+	return -gravity_buffer;
+}
+
+float DiploidPhysics::GetGracitySize()
+{
+	return gravity;
 }
 
 void DiploidPhysics::GravityReset()
 {
-	gravity = 0.0f;
+	gravity_buffer = 0.0f;
 }
 
-void DiploidPhysics::JumpOn()
+
+float DiploidPhysics::Jump(float jump_max)
 {
-	jump_button = true;//ジャンプボタンフラグをtrueに
+	if (jump_buffer > jump_max)
+	{
+		jump_buffer = jump_max;
+	}
+
+	jump_buffer = gravity + jump_buffer;
+
+	return jump_buffer;
 }
 
-void DiploidPhysics::JumpOff()
+void DiploidPhysics::JumpReset()
 {
-	jump_button = false;//ジャンプボタンフラグをtrueに
+	jump_buffer = 0.0f;
 }

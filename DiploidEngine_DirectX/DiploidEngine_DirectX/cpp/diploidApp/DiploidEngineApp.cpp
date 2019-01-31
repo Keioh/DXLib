@@ -71,60 +71,43 @@ void DiploidEngineApp::Init()//ゲーム起動時に一回だけ初期化したい処理を記述。
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数値処理)
 {
-	float gravity = object.physics.Gravity(0.4f, 12.0f);
+	float gravity = object.physics.Gravity(5.0f);
 
-	if (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_DOWN) == 0)//PLAYER下が衝突していないときの処理
+	for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
 	{
+		diploidEngineImpact.SetBoxPositionAnimation(count, VGet(0, gravity, 0));
+		diploidEngineLayer.SetTOPAnimationPosition(count, VGet(0, gravity, 0));
+	}
 
+	if ((diploidEngineInput.GetPressKey(KEY_INPUT_D) == 1) && (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_RIGHT) == 0))
+	{
 		for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
 		{
-			diploidEngineImpact.SetBoxPositionAnimation(count, VGet(0, gravity, 0));
-			diploidEngineLayer.SetTOPAnimationPosition(count, VGet(0, gravity, 0));
-		}
-
-		if ((diploidEngineInput.GetPressKey(KEY_INPUT_D) == 1) && (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_RIGHT) == 0))
-		{
-			for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
-			{
-				diploidEngineImpact.SetBoxPositionAnimation(count, VGet(-4, gravity, 0));
-				diploidEngineLayer.SetTOPAnimationPosition(count, VGet(-4, gravity, 0));
-			}
-		}
-
-		if ((diploidEngineInput.GetPressKey(KEY_INPUT_A) == 1) && (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_LEFT) == 0))
-		{
-			for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
-			{
-				diploidEngineImpact.SetBoxPositionAnimation(count, VGet(4, gravity, 0));
-				diploidEngineLayer.SetTOPAnimationPosition(count, VGet(4, gravity, 0));
-			}
+			diploidEngineImpact.SetBoxPositionAnimation(count, VGet(-4, gravity, 0));
+			diploidEngineLayer.SetTOPAnimationPosition(count, VGet(-4, gravity, 0));
 		}
 	}
-	else//PLAYER下が衝突しているときの処理
+
+	if ((diploidEngineInput.GetPressKey(KEY_INPUT_A) == 1) && (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_LEFT) == 0))
+	{
+		for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
+		{
+			diploidEngineImpact.SetBoxPositionAnimation(count, VGet(4, gravity, 0));
+			diploidEngineLayer.SetTOPAnimationPosition(count, VGet(4, gravity, 0));
+		}
+	}
+
+
+	if ((diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_DOWN) == 1))//PLAYER下が衝突しているときの処理
 	{
 		object.physics.GravityReset();
 
-		for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
-		{
-			diploidEngineImpact.SetBoxPositionAnimation(count, VGet(0, 0, 0));
-			diploidEngineLayer.SetTOPAnimationPosition(count, VGet(0, 0, 0));
-		}
-
-		if ((diploidEngineInput.GetPressKey(KEY_INPUT_D) == 1) && (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_RIGHT) == 0))
+		if ((diploidEngineInput.GetPressKey(KEY_INPUT_SPACE) == 1))
 		{
 			for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
 			{
-				diploidEngineImpact.SetBoxPositionAnimation(count, VGet(-4, 0, 0));
-				diploidEngineLayer.SetTOPAnimationPosition(count, VGet(-4, 0, 0));
-			}
-		}
-
-		if ((diploidEngineInput.GetPressKey(KEY_INPUT_A) == 1) && (diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_LEFT) == 0))
-		{
-			for (int count = OBJECT_NUMBER_PLAYER_MAX; count != diploidEngineImpact.box_vector.size(); ++count)
-			{
-				diploidEngineImpact.SetBoxPositionAnimation(count, VGet(4, 0, 0));
-				diploidEngineLayer.SetTOPAnimationPosition(count, VGet(4, 0, 0));
+				diploidEngineImpact.SetBoxPositionAnimation(count, VGet(0, -gravity, 0));
+				diploidEngineLayer.SetTOPAnimationPosition(count, VGet(0, -gravity, 0));
 			}
 		}
 	}

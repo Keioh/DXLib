@@ -36,6 +36,8 @@ void DiploidEngineSetting::SetBegin()
 	SetAlwaysRunFlag(TRUE);//ウィンドウ非アクティブで処理を実行
 
 	SetFullScreenScalingMode(DX_FSSCALINGMODE_NEAREST);//画像補間の変更
+
+	SetEnableXAudioFlag(TRUE);//XAudioフラグ
 }
 
 void DiploidEngineSetting::SetEnd()

@@ -796,6 +796,49 @@ void DiploidEngineImpact::SetBoxPositionAnimation(int number, VECTOR move_speed)
 	}
 }
 
+void DiploidEngineImpact::SetBoxPositionAnimationX(int number, float move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetBoxPositionAnimationY(int number, float move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->move_speed.y = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetBoxPositionAnimationZ(int number, float move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->move_speed.z = move_speed;
+			}
+		}
+	}
+}
+
+
 void DiploidEngineImpact::SetCirclePositionAnimation(int number, VECTOR move_speed)
 {
 	if (!circle_vector.empty())
@@ -810,6 +853,35 @@ void DiploidEngineImpact::SetCirclePositionAnimation(int number, VECTOR move_spe
 	}
 }
 
+void DiploidEngineImpact::SetCirclePositionAnimationX(int number, float move_speed)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				circle->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetCirclePositionAnimationY(int number, float move_speed)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->number == number)
+			{
+				circle->move_speed.y = move_speed;
+			}
+		}
+	}
+}
+
+
 void DiploidEngineImpact::SetPointPositionAnimation(int number, VECTOR move_speed)
 {
 	if (!point_vector.empty())
@@ -819,6 +891,34 @@ void DiploidEngineImpact::SetPointPositionAnimation(int number, VECTOR move_spee
 			if (point->number == number)
 			{
 				point->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetPointPositionAnimationX(int number, float move_speed)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->number == number)
+			{
+				point->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetPointPositionAnimationY(int number, float move_speed)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->number == number)
+			{
+				point->move_speed.y = move_speed;
 			}
 		}
 	}
