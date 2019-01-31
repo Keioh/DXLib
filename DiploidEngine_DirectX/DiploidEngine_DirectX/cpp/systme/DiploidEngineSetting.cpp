@@ -7,7 +7,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_y = 720;
 	window_bit = 32;
 	refresh_rate = 60;
-	window_mode = TRUE;
+	window_mode = FALSE;
 	window_name = "DiploidEngine ver0.03";
 }
 

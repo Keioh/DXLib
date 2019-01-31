@@ -16,7 +16,10 @@ class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidObject object;
+	float test, p1,p2;
+	int number = -1;
 
+	VECTOR test1, test2;
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

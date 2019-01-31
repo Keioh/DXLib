@@ -970,6 +970,38 @@ void DiploidEngineImpact::SetBoxPositionAdd(int number, VECTOR position)
 	}
 }
 
+void DiploidEngineImpact::SetBoxPositionYAdd(int number, float position)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->position.y += position;
+			}
+		}
+	}
+}
+
+
+void DiploidEngineImpact::SetBoxPosition(int number, VECTOR position)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->number == number)
+			{
+				box->position.x = position.x;
+				box->position.y = position.y;
+				box->position.z = position.z;
+			}
+		}
+	}
+}
+
+
 void DiploidEngineImpact::SetCirclePositionAdd(int number, VECTOR position)
 {
 	if (!circle_vector.empty())
@@ -1404,7 +1436,7 @@ void DiploidEngineImpact::SetLineLayerNumber(int target_number, int set_number)
 }
 
 
-int DiploidEngineImpact::GetBoxImpactFlag(int number)
+bool DiploidEngineImpact::GetBoxImpactFlag(int number)
 {
 	if (!box_vector.empty())
 	{
@@ -1417,10 +1449,10 @@ int DiploidEngineImpact::GetBoxImpactFlag(int number)
 		}
 	}
 
-	return 0;
+	return false;
 }
 
-int DiploidEngineImpact::GetPointImpactFlag(int number)
+bool DiploidEngineImpact::GetPointImpactFlag(int number)
 {
 	if (!point_vector.empty())
 	{
@@ -1433,10 +1465,10 @@ int DiploidEngineImpact::GetPointImpactFlag(int number)
 		}
 	}
 
-	return 0;
+	return false;
 }
 
-int DiploidEngineImpact::GetCircleImpactFlag(int number)
+bool DiploidEngineImpact::GetCircleImpactFlag(int number)
 {
 	if (!circle_vector.empty())
 	{
@@ -1449,10 +1481,10 @@ int DiploidEngineImpact::GetCircleImpactFlag(int number)
 		}
 	}
 
-	return 0;
+	return false;
 }
 
-int DiploidEngineImpact::GetLineImpactFlag(int number)
+bool DiploidEngineImpact::GetLineImpactFlag(int number)
 {
 	if (!line_vector.empty())
 	{
@@ -1465,5 +1497,20 @@ int DiploidEngineImpact::GetLineImpactFlag(int number)
 		}
 	}
 
-	return 0;
+	return false;
+}
+
+
+DiploidBox DiploidEngineImpact::GetBoxInfo(int number)
+{
+	if (!box_vector.empty())
+	{
+		for (int count = 0; count != box_vector.size(); ++count)
+		{
+			if (box_vector[count].number == number)
+			{
+				return box_vector[count];
+			}
+		}
+	}
 }

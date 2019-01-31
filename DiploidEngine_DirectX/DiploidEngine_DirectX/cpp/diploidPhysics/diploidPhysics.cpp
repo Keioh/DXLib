@@ -28,16 +28,30 @@ void DiploidPhysics::GravityReset()
 }
 
 
-float DiploidPhysics::Jump(float jump_max)
+float DiploidPhysics::Jump(float jump_power)
 {
-	if (jump_buffer > jump_max)
+	if (jump_flag == true)
 	{
-		jump_buffer = jump_max;
+		if (jump_buffer > jump_power)
+		{
+			jump_buffer = jump_power;
+			GravityReset();
+			jump_flag = false;
+		}
+
+		jump_buffer = gravity + jump_buffer;
+	}
+	else
+	{
+		JumpReset();
 	}
 
-	jump_buffer = gravity + jump_buffer;
-
 	return jump_buffer;
+}
+
+void DiploidPhysics::JumpOn()
+{
+	jump_flag = true;
 }
 
 void DiploidPhysics::JumpReset()

@@ -96,8 +96,12 @@ public:
 	void SetCircleSizeAnimation(int number, float move_size = 0.0f);//circle配列から特定のcircleを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 
 	void SetBoxPositionAdd(int number, VECTOR position = { 0,0,0 });//box配列から特定のboxを見つけて元ある座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetBoxPositionYAdd(int number, float position = 0.0f);//box配列から特定のboxを見つけて元あるY座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
 	void SetCirclePositionAdd(int number, VECTOR position = { 0,0,0 });//circle配列から特定のcircleを見つけて元ある座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetPointPositionAdd(int number, VECTOR position = { 0,0,0 });//point配列から特定のpointを見つけて元ある座標に指定数値分だけを足す。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+	void SetBoxPosition(int number, VECTOR position = { 0.0f,0.0f,0.0f });
 
 	VECTOR GetBoxCenterPosition(int number);//box配列から特定のboxを見つけてそのboxの中心点の座標を得ます。
 	VECTOR GetCircleCenterPosition(int number);//circle配列から特定のcircleを見つけてそのcircleの中心点の座標を得ます。
@@ -147,9 +151,10 @@ public:
 
 
 	//オブジェクトが衝突しているか調べる関数。
-	int GetBoxImpactFlag(int number);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
-	int GetPointImpactFlag(int number);//point配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
-	int GetCircleImpactFlag(int number);//circle配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
-	int GetLineImpactFlag(int number);//line配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetBoxImpactFlag(int number);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetPointImpactFlag(int number);//point配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetCircleImpactFlag(int number);//circle配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetLineImpactFlag(int number);//line配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
 
+	DiploidBox GetBoxInfo(int number);
 };

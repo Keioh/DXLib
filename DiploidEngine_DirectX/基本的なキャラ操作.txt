@@ -8,7 +8,7 @@ void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイルを作る処理。
 void DiploidEngineApp::Load()//ゲーム起動時に1回だけロードするデータ(音や画像やセーブデータやマップデータなど)
 {	
 	object.map.Load("texter/MAP/test_map.png", 128, 128);//マップ画像データを読み込み(最後のx,yは画像の大きさを指定)
-	object.image.Load("texter/test_map_chip/testTIle_16.png");
+	object.image.Load("texter/test_map_chip/01_ground_rock_32_32.png");
 }
 
 void DiploidEngineApp::Init()//ゲーム起動時に一回だけ初期化したい処理を記述。
@@ -109,7 +109,7 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 		}
 	}
 
-	//PLAYER下が衝突しているときの処理
+	//PLAYER_BOX下が衝突しているときの処理
 	if ((diploidEngineImpact.GetBoxImpactFlag(OBJECT_NUMBER_PLAYER_DOWN) == true))
 	{
 		object.physics.GravityReset();//重力を初期化。

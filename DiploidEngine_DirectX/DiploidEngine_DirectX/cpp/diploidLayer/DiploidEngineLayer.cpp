@@ -161,6 +161,64 @@ void DiploidEngineLayer::SetTOPAnimationPosition(int number, VECTOR move_speed)
 	}
 }
 
+void DiploidEngineLayer::SetTOPAnimationPositionX(int number, float move_speed)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetTOPAnimationPositionY(int number, float move_speed)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->move_speed.y = move_speed;
+			}
+		}
+	}
+}
+
+
+void DiploidEngineLayer::SetTOPPositionYAdd(int number, float move_speed)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->move_speed.y += move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetTOPPosition(int number, VECTOR position)
+{
+	if (!image_top_vector.empty())
+	{
+		for (auto top = image_top_vector.begin(); top != image_top_vector.end(); ++top)
+		{
+			if (top->number == number)
+			{
+				top->position = position;
+			}
+		}
+	}
+}
+
+
 void DiploidEngineLayer::SetMIDAnimationPosition(int number, VECTOR move_speed)
 {
 	if (!image_mid_vector.empty())
