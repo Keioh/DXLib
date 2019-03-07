@@ -201,6 +201,18 @@
     <ClCompile Include="cpp\diploidPhysics\diploidPhysics.cpp">
       <Filter>ソース ファイル\cpp\diploidPhysics</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\data\dice.cpp">
+      <Filter>ソース ファイル\data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\number.cpp">
+      <Filter>ソース ファイル\data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\custom_number.cpp">
+      <Filter>ソース ファイル\data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\dice_3d6n.cpp">
+      <Filter>ソース ファイル\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -289,6 +301,18 @@
     </ClInclude>
     <ClInclude Include="header\diploidPhysics\diploidPhysics.h">
       <Filter>ヘッダー ファイル\header\diploidPhysics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\dice.h">
+      <Filter>ヘッダー ファイル\data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\number.h">
+      <Filter>ヘッダー ファイル\data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\custom_number.h">
+      <Filter>ヘッダー ファイル\data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\dice_3d6n.h">
+      <Filter>ヘッダー ファイル\data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

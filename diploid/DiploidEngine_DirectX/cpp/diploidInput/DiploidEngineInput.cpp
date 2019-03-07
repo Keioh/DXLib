@@ -36,7 +36,7 @@ void DiploidEngineInput::Draw(int x, int y ,bool debug)
 
 bool DiploidEngineInput::GetMouse(int DXLIB_MOUSE_CODE)
 {
-	if ((MOUSE_BUTTON & DXLIB_MOUSE_CODE) != 0)
+	if ((GetMouseInput() & DXLIB_MOUSE_CODE) != 0)
 	{
 		return true;
 	}
@@ -46,19 +46,22 @@ bool DiploidEngineInput::GetMouse(int DXLIB_MOUSE_CODE)
 
 bool DiploidEngineInput::GetPressMouse(int DXLIB_MOUSE_CODE)
 {
-	if (Check_Mouse != -1)
+	if (GetMouse(DXLIB_MOUSE_CODE) == true)
 	{
-		if (GetMouse(DXLIB_MOUSE_CODE) == true)
+		press_time_mouse++;
+
+		if (press_time_mouse <= 1)
 		{
-			if (LOG_TYPE == MOUSE_INPUT_LOG_DOWN)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
+			return true;
 		}
+		else if (press_time_mouse >= 2)
+		{
+			return false;
+		}
+	}
+	else
+	{
+		press_time_mouse = 0;
 	}
 
 	return false;

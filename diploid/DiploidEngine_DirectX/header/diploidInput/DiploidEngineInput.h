@@ -21,9 +21,15 @@ private:
 	int mouse_pos_adr_x;
 	int mouse_pos_adr_y;
 
+	bool press_click_mouse;
+	bool release_click_mouse;
+
+	int press_time_mouse = 0;
+	int release_time_mouse = 0;
 
 	int press_time = 0;//‰Ÿ‚µ‚Ä‚¢‚éŠÔ
 	int release_time = 0;//—£‚µ‚Ä‚¢‚éŠÔ
+
 
 public:	
 	char Key[256];

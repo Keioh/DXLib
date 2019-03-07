@@ -11,16 +11,15 @@
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
 
+//ゲームデータ関連
+#include "data/dice_3d6n.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObject dice_1;
-	DiploidObject dice_2;
-	DiploidObject dice_3;
-	DiploidObject dice_4;
-	DiploidObject dice_5;
-	DiploidObject dice_6;
+	DiploidPoint point;//マウス判定用
+
+	Dice3D6n dice_3d6n;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

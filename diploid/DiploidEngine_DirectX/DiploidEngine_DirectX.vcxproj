@@ -128,6 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cpp\data\custom_number.cpp" />
+    <ClCompile Include="cpp\data\dice.cpp" />
+    <ClCompile Include="cpp\data\dice_3d6n.cpp" />
+    <ClCompile Include="cpp\data\number.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
@@ -158,6 +162,10 @@
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="header\data\custom_number.h" />
+    <ClInclude Include="header\data\dice.h" />
+    <ClInclude Include="header\data\dice_3d6n.h" />
+    <ClInclude Include="header\data\number.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
     <ClInclude Include="header\diploidGraphics\diploidBox.h" />

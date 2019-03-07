@@ -47,11 +47,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		diploid_engine_app.Draw();//メイン描写
 
-		diploid_engine_app.diploidEngineInput.Draw(1000, 0, true);//入力判定の表示(debug情報あり)
+		diploid_engine_app.diploidEngineInput.Draw(1000, 0, false);//入力判定の表示(debug情報あり)
 
 		diploid_engine_app.diploidEngineScreen.Update();//FPSをアップデート
 
-		diploid_engine_app.diploidEngineScreen.Draw(800,0,true);//FPSを表示(debug情報あり)
+		diploid_engine_app.diploidEngineScreen.Draw(800,0,false);//FPSを表示(debug情報あり)
 
 		ScreenFlip();//表画面へ描写
 
@@ -64,6 +64,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	InitSoftImage();//メモリ上にあるソフトウェア画像をすべて削除
 	InitGraph();//メモリ上にある画像データをすべて削除
 	InitSoundMem();//メモリにあるサウンドをすべて削除
+	InitKeyInput();//すべてのキー入力を削除
 	diploid_engine_app.diploidEngineSetting.End();//エンジンの終了
 
 	return 0;
