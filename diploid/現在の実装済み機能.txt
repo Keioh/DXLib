@@ -1,14 +1,32 @@
-diploidEngineApp			各処理をまとめるクラス。一言でいうとループ
-	･Load();				ゲーム起動時にロードするデータを記述。(Init処理より前に呼ばれます)
-	･Init();				最初に一回だけ初期化したい処理を記述。
-	･Updata();			アニメーションなど連続して行いたい処理。つまりループ処理。
-	･Draw();				結果を描写する処理。
+diploidEngineApp			各処理をまとめるクラス。一言でいうとループ処理
+	･void FileCreate();			ゲーム起動時に一度だけファイルを作る処理。
+	･void Load();			ゲーム起動時にロードするデータを記述。(Init処理より前に呼ばれます)
+	･void Init();			最初に一回だけ初期化したい処理を記述。
+	･void Updata();			アニメーションなど連続して行いたい処理。つまりループ処理。
+	･void Draw();			結果を描写する処理。
+
+DiploidEngineMain			よく使うかもしれな関数を定義していることがあります。
+	･VECTOR WindowSize();		windowサイズを取得(z値はBIT)
+
+DiploidEngineSetting		DxLibの設定やWindowサイズなどの変数と関数。
+	･int window_x, window_y, window_bit, refresh_rate;	ウィンドウサイズとリフレッシュレート
+	･int window_mode;					TRUEでウィンドウモード
+	･const char* window_name;				アプリケーションの名前
+
+	･void Init();					DxLib初期化処理。初期化に失敗(-1)した場合はアプリケーションを終了します。
+	･void SetBegin();					DxLib初期化処理より前に設定する項目。
+	･void SetEnd();					DxLib初期化処理後に設定する項目。
+	･void End();					ゲーム終了をするときに呼ぶDxLib終了処理。
 
 diploidEngineTag			オブジェクトの名前を登録するクラス。
-	･enum NAME			クラス内にあるenumに名前を追加していってください。
+	･enum NAME			クラス内にあるenumに名前を追加していってください。	
 
-diploidScreen			フレームレートなどフレームに関するクラス
-	
+DiploidEngineScreen		スクリーンに関する処理です。(関数の説明は省きます。第6感覚で感じて)
+	void Init(int setting_fps = 60);
+	void Update();
+	void Draw(int x = 0, int y = 0, bool debug = false);	FPSを表示します。
+	void Wait();
+
 
 diploidEngineObjectInformaiton	オブジェクトの基本クラス(基本的に使わないと思います)
 	･int name_tag;			diploidEngineTagのNAMEにある使いたい名前を代入。
@@ -36,7 +54,7 @@ DiploidEngineImage			イメージ画像オブジェクトを表示する基本クラス
 	･int revers_y = FALSE;		Y軸に対しての画像反転(TRUEで反転)
 	･int GRAPHICS_SIZE_X;		読み込んだ画像の現在のX方向の大きさ(ドット数)
 	･int GRAPHICS_SIZE_Y;		読み込んだ画像の現座のY方向の大きさ(ドット数)
-	･bool destory = false;		削除フラグ(trueを指定した場合、対象を削除します。主にLayerシステムで使用してください。)
+	･bool destory = false;		削除フラグ(trueを指定した場合、対象を削除します。主にLayerシステムで使用しています。)
 	･void Load(const char* path);		画像データを読み込みます。
 	･void Init(VECTOR pos = {0.0f,0.0f,0.0f}, 
 		double size_scale = 1.0f, 
@@ -53,14 +71,67 @@ diploidEngineImpact			衝突関連のクラス
 	･ImpactCirclePoint();		点と円の当たり判定の処理
 	･ImpactCircleCircle();		円と円の当たり判定の処理
 	･ImpactBoxPoint();			四角と点の当たり判定の処理
+
 	･PushCircle(DiploidCircle circle);	円をvectorにプッシュバックします。
 	･PushPoint(DiploidPoint point);	点をvectorにプッシュバックします。
 	･PushBox(DiploidBox box);		四角をvectorにプッシュバックします。
+
 	･DestoryCircle();			destoryがtrueの場合かつ、impacted(衝突)している円を削除。
+
 	･Init();				初期化処理(処理は特にない)
-	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。
+	･Updata();			Impact~系関数をまとめた奴です。これ一つ呼べば全ての衝突判定が可能。(ただしデフォルトで呼ばれる為、明示的に記述しなくてよい)
 	･Draw(bool wire = true);		wireをfalseにするとワイヤーフレームとメモリ占有量(おおざっぱ)とオブジェクト数を表示しない。
-	･SetBoxAnimation(int number, VECTOR move_speed = { 0,0,0 }, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけてアニメーション値を変更する。
+	
+	･VECTOR GetBoxCenterPosition(int number)	box配列から特定のboxを見つけてそのboxの中心点の座標を得ます。
+	･VECTOR GetCircleCenterPosition(int number)	circle配列から特定のcircleを見つけてそのcircleの中心点の座標を得ます。
+	･VECTOR GetPointPosition(int number)		point配列から特定のpointを見つけてそのpointの座標を得ます。
+
+	･int GetEndBox()				box配列の現在の配列数を取得。(配列になにもなければ-1を返す。)
+	･int GetEndCircle()				circle配列の現在の配列数を取得。(配列になにもなければ-1を返す。)
+	･int GetEndPoint()				point配列の現在の配列数を取得。(配列になにもなければ-1を返す。)
+	･int GetEndLine()				line配列の現在の配列数を取得。(配列になにもなければ-1を返す。)
+
+	･int GetBoxNumber(int target)			box配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	･int GetPointNumber(int target)		point配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	･int GetCircleNumber(int target)		circle配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	･int GetLineNumber(int target)		line配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+
+	･int GetBoxLayerNumber(int target)		box配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	･int GetPointLayerNumber(int target)		point配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	･int GetCircleLayerNumber(int target)		circle配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	･int GetLineLayerNumber(int target)		line配列の最初から数えてｘ番目のレイヤー番号を取得する。
+
+	･bool GetBoxImpactFlag(int number)		box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	･bool GetPointImpactFlag(int number)		point配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	･bool GetCircleImpactFlag(int number)		circle配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	･bool GetLineImpactFlag(int number)		line配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+
+	･void SetBoxPositionAnimation(int number, 
+					VECTOR move_speed = { 0.0f,0.0f,0.0f });	box配列から特定のboxを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetBoxPositionAnimationX(int number, 
+					float move_speed = 0.0f);			box配列から特定のboxを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetBoxPositionAnimationY(int number, 
+					float move_speed = 0.0f);			box配列から特定のboxを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	
+	･void SetCirclePositionAnimation(int number, 
+					VECTOR move_speed = { 0.0f,0.0f,0.0f });	circle配列から特定のcircleを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetCirclePositionAnimationX(int number, 
+					float move_speed = 0.0f);			circle配列から特定のcircleを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetCirclePositionAnimationY(int number, 
+					float move_speed = 0.0f);			circle配列から特定のcircleを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+	･void SetPointPositionAnimation(int number, 
+					VECTOR move_speed = { 0.0f,0.0f,0.0f });	point配列から特定のpointを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetPointPositionAnimationX(int number, 
+					float move_speed = 0.0f);			point配列から特定のpointを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetPointPositionAnimationY(int number, 
+					float move_speed = 0.0f);			point配列から特定のpointを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+	void SetBoxSizeAnimation(int number,
+				 VECTOR move_size = { 0,0,0 })			box配列から特定のboxを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetCircleSizeAnimation(int number,
+				 float move_size = 0.0f)				circle配列から特定のcircleを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
 
 
 diploidEngineLayer			イメージ画像表示管理関連のクラス
@@ -70,8 +141,56 @@ diploidEngineLayer			イメージ画像表示管理関連のクラス
 	･void Updata();				アニメーションなど連続した処理を実行します。
 	･void Draw(bool draw = true);		レイヤー配列にあるイメージ画像を描写します。(drawをfalseにするとイメージ画像を表示しません)
 
+	･int GetTOPNumber(int target);		top配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	･int GetMIDNumber(int target);		mid配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+	･int GetBOTNumber(int target);		bot配列の最初から数えてｘ番目のオブジェクト番号を取得する。
+
+	･int GetTOPLayerNumber(int target);		top配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	･int GetMIDLayerNumber(int target);		mid配列の最初から数えてｘ番目のレイヤー番号を取得する。
+	･int GetBOTLayerNumber(int target);		bot配列の最初から数えてｘ番目のレイヤー番号を取得する。
+
+	･void SetTOPAnimationPosition(int number,
+					 VECTOR move_speed = { 0.0f,0.0f,0.0f });	top配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。
+	･void SetTOPAnimationPositionX(int number,
+					 float move_speed = 0.0f);			top配列の指定のオブジェクト番号の画像のX座標アニメーション値を変更する。
+	･void SetTOPAnimationPositionY(int number, 
+					float move_speed = 0.0f);			top配列の指定のオブジェクト番号の画像のY座標アニメーション値を変更する。
+
+	･void SetTOPPositionYAdd(int number, float move_speed = 0.0f);			top配列の指定のオブジェクト番号の画像のY座標に値をたす。
+
+	･void SetTOPPosition(int number, VECTOR position = {0.0f,0.0f,0.0f});		top配列の指定のオブジェクト番号の画像の座標をセットする。
+
+
+	･void SetMIDAnimationPosition(int number, 
+					VECTOR move_speed = { 0,0,0 });		mid配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。
+	･void SetBOTAnimationPosition(int number, 
+					VECTOR move_speed = { 0,0,0 });		bot配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。
+
+	･void SetTOPAnimationAngle(int number, float angle = 0.0f);				top配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。
+	･void SetMIDAnimationAngle(int number, float angle = 0.0f);				mid配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。
+	･void SetBOTAnimationAngle(int number, float angle = 0.0f);				bot配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。
+
+	･void SetTOPAnimationSize(int number, VECTOR size = { 0,0,0 });			top配列の指定のオブジェクト番号の画像の大きさアニメーション値を変更する。
+	･void SetMIDAnimationSize(int number, VECTOR size = { 0,0,0 });			mid配列の指定のオブジェクト番号の画像の大きさアニメーション値を変更する。
+	･void SetBOTAnimationSize(int number, VECTOR size = { 0,0,0 });			bot配列の指定のオブジェクト番号の画像の大きさアニメーション値を変更する。
+
+	･void SetTOPAnimationScale(int number, float scale = 0.0f);				top配列の指定のオブジェクト番号の画像の拡大縮小アニメーション値を変更する。(使用非推奨。サイズ変更する場合は上記のSize()関数を使うこと)
+	･void SetMIDAnimationScale(int number, float scale = 0.0f);				mid配列の指定のオブジェクト番号の画像の拡大縮小アニメーション値を変更する。(使用非推奨。サイズ変更する場合は上記のSize()関数を使うこと)
+	･void SetBOTAnimationScale(int number, float scale = 0.0f);				bot配列の指定のオブジェクト番号の画像の拡大縮小アニメーション値を変更する。(使用非推奨。サイズ変更する場合は上記のSize()関数を使うこと)
+
+
+DiploidEngineFile(使用は可能ですが仮機能です)
+	･int file_handl;						ファイルハンドル
+	･int Craete(const char* path);					ファイルを作る。同じ場所と名前でこの関数を使用すると白紙で元ファイルが上書きされます(1が返ると成功)
+	･int Load(const char* path);					1以上返ると成功(ファイルハンドルを返す)
+	･int WriteINT(const char* path, const char* name, int data);		ファイルの末尾に書き込みたい数値が返る(整数)スタンドアローンで使用可能{pathでファイル指定、name=dataという形でファイルに書き出す}
+	･float WriteFLOAT(const char* path, const char* name, float data);	ファイルの末尾に書き込みたい数値が返る(小数)スタンドアローンで使用可能{pathでファイル指定、name=dataという形でファイルに書き出す}
+	･void Read(int handl);					ファイルから一行読み出す
+	･void Close(int handl);					ファイルを閉じる(ファイル操作を完了したら必ずこの関数を使ってファイルを閉じてください)
+
+
 diploidEngineSound			サウンド関連のクラス
-	･Load(const char* path);		サウンドハンドルをvector<handl>にプッシュします。pathにデータがある相対パスを指定。
+	･Load(const char* path);		pathにデータがある相対パスを指定。
 	･Play(int play_type = 0);		読み込んだ音を再生します。基本、無指定でワンショット再生をします。
 
 diploidEngineNetwork		ネットワーク関連のクラス(仮)
