@@ -31,7 +31,10 @@ void DiploidEngineInput::Update()
 
 void DiploidEngineInput::Draw(int x, int y ,bool debug)
 {
-	DrawFormatStringF(x, y, GetColor(255, 255, 255), "CHECK MOUSE = %d", Check_Mouse);
+	if (debug == true)
+	{
+		DrawFormatStringF(x, y, GetColor(255, 255, 255), "CHECK MOUSE = %d", Check_Mouse);
+	}
 }
 
 bool DiploidEngineInput::GetMouse(int DXLIB_MOUSE_CODE)

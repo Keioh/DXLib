@@ -52,12 +52,9 @@ void DiploidBox::Draw(bool wire)
 		if (DiploidBox::center_position_draw_flag == true)
 		{
 			DrawCircle(center_position.x, center_position.y, 2, color);
-		}	
-
-		if (SetDrawNameTagFlag() == TRUE)
-		{
-			DrawNameTag();
 		}
+
+		DrawNameTag();
 	}
 }
 
@@ -134,9 +131,12 @@ void DiploidBox::TransformScale(float scale)
 
 void DiploidBox::DrawNameTag()
 {
-	for (int count = 0; count != 1; ++count)
+	if (SetDrawNameTagFlag() == TRUE)
 	{
-		DrawString(GetPosition().x + (count * 20), GetPosition().y, &name_tag[count], GetColor(255, 255, 255));
+		for (int count = 0; count != 1; ++count)
+		{
+			DrawString(GetPosition().x + (count * 20), GetPosition().y, &name_tag[count], GetColor(255, 255, 255));
+		}
 	}
 }
 

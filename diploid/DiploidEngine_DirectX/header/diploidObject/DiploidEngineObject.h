@@ -11,7 +11,8 @@
 #include "diploidInput\DiploidEngineInput.h"
 #include "diploidInput\DiploidEnigneFile.h"
 #include "diploidObject\DiploidMap.h"
-#include "diploidPhysics/diploidPhysics.h"//重力などの物理計算
+#include "diploidPhysics/diploidPhysics.h"
+#include "diploidObject/DiploidEngineTag.h"
 
 class DiploidObject
 {
@@ -29,6 +30,9 @@ public:
 	
 	DiploidEngineFile file;//ファイル入出力
 	DiploidMap map;//マップ作製
+
+	Tag tag;//タグ情報の作成(AppにあるdiploidEngineTagのPush関数に代入)
+	DiploidEngineTag tag_system;//タグシステムの作成(AppにあるdiploidEngineTagとは別に新しくシステムを作成したい場合に使用)
 
 	DiploidEngineInput input;//入力機器キーボードやマウス、パッドなど(Appのほうで使ったほうが無駄なメモリを消費しないですむ。シングルトン実装しなければ)
 

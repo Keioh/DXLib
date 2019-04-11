@@ -17,9 +17,6 @@ private:
 	int release_click_position_x;
 	int release_click_position_y;
 
-	//現在のマウス座標
-	int mouse_pos_adr_x;
-	int mouse_pos_adr_y;
 
 	bool press_click_mouse;
 	bool release_click_mouse;
@@ -32,6 +29,11 @@ private:
 
 
 public:	
+
+	//現在のマウス座標
+	int mouse_pos_adr_x;
+	int mouse_pos_adr_y;
+
 	char Key[256];
 
 	int Check_Mouse;

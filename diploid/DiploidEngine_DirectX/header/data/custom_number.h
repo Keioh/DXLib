@@ -40,6 +40,7 @@ private:
 	Number number_3;
 	Number number_4;
 
+
 	DiploidEngineInput input;
 
 	bool in_active = false;

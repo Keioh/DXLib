@@ -25,7 +25,10 @@ void DiploidEngineScreen::Update()
 
 void DiploidEngineScreen::Draw(int x, int y, bool debug)
 {
-	DrawFormatString(x, y, GetColor(255, 255, 255), "%.2f fps", Fps);
+	if (debug == true)
+	{
+		DrawFormatString(x, y, GetColor(255, 255, 255), "%.2f fps", Fps);
+	}
 }
 
 void DiploidEngineScreen::Wait()

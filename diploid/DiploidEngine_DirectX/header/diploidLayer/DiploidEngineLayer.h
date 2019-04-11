@@ -41,9 +41,9 @@ public:
 	void SetTOPAnimationPositionX(int number, float move_speed = 0.0f);//top配列の指定のオブジェクト番号の画像のX座標アニメーション値を変更する。
 	void SetTOPAnimationPositionY(int number, float move_speed = 0.0f);//top配列の指定のオブジェクト番号の画像のY座標アニメーション値を変更する。
 
-	void SetTOPPositionYAdd(int number, float move_speed = 0.0f);//top配列の指定のオブジェクト番号の画像のY座標アニメーション値をたす。
+	void SetTOPPositionYAdd(int number, float move_speed = 0.0f);//top配列の指定のオブジェクト番号の画像のY座標に値をたす。
 
-	void SetTOPPosition(int number, VECTOR position = {0.0f,0.0f,0.0f});//top配列の指定のオブジェクト番号の画像のY座標アニメーション値をたす。
+	void SetTOPPosition(int number, VECTOR position = {0.0f,0.0f,0.0f});//top配列の指定のオブジェクト番号の画像の座標をセットする。
 
 
 	void SetMIDAnimationPosition(int number, VECTOR move_speed = { 0,0,0 });//mid配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。

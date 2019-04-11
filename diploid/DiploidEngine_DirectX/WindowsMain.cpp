@@ -21,8 +21,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	diploid_engine_app.diploidEngineInput.Init();//入力機器初期化
 
 	while (ProcessMessage() == 0)
-	{
-		
+	{		
 		diploid_engine_app.diploidEngineScreen.Init();//FPS初期化
 
 		diploid_engine_app.diploidEngineNetwork.Update();//ネット処理の更新
@@ -43,15 +42,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app.diploidEngineInput.Update();//入力機器アップデート
 
 		diploid_engine_app.diploidEngineLayer.Draw(false);//レイヤー画像を表示(debug情報あり)
-		diploid_engine_app.diploidEngineImpact.Draw(true,false);//衝突範囲を描写(debug情報あり)
+		diploid_engine_app.diploidEngineImpact.Draw(true);//衝突範囲を描写(debug情報あり)
 
 		diploid_engine_app.Draw();//メイン描写
 
-		diploid_engine_app.diploidEngineInput.Draw(1000, 0, false);//入力判定の表示(debug情報あり)
+		diploid_engine_app.diploidEngineInput.Draw(1000, 0);//入力判定の表示(debug情報あり)
 
 		diploid_engine_app.diploidEngineScreen.Update();//FPSをアップデート
 
-		diploid_engine_app.diploidEngineScreen.Draw(800,0,false);//FPSを表示(debug情報あり)
+		diploid_engine_app.diploidEngineScreen.Draw(800,0);//FPSを表示(debug情報あり)
 
 		ScreenFlip();//表画面へ描写
 

@@ -3,12 +3,12 @@
 DiploidEngineSetting::DiploidEngineSetting()
 {
 	//windowŠÖ˜A
-	window_x = 1280/2;
-	window_y = 720/2;
+	window_x = 1280;
+	window_y = 720;
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "TRPG DICE ver0.01";//Diploid Engine ver0.03
+	window_name = "Diploid Engine ver0.03";//Diploid Engine ver0.03
 }
 
 void DiploidEngineSetting::Init()

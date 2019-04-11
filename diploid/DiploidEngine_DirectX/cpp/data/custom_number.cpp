@@ -41,10 +41,10 @@ void CustomNumber::Load()
 
 void CustomNumber::Init(VECTOR pos, float scale)
 {
-	number_1.Init(VAdd(pos, VGet(0 + (24 * 2), -48, 0)), scale);
-	number_2.Init(VAdd(pos, VGet(-24 + (24 * 2), -48, 0)), scale);
-	number_3.Init(VAdd(pos, VGet(-48 + (24 * 2), -48, 0)), scale);
-	number_4.Init(VAdd(pos, VGet(-72 + (24 * 2), -48, 0)), scale);
+	number_1.Init(VAdd(pos, VGet(0 + (24 * scale), -48, 0)), scale);
+	number_2.Init(VAdd(pos, VGet(-24 + (24 * scale), -48, 0)), scale);
+	number_3.Init(VAdd(pos, VGet(-48 + (24 * scale), -48, 0)), scale);
+	number_4.Init(VAdd(pos, VGet(-72 + (24 * scale), -48, 0)), scale);
 
 	plus.image.Init(VAdd(pos, VGet(36 * scale, 0, 0)), scale);
 	minus.image.Init(VAdd(pos, VGet(36 * scale, 24 * scale, 0)), scale);
@@ -70,6 +70,7 @@ void CustomNumber::Init(VECTOR pos, float scale)
 	back_2_copy.image.Init(VAdd(pos, VGet(36 * scale, 24 * scale, 0)), scale);
 	edge_2_copy.image.Init(VAdd(pos, VGet(36 * scale, 24 * scale, 0)), scale);
 	mark_2_copy.image.Init(VAdd(pos, VGet(36 * scale, 24 * scale, 0)), scale);
+
 
 }
 
@@ -131,15 +132,26 @@ void CustomNumber::Update(DiploidEngineImpact& impact, DiploidEngineInput& input
 	{
 		if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
 		{
-			key_input_handl = MakeKeyInput(3, TRUE, TRUE, TRUE);
+			if (in_active == false)
+			{
 
-			in_active = true;
+				key_input_handl = MakeKeyInput(3, TRUE, TRUE, TRUE);
+
+				in_active = true;
+			}
+			else
+			{
+				DeleteKeyInput(custom_number);
+
+				in_active = false;
+			}
 		}
 	}
 
+
 	//数値を入力
 	if (in_active == true)
-	{			
+	{
 		DrawBox(0, (720 / 2) - 24, 1280 / 2, 720 / 2, GetColor(20, 20, 20), TRUE);
 
 		SetActiveKeyInput(key_input_handl);
@@ -159,6 +171,7 @@ void CustomNumber::Update(DiploidEngineImpact& impact, DiploidEngineInput& input
 		}
 	}
 
+
 	//マイナスの数値を取らないようにする。
 	if (custom_number < 0)
 	{
@@ -171,6 +184,7 @@ void CustomNumber::Update(DiploidEngineImpact& impact, DiploidEngineInput& input
 		custom_number = 999;
 	}
 }
+
 
 void CustomNumber::Draw(DiploidEngineImpact& impact, bool draw)
 {

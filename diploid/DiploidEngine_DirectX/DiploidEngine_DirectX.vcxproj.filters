@@ -213,6 +213,9 @@
     <ClCompile Include="cpp\data\dice_3d6n.cpp">
       <Filter>ソース ファイル\data</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\data\dice_result_bord.cpp">
+      <Filter>ソース ファイル\data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -312,6 +315,9 @@
       <Filter>ヘッダー ファイル\data</Filter>
     </ClInclude>
     <ClInclude Include="header\data\dice_3d6n.h">
+      <Filter>ヘッダー ファイル\data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\dice_result_bord.h">
       <Filter>ヘッダー ファイル\data</Filter>
     </ClInclude>
   </ItemGroup>
