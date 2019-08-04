@@ -1644,6 +1644,23 @@ bool DiploidEngineImpact::GetLineImpactFlag(int number)
 }
 
 
+bool DiploidEngineImpact::GetBoxImpactFlag_Sreach_Name_Tag(std::string name_tag)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->name_tag == name_tag)
+			{
+				return box->impacted;
+			}
+		}
+	}
+
+	return false;
+}
+
+
 DiploidBox DiploidEngineImpact::GetBoxInfo(int number)
 {
 	if (!box_vector.empty())

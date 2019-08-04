@@ -5,6 +5,7 @@
 #include "diploidApp\DiploidEngineMain.h"//心臓部分(必ず呼ぶ)
 #include "diploidObject\DiploidEngineObject.h"//円や四角や画像や音など、オブジェクト全般
 #include "system\DiploidEngineMath.h"//数学式関連(DxLibもしくはC++標準もしくはその他の数学ライブラリの使用を推奨)
+#include "diploidUI/diploidUI.h"
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
@@ -15,7 +16,8 @@
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObject object;	
+	DiploidObject object;
+	DiploidUI ui;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
