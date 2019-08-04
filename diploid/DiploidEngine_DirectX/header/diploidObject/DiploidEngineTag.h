@@ -11,14 +11,13 @@
 #define DIPLOID_LAYER_03 3
 #define DIPLOID_LAYER_04 4
 
-//仮マクロ
+//仮マクロ(ダイスプログラムで使用)
 #define OBJECT_NUMBER_POINT 0//ポイント
 #define OBJECT_NUMBER_PLUS_BUTTON 1//プラスボタン
 #define OBJECT_NUMBER_MINUS_BUTTON 2//マイナスボタン
 #define OBJECT_NUMBER_CUSTOM_NUMBER_BUTTON 3//カスタムナンバーボタン
 #define OBJECT_NUMBER_CLEAR_BUTTON 4//クリアボタン
 
-#define TEST_OBJECT 5
 
 
 

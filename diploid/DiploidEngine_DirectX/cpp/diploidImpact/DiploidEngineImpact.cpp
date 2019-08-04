@@ -939,6 +939,49 @@ void DiploidEngineImpact::SetCirclePositionAnimationY(int number, float move_spe
 }
 
 
+void DiploidEngineImpact::SetCirclePositionAnimation_Sreach_Object_Name(std::string name_tag, VECTOR move_speed)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->name_tag == name_tag)
+			{
+				circle->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetCirclePositionAnimationX_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->name_tag == name_tag)
+			{
+				circle->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetCirclePositionAnimationY_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->name_tag == name_tag)
+			{
+				circle->move_speed.y = move_speed;
+			}
+		}
+	}
+}
+
+
 void DiploidEngineImpact::SetPointPositionAnimation(int number, VECTOR move_speed)
 {
 	if (!point_vector.empty())
@@ -974,6 +1017,49 @@ void DiploidEngineImpact::SetPointPositionAnimationY(int number, float move_spee
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
+			{
+				point->move_speed.y = move_speed;
+			}
+		}
+	}
+}
+
+
+void DiploidEngineImpact::SetPointPositionAnimation_Sreach_Object_Name(std::string name_tag, VECTOR move_speed)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->name_tag == name_tag)
+			{
+				point->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetPointPositionAnimationX_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->name_tag == name_tag)
+			{
+				point->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetPointPositionAnimationY_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->name_tag == name_tag)
 			{
 				point->move_speed.y = move_speed;
 			}

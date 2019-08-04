@@ -15,13 +15,13 @@
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObject *object = new DiploidObject;
-	
+	DiploidObject object;	
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ
-	void Init();//最初に一回だけ初期化したい処理を記述。
+	void Init();//最初に一回だけ初期化したい処理を記述。	
+	void LoadUpdata();//ループ中に一度だけデータをロードしたい処理を記述。(仮)
 	void Updata();//アニメーションなど連続して行いたい処理。
 	void Draw();//結果を描写する処理
 	void End();//engine終了前処理。

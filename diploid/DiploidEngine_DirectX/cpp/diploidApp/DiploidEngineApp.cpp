@@ -13,22 +13,16 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	object->box.Init(VGet(100, 300, 0), VGet(20, 60, 0));
-	object->box.name_tag = "test_object";
-	object->box.layer_number = DIPLOID_LAYER_00;
-	diploidEngineImpact.PushBox(object->box);
 
-	object->box.Init(VGet(100, 300, 0), VGet(20, 60, 0));
-	object->box.name_tag = "test_object_1";
-	object->box.layer_number = DIPLOID_LAYER_01;
-	diploidEngineImpact.PushBox(object->box);
+}
+
+void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
+{
 
 }
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-	diploidEngineImpact.SetBoxPositionAnimation_Sreach_Object_Name("test_object", VGet(0.5f, 0, 0));
-	diploidEngineImpact.SetBoxPositionAnimation_Sreach_Object_Name("test_object_1", VGet(0.1f, 0.1f, 0));
 
 }
 

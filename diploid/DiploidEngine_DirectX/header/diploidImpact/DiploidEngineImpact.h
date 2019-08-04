@@ -93,10 +93,19 @@ public:
 	void SetCirclePositionAnimationX(int number, float move_speed = 0.0f);//circle配列から特定のcircleを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetCirclePositionAnimationY(int number, float move_speed = 0.0f);//circle配列から特定のcircleを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 
+	void SetCirclePositionAnimation_Sreach_Object_Name(std::string name_tag, VECTOR move_speed = { 0,0,0 });//circle配列から特定のcircleを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetCirclePositionAnimationX_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//circle配列から特定のcircleを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetCirclePositionAnimationY_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//circle配列から特定のcircleを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+
 	//POINT(Position)
 	void SetPointPositionAnimation(int number, VECTOR move_speed = { 0,0,0 });//point配列から特定のpointを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetPointPositionAnimationX(int number, float move_speed = 0.0f);//point配列から特定のpointを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetPointPositionAnimationY(int number, float move_speed = 0.0f);//point配列から特定のpointを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+	void SetPointPositionAnimation_Sreach_Object_Name(std::string name_tag, VECTOR move_speed = { 0,0,0 });//point配列から特定のpointを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetPointPositionAnimationX_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//point配列から特定のpointを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetPointPositionAnimationY_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//point配列から特定のpointを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 
 
 	void SetBoxSizeAnimation(int number, VECTOR move_size = { 0,0,0 });//box配列から特定のboxを見つけて拡大アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
