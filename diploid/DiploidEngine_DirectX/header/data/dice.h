@@ -1,5 +1,6 @@
 #pragma once
 #include "diploidObject/DiploidEngineObject.h"
+#include "diploidImpact/DiploidEngineImpact.h"
 
 //‚³‚¢‚±‚ë‚Ìˆ—
 class Dice
@@ -13,6 +14,8 @@ private:
 	DiploidObject dice_4;
 	DiploidObject dice_5;
 	DiploidObject dice_6;
+
+	DiploidBox box;
 
 	DiploidEngineInput input;
 
@@ -28,6 +31,7 @@ public:
 
 	void Load();//‰æ‘œ‚Ì“Ç‚İ‚İB
 	void Init(VECTOR pos = { 0.0f,0.0f,0.0f }, float scale = 1.0f);//‰Šú‰»
+	void Push(DiploidEngineImpact& impact, VECTOR pos, float scale);//“–‚½‚è”»’è’Ç‰Á
 	void Update();//XVˆ—
 	void Draw(bool draw = true);//•`Êˆ—
 

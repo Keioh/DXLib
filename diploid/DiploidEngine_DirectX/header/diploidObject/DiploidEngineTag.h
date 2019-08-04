@@ -4,10 +4,12 @@
 #include <string>
 
 //変更非推奨マクロ
-#define DIPLOID_ENGINE_UI 0
-#define DIPLOID_ENGINE_GAMEOBJECT 1
-#define DIPLOID_ENGINE_MAP_HIT_OBJECT 2//マップとキャラクタのヒットレイヤー
-#define DIPLOID_ENGINE_PLAYER_ENEMY_HIT_OBJECT 3//PLAYERとENEMYのヒットレイヤー(例：攻撃判定など)
+//レイヤー番号(0～4)
+#define DIPLOID_LAYER_00 0
+#define DIPLOID_LAYER_01 1
+#define DIPLOID_LAYER_02 2
+#define DIPLOID_LAYER_03 3
+#define DIPLOID_LAYER_04 4
 
 //仮マクロ
 #define OBJECT_NUMBER_POINT 0//ポイント

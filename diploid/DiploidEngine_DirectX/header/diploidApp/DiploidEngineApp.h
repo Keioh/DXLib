@@ -1,5 +1,6 @@
 //中枢です。
 #pragma once
+#include <vector>
 #include "DxLib.h"//Dxlib本体
 #include "diploidApp\DiploidEngineMain.h"//心臓部分(必ず呼ぶ)
 #include "diploidObject\DiploidEngineObject.h"//円や四角や画像や音など、オブジェクト全般
@@ -9,15 +10,14 @@
 #include "diploidStandalone\standalone.h"//未実装
 
 //ゲームデータ関連
-#include "data/dice_3d6n.h"
-#include "data/dice_result_bord.h"
-
+#include "data/dice.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObject object;
+	DiploidObject *object = new DiploidObject;
 	
+
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

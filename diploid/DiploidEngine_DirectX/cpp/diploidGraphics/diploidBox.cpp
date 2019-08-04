@@ -54,7 +54,7 @@ void DiploidBox::Draw(bool wire)
 			DrawCircle(center_position.x, center_position.y, 2, color);
 		}
 
-		DrawNameTag();
+		//DrawNameTag();
 	}
 }
 

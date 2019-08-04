@@ -32,6 +32,15 @@ void Dice::Init(VECTOR pos, float scale)
 
 }
 
+void Dice::Push(DiploidEngineImpact& impact, VECTOR pos, float scale)
+{
+	box.Init(pos, VScale(VGet(24, 24, 0), scale));
+	box.number = impact.GetAllArraySize();
+	box.name_tag = "1D6";
+	impact.PushBox(box);
+
+}
+
 void Dice::Update()
 {	
 	input.Update();
@@ -65,6 +74,11 @@ void Dice::Update()
 
 void Dice::Draw(bool draw)
 {
+	if (draw == true)
+	{
+		
+	}
+
 	switch (dice_number)
 	{
 	case 1:

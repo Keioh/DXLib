@@ -68,6 +68,8 @@ DiploidEngineObject			点、円、四角、イメージ画像などのオブジェクトを一つにまとめ
 	･DiploidPoint point;			点を描写するための変数。
 
 diploidEngineImpact			衝突関連のクラス
+	･AutoNumber();			オブジェクト番号を付けるのがめんどいときの自動オブジェクト番号付与処理。(全てのオブジェクトは番号が異なるようになる。ループ処理に組み込むと動作が重くなるかも)
+
 	･ImpactCirclePoint();		点と円の当たり判定の処理
 	･ImpactCircleCircle();		円と円の当たり判定の処理
 	･ImpactBoxPoint();			四角と点の当たり判定の処理
@@ -106,6 +108,7 @@ diploidEngineImpact			衝突関連のクラス
 	･bool GetCircleImpactFlag(int number)		circle配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
 	･bool GetLineImpactFlag(int number)		line配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
 
+	//numberをもとに変更
 	･void SetBoxPositionAnimation(int number, 
 					VECTOR move_speed = { 0.0f,0.0f,0.0f });	box配列から特定のboxを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	･void SetBoxPositionAnimationX(int number, 
@@ -113,6 +116,15 @@ diploidEngineImpact			衝突関連のクラス
 	･void SetBoxPositionAnimationY(int number, 
 					float move_speed = 0.0f);			box配列から特定のboxを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	
+	//name_tagをもとに変更
+	･void SetBoxPositionAnimation_Sreach_Object_Name(std::string name_tag,
+					VECTOR move_speed = { 0.0f,0.0f,0.0f });	box配列から特定のboxを見つけて座標アニメーション値を変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetBoxPositionAnimationX_Sreach_Object_Name(std::string name_tag, 
+					float move_speed = 0.0f);			box配列から特定のboxを見つけてX座標アニメーション値だけを変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+	･void SetBoxPositionAnimationY_Sreach_Object_Name(std::string name_tag, 
+					float move_speed = 0.0f);			box配列から特定のboxを見つけてY座標アニメーション値だけを変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+
 	･void SetCirclePositionAnimation(int number, 
 					VECTOR move_speed = { 0.0f,0.0f,0.0f });	circle配列から特定のcircleを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	･void SetCirclePositionAnimationX(int number, 

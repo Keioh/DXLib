@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 #include <algorithm>
 #include "diploidObject\DiploidEngineObject.h"
 #include "system\DiploidEngineMath.h"
@@ -80,6 +81,12 @@ public:
 	void SetBoxPositionAnimationX(int number, float move_speed = 0.0f);//box配列から特定のboxを見つけてX座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetBoxPositionAnimationY(int number, float move_speed = 0.0f);//box配列から特定のboxを見つけてY座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
 	void SetBoxPositionAnimationZ(int number, float move_speed = 0.0f);//box配列から特定のboxを見つけてZ座標アニメーション値だけを変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)
+
+	void SetBoxPositionAnimation_Sreach_Object_Name(std::string name_tag, VECTOR move_speed = { 0.0f,0.0f,0.0f });//box配列から特定のboxを見つけて座標アニメーション値を変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetBoxPositionAnimationX_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//box配列から特定のboxを見つけてX座標アニメーション値だけを変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetBoxPositionAnimationY_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//box配列から特定のboxを見つけてY座標アニメーション値だけを変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+	void SetBoxPositionAnimationZ_Sreach_Object_Name(std::string name_tag, float move_speed = 0.0f);//box配列から特定のboxを見つけてZ座標アニメーション値だけを変更する。(name_tagにはオブジェクト名を入れること。配列に追加した後に数値を変更したい場合に使用)
+
 
 	//CIRCLE(Position)
 	void SetCirclePositionAnimation(int number, VECTOR move_speed = { 0,0,0 });//circle配列から特定のcircleを見つけて座標アニメーション値を変更する。(numberにはオブジェクト番号を入れること。配列に追加した後に数値を変更したい場合に使用)

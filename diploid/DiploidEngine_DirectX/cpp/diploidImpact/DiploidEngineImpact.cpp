@@ -839,6 +839,63 @@ void DiploidEngineImpact::SetBoxPositionAnimationZ(int number, float move_speed)
 }
 
 
+void DiploidEngineImpact::SetBoxPositionAnimation_Sreach_Object_Name(std::string name_tag, VECTOR move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->name_tag == name_tag)
+			{
+				box->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetBoxPositionAnimationX_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->name_tag == name_tag)
+			{
+				box->move_speed.x = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetBoxPositionAnimationY_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->name_tag == name_tag)
+			{
+				box->move_speed.y = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineImpact::SetBoxPositionAnimationZ_Sreach_Object_Name(std::string name_tag, float move_speed)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->name_tag == name_tag)
+			{
+				box->move_speed.z = move_speed;
+			}
+		}
+	}
+}
+
+
 void DiploidEngineImpact::SetCirclePositionAnimation(int number, VECTOR move_speed)
 {
 	if (!circle_vector.empty())

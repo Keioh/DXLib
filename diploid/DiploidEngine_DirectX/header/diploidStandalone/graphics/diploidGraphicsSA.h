@@ -1,14 +1,15 @@
 #pragma once
 #include "DxLib.h"
-#include "diploidStandalone\base_standalone.h"
 
 
-class DiploidGraphicsStandalone : public BaseStandalone
+
+class DiploidGraphicsStandalone
 {
 private:
 
 public:
 	DiploidGraphicsStandalone();
 	~DiploidGraphicsStandalone();
+
 
 };
