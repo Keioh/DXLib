@@ -18,6 +18,7 @@ class DiploidEngineApp : public DiploidEngineMain
 private:
 	DiploidObject object;
 	DiploidUI ui;
+	Dice dice;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

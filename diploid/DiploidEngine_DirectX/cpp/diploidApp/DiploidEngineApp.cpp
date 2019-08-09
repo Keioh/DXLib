@@ -8,11 +8,13 @@ void DiploidEngineApp::FileCreate()//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ƒtƒ@ƒCƒ‹‚ğì‚éˆ—B
 
 void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒZ[ƒuƒf[ƒ^‚âƒ}ƒbƒvƒf[ƒ^‚È‚Ç)
 {
-
+	dice.Load();
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
+	dice.Init(VGet(50, 50, 0));//ƒ_ƒCƒXƒIƒuƒWƒFƒNƒg‰Šú‰»
+
 	//ƒ}ƒEƒXƒ|ƒCƒ“ƒg
 	object.point.mouse_point_move_flag = true;
 	diploidEngineImpact.PushPoint(object.point);
@@ -20,6 +22,8 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“
 	ui.OneClickButton_Init(VGet(50,50,0),VGet(50,50,0), "one_click_button");//‰Šú‰»
 	ui.OneClickButton_Push(diploidEngineImpact);//“–‚½‚è”»’è‚Ì”z—ñ‚Éƒf[ƒ^‚ğƒvƒbƒVƒ…
+
+	diploidEngineImpact.AutoNumber();//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ©“®‚ÅU‚è•ª‚¯
 }
 
 void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
@@ -29,17 +33,20 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
 	//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“‚ÌXV
-	ui.OneClickButton_Update(diploidEngineImpact, diploidEngineInput);
+	if (ui.OneClickButton_Update(diploidEngineImpact, diploidEngineInput) == true)
+	{
+		dice.Roll();
+	}
 
-	//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“‚Ì“–‚½‚è”»’è‚ğˆÚ“®‚³‚¹‚éê‡‚ÍdiploidEngineImpact‚©‚ç’¼Ú‚¢‚¶‚é
-	diploidEngineImpact.SetBoxPositionAnimation_Sreach_Object_Name("one_click_button", VGet(0.5f, 0, 0));
+	dice.Update();
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
 	//‰æ‘œ‚ğg‚í‚È‚¢ê‡ABOX‚ğ•`Ê‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B(‚½‚¾‚µAdiploidEngineImpact‚É‚æ‚Á‚ÄOneClickButton_Draw‚Ìposition‚Í•Ï“®‚µ‚Ü‚¹‚ñB)
-	ui.OneClickButton_Draw();	
+	ui.OneClickButton_Draw();
 
+	dice.Draw();
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

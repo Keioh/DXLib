@@ -47,7 +47,7 @@ void Dice::Update()
 
 
 	//スペースボタンを押したら
-	if (input.GetPressKey(KEY_INPUT_SPACE) == true)
+	if (input.GetPressKey(KEY_INPUT_F10) == true)
 	{
 		roll_time = GetRand(20) + 40;
 		dice_roll = true;//さいころを振るフラグを立てる。
@@ -108,4 +108,11 @@ void Dice::Draw(bool draw)
 	default:
 		break;
 	}
+}
+
+void Dice::Roll()
+{
+	roll_time = GetRand(20) + 40;
+	dice_roll = true;//さいころを振るフラグを立てる。
+	dice_roll_active = true;//さいころを振っているというフラグを立てる。
 }

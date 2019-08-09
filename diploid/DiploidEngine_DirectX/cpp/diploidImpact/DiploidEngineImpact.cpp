@@ -612,7 +612,7 @@ void DiploidEngineImpact::AutoNumber()
 	//point
 	for (auto count = point_vector.begin(); count != point_vector.end(); ++count)
 	{
-		count->number = point_count;//オブジェクト番号を変更
+		count->number = point_count + box_count;//オブジェクト番号を変更
 		point_count += 1;//オブジェクト番号を足す。
 	}
 
@@ -621,7 +621,7 @@ void DiploidEngineImpact::AutoNumber()
 	//circle
 	for (auto count = circle_vector.begin(); count != circle_vector.end(); ++count)
 	{
-		count->number = circle_count;//オブジェクト番号を変更
+		count->number = circle_count + box_count + point_count;//オブジェクト番号を変更
 		circle_count += 1;//オブジェクト番号を足す。
 	}
 
@@ -630,7 +630,7 @@ void DiploidEngineImpact::AutoNumber()
 	//line
 	for (auto count = line_vector.begin(); count != line_vector.end(); ++count)
 	{
-		count->number = line_count;//オブジェクト番号を変更
+		count->number = line_count + box_count + point_count + circle_count;//オブジェクト番号を変更
 		line_count += 1;//オブジェクト番号を足す。
 	}
 

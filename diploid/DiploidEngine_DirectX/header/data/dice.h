@@ -35,4 +35,6 @@ public:
 	void Update();//更新処理
 	void Draw(bool draw = true);//描写処理
 
+	void Roll();//ダイスを振る
+
 };
