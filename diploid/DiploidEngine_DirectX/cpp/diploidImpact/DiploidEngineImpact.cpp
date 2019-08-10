@@ -1652,7 +1652,67 @@ bool DiploidEngineImpact::GetBoxImpactFlag_Sreach_Name_Tag(std::string name_tag)
 		{
 			if (box->name_tag == name_tag)
 			{
-				return box->impacted;
+				if (box->impacted == true)
+				{
+					return true;					
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool DiploidEngineImpact::GetPointImpactFlag_Sreach_Name_Tag(std::string name_tag)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->name_tag == name_tag)
+			{
+				if (point->impacted == true)
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool DiploidEngineImpact::GetCircleImpactFlag_Sreach_Name_Tag(std::string name_tag)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->name_tag == name_tag)
+			{
+				if (circle->impacted == true)
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool DiploidEngineImpact::GetLineImpactFlag_Sreach_Name_Tag(std::string name_tag)
+{
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			if (line->name_tag == name_tag)
+			{
+				if (line->impacted == true)
+				{
+					return true;
+				}
 			}
 		}
 	}

@@ -8,22 +8,38 @@ void DiploidEngineApp::FileCreate()//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ƒtƒ@ƒCƒ‹‚ğì‚éˆ—B
 
 void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒZ[ƒuƒf[ƒ^‚âƒ}ƒbƒvƒf[ƒ^‚È‚Ç)
 {
-	dice.Load();
+	object.map.Load("texter/MAP/map.png", 10, 6);
+	object.image.Load("texter/map_chip/ƒCƒ‰ƒXƒg4.png");
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	dice.Init(VGet(50, 50, 0));//ƒ_ƒCƒXƒIƒuƒWƒFƒNƒg‰Šú‰»
+	object.map.SetMapChipSize(128);
+	object.map.Create();
 
-	//ƒ}ƒEƒXƒ|ƒCƒ“ƒg
-	object.point.mouse_point_move_flag = true;
-	diploidEngineImpact.PushPoint(object.point);
+	object.box.Init(VGet(1280 - (128 * 3), 720 - 128 -80, 0), VGet(64, 128, 0));
+	object.box.name_tag = "player_box";
+	object.box.layer_number = DIPLOID_LAYER_00;
+	diploidEngineImpact.PushBox(object.box);
 
-	//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“
-	ui.OneClickButton_Init(VGet(50,50,0),VGet(50,50,0), "one_click_button");//‰Šú‰»
-	ui.OneClickButton_Push(diploidEngineImpact);//“–‚½‚è”»’è‚Ì”z—ñ‚Éƒf[ƒ^‚ğƒvƒbƒVƒ…
 
-	diploidEngineImpact.AutoNumber();//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ©“®‚ÅU‚è•ª‚¯
+	for (auto count = object.map.MAP.begin(); count != object.map.MAP.end(); ++count)
+	{
+		if ((count->red == 0) && (count->green == 0) && (count->blue == 0) && (count->alph == 255))
+		{
+			object.box.Init(VGet(count->x * count->size, count->y * count->size, 0), VGet(count->size, count->size, 0));
+			object.box.name_tag = "ground_box";
+			object.box.layer_number = DIPLOID_LAYER_00;
+			diploidEngineImpact.PushBox(object.box);
+
+			object.image.Init(VGet(count->x * count->size + 64, count->y * count->size + 64, 0));
+			object.image.name_tag = "ground_image";
+			object.box.layer_number = DIPLOID_LAYER_00;
+			diploidEngineLayer.PushMidGraphics(object.image);
+		}
+	}
+
+	diploidEngineImpact.AutoNumber();
 }
 
 void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
@@ -32,21 +48,36 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-	//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“‚ÌXV
-	if (ui.OneClickButton_Update(diploidEngineImpact, diploidEngineInput) == true)
+	//d—Íˆ—
+	if (diploidEngineImpact.GetBoxImpactFlag_Sreach_Name_Tag("ground_box") == false)
 	{
-		dice.Roll();
+		diploidEngineImpact.SetBoxPositionAnimationY_Sreach_Object_Name("player_box", -object.physics.Gravity());
+	}
+	else
+	{
+		object.physics.GravityReset();
+		diploidEngineImpact.SetBoxPositionAnimationY_Sreach_Object_Name("player_box", 0.0f);
 	}
 
-	dice.Update();
+	//‰EˆÚ“®
+	if (diploidEngineInput.GetKey(KEY_INPUT_RIGHT) == true)
+	{
+		diploidEngineImpact.SetBoxPositionAnimationX_Sreach_Object_Name("player_box", 3.0f);
+	}
+	//¶ˆÚ“®
+	else if (diploidEngineInput.GetKey(KEY_INPUT_LEFT) == true)
+	{
+		diploidEngineImpact.SetBoxPositionAnimationX_Sreach_Object_Name("player_box", -3.0f);
+	}
+	else
+	{
+		diploidEngineImpact.SetBoxPositionAnimationX_Sreach_Object_Name("player_box", 0.0f);
+	}
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
-	//‰æ‘œ‚ğg‚í‚È‚¢ê‡ABOX‚ğ•`Ê‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚·B(‚½‚¾‚µAdiploidEngineImpact‚É‚æ‚Á‚ÄOneClickButton_Draw‚Ìposition‚Í•Ï“®‚µ‚Ü‚¹‚ñB)
-	ui.OneClickButton_Draw();
 
-	dice.Draw();
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

@@ -20,6 +20,8 @@ private:
 	DiploidUI ui;
 	Dice dice;
 
+	DiploidPhysics physics;
+
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

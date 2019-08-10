@@ -173,6 +173,9 @@ public:
 	bool GetLineImpactFlag(int number);//line配列の最初から数えてｘ番目のオブジェクト衝突フラグ取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
 
 	bool GetBoxImpactFlag_Sreach_Name_Tag(std::string name_tag);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetPointImpactFlag_Sreach_Name_Tag(std::string name_tag);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetCircleImpactFlag_Sreach_Name_Tag(std::string name_tag);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
+	bool GetLineImpactFlag_Sreach_Name_Tag(std::string name_tag);//box配列のオブジェクト衝突フラグを取得する。(numberにはオブジェクト番号、0でヒットなし、１でヒットしている)
 
 
 	DiploidBox GetBoxInfo(int number);
