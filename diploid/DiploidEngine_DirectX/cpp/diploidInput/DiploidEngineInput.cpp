@@ -37,6 +37,7 @@ void DiploidEngineInput::Draw(int x, int y ,bool debug)
 	}
 }
 
+
 bool DiploidEngineInput::GetMouse(int DXLIB_MOUSE_CODE)
 {
 	if ((GetMouseInput() & DXLIB_MOUSE_CODE) != 0)
@@ -85,6 +86,27 @@ bool DiploidEngineInput::GetReleaseMouse(int DXLIB_MOUSE_CODE)
 
 	return false;
 }
+
+int DiploidEngineInput::GetWhellVolume()
+{
+	return mouse_whell_volume = GetMouseWheelRotVol();
+}
+
+float DiploidEngineInput::GetWhellVolume_Scale(float max, float min, float scale)
+{
+	if (max < mouse_whell_scale)
+	{
+		mouse_whell_scale = max;
+	}
+	
+	if (min > mouse_whell_scale)
+	{
+		mouse_whell_scale = min;
+	}
+
+	return mouse_whell_scale += mouse_whell_volume * scale;
+}
+
 
 bool DiploidEngineInput::GetKey(int DXLIB_KEY_CODE)
 {
@@ -137,6 +159,7 @@ bool DiploidEngineInput::GetReleaseKey(int DXLIB_KEY_CODE)
 
 	return false;
 }
+
 
 VECTOR DiploidEngineInput::GetMousePressPosition()
 {

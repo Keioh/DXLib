@@ -77,6 +77,8 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
+	DrawFormatString(0, 0, GetColor(0, 0, 0), "center_val = %d", diploidEngineInput.GetWhellVolume());
+	DrawFormatString(0, 20, GetColor(0, 0, 0), "scale_val = %.2f", diploidEngineInput.GetWhellVolume_Scale());
 
 }
 
