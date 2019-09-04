@@ -1,328 +1,160 @@
-Å@Å@Å@libjpeg
-Å@Å@Å@Å@Å@Copyright (C) 1991-2013, Thomas G. Lane, Guido Vollbeding.
-Å@Å@Å@Å@Å@this software is based in part on the work of the Independent JPEG Group
-
-
-Å@Å@Å@libtiff
-Å@Å@Å@Å@Å@Copyright (c) 1988-1997 Sam Leffler
-Å@Å@Å@Å@Å@Copyright (c) 1991-1997 Silicon Graphics, Inc.
-
-Å@Å@Å@Å@Å@Permission to use, copy, modify, distribute, and sell this software and 
-Å@Å@Å@Å@Å@its documentation for any purpose is hereby granted without fee, provided
-Å@Å@Å@Å@Å@that (i) the above copyright notices and this permission notice appear in
-Å@Å@Å@Å@Å@all copies of the software and related documentation, and (ii) the names of
-Å@Å@Å@Å@Å@Sam Leffler and Silicon Graphics may not be used in any advertising or
-Å@Å@Å@Å@Å@publicity relating to the software without the specific, prior written
-Å@Å@Å@Å@Å@permission of Sam Leffler and Silicon Graphics.
-
-Å@Å@Å@Å@Å@THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
-Å@Å@Å@Å@Å@EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
-Å@Å@Å@Å@Å@WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. 
-
-Å@Å@Å@Å@Å@IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
-Å@Å@Å@Å@Å@ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
-Å@Å@Å@Å@Å@OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
-Å@Å@Å@Å@Å@WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF 
-Å@Å@Å@Å@Å@LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
-Å@Å@Å@Å@Å@OF THIS SOFTWARE.
-
-
-Å@Å@Å@libpng
-Å@Å@Å@Å@Å@Copyright (c) 2004, 2006-2012 Glenn Randers-Pehrson.
-
-
-Å@Å@Å@zlib
-Å@Å@Å@Å@Å@Copyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
-
-
-Å@Å@Å@Bullet
-Å@Å@Å@Å@Å@Copyright (c) 2003-2006 Erwin Coumans.
-
-
-Å@Å@Å@ogg_static, vorbis_static, vorbisfile_static, libtheora_static
-Å@Å@Å@Å@Å@Å@Copyright (C) 2002-2009 Xiph.org Foundation
-
-Å@Å@Å@Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@Å@Å@Å@are met:
-
-Å@Å@Å@Å@Å@Å@- Redistributions of source code must retain the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@Å@Å@Å@- Neither the name of the Xiph.org Foundation nor the names of its
-Å@Å@Å@Å@Å@Å@contributors may be used to endorse or promote products derived from
-Å@Å@Å@Å@Å@Å@this software without specific prior written permission.
-
-Å@Å@Å@Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-Å@Å@Å@Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-Å@Å@Å@Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-Å@Å@Å@Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
-Å@Å@Å@Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-Å@Å@Å@Å@Å@Å@SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-Å@Å@Å@Å@Å@Å@LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-Å@Å@Å@Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-Å@Å@Å@Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-Å@Å@Å@Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-Å@Å@Å@Å@Å@Å@OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@Opus audio codec
-Å@Å@Å@Å@Å@Å@Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
-Å@Å@Å@Å@Å@Å@ Jean-Marc Valin, Timothy B. Terriberry,
-Å@Å@Å@Å@Å@Å@ CSIRO, Gregory Maxwell, Mark Borgerding,
-Å@Å@Å@Å@Å@Å@ Erik de Castro Lopo
-
-Å@Å@Å@Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@Å@Å@Å@are met:
-
-Å@Å@Å@Å@Å@Å@- Redistributions of source code must retain the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@Å@Å@Å@- Neither the name of Internet Society, IETF or IETF Trust, nor the
-Å@Å@Å@Å@Å@Å@names of specific contributors, may be used to endorse or promote
-Å@Å@Å@Å@Å@Å@products derived from this software without specific prior written
-Å@Å@Å@Å@Å@Å@permission.
-
-Å@Å@Å@Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-Å@Å@Å@Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-Å@Å@Å@Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-Å@Å@Å@Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
-Å@Å@Å@Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-Å@Å@Å@Å@Å@Å@EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-Å@Å@Å@Å@Å@Å@PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-Å@Å@Å@Å@Å@Å@PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-Å@Å@Å@Å@Å@Å@LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-Å@Å@Å@Å@Å@Å@NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-Å@Å@Å@Å@Å@Å@SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@Opusfile
-Å@Å@Å@Å@Å@Å@Copyright (c) 1994-2013 Xiph.Org Foundation and contributors
-
-Å@Å@Å@Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@Å@Å@Å@are met:
-
-Å@Å@Å@Å@Å@Å@- Redistributions of source code must retain the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@Å@Å@Å@- Neither the name of the Xiph.Org Foundation nor the names of its
-Å@Å@Å@Å@Å@Å@contributors may be used to endorse or promote products derived from
-Å@Å@Å@Å@Å@Å@this software without specific prior written permission.
-
-Å@Å@Å@Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-Å@Å@Å@Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-Å@Å@Å@Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-Å@Å@Å@Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
-Å@Å@Å@Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-Å@Å@Å@Å@Å@Å@SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-Å@Å@Å@Å@Å@Å@LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-Å@Å@Å@Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-Å@Å@Å@Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-Å@Å@Å@Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-Å@Å@Å@Å@Å@Å@OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@Mersenne Twister
-Å@Å@Å@Å@Å@Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
-Å@Å@Å@Å@Å@All rights reserved.
-
-Å@Å@Å@Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@Å@Å@Å@are met:
-
-Å@Å@Å@Å@Å@Å@1. Redistributions of source code must retain the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@Å@Å@Å@2. Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@Å@Å@Å@3. The name of the author may not be used to endorse or promote products
-Å@Å@Å@Å@Å@Å@derived from this software without specific prior written permission.
-
-Å@Å@Å@Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-Å@Å@Å@Å@Å@Å@IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-Å@Å@Å@Å@Å@Å@OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-Å@Å@Å@Å@Å@Å@IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-Å@Å@Å@Å@Å@Å@INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-Å@Å@Å@Å@Å@Å@NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-Å@Å@Å@Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-Å@Å@Å@Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-Å@Å@Å@Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-Å@Å@Å@Å@Å@Å@THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@libjpegÅ@Copyright (C) 1991-2013, Thomas G. Lane, Guido Vollbeding.
-Å@Å@Å@this software is based in part on the work of the Independent JPEG Group
-
-
-Å@Å@Å@libpngÅ@Copyright (C) 2004, 2006-2012 Glenn Randers-Pehrson.
-Å@Å@Å@zlibÅ@Copyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
-
-
-Å@Å@Å@libtiffÅ@Copyright (c) 1988-1997 Sam Leffler
-Å@Å@Å@libtiffÅ@Copyright (c) 1991-1997 Silicon Graphics, Inc.
-
-Å@Å@Å@Permission to use, copy, modify, distribute, and sell this software and 
-Å@Å@Å@its documentation for any purpose is hereby granted without fee, provided
-Å@Å@Å@that (i) the above copyright notices and this permission notice appear in
-Å@Å@Å@all copies of the software and related documentation, and (ii) the names of
-Å@Å@Å@Sam Leffler and Silicon Graphics may not be used in any advertising or
-Å@Å@Å@publicity relating to the software without the specific, prior written
-Å@Å@Å@permission of Sam Leffler and Silicon Graphics.
-
-Å@Å@Å@THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
-Å@Å@Å@EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
-Å@Å@Å@WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. 
-
-Å@Å@Å@IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
-Å@Å@Å@ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
-Å@Å@Å@OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
-Å@Å@Å@WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF 
-Å@Å@Å@LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
-Å@Å@Å@OF THIS SOFTWARE.
-
-
-Å@Å@Å@liboggÅ@Copyright (C) 2002-2009 Xiph.org Foundation
-
-Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@are met:
-
-Å@Å@Å@- Redistributions of source code must retain the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@- Neither the name of the Xiph.org Foundation nor the names of its
-Å@Å@Å@contributors may be used to endorse or promote products derived from
-Å@Å@Å@this software without specific prior written permission.
-
-Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
-Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-Å@Å@Å@SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-Å@Å@Å@LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-Å@Å@Å@OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@Opus audio codec
-Å@Å@Å@Copyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
-Å@Å@Å@ Jean-Marc Valin, Timothy B. Terriberry,
-Å@Å@Å@ CSIRO, Gregory Maxwell, Mark Borgerding,
-Å@Å@Å@ Erik de Castro Lopo
-
-Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@are met:
-
-Å@Å@Å@- Redistributions of source code must retain the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@- Neither the name of Internet Society, IETF or IETF Trust, nor the
-Å@Å@Å@names of specific contributors, may be used to endorse or promote
-Å@Å@Å@products derived from this software without specific prior written
-Å@Å@Å@permission.
-
-Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
-Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-Å@Å@Å@EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-Å@Å@Å@PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-Å@Å@Å@PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-Å@Å@Å@LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-Å@Å@Å@NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-Å@Å@Å@SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@Opusfile
-Å@Å@Å@Copyright (c) 1994-2013 Xiph.Org Foundation and contributors
-
-Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@are met:
-
-Å@Å@Å@- Redistributions of source code must retain the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@- Neither the name of the Xiph.Org Foundation nor the names of its
-Å@Å@Å@contributors may be used to endorse or promote products derived from
-Å@Å@Å@this software without specific prior written permission.
-
-Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
-Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-Å@Å@Å@SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-Å@Å@Å@LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-Å@Å@Å@OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@Mersenne Twister
-Å@Å@Å@Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
-Å@Å@Å@All rights reserved.
-
-Å@Å@Å@Redistribution and use in source and binary forms, with or without
-Å@Å@Å@modification, are permitted provided that the following conditions
-Å@Å@Å@are met:
-
-Å@Å@Å@1. Redistributions of source code must retain the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer.
-
-Å@Å@Å@2. Redistributions in binary form must reproduce the above copyright
-Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-Å@Å@Å@documentation and/or other materials provided with the distribution.
-
-Å@Å@Å@3. The name of the author may not be used to endorse or promote products
-Å@Å@Å@derived from this software without specific prior written permission.
-
-Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-Å@Å@Å@IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-Å@Å@Å@OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-Å@Å@Å@IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-Å@Å@Å@INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-Å@Å@Å@NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-Å@Å@Å@THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Å@Å@Å@BulletÅ@Copyright (c) 2003-2006 Erwin Coumans.
-
-Å@Å@Å@DX Library Copyright (C) 2001-2018 Takumi Yamada.
+„ÄÄ„ÄÄ„ÄÄlibjpeg„ÄÄCopyright (C) 1991-2013, Thomas G. Lane, Guido Vollbeding.
+„ÄÄ„ÄÄ„ÄÄthis software is based in part on the work of the Independent JPEG Group
+
+
+„ÄÄ„ÄÄ„ÄÄlibpng„ÄÄCopyright (C) 2004, 2006-2012 Glenn Randers-Pehrson.
+„ÄÄ„ÄÄ„ÄÄzlib„ÄÄCopyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
+
+
+„ÄÄ„ÄÄ„ÄÄlibtiff„ÄÄCopyright (c) 1988-1997 Sam Leffler
+„ÄÄ„ÄÄ„ÄÄlibtiff„ÄÄCopyright (c) 1991-1997 Silicon Graphics, Inc.
+
+„ÄÄ„ÄÄ„ÄÄPermission to use, copy, modify, distribute, and sell this software and 
+„ÄÄ„ÄÄ„ÄÄits documentation for any purpose is hereby granted without fee, provided
+„ÄÄ„ÄÄ„ÄÄthat (i) the above copyright notices and this permission notice appear in
+„ÄÄ„ÄÄ„ÄÄall copies of the software and related documentation, and (ii) the names of
+„ÄÄ„ÄÄ„ÄÄSam Leffler and Silicon Graphics may not be used in any advertising or
+„ÄÄ„ÄÄ„ÄÄpublicity relating to the software without the specific, prior written
+„ÄÄ„ÄÄ„ÄÄpermission of Sam Leffler and Silicon Graphics.
+
+„ÄÄ„ÄÄ„ÄÄTHE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
+„ÄÄ„ÄÄ„ÄÄEXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
+„ÄÄ„ÄÄ„ÄÄWARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. 
+
+„ÄÄ„ÄÄ„ÄÄIN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR
+„ÄÄ„ÄÄ„ÄÄANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND,
+„ÄÄ„ÄÄ„ÄÄOR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+„ÄÄ„ÄÄ„ÄÄWHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF 
+„ÄÄ„ÄÄ„ÄÄLIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
+„ÄÄ„ÄÄ„ÄÄOF THIS SOFTWARE.
+
+
+„ÄÄ„ÄÄ„ÄÄlibogg„ÄÄCopyright (C) 2002-2009 Xiph.org Foundation
+
+„ÄÄ„ÄÄ„ÄÄRedistribution and use in source and binary forms, with or without
+„ÄÄ„ÄÄ„ÄÄmodification, are permitted provided that the following conditions
+„ÄÄ„ÄÄ„ÄÄare met:
+
+„ÄÄ„ÄÄ„ÄÄ- Redistributions of source code must retain the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer.
+
+„ÄÄ„ÄÄ„ÄÄ- Redistributions in binary form must reproduce the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer in the
+„ÄÄ„ÄÄ„ÄÄdocumentation and/or other materials provided with the distribution.
+
+„ÄÄ„ÄÄ„ÄÄ- Neither the name of the Xiph.org Foundation nor the names of its
+„ÄÄ„ÄÄ„ÄÄcontributors may be used to endorse or promote products derived from
+„ÄÄ„ÄÄ„ÄÄthis software without specific prior written permission.
+
+„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+„ÄÄ„ÄÄ„ÄÄ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+„ÄÄ„ÄÄ„ÄÄLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+„ÄÄ„ÄÄ„ÄÄA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
+„ÄÄ„ÄÄ„ÄÄOR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+„ÄÄ„ÄÄ„ÄÄSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+„ÄÄ„ÄÄ„ÄÄLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+„ÄÄ„ÄÄ„ÄÄDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+„ÄÄ„ÄÄ„ÄÄTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+„ÄÄ„ÄÄ„ÄÄ(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+„ÄÄ„ÄÄ„ÄÄOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+„ÄÄ„ÄÄ„ÄÄOpus audio codec
+„ÄÄ„ÄÄ„ÄÄCopyright 2001-2011 Xiph.Org, Skype Limited, Octasic,
+„ÄÄ„ÄÄ„ÄÄ Jean-Marc Valin, Timothy B. Terriberry,
+„ÄÄ„ÄÄ„ÄÄ CSIRO, Gregory Maxwell, Mark Borgerding,
+„ÄÄ„ÄÄ„ÄÄ Erik de Castro Lopo
+
+„ÄÄ„ÄÄ„ÄÄRedistribution and use in source and binary forms, with or without
+„ÄÄ„ÄÄ„ÄÄmodification, are permitted provided that the following conditions
+„ÄÄ„ÄÄ„ÄÄare met:
+
+„ÄÄ„ÄÄ„ÄÄ- Redistributions of source code must retain the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer.
+
+„ÄÄ„ÄÄ„ÄÄ- Redistributions in binary form must reproduce the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer in the
+„ÄÄ„ÄÄ„ÄÄdocumentation and/or other materials provided with the distribution.
+
+„ÄÄ„ÄÄ„ÄÄ- Neither the name of Internet Society, IETF or IETF Trust, nor the
+„ÄÄ„ÄÄ„ÄÄnames of specific contributors, may be used to endorse or promote
+„ÄÄ„ÄÄ„ÄÄproducts derived from this software without specific prior written
+„ÄÄ„ÄÄ„ÄÄpermission.
+
+„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+„ÄÄ„ÄÄ„ÄÄ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+„ÄÄ„ÄÄ„ÄÄLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+„ÄÄ„ÄÄ„ÄÄA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+„ÄÄ„ÄÄ„ÄÄOR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+„ÄÄ„ÄÄ„ÄÄEXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+„ÄÄ„ÄÄ„ÄÄPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+„ÄÄ„ÄÄ„ÄÄPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+„ÄÄ„ÄÄ„ÄÄLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+„ÄÄ„ÄÄ„ÄÄNEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+„ÄÄ„ÄÄ„ÄÄSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+„ÄÄ„ÄÄ„ÄÄOpusfile
+„ÄÄ„ÄÄ„ÄÄCopyright (c) 1994-2013 Xiph.Org Foundation and contributors
+
+„ÄÄ„ÄÄ„ÄÄRedistribution and use in source and binary forms, with or without
+„ÄÄ„ÄÄ„ÄÄmodification, are permitted provided that the following conditions
+„ÄÄ„ÄÄ„ÄÄare met:
+
+„ÄÄ„ÄÄ„ÄÄ- Redistributions of source code must retain the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer.
+
+„ÄÄ„ÄÄ„ÄÄ- Redistributions in binary form must reproduce the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer in the
+„ÄÄ„ÄÄ„ÄÄdocumentation and/or other materials provided with the distribution.
+
+„ÄÄ„ÄÄ„ÄÄ- Neither the name of the Xiph.Org Foundation nor the names of its
+„ÄÄ„ÄÄ„ÄÄcontributors may be used to endorse or promote products derived from
+„ÄÄ„ÄÄ„ÄÄthis software without specific prior written permission.
+
+„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+„ÄÄ„ÄÄ„ÄÄ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+„ÄÄ„ÄÄ„ÄÄLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+„ÄÄ„ÄÄ„ÄÄA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
+„ÄÄ„ÄÄ„ÄÄOR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+„ÄÄ„ÄÄ„ÄÄSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+„ÄÄ„ÄÄ„ÄÄLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+„ÄÄ„ÄÄ„ÄÄDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+„ÄÄ„ÄÄ„ÄÄTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+„ÄÄ„ÄÄ„ÄÄ(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+„ÄÄ„ÄÄ„ÄÄOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+„ÄÄ„ÄÄ„ÄÄMersenne Twister
+„ÄÄ„ÄÄ„ÄÄCopyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
+„ÄÄ„ÄÄ„ÄÄAll rights reserved.
+
+„ÄÄ„ÄÄ„ÄÄRedistribution and use in source and binary forms, with or without
+„ÄÄ„ÄÄ„ÄÄmodification, are permitted provided that the following conditions
+„ÄÄ„ÄÄ„ÄÄare met:
+
+„ÄÄ„ÄÄ„ÄÄ1. Redistributions of source code must retain the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer.
+
+„ÄÄ„ÄÄ„ÄÄ2. Redistributions in binary form must reproduce the above copyright
+„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer in the
+„ÄÄ„ÄÄ„ÄÄdocumentation and/or other materials provided with the distribution.
+
+„ÄÄ„ÄÄ„ÄÄ3. The name of the author may not be used to endorse or promote products
+„ÄÄ„ÄÄ„ÄÄderived from this software without specific prior written permission.
+
+„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+„ÄÄ„ÄÄ„ÄÄIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+„ÄÄ„ÄÄ„ÄÄOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+„ÄÄ„ÄÄ„ÄÄIN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+„ÄÄ„ÄÄ„ÄÄINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+„ÄÄ„ÄÄ„ÄÄNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+„ÄÄ„ÄÄ„ÄÄDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+„ÄÄ„ÄÄ„ÄÄTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+„ÄÄ„ÄÄ„ÄÄ(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+„ÄÄ„ÄÄ„ÄÄBullet„ÄÄCopyright (c) 2003-2006 Erwin Coumans.
+
+„ÄÄ„ÄÄDX Library Copyright (C) 2001-2019 Takumi Yamada.
