@@ -85,7 +85,9 @@ void DiploidEngineFile::LoadJSON(const char* path)
 		std::exit(EXIT_FAILURE);
 	}
 
-	json_file >> json_data;
+	//json_file >> json_data;
+
+	json_data = json::parse(json_file);
 
 	ptr = &json_data;
 }

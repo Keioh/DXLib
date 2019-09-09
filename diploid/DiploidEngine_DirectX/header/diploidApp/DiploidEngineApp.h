@@ -16,6 +16,7 @@ class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidObject object;
+
 	int json_test;
 	float json_pi;
 	std::string json_string;

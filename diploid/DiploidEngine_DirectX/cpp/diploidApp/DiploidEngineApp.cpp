@@ -11,7 +11,7 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	object.file.LoadJSON("json/test.json");	//jsonƒtƒ@ƒCƒ‹“Ç‚İ‚İ
 	json_test = object.file.GetJSON()["test"];//"test"‚Ìƒf[ƒ^‚ğ“Ç‚İæ‚éB
 	json_pi = object.file.GetJSON()["pi"];//"pi"‚Ìƒf[ƒ^‚ğ“Ç‚İæ‚éB
-	json_string = object.file.GetJSON()["world"].dump();//•¶š—ñ‚Í•¶š‰»‚¯B‚±‚ê‚Í‰pš‚Å‚à“¯‚¶B
+	json_string = object.file.GetJSON()["world"].dump();//•¶š—ñ‚Í•¶š‰»‚¯B‚È‚º‚©“ú–{Œê‚¾‚¯release‚µ‚½‚Æ‚«•¶š‰»‚¯‚µ‚È‚¢B‚È‚ñ‚Å‚âB
 
 }
 
