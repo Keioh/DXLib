@@ -179,6 +179,7 @@
     <ClInclude Include="header\diploidImpact\DiploidEngineImpact.h" />
     <ClInclude Include="header\diploidInput\DiploidEngineInput.h" />
     <ClInclude Include="header\diploidInput\DiploidEnigneFile.h" />
+    <ClInclude Include="header\diploidInput\json.hpp" />
     <ClInclude Include="header\diploidLayer\DiploidEngineLayer.h" />
     <ClInclude Include="header\diploidNetwork\DiploidEngineNetwork.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineObject.h" />

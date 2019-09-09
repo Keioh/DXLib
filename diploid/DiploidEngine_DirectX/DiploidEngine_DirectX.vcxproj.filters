@@ -326,6 +326,9 @@
     <ClInclude Include="header\diploidStandalone\graphics\diploidBoxSA.h">
       <Filter>ヘッダー ファイル\header\diploidStandalone\graphics</Filter>
     </ClInclude>
+    <ClInclude Include="header\diploidInput\json.hpp">
+      <Filter>ヘッダー ファイル\header\diploidInput</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DiploidEngine_DirectX.rc">

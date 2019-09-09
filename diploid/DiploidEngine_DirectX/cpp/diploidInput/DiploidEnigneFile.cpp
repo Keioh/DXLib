@@ -74,3 +74,23 @@ void DiploidEngineFile::Close(int handl)
 {
 	FileRead_close(handl);
 }
+
+
+void DiploidEngineFile::LoadJSON(const char* path)
+{
+	json_file.open(path);
+
+	if (!json_file)
+	{
+		std::exit(EXIT_FAILURE);
+	}
+
+	json_file >> json_data;
+
+	ptr = &json_data;
+}
+
+json DiploidEngineFile::GetJSON()
+{
+	return *ptr;
+}

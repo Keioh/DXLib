@@ -38,6 +38,7 @@ public:
 
 	DiploidPhysics physics;//•¨—ŒvZ
 
+
 	void Init();
 	void Updata();
 	void Draw(bool debug = true);
