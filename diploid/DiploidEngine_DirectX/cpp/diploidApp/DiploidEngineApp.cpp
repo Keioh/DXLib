@@ -11,6 +11,8 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	object.file.LoadJSON("json/test.json");	//jsonƒtƒ@ƒCƒ‹“Ç‚İ‚İ
 	json_test = object.file.GetJSON()["test"];//"test"‚Ìƒf[ƒ^‚ğ“Ç‚İæ‚éB
 	json_pi = object.file.GetJSON()["pi"];//"pi"‚Ìƒf[ƒ^‚ğ“Ç‚İæ‚éB
+	json_string = object.file.GetJSON()["world"].dump();//•¶š—ñ‚Í•¶š‰»‚¯B‚±‚ê‚Í‰pš‚Å‚à“¯‚¶B
+
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
@@ -32,6 +34,8 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
 	DrawFormatString(0, 0, GetColor(0, 0, 0), "%d", json_test);//"test"‚Ì’†g‚ğo—Í
 	DrawFormatString(0, 20, GetColor(0, 0, 0), "%f", json_pi);//"pi"‚Ì’†g‚ğo—Í
+	DrawFormatString(0, 40, GetColor(0, 0, 0), "%s", json_string);//•¶š‰»‚¯
+
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

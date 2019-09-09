@@ -25,6 +25,7 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {
+	SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//文字コード変更
 	SetBackgroundColor(100, 100, 100);
 	SetOutApplicationLogValidFlag(FALSE);//ログ出力関連
 	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
