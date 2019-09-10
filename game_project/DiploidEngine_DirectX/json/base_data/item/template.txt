@@ -1,0 +1,5 @@
+rarity	//レア度　0が最低値
+quality	//質	0が最低値
+size	//大きさ　0が最低値
+Buy price//買い値	0が最低値
+sell_price//売り値	0が最低値
