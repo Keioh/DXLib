@@ -12,14 +12,11 @@
 //ゲームデータ関連
 #include "data/number.h"
 
+
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObject object;
 
-	int json_test;
-	float json_pi;
-	std::string json_string;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

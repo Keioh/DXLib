@@ -57,7 +57,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ScreenFlip();//表画面へ描写
 
 		diploid_engine_app->diploidEngineScreen.Wait();//FPS待機
-
 	}
 
 	diploid_engine_app->End();//エンジン終了前処理。

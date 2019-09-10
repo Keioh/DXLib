@@ -119,7 +119,7 @@ void DiploidImage::Draw(bool draw)
 
 		if (SetDrawNameTagFlag() == TRUE)
 		{
-			DrawNameTag();
+			//DrawNameTag();
 		}
 	}
 }

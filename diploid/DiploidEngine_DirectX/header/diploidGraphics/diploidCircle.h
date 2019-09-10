@@ -21,12 +21,15 @@ public:
 	void Update();
 	void Draw(bool wire = true);
 
+	//VECTOR MovePosition(VECTOR value = { 0.0f,0.0f,0.0f });//移動させたいときに使用。(valueには1フレーム毎に何ドット移動するかを指定。)
+
 	float GetSize();//円の大きさを返します。
 	VECTOR GetCenterPosition();//中央の位置を返します。
 
 	void Destory() { impacted = destory = true; };
 
 	int SetDrawNameTagFlag(int flag = TRUE);//TRUEでname_tagを表示。
+
 
 	std::string GetNameTag();//name_tagに設定されている名前を返します。
 

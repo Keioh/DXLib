@@ -1,7 +1,7 @@
 #include "diploidApp\DiploidEngineMain.h"
 
 
-VECTOR DiploidEngineMain::WindowSize()
+VECTOR DiploidEngineMain::GetWindowSize()
 {
 	VECTOR window_size;
 

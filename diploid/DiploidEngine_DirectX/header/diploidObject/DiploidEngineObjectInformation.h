@@ -26,7 +26,7 @@ public:
 	bool impacted = false;//trueで当たっている
 	bool destory = false;//trueで削除
 
-	int name_tag_flag;//name_tagの表示フラグ
+	int name_tag_flag = false;//name_tagの表示フラグ
 
 
 	//例)1-29　→　識別番号 - オブジェクト番号

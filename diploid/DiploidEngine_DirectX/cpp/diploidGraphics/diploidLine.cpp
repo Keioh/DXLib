@@ -36,7 +36,7 @@ void DiploidLine::Draw(bool wire)
 
 		if (SetDrawNameTagFlag() == TRUE)
 		{
-			DrawNameTag();
+			//DrawNameTag();
 		}
 	}
 }
