@@ -121,6 +121,12 @@
     <Filter Include="ソース ファイル\data\game_data">
       <UniqueIdentifier>{256d37ea-b890-4bac-bdf9-03528766a71d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\data\game_data\command_ui">
+      <UniqueIdentifier>{22cf28b4-c858-4d3c-88a7-474d78413fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\game_data\command_ui">
+      <UniqueIdentifier>{67b005d1-27c1-4e81-970e-d7c574cc49ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -227,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="cpp\data\game_data\main_castle.cpp">
       <Filter>ソース ファイル\data\game_data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\game_data\UI\command_ui.cpp">
+      <Filter>ソース ファイル\data\game_data\command_ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -340,6 +349,9 @@
     </ClInclude>
     <ClInclude Include="header\data\game_data\main_castle.h">
       <Filter>ヘッダー ファイル\data\game_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\game_data\UI\command_ui.h">
+      <Filter>ヘッダー ファイル\data\game_data\command_ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

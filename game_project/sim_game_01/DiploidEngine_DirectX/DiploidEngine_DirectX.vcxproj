@@ -70,10 +70,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
+    <IncludePath>C:\GameProject\sim_game_01\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
+    <IncludePath>C:\GameProject\sim_game_01\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,7 +81,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameProject\sim_game_01\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -104,7 +104,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameProject\sim_game_01\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -133,6 +133,7 @@
     <ClCompile Include="cpp\data\dice_3d6n.cpp" />
     <ClCompile Include="cpp\data\dice_result_bord.cpp" />
     <ClCompile Include="cpp\data\game_data\main_castle.cpp" />
+    <ClCompile Include="cpp\data\game_data\UI\command_ui.cpp" />
     <ClCompile Include="cpp\data\number.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="header\data\dice_3d6n.h" />
     <ClInclude Include="header\data\dice_result_bord.h" />
     <ClInclude Include="header\data\game_data\main_castle.h" />
+    <ClInclude Include="header\data\game_data\UI\command_ui.h" />
     <ClInclude Include="header\data\number.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
