@@ -10,23 +10,33 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 {
 	my_castle.Load();//©‹’“_‚Ìƒ[ƒh
 
-	command_ui.Load();
+	command_ui.Load();//ƒRƒ}ƒ“ƒhUI‚Ìƒ[ƒh
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	//ƒ}ƒEƒXƒJ[ƒ\ƒ‹
+	//ƒ}ƒEƒXƒJ[ƒ\ƒ‹(UI)
 	mouse_point.point.Init(VGet(0, 0, 0));
 	mouse_point.point.mouse_point_move_flag = true;
+	mouse_point.point.layer_number = DIPLOID_LAYER_01;
 	diploidEngineImpact.PushPoint(mouse_point.point);
+
+	//ƒ}ƒEƒXƒJ[ƒ\ƒ‹(Game‰æ–Ê)
+	mouse_point.point.Init(VGet(0, 0, 0));
+	mouse_point.point.mouse_point_move_flag = true;
+	mouse_point.point.layer_number = DIPLOID_LAYER_00;
+	diploidEngineImpact.PushPoint(mouse_point.point);
+
 
 	//©•ª‚Ì‹’“_
 	my_castle.Inti(VGet(GetWindowSize().x / 2, GetWindowSize().y / 2, 0), 50);
 	my_castle.Push(diploidEngineImpact);
 
 	//ƒRƒ}ƒ“ƒhUI
-	command_ui.Init(VGet(0, 200, 0));
+	command_ui.Init(VGet(0, 100, 0));
 	command_ui.Push(diploidEngineImpact);
+
+
 
 	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
 	diploidEngineImpact.AutoNumber();
@@ -38,14 +48,22 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-	my_castle.Updata(diploidEngineImpact, diploidEngineInput);//©‹’“_ƒAƒbƒvƒf[ƒg
+	//©‹’“_ƒAƒbƒvƒf[ƒg
+	my_castle.Updata(diploidEngineImpact, diploidEngineInput);
 
+	//ƒRƒ}ƒ“ƒhUI‚ÌƒAƒbƒvƒf[ƒg
 	command_ui.Updata(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput);
+
+	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
+	diploidEngineImpact.AutoNumber();
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
-{
-	my_castle.Draw(true,true);//©‹’“_‚Ì•`Ê
+{	
+	//©‹’“_‚Ì•`Ê
+	my_castle.Draw(true,true);
+
+	//ƒRƒ}ƒ“ƒhUI‚Ì•`Ê
 	command_ui.Draw();
 }
 

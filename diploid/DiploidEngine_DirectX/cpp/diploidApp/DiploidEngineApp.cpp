@@ -8,12 +8,30 @@ void DiploidEngineApp::FileCreate()//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ƒtƒ@ƒCƒ‹‚ğì‚éˆ—B
 
 void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒZ[ƒuƒf[ƒ^‚âƒ}ƒbƒvƒf[ƒ^‚È‚Ç)
 {
+	my_castle.Load();//©‹’“_‚Ìƒ[ƒh
 
+	command_ui.Load();//ƒRƒ}ƒ“ƒhUI‚Ìƒ[ƒh
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
+	//ƒ}ƒEƒXƒJ[ƒ\ƒ‹
+	mouse_point.point.Init(VGet(0, 0, 0));
+	mouse_point.point.mouse_point_move_flag = true;
+	diploidEngineImpact.PushPoint(mouse_point.point);
 
+	//©•ª‚Ì‹’“_
+	my_castle.Inti(VGet(GetWindowSize().x / 2, GetWindowSize().y / 2, 0), 50);
+	my_castle.Push(diploidEngineImpact);
+
+	//ƒRƒ}ƒ“ƒhUI
+	command_ui.Init(VGet(0, 200, 0));
+	command_ui.Push(diploidEngineImpact);
+
+
+
+	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
+	diploidEngineImpact.AutoNumber();
 }
 
 void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
@@ -22,12 +40,23 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
+	//©‹’“_ƒAƒbƒvƒf[ƒg
+	my_castle.Updata(diploidEngineImpact, diploidEngineInput);
 
+	//ƒRƒ}ƒ“ƒhUI‚ÌƒAƒbƒvƒf[ƒg
+	command_ui.Updata(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput);
+
+	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
+	diploidEngineImpact.AutoNumber();
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
-{
+{	
+	//©‹’“_‚Ì•`Ê
+	my_castle.Draw(true,true);
 
+	//ƒRƒ}ƒ“ƒhUI‚Ì•`Ê
+	command_ui.Draw();
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

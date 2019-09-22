@@ -25,6 +25,11 @@ private:
 	int box_size;
 	int line_size;
 
+	std::vector<DiploidBox>::iterator box_itr;
+	std::vector<DiploidCircle>::iterator circle_itr;
+	std::vector<DiploidPoint>::iterator point_itr;
+	std::vector<DiploidLine>::iterator line_itr;
+
 public:
 	DiploidEngineImpact();//コンストラクタ
 	~DiploidEngineImpact();//デストラクタ
@@ -53,6 +58,12 @@ public:
 	void DestoryPoint();//点がヒットしていたら点配列から削除
 	void DestoryBox();//四角がヒットしていたら四角配列から削除
 	void DestoryLine();//線分がヒットしていたら線分配列から削除
+
+	void DestoryBox_Name_Tag(std::string name_tag);//name_tagから対象を見つけ出し四角配列から削除
+	void DestoryCircle_Name_Tag(std::string name_tag);//name_tagから対象を見つけ出し円配列から削除
+	void DestoryPoint_Name_Tag(std::string name_tag);//name_tagから対象を見つけ出し点配列から削除
+	void DestoryLine_Name_Tag(std::string name_tag);//name_tagから対象を見つけ出し線配列から削除
+
 
 	void Destory();//配列から削除
 

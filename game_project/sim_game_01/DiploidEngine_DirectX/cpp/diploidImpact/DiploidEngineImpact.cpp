@@ -137,6 +137,83 @@ void DiploidEngineImpact::DestoryLine()
 }
 
 
+void DiploidEngineImpact::DestoryBox_Name_Tag(std::string name_tag)
+{
+	if (!box_vector.empty())
+	{
+		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
+		{
+			if (box->name_tag == name_tag)
+			{
+				box_itr = box;
+			}
+		}	
+
+		if (box_itr->name_tag == name_tag)
+		{
+			box_vector.erase(box_itr);
+		}
+	}
+}
+
+void DiploidEngineImpact::DestoryCircle_Name_Tag(std::string name_tag)
+{
+	if (!circle_vector.empty())
+	{
+		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
+		{
+			if (circle->name_tag == name_tag)
+			{
+				circle_itr = circle;
+			}
+		}
+
+		if (box_itr->name_tag == name_tag)
+		{
+			circle_vector.erase(circle_itr);
+		}
+	}
+}
+
+void DiploidEngineImpact::DestoryPoint_Name_Tag(std::string name_tag)
+{
+	if (!point_vector.empty())
+	{
+		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
+		{
+			if (point->name_tag == name_tag)
+			{
+				point_itr = point;
+			}
+		}
+
+		if (point_itr->name_tag == name_tag)
+		{
+			point_vector.erase(point_itr);
+		}
+	}
+}
+
+void DiploidEngineImpact::DestoryLine_Name_Tag(std::string name_tag)
+{
+	if (!line_vector.empty())
+	{
+		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
+		{
+			if (line->name_tag == name_tag)
+			{
+				line_itr = line;
+			}
+		}
+
+		if (line_itr->name_tag == name_tag)
+		{
+			line_vector.erase(line_itr);
+		}
+	}
+}
+
+
 void DiploidEngineImpact::ImpactCirclePoint()
 {
 	if (!point_vector.empty() || !circle_vector.empty())
