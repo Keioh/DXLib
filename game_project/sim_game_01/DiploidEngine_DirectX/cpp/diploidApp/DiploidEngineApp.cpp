@@ -54,7 +54,7 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 	static int count;
 	count++;
 
-	if (count > 30)
+	if (count > 5)
 	{
 		season_panel.NextDays();
 		count = 0;

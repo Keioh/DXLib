@@ -44,6 +44,22 @@ void SeasonPanel::Load()
 		days23.image.Load("texter/game/season/day/day23.png");
 		days24.image.Load("texter/game/season/day/day24.png");
 	}
+
+	//ŒŽ•¶Žš‚Ì“Ç‚Ýž‚Ý
+	{
+		blue_month_1.image.Load("texter/game/season/month/blue_month_1.png");
+		blue_month_2.image.Load("texter/game/season/month/blue_month_2.png");
+		blue_month_3.image.Load("texter/game/season/month/blue_month_3.png");
+		red_month_1.image.Load("texter/game/season/month/red_month_1.png");
+		red_month_2.image.Load("texter/game/season/month/red_month_2.png");
+		red_month_3.image.Load("texter/game/season/month/red_month_3.png");
+		white_month_1.image.Load("texter/game/season/month/white_month_1.png");
+		white_month_2.image.Load("texter/game/season/month/white_month_2.png");
+		white_month_3.image.Load("texter/game/season/month/white_month_3.png");
+		pink_month_1.image.Load("texter/game/season/month/pink_month_1.png");
+		pink_month_2.image.Load("texter/game/season/month/pink_month_2.png");
+		pink_month_3.image.Load("texter/game/season/month/pink_month_3.png");
+	}
 }
 
 void SeasonPanel::Init(VECTOR position)
@@ -89,6 +105,22 @@ void SeasonPanel::Init(VECTOR position)
 		days22.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
 		days23.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
 		days24.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+	}
+
+	//ŒŽ•¶Žš‚Ì‰Šú‰»
+	{
+		blue_month_1.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		blue_month_2.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		blue_month_3.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		red_month_1.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		red_month_2.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		red_month_3.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		white_month_1.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		white_month_2.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		white_month_3.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		pink_month_1.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		pink_month_2.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
+		pink_month_3.image.Init(VGet(position.x + (128 / 2), position.y + (128 / 2), 0));
 	}
 }
 
@@ -158,6 +190,23 @@ void SeasonPanel::Updata(int mouse_input_button_type, DiploidEngineImpact& impac
 	default: break;
 	}
 
+	//ŒŽ‚ÌƒAƒbƒvƒf[ƒg
+	switch (month)
+	{
+	case 1: pink_month_1.image.Updata(); break;
+	case 2: pink_month_2.image.Updata(); break;
+	case 3: pink_month_3.image.Updata(); break;
+	case 4: blue_month_1.image.Updata(); break;
+	case 5: blue_month_2.image.Updata(); break;
+	case 6: blue_month_3.image.Updata(); break;
+	case 7: red_month_1.image.Updata(); break;
+	case 8: red_month_2.image.Updata(); break;
+	case 9: red_month_3.image.Updata(); break;
+	case 10: white_month_1.image.Updata(); break;
+	case 11: white_month_2.image.Updata(); break;
+	case 12: white_month_3.image.Updata(); break;
+	default: break;
+	}
 }
 
 void SeasonPanel::Draw(bool draw)
@@ -165,25 +214,25 @@ void SeasonPanel::Draw(bool draw)
 	//‹Gßƒpƒlƒ‹‚Ì•`ŽÊ
 	season_panel.image.Draw();
 
-	//t‹Gƒpƒlƒ‹‚Ì•`ŽÊ
+	//t‹G‚Ì•`ŽÊ
 	if (season == SPRING_SEASON)
 	{
 		spring_season.image.Draw();
 	}
 
-	//‰J‹Gƒpƒlƒ‹‚Ì•`ŽÊ
+	//‰J‹G‚Ì•`ŽÊ
 	if (season == RAINY_SEASON)
 	{
 		rainy_season.image.Draw();
 	}
 
-	//‰Ä‹Gƒpƒlƒ‹‚Ì•`ŽÊ
+	//‰Ä‹G‚Ì•`ŽÊ
 	if (season == SUMMER_SEASON)
 	{
 		summer_season.image.Draw();
 	}
 
-	//“~‹Gƒpƒlƒ‹‚Ì•`ŽÊ
+	//“~‹G‚Ì•`ŽÊ
 	if (season == WINTER_SEASON)
 	{
 		winter_season.image.Draw();
@@ -218,12 +267,35 @@ void SeasonPanel::Draw(bool draw)
 	case 24: days24.image.Draw(); break;
 	default: break;
 	}
+
+	//ŒŽ‚Ì•`ŽÊ
+	switch (month)
+	{
+	case 1: pink_month_1.image.Draw(); break;
+	case 2: pink_month_2.image.Draw(); break;
+	case 3: pink_month_3.image.Draw(); break;
+	case 4: blue_month_1.image.Draw(); break;
+	case 5: blue_month_2.image.Draw(); break;
+	case 6: blue_month_3.image.Draw(); break;
+	case 7: red_month_1.image.Draw(); break;
+	case 8: red_month_2.image.Draw(); break;
+	case 9: red_month_3.image.Draw(); break;
+	case 10: white_month_1.image.Draw(); break;
+	case 11: white_month_2.image.Draw(); break;
+	case 12: white_month_3.image.Draw(); break;
+	default: break;
+	}
 }
 
 
 int SeasonPanel::GetDays()
 {
 	return days;
+}
+
+int SeasonPanel::GetMonth()
+{
+	return month;
 }
 
 int SeasonPanel::GetSeason()
@@ -237,6 +309,11 @@ void SeasonPanel::NextDays()
 	days += 1;
 }
 
+void SeasonPanel::NextMonth()
+{
+	month += 1;
+}
+
 void SeasonPanel::NextSeason()
 {
 	season += NEXT_SEASON;
@@ -248,6 +325,11 @@ void SeasonPanel::SetDays(int set_day)
 	days = set_day;
 }
 
+void SeasonPanel::SetMonth(int set_month)
+{
+	month = set_month;
+}
+
 void SeasonPanel::SetSeason(int set_season)
 {
 	season = set_season;
@@ -257,13 +339,40 @@ void SeasonPanel::SetSeason(int set_season)
 
 void SeasonPanel::_Days_Season_Count()
 {
+	//“ú‚É‚¿
 	if (days > 24)
 	{
-		season += NEXT_SEASON;
-		days = 1;
+		month += NEXT_MONTH;
+		days = NEXT_DAY;
 	}
 
-	if (season > 3)
+	if (month >= TANTOU_NO_TUKI)//t
+	{
+		season = SPRING_SEASON;
+
+		if (month >= TANSEI_NO_TUKI)//‰J
+		{
+			season = RAINY_SEASON;
+
+			if (month >= TANSEKI_NO_TUKI)//‰Ä
+			{
+				season = SUMMER_SEASON;
+
+				if (month >= TANHAKU_NO_TUKI)//“~
+				{
+					season = WINTER_SEASON;
+				}
+			}
+		}
+	}
+
+	//ƒtƒ[ˆ—
+	if (month > 12)
+	{
+		month = TANTOU_NO_TUKI;
+	}
+
+	if (season > 4)
 	{
 		season = SPRING_SEASON;
 	}

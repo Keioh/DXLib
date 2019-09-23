@@ -46,10 +46,26 @@ private:
 	DiploidObject days23;
 	DiploidObject days24;
 
+	//月文字
+	DiploidObject blue_month_1;
+	DiploidObject blue_month_2;
+	DiploidObject blue_month_3;
+	DiploidObject red_month_1;
+	DiploidObject red_month_2;
+	DiploidObject red_month_3;
+	DiploidObject white_month_1;
+	DiploidObject white_month_2;
+	DiploidObject white_month_3;
+	DiploidObject pink_month_1;
+	DiploidObject pink_month_2;
+	DiploidObject pink_month_3;
+
+
 	void _Days_Season_Count();//季節と日にちのフロー管理
 
 
 	int days = 1;//日にちのカウント(１から始まる)
+	int month = TANTOU_NO_TUKI;//日にちのカウント(１から始まる)
 	int season = SPRING_SEASON;//季節のカウント(春季が初期値)
 
 	int count;
@@ -64,13 +80,17 @@ public:
 	void Updata(int mouse_input_button_type, DiploidEngineImpact& impact, DiploidEngineInput& input);
 	void Draw(bool draw = true);
 
+	//基本はDays系関数を使うこと
 	int GetDays();//現在の日にちを得る。
+	int GetMonth();//現在の月を得る。
 	int GetSeason();//現在の季節を得る。
 
 	void NextDays();//現在の日にちを一日進める。
+	void NextMonth();//現在の月を一月進める。
 	void NextSeason();//現在の季節を一季節進める。
 
 	void SetDays(int set_day);//日にちを設定する。
+	void SetMonth(int set_month);//月を設定する。
 	void SetSeason(int set_season);//季節を設定する。
 
 };

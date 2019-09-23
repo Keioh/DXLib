@@ -19,12 +19,35 @@
 #define OBJECT_NUMBER_CUSTOM_NUMBER_BUTTON 3//カスタムナンバーボタン
 #define OBJECT_NUMBER_CLEAR_BUTTON 4//クリアボタン
 
+//季節
+const int NEXT_DAY = 1;
+const int NEXT_SEASON	= 1;
+const int SPRING_SEASON = 1;
+const int RAINY_SEASON  = 2;
+const int SUMMER_SEASON = 3;
+const int WINTER_SEASON = 4;
 
-const int NEXT_SEASON = 1;
-const int SPRING_SEASON = 0;
-const int RAINY_SEASON  = 1;
-const int SUMMER_SEASON = 2;
-const int WINTER_SEASON = 3;
+
+//月(桃)
+const int NEXT_MONTH = 1;
+const int TANTOU_NO_TUKI = 1;
+const int KOUTOU_NO_TUKI = 2;
+const int NOUTOU_NO_TUKI = 3;
+
+//月(青)
+const int TANSEI_NO_TUKI = 4;
+const int KOUSEI_NO_TUKI = 5;
+const int NOUSEI_NO_TUKI = 6;
+
+//月(赤)
+const int TANSEKI_NO_TUKI = 7;
+const int KOUSEKI_NO_TUKI = 8;
+const int NOUSEKI_NO_TUKI = 9;
+
+//月(白)
+const int TANHAKU_NO_TUKI = 10;
+const int KOUPAKU_NO_TUKI = 11;
+const int NOUHAKU_NO_TUKI = 12;
 
 
 //タグ情報構造体
