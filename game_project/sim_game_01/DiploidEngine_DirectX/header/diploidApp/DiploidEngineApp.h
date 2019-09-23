@@ -11,17 +11,21 @@
 
 //ゲームデータ関連
 #include "data/number.h"
-#include "data/game_data/main_castle.h"
+
+//UI
 #include "data/game_data/UI/command_ui.h"
+#include "data/game_data/UI/season_panel.h"
+
 
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidObject mouse_point;//マウスカーソルの判定用
 
-	MyCastle my_castle;//自分の拠点
+	CommandUI command_ui;//コマンドUI
+	SeasonPanel season_panel;//季節パネル
 
-	CommandUI command_ui;
+	DiploidObject status_bar;//ステータスバー
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

@@ -1,3 +1,8 @@
+
+/*---------------------------------------------------------*/
+/*--------------ゲームコマンドのすべてがここに-------------*/
+/*---------------------------------------------------------*/
+
 #pragma once
 #include "diploidObject/DiploidEngineObject.h"
 #include "diploidImpact/DiploidEngineImpact.h"
@@ -6,7 +11,7 @@
 #include "diploidSystem/diploidSystem.h"
 
 
-//レイヤー番号はDIPLOID_LAYER_01
+//レイヤー番号はDIPLOID_LAYER_00
 class CommandUI
 {
 private:
@@ -23,6 +28,8 @@ private:
 	DiploidUI policy_button;//政策ボタン
 	DiploidUI defense_button;//防衛ボタン
 	DiploidUI information_button;//情報ボタン
+	DiploidUI search_button;//探索ボタン
+	DiploidUI move_button;//移動ボタン
 
 	DiploidUI agriculture_button;//農業ボタン
 	DiploidUI industrial_button;//工業ボタン

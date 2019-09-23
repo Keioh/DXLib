@@ -11,7 +11,7 @@ void DiploidSystem::OnePushBOX_Impact(DiploidEngineImpact& impact, DiploidBox bo
 
 void DiploidSystem::OneDeleteBOX_Impact(DiploidEngineImpact& impact, std::string name_tag)
 {
-	if (delete_box_flag == false)
+	if ((delete_box_flag == false) && (push_box_flag == true))
 	{
 		impact.DestoryBox_Name_Tag(name_tag);
 		delete_box_flag = true;

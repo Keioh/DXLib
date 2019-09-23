@@ -11,6 +11,7 @@
 #define DIPLOID_LAYER_03 3
 #define DIPLOID_LAYER_04 4
 
+
 //仮マクロ(ダイスプログラムで使用)
 #define OBJECT_NUMBER_POINT 0//ポイント
 #define OBJECT_NUMBER_PLUS_BUTTON 1//プラスボタン
@@ -19,6 +20,11 @@
 #define OBJECT_NUMBER_CLEAR_BUTTON 4//クリアボタン
 
 
+const int NEXT_SEASON = 1;
+const int SPRING_SEASON = 0;
+const int RAINY_SEASON  = 1;
+const int SUMMER_SEASON = 2;
+const int WINTER_SEASON = 3;
 
 
 //タグ情報構造体

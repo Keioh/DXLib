@@ -121,17 +121,17 @@
     <Filter Include="ソース ファイル\data\game_data">
       <UniqueIdentifier>{256d37ea-b890-4bac-bdf9-03528766a71d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\data\game_data\command_ui">
-      <UniqueIdentifier>{22cf28b4-c858-4d3c-88a7-474d78413fd0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\data\game_data\command_ui">
-      <UniqueIdentifier>{67b005d1-27c1-4e81-970e-d7c574cc49ec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\cpp\diploidSystem">
       <UniqueIdentifier>{ca2875d1-46bc-46b8-9799-f2ccf230304c}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッダー ファイル\header\diploidSystem">
       <UniqueIdentifier>{b53dbe04-31a5-4f7a-a766-be894ffb4b29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\data\game_data\UI">
+      <UniqueIdentifier>{22cf28b4-c858-4d3c-88a7-474d78413fd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\game_data\UI">
+      <UniqueIdentifier>{67b005d1-27c1-4e81-970e-d7c574cc49ec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -241,10 +241,13 @@
       <Filter>ソース ファイル\data\game_data</Filter>
     </ClCompile>
     <ClCompile Include="cpp\data\game_data\UI\command_ui.cpp">
-      <Filter>ソース ファイル\data\game_data\command_ui</Filter>
+      <Filter>ソース ファイル\data\game_data\UI</Filter>
     </ClCompile>
     <ClCompile Include="cpp\diploidSystem\diploidSystem.cpp">
       <Filter>ソース ファイル\cpp\diploidSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\game_data\UI\season_panel.cpp">
+      <Filter>ソース ファイル\data\game_data\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -360,10 +363,13 @@
       <Filter>ヘッダー ファイル\data\game_data</Filter>
     </ClInclude>
     <ClInclude Include="header\data\game_data\UI\command_ui.h">
-      <Filter>ヘッダー ファイル\data\game_data\command_ui</Filter>
+      <Filter>ヘッダー ファイル\data\game_data\UI</Filter>
     </ClInclude>
     <ClInclude Include="header\diploidSystem\diploidSystem.h">
       <Filter>ヘッダー ファイル\header\diploidSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\game_data\UI\season_panel.h">
+      <Filter>ヘッダー ファイル\data\game_data\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

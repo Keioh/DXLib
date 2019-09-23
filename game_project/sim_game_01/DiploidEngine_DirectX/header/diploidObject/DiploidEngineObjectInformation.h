@@ -35,6 +35,31 @@ public:
 	int number;//オブジェクト番号(番号はなるべくかぶらないように)
 	int layer_number;//識別番号
 
+	//円関連の当たり判定をするかのフラグ
+	bool impact_circle_point_flag = true;
+	bool impact_circle_box_flag = true;
+	bool impact_circle_circle_flag = true;
+	bool impact_circle_line_flag = true;
+
+	//箱関連の当たり判定をするかのフラグ
+	bool impact_box_point_flag = true;
+	bool impact_box_box_flag = true;
+	bool impact_box_circle_flag = true;
+	bool impact_box_line_flag = true;
+
+	//点関連の当たり判定をするかのフラグ
+	bool impact_point_point_flag = true;
+	bool impact_point_box_flag = true;
+	bool impact_point_circle_flag = true;
+	bool impact_point_line_flag = true;
+
+	//線分関連の当たり判定をするかのフラグ(impact処理のほうにはまだ実装してない)
+	bool impact_line_point_flag = true;
+	bool impact_line_box_flag = true;
+	bool impact_line_circle_flag = true;
+	bool impact_line_line_flag = true;
+
+
 	//仮追加(エラーが出る場合は削除)
 	DiploidEngineObjectInformation();//コンストラクタ
 	~DiploidEngineObjectInformation();//デストラクタ

@@ -238,8 +238,17 @@ void DiploidEngineImpact::ImpactCirclePoint()
 							//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
 							if (circle->layer_number == point->layer_number)
 							{
-								circle->impacted = true;
-								point->impacted = true;
+								//“_‚Æ‰~‚Ì”»’èi“_—Dæj‚ð—LŒø‚É‚µ‚Ä‚¢‚é‚È‚ç
+								if ((point->impact_point_circle_flag == true) )
+								{
+									point->impacted = true;
+								}
+
+								//“_‚Æ‰~‚Ì”»’èi‰~—Dæj‚ð—LŒø‚É‚µ‚Ä‚¢‚é‚È‚ç
+								if (circle->impact_circle_point_flag == true)
+								{
+									circle->impacted = true;
+								}
 							}
 						}
 					}
@@ -276,8 +285,15 @@ void DiploidEngineImpact::ImpactCircleCircle()
 						//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
 						if (circle_vector[circle_one].layer_number == circle_vector[circle_two].layer_number)
 						{
-							circle_vector[circle_one].impacted = true;
-							circle_vector[circle_two].impacted = true;
+							if (circle_vector[circle_one].impact_circle_circle_flag == true)
+							{
+								circle_vector[circle_one].impacted = true;
+							}
+
+							if (circle_vector[circle_two].impact_circle_circle_flag == true)
+							{
+								circle_vector[circle_two].impacted = true;
+							}
 						}
 					}
 				}
@@ -308,8 +324,15 @@ void DiploidEngineImpact::ImpactBoxPoint()
 								//Ž¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
 								if (point->layer_number == box->layer_number)
 								{
-									point->impacted = true;
-									box->impacted = true;
+									if (point->impact_point_box_flag == true)
+									{
+										point->impacted = true;
+									}
+
+									if (box->impact_box_point_flag == true)
+									{
+										box->impacted = true;
+									}
 								}
 							}
 						}
@@ -348,9 +371,16 @@ void DiploidEngineImpact::ImpactBoxBox()
 								{
 									//two
 									if (box_two->position.x < (box_one->position.x + box_one->size.x) && box_two->position.y < (box_one->position.y + box_one->size.y))
-									{
-										box_two->impacted = true;
-										box_one->impacted = true;
+									{	
+										if (box_two->impact_box_box_flag == true)
+										{
+											box_two->impacted = true;
+										}
+
+										if (box_one->impact_box_box_flag == true)
+										{
+											box_one->impacted = true;
+										}
 									}
 								}
 							}
@@ -383,12 +413,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -400,12 +436,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -414,12 +456,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -428,12 +476,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -442,12 +496,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -456,12 +516,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 				}

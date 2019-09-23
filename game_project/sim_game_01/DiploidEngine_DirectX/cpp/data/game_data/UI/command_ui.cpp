@@ -17,6 +17,11 @@ void CommandUI::Load()
 	//情報ボタン画像の読み込み
 	information_button.SwitchButtonBOX_Load("texter/game/command_button/information.png", 128, 64);
 
+	//探索ボタン画像の読み込み
+	search_button.SwitchButtonBOX_Load("texter/game/command_button/search.png", 128, 64);
+
+	//移動ボタン画像の読み込み
+	move_button.SwitchButtonBOX_Load("texter/game/command_button/move.png", 128, 64);
 
 
 	//農業ボタン画像の読み込み
@@ -33,30 +38,36 @@ void CommandUI::Load()
 void CommandUI::Init(VECTOR position)
 {
 	//開発ボタン関連
-	development_button.SwitchButtonBOX_Init(VGet(position.x, position.y, 0), VGet(128, 64, 0), "development_button", DIPLOID_LAYER_01);
+	development_button.SwitchButtonBOX_Init(VGet(position.x, position.y, 0), VGet(128, 64, 0), "development_button", DIPLOID_LAYER_00);
 
 	//研究ボタン関連
-	research_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64), 0), VGet(128, 64, 0), "research_button", DIPLOID_LAYER_01);
+	research_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64), 0), VGet(128, 64, 0), "research_button", DIPLOID_LAYER_00);
 
 	//政策ボタン関連
-	policy_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 2), 0), VGet(128, 64, 0), "policy_button", DIPLOID_LAYER_01);
+	policy_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 2), 0), VGet(128, 64, 0), "policy_button", DIPLOID_LAYER_00);
 
 	//防衛ボタン関連
-	defense_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 3), 0), VGet(128, 64, 0), "defense_button", DIPLOID_LAYER_01);
+	defense_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 3), 0), VGet(128, 64, 0), "defense_button", DIPLOID_LAYER_00);
 
 	//情報ボタン関連
-	information_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 4), 0), VGet(128, 64, 0), "information_button", DIPLOID_LAYER_01);
+	information_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 4), 0), VGet(128, 64, 0), "information_button", DIPLOID_LAYER_00);
+
+	//探索ボタン関連
+	search_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 5), 0), VGet(128, 64, 0), "search_button", DIPLOID_LAYER_00);
+
+	//移動ボタン関連
+	move_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 6), 0), VGet(128, 64, 0), "move_button", DIPLOID_LAYER_00);
 
 
 
 	//農業ボタン関連
-	agriculture_button.SwitchButtonBOX_Init(VGet(position.x + (128), position.y, 0), VGet(112, 52, 0), "agriculture_button", DIPLOID_LAYER_01);
+	agriculture_button.SwitchButtonBOX_Init(VGet(position.x + (128), position.y, 0), VGet(112, 52, 0), "agriculture_button", DIPLOID_LAYER_00);
 
-	//工業ボタン関連
-	industrial_button.SwitchButtonBOX_Init(VGet(position.x + (128), position.y + (52), 0), VGet(112, 52, 0), "industrial_button", DIPLOID_LAYER_01);
+	//工業ボタン
+	industrial_button.SwitchButtonBOX_Init(VGet(position.x + (128), position.y + (52), 0), VGet(112, 52, 0), "industrial_button", DIPLOID_LAYER_00);
 
 	//科学ボタン関連
-	science_button.SwitchButtonBOX_Init(VGet(position.x + (128), position.y + (52 * 2), 0), VGet(112, 52, 0), "science_button", DIPLOID_LAYER_01);
+	science_button.SwitchButtonBOX_Init(VGet(position.x + (128), position.y + (52 * 2), 0), VGet(112, 52, 0), "science_button", DIPLOID_LAYER_00);
 
 }
 
@@ -68,6 +79,8 @@ void CommandUI::Push(DiploidEngineImpact& impact)
 	policy_button.SwitchButtonBOX_Push(impact);
 	defense_button.SwitchButtonBOX_Push(impact);
 	information_button.SwitchButtonBOX_Push(impact);
+	search_button.SwitchButtonBOX_Push(impact);
+	move_button.SwitchButtonBOX_Push(impact);
 }
 
 void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact, DiploidEngineInput& input)
@@ -122,6 +135,9 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 		policy_button.SwitchButton_Flag_Change(false);
 		defense_button.SwitchButton_Flag_Change(false);
 		information_button.SwitchButton_Flag_Change(false);
+		search_button.SwitchButton_Flag_Change(false);
+		move_button.SwitchButton_Flag_Change(false);
+
 	}
 	else
 	{
@@ -169,6 +185,8 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 		policy_button.SwitchButton_Flag_Change(false);
 		defense_button.SwitchButton_Flag_Change(false);
 		information_button.SwitchButton_Flag_Change(false);
+		search_button.SwitchButton_Flag_Change(false);
+		move_button.SwitchButton_Flag_Change(false);
 
 		industrial_button.SwitchButton_Flag_Change(false);
 		science_button.SwitchButton_Flag_Change(false);
@@ -196,6 +214,8 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 		development_button.SwitchButton_Flag_Change(false);
 		defense_button.SwitchButton_Flag_Change(false);
 		information_button.SwitchButton_Flag_Change(false);
+		search_button.SwitchButton_Flag_Change(false);
+		move_button.SwitchButton_Flag_Change(false);
 
 		industrial_button.SwitchButton_Flag_Change(false);
 		science_button.SwitchButton_Flag_Change(false);
@@ -223,6 +243,8 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 		policy_button.SwitchButton_Flag_Change(false);
 		development_button.SwitchButton_Flag_Change(false);
 		information_button.SwitchButton_Flag_Change(false);
+		search_button.SwitchButton_Flag_Change(false);
+		move_button.SwitchButton_Flag_Change(false);
 
 		industrial_button.SwitchButton_Flag_Change(false);
 		science_button.SwitchButton_Flag_Change(false);
@@ -250,11 +272,72 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 		policy_button.SwitchButton_Flag_Change(false);
 		defense_button.SwitchButton_Flag_Change(false);
 		development_button.SwitchButton_Flag_Change(false);
+		search_button.SwitchButton_Flag_Change(false);
+		move_button.SwitchButton_Flag_Change(false);
 
 		industrial_button.SwitchButton_Flag_Change(false);
 		science_button.SwitchButton_Flag_Change(false);
 		agriculture_button.SwitchButton_Flag_Change(false);
 	}
+
+	//探索ボタンアップデート
+	if (search_button.SwitchButtonBOX_Update(mouse_input_button_type, impact, input) == true)
+	{
+		//農業ボタンの削除
+		agriculture_button_systme.OneDeleteBOX_Impact(impact, "agriculture_button");
+		agriculture_button_systme.FlagReset_OnePushBOX();//プッシュフラグのリセット
+
+		//工業ボタンの削除
+		industrial_button_systme.OneDeleteBOX_Impact(impact, "industrial_button");
+		industrial_button_systme.FlagReset_OnePushBOX();//プッシュフラグのリセット
+
+		//科学ボタンの削除
+		industrial_button_systme.OneDeleteBOX_Impact(impact, "science_button");
+		industrial_button_systme.FlagReset_OnePushBOX();//プッシュフラグのリセット
+
+
+		//他のボタンをオフにする
+		research_button.SwitchButton_Flag_Change(false);
+		policy_button.SwitchButton_Flag_Change(false);
+		defense_button.SwitchButton_Flag_Change(false);
+		development_button.SwitchButton_Flag_Change(false);
+		information_button.SwitchButton_Flag_Change(false);
+		move_button.SwitchButton_Flag_Change(false);
+
+		industrial_button.SwitchButton_Flag_Change(false);
+		science_button.SwitchButton_Flag_Change(false);
+		agriculture_button.SwitchButton_Flag_Change(false);
+	}
+
+	//移動ボタンアップデート
+	if (move_button.SwitchButtonBOX_Update(mouse_input_button_type, impact, input) == true)
+	{
+		//農業ボタンの削除
+		agriculture_button_systme.OneDeleteBOX_Impact(impact, "agriculture_button");
+		agriculture_button_systme.FlagReset_OnePushBOX();//プッシュフラグのリセット
+
+		//工業ボタンの削除
+		industrial_button_systme.OneDeleteBOX_Impact(impact, "industrial_button");
+		industrial_button_systme.FlagReset_OnePushBOX();//プッシュフラグのリセット
+
+		//科学ボタンの削除
+		industrial_button_systme.OneDeleteBOX_Impact(impact, "science_button");
+		industrial_button_systme.FlagReset_OnePushBOX();//プッシュフラグのリセット
+
+
+		//他のボタンをオフにする
+		research_button.SwitchButton_Flag_Change(false);
+		policy_button.SwitchButton_Flag_Change(false);
+		defense_button.SwitchButton_Flag_Change(false);
+		development_button.SwitchButton_Flag_Change(false);
+		information_button.SwitchButton_Flag_Change(false);
+		search_button.SwitchButton_Flag_Change(false);
+
+		industrial_button.SwitchButton_Flag_Change(false);
+		science_button.SwitchButton_Flag_Change(false);
+		agriculture_button.SwitchButton_Flag_Change(false);
+	}
+
 }
 
 void CommandUI::Draw(bool draw)
@@ -266,6 +349,8 @@ void CommandUI::Draw(bool draw)
 		policy_button.SwitchButtonBOX_Draw();//政策ボタンの描写
 		defense_button.SwitchButtonBOX_Draw();//防衛ボタンの描写
 		information_button.SwitchButtonBOX_Draw();//情報ボタンの描写
+		search_button.SwitchButtonBOX_Draw();//情報ボタンの描写
+		move_button.SwitchButtonBOX_Draw();//移動ボタンの描写
 
 		//開発ボタンがオンの時
 		if (development_button_flag == true)
