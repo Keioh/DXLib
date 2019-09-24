@@ -10,8 +10,9 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 {
 	command_ui.Load();//ƒRƒ}ƒ“ƒhUI‚Ìƒ[ƒh
 	season_panel.Load();//‹Gßƒpƒlƒ‹‚Ìƒ[ƒh
+	status_bar.Load();//ƒXƒe[ƒ^ƒXƒo[‚Ìƒ[ƒh
 
-	status_bar.image.Load("texter/game/status_bar/status_bar.png");
+	test.Load("texter/game/map/wall.png");
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
@@ -30,9 +31,14 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	season_panel.Init(VGet(0, 0, 0));
 	//season_panel.Push(diploidEngineImpact);//¡‚Ì‚Æ‚±‚ë’†g‚È‚µ
 
+	//ƒXƒe[ƒ^ƒXƒo[‚Ì‰Šú‰»‚ÆƒvƒbƒVƒ…
+	status_bar.Init(VGet(0, 0, 0));
+	//status_bar.Push(diploidEngineImpact);//¡‚Ì‚Æ‚±‚ë’†g‚È‚µ
 
-	status_bar.image.Init(VGet(0 + (640 / 2), 0 + (128 / 2), 0));
-
+	//test.Init(VGet(1280.0f/2, 720.0f/ 2, 0.0f));
+	test.Scale(VGet(64.0f * 2,64.0f * 2, 0.0f));
+	//test.RotateY(30.0f);
+	test.Translate(VGet(1280.0f/2, 720.0f/2, 10.0f));
 
 	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
 	diploidEngineImpact.AutoNumber();
@@ -48,6 +54,9 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 	//ƒRƒ}ƒ“ƒhUI‚ÌƒAƒbƒvƒf[ƒg
 	command_ui.Updata(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput);
 
+	//ƒXƒe[ƒ^ƒXƒo[‚ÌƒAƒbƒvƒf[ƒg
+	status_bar.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
+
 	//‹Gßƒpƒlƒ‹‚ÌƒAƒbƒvƒf[ƒg
 	season_panel.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
 
@@ -60,21 +69,24 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 		count = 0;
 	}
 
-	status_bar.image.Updata();
 
 	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
 	diploidEngineImpact.AutoNumber();
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
-{
+{	
 	//ƒRƒ}ƒ“ƒhUI‚Ì•`Ê
 	command_ui.Draw();
+
+	//ƒXƒe[ƒ^ƒXƒo[‚Ì•`Ê
+	status_bar.Draw();
 
 	//‹Gßƒpƒlƒ‹‚Ì•`Ê
 	season_panel.Draw();
 
-	status_bar.image.Draw();
+
+	test.Draw();
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

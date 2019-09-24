@@ -133,6 +133,18 @@
     <Filter Include="ヘッダー ファイル\data\game_data\UI">
       <UniqueIdentifier>{67b005d1-27c1-4e81-970e-d7c574cc49ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\data\game_data\EXPLORE">
+      <UniqueIdentifier>{72987594-97fc-4a73-aafc-1e6d147f30a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\game_data\EXPLORE">
+      <UniqueIdentifier>{7fd78824-d7ff-4521-ac6a-8dbb92ff6f98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\diploid3D">
+      <UniqueIdentifier>{47382110-75fa-4647-9cc8-8c7c3d3e1186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploid3D">
+      <UniqueIdentifier>{142727dc-a22e-4cd3-9bb3-bd0580a910d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -248,6 +260,15 @@
     </ClCompile>
     <ClCompile Include="cpp\data\game_data\UI\season_panel.cpp">
       <Filter>ソース ファイル\data\game_data\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\game_data\UI\status_bar.cpp">
+      <Filter>ソース ファイル\data\game_data\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\game_data\EXPLORE\explore_test_map.cpp">
+      <Filter>ソース ファイル\data\game_data\EXPLORE</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploid3D\diploidPanel.cpp">
+      <Filter>ソース ファイル\cpp\diploid3D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -370,6 +391,15 @@
     </ClInclude>
     <ClInclude Include="header\data\game_data\UI\season_panel.h">
       <Filter>ヘッダー ファイル\data\game_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\game_data\UI\status_bar.h">
+      <Filter>ヘッダー ファイル\data\game_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\game_data\EXPLORE\explore_test_map.h">
+      <Filter>ヘッダー ファイル\data\game_data\EXPLORE</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploid3D\diploidPanel.h">
+      <Filter>ヘッダー ファイル\header\diploid3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -44,6 +44,7 @@ void DiploidEngineImpact::PushLine(DiploidLine line)
 	line_vector.push_back(line);
 }
 
+
 void DiploidEngineImpact::PopBackCircle()
 {
 	if (!circle_vector.empty())
@@ -75,6 +76,7 @@ void DiploidEngineImpact::PopBackLine()
 		line_vector.pop_back();
 	}
 }
+
 
 void DiploidEngineImpact::DestoryCircle()
 {	
@@ -723,6 +725,7 @@ void DiploidEngineImpact::Updata()
 			line->Update();//アニメアプデ
 		}
 	}
+	
 
 	ImpactCirclePoint();//円と点の衝突計算
 	ImpactBoxPoint();//四角と点の衝突計算
@@ -776,7 +779,6 @@ void DiploidEngineImpact::AutoNumber()
 		count->number = line_count + box_count + point_count + circle_count;//オブジェクト番号を変更
 		line_count += 1;//オブジェクト番号を足す。
 	}
-
 }
 
 void DiploidEngineImpact::Init()

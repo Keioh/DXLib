@@ -19,14 +19,14 @@
 #define OBJECT_NUMBER_CUSTOM_NUMBER_BUTTON 3//カスタムナンバーボタン
 #define OBJECT_NUMBER_CLEAR_BUTTON 4//クリアボタン
 
+//日付関連
 //季節
 const int NEXT_DAY = 1;
-const int NEXT_SEASON	= 1;
+const int NEXT_SEASON = 1;
 const int SPRING_SEASON = 1;
-const int RAINY_SEASON  = 2;
+const int RAINY_SEASON = 2;
 const int SUMMER_SEASON = 3;
 const int WINTER_SEASON = 4;
-
 
 //月(桃)
 const int NEXT_MONTH = 1;
@@ -48,6 +48,18 @@ const int NOUSEKI_NO_TUKI = 9;
 const int TANHAKU_NO_TUKI = 10;
 const int KOUPAKU_NO_TUKI = 11;
 const int NOUHAKU_NO_TUKI = 12;
+
+
+//主要コマンド関連
+const int NO_COMMAND		  = 0;
+const int CAMP_COMMAND		  = 1;
+const int INFORMATION_COMMAND = 2;
+const int MOVE_COMMAND		  = 3;
+const int PRODUCTION_COMMAND  = 4;
+const int RESEARCH_COMMAND	  = 5;
+const int EXPLORE_COMMAND	  = 6;
+const int SHOPPING_COMMAND	  = 7;
+
 
 
 //タグ情報構造体

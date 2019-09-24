@@ -6,6 +6,8 @@
 #include "diploidObject\DiploidEngineObject.h"//円や四角や画像や音など、オブジェクト全般
 #include "system\DiploidEngineMath.h"//数学式関連(DxLibもしくはC++標準もしくはその他の数学ライブラリの使用を推奨。というか中身ない)
 
+#include "diploid3D/diploidPanel.h"
+
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
 
@@ -15,7 +17,7 @@
 //UI
 #include "data/game_data/UI/command_ui.h"
 #include "data/game_data/UI/season_panel.h"
-
+#include "data/game_data/UI/status_bar.h"
 
 class DiploidEngineApp : public DiploidEngineMain
 {
@@ -24,8 +26,9 @@ private:
 
 	CommandUI command_ui;//コマンドUI
 	SeasonPanel season_panel;//季節パネル
+	StatusBar status_bar;//ステータスバー
 
-	DiploidObject status_bar;//ステータスバー
+	DiploidPanel test;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

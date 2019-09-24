@@ -42,6 +42,7 @@ public:
 	bool SwitchButtonBOX_Update(int mouse_input_button_type, DiploidEngineImpact& impact, DiploidEngineInput& input);//スイッチボタンのアプデ処理
 	void SwitchButtonBOX_Draw(bool image_draw = true, bool draw = false);//スイッチボタンの描写処理
 	bool SwitchButton_Flag_Change(bool flag);//スイッチのフラグを強制的に変更する
+	bool GetSwitchButton_Flag();//現在のスイッチのフラグを得る
 
 
 	void Draw() {};//たぶん使わない。

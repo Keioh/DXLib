@@ -39,11 +39,13 @@ void DiploidEngineSetting::SetBegin()
 	SetFullScreenScalingMode(DX_FSSCALINGMODE_NEAREST);//画像補間の変更
 
 	SetEnableXAudioFlag(TRUE);//XAudioフラグ
+
 }
 
 void DiploidEngineSetting::SetEnd()
 {
 	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
+	SetCameraNearFar(0.1f, 10000.0f);
 }
 
 void DiploidEngineSetting::End()

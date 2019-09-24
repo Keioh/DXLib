@@ -10,6 +10,7 @@
 #include "diploidGraphics\diploidBox.h"
 #include "diploidGraphics\diploidLine.h"
 
+
 class DiploidEngineImpact
 {
 private:

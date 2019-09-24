@@ -288,3 +288,8 @@ bool DiploidUI::SwitchButton_Flag_Change(bool flag)
 {
 	return button_flag = flag;
 }
+
+bool DiploidUI::GetSwitchButton_Flag()
+{
+	return button_flag;
+}
