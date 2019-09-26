@@ -40,6 +40,8 @@ void DiploidEngineSetting::SetBegin()
 
 	SetEnableXAudioFlag(TRUE);//XAudioƒtƒ‰ƒO
 
+	SetUseZBuffer3D(TRUE);
+	SetWriteZBuffer3D(TRUE);
 }
 
 void DiploidEngineSetting::SetEnd()

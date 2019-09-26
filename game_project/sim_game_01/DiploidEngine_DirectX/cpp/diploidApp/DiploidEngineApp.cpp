@@ -12,11 +12,12 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	season_panel.Load();//‹Gßƒpƒlƒ‹‚Ìƒ[ƒh
 	status_bar.Load();//ƒXƒe[ƒ^ƒXƒo[‚Ìƒ[ƒh
 
-	test.Load("texter/game/map/wall.png");
+	test_map.Load();
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {	
+
 	//ƒ}ƒEƒXƒJ[ƒ\ƒ‹(UI‰æ–Ê)
 	mouse_point.point.Init(VGet(0, 0, 0));
 	mouse_point.point.mouse_point_move_flag = true;
@@ -35,10 +36,9 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	status_bar.Init(VGet(0, 0, 0));
 	//status_bar.Push(diploidEngineImpact);//¡‚Ì‚Æ‚±‚ë’†g‚È‚µ
 
-	//test.Init(VGet(1280.0f/2, 720.0f/ 2, 0.0f));
-	test.Scale(VGet(64.0f * 2,64.0f * 2, 0.0f));
-	//test.RotateY(30.0f);
-	test.Translate(VGet(1280.0f/2, 720.0f/2, 10.0f));
+
+	test_map.Init(VGet(1280/2, 720/2, 0));
+	test_map.Push(diploidEngineImpact);
 
 	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
 	diploidEngineImpact.AutoNumber();
@@ -69,6 +69,7 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 		count = 0;
 	}
 
+	test_map.Updata(diploidEngineImpact, diploidEngineInput);
 
 	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
 	diploidEngineImpact.AutoNumber();
@@ -76,6 +77,8 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {	
+	test_map.Draw();
+
 	//ƒRƒ}ƒ“ƒhUI‚Ì•`Ê
 	command_ui.Draw();
 
@@ -85,8 +88,6 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	//‹Gßƒpƒlƒ‹‚Ì•`Ê
 	season_panel.Draw();
 
-
-	test.Draw();
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

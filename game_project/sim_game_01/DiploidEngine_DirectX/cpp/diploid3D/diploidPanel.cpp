@@ -131,15 +131,20 @@ void DiploidPanel::Init(VECTOR size)
 	vertex[5].sv = 0.0f;
 }
 
-void DiploidPanel::Updata()
+void DiploidPanel::Update()
 {
+
 }
 
-void DiploidPanel::Draw(bool draw)
+void DiploidPanel::Draw(bool wire)
 {	
-	SetCameraPositionAndTarget_UpVecY(VGet(1280 / 2, 720 / 2, -1000.0f), VGet(1280 / 2, 720 / 2, 0.1f));
-
 	DrawPolygon3D(vertex, 2, object.image.handl, TRUE);
+
+	if (wire == true)
+	{
+		DrawTriangle3D(triangle_one[0], triangle_one[1], triangle_one[2], color, FALSE);
+		DrawTriangle3D(triangle_two[0], triangle_two[1], triangle_two[2], color, FALSE);
+	}
 
 	//三角形の情報を保存
 	triangle_one[0] = vertex[0].pos;
@@ -149,7 +154,18 @@ void DiploidPanel::Draw(bool draw)
 	triangle_two[0] = vertex[3].pos;
 	triangle_two[1] = vertex[4].pos;
 	triangle_two[2] = vertex[5].pos;
+}
 
+void DiploidPanel::isGetTriangles()
+{
+	//三角形の情報を保存
+	triangle_one[0] = vertex[0].pos;
+	triangle_one[1] = vertex[1].pos;
+	triangle_one[2] = vertex[2].pos;
+
+	triangle_two[0] = vertex[3].pos;
+	triangle_two[1] = vertex[4].pos;
+	triangle_two[2] = vertex[5].pos;
 }
 
 void DiploidPanel::Translate(VECTOR trans)
@@ -162,6 +178,15 @@ void DiploidPanel::Translate(VECTOR trans)
 
 		vertex[count].pos = translate_position[count];
 	}
+
+	//三角形の情報を保存
+	triangle_one[0] = vertex[0].pos;
+	triangle_one[1] = vertex[1].pos;
+	triangle_one[2] = vertex[2].pos;
+
+	triangle_two[0] = vertex[3].pos;
+	triangle_two[1] = vertex[4].pos;
+	triangle_two[2] = vertex[5].pos;
 }
 
 void DiploidPanel::Scale(VECTOR scale)
@@ -174,6 +199,15 @@ void DiploidPanel::Scale(VECTOR scale)
 
 		vertex[count].pos = scale_position[count];
 	}
+
+	//三角形の情報を保存
+	triangle_one[0] = vertex[0].pos;
+	triangle_one[1] = vertex[1].pos;
+	triangle_one[2] = vertex[2].pos;
+
+	triangle_two[0] = vertex[3].pos;
+	triangle_two[1] = vertex[4].pos;
+	triangle_two[2] = vertex[5].pos;
 }
 
 void DiploidPanel::RotateX(float rotate)
@@ -186,6 +220,16 @@ void DiploidPanel::RotateX(float rotate)
 
 		vertex[count].pos = rotate_x_position[count];
 	}
+
+	//三角形の情報を保存
+	triangle_one[0] = vertex[0].pos;
+	triangle_one[1] = vertex[1].pos;
+	triangle_one[2] = vertex[2].pos;
+
+	triangle_two[0] = vertex[3].pos;
+	triangle_two[1] = vertex[4].pos;
+	triangle_two[2] = vertex[5].pos;
+
 }
 
 void DiploidPanel::RotateY(float rotate)
@@ -198,6 +242,16 @@ void DiploidPanel::RotateY(float rotate)
 
 		vertex[count].pos = rotate_y_position[count];
 	}
+
+	//三角形の情報を保存
+	triangle_one[0] = vertex[0].pos;
+	triangle_one[1] = vertex[1].pos;
+	triangle_one[2] = vertex[2].pos;
+
+	triangle_two[0] = vertex[3].pos;
+	triangle_two[1] = vertex[4].pos;
+	triangle_two[2] = vertex[5].pos;
+
 }
 
 void DiploidPanel::RotateZ(float rotate)
@@ -210,4 +264,20 @@ void DiploidPanel::RotateZ(float rotate)
 
 		vertex[count].pos = rotate_z_position[count];
 	}
+
+	//三角形の情報を保存
+	triangle_one[0] = vertex[0].pos;
+	triangle_one[1] = vertex[1].pos;
+	triangle_one[2] = vertex[2].pos;
+
+	triangle_two[0] = vertex[3].pos;
+	triangle_two[1] = vertex[4].pos;
+	triangle_two[2] = vertex[5].pos;
+}
+
+
+VECTOR DiploidPanel::GetCenter()
+{
+	VECTOR pos = {0,0,0};
+	return pos;
 }

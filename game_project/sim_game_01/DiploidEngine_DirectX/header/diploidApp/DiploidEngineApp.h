@@ -19,6 +19,8 @@
 #include "data/game_data/UI/season_panel.h"
 #include "data/game_data/UI/status_bar.h"
 
+#include "data/game_data/EXPLORE/explore_test_map.h"
+
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
@@ -28,7 +30,7 @@ private:
 	SeasonPanel season_panel;//季節パネル
 	StatusBar status_bar;//ステータスバー
 
-	DiploidPanel test;
+	Explore_TestMap test_map;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
