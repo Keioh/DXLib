@@ -58,7 +58,6 @@ const int MOVE_COMMAND		  = 3;
 const int PRODUCTION_COMMAND  = 4;
 const int RESEARCH_COMMAND	  = 5;
 const int EXPLORE_COMMAND	  = 6;
-const int SHOPPING_COMMAND	  = 7;
 
 
 

@@ -1,5 +1,14 @@
 #include "diploidSystem/diploidSystem.h"
 
+
+void DiploidSystem::OnePushBegin()
+{
+	if (push_flag == false)
+	{
+
+	}
+}
+
 void DiploidSystem::OnePushBOX_Impact(DiploidEngineImpact& impact, DiploidBox box)
 {
 	if (push_box_flag == false)

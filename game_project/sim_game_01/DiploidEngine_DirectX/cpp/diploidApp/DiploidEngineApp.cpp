@@ -69,7 +69,11 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 		count = 0;
 	}
 
-	test_map.Updata(diploidEngineImpact, diploidEngineInput);
+	//コマンドUIがオフなら
+	if (command_ui.GetUIFlag() == false)
+	{
+		test_map.Updata(diploidEngineImpact, diploidEngineInput);
+	}
 
 	//オブジェクト番号の自動振り分け
 	diploidEngineImpact.AutoNumber();

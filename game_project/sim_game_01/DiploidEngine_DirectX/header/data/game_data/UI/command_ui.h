@@ -15,15 +15,22 @@
 class CommandUI
 {
 private:
+	DiploidSystem system_production_button;
+	DiploidSystem system_research_button;
+	DiploidSystem system_camp_button;
+	DiploidSystem system_information_button;
+	DiploidSystem system_explore_button;
+	DiploidSystem system_move_button;
+
 	DiploidUI production_button;//製作ボタン
 	DiploidUI research_button;//研究ボタン
-	DiploidUI shopping_button;//買い物ボタン
 	DiploidUI camp_button;//野営ボタン
 	DiploidUI information_button;//情報ボタン
 	DiploidUI explore_button;//探索ボタン
 	DiploidUI move_button;//移動ボタン
 
 	int select_command;//現在選択されているコマンド
+	int command_ui_on = -1;//コマンドUIがオンになっている場合は1
 
 public:
 	CommandUI() {};
@@ -36,4 +43,6 @@ public:
 	void Draw(bool draw = true);
 
 	int GetCommand();//どのコマンドが選択されているかを得る。
+	bool GetUIFlag();//コマンドUIのオンオフを知る。
+
 };

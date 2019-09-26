@@ -74,7 +74,7 @@ void Explore_TestMap::Push(DiploidEngineImpact& impact)
 void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& input)
 {
 	//左へ行く
-	if (input.GetKey(KEY_INPUT_LEFT) == true)
+	if (input.GetKey(KEY_INPUT_A) == true)
 	{
 		if (impact.GetBoxImpactFlag_Sreach_Name_Tag("player_left") == false)//左が当たっていなければ
 		{
@@ -87,7 +87,7 @@ void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	}
 
 	//右へ行く
-	if (input.GetKey(KEY_INPUT_RIGHT) == true)
+	if (input.GetKey(KEY_INPUT_D) == true)
 	{
 		if (impact.GetBoxImpactFlag_Sreach_Name_Tag("player_right") == false)//右が当たっていなければ
 		{
@@ -100,7 +100,7 @@ void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	}
 	
 	//上へ行く
-	if (input.GetKey(KEY_INPUT_UP) == true)
+	if (input.GetKey(KEY_INPUT_W) == true)
 	{
 		if (impact.GetBoxImpactFlag_Sreach_Name_Tag("player_up") == false)//上が当たっていなければ
 		{
@@ -113,7 +113,7 @@ void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	}
 
 	//下へ行く
-	if (input.GetKey(KEY_INPUT_DOWN) == true)
+	if (input.GetKey(KEY_INPUT_S) == true)
 	{
 		if (impact.GetBoxImpactFlag_Sreach_Name_Tag("player_down") == false)//下が当たっていなければ
 		{
