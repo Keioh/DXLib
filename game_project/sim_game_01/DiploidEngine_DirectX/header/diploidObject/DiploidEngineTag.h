@@ -60,6 +60,16 @@ const int RESEARCH_COMMAND	  = 5;
 const int EXPLORE_COMMAND	  = 6;
 
 
+//プレーヤーの向いている方向
+const int PLAYER_UP = 0;
+const int PLAYER_DOWN = 1;
+const int PLAYER_LEFT = 2;
+const int PLAYER_RIGHT = 3;
+const int PLAYER_LEFT_UP = 4;
+const int PLAYER_RIGHT_UP = 5;
+const int PLAYER_RIGHT_DOWN = 6;
+const int PLAYER_LEFT_DOWN = 7;
+
 
 //タグ情報構造体
 struct Tag
