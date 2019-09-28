@@ -1,5 +1,5 @@
 /*---------------------------------------------------------*/
-/*--------------探索パートのすべてがここに-------------*/
+/*--------------探索テストマップのすべてがここに-------------*/
 /*---------------------------------------------------------*/
 
 #pragma once
@@ -9,6 +9,8 @@
 #include "diploidUI/diploidUI.h"
 #include "diploidSystem/diploidSystem.h"
 #include "diploid3D/diploidPanel.h"
+
+#include "data/game_data/CHARACTER/player_direction.h"
 
 class Explore_TestMap
 {
@@ -29,31 +31,10 @@ private:
 	void _MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input);
 	void _MapDraw(bool draw = true);
 
-	//プレーヤー関連
-	DiploidObject player_up;//プレーヤーの上の当たり判定
-	DiploidObject player_down;//プレーヤーの下の当たり判定
-	DiploidObject player_left;//プレーヤーの左の当たり判定
-	DiploidObject player_right;//プレーヤーの右の当たり判定
-
-	DiploidObject player_up_image;//プレーヤーの上の画像
-	DiploidObject player_down_image;//プレーヤーの下の画像
-	DiploidObject player_left_image;//プレーヤーの左の画像
-	DiploidObject player_right_image;//プレーヤーの右の画像
-
-	DiploidObject player_left_up_image;//プレーヤーの左上の画像
-	DiploidObject player_right_up_image;//プレーヤーの右上の画像
-	DiploidObject player_left_down_image;//プレーヤーの左下の画像
-	DiploidObject player_right_down_image;//プレーヤーの右下の画像
-
-	int player_direction = PLAYER_DOWN;//プレーヤーの向き
+	//プレーヤー関連	
+	PlayerDirection player_direction;//プレーヤー表示
 	float player_size;//プレーヤーの大きさ(map_chip_sizeの0.2倍)
 	float movement_speed = 5.0f;//プレーヤーの移動速度
-
-	void _PlayerLoad();
-	void _PlayerInit();
-	void _PlayerPush(DiploidEngineImpact* impact);
-	void _PlayerUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input);
-	void _PlayerDraw(bool draw = true);
 
 
 public:

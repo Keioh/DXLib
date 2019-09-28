@@ -145,6 +145,12 @@
     <Filter Include="ヘッダー ファイル\header\diploid3D">
       <UniqueIdentifier>{142727dc-a22e-4cd3-9bb3-bd0580a910d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\data\game_data\CHARACTER">
+      <UniqueIdentifier>{5294a1ba-4c83-4f8e-9aa1-a59f70a12fde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\game_data\CHARACTER">
+      <UniqueIdentifier>{f086d58f-5d3a-4c50-b781-b9ff4c0e466d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -249,9 +255,6 @@
     <ClCompile Include="cpp\diploidStandalone\graphics\diploidBoxSA.cpp">
       <Filter>ソース ファイル\cpp\diploidStandalone\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\data\game_data\main_castle.cpp">
-      <Filter>ソース ファイル\data\game_data</Filter>
-    </ClCompile>
     <ClCompile Include="cpp\data\game_data\UI\command_ui.cpp">
       <Filter>ソース ファイル\data\game_data\UI</Filter>
     </ClCompile>
@@ -269,6 +272,9 @@
     </ClCompile>
     <ClCompile Include="cpp\diploid3D\diploidPanel.cpp">
       <Filter>ソース ファイル\cpp\diploid3D</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\game_data\CHARACTER\player_direction.cpp">
+      <Filter>ソース ファイル\data\game_data\CHARACTER</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -380,9 +386,6 @@
     <ClInclude Include="header\diploidInput\json.hpp">
       <Filter>ヘッダー ファイル\header\diploidInput</Filter>
     </ClInclude>
-    <ClInclude Include="header\data\game_data\main_castle.h">
-      <Filter>ヘッダー ファイル\data\game_data</Filter>
-    </ClInclude>
     <ClInclude Include="header\data\game_data\UI\command_ui.h">
       <Filter>ヘッダー ファイル\data\game_data\UI</Filter>
     </ClInclude>
@@ -400,6 +403,9 @@
     </ClInclude>
     <ClInclude Include="header\diploid3D\diploidPanel.h">
       <Filter>ヘッダー ファイル\header\diploid3D</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\game_data\CHARACTER\player_direction.h">
+      <Filter>ヘッダー ファイル\data\game_data\CHARACTER</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
