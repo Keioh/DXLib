@@ -65,7 +65,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if (input.GetKey(KEY_INPUT_A) == true)
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_LEFT;
+		player_direction = PLAYER_DIRECTION_LEFT;
 		player_left_image.image.Updata();
 	}
 
@@ -73,7 +73,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if (input.GetKey(KEY_INPUT_D) == true)
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_RIGHT;
+		player_direction = PLAYER_DIRECTION_RIGHT;
 		player_right_image.image.Updata();
 	}
 
@@ -81,7 +81,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if (input.GetKey(KEY_INPUT_W) == true)
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_UP;
+		player_direction = PLAYER_DIRECTION_UP;
 		player_up_image.image.Updata();
 	}
 
@@ -89,7 +89,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if (input.GetKey(KEY_INPUT_S) == true)
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_DOWN;
+		player_direction = PLAYER_DIRECTION_DOWN;
 		player_down_image.image.Updata();
 	}
 
@@ -97,7 +97,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if ((input.GetKey(KEY_INPUT_A) == true) && (input.GetKey(KEY_INPUT_W) == true))
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_LEFT_UP;
+		player_direction = PLAYER_DIRECTION_LEFT_UP;
 		player_left_up_image.image.Updata();
 	}
 
@@ -105,7 +105,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if ((input.GetKey(KEY_INPUT_D) == true) && (input.GetKey(KEY_INPUT_W) == true))
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_RIGHT_UP;
+		player_direction = PLAYER_DIRECTION_RIGHT_UP;
 		player_right_up_image.image.Updata();
 	}
 
@@ -113,7 +113,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if ((input.GetKey(KEY_INPUT_D) == true) && (input.GetKey(KEY_INPUT_S) == true))
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_RIGHT_DOWN;
+		player_direction = PLAYER_DIRECTION_RIGHT_DOWN;
 		player_right_down_image.image.Updata();
 	}
 
@@ -121,7 +121,7 @@ void PlayerDirection::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if ((input.GetKey(KEY_INPUT_A) == true) && (input.GetKey(KEY_INPUT_S) == true))
 	{
 		//プレーヤー画像の更新
-		player_direction = PLAYER_LEFT_DOWN;
+		player_direction = PLAYER_DIRECTION_LEFT_DOWN;
 		player_left_down_image.image.Updata();
 	}
 
@@ -134,14 +134,14 @@ void PlayerDirection::Draw(bool draw)
 		//プレーヤー画像の描写
 		switch (player_direction)
 		{
-		case PLAYER_UP:	player_up_image.image.Draw(); break;
-		case PLAYER_DOWN: player_down_image.image.Draw(); break;
-		case PLAYER_LEFT: player_left_image.image.Draw(); break;
-		case PLAYER_RIGHT: player_right_image.image.Draw(); break;
-		case PLAYER_LEFT_UP: player_left_up_image.image.Draw(); break;
-		case PLAYER_RIGHT_UP: player_right_up_image.image.Draw(); break;
-		case PLAYER_LEFT_DOWN: player_left_down_image.image.Draw(); break;
-		case PLAYER_RIGHT_DOWN: player_right_down_image.image.Draw(); break;
+		case PLAYER_DIRECTION_UP:	player_up_image.image.Draw(); break;
+		case PLAYER_DIRECTION_DOWN: player_down_image.image.Draw(); break;
+		case PLAYER_DIRECTION_LEFT: player_left_image.image.Draw(); break;
+		case PLAYER_DIRECTION_RIGHT: player_right_image.image.Draw(); break;
+		case PLAYER_DIRECTION_LEFT_UP: player_left_up_image.image.Draw(); break;
+		case PLAYER_DIRECTION_RIGHT_UP: player_right_up_image.image.Draw(); break;
+		case PLAYER_DIRECTION_LEFT_DOWN: player_left_down_image.image.Draw(); break;
+		case PLAYER_DIRECTION_RIGHT_DOWN: player_right_down_image.image.Draw(); break;
 		default: break;
 		}
 	}

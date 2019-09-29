@@ -10,6 +10,7 @@
 #include "diploidUI/diploidUI.h"
 #include "diploidSystem/diploidSystem.h"
 
+#include "data/game_data/UI/information_command.h"
 
 //レイヤー番号はDIPLOID_LAYER_00
 class CommandUI
@@ -32,9 +33,12 @@ private:
 	int select_command;//現在選択されているコマンド
 	int command_ui_on = -1;//コマンドUIがオンになっている場合は1
 
+
 public:
 	CommandUI() {};
 	~CommandUI() {};
+
+	InformationCommand information_command;
 
 	void Load();
 	void Init(VECTOR position = { 0.0f,0.0f,0.0f });

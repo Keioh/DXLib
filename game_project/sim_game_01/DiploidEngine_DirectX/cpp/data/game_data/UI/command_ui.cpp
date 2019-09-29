@@ -20,6 +20,9 @@ void CommandUI::Load()
 	//移動ボタン画像の読み込み
 	move_button.SwitchButtonBOX_Load("texter/game/command_button/move.png", 128, 64);
 
+
+	//情報ウィンドウの読み込み
+	information_command.Load();
 }
 
 void CommandUI::Init(VECTOR position)
@@ -42,6 +45,9 @@ void CommandUI::Init(VECTOR position)
 	//移動ボタン関連
 	move_button.SwitchButtonBOX_Init(VGet(position.x, position.y + (64 * 5), 0), VGet(128, 64, 0), "move_button", DIPLOID_LAYER_00);
 
+
+	//情報ウィンドウの初期化
+	information_command.Init(VGet((position.x + 128), position.y, 0));
 }
 
 void CommandUI::Push(DiploidEngineImpact& impact)
@@ -62,6 +68,7 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 	{
 		command_ui_on *= -1;
 	}
+
 
 	if (GetUIFlag() == true)
 	{
@@ -173,6 +180,8 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 	}
 	else
 	{
+		select_command = NO_COMMAND;
+
 		//ボタンをオフにする
 		production_button.SwitchButton_Flag_Change(false);
 		research_button.SwitchButton_Flag_Change(false);
@@ -196,8 +205,10 @@ void CommandUI::Updata(int mouse_input_button_type, DiploidEngineImpact& impact,
 		system_information_button.FlagReset_OnePushBOX();
 		system_explore_button.FlagReset_OnePushBOX();
 		system_move_button.FlagReset_OnePushBOX();
-
-	}
+	}	
+	
+	//情報ウィンドウの更新
+	information_command.Update(GetUIFlag(), GetCommand(), impact);
 }
 
 void CommandUI::Draw(bool draw)
@@ -212,7 +223,10 @@ void CommandUI::Draw(bool draw)
 			information_button.SwitchButtonBOX_Draw();//情報ボタンの描写
 			explore_button.SwitchButtonBOX_Draw();//情報ボタンの描写
 			move_button.SwitchButtonBOX_Draw();//移動ボタンの描写
-		}
+
+		}	
+
+		information_command.Draw(GetUIFlag(), GetCommand());//情報ウィンドウの描写
 	}
 }
 

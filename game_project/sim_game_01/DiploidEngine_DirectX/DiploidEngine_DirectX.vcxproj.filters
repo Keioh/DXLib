@@ -276,6 +276,9 @@
     <ClCompile Include="cpp\data\game_data\CHARACTER\player_direction.cpp">
       <Filter>ソース ファイル\data\game_data\CHARACTER</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\data\game_data\UI\information_command.cpp">
+      <Filter>ソース ファイル\data\game_data\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -406,6 +409,9 @@
     </ClInclude>
     <ClInclude Include="header\data\game_data\CHARACTER\player_direction.h">
       <Filter>ヘッダー ファイル\data\game_data\CHARACTER</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\game_data\UI\information_command.h">
+      <Filter>ヘッダー ファイル\data\game_data\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

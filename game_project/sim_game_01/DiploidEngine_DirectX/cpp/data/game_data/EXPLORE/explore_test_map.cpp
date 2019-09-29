@@ -96,19 +96,44 @@ void Explore_TestMap::_MapPush(DiploidEngineImpact* impact)
 }
 
 void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input)
-{	
+{
 	//背景画像のアップデート
 	test_map_texter.image.Updata();
+
+	//走る
+	if (input->GetKey(KEY_INPUT_LSHIFT) == true)
+	{
+		movement_type = PLAYER_RUN;//移動状態を「走り」にする
+	}
+	else
+	{
+		movement_type = PLAYER_WALK;//移動状態を「歩き」にする
+	}
 
 	//左へ行く
 	if (input->GetKey(KEY_INPUT_A) == true)
 	{
 		if (impact->GetBoxImpactFlag_Sreach_Name_Tag("player_left") == false)//左が当たっていなければ
 		{
-			for (int count = 0; count <= map_number; count++)
+			//歩き
+			if (movement_type == PLAYER_WALK)
 			{
-				impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", movement_speed);//移動	
-				test_map_texter.image.move_speed.x = movement_speed;
+				for (int count = 0; count <= map_number; count++)
+				{
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", movement_speed);//移動	
+					test_map_texter.image.move_speed.x = movement_speed;
+				}
+			}
+
+			//走り
+			if (movement_type == PLAYER_RUN)
+			{
+				for (int count = 0; count <= map_number; count++)
+				{
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", movement_speed * movement_run_scale);//移動	
+					test_map_texter.image.move_speed.x = movement_speed * movement_run_scale;
+
+				}
 			}
 		}
 	}
@@ -118,10 +143,26 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 	{
 		if (impact->GetBoxImpactFlag_Sreach_Name_Tag("player_right") == false)//右が当たっていなければ
 		{
-			for (int count = 0; count <= map_number; count++)
+			//歩き
+			if (movement_type == PLAYER_WALK)
 			{
-				impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", -movement_speed);//移動
-				test_map_texter.image.move_speed.x = -movement_speed;
+				for (int count = 0; count <= map_number; count++)
+				{
+
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", -movement_speed);//移動
+					test_map_texter.image.move_speed.x = -movement_speed;
+				}
+			}
+
+			//走り
+			if (movement_type == PLAYER_RUN)
+			{
+				for (int count = 0; count <= map_number; count++)
+				{
+
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", -movement_speed * movement_run_scale);//移動
+					test_map_texter.image.move_speed.x = -movement_speed * movement_run_scale;
+				}
 			}
 		}
 	}
@@ -131,10 +172,24 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 	{
 		if (impact->GetBoxImpactFlag_Sreach_Name_Tag("player_up") == false)//上が当たっていなければ
 		{
-			for (int count = 0; count <= map_number; count++)
+			//歩き
+			if (movement_type == PLAYER_WALK)
 			{
-				impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", movement_speed);//移動
-				test_map_texter.image.move_speed.y = movement_speed;
+				for (int count = 0; count <= map_number; count++)
+				{
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", movement_speed);//移動
+					test_map_texter.image.move_speed.y = movement_speed;
+				}
+			}
+
+			//走り
+			if (movement_type == PLAYER_RUN)
+			{
+				for (int count = 0; count <= map_number; count++)
+				{
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", movement_speed * movement_run_scale);//移動
+					test_map_texter.image.move_speed.y = movement_speed * movement_run_scale;
+				}
 			}
 		}
 	}
@@ -144,10 +199,24 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 	{
 		if (impact->GetBoxImpactFlag_Sreach_Name_Tag("player_down") == false)//下が当たっていなければ
 		{
-			for (int count = 0; count <= map_number; count++)
+			//歩き
+			if (movement_type == PLAYER_WALK)
 			{
-				impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", -movement_speed);//移動
-				test_map_texter.image.move_speed.y = -movement_speed;
+				for (int count = 0; count <= map_number; count++)
+				{
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", -movement_speed);//移動
+					test_map_texter.image.move_speed.y = -movement_speed;
+				}
+			}
+
+			//走り
+			if (movement_type == PLAYER_RUN)
+			{
+				for (int count = 0; count <= map_number; count++)
+				{
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", -movement_speed * movement_run_scale);//移動
+					test_map_texter.image.move_speed.y = -movement_speed * movement_run_scale;
+				}
 			}
 		}
 	}

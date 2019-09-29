@@ -6,11 +6,10 @@
 #include "diploidObject/DiploidEngineObject.h"
 #include "diploidImpact/DiploidEngineImpact.h"
 #include "diploidInput/DiploidEngineInput.h"
-#include "diploidUI/diploidUI.h"
 #include "diploidSystem/diploidSystem.h"
-#include "diploid3D/diploidPanel.h"
 
 #include "data/game_data/CHARACTER/player_direction.h"
+
 
 class Explore_TestMap
 {
@@ -34,8 +33,16 @@ private:
 	//プレーヤー関連	
 	PlayerDirection player_direction;//プレーヤー表示
 	float player_size;//プレーヤーの大きさ(map_chip_sizeの0.2倍)
-	float movement_speed = 5.0f;//プレーヤーの移動速度
 
+	float movement_speed = 3.0f;//プレーヤーの移動速度
+	float movement_run_scale = 1.8f;//走る際の移動倍率
+	float rinjury_lv1_scale = 0.8f;//怪我を負った際のLV1倍率
+	float rinjury_lv2_scale = 0.6f;//怪我を負った際のLV2倍率
+	float rinjury_lv3_scale = 0.5f;//怪我を負った際のLV3倍率
+	float rinjury_lv4_scale = 0.3f;//怪我を負った際のLV4倍率
+	float rinjury_lv5_scale = 0.1f;//怪我を負った際のLV5倍率
+
+	int movement_type = PLAYER_WALK;//プレーヤーの移動状態
 
 public:
 	Explore_TestMap() {};

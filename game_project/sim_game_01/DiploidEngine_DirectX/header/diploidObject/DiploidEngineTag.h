@@ -51,24 +51,36 @@ const int NOUHAKU_NO_TUKI = 12;
 
 
 //主要コマンド関連
-const int NO_COMMAND		  = 0;
-const int CAMP_COMMAND		  = 1;
-const int INFORMATION_COMMAND = 2;
-const int MOVE_COMMAND		  = 3;
-const int PRODUCTION_COMMAND  = 4;
-const int RESEARCH_COMMAND	  = 5;
-const int EXPLORE_COMMAND	  = 6;
+const int NO_COMMAND		  = 0;//コマンド選択なし
+const int CAMP_COMMAND		  = 1;//野営コマンド
+const int INFORMATION_COMMAND = 2;//情報コマンド
+const int MOVE_COMMAND		  = 3;//移動コマンド
+const int PRODUCTION_COMMAND  = 4;//製作コマンド
+const int RESEARCH_COMMAND	  = 5;//研究コマンド
+const int EXPLORE_COMMAND	  = 6;//探索コマンド
 
 
 //プレーヤーの向いている方向
-const int PLAYER_UP = 0;
-const int PLAYER_DOWN = 1;
-const int PLAYER_LEFT = 2;
-const int PLAYER_RIGHT = 3;
-const int PLAYER_LEFT_UP = 4;
-const int PLAYER_RIGHT_UP = 5;
-const int PLAYER_RIGHT_DOWN = 6;
-const int PLAYER_LEFT_DOWN = 7;
+const int PLAYER_DIRECTION_UP = 0;//上
+const int PLAYER_DIRECTION_DOWN = 1;//下
+const int PLAYER_DIRECTION_LEFT = 2;//左
+const int PLAYER_DIRECTION_RIGHT = 3;//右
+const int PLAYER_DIRECTION_LEFT_UP = 4;//左上
+const int PLAYER_DIRECTION_RIGHT_UP = 5;//右上
+const int PLAYER_DIRECTION_RIGHT_DOWN = 6;//右下
+const int PLAYER_DIRECTION_LEFT_DOWN = 7;//左下
+
+//プレーヤーの移動状態
+const int PLAYER_WAIT = 0;//待機
+const int PLAYER_WALK = 1;//歩き
+const int PLAYER_RUN = 2;//走り
+
+//ステータス異常関連
+const int STATUS_INJURY_LV1 = 0;//負傷LV1
+const int STATUS_INJURY_LV2 = 1;//負傷LV2
+const int STATUS_INJURY_LV3 = 2;//負傷LV3
+const int STATUS_INJURY_LV4 = 3;//負傷LV4
+const int STATUS_INJURY_LV5 = 4;//負傷LV5
 
 
 //タグ情報構造体

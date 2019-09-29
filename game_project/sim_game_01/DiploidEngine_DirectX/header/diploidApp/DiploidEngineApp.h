@@ -30,6 +30,8 @@ private:
 	SeasonPanel season_panel;//季節パネル
 	StatusBar status_bar;//ステータスバー
 
+	DiploidObject test_clock;
+
 	Explore_TestMap test_map;
 
 public:

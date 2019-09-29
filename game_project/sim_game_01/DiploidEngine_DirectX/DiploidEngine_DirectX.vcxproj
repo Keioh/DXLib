@@ -135,6 +135,7 @@
     <ClCompile Include="cpp\data\game_data\CHARACTER\player_direction.cpp" />
     <ClCompile Include="cpp\data\game_data\EXPLORE\explore_test_map.cpp" />
     <ClCompile Include="cpp\data\game_data\UI\command_ui.cpp" />
+    <ClCompile Include="cpp\data\game_data\UI\information_command.cpp" />
     <ClCompile Include="cpp\data\game_data\UI\season_panel.cpp" />
     <ClCompile Include="cpp\data\game_data\UI\status_bar.cpp" />
     <ClCompile Include="cpp\data\number.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="header\data\game_data\CHARACTER\player_direction.h" />
     <ClInclude Include="header\data\game_data\EXPLORE\explore_test_map.h" />
     <ClInclude Include="header\data\game_data\UI\command_ui.h" />
+    <ClInclude Include="header\data\game_data\UI\information_command.h" />
     <ClInclude Include="header\data\game_data\UI\season_panel.h" />
     <ClInclude Include="header\data\game_data\UI\status_bar.h" />
     <ClInclude Include="header\data\number.h" />

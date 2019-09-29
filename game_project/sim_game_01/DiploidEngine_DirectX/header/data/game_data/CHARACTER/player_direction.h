@@ -28,7 +28,7 @@ private:
 	DiploidObject player_left_down_image;//プレーヤーの左下の画像
 	DiploidObject player_right_down_image;//プレーヤーの右下の画像
 
-	int player_direction = PLAYER_DOWN;//プレーヤーの向き
+	int player_direction = PLAYER_DIRECTION_DOWN;//プレーヤーの向き
 	float player_scale;//プレーヤーの大きさ保存用(player_sizeの保存用)
 	float player_size;//プレーヤーの大きさ(map_chip_sizeの0.2倍)
 	float movement_speed = 5.0f;//プレーヤーの移動速度

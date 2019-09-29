@@ -12,6 +12,8 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	season_panel.Load();//‹Gßƒpƒlƒ‹‚Ìƒ[ƒh
 	status_bar.Load();//ƒXƒe[ƒ^ƒXƒo[‚Ìƒ[ƒh
 
+	test_clock.image.Load("texter/game/clock/clock.png");
+
 	test_map.Load();
 }
 
@@ -31,6 +33,8 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//‹Gßƒpƒlƒ‹‚Ì‰Šú‰»‚ÆƒvƒbƒVƒ…
 	season_panel.Init(VGet(0, 0, 0));
 	//season_panel.Push(diploidEngineImpact);//¡‚Ì‚Æ‚±‚ë’†g‚È‚µ
+
+	test_clock.image.Init(VGet(1280 - 128/2, 0 + 320/2, 0));
 
 	//ƒXƒe[ƒ^ƒXƒo[‚Ì‰Šú‰»‚ÆƒvƒbƒVƒ…
 	status_bar.Init(VGet(0, 0, 0));
@@ -56,6 +60,7 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 
 	//ƒXƒe[ƒ^ƒXƒo[‚ÌƒAƒbƒvƒf[ƒg
 	status_bar.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
+	status_bar.StatusUpdate(command_ui.information_command);//ƒXƒe[ƒ^ƒXƒo[‚Ì”’l‚ğƒRƒ}ƒ“ƒhUI‚©‚ç‚Ìî•ñ‚ğ—p‚¢‚ÄXV
 
 	//‹Gßƒpƒlƒ‹‚ÌƒAƒbƒvƒf[ƒg
 	season_panel.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
@@ -88,9 +93,12 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 
 	//ƒXƒe[ƒ^ƒXƒo[‚Ì•`Ê
 	status_bar.Draw();
+	status_bar.StatusDraw(command_ui.information_command);//ƒXƒe[ƒ^ƒXƒo[‚ÉƒRƒ}ƒ“ƒhUI‚©‚ç‚Ì”’l‚ğo—Í
 
 	//‹Gßƒpƒlƒ‹‚Ì•`Ê
 	season_panel.Draw();
+
+	test_clock.image.Draw();
 
 }
 
