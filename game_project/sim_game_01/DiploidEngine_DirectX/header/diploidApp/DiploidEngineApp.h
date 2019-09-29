@@ -30,9 +30,18 @@ private:
 	SeasonPanel season_panel;//季節パネル
 	StatusBar status_bar;//ステータスバー
 
-	DiploidObject test_clock;
-
 	Explore_TestMap test_map;
+
+	//時計
+	DiploidObject test_clock_back;
+	DiploidObject test_clock_hour_hand;
+	DiploidObject test_clock_minute_hand;
+	DiploidObject test_clock_second_hand;
+	int timer = 0;
+	int hour = 0;
+	int minute = 0;
+	int second = 0;
+
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

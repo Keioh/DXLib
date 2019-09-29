@@ -12,7 +12,12 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	season_panel.Load();//‹Gßƒpƒlƒ‹‚Ìƒ[ƒh
 	status_bar.Load();//ƒXƒe[ƒ^ƒXƒo[‚Ìƒ[ƒh
 
-	test_clock.image.Load("texter/game/clock/clock.png");
+	//Œv
+	test_clock_back.image.Load("texter/game/clock/back.png");
+	test_clock_hour_hand.image.Load("texter/game/clock/hour_hand.png");
+	test_clock_minute_hand.image.Load("texter/game/clock/minute_hand.png");
+	test_clock_second_hand.image.Load("texter/game/clock/second_hand.png");
+
 
 	test_map.Load();
 }
@@ -34,7 +39,14 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	season_panel.Init(VGet(0, 0, 0));
 	//season_panel.Push(diploidEngineImpact);//¡‚Ì‚Æ‚±‚ë’†g‚È‚µ
 
-	test_clock.image.Init(VGet(1280 - 128/2, 0 + 320/2, 0));
+
+	//Œv
+	test_clock_back.image.Init(VGet(1280 - 128/2, 0 + 320/2, 0));
+	test_clock_hour_hand.image.Init(VGet(1280 - 128 / 2, 0 + 320 / 2, 0));
+	test_clock_minute_hand.image.Init(VGet(1280 - 128 / 2, 0 + 320 / 2, 0));
+	test_clock_second_hand.image.Init(VGet(1280 - 128 / 2, 0 + 320 / 2, 0));
+
+
 
 	//ƒXƒe[ƒ^ƒXƒo[‚Ì‰Šú‰»‚ÆƒvƒbƒVƒ…
 	status_bar.Init(VGet(0, 0, 0));
@@ -55,6 +67,54 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
+	//Œv
+	timer++;
+	if (timer > 59 * 2)
+	{
+		second += 1;
+		
+		test_clock_second_hand.image.move_speed.x = 2;
+
+		timer = 0;
+	}
+
+	if (second > 29)
+	{
+		minute += 1;
+
+		test_clock_minute_hand.image.move_speed.y = 18;
+
+		test_clock_second_hand.image.move_speed.x = -(2 * 29);
+		
+		
+		second = 0;	
+	}
+
+	if (minute > 11)
+	{
+		hour += 1;
+
+		test_clock_hour_hand.image.move_speed.y = 24;
+
+		test_clock_minute_hand.image.move_speed.y = -(18 * 11);
+		
+		
+		minute = 0;	
+	}
+
+	if (hour > 7)
+	{
+		test_clock_hour_hand.image.move_speed.y = -(24 * 7);
+
+
+		hour = 0;
+	}
+
+	test_clock_second_hand.image.Updata();		
+	test_clock_minute_hand.image.Updata();	
+	test_clock_hour_hand.image.Updata();
+
+
 	//ƒRƒ}ƒ“ƒhUI‚ÌƒAƒbƒvƒf[ƒg
 	command_ui.Updata(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput);
 
@@ -98,7 +158,11 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	//‹Gßƒpƒlƒ‹‚Ì•`Ê
 	season_panel.Draw();
 
-	test_clock.image.Draw();
+	//Œv
+	test_clock_back.image.Draw();
+	test_clock_hour_hand.image.Draw();
+	test_clock_minute_hand.image.Draw();
+	test_clock_second_hand.image.Draw();
 
 }
 
