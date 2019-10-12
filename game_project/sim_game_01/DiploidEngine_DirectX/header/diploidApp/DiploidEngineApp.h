@@ -18,6 +18,7 @@
 #include "data/game_data/UI/command_ui.h"
 #include "data/game_data/UI/season_panel.h"
 #include "data/game_data/UI/status_bar.h"
+#include "data/game_data/UI/clock.h"
 
 #include "data/game_data/EXPLORE/explore_test_map.h"
 
@@ -25,22 +26,14 @@ class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidObject mouse_point;//マウスカーソルの判定用
+	DiploidObject input;
 
 	CommandUI command_ui;//コマンドUI
 	SeasonPanel season_panel;//季節パネル
 	StatusBar status_bar;//ステータスバー
+	Clock clock;//時計
 
 	Explore_TestMap test_map;
-
-	//時計
-	DiploidObject test_clock_back;
-	DiploidObject test_clock_hour_hand;
-	DiploidObject test_clock_minute_hand;
-	DiploidObject test_clock_second_hand;
-	int timer = 0;
-	int hour = 0;
-	int minute = 0;
-	int second = 0;
 
 
 public:

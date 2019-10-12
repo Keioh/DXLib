@@ -134,6 +134,7 @@
     <ClCompile Include="cpp\data\dice_result_bord.cpp" />
     <ClCompile Include="cpp\data\game_data\CHARACTER\player_direction.cpp" />
     <ClCompile Include="cpp\data\game_data\EXPLORE\explore_test_map.cpp" />
+    <ClCompile Include="cpp\data\game_data\UI\clock.cpp" />
     <ClCompile Include="cpp\data\game_data\UI\command_ui.cpp" />
     <ClCompile Include="cpp\data\game_data\UI\information_command.cpp" />
     <ClCompile Include="cpp\data\game_data\UI\season_panel.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="header\data\dice_result_bord.h" />
     <ClInclude Include="header\data\game_data\CHARACTER\player_direction.h" />
     <ClInclude Include="header\data\game_data\EXPLORE\explore_test_map.h" />
+    <ClInclude Include="header\data\game_data\UI\clock.h" />
     <ClInclude Include="header\data\game_data\UI\command_ui.h" />
     <ClInclude Include="header\data\game_data\UI\information_command.h" />
     <ClInclude Include="header\data\game_data\UI\season_panel.h" />

@@ -1,0 +1,52 @@
+﻿  explore_test_map.cpp
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\explore\explore_test_map.cpp(74): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\explore\explore_test_map.cpp(88): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  clock.cpp
+  command_ui.cpp
+  information_command.cpp
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(10): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(65): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(66): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(67): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(68): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(69): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(70): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(71): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(75): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(78): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(79): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(81): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(82): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(84): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(85): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(87): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(88): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(90): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(91): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(93): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(94): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(96): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(97): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(101): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(197): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(266): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(335): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(405): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(474): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(543): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(612): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\information_command.cpp(682): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  status_bar.cpp
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\status_bar.cpp(42): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\status_bar.cpp(43): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\sim_game_01\diploidengine_directx\cpp\data\game_data\ui\status_bar.cpp(44): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  DiploidEngineApp.cpp
+  WindowsMain.cpp
+  コード生成しています。
+  83 of 1434 functions ( 5.8%) were compiled, the rest were copied from previous compilation.
+    38 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  コード生成が終了しました。
+  DiploidEngine_DirectX.vcxproj -> C:\GameProject\sim_game_01\Release\DiploidEngine_DirectX.exe

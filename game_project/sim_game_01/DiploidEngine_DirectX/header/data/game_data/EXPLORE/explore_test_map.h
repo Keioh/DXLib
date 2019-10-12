@@ -42,7 +42,7 @@ private:
 	float rinjury_lv4_scale = 0.3f;//怪我を負った際のLV4倍率
 	float rinjury_lv5_scale = 0.1f;//怪我を負った際のLV5倍率
 
-	int movement_type = PLAYER_WALK;//プレーヤーの移動状態
+	int movement_type = PLAYER_WAIT;//プレーヤーの移動状態
 
 public:
 	Explore_TestMap() {};
