@@ -7,6 +7,8 @@ void Explore_TestMap::Load()
 
 	//プレーヤーの読み込み
 	player_direction.Load();
+
+	player_visibility.image.Load("texter/game/character/shikai.png");
 }
 
 void Explore_TestMap::Init(VECTOR position)
@@ -16,6 +18,8 @@ void Explore_TestMap::Init(VECTOR position)
 
 	//プレーヤーの初期化
 	player_direction.Init(player_size);
+
+	player_visibility.image.Init(VGet(1280 / 2, 720 / 2, 0));
 }
 
 void Explore_TestMap::Push(DiploidEngineImpact& impact)
@@ -27,13 +31,14 @@ void Explore_TestMap::Push(DiploidEngineImpact& impact)
 	player_direction.Push(impact);
 }
 
-void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& input)
+void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& input, CommandUI& command_ui, StatusBar& status_bar, Clock& clock)
 {
 	//マップのアップデート
-	_MapUpdate(&impact, &input);
+	_MapUpdate(&impact, &input, &command_ui, &status_bar, &clock);
 
 	//プレーヤーのアップデート
 	player_direction.Updata(impact, input);
+
 }
 
 void Explore_TestMap::Draw(bool draw)
@@ -43,6 +48,8 @@ void Explore_TestMap::Draw(bool draw)
 
 	//プレーヤーの描写
 	player_direction.Draw(draw);
+
+	player_visibility.image.Draw(draw);
 }
 
 
@@ -75,7 +82,7 @@ void Explore_TestMap::_MapInit(VECTOR position)
 	test_map.map.Create();
 
 	//背景画像の初期化
-	test_map_texter.image.Init(VGet((1280 / 2), (720 / 2), 0), 40.0f);
+	test_map_texter.image.Init(VGet((1280 / 2), (720 / 2), 0), 4.0f);
 }
 
 void Explore_TestMap::_MapPush(DiploidEngineImpact* impact)
@@ -95,20 +102,50 @@ void Explore_TestMap::_MapPush(DiploidEngineImpact* impact)
 	}
 }
 
-void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input)
+void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input, CommandUI* command_ui, StatusBar* status_bar, Clock* clock)
 {
 	//背景画像のアップデート
 	test_map_texter.image.Updata();
 
-	//走る
-	if (input->GetKey(KEY_INPUT_LSHIFT) == true)
+	//走っているときと歩いているときの具体処理
+	if (movement_type == PLAYER_RUN)
 	{
-		movement_type = PLAYER_RUN;//移動状態を「走り」にする
+		if (clock->isSecondFlag() == true)
+		{		
+			command_ui->information_command.AddStaminaEXP(1);//持久力の経験値を1上げる
+
+			status_bar->SubSP(1, command_ui->information_command);//スタミナポイント(SP)を１減らす
+		}
+
+	}
+	else if(movement_type == PLAYER_WALK)
+	{
+		if (command_ui->information_command.GetStaminaPoint() < command_ui->information_command.GetMaxStaminaPoint())//スタミナポイントが0でなければ
+		{
+			if (clock->isSecondFlag() == true)
+			{
+				status_bar->AddSP(1, command_ui->information_command);//スタミナポイント(SP)を１回復する
+			}
+		}
+	}
+
+	//走る
+	if ((input->GetKey(KEY_INPUT_LSHIFT) == true) && (((input->GetKey(KEY_INPUT_A) == true) || ((input->GetKey(KEY_INPUT_D) == true)) || ((input->GetKey(KEY_INPUT_W) == true) || ((input->GetKey(KEY_INPUT_S) == true))))))
+	{
+		if (command_ui->information_command.GetStaminaPoint() != 0)//スタミナポイントが0でなければ
+		{
+			movement_type = PLAYER_RUN;//移動状態を「走り」にする
+
+		}
+		else
+		{
+			movement_type = PLAYER_WALK;//移動状態を「走り」にする
+		}
 	}
 	else
 	{
-		movement_type = PLAYER_WALK;//移動状態を「歩き」にする
-	}
+		movement_type = PLAYER_WALK;//移動状態を「走り」にする
+	}	
 
 	//左へ行く
 	if (input->GetKey(KEY_INPUT_A) == true)

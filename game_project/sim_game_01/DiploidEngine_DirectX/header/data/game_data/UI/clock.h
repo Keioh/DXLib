@@ -15,6 +15,7 @@ private:
 	DiploidObject test_clock_minute_hand;
 	DiploidObject test_clock_second_hand;
 	int timer = 0;
+	int day = 0;
 	int hour = 0;
 	int minute = 0;
 	int second = 0;
@@ -22,7 +23,7 @@ private:
 	bool second_flag = false;
 	bool minute_flag = false;
 	bool hour_flag = false;
-
+	bool day_flag = false;
 
 public:
 
@@ -35,4 +36,6 @@ public:
 	bool isSecondFlag();
 	bool isHourFlag();
 	bool isMinuteFlag();
+	bool isDayFlag();
+
 };

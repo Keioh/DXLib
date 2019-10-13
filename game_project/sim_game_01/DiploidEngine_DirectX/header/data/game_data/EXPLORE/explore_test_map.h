@@ -7,6 +7,9 @@
 #include "diploidImpact/DiploidEngineImpact.h"
 #include "diploidInput/DiploidEngineInput.h"
 #include "diploidSystem/diploidSystem.h"
+#include "data/game_data/UI/command_ui.h"
+#include "data/game_data/UI/status_bar.h"
+#include "data/game_data/UI/clock.h"
 
 #include "data/game_data/CHARACTER/player_direction.h"
 
@@ -27,10 +30,11 @@ private:
 	void _MapLoad();
 	void _MapInit(VECTOR position);
 	void _MapPush(DiploidEngineImpact* impact);
-	void _MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input);
+	void _MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput* input, CommandUI* command_ui, StatusBar* status_bar, Clock* clock);
 	void _MapDraw(bool draw = true);
 
 	//プレーヤー関連	
+	DiploidObject player_visibility;//視界画像
 	PlayerDirection player_direction;//プレーヤー表示
 	float player_size;//プレーヤーの大きさ(map_chip_sizeの0.2倍)
 
@@ -51,7 +55,7 @@ public:
 	void Load();
 	void Init(VECTOR position = { 0.0f,0.0f,0.0f });
 	void Push(DiploidEngineImpact& impact);
-	void Updata(DiploidEngineImpact& impact, DiploidEngineInput& input);
+	void Updata(DiploidEngineImpact& impact, DiploidEngineInput& input, CommandUI& command_ui, StatusBar& status_bar, Clock& clock);
 	void Draw(bool draw = true);
 
 };

@@ -69,13 +69,18 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 
 	//季節パネルのアップデート
 	season_panel.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//現在は当たり判定は使ってないけど、アニメーションで使用
-
+	
+	//日を進める
+	if (clock.isDayFlag() == true)
+	{
+		season_panel.NextDays();
+	}
 
 
 	//コマンドUIがオフなら
 	if (command_ui.GetUIFlag() == false)
 	{
-		test_map.Updata(diploidEngineImpact, diploidEngineInput);//マップのアップデート(移動など)
+		test_map.Updata(diploidEngineImpact, diploidEngineInput, command_ui, status_bar, clock);//マップのアップデート(移動など)
 	}
 
 	//オブジェクト番号の自動振り分け

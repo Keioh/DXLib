@@ -78,11 +78,23 @@ void Clock::Update()
 
 	if (hour > 7)
 	{
+		day += 1;
+
+		day_flag = true;
+
 		test_clock_hour_hand.image.move_speed.y = -(24 * 7);
 
 		hour = 0;
 	}
+	else
+	{
+		day_flag = false;
+	}
 
+	if (day > 23)
+	{
+		day = 0;
+	}
 
 	test_clock_second_hand.image.Updata();
 	test_clock_minute_hand.image.Updata();
@@ -113,4 +125,9 @@ bool Clock::isHourFlag()
 bool Clock::isMinuteFlag()
 {
 	return minute_flag;
+}
+
+bool Clock::isDayFlag()
+{
+	return day_flag;
 }

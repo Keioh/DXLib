@@ -134,6 +134,7 @@ public:
 	void SetMaxStamina(int val);//持久力の最大値をセットする
 	void SetStamina(int val);//現在の持久力をセットする
 	void SetStaminaEXP(int val);
+	void AddStaminaEXP(int val);
 
 	int GetMaxStrength();//筋力の最大値を得る
 	int GetStrength();//現在の筋力を得る
@@ -154,6 +155,7 @@ public:
 	void SetMaxAgility(int val);//敏捷力の最大値をセットする
 	void SetAgility(int val);//現在の敏捷力をセットする
 	void SetAgilityEXP(int val);
+	void AddAgilityEXP(int val);
 
 	int GetMaxSpirit();//精神力の最大値を得る
 	int GetSpirit();//現在の精神力を得る

@@ -190,11 +190,14 @@ int InformationCommand::VitalityCalculation()
 {
 	if (vitality_exp > vitality_need_exp)
 	{
-		vitality_level += 1;
+		vitality_level += 1;//体力のレベルを1上げる
 
-		vitality_exp = 0;
+		vitality_max += 1;//体力のステータスを上昇
+		vitality += 1;//体力のステータスを上昇
 
 		vitality_need_exp = (vitality_level + 1) * (vitality_exp * exp_scale);//必要経験値を算出
+
+		vitality_exp = 0;//経験値を初期化
 
 		return vitality_need_exp;
 	}
@@ -259,11 +262,14 @@ int InformationCommand::StaminaCalculation()
 {
 	if (stamina_exp > stamina_need_exp)
 	{
-		stamina_level += 1;
+		stamina_level += 1;//スタミナのレベルを1上げる
 
-		stamina_exp = 0;
+		stamina_max += 1;//スタミナのステータスを上昇
+		stamina += 1;//スタミナのステータスを上昇
 
-		stamina_need_exp = (stamina_level + 1) * (stamina_exp * exp_scale);//必要経験値を算出
+		stamina_need_exp = (stamina_level + 1) * (stamina_exp * exp_scale);//必要経験値を計算しなおす
+
+		stamina_exp = 0;//経験値を初期化
 
 		return stamina_need_exp;
 	}
@@ -323,16 +329,24 @@ void InformationCommand::SetStaminaEXP(int val)
 	stamina_exp = val;
 }
 
+void InformationCommand::AddStaminaEXP(int val)
+{
+	stamina_exp += val;
+}
+
 
 int InformationCommand::StrengthCalculation()
 {
 	if (strength_exp > strength_need_exp)
 	{
-		strength_level += 1;
+		strength_level += 1;//筋力のレベルを1上げる
 
-		strength_exp = 0;
+		strength_max += 1;//筋力のステータスを上昇
+		strength += 1;//筋力のステータスを上昇
 
 		strength_need_exp = (strength_level + 1) * (strength_exp * exp_scale);//必要経験値を算出
+
+		strength_exp = 0;//経験値を初期化
 
 		return strength_need_exp;
 	}
@@ -398,11 +412,14 @@ int InformationCommand::AgilityCalculation()
 {
 	if (agility_exp > agility_need_exp)
 	{
-		agility_level += 1;
+		agility_level += 1;//敏捷力のレベルを1上げる
 
-		agility_exp = 0;
+		agility_max += 1;//敏捷力のステータスを上昇
+		agility += 1;//敏捷力のステータスを上昇
 
 		agility_need_exp = (agility_level + 1) * (agility_exp * exp_scale);//必要経験値を算出
+
+		agility_exp = 0;//経験値を初期化
 
 		return agility_need_exp;
 	}
@@ -462,16 +479,25 @@ void InformationCommand::SetAgilityEXP(int val)
 	agility_exp = val;
 }
 
+void InformationCommand::AddAgilityEXP(int val)
+{
+	agility_exp += val;
+}
+
+
 
 int InformationCommand::SpiritCalculation()
 {
 	if (spirit_exp > spirit_need_exp)
 	{
-		spirit_level += 1;
+		spirit_level += 1;//精神力のレベルを1上げる
 
-		spirit_exp = 0;
+		spirit_max += 1;//精神力のステータスを上昇
+		spirit += 1;//精神力のステータスを上昇
 
 		spirit_need_exp = (spirit_level + 1) * (spirit_exp * exp_scale);//必要経験値を算出
+
+		spirit_exp = 0;//経験値を初期化
 
 		return spirit_need_exp;
 	}
@@ -536,11 +562,14 @@ int InformationCommand::WillpowerCalculation()
 {
 	if (willpower_exp > willpower_need_exp)
 	{
-		willpower_level += 1;
+		willpower_level += 1;//意志力のレベルを1上げる
 
-		willpower_exp = 0;
+		willpower_max += 1;//意志力のステータスを上昇
+		willpower += 1;//意志力のステータスを上昇
 
 		willpower_need_exp = (willpower_level + 1) * (willpower_exp * exp_scale);//必要経験値を算出
+
+		willpower_exp = 0;//経験値を初期化
 
 		return willpower_need_exp;
 	}
@@ -605,11 +634,14 @@ int InformationCommand::FortuneCalculation()
 {
 	if (fortune_exp > fortune_need_exp)
 	{
-		fortune_level += 1;
+		fortune_level += 1;//幸運力のレベルを1上げる
 
-		fortune_exp = 0;
+		fortune_max += 1;//幸運力のステータスを上昇
+		fortune += 1;//幸運力のステータスを上昇
 
 		fortune_need_exp = (fortune_level + 1) * (fortune_exp * exp_scale);//必要経験値を算出
+
+		fortune_exp = 0;//経験値を初期化
 
 		return fortune_need_exp;
 	}
@@ -675,11 +707,14 @@ int InformationCommand::MadnessCalculation()
 {
 	if (madness_exp > madness_need_exp)
 	{
-		madness_level += 1;
+		madness_level += 1;//狂気力のレベルを1上げる
 
-		madness_exp = 0;
+		madness_max += 1;//狂気力のステータスを上昇
+		madness += 1;//狂気力のステータスを上昇
 
 		madness_need_exp = (madness_level + 1) * (madness_exp * exp_scale);//必要経験値を算出
+
+		madness_exp = 0;//経験値を初期化
 
 		return madness_need_exp;
 	}

@@ -35,6 +35,7 @@ private:
 
 	Explore_TestMap test_map;
 
+	int timer;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
