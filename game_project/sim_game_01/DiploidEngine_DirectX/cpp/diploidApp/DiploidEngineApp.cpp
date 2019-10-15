@@ -11,7 +11,7 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	command_ui.Load();//ƒRƒ}ƒ“ƒhUI‚Ìƒ[ƒh
 	season_panel.Load();//‹Gßƒpƒlƒ‹‚Ìƒ[ƒh
 	status_bar.Load();//ƒXƒe[ƒ^ƒXƒo[‚Ìƒ[ƒh
-	clock.Load();//Œv
+	clock.Load();//Œv‚Ìƒ[ƒh
 
 	test_map.Load();
 }
@@ -34,7 +34,7 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//season_panel.Push(diploidEngineImpact);//¡‚Ì‚Æ‚±‚ë’†g‚È‚µ
 
 
-	//Œv
+	//Œv‚Ì‰Šú‰»
 	clock.Init();
 
 
@@ -57,30 +57,39 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-	//Œv
-	clock.Update();
-
-	//ƒRƒ}ƒ“ƒhUI‚ÌƒAƒbƒvƒf[ƒg
-	command_ui.Updata(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput);
-
-	//ƒXƒe[ƒ^ƒXƒo[‚ÌƒAƒbƒvƒf[ƒg
-	status_bar.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
-	status_bar.StatusUpdate(command_ui.information_command);//ƒXƒe[ƒ^ƒXƒo[‚Ì”’l‚ğƒRƒ}ƒ“ƒhUI‚©‚ç‚Ìî•ñ‚ğ—p‚¢‚ÄXV
-
-	//‹Gßƒpƒlƒ‹‚ÌƒAƒbƒvƒf[ƒg
-	season_panel.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
-	
 	//“ú‚ği‚ß‚é
 	if (clock.isDayFlag() == true)
-	{
+	{	
+		//Ÿ‚Ì“ú‚Ö
 		season_panel.NextDays();
 	}
 
+	//“G‚É“–‚½‚Á‚Ä‚¢‚È‚¯‚ê‚Î
+	if (test_map.GetEnemyHitFlag() == false)
+	{
+		//ƒRƒ}ƒ“ƒhUI‚ÌƒAƒbƒvƒf[ƒg
+		command_ui.Updata(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput);
+	}
 
 	//ƒRƒ}ƒ“ƒhUI‚ªƒIƒt‚È‚ç
 	if (command_ui.GetUIFlag() == false)
-	{
-		test_map.Updata(diploidEngineImpact, diploidEngineInput, command_ui, status_bar, clock);//ƒ}ƒbƒv‚ÌƒAƒbƒvƒf[ƒg(ˆÚ“®‚È‚Ç)
+	{	
+		//ƒ}ƒbƒv‚ÌƒAƒbƒvƒf[ƒg(ˆÚ“®‚È‚Ç)
+		test_map.Updata(diploidEngineImpact, diploidEngineInput, command_ui, status_bar, clock);
+
+		//“G‚É“–‚½‚Á‚Ä‚¢‚È‚¯‚ê‚Î
+		if (test_map.GetEnemyHitFlag() == false)
+		{
+			//Œv‚ÌƒAƒbƒvƒf[ƒg
+			clock.Update();
+
+			//ƒXƒe[ƒ^ƒXƒo[‚ÌƒAƒbƒvƒf[ƒg
+			status_bar.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
+			status_bar.StatusUpdate(command_ui.information_command);//ƒXƒe[ƒ^ƒXƒo[‚Ì”’l‚ğƒRƒ}ƒ“ƒhUI‚©‚ç‚Ìî•ñ‚ğ—p‚¢‚ÄXV
+
+			//‹Gßƒpƒlƒ‹‚ÌƒAƒbƒvƒf[ƒg
+			season_panel.Updata(MOUSE_INPUT_RIGHT, diploidEngineImpact, diploidEngineInput);//Œ»İ‚Í“–‚½‚è”»’è‚Íg‚Á‚Ä‚È‚¢‚¯‚ÇAƒAƒjƒ[ƒVƒ‡ƒ“‚Åg—p
+		}
 	}
 
 	//ƒIƒuƒWƒFƒNƒg”Ô†‚Ì©“®U‚è•ª‚¯
@@ -92,19 +101,22 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	//ƒeƒXƒgƒ}ƒbƒv‚Ì•`Ê(ƒvƒŒƒCƒ„[‚à‚±‚±‚ÉŠÜ‚Ü‚ê‚é)
 	test_map.Draw();
 
+	//“G‚É“–‚½‚Á‚Ä‚¢‚È‚¯‚ê‚Î
+	if (test_map.GetEnemyHitFlag() == false)
+	{
+		//ƒRƒ}ƒ“ƒhUI‚Ì•`Ê
+		command_ui.Draw();
 
-	//ƒRƒ}ƒ“ƒhUI‚Ì•`Ê
-	command_ui.Draw();
+		//ƒXƒe[ƒ^ƒXƒo[‚Ì•`Ê
+		status_bar.Draw();
+		status_bar.StatusDraw(command_ui.information_command);//ƒXƒe[ƒ^ƒXƒo[‚ÉƒRƒ}ƒ“ƒhUI‚©‚ç‚Ì”’l‚ğo—Í
 
-	//ƒXƒe[ƒ^ƒXƒo[‚Ì•`Ê
-	status_bar.Draw();
-	status_bar.StatusDraw(command_ui.information_command);//ƒXƒe[ƒ^ƒXƒo[‚ÉƒRƒ}ƒ“ƒhUI‚©‚ç‚Ì”’l‚ğo—Í
+		//‹Gßƒpƒlƒ‹‚Ì•`Ê
+		season_panel.Draw();
 
-	//‹Gßƒpƒlƒ‹‚Ì•`Ê
-	season_panel.Draw();
-
-	//Œv
-	clock.Draw();
+		//Œv
+		clock.Draw();
+	}
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

@@ -8,7 +8,16 @@ void Explore_TestMap::Load()
 	//プレーヤーの読み込み
 	player_direction.Load();
 
+	//視界域の読み込み
 	player_visibility.image.Load("texter/game/character/shikai.png");
+
+
+	//戦闘画面の背景画像の読み込み
+	combat_back_texter.image.Load("texter/game/battle/back.png");
+
+	//戦闘コマンド画像の読み込み
+	battle_command.SwitchButtonBOX_Load("texter/game/battle/battle.png", 60, 30);
+
 }
 
 void Explore_TestMap::Init(VECTOR position)
@@ -19,7 +28,20 @@ void Explore_TestMap::Init(VECTOR position)
 	//プレーヤーの初期化
 	player_direction.Init(player_size);
 
+	//視界域の初期化
 	player_visibility.image.Init(VGet(1280 / 2, 720 / 2, 0));
+
+	//敵の初期化
+	enemy_position = VGet(100, 0, 0);
+	enemy_test.box.Init(VGet(1280 / 2 + enemy_position.x, 720 / 2 + enemy_position.y, 0), VGet(50,50,0));
+	enemy_test.box.name_tag = "test_enemy";
+	enemy_test.box.layer_number = DIPLOID_LAYER_02;
+
+	//戦闘画面の背景画像の初期化
+	combat_back_texter.image.Init(VGet(1280/2, 720/2, 0));
+
+	//戦闘コマンドの初期化
+	battle_command.SwitchButtonBOX_Init(VGet(100, 300, 0), VGet(60, 30, 0), "battle_command", DIPLOID_LAYER_03);
 }
 
 void Explore_TestMap::Push(DiploidEngineImpact& impact)
@@ -29,27 +51,81 @@ void Explore_TestMap::Push(DiploidEngineImpact& impact)
 
 	//プレーヤーのプッシュ
 	player_direction.Push(impact);
+
+	//敵のプッシュ
+	impact.PushBox(enemy_test.box);
+
 }
 
 void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& input, CommandUI& command_ui, StatusBar& status_bar, Clock& clock)
-{
-	//マップのアップデート
-	_MapUpdate(&impact, &input, &command_ui, &status_bar, &clock);
+{	
+	//敵がプレイヤーと当たっていたら
+	if (impact.GetBoxImpactFlag_Sreach_Name_Tag("test_enemy") == true)
+	{
+		enemy_hit = true;
+	}
 
-	//プレーヤーのアップデート
-	player_direction.Updata(impact, input);
+	//敵と当たっていないとき
+	if (enemy_hit == false)
+	{
 
+		system.OneDeletePOINT_Impact(impact, "battle_command_point");//戦闘画面のマウスポイントと削除
+		system.OneDeleteBOX_Impact(impact, "battle_command");//戦闘コマンドの削除
+		system.FlagReset_OnePushPOINT();//読み込みフラグをfalseに
+
+		//マップのアップデート
+		_MapUpdate(&impact, &input, &command_ui, &status_bar, &clock);
+
+		//プレーヤーのアップデート
+		player_direction.Updata(impact, input);
+	}
+	else if(enemy_hit == true)//敵との戦闘
+	{
+
+		system.FlagReset_OneDeletePOINT();//削除フラグをfalseに
+
+		//マウスカーソル(戦闘画面UI画面)
+		mouse_point.point.Init(VGet(0, 0, 0));
+		mouse_point.point.mouse_point_move_flag = true;
+		mouse_point.point.layer_number = DIPLOID_LAYER_03;
+		mouse_point.point.name_tag = "battle_command_point";
+		system.OnePushPOINT_Impact(impact, mouse_point.point);//戦闘画面のマウスポイントを追加
+		system.OnePushBOX_Impact(impact, battle_command.box);//戦闘コマンドを追加。
+
+
+		battle_command.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, impact, input);//戦闘コマンドの更新
+
+
+		if (input.GetPressKey(KEY_INPUT_L) == true)
+		{
+			impact.DestoryBox_Name_Tag("test_enemy");
+
+			enemy_hit = false;
+		}
+	}
 }
 
 void Explore_TestMap::Draw(bool draw)
 {
-	//マップの描写
-	_MapDraw(draw);
+	if (enemy_hit == false)
+	{
+		//マップの描写
+		_MapDraw(draw);
 
-	//プレーヤーの描写
-	player_direction.Draw(draw);
+		//プレーヤーの描写
+		player_direction.Draw(draw);
 
-	player_visibility.image.Draw(draw);
+		//視界域の描写
+		player_visibility.image.Draw(draw);
+	}
+	else
+	{
+		//戦闘画面の背景画像の描写
+		combat_back_texter.image.Draw();
+
+		//戦闘コマンドの描写
+		battle_command.SwitchButtonBOX_Draw(draw);
+	}
 }
 
 
@@ -159,6 +235,9 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 				{
 					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", movement_speed);//移動	
 					test_map_texter.image.move_speed.x = movement_speed;
+
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("test_enemy", movement_speed);//移動	
+
 				}
 			}
 
@@ -169,6 +248,9 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 				{
 					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", movement_speed * movement_run_scale);//移動	
 					test_map_texter.image.move_speed.x = movement_speed * movement_run_scale;
+
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("test_enemy", movement_speed * movement_run_scale);//移動	
+
 
 				}
 			}
@@ -188,6 +270,9 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 
 					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", -movement_speed);//移動
 					test_map_texter.image.move_speed.x = -movement_speed;
+
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("test_enemy", -movement_speed);//移動	
+
 				}
 			}
 
@@ -199,6 +284,9 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 
 					impact->SetBoxPositionAnimationX_Sreach_Object_Name("map_chip_wall_impact", -movement_speed * movement_run_scale);//移動
 					test_map_texter.image.move_speed.x = -movement_speed * movement_run_scale;
+
+					impact->SetBoxPositionAnimationX_Sreach_Object_Name("test_enemy", -movement_speed * movement_run_scale);//移動	
+
 				}
 			}
 		}
@@ -216,6 +304,8 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 				{
 					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", movement_speed);//移動
 					test_map_texter.image.move_speed.y = movement_speed;
+
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("test_enemy", movement_speed);//移動
 				}
 			}
 
@@ -226,6 +316,9 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 				{
 					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", movement_speed * movement_run_scale);//移動
 					test_map_texter.image.move_speed.y = movement_speed * movement_run_scale;
+
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("test_enemy", movement_speed * movement_run_scale);//移動
+
 				}
 			}
 		}
@@ -243,6 +336,8 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 				{
 					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", -movement_speed);//移動
 					test_map_texter.image.move_speed.y = -movement_speed;
+
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("test_enemy", -movement_speed);//移動
 				}
 			}
 
@@ -253,6 +348,8 @@ void Explore_TestMap::_MapUpdate(DiploidEngineImpact* impact, DiploidEngineInput
 				{
 					impact->SetBoxPositionAnimationY_Sreach_Object_Name("map_chip_wall_impact", -movement_speed * movement_run_scale);//移動
 					test_map_texter.image.move_speed.y = -movement_speed * movement_run_scale;
+
+					impact->SetBoxPositionAnimationY_Sreach_Object_Name("test_enemy", -movement_speed * movement_run_scale);//移動
 				}
 			}
 		}
@@ -266,4 +363,10 @@ void Explore_TestMap::_MapDraw(bool draw)
 	{
 		test_map_texter.image.Draw();
 	}
+}
+
+
+bool Explore_TestMap::GetEnemyHitFlag()
+{
+	return enemy_hit;
 }

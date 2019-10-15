@@ -5,11 +5,15 @@
 
 //変更非推奨マクロ
 //レイヤー番号(0～4)
-#define DIPLOID_LAYER_00 0
-#define DIPLOID_LAYER_01 1
-#define DIPLOID_LAYER_02 2
+#define DIPLOID_LAYER_00 0//コマンドUIの当たり判定
+#define DIPLOID_LAYER_01 1//マップチップとプレイヤーの当たり判定
+#define DIPLOID_LAYER_02 2//敵とプレイヤーの当たり判定
 #define DIPLOID_LAYER_03 3
 #define DIPLOID_LAYER_04 4
+#define DIPLOID_LAYER_05 5
+#define DIPLOID_LAYER_06 6
+#define DIPLOID_LAYER_07 7
+#define DIPLOID_LAYER_08 8
 
 
 //仮マクロ(ダイスプログラムで使用)

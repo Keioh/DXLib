@@ -7,6 +7,8 @@
 #include "diploidImpact/DiploidEngineImpact.h"
 #include "diploidInput/DiploidEngineInput.h"
 #include "diploidSystem/diploidSystem.h"
+#include "diploidUI/diploidUI.h"
+
 #include "data/game_data/UI/command_ui.h"
 #include "data/game_data/UI/status_bar.h"
 #include "data/game_data/UI/clock.h"
@@ -40,22 +42,36 @@ private:
 
 	float movement_speed = 3.0f;//プレーヤーの移動速度
 	float movement_run_scale = 1.8f;//走る際の移動倍率
-	float rinjury_lv1_scale = 0.8f;//怪我を負った際のLV1倍率
-	float rinjury_lv2_scale = 0.6f;//怪我を負った際のLV2倍率
-	float rinjury_lv3_scale = 0.5f;//怪我を負った際のLV3倍率
-	float rinjury_lv4_scale = 0.3f;//怪我を負った際のLV4倍率
-	float rinjury_lv5_scale = 0.1f;//怪我を負った際のLV5倍率
 
 	int movement_type = PLAYER_WAIT;//プレーヤーの移動状態
+
+
+	//敵関連
+	DiploidObject enemy_test;//敵の当たり判定
+
+	VECTOR enemy_position;
+	bool enemy_dead = false;
+	bool enemy_hit = false;
+
+	//戦闘画面
+	DiploidSystem system;//ワンショット読み込み用
+
+	DiploidObject combat_back_texter;//戦闘画面の背景
+	DiploidObject mouse_point;//戦闘画面用のマウスポイント
+
+	DiploidUI battle_command;//戦闘コマンド
 
 public:
 	Explore_TestMap() {};
 	~Explore_TestMap() {};
+
 
 	void Load();
 	void Init(VECTOR position = { 0.0f,0.0f,0.0f });
 	void Push(DiploidEngineImpact& impact);
 	void Updata(DiploidEngineImpact& impact, DiploidEngineInput& input, CommandUI& command_ui, StatusBar& status_bar, Clock& clock);
 	void Draw(bool draw = true);
+
+	bool GetEnemyHitFlag();
 
 };

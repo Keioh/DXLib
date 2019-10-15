@@ -36,6 +36,8 @@ void PlayerDirection::Init(float player_scale)
 	player_left_down_image.image.Init(VGet((1280 / 2) - (player_size / 2) + 38, (720 / 2) - (player_size / 2) + 40, 0), 2.0f);
 	player_right_down_image.image.Init(VGet((1280 / 2) - (player_size / 2) + 38, (720 / 2) - (player_size / 2) + 40, 0), 2.0f);
 
+
+	player_center_impact.box.Init(VGet(1280 / 2 - 40, 720 / 2 - 40, 0), VGet(80, 80, 0));
 }
 
 void PlayerDirection::Push(DiploidEngineImpact& impact)
@@ -56,6 +58,10 @@ void PlayerDirection::Push(DiploidEngineImpact& impact)
 	player_down.box.name_tag = "player_down";
 	player_down.box.layer_number = DIPLOID_LAYER_01;
 	impact.PushBox(player_down.box);
+
+	player_center_impact.box.name_tag = "player_center";
+	player_center_impact.box.layer_number = DIPLOID_LAYER_02;
+	impact.PushBox(player_center_impact.box);
 
 }
 

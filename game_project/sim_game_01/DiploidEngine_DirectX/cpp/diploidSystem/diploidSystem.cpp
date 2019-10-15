@@ -1,13 +1,6 @@
 #include "diploidSystem/diploidSystem.h"
 
 
-void DiploidSystem::OnePushBegin()
-{
-	if (push_flag == false)
-	{
-
-	}
-}
 
 void DiploidSystem::OnePushBOX_Impact(DiploidEngineImpact& impact, DiploidBox box)
 {
@@ -45,6 +38,48 @@ bool DiploidSystem::GetOnePushBOX_Flag()
 }
 
 bool DiploidSystem::GetOneDeleteBOX_Flag()
+{
+	return delete_box_flag;
+}
+
+
+
+void DiploidSystem::OnePushPOINT_Impact(DiploidEngineImpact& impact, DiploidPoint point)
+{
+	if (push_point_flag == false)
+	{
+		impact.PushPoint(point);
+		push_point_flag = true;
+	}
+}
+
+void DiploidSystem::OneDeletePOINT_Impact(DiploidEngineImpact& impact, std::string name_tag)
+{
+	if ((delete_point_flag == false) && (push_point_flag == true))
+	{
+		impact.DestoryPoint_Name_Tag(name_tag);
+		delete_point_flag = true;
+	}
+}
+
+
+void DiploidSystem::FlagReset_OnePushPOINT()
+{
+	push_point_flag = false;
+}
+
+void DiploidSystem::FlagReset_OneDeletePOINT()
+{
+	delete_point_flag = false;
+}
+
+
+bool DiploidSystem::GetOnePushPOINT_Flag()
+{
+	return push_point_flag;
+}
+
+bool DiploidSystem::GetOneDeletePOINT_Flag()
 {
 	return delete_box_flag;
 }
