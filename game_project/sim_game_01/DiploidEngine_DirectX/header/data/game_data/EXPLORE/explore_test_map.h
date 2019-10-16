@@ -54,12 +54,17 @@ private:
 	bool enemy_hit = false;
 
 	//戦闘画面
-	DiploidSystem system;//ワンショット読み込み用
+	DiploidSystem mouse_point_system;//ワンショット読み込み用(マウスポイント)
+	DiploidSystem battle_command_system;//ワンショット読み込み用(戦闘コマンド)
+	DiploidSystem medical_care_system;//ワンショット読み込み用(治療コマンド)
+	DiploidSystem run_way_system;//ワンショット読み込み用(逃走コマンド)
+
+	DiploidUI battle_command;//戦闘コマンド
+	DiploidUI medical_care_command;//治療コマンド
+	DiploidUI run_way_command;//治療コマンド
 
 	DiploidObject combat_back_texter;//戦闘画面の背景
 	DiploidObject mouse_point;//戦闘画面用のマウスポイント
-
-	DiploidUI battle_command;//戦闘コマンド
 
 public:
 	Explore_TestMap() {};

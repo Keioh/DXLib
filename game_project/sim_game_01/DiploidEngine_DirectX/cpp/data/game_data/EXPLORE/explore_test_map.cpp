@@ -18,6 +18,12 @@ void Explore_TestMap::Load()
 	//戦闘コマンド画像の読み込み
 	battle_command.SwitchButtonBOX_Load("texter/game/battle/battle.png", 60, 30);
 
+	//治療コマンド画像の読み込み
+	medical_care_command.SwitchButtonBOX_Load("texter/game/battle/medical_care.png", 60, 30);
+
+	//逃走コマンド画像の読み込み
+	run_way_command.SwitchButtonBOX_Load("texter/game/battle/run_way.png", 60, 30);
+
 }
 
 void Explore_TestMap::Init(VECTOR position)
@@ -41,7 +47,14 @@ void Explore_TestMap::Init(VECTOR position)
 	combat_back_texter.image.Init(VGet(1280/2, 720/2, 0));
 
 	//戦闘コマンドの初期化
-	battle_command.SwitchButtonBOX_Init(VGet(100, 300, 0), VGet(60, 30, 0), "battle_command", DIPLOID_LAYER_03);
+	battle_command.SwitchButtonBOX_Init(VGet(200, 300, 0), VGet(60, 30, 0), "battle_command", DIPLOID_LAYER_03);
+
+	//戦闘コマンドの初期化
+	medical_care_command.SwitchButtonBOX_Init(VGet(200, 300 + 30, 0), VGet(60, 30, 0), "medical_care_command", DIPLOID_LAYER_03);
+
+	//逃走コマンドの初期化
+	run_way_command.SwitchButtonBOX_Init(VGet(200, 300 + 60, 0), VGet(60, 30, 0), "run_way_command", DIPLOID_LAYER_03);
+
 }
 
 void Explore_TestMap::Push(DiploidEngineImpact& impact)
@@ -69,9 +82,15 @@ void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	if (enemy_hit == false)
 	{
 
-		system.OneDeletePOINT_Impact(impact, "battle_command_point");//戦闘画面のマウスポイントと削除
-		system.OneDeleteBOX_Impact(impact, "battle_command");//戦闘コマンドの削除
-		system.FlagReset_OnePushPOINT();//読み込みフラグをfalseに
+		mouse_point_system.OneDeletePOINT_Impact(impact, "battle_command_point");//戦闘画面のマウスポイントと削除
+		battle_command_system.OneDeleteBOX_Impact(impact, "battle_command");//戦闘コマンドの削除
+		medical_care_system.OneDeleteBOX_Impact(impact, "medical_care_command");//戦闘コマンドの削除
+		run_way_system.OneDeleteBOX_Impact(impact, "run_way_command");//戦闘コマンドの削除
+
+		mouse_point_system.FlagReset_OnePushPOINT();//読み込みフラグをfalseに
+		battle_command_system.FlagReset_OnePushBOX();//読み込みフラグをfalseに
+		medical_care_system.FlagReset_OnePushBOX();//読み込みフラグをfalseに
+		run_way_system.FlagReset_OnePushBOX();//読み込みフラグをfalseに
 
 		//マップのアップデート
 		_MapUpdate(&impact, &input, &command_ui, &status_bar, &clock);
@@ -82,18 +101,25 @@ void Explore_TestMap::Updata(DiploidEngineImpact& impact, DiploidEngineInput& in
 	else if(enemy_hit == true)//敵との戦闘
 	{
 
-		system.FlagReset_OneDeletePOINT();//削除フラグをfalseに
+		mouse_point_system.FlagReset_OneDeletePOINT();//削除フラグをfalseに
+		battle_command_system.FlagReset_OneDeleteBOX();//削除フラグをfalseに
+		medical_care_system.FlagReset_OneDeleteBOX();//削除フラグをfalseに
+		run_way_system.FlagReset_OneDeleteBOX();//削除フラグをfalseに
 
 		//マウスカーソル(戦闘画面UI画面)
 		mouse_point.point.Init(VGet(0, 0, 0));
 		mouse_point.point.mouse_point_move_flag = true;
 		mouse_point.point.layer_number = DIPLOID_LAYER_03;
 		mouse_point.point.name_tag = "battle_command_point";
-		system.OnePushPOINT_Impact(impact, mouse_point.point);//戦闘画面のマウスポイントを追加
-		system.OnePushBOX_Impact(impact, battle_command.box);//戦闘コマンドを追加。
+		mouse_point_system.OnePushPOINT_Impact(impact, mouse_point.point);//戦闘画面のマウスポイントを追加
+		battle_command_system.OnePushBOX_Impact(impact, battle_command.box);//戦闘コマンドを追加。
+		medical_care_system.OnePushBOX_Impact(impact, medical_care_command.box);//治療コマンドを追加。
+		run_way_system.OnePushBOX_Impact(impact, run_way_command.box);//治療コマンドを追加。
 
 
 		battle_command.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, impact, input);//戦闘コマンドの更新
+		medical_care_command.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, impact, input);//治療コマンドの更新
+		run_way_command.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, impact, input);//治療コマンドの更新
 
 
 		if (input.GetPressKey(KEY_INPUT_L) == true)
@@ -125,6 +151,13 @@ void Explore_TestMap::Draw(bool draw)
 
 		//戦闘コマンドの描写
 		battle_command.SwitchButtonBOX_Draw(draw);
+
+		//治療コマンドの描写
+		medical_care_command.SwitchButtonBOX_Draw(draw);
+
+		//逃走コマンドの描写
+		run_way_command.SwitchButtonBOX_Draw(draw);
+
 	}
 }
 
