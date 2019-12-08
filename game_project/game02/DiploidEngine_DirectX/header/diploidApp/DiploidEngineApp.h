@@ -24,10 +24,11 @@ private:
 	int sannsyutu = 10;//産出
 	int jinkou = 10;//人口
 
-	float sakumotu_scale[9];
-	float sikinn_scale[9];
-	float sannsyutu_scale[9];
-	float all_basic_scale = 0.025f;
+	float sakumotu_scale[9];//作物収穫の倍率
+	float sikinn_scale[9];//資金収集の倍率
+	float sannsyutu_scale[9];//産出の倍率
+	float all_basic_scale = 0.025f;//段階ごとの倍率設定
+	float zeiritu_scale = 0.0f;//税率
 
 	int sakumotu_syuunyuu;//作物の収入情報
 	int sikin_syuunyuu;//資金の収入情報
@@ -57,12 +58,28 @@ private:
 	DiploidSystem sangyou_system;//産業区ワンショットロード
 	DiploidSystem zikkou_system;//実行ワンショットロード
 	DiploidSystem sarati_system;//更地ワンショットロード
+	DiploidSystem siren_system;//試練ワンショットロード
+	DiploidSystem seisaku_system;//政策ワンショットロード
+	DiploidSystem zeiritu_system;//税率ワンショットロード
+	DiploidSystem per_0_system;//0%ワンショットロード
+	DiploidSystem per_5_system;//5%ワンショットロード
+	DiploidSystem per_10_system;//10%ワンショットロード
+	DiploidSystem per_15_system;//15%ワンショットロード
+	DiploidSystem per_20_system;//20%ワンショットロード
 	DiploidUI nougyou;//農業区ボタン
 	DiploidUI sangyou;//産業区ボタン
 	DiploidUI syougyou;//商業区ボタン
 	DiploidUI sarati;//更地ボタン
 	DiploidUI kaitaku;//開拓ボタン
 	DiploidUI zikkou;//実行ボタン
+	DiploidUI siren;//試練ボタン
+	DiploidUI seisaku;//政策ボタン
+	DiploidUI zeiritu;//税率ボタン
+	DiploidUI per_0;//0%ボタン
+	DiploidUI per_5;//5%ボタン
+	DiploidUI per_10;//10%ボタン
+	DiploidUI per_15;//15%ボタン
+	DiploidUI per_20;//20%ボタン
 	DiploidUI play;//プレイボタン
 	bool nougyou_sangyou_syougou_flags;//農業区と産業区と商業区のボタンのフラグを保存。(全て0なら0を返して、どれか一つでも1があれば1を返す)
 	int play_type;//ゲーム速度のフラグ
@@ -71,7 +88,7 @@ private:
 	DiploidObject kaitaku_syouku[9];//商区を開拓中の画像
 	DiploidObject kaitaku_sanku[9];//産区を開拓中の画像
 	DiploidObject kaitaku_sarati[9];//更地を開拓中の画像
-	DiploidObject double_1_025[9];//1.05倍の画像
+	DiploidObject double_1_025[9];//1.025倍の画像
 	DiploidObject double_1_05[9];//1.05倍の画像
 	DiploidObject nouku_setumei;//農区の説明画像
 	DiploidObject syouku_setumei;//商区の説明画像
