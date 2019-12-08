@@ -8,6 +8,15 @@ void DiploidEngineApp::FileCreate()//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ƒtƒ@ƒCƒ‹‚ğì‚éˆ—B
 
 void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒZ[ƒuƒf[ƒ^‚âƒ}ƒbƒvƒf[ƒ^‚È‚Ç)
 {	
+	status.image.Load("texter/ui/status.png");//ƒXƒe[ƒ^ƒX‰æ‘œ‚Ìƒ[ƒh
+	status_down.image.Load("texter/ui/status_down.png");//ƒXƒe[ƒ^ƒX‰º•”‚Ì‰æ‘œ‚Ìƒ[ƒh
+	nouku_setumei.image.Load("texter/ui/nouku_setumei.png");//ƒXƒe[ƒ^ƒX‰º•”‚Ì”_‹æà–¾‰æ‘œ‚Ìƒ[ƒh
+	sanku_setumei.image.Load("texter/ui/sanku_setumei.png");//ƒXƒe[ƒ^ƒX‰º•”‚ÌY‹æà–¾‰æ‘œ‚Ìƒ[ƒh
+	syouku_setumei.image.Load("texter/ui/syouku_setumei.png");//ƒXƒe[ƒ^ƒX‰º•”‚Ì¤‹æà–¾‰æ‘œ‚Ìƒ[ƒh
+	kaitaku_setumei.image.Load("texter/ui/kaitaku_setumei.png");//ƒXƒe[ƒ^ƒX‰º•”‚ÌŠJ‘ñà–¾‰æ‘œ‚Ìƒ[ƒh
+	sarati_setumei.image.Load("texter/ui/sarati_setumei.png");//ƒXƒe[ƒ^ƒX‰º•”‚ÌX’nà–¾‰æ‘œ‚Ìƒ[ƒh
+	play_setumei.image.Load("texter/ui/play_setumei.png");//ƒXƒe[ƒ^ƒX‰º•”‚ÌƒvƒŒƒCƒ{ƒ^ƒ“à–¾‰æ‘œ‚Ìƒ[ƒh
+
 	kaitaku.SwitchButtonBOX_Load("texter/command/kaitaku.png", 128, 64);//ŠJ‘ñƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
 	nougyou.SwitchButtonBOX_Load("texter/command/nougyou.png", 128, 64);//”_‹Æ‹æƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
 	sangyou.SwitchButtonBOX_Load("texter/command/sangyou.png", 128, 64);//Y‹Æ‹æƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
@@ -17,18 +26,115 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	play.OneClickButtonBOX_Load("texter/command/teisi.png", "texter/command/sokudo_1.png", "texter/command/sokudo_2.png", 128, 64);//ƒvƒŒƒCƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
 
 	for (int count = 0; count < 9; ++count)
-	{	
-		field[count].SwitchButtonBOX_Load("texter/field/nasi.png", "texter/field/nouku.png", "texter/field/sanku.png", "texter/field/syouku.png", 128, 128);//Še‹æˆæ‚Ì‰Šú‰æ‘œ‚ğƒ[ƒh
+	{
+		kaitaku_nouku[count].image.Load("texter/field/nouku_kaitaku_tyu.png");//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ìƒ[ƒh
+		kaitaku_syouku[count].image.Load("texter/field/syouku_kaitaku_tyu.png");//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ìƒ[ƒh
+		kaitaku_sanku[count].image.Load("texter/field/sanku_kaitaku_tyu.png");//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ìƒ[ƒh
+		kaitaku_sarati[count].image.Load("texter/field/sarati_kaitaku_tyu.png");//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ìƒ[ƒh
+		double_1_05[count].image.Load("texter/field/1_05.png");//1.05”{‰æ‘œ‚Ìƒ[ƒh
+		double_1_025[count].image.Load("texter/field/1_025.png");//1.025”{‰æ‘œ‚Ìƒ[ƒh
+
+		if (count == 4)
+		{
+			field[4].SwitchButtonBOX_Load("texter/field/tyuuou.png", 128, 128);//’†‰›‹æƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
+		}
+		else
+		{
+			field[count].SwitchButtonBOX_Load("texter/field/nasi.png", "texter/field/nouku.png", "texter/field/sanku.png", "texter/field/syouku.png", 128, 128);//Še‹æˆæ‚Ì‰Šú‰æ‘œ‚ğƒ[ƒh
+		}
 	}
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
+	for (int count = 0; count < 9; ++count)
+	{
+		sakumotu_scale[count] = 1.0f;
+		sikinn_scale[count] = 1.0f;
+		sannsyutu_scale[count] = 1.0f;
+	}
+
+	status.image.Init(VGet(384/2, 64, 0));//ƒXƒe[ƒ^ƒX‰æ‘œ‚Ì‰Šú‰»
+	status_down.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‰æ‘œ‚Ì‰Šú‰»
+	nouku_setumei.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‚Ì”_‹æà–¾‰æ‘œ‚Ì‰Šú‰»
+	sanku_setumei.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‚ÌY‹æà–¾‰æ‘œ‚Ì‰Šú‰»
+	syouku_setumei.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‚Ì¤‹æà–¾‰æ‘œ‚Ì‰Šú‰»
+	kaitaku_setumei.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‚ÌŠJ‘ñà–¾‰æ‘œ‚Ì‰Šú‰»
+	sarati_setumei.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‚ÌX’nà–¾‰æ‘œ‚Ì‰Šú‰»
+	play_setumei.image.Init(VGet(1280 / 2, 720 - 16, 0));//ƒXƒe[ƒ^ƒX‰º•”‚ÌƒvƒŒƒCƒ{ƒ^ƒ“à–¾‰æ‘œ‚Ì‰Šú‰»
+
 	mouse_point.point.mouse_point_move_flag = TRUE;
 	diploidEngineImpact.PushPoint(mouse_point.point);
 
 	field_position = VGet(1280 / 2 - 64, 720 / 2 - 32, 0);
 	ku_position = VGet(0, 128, 0);
+
+	//‹æˆæî•ñ‰æ‘œ‚Ì‰Šú‰»
+	{
+		kaitaku_nouku[0].image.Init(VGet(field_position.x - 128 + 64, field_position.y - 128 + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[0].image.Init(VGet(field_position.x - 128 + 64, field_position.y - 128 + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[0].image.Init(VGet(field_position.x - 128 + 64, field_position.y - 128 + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[0].image.Init(VGet(field_position.x - 128 + 64, field_position.y - 128 + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[0].image.Init(VGet(field_position.x - 128 + 64, field_position.y - 128 + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[0].image.Init(VGet(field_position.x - 128 + 64, field_position.y - 128 + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[1].image.Init(VGet(field_position.x + 64, field_position.y - 128 + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[1].image.Init(VGet(field_position.x + 64, field_position.y - 128 + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[1].image.Init(VGet(field_position.x + 64, field_position.y - 128 + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[1].image.Init(VGet(field_position.x + 64, field_position.y - 128 + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[1].image.Init(VGet(field_position.x + 64, field_position.y - 128 + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[1].image.Init(VGet(field_position.x + 64, field_position.y - 128 + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[2].image.Init(VGet(field_position.x + 128 + 64, field_position.y - 128 + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[2].image.Init(VGet(field_position.x + 128 + 64, field_position.y - 128 + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[2].image.Init(VGet(field_position.x + 128 + 64, field_position.y - 128 + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[2].image.Init(VGet(field_position.x + 128 + 64, field_position.y - 128 + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[2].image.Init(VGet(field_position.x + 128 + 64, field_position.y - 128 + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[2].image.Init(VGet(field_position.x + 128 + 64, field_position.y - 128 + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[3].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[3].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[3].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[3].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[3].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[3].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[4].image.Init(VGet(field_position.x + 64, field_position.y + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[4].image.Init(VGet(field_position.x + 64, field_position.y + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[4].image.Init(VGet(field_position.x + 64, field_position.y + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[4].image.Init(VGet(field_position.x + 64, field_position.y + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[4].image.Init(VGet(field_position.x + 64, field_position.y + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[4].image.Init(VGet(field_position.x + 64, field_position.y + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[5].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[5].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[5].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[5].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[5].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[5].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[6].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 128 + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[6].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 128 + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[6].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 128 + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[6].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 128 + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[6].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 128 + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[6].image.Init(VGet(field_position.x - 128 + 64, field_position.y + 128 + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[7].image.Init(VGet(field_position.x + 64, field_position.y + 128 + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[7].image.Init(VGet(field_position.x + 64, field_position.y + 128 + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[7].image.Init(VGet(field_position.x + 64, field_position.y + 128 + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[7].image.Init(VGet(field_position.x + 64, field_position.y + 128 + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[7].image.Init(VGet(field_position.x + 64, field_position.y + 128 + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[7].image.Init(VGet(field_position.x + 64, field_position.y + 128 + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+		kaitaku_nouku[8].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 128 + 64, 0));//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_syouku[8].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 128 + 64, 0));//¤‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sanku[8].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 128 + 64, 0));//Y‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		kaitaku_sarati[8].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 128 + 64, 0));//X’n‚ğŠJ‘ñ’†‰æ‘œ‚Ì‰Šú‰»
+		double_1_05[8].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 128 + 64, 0));//1.05”{‰æ‘œ‚Ì‰Šú‰»
+		double_1_025[8].image.Init(VGet(field_position.x + 128 + 64, field_position.y + 128 + 64, 0));//1.025”{‰æ‘œ‚Ì‰Šú‰»
+
+	}
 
 	kaitaku.SwitchButtonBOX_Init(VGet(ku_position.x, ku_position.y, 0), VGet(128, 64, 0), "kaitaku");//ŠJ‘ñƒ{ƒ^ƒ“‚Ì‰Šú‰»
 	nougyou.SwitchButtonBOX_Init(VGet(ku_position.x + 128, ku_position.y, 0), VGet(128, 64, 0), "nougyou");//”_‹Æ‹æƒ{ƒ^ƒ“‚Ì‰Šú‰»
@@ -38,37 +144,38 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 
 	zikkou.OneClickButtonBOX_Init(VGet(ku_position.x + (128 * 2), ku_position.y, 0), VGet(128, 64, 0), "zikkou");//Àsƒ{ƒ^ƒ“‚Ì‰Šú‰»
 
-	play.OneClickButtonBOX_Init(VGet(1280 - 128, 720 - 64, 0), VGet(128, 64, 0), "play");//ƒvƒŒƒCƒ{ƒ^ƒ“‚Ì‰Šú‰»
+	play.OneClickButtonBOX_Init(VGet(1280 - 128, 720 - 64 - 32, 0), VGet(128, 64, 0), "play");//ƒvƒŒƒCƒ{ƒ^ƒ“‚Ì‰Šú‰»
 	play.OneClickButtonBOX_Push(diploidEngineImpact);//ƒvƒŒƒCƒ{ƒ^ƒ“‚Ì’Ç‰Á
 
 	//‹ó‚Ì‹æˆæ‚Ì‰Šú‰»(4‚ª’†‰›)
-	field[0].SwitchButtonBOX_Init(VGet(field_position.x - 128, field_position.y - 128, 0), VGet(128, 128, 0), "main_field_0", DIPLOID_LAYER_00);
-	field[0].SwitchButtonBOX_Push(diploidEngineImpact);
+	{
+		field[0].SwitchButtonBOX_Init(VGet(field_position.x - 128, field_position.y - 128, 0), VGet(128, 128, 0), "main_field_0", DIPLOID_LAYER_00);
+		field[0].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[1].SwitchButtonBOX_Init(VGet(field_position.x, field_position.y - 128, 0), VGet(128, 128, 0), "main_field_1", DIPLOID_LAYER_00);
-	field[1].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[1].SwitchButtonBOX_Init(VGet(field_position.x, field_position.y - 128, 0), VGet(128, 128, 0), "main_field_1", DIPLOID_LAYER_00);
+		field[1].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[2].SwitchButtonBOX_Init(VGet(field_position.x + 128, field_position.y - 128, 0), VGet(128, 128, 0), "main_field_2", DIPLOID_LAYER_00);
-	field[2].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[2].SwitchButtonBOX_Init(VGet(field_position.x + 128, field_position.y - 128, 0), VGet(128, 128, 0), "main_field_2", DIPLOID_LAYER_00);
+		field[2].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[3].SwitchButtonBOX_Init(VGet(field_position.x - 128, field_position.y, 0), VGet(128, 128, 0), "main_field_3", DIPLOID_LAYER_00);
-	field[3].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[3].SwitchButtonBOX_Init(VGet(field_position.x - 128, field_position.y, 0), VGet(128, 128, 0), "main_field_3", DIPLOID_LAYER_00);
+		field[3].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[4].SwitchButtonBOX_Init(VGet(field_position.x, field_position.y, 0), VGet(128, 128, 0), "main_field_4", DIPLOID_LAYER_00);
-	field[4].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[4].SwitchButtonBOX_Init(VGet(field_position.x, field_position.y, 0), VGet(128, 128, 0), "main_field_4", DIPLOID_LAYER_00);
+		field[4].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[5].SwitchButtonBOX_Init(VGet(field_position.x + 128, field_position.y, 0), VGet(128, 128, 0), "main_field_5", DIPLOID_LAYER_00);
-	field[5].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[5].SwitchButtonBOX_Init(VGet(field_position.x + 128, field_position.y, 0), VGet(128, 128, 0), "main_field_5", DIPLOID_LAYER_00);
+		field[5].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[6].SwitchButtonBOX_Init(VGet(field_position.x - 128, field_position.y + 128, 0), VGet(128, 128, 0), "main_field_6", DIPLOID_LAYER_00);
-	field[6].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[6].SwitchButtonBOX_Init(VGet(field_position.x - 128, field_position.y + 128, 0), VGet(128, 128, 0), "main_field_6", DIPLOID_LAYER_00);
+		field[6].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[7].SwitchButtonBOX_Init(VGet(field_position.x, field_position.y + 128, 0), VGet(128, 128, 0), "main_field_7", DIPLOID_LAYER_00);
-	field[7].SwitchButtonBOX_Push(diploidEngineImpact);
+		field[7].SwitchButtonBOX_Init(VGet(field_position.x, field_position.y + 128, 0), VGet(128, 128, 0), "main_field_7", DIPLOID_LAYER_00);
+		field[7].SwitchButtonBOX_Push(diploidEngineImpact);
 
-	field[8].SwitchButtonBOX_Init(VGet(field_position.x + 128, field_position.y + 128, 0), VGet(128, 128, 0), "main_field_8", DIPLOID_LAYER_00);
-	field[8].SwitchButtonBOX_Push(diploidEngineImpact);
-
+		field[8].SwitchButtonBOX_Init(VGet(field_position.x + 128, field_position.y + 128, 0), VGet(128, 128, 0), "main_field_8", DIPLOID_LAYER_00);
+		field[8].SwitchButtonBOX_Push(diploidEngineImpact);
+	}
 }
 
 void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
@@ -85,9 +192,515 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 
 		if (play_type > 2)
 		{
-			play_type = 0;
+			play_type = 0;//’â~‚É–ß‚éB
 		}
 	}
+
+	if (play_type == 1)//ƒQ[ƒ€‘¬“x1”{‚Ì‚Æ‚«‚Ìˆ—
+	{
+		//ŠÔ‚Ìˆ—
+		++fps_time;//ŠÔ‚ğ‘‚â‚·B
+
+		if (fps_time >= 5)
+		{
+			++second;//•b‚ğ‘‚â‚·
+			fps_time = 0;//‰Šú‰»
+		}
+
+		if (second >= 1)
+		{
+			++minute;//•ª‚ğ‘‚â‚·
+			second = 0;//‰Šú‰»
+		}
+
+		if (minute >= 1)
+		{
+			++hour;//‚ğ‘‚â‚·B
+			minute = 0;//‰Šú‰»
+		}
+
+		if (hour >= 24)
+		{
+			day_flag = true;//“ú‚ª‘‚¦‚½ƒtƒ‰ƒO‚ğƒIƒ“‚É‚·‚éB
+			++day;//“ú‚ğ‘‚â‚·B
+			hour = 0;//‰Šú‰»
+		}
+
+		//“ú‚ªi‚ñ‚¾‚ç(for•¶‘Oˆ—)
+		if (day_flag == true)
+		{
+			//û“üî•ñ‚Ì‰Šú‰»
+			sakumotu_syuunyuu = 0;
+			sannsyutu_syuunyuu = 0;
+			sikin_syuunyuu = 0;
+		}
+
+		//ŠJ‘ñ‚Æû“ü‚Ìˆ—
+		for (int count = 0; count < 9; ++count)
+		{
+			//“ú‚ªi‚ñ‚¾‚ç
+			if (day_flag == true)
+			{
+				if (kaitaku_time[count] != 0)//ŠJ‘ñŠÔ‚ª0‚Å‚È‚¢‚È‚ç
+				{
+					--kaitaku_time[count];//ŠJ‘ñŠÔ‚ğŒ¸‚ç‚·
+				}
+
+				//û“üˆ—
+				switch (count)
+				{
+				case 0:
+					if (field_type[0] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[0] = 1.0f;
+
+						if (field_type[1] == 1)
+						{
+							sakumotu_scale[0] += all_basic_scale;
+						}
+						if (field_type[3] == 1)
+						{
+							sakumotu_scale[0] += all_basic_scale;
+						}	
+
+						sakumotu += 5 * sakumotu_scale[0];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[0];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[0] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[0] = 1.0f;
+
+						if (field_type[1] == 2)
+						{
+							sannsyutu_scale[0] += all_basic_scale;
+						}
+						if (field_type[3] == 2)
+						{
+							sannsyutu_scale[0] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[0];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[0];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[0] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[0] = 1.0f;
+
+						if (field_type[1] == 3)
+						{
+							sikinn_scale[0] += all_basic_scale;
+						}
+						if (field_type[3] == 3)
+						{
+							sikinn_scale[0] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[0];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[0];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+
+					}
+					break;
+
+				case 1:
+					if (field_type[1] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[1] = 1.0f;
+
+						if (field_type[0] == 1)
+						{
+							sakumotu_scale[1] += all_basic_scale;
+						}
+						if (field_type[2] == 1)
+						{
+							sakumotu_scale[1] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[1];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[1];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[1] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[1] = 1.0f;
+
+						if (field_type[0] == 2)
+						{
+							sannsyutu_scale[1] += all_basic_scale;
+						}
+						if (field_type[2] == 2)
+						{
+							sannsyutu_scale[1] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[1];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[1];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[1] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[1] = 1.0f;
+
+						if (field_type[0] == 3)
+						{
+							sikinn_scale[1] += all_basic_scale;
+						}
+						if (field_type[2] == 3)
+						{
+							sikinn_scale[1] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[1];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[1];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					break;
+
+				case 2:
+					if (field_type[2] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[2] = 1.0f;
+
+						if (field_type[1] == 1)
+						{
+							sakumotu_scale[2] += all_basic_scale;
+						}
+						if (field_type[5] == 1)
+						{
+							sakumotu_scale[2] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[2];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[2];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[2] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[2] = 1.0f;
+
+						if (field_type[1] == 2)
+						{
+							sannsyutu_scale[2] += all_basic_scale;
+						}
+						if (field_type[5] == 2)
+						{
+							sannsyutu_scale[2] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[2];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[2];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[2] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[2] = 1.0f;
+
+						if (field_type[1] == 3)
+						{
+							sikinn_scale[2] += all_basic_scale;
+						}
+						if (field_type[5] == 3)
+						{
+							sikinn_scale[2] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[2];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[2];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+
+				case 3:
+					if (field_type[3] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[3] = 1.0f;
+
+						if (field_type[0] == 1)
+						{
+							sakumotu_scale[3] += all_basic_scale;
+						}
+						if (field_type[6] == 1)
+						{
+							sakumotu_scale[3] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[3];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[3];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[3] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[3] = 1.0f;
+
+						if (field_type[0] == 2)
+						{
+							sannsyutu_scale[3] += all_basic_scale;
+						}
+						if (field_type[6] == 2)
+						{
+							sannsyutu_scale[3] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[3];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[3];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[3] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[3] = 1.0f;
+
+						if (field_type[0] == 3)
+						{
+							sikinn_scale[3] += all_basic_scale;
+						}
+						if (field_type[6] == 3)
+						{
+							sikinn_scale[3] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[3];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[3];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					break;
+
+				case 5:
+					if (field_type[5] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[5] = 1.0f;
+
+						if (field_type[2] == 1)
+						{
+							sakumotu_scale[5] += all_basic_scale;
+						}
+						if (field_type[8] == 1)
+						{
+							sakumotu_scale[5] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[5];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[5];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[5] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[5] = 1.0f;
+
+						if (field_type[2] == 2)
+						{
+							sannsyutu_scale[5] += all_basic_scale;
+						}
+						if (field_type[8] == 2)
+						{
+							sannsyutu_scale[5] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[5];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[5];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[5] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[5] = 1.0f;
+
+						if (field_type[2] == 3)
+						{
+							sikinn_scale[5] += all_basic_scale;
+						}
+						if (field_type[8] == 3)
+						{
+							sikinn_scale[5] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[5];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[5];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					break;
+
+				case 6:
+					if (field_type[6] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[6] = 1.0f;
+
+						if (field_type[3] == 1)
+						{
+							sakumotu_scale[6] += all_basic_scale;
+						}
+						if (field_type[7] == 1)
+						{
+							sakumotu_scale[6] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[6];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[6];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[6] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[6] = 1.0f;
+
+						if (field_type[3] == 2)
+						{
+							sannsyutu_scale[6] += all_basic_scale;
+						}
+						if (field_type[7] == 2)
+						{
+							sannsyutu_scale[6] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[6];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[6];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[6] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[6] = 1.0f;
+
+						if (field_type[3] == 3)
+						{
+							sikinn_scale[6] += all_basic_scale;
+						}
+						if (field_type[7] == 3)
+						{
+							sikinn_scale[6] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[6];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[6];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					break;
+
+				case 7:
+					if (field_type[7] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[7] = 1.0f;
+
+						if (field_type[6] == 1)
+						{
+							sakumotu_scale[7] += all_basic_scale;
+						}
+						if (field_type[8] == 1)
+						{
+							sakumotu_scale[7] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[7];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[7];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[7] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[7] = 1.0f;
+
+						if (field_type[6] == 2)
+						{
+							sannsyutu_scale[7] += all_basic_scale;
+						}
+						if (field_type[8] == 2)
+						{
+							sannsyutu_scale[7] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[7];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[7];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[7] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[7] = 1.0f;
+
+						if (field_type[6] == 3)
+						{
+							sikinn_scale[7] += all_basic_scale;
+						}
+						if (field_type[8] == 3)
+						{
+							sikinn_scale[7] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[7];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[7];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					break;
+
+				case 8:
+					if (field_type[8] == 1)//”_‹æ‚Å‚ ‚ê‚Î
+					{
+						sakumotu_scale[8] = 1.0f;
+
+						if (field_type[5] == 1)
+						{
+							sakumotu_scale[8] += all_basic_scale;
+						}
+						if (field_type[7] == 1)
+						{
+							sakumotu_scale[8] += all_basic_scale;
+						}
+
+						sakumotu += 5 * sakumotu_scale[8];//ì•¨‚ğ‘‚â‚·
+						sakumotu_syuunyuu += 5 * sakumotu_scale[8];//ì•¨‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[8] == 2)//Y‹æ‚Å‚ ‚ê‚Î
+					{
+						sannsyutu_scale[8] = 1.0f;
+
+						if (field_type[5] == 2)
+						{
+							sannsyutu_scale[8] += all_basic_scale;
+						}
+						if (field_type[7] == 2)
+						{
+							sannsyutu_scale[8] += all_basic_scale;
+						}
+
+						sannsyutu += 1 * sannsyutu_scale[8];//Yo‚ğ‘‚â‚·
+						sannsyutu_syuunyuu += 1 * sannsyutu_scale[8];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					if (field_type[8] == 3)//¤‹æ‚Å‚ ‚ê‚Î
+					{
+						sikinn_scale[8] = 1.0f;
+
+						if (field_type[5] == 3)
+						{
+							sikinn_scale[8] += all_basic_scale;
+						}
+						if (field_type[7] == 3)
+						{
+							sikinn_scale[8] += all_basic_scale;
+						}
+
+						sikinn += 10 * sikinn_scale[8];//Yo‚ğ‘‚â‚·
+						sikin_syuunyuu += 10 * sikinn_scale[8];//Yo‚Ìû“üî•ñ‚ğ‘‚â‚·
+					}
+					break;
+
+				default:
+					break;
+				}
+			}
+
+			if (kaitaku_time[count] <= 0)//ŠJ‘ñŠÔ‚ª0‚É‚È‚Á‚½‚ç
+			{
+				field_type[count] = kaitaku_type[count];//‹æˆæƒ^ƒCƒv‚ğ•ÏX
+				kaitaku_time[count] = 0;//ŠJ‘ñŠÔ‚Ì‰Šú‰»
+			}
+		}
+
+		//“ú‚ªi‚ñ‚¾‚ç(for•¶Œãˆ—)
+		if (day_flag == true)
+		{
+			//lŒû‚Ìˆ—
+			if ((sakumotu - (jinkou * 0.5)) >= jinkou)//ì•¨‚Ì•Û—L—Ê‚ªlŒû‚Ì5Š„‚ğˆø‚¢‚½•ª‚æ‚è‘½‚¯‚ê‚Î
+			{
+				sakumotu -= jinkou * 0.5;//lŒû‚Ì5Š„•ª‚Ìì•¨‚ğÁ”ï
+				jinkou += sakumotu * 0.05;//ì•¨‚Ì0.5Š„•ª‚ÌlŒû‚ğ‘‚â‚·
+
+				jinkou_zouka = sakumotu * 0.05;//lŒû‘‰Á—Ê‚Ìî•ñ‚ğ‘ã“ü
+				sakumotu_syouhi = -jinkou * 0.5;//ì•¨‚ÌÁ”ï—Êî•ñ‚ğ‘ã“ü
+			}
+			else
+			{
+				sakumotu -= jinkou * 0.5;//lŒû‚Ì5Š„•ª‚Ìì•¨‚ğÁ”ï
+				jinkou -= jinkou * 0.1;//ì•¨‚ª‘«‚è‚È‚©‚Á‚½‚çlŒû‚ğ2Š„Œ¸‚ç‚·B
+
+				jinkou_zouka = -jinkou * 0.1 - 1;//lŒû‘‰Á—Ê‚Ìî•ñ‚ğ‘ã“ü
+				sakumotu_syouhi = -jinkou * 0.5;//ì•¨‚ÌÁ”ï—Êî•ñ‚ğ‘ã“ü
+
+			}
+		}
+
+		if (sakumotu <= 0)//ì•¨‚ª0ˆÈ‰º‚É‚È‚Á‚½‚ç0‚É‚·‚éB
+		{
+			sakumotu = 0;
+		}
+
+
+		day_flag = false;//“ú‚ªi‚ñ‚¾ƒtƒ‰ƒO‚ğƒIƒt‚É‚·‚éB
+	}
+
 
 	for (int count = 0; count < 9; ++count)
 	{
@@ -110,99 +723,157 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 						sarati.SwitchButton_Flag_Change(false);//X’nƒ{ƒ^ƒ“‚ğFALSE‚É
 					}
 				}
-			}
-			
-			kaitaku_system.OnePushBOX_Impact(diploidEngineImpact, kaitaku.box);//ŠJ‘ñƒ{ƒ^ƒ“‚Ì’Ç‰Á
-			kaitaku_system.FlagReset_OneDeleteBOX();//ŠJ‘ñƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg			
+			}			
 
-			//ŠJ‘ñƒ{ƒ^ƒ“
-			if (kaitaku.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
-			{	
-				nougyou_system.OnePushBOX_Impact(diploidEngineImpact, nougyou.box);//”_‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Á
-				sangyou_system.OnePushBOX_Impact(diploidEngineImpact, sangyou.box);//Y‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Á
-				syougyou_system.OnePushBOX_Impact(diploidEngineImpact, syougyou.box);//¤‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Á
-				sarati_system.OnePushBOX_Impact(diploidEngineImpact, sarati.box);//X’nƒ{ƒ^ƒ“‚Ì’Ç‰Á
+			//’†‰›‹æˆÈŠO‚ğ‘I‘ğ‚µ‚Ä‚¢‚é‚Æ‚«‚ÌƒRƒ}ƒ“ƒh
+			if (count != 4)
+			{
+				kaitaku_system.OnePushBOX_Impact(diploidEngineImpact, kaitaku.box);//ŠJ‘ñƒ{ƒ^ƒ“‚Ì’Ç‰Á
+				kaitaku_system.FlagReset_OneDeleteBOX();//ŠJ‘ñƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg			
 
-				nougyou_system.FlagReset_OneDeleteBOX();//”_‹Æ‹æƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
-				sangyou_system.FlagReset_OneDeleteBOX();//Y‹Æ‹æƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
-				syougyou_system.FlagReset_OneDeleteBOX();//¤‹Æ‹æƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
-				sarati_system.FlagReset_OneDeleteBOX();//X’nƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
-
-				//”_‹Æ‹æˆæƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-				if (nougyou.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
+					//ŠJ‘ñƒ{ƒ^ƒ“
+				if (kaitaku.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
 				{
-					sangyou.SwitchButton_Flag_Change(false);//Y‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					syougyou.SwitchButton_Flag_Change(false);//¤‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					sarati.SwitchButton_Flag_Change(false);//X’n‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+					nougyou_system.OnePushBOX_Impact(diploidEngineImpact, nougyou.box);//”_‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Á
+					sangyou_system.OnePushBOX_Impact(diploidEngineImpact, sangyou.box);//Y‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Á
+					syougyou_system.OnePushBOX_Impact(diploidEngineImpact, syougyou.box);//¤‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Á
+					sarati_system.OnePushBOX_Impact(diploidEngineImpact, sarati.box);//X’nƒ{ƒ^ƒ“‚Ì’Ç‰Á
 
-					zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
-					zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
+					nougyou_system.FlagReset_OneDeleteBOX();//”_‹Æ‹æƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+					sangyou_system.FlagReset_OneDeleteBOX();//Y‹Æ‹æƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+					syougyou_system.FlagReset_OneDeleteBOX();//¤‹Æ‹æƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+					sarati_system.FlagReset_OneDeleteBOX();//X’nƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
 
-					if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+					//”_‹Æ‹æˆæƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+					if (nougyou.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
 					{
-						field_type[count] = 1;//”_‹æ‚É•ÏX
+						sangyou.SwitchButton_Flag_Change(false);//Y‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						syougyou.SwitchButton_Flag_Change(false);//¤‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						sarati.SwitchButton_Flag_Change(false);//X’n‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+
+						zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
+						zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
+
+						if ((sikinn - 200) >= 0)//‘‹à‚©‚ç200Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+						{
+							if ((sannsyutu - 2) >= 0)//Yo‚©‚ç2Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+							{
+								if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+								{
+									kaitaku_time[count] = 7;//ŠJ‘ñŠÔ‚ğ90‚Éİ’è
+									kaitaku_type[count] = 1;//”_‹æ‚É•ÏX
+									sikinn -= 200;//‘‹à‚ğŒ¸‚ç‚·B
+									sannsyutu -= 2;//Yo‚ğŒ¸‚ç‚·
+								}
+							}
+						}
+					}
+
+					//Y‹Æ‹æˆæƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+					if (sangyou.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
+					{
+						nougyou.SwitchButton_Flag_Change(false);//”_‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						syougyou.SwitchButton_Flag_Change(false);//¤‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						sarati.SwitchButton_Flag_Change(false);//X’n‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+
+						zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
+						zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
+
+						if ((sikinn - 300) >= 0)//‘‹à‚©‚ç300Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+						{
+							if ((sannsyutu - 4) >= 0)//Yo‚©‚ç4Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+							{
+								if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput))//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+								{
+									kaitaku_time[count] = 7;//ŠJ‘ñŠÔ‚ğ90‚Éİ’è
+									kaitaku_type[count] = 2;//Y‹æ‚É•ÏX
+									sikinn -= 300;//‘‹à‚ğŒ¸‚ç‚·B
+									sannsyutu -= 4;//Yo‚ğŒ¸‚ç‚·
+								}
+							}
+						}
+					}
+
+					//¤‹Æ‹æˆæƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+					if (syougyou.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
+					{
+						nougyou.SwitchButton_Flag_Change(false);//”_‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						sangyou.SwitchButton_Flag_Change(false);//Y‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						sarati.SwitchButton_Flag_Change(false);//X’n‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+
+						zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
+						zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
+
+						if ((sikinn - 500) >= 0)//‘‹à‚©‚ç500Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+						{
+							if ((sannsyutu - 3) >= 0)//Yo‚©‚ç3Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+							{
+								if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput))//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+								{
+									kaitaku_time[count] = 7;//ŠJ‘ñŠÔ‚ğ90‚Éİ’è
+									kaitaku_type[count] = 3;//¤‹æ‚É•ÏX
+									sikinn -= 500;//‘‹à‚ğŒ¸‚ç‚·B
+									sannsyutu -= 3;//Yo‚ğŒ¸‚ç‚·
+								}
+							}
+						}
+					}
+
+					//X’nƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+					if (sarati.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
+					{
+						nougyou.SwitchButton_Flag_Change(false);//”_‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						sangyou.SwitchButton_Flag_Change(false);//Y‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+						syougyou.SwitchButton_Flag_Change(false);//¤‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
+
+						zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
+						zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
+
+						if ((sikinn - 100) >= 0)//‘‹à‚©‚ç100Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+						{
+							if ((sannsyutu - 2) >= 0)//Yo‚©‚ç2Œ¸‚ç‚µ‚Ä‚à0‚É‚È‚ç‚È‚¯‚ê‚Î
+							{
+								if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput))//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
+								{
+									kaitaku_time[count] = 7;//ŠJ‘ñŠÔ‚ğ90‚Éİ’è
+									kaitaku_type[count] = 0;//X’n‚É•ÏX
+									sikinn -= 100;//‘‹à‚ğŒ¸‚ç‚·B
+									sannsyutu -= 2;//Yo‚ğŒ¸‚ç‚·
+								}
+							}
+						}
+					}
+
+					//‹æˆæƒ{ƒ^ƒ“‚Ìƒtƒ‰ƒOŒvZˆ—
+					nougyou_sangyou_syougou_flags = (nougyou.GetSwitchButton_Flag() || sangyou.GetSwitchButton_Flag() || syougyou.GetSwitchButton_Flag() || sarati.GetSwitchButton_Flag());
+
+					if (nougyou_sangyou_syougou_flags == false)//‹æˆæƒ{ƒ^ƒ“‚·‚×‚Ä‚ªƒIƒt‚È‚ç
+					{
+						zikkou_system.OneDeleteBOX_Impact(diploidEngineImpact, "zikkou");//Àsƒ{ƒ^ƒ“‚Ìíœ
+						zikkou_system.FlagReset_OnePushBOX();//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
 					}
 				}
-
-				//Y‹Æ‹æˆæƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-				if (sangyou.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
+				else//ŠJ‘ñƒ{ƒ^ƒ“‚ªƒIƒt‚Ì‚Æ‚«
 				{
-					nougyou.SwitchButton_Flag_Change(false);//”_‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					syougyou.SwitchButton_Flag_Change(false);//¤‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					sarati.SwitchButton_Flag_Change(false);//X’n‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-
-					zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
-					zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
-
-					if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput))//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-					{
-						field_type[count] = 2;//Y‹æ‚É•ÏX
-					}
-				}
-
-				//¤‹Æ‹æˆæƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-				if (syougyou.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
-				{
-					nougyou.SwitchButton_Flag_Change(false);//”_‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					sangyou.SwitchButton_Flag_Change(false);//Y‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					sarati.SwitchButton_Flag_Change(false);//X’n‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-
-					zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
-					zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
-
-					if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput))//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-					{
-						field_type[count] = 3;//¤‹æ‚É•ÏX
-					}
-				}				
-
-				//X’nƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-				if (sarati.SwitchButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput) == true)
-				{
-					nougyou.SwitchButton_Flag_Change(false);//”_‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					sangyou.SwitchButton_Flag_Change(false);//Y‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-					syougyou.SwitchButton_Flag_Change(false);//¤‹Æ‹æ‚Ìƒ{ƒ^ƒ“‚ğƒIƒt‚É‚·‚éB
-
-					zikkou_system.OnePushBOX_Impact(diploidEngineImpact, zikkou.box);//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Á
-					zikkou_system.FlagReset_OneDeleteBOX();//Àsƒ{ƒ^ƒ“‚Ìíœƒtƒ‰ƒO‚ğƒŠƒZƒbƒg‚·‚éB
-
-					if (zikkou.OneClickButtonBOX_Update(MOUSE_INPUT_LEFT, diploidEngineImpact, diploidEngineInput))//Àsƒ{ƒ^ƒ“‚ÌƒAƒbƒvƒf[ƒg
-					{
-						field_type[count] = 0;//X’n‚É•ÏX
-					}
-				}
-
-				//‹æˆæƒ{ƒ^ƒ“‚Ìƒtƒ‰ƒOŒvZˆ—
-				nougyou_sangyou_syougou_flags = (nougyou.GetSwitchButton_Flag() || sangyou.GetSwitchButton_Flag() || syougyou.GetSwitchButton_Flag() || sarati.GetSwitchButton_Flag());
-
-				if (nougyou_sangyou_syougou_flags == false)//‹æˆæƒ{ƒ^ƒ“‚·‚×‚Ä‚ªƒIƒt‚È‚ç
-				{
+					nougyou_system.OneDeleteBOX_Impact(diploidEngineImpact, "nougyou");//”_‹Æ‹æƒ{ƒ^ƒ“‚Ìíœ
+					sangyou_system.OneDeleteBOX_Impact(diploidEngineImpact, "sangyou");//Y‹Æ‹æƒ{ƒ^ƒ“‚Ìíœ
+					syougyou_system.OneDeleteBOX_Impact(diploidEngineImpact, "syougyou");//¤‹Æ‹æƒ{ƒ^ƒ“‚Ìíœ
+					sarati_system.OneDeleteBOX_Impact(diploidEngineImpact, "sarati");//X’nƒ{ƒ^ƒ“‚Ìíœ
 					zikkou_system.OneDeleteBOX_Impact(diploidEngineImpact, "zikkou");//Àsƒ{ƒ^ƒ“‚Ìíœ
+
+					nougyou_system.FlagReset_OnePushBOX();//”_‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+					sangyou_system.FlagReset_OnePushBOX();//Y‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+					syougyou_system.FlagReset_OnePushBOX();//¤‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+					sarati_system.FlagReset_OnePushBOX();//X’nƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
 					zikkou_system.FlagReset_OnePushBOX();//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
 				}
 			}
-			else//ŠJ‘ñƒ{ƒ^ƒ“‚ªƒIƒt‚Ì‚Æ‚«
+			else//ƒRƒ}ƒ“ƒhƒ{ƒ^ƒ“‚Ìíœˆ—‚ğ‘‚­B
 			{
+				kaitaku.SwitchButton_Flag_Change(false);//ŠJ‘ñƒ{ƒ^ƒ“‚ğFALSE‚É
+				kaitaku_system.OneDeleteBOX_Impact(diploidEngineImpact, "kaitaku");//ŠJ‘ñƒ{ƒ^ƒ“‚Ìíœ
+				kaitaku_system.FlagReset_OnePushBOX();//ŠJ‘ñƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+
 				nougyou_system.OneDeleteBOX_Impact(diploidEngineImpact, "nougyou");//”_‹Æ‹æƒ{ƒ^ƒ“‚Ìíœ
 				sangyou_system.OneDeleteBOX_Impact(diploidEngineImpact, "sangyou");//Y‹Æ‹æƒ{ƒ^ƒ“‚Ìíœ
 				syougyou_system.OneDeleteBOX_Impact(diploidEngineImpact, "syougyou");//¤‹Æ‹æƒ{ƒ^ƒ“‚Ìíœ
@@ -214,6 +885,7 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 				syougyou_system.FlagReset_OnePushBOX();//¤‹Æ‹æƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
 				sarati_system.FlagReset_OnePushBOX();//X’nƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
 				zikkou_system.FlagReset_OnePushBOX();//Àsƒ{ƒ^ƒ“‚Ì’Ç‰Áƒtƒ‰ƒO‚ğƒŠƒZƒbƒg
+
 			}
 		}		
 	}	
@@ -256,29 +928,127 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	//‹æˆæ‚ÆƒRƒ}ƒ“ƒhƒ{ƒ^ƒ“‚Ì•\¦
 	for (int count = 0; count < 9; ++count)
 	{
+		//ƒRƒ}ƒ“ƒh‚Ì•\¦
 		if (field[count].GetSwitchButton_Flag() == true)
 		{
-			//ŠJ‘ñƒ{ƒ^ƒ“‚Ì•`‰æ
-			kaitaku.SwitchButtonBOX_Draw();
-
-			//ŠJ‘ñƒ{ƒ^ƒ“‚ªƒIƒ“‚È‚ç
-			if (kaitaku.GetSwitchButton_Flag() == true)
+			//’†‰›‹æˆÈŠO‚Ì‹æˆæ‚ğ‘I‘ğ‚µ‚½‚Æ‚«
+			if (count != 4)
 			{
-				nougyou.SwitchButtonBOX_Draw();
-				sangyou.SwitchButtonBOX_Draw();
-				syougyou.SwitchButtonBOX_Draw();
-				sarati.SwitchButtonBOX_Draw();
+				//ŠJ‘ñƒ{ƒ^ƒ“‚Ì•`‰æ
+				kaitaku.SwitchButtonBOX_Draw();
 
-				if ((nougyou.GetSwitchButton_Flag() || sangyou.GetSwitchButton_Flag() || syougyou.GetSwitchButton_Flag() || sarati.GetSwitchButton_Flag()) == true)
+				//ŠJ‘ñƒ{ƒ^ƒ“‚ªƒIƒ“‚È‚ç
+				if (kaitaku.GetSwitchButton_Flag() == true)
 				{
-					zikkou.OneClickButtonBOX_Draw();
+					nougyou.SwitchButtonBOX_Draw();
+					sangyou.SwitchButtonBOX_Draw();
+					syougyou.SwitchButtonBOX_Draw();
+					sarati.SwitchButtonBOX_Draw();
+
+					if ((nougyou.GetSwitchButton_Flag() || sangyou.GetSwitchButton_Flag() || syougyou.GetSwitchButton_Flag() || sarati.GetSwitchButton_Flag()) == true)
+					{
+						zikkou.OneClickButtonBOX_Draw();
+					}
 				}
 			}
 		}
 
 		//‹æˆæ‚Ì•`‰æ
-		field[count].SwitchButtonBOX_Draw(field_type[count]);
+		field[count].SwitchButtonBOX_Draw(field_type[count]);	
+		
+		//ŠJ‘ñ’†‚Ìî•ñ•\¦
+		if (kaitaku_time[count] != 0)
+		{
+			//‹æˆæ‚ÌŠJ‘ñó‘Ô‚É‚æ‚Á‚Ä•\¦‚ğ•Ï‚¦‚é
+			switch (count)
+			{
+			case 0: DrawFormatString(field_position.x - 128 + 60, field_position.y - 128 + 60, GetColor(0, 0, 0), "%d", kaitaku_time[0]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 1: DrawFormatString(field_position.x + 60, field_position.y - 128 + 60, GetColor(0, 0, 0), "%d", kaitaku_time[1]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 2: DrawFormatString(field_position.x + 128 + 60, field_position.y - 128 + 60, GetColor(0, 0, 0), "%d", kaitaku_time[2]);
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 3: DrawFormatString(field_position.x - 128 + 60, field_position.y + 60, GetColor(0, 0, 0), "%d", kaitaku_time[3]);	
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 4: DrawFormatString(field_position.x, field_position.y, GetColor(0, 0, 0), "%d", kaitaku_time[4]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 5: DrawFormatString(field_position.x + 128 + 60, field_position.y + 60, GetColor(0, 0, 0), "%d", kaitaku_time[5]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 6: DrawFormatString(field_position.x - 128 + 60, field_position.y + 128 + 60, GetColor(0, 0, 0), "%d", kaitaku_time[6]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 7: DrawFormatString(field_position.x + 60, field_position.y + 128 + 60, GetColor(0, 0, 0), "%d", kaitaku_time[7]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			case 8: DrawFormatString(field_position.x + 128 + 60, field_position.y + 128 + 60, GetColor(0, 0, 0), "%d", kaitaku_time[8]); 
+					if (kaitaku_type[count] == 0) kaitaku_sarati[count].image.Draw();
+					if (kaitaku_type[count] == 1) kaitaku_nouku[count].image.Draw();
+					if (kaitaku_type[count] == 2) kaitaku_sanku[count].image.Draw();
+					if (kaitaku_type[count] == 3) kaitaku_syouku[count].image.Draw();
+					break;
+			default:
+				break;
+			}
+		}
+
+		//‹æˆæî•ñ‚Ì•\¦
+		if ((sakumotu_scale[count] == 1.025f) || (sannsyutu_scale[count] == 1.025f) || (sikinn_scale[count] == 1.025f)) double_1_025[count].image.Draw();
+		if ((sakumotu_scale[count] == 1.05f) || (sannsyutu_scale[count] == 1.05f) || (sikinn_scale[count] == 1.05f)) double_1_05[count].image.Draw();
 	}
+
+	//ƒXƒe[ƒ^ƒX‚Ì•`‰æ
+	status.image.Draw();//ƒXƒe[ƒ^ƒX‰æ‘œ‚Ì•`‰æ
+	DrawFormatString(128, 20, GetColor(0, 0, 0), "%d", sikinn);//‘‹à
+	DrawFormatString(128, 60, GetColor(0, 0, 0), "%d", sakumotu);//ì•¨
+	DrawFormatString(128, 100, GetColor(0, 0, 0), "%d", sannsyutu);//¶Y
+	DrawFormatString(128 * 3 - 90, 100, GetColor(0, 0, 0), "%d", day);//“ú
+	DrawFormatString(128 * 3 - 60, 20, GetColor(0, 0, 0), "%d", jinkou);//lŒû
+
+	//ƒXƒe[ƒ^ƒX‰º•”‚Ì•`‰æ
+	status_down.image.Draw();
+	DrawFormatString(100, 698, GetColor(0, 0, 0), "%d", sannsyutu_syuunyuu);//Yoû“ü
+	DrawFormatString(128 * 2 - 28, 698, GetColor(0, 0, 0), "%d", sikin_syuunyuu);//‘‹àû“ü
+	DrawFormatString(128 * 3 - 24, 698, GetColor(0, 0, 0), "%d", sakumotu_syuunyuu);//ì•¨û“ü
+	DrawFormatString(128 * 4 + 8, 698, GetColor(0, 0, 0), "%d", jinkou_zouka);//lŒû‘‰Á—Ê
+	DrawFormatString(128 * 5 + 34, 698, GetColor(0, 0, 0), "%d", sakumotu_syouhi);//ì•¨Á”ï—Ê
+
+	if (nougyou.GetSwitchButton_HitFlag() == true) nouku_setumei.image.Draw();//”_‹æ‚Ìà–¾
+	if (sangyou.GetSwitchButton_HitFlag() == true) sanku_setumei.image.Draw();//Y‹æ‚Ìà–¾
+	if (syougyou.GetSwitchButton_HitFlag() == true) syouku_setumei.image.Draw();//¤‹æ‚Ìà–¾
+	if (kaitaku.GetSwitchButton_HitFlag() == true) kaitaku_setumei.image.Draw();//ŠJ‘ñƒRƒ}ƒ“ƒh‚Ìà–¾
+	if (sarati.GetSwitchButton_HitFlag() == true) sarati_setumei.image.Draw();//X’n‚Ìà–¾
+	if (play.GetOneClickButton_HitFlag() == true) play_setumei.image.Draw();//ƒvƒŒƒCƒ{ƒ^ƒ“‚Ìà–¾
+
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

@@ -736,6 +736,10 @@ void DiploidEngineImpact::Updata()
 	ImpactCircleLine();//‰~‚Æü•ª‚ÌÕ“Ë”»’è
 	ImpactLineLine();//ü•ª‚Æü•ª‚ÌÕ“Ë”»’è
 	ImpactLineBox();//ü•ª‚ÆlŠp‚ÌÕ“Ë”»’è
+
+	//std::thread thread_box_point(&DiploidEngineImpact::ImpactBoxPoint);
+	//thread_box_point.join();
+
 }
 
 void DiploidEngineImpact::AutoNumber()

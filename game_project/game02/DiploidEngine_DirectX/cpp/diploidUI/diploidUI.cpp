@@ -64,6 +64,8 @@ bool DiploidUI::OneClickButtonBOX_Update(int mouse_input_button_type, DiploidEng
 		bright_two = true;
 		bright_three = false;
 
+		button_hit_flag = true;
+
 		if (input.GetPressMouse(mouse_input_button_type) == true)
 		{
 			box.color = GetColor(200, 200, 200);
@@ -74,6 +76,10 @@ bool DiploidUI::OneClickButtonBOX_Update(int mouse_input_button_type, DiploidEng
 
 			return true;
 		}
+	}
+	else
+	{
+		button_hit_flag = false;
 	}
 
 	return false;
@@ -263,6 +269,11 @@ void DiploidUI::OneClickButtonBOX_Draw(int image_number, bool image_draw, bool d
 	}
 }
 
+bool DiploidUI:: GetOneClickButton_HitFlag()
+{
+	return button_hit_flag;
+}
+
 
 //ワンクリックボタン(押してすぐに元に戻るボタン)
 void DiploidUI::OneClickButtonCIRCLE_Init(VECTOR position, float radius, std::string name_tag, int layer_number)
@@ -376,6 +387,8 @@ bool DiploidUI::SwitchButtonBOX_Update(int mouse_input_button_type, DiploidEngin
 		bright_two = true;
 		bright_three = false;
 
+		button_hit_flag = true;
+
 		if (input.GetPressMouse(mouse_input_button_type) == true)
 		{
 			box.color = GetColor(200, 200, 200);
@@ -397,6 +410,10 @@ bool DiploidUI::SwitchButtonBOX_Update(int mouse_input_button_type, DiploidEngin
 				return button_flag;
 			}
 		}
+	}
+	else
+	{
+		button_hit_flag = false;
 	}
 
 	return button_flag;
@@ -594,4 +611,9 @@ bool DiploidUI::SwitchButton_Flag_Change(bool flag)
 bool DiploidUI::GetSwitchButton_Flag()
 {
 	return button_flag;
+}
+
+bool DiploidUI::GetSwitchButton_HitFlag()
+{
+	return button_hit_flag;
 }
