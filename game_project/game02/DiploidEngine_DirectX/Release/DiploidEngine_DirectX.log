@@ -1,7 +1,79 @@
 ﻿  WindowsMain.cpp
+  DiploidEngineApp.cpp
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(285): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(286): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(301): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(302): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(317): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(318): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(337): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(338): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(353): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(354): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(369): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(370): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(388): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(389): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(404): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(405): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(420): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(421): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(438): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(439): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(454): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(455): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(470): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(471): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(489): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(490): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(505): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(506): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(521): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(522): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(540): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(541): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(556): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(557): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(572): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(573): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(591): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(592): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(607): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(608): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(623): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(624): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(642): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(643): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(658): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(659): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(674): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(675): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(697): warning C4244: '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(698): warning C4244: '+=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(700): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(701): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(705): warning C4244: '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(706): warning C4244: '-=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(708): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(709): warning C4244: '=': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1223): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1229): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1235): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1241): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1247): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1253): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1259): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1265): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(1271): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  DiploidEngineImpact.cpp
+c:\gameproject\game02\diploidengine_directx\cpp\diploidimpact\diploidengineimpact.cpp(21): warning C4244: '=': 'unsigned int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidimpact\diploidengineimpact.cpp(22): warning C4244: '=': 'unsigned int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidimpact\diploidengineimpact.cpp(23): warning C4244: '=': 'unsigned int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidimpact\diploidengineimpact.cpp(24): warning C4244: '=': 'unsigned int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game02\diploidengine_directx\cpp\diploidimpact\diploidengineimpact.cpp(554): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
   コード生成しています。
-  8 of 1305 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+  57 of 1700 functions ( 3.4%) were compiled, the rest were copied from previous compilation.
+    40 functions were new in current compilation
+    48 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\game02\Release\DiploidEngine_DirectX.exe

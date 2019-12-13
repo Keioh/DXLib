@@ -727,19 +727,49 @@ void DiploidEngineImpact::Updata()
 	}
 	
 
-	ImpactCirclePoint();//‰~‚Æ“_‚ÌÕ“ËŒvŽZ
-	ImpactBoxPoint();//ŽlŠp‚Æ“_‚ÌÕ“ËŒvŽZ
-	ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvŽZ
-	ImpactBoxBox();//ŽlŠp‚ÆŽlŠp‚ÌÕ“ËŒvŽZ
-	ImpactBoxCircle();//ŽlŠp‚Æ‰~‚ÌÕ“ËŒvŽZ
-	ImpactPointLine();//“_‚Æü•ª‚ÌÕ“Ë”»’è
-	ImpactCircleLine();//‰~‚Æü•ª‚ÌÕ“Ë”»’è
-	ImpactLineLine();//ü•ª‚Æü•ª‚ÌÕ“Ë”»’è
-	ImpactLineBox();//ü•ª‚ÆŽlŠp‚ÌÕ“Ë”»’è
+	//ImpactCirclePoint();//‰~‚Æ“_‚ÌÕ“ËŒvŽZ
+	//ImpactBoxPoint();//ŽlŠp‚Æ“_‚ÌÕ“ËŒvŽZ
+	//ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvŽZ
+	//ImpactBoxBox();//ŽlŠp‚ÆŽlŠp‚ÌÕ“ËŒvŽZ
+	//ImpactBoxCircle();//ŽlŠp‚Æ‰~‚ÌÕ“ËŒvŽZ
+	//ImpactPointLine();//“_‚Æü•ª‚ÌÕ“Ë”»’è
+	//ImpactCircleLine();//‰~‚Æü•ª‚ÌÕ“Ë”»’è
+	//ImpactLineLine();//ü•ª‚Æü•ª‚ÌÕ“Ë”»’è
+	//ImpactLineBox();//ü•ª‚ÆŽlŠp‚ÌÕ“Ë”»’è
 
-	//std::thread thread_box_point(&DiploidEngineImpact::ImpactBoxPoint);
-	//thread_box_point.join();
+	//Threadˆ—
+	std::thread thread_box_point([this]() { this->ImpactBoxPoint(); });//ŽlŠp‚Æ“_‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_circle_point([this]() { this->ImpactCirclePoint(); });//‰~‚Æ“_‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_circle_circle([this]() { this->ImpactCircleCircle(); });//‰~‚Æ‰~‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_box_box([this]() { this->ImpactBoxBox(); });//ŽlŠp‚ÆŽlŠp‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_box_circle([this]() { this->ImpactBoxCircle(); });//ŽlŠp‚Æ‰~‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_point_line([this]() { this->ImpactPointLine(); });//“_‚Æü•ª‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_circle_line([this]() { this->ImpactCircleLine(); });//‰~‚Æü•ª‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_line_line([this]() { this->ImpactLineLine(); });//ü•ª‚Æü•ª‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
+	std::thread thread_line_box([this]() { this->ImpactLineBox(); });//ü•ª‚ÆŽlŠp‚ÌÕ“ËŒvŽZ‚Ì•À—ñˆ—‚ÌŽÀs
 
+	thread_circle_point.join();//‰~‚Æ“_‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_box_point.join();//ŽlŠp‚Æ“_‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_circle_circle.join();//‰~‚Æ‰~‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_box_box.join();//ŽlŠp‚ÆŽlŠp‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_box_circle.join();//ŽlŠp‚Æ‰~‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_point_line.join();//“_‚Æü•ª‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_circle_line.join();//‰~‚Æü•ª‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_line_line.join();//ü•ª‚Æü•ª‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+	thread_line_box.join();//ü•ª‚ÆŽlŠp‚ÌÕ“ËŒvŽZ‚ð‘Ò‚Â
+
+	//asyncˆ—
+	/*
+	auto box_point = std::async([this]() { this->ImpactBoxPoint(); });
+	auto circle_point = std::async([this]() { this->ImpactCirclePoint(); });
+	auto circle_circle = std::async([this]() { this->ImpactCircleCircle(); });
+	auto box_box = std::async([this]() { this->ImpactBoxBox(); });
+	auto box_circle = std::async([this]() { this->ImpactBoxCircle(); });
+	auto point_line = std::async([this]() { this->ImpactPointLine(); });
+	auto circle_line = std::async([this]() { this->ImpactCircleLine(); });
+	auto line_line = std::async([this]() { this->ImpactLineLine(); });
+	auto line_box = std::async([this]() { this->ImpactLineBox(); });
+	*/
 }
 
 void DiploidEngineImpact::AutoNumber()
