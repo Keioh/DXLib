@@ -34,7 +34,6 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	per_15.SwitchButtonBOX_Load("texter/command/15_per.png", 128, 64);//15%ƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
 	per_20.SwitchButtonBOX_Load("texter/command/20_per.png", 128, 64);//20%ƒ{ƒ^ƒ“‚Ì‰æ‘œ‚ğƒ[ƒh
 
-
 	for (int count = 0; count < 9; ++count)
 	{
 		kaitaku_nouku[count].image.Load("texter/field/nouku_kaitaku_tyu.png");//”_‹æ‚ğŠJ‘ñ’†‰æ‘œ‚Ìƒ[ƒh
@@ -57,6 +56,8 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
+	jinkou = musyoku + nougyousya + sanngyousya + syougyousya;//‘lŒûŒvZ
+
 	for (int count = 0; count < 9; ++count)
 	{
 		sakumotu_scale[count] = 1.0f;

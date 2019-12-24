@@ -22,7 +22,11 @@ private:
 	int sakumotu = 50;//作物
 	int sikinn = 1000;//資金
 	int sannsyutu = 10;//産出
-	int jinkou = 10;//人口
+	int musyoku = 10;//無職者数
+	int nougyousya = 0;//農業者
+	int sanngyousya = 0;//産業者
+	int syougyousya = 0;//商業者
+	int jinkou = 0;//総人口
 
 	float sakumotu_scale[9];//作物収穫の倍率
 	float sikinn_scale[9];//資金収集の倍率
@@ -104,9 +108,13 @@ private:
 	int field_type[9];//区域のタイプ(商区なのか産区なのか農区なのか)
 	int kaitaku_time[9];//開拓時間
 	int kaitaku_type[9];//開拓のタイプ（商区なのか産区なのか農区なのか）
+	int field_nougyou[9];//区域にいる農業者
+	int field_syougyou[9];//区域にいる商業者
+	int field_sangyou[9];//区域にいる産業者
+
 
 	DiploidObject mouse_point;//マウスポイント用
-
+	DiploidObject test;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
