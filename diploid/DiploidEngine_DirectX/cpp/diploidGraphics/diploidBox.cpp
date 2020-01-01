@@ -30,6 +30,8 @@ void DiploidBox::Update()
 
 		anime_size = VAdd(anime_size, move_size);
 		size = VAdd(anime_size, origin_size);
+
+		move_speed = VGet(0,0,0);
 	}
 	else
 	{
@@ -133,6 +135,7 @@ void DiploidBox::DrawNameTag()
 {
 	if (SetDrawNameTagFlag() == TRUE)
 	{
+		#pragma acc kernels
 		for (int count = 0; count != 1; ++count)
 		{
 			DrawString(GetPosition().x + (count * 20), GetPosition().y, &name_tag[count], GetColor(255, 255, 255));

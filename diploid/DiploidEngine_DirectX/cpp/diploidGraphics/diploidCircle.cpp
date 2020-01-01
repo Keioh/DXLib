@@ -28,6 +28,8 @@ void DiploidCircle::Update()
 
 		anime_size = VAdd(anime_size, move_size);
 		size = VAdd(anime_size, origin_size);
+
+		move_speed = VGet(0, 0, 0);
 	}
 	else
 	{

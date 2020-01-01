@@ -17,7 +17,7 @@ private:
 	void DrawNameTag();
 
 public:
-	int handl;
+	int handl = DX_NONE_GRAPH;
 	int mouse_x, mouse_y;
 	double scale = 1.0f;
 	double angle = 0.0f;

@@ -20,18 +20,22 @@ private:
 	void LayerTOP_ImapctBOX_Sync();//四角とレイヤーTOPの処理
 	void LayerMID_ImapctBOX_Sync();//四角とレイヤーMIDの処理
 	void LayerBOT_ImapctBOX_Sync();//四角とレイヤーBOTの処理
+	void LayerUI_ImapctBOX_Sync();//四角とレイヤーUIの処理
 
 	void LayerTOP_ImapctCIRCLE_Sync();//円とレイヤーTOPの処理
 	void LayerMID_ImapctCIRCLE_Sync();//円とレイヤーMIDの処理
 	void LayerBOT_ImapctCIRCLE_Sync();//円とレイヤーBOTの処理
+	void LayerUI_ImapctCIRCLE_Sync();//円とレイヤーUIの処理
 
 	void LayerTOP_ImapctPOINT_Sync();//点とレイヤーTOPの処理
 	void LayerMID_ImapctPOINT_Sync();//点とレイヤーMIDの処理
 	void LayerBOT_ImapctPOINT_Sync();//点とレイヤーBOTの処理
+	void LayerUI_ImapctPOINT_Sync();//点とレイヤーUIの処理
 
 	void LayerTOP_ImapctLINE_Sync();//線分とレイヤーTOPの処理
 	void LayerMID_ImapctLINE_Sync();//線分とレイヤーMIDの処理
 	void LayerBOT_ImapctLINE_Sync();//線分とレイヤーBOTの処理
+	void LayerUI_ImapctLINE_Sync();//線分とレイヤーUIの処理
 
 
 public:	

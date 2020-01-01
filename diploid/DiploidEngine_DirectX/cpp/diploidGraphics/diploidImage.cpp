@@ -35,6 +35,9 @@ void DiploidImage::Updata()
 		red_bright += red_bright_speed;
 		green_bright += green_bright_speed;
 		blue_bright += blue_bright_speed;
+
+		move_speed = VGet(0, 0, 0);
+
 	}
 	else
 	{

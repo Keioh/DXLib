@@ -27,6 +27,11 @@ void DiploidEngineLayer::PushBotGraphics(DiploidImage image)
 	image_bot_vector.push_back(image);
 }
 
+void DiploidEngineLayer::PushUIGraphics(DiploidImage image)
+{
+	image_ui_vector.push_back(image);
+}
+
 
 void DiploidEngineLayer::Updata()
 {
@@ -49,6 +54,14 @@ void DiploidEngineLayer::Updata()
 	if (!image_top_vector.empty())
 	{
 		for (auto image = image_top_vector.begin(); image != image_top_vector.end(); ++image)
+		{
+			image->Updata();
+		}
+	}
+
+	if (!image_ui_vector.empty())
+	{
+		for (auto image = image_ui_vector.begin(); image != image_ui_vector.end(); ++image)
 		{
 			image->Updata();
 		}
@@ -78,6 +91,14 @@ void DiploidEngineLayer::Draw(bool debug, bool draw)
 	if (!image_top_vector.empty())
 	{
 		for (auto image = image_top_vector.begin(); image != image_top_vector.end(); ++image)
+		{
+			image->Draw(draw);
+		}
+	}
+
+	if (!image_ui_vector.empty())
+	{
+		for (auto image = image_ui_vector.begin(); image != image_ui_vector.end(); ++image)
 		{
 			image->Draw(draw);
 		}
@@ -141,6 +162,21 @@ void DiploidEngineLayer::DestoryBot()
 			{
 				image_bot_vector.erase(image);
 				image = image_bot_vector.begin();
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::DestoryUI()
+{
+	if (!image_ui_vector.empty())
+	{
+		for (auto image = image_ui_vector.begin(); image != image_ui_vector.end(); ++image)
+		{
+			if (image->destory == true)
+			{
+				image_ui_vector.erase(image);
+				image = image_ui_vector.begin();
 			}
 		}
 	}
@@ -219,6 +255,7 @@ void DiploidEngineLayer::SetTOPPosition(int number, VECTOR position)
 }
 
 
+
 void DiploidEngineLayer::SetMIDAnimationPosition(int number, VECTOR move_speed)
 {
 	if (!image_mid_vector.empty())
@@ -242,6 +279,34 @@ void DiploidEngineLayer::SetBOTAnimationPosition(int number, VECTOR move_speed)
 			if (bot->number == number)
 			{
 				bot->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetUIAnimationPosition(int number, VECTOR move_speed)
+{
+	if (!image_ui_vector.empty())
+	{
+		for (auto ui = image_ui_vector.begin(); ui != image_ui_vector.end(); ++ui)
+		{
+			if (ui->number == number)
+			{
+				ui->move_speed = move_speed;
+			}
+		}
+	}
+}
+
+void DiploidEngineLayer::SetUIAnimationPosition_NameTag(std::string name_tag, VECTOR move_speed)
+{
+	if (!image_ui_vector.empty())
+	{
+		for (auto ui = image_ui_vector.begin(); ui != image_ui_vector.end(); ++ui)
+		{
+			if (ui->name_tag == name_tag)
+			{
+				ui->move_speed = move_speed;
 			}
 		}
 	}

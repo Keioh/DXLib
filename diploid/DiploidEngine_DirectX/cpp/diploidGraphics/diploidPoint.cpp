@@ -12,6 +12,8 @@ void DiploidPoint::Update()
 	{
 		anime_position = VAdd(anime_position, move_speed);//アニメーションで移動した分を保存
 		position = VAdd(center_position, anime_position);//オブジェクトを描写した位置と移動した分を保存
+
+		move_speed = VGet(0, 0, 0);
 	}
 	else
 	{

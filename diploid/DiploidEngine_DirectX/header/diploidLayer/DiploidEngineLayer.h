@@ -11,20 +11,24 @@ private:
 	float top_byte;
 	float mid_byte;
 	float bot_byte;
+	float ui_byte;
 	int top_size;
 	int mid_size;
 	int bot_size;
+	int ui_size;
 
 public:
 	std::vector<DiploidImage> image_top_vector;
 	std::vector<DiploidImage> image_mid_vector;
 	std::vector<DiploidImage> image_bot_vector;
+	std::vector<DiploidImage> image_ui_vector;
 
 	void GetSize();//各配列の大きさを取得
 
 	void PushTopGraphics(DiploidImage image);
 	void PushMidGraphics(DiploidImage image);
 	void PushBotGraphics(DiploidImage image);
+	void PushUIGraphics(DiploidImage image);
 
 	void Updata();
 	void Draw(bool debug = false, bool draw = true);
@@ -33,6 +37,7 @@ public:
 	void DestoryTop();//top配列から要素を削除
 	void DestoryMid();//mid配列から要素を削除
 	void DestoryBot();//bot配列から要素を削除
+	void DestoryUI();//bot配列から要素を削除
 
 
 	//アニメーション値を変更する関数。
@@ -48,6 +53,8 @@ public:
 
 	void SetMIDAnimationPosition(int number, VECTOR move_speed = { 0,0,0 });//mid配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。
 	void SetBOTAnimationPosition(int number, VECTOR move_speed = { 0,0,0 });//bot配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。
+	void SetUIAnimationPosition(int number, VECTOR move_speed = { 0.0f,0.0f,0.0f });//ui配列の指定のオブジェクト番号の画像の座標アニメーション値を変更する。
+	void SetUIAnimationPosition_NameTag(std::string name_tag, VECTOR move_speed = { 0.0f,0.0f,0.0f });//ui配列の指定のタグ名の画像の座標アニメーション値を変更する。
 
 	void SetTOPAnimationAngle(int number, float angle = 0.0f);//top配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。
 	void SetMIDAnimationAngle(int number, float angle = 0.0f);//mid配列の指定のオブジェクト番号の画像の回転アニメーション値を変更する。

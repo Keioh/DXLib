@@ -8,7 +8,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "Diploid Engine ver0.04";//Diploid Engine ver0.03
+	window_name = "Mikaitaku wo kaitaku suru! ver0.01";//Diploid Engine ver0.05
 }
 
 void DiploidEngineSetting::Init()
@@ -26,7 +26,7 @@ void DiploidEngineSetting::Init()
 void DiploidEngineSetting::SetBegin()
 {
 	SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//文字コード変更
-	SetBackgroundColor(100, 100, 100);
+	SetBackgroundColor(50, 50, 50);
 	SetOutApplicationLogValidFlag(FALSE);//ログ出力関連
 	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
 	ChangeWindowMode(window_mode);//ウィンドウモード変更
@@ -39,11 +39,15 @@ void DiploidEngineSetting::SetBegin()
 	SetFullScreenScalingMode(DX_FSSCALINGMODE_NEAREST);//画像補間の変更
 
 	SetEnableXAudioFlag(TRUE);//XAudioフラグ
+
+	SetUseZBuffer3D(TRUE);
+	SetWriteZBuffer3D(TRUE);
 }
 
 void DiploidEngineSetting::SetEnd()
 {
 	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
+	SetCameraNearFar(0.1f, 10000.0f);
 }
 
 void DiploidEngineSetting::End()

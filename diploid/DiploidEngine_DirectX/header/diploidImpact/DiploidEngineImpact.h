@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <future>
 #include <string>
 #include <algorithm>
 #include "diploidObject\DiploidEngineObject.h"
@@ -9,6 +10,7 @@
 #include "diploidGraphics\diploidPoint.h"
 #include "diploidGraphics\diploidBox.h"
 #include "diploidGraphics\diploidLine.h"
+
 
 class DiploidEngineImpact
 {
@@ -30,12 +32,15 @@ private:
 	std::vector<DiploidPoint>::iterator point_itr;
 	std::vector<DiploidLine>::iterator line_itr;
 
+
 public:
 	DiploidEngineImpact();//コンストラクタ
 	~DiploidEngineImpact();//デストラクタ
 
 	int screen_size_x = 1280 + 200;
 	int screen_size_y = 720 + 200;
+
+	DiploidEngineImpact* ptr;
 
 	std::vector<DiploidCircle> circle_vector;//円を保存しておく配列
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
@@ -85,6 +90,7 @@ public:
 	void ImpactPointLine();//点と線分の当たり判定処理
 	void ImpactLineLine();//線分と線分の当たり判定処理
 	void ImpactLineBox();//線分と箱の当たり判定処理
+
 
 	//アニメーション値を変更する関数。
 	//BOX(Position)

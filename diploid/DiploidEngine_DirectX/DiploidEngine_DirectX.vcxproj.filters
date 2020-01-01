@@ -115,6 +115,18 @@
     <Filter Include="ヘッダー ファイル\data">
       <UniqueIdentifier>{500d879f-a870-4835-83ec-70eae3a9497c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0">
+      <UniqueIdentifier>{6caa08d9-a6ae-4b7d-861c-466c58de9166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0">
+      <UniqueIdentifier>{1ec3a71b-f8e3-4600-8ed5-2328937830bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Main">
+      <UniqueIdentifier>{36423ef3-cc9f-4b38-b442-175a76c2281f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Main">
+      <UniqueIdentifier>{97f97363-3845-4cba-945c-31782a4f9f2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -218,6 +230,12 @@
     </ClCompile>
     <ClCompile Include="cpp\diploidStandalone\graphics\diploidBoxSA.cpp">
       <Filter>ソース ファイル\cpp\diploidStandalone\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Transform.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Object.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -326,8 +344,11 @@
     <ClInclude Include="header\diploidStandalone\graphics\diploidBoxSA.h">
       <Filter>ヘッダー ファイル\header\diploidStandalone\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="header\diploidInput\json.hpp">
-      <Filter>ヘッダー ファイル\header\diploidInput</Filter>
+    <ClInclude Include="header\ver2.0\Main\Transform.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Main\Object.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

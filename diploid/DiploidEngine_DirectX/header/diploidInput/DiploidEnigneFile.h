@@ -1,9 +1,6 @@
 #pragma once
 #include <fstream>
 #include "DxLib.h"
-#include "diploidInput/json.hpp"
-
-using json = nlohmann::json;//jsonファイル読み込み、書き出し関連。
 
 class DiploidEngineFile
 {
@@ -12,9 +9,6 @@ private:
 	std::ofstream output_file;//出力
 
 	std::ifstream json_file;//jsonファイル読み込み
-
-	json json_data;
-	json *ptr;
 
 public:
 
@@ -31,5 +25,4 @@ public:
 
 
 	void LoadJSON(const char* path);//1以上返ると成功
-	json GetJSON();
 };

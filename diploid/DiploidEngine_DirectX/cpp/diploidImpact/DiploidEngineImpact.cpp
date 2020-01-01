@@ -1,4 +1,4 @@
-#include "diploidImpact\DiploidEngineImpact.h"
+#include "diploidImpact/DiploidEngineImpact.h"
 
 DiploidEngineImpact::DiploidEngineImpact()
 {
@@ -44,6 +44,7 @@ void DiploidEngineImpact::PushLine(DiploidLine line)
 	line_vector.push_back(line);
 }
 
+
 void DiploidEngineImpact::PopBackCircle()
 {
 	if (!circle_vector.empty())
@@ -75,6 +76,7 @@ void DiploidEngineImpact::PopBackLine()
 		line_vector.pop_back();
 	}
 }
+
 
 void DiploidEngineImpact::DestoryCircle()
 {	
@@ -216,10 +218,12 @@ void DiploidEngineImpact::DestoryLine_Name_Tag(std::string name_tag)
 
 void DiploidEngineImpact::ImpactCirclePoint()
 {
-	if (!point_vector.empty() || !circle_vector.empty())
+	if (!point_vector.empty() == !circle_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
+			#pragma omp parallel for//並列処理
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
 				//円が画面内にあったら
@@ -238,8 +242,17 @@ void DiploidEngineImpact::ImpactCirclePoint()
 							//識別番号が同じなら
 							if (circle->layer_number == point->layer_number)
 							{
-								circle->impacted = true;
-								point->impacted = true;
+								//点と円の判定（点優先）を有効にしているなら
+								if ((point->impact_point_circle_flag == true) )
+								{
+									point->impacted = true;
+								}
+
+								//点と円の判定（円優先）を有効にしているなら
+								if (circle->impact_circle_point_flag == true)
+								{
+									circle->impacted = true;
+								}
 							}
 						}
 					}
@@ -253,8 +266,10 @@ void DiploidEngineImpact::ImpactCircleCircle()
 {
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (size_t circle_one = 0; circle_one != circle_vector.size(); ++circle_one)
 		{
+			#pragma omp parallel for//並列処理
 			for (size_t circle_two = 1; circle_two != circle_vector.size(); ++circle_two)
 			{
 				float x = 0, y = 0, r = 0;
@@ -276,8 +291,15 @@ void DiploidEngineImpact::ImpactCircleCircle()
 						//識別番号が同じなら
 						if (circle_vector[circle_one].layer_number == circle_vector[circle_two].layer_number)
 						{
-							circle_vector[circle_one].impacted = true;
-							circle_vector[circle_two].impacted = true;
+							if (circle_vector[circle_one].impact_circle_circle_flag == true)
+							{
+								circle_vector[circle_one].impacted = true;
+							}
+
+							if (circle_vector[circle_two].impact_circle_circle_flag == true)
+							{
+								circle_vector[circle_two].impacted = true;
+							}
 						}
 					}
 				}
@@ -288,10 +310,12 @@ void DiploidEngineImpact::ImpactCircleCircle()
 
 void DiploidEngineImpact::ImpactBoxPoint()
 {
-	if (!point_vector.empty() && !box_vector.empty())
+	if (!point_vector.empty() == !box_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
+			#pragma omp parallel for//並列処理
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
 				//boxが画面内にあったら
@@ -308,8 +332,15 @@ void DiploidEngineImpact::ImpactBoxPoint()
 								//識別番号が同じなら
 								if (point->layer_number == box->layer_number)
 								{
-									point->impacted = true;
-									box->impacted = true;
+									if (point->impact_point_box_flag == true)
+									{
+										point->impacted = true;
+									}
+
+									if (box->impact_box_point_flag == true)
+									{
+										box->impacted = true;
+									}
 								}
 							}
 						}
@@ -324,8 +355,10 @@ void DiploidEngineImpact::ImpactBoxBox()
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto box_one = box_vector.begin(); box_one != box_vector.end(); ++box_one)
 		{
+			#pragma omp parallel for//並列処理
 			for (auto box_two = box_vector.begin(); box_two != box_vector.end(); ++box_two)
 			{
 				//識別番号が同じなら
@@ -348,9 +381,16 @@ void DiploidEngineImpact::ImpactBoxBox()
 								{
 									//two
 									if (box_two->position.x < (box_one->position.x + box_one->size.x) && box_two->position.y < (box_one->position.y + box_one->size.y))
-									{
-										box_two->impacted = true;
-										box_one->impacted = true;
+									{	
+										if (box_two->impact_box_box_flag == true)
+										{
+											box_two->impacted = true;
+										}
+
+										if (box_one->impact_box_box_flag == true)
+										{
+											box_one->impacted = true;
+										}
 									}
 								}
 							}
@@ -364,12 +404,14 @@ void DiploidEngineImpact::ImpactBoxBox()
 
 void DiploidEngineImpact::ImpactBoxCircle()
 {
-	if (!box_vector.empty() || !circle_vector.empty())
+	if (!box_vector.empty() == !circle_vector.empty())
 	{
 		//BOX
+		#pragma omp parallel for//並列処理
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			//Circle
+			#pragma omp parallel for//並列処理
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
 				//識別番号が同じなら
@@ -383,12 +425,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -400,12 +448,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -414,12 +468,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -428,12 +488,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -442,12 +508,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 
@@ -456,12 +528,18 @@ void DiploidEngineImpact::ImpactBoxCircle()
 					{
 						if (circle->impacted == false)
 						{
-							circle->impacted = true;
+							if (circle->impact_circle_box_flag == true)
+							{
+								circle->impacted = true;
+							}
 						}
 
 						if (box->impacted == false)
 						{
-							box->impacted = true;
+							if (box->impact_box_circle_flag == true)
+							{
+								box->impacted = true;
+							}
 						}
 					}
 				}
@@ -472,12 +550,14 @@ void DiploidEngineImpact::ImpactBoxCircle()
 
 void DiploidEngineImpact::ImpactCircleLine()
 {
-	if (!line_vector.empty() || !circle_vector.empty())
+	if (!line_vector.empty() == !circle_vector.empty())
 	{
 		//LINE
+		#pragma omp parallel for//並列処理
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			//Circle
+			#pragma omp parallel for//並列処理
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
 				//識別番号が同じなら
@@ -496,12 +576,14 @@ void DiploidEngineImpact::ImpactCircleLine()
 
 void DiploidEngineImpact::ImpactPointLine()
 {
-	if (!line_vector.empty() || !point_vector.empty())
+	if (!line_vector.empty() == !point_vector.empty())
 	{
 		//LINE
+		#pragma omp parallel for//並列処理
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			//POINT
+			#pragma omp parallel for//並列処理
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
 				//識別番号が同じなら
@@ -522,8 +604,10 @@ void DiploidEngineImpact::ImpactLineLine()
 {
 	if (!line_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto line_one = line_vector.begin(); line_one != line_vector.end(); ++line_one)
 		{
+			#pragma omp parallel for//並列処理
 			for (auto line_two = line_vector.begin(); line_two != line_vector.end(); ++line_two)
 			{
 				float x = 0, y = 0, r = 0;
@@ -550,10 +634,12 @@ void DiploidEngineImpact::ImpactLineLine()
 
 void DiploidEngineImpact::ImpactLineBox()
 {
-	if (!line_vector.empty() || !box_vector.empty())
+	if (!line_vector.empty() == !box_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
+			#pragma omp parallel for//並列処理
 			for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 			{
 				//識別番号が同じなら
@@ -624,7 +710,8 @@ void DiploidEngineImpact::Updata()
 {
 	//円の更新処理
 	if (!circle_vector.empty())
-	{
+	{	
+		#pragma omp parallel for//並列処理
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			circle->Update();//アニメアプデ
@@ -633,7 +720,8 @@ void DiploidEngineImpact::Updata()
 
 	//点の更新処理
 	if (!point_vector.empty())
-	{
+	{	
+		#pragma omp parallel for//並列処理
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			point->Update();//アニメアプデ
@@ -642,7 +730,8 @@ void DiploidEngineImpact::Updata()
 
 	//四角の更新処理
 	if (!box_vector.empty())
-	{
+	{	
+		#pragma omp parallel for//並列処理
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			box->Update();//アニメアプデ
@@ -651,12 +740,14 @@ void DiploidEngineImpact::Updata()
 
 	//線分の更新処理
 	if (!line_vector.empty())
-	{
+	{	
+		#pragma omp parallel for//並列処理
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			line->Update();//アニメアプデ
 		}
 	}
+	
 
 	ImpactCirclePoint();//円と点の衝突計算
 	ImpactBoxPoint();//四角と点の衝突計算
@@ -667,6 +758,40 @@ void DiploidEngineImpact::Updata()
 	ImpactCircleLine();//円と線分の衝突判定
 	ImpactLineLine();//線分と線分の衝突判定
 	ImpactLineBox();//線分と四角の衝突判定
+	
+	//Thread処理
+	/*
+	std::thread thread_box_point([this]() { this->ImpactBoxPoint(); });//四角と点の衝突計算の並列処理の実行
+	std::thread thread_circle_point([this]() { this->ImpactCirclePoint(); });//円と点の衝突計算の並列処理の実行
+	std::thread thread_circle_circle([this]() { this->ImpactCircleCircle(); });//円と円の衝突計算の並列処理の実行
+	std::thread thread_box_box([this]() { this->ImpactBoxBox(); });//四角と四角の衝突計算の並列処理の実行
+	std::thread thread_box_circle([this]() { this->ImpactBoxCircle(); });//四角と円の衝突計算の並列処理の実行
+	std::thread thread_point_line([this]() { this->ImpactPointLine(); });//点と線分の衝突計算の並列処理の実行
+	std::thread thread_circle_line([this]() { this->ImpactCircleLine(); });//円と線分の衝突計算の並列処理の実行
+	std::thread thread_line_line([this]() { this->ImpactLineLine(); });//線分と線分の衝突計算の並列処理の実行
+	std::thread thread_line_box([this]() { this->ImpactLineBox(); });//線分と四角の衝突計算の並列処理の実行
+
+	thread_circle_point.join();//円と点の衝突計算を待つ
+	thread_box_point.join();//四角と点の衝突計算を待つ
+	thread_circle_circle.join();//円と円の衝突計算を待つ
+	thread_box_box.join();//四角と四角の衝突計算を待つ
+	thread_box_circle.join();//四角と円の衝突計算を待つ
+	thread_point_line.join();//点と線分の衝突計算を待つ
+	thread_circle_line.join();//円と線分の衝突計算を待つ
+	thread_line_line.join();//線分と線分の衝突計算を待つ
+	thread_line_box.join();//線分と四角の衝突計算を待つ
+
+	//async処理	
+	auto box_point = std::async([this]() { this->ImpactBoxPoint(); });
+	auto circle_point = std::async([this]() { this->ImpactCirclePoint(); });
+	auto circle_circle = std::async([this]() { this->ImpactCircleCircle(); });
+	auto box_box = std::async([this]() { this->ImpactBoxBox(); });
+	auto box_circle = std::async([this]() { this->ImpactBoxCircle(); });
+	auto point_line = std::async([this]() { this->ImpactPointLine(); });
+	auto circle_line = std::async([this]() { this->ImpactCircleLine(); });
+	auto line_line = std::async([this]() { this->ImpactLineLine(); });
+	auto line_box = std::async([this]() { this->ImpactLineBox(); });
+	*/
 }
 
 void DiploidEngineImpact::AutoNumber()
@@ -710,13 +835,13 @@ void DiploidEngineImpact::AutoNumber()
 		count->number = line_count + box_count + point_count + circle_count;//オブジェクト番号を変更
 		line_count += 1;//オブジェクト番号を足す。
 	}
-
 }
 
 void DiploidEngineImpact::Init()
 {
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			//円がヒットしていたら
@@ -729,6 +854,7 @@ void DiploidEngineImpact::Init()
 
 	if (!point_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			//点がヒットしていたら
@@ -741,6 +867,7 @@ void DiploidEngineImpact::Init()
 
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			//四角がヒットしていたら
@@ -753,6 +880,7 @@ void DiploidEngineImpact::Init()
 
 	if (!line_vector.empty())
 	{
+		#pragma omp parallel for//並列処理
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			//線分がヒットしていたら
