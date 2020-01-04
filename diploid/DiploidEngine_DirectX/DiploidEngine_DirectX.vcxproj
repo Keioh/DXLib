@@ -161,6 +161,7 @@
     <ClCompile Include="cpp\diploidUI\diploidUI.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Object.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="header\diploidUI\diploidUI.h" />
     <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h" />
     <ClInclude Include="header\ver2.0\Main\Object.h" />
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="resource.h" />

@@ -127,6 +127,12 @@
     <Filter Include="ヘッダー ファイル\header\ver2.0\Main">
       <UniqueIdentifier>{97f97363-3845-4cba-945c-31782a4f9f2d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Graphics">
+      <UniqueIdentifier>{a15c6668-086b-4cba-a7ee-ea5a537ca552}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Graphics">
+      <UniqueIdentifier>{e2cad86d-2690-466f-80b3-ce22363e0143}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -236,6 +242,9 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Main\Object.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +358,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Main\Object.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
