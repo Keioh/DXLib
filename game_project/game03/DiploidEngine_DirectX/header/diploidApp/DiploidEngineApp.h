@@ -1,6 +1,7 @@
 //中枢です。
 #pragma once
 #include <vector>
+#include <memory>
 #include "DxLib.h"//Dxlib本体
 #include "diploidApp\DiploidEngineMain.h"//心臓部分(必ず呼ぶ)
 #include "diploidObject\DiploidEngineObject.h"//円や四角や画像や音など、オブジェクト全般
@@ -8,8 +9,8 @@
 #include "diploidUI/diploidUI.h"
 #include "diploidSystem/diploidSystem.h"//一回だけデータを読み込むための処理群
 
-#include "ver2.0/Main/Object.h"//Ver2.0
-#include "ver2.0/Main/Transform.h"//Ver2.0
+#include "ver2.0/Graphics/DiploidCircleV2.h"//Ver2.0の円クラス
+#include "ver2.0/Main/Collision.h"//Ver2.0の当たり判定処理
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
@@ -17,10 +18,13 @@
 //ゲームデータ関連
 #include "data/number.h"
 
+using namespace std;
+
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidObjectV2 test;
+	DiploidCollision collision;
+	DiploidCircleV2 test_one, test_two;
 
 	float anime;
 

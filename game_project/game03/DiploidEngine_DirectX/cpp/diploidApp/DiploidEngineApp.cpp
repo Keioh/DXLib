@@ -13,7 +13,9 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	test.circle.Init(VGet(GetWindowSize().x / 2, GetWindowSize().y / 2, 0.0f), 50.0f, GetColor(255, 255, 255), FALSE);
+	test_one.Init(VGet(GetWindowSize().x / 2, GetWindowSize().y / 2, 0.0f), 50.0f, GetColor(255, 255, 255));
+	test_two.Init(VGet(200, GetWindowSize().y / 2, 0.0f), 50.0f, GetColor(255, 255, 255));
+
 }
 
 void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
@@ -23,14 +25,23 @@ void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-	anime += 0.5f;
+	anime += 2.5f;
 
-	test.circle.SetRadius(anime);
+	test_one.SetRadius(anime);
+
+	collision.CircleAndCircleCollisionUpdata(&test_one, &test_two);
+
+	if (test_one.GetHitFlag() == true)
+	{
+		test_one.SetColor(GetColor(0, 0, 0));
+	}
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
-	test.circle.Draw();
+	test_one.Draw();
+	test_two.Draw();
+
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

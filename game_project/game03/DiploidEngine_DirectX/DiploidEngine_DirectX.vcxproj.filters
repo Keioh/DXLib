@@ -261,6 +261,9 @@
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidCircleV2.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Collision.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -385,6 +388,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Graphics\DiploidCircleV2.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Main\Collision.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
