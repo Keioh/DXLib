@@ -22,8 +22,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ProcessMessage() == 0)
 	{		
-		diploid_engine_app->LoadUpdata();//動的データロード
-
 		diploid_engine_app->diploidEngineScreen.Init();//FPS初期化
 
 		diploid_engine_app->diploidEngineNetwork.Update();//ネット処理の更新
@@ -47,6 +45,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app->diploidEngineImpact.Draw(true);//衝突範囲を描写(debug情報あり)
 
 		diploid_engine_app->Draw();//メイン描写
+
+		diploid_engine_app->Destory();//ゲーム中の動的削除処理。
 
 		diploid_engine_app->diploidEngineInput.Draw(1000, 0);//入力判定の表示(debug情報あり)
 

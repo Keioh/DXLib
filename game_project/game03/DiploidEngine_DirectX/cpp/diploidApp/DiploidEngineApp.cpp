@@ -13,35 +13,262 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	test_one.Init(VGet(GetWindowSize().x / 2, GetWindowSize().y / 2, 0.0f), 50.0f, GetColor(255, 255, 255));
-	test_two.Init(VGet(200, GetWindowSize().y / 2, 0.0f), 50.0f, GetColor(255, 255, 255));
-
-}
-
-void DiploidEngineApp::LoadUpdata()//ƒ‹[ƒv’†‚Éˆê“x‚¾‚¯ƒf[ƒ^‚ğƒ[ƒh‚µ‚½‚¢ˆ—‚ğ‹LqB(ƒQ[ƒ€’†‚Éƒ[ƒh‚µ‚½‚¢ƒf[ƒ^‚È‚Ç)
-{
-
+	player_main.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 5.0f, GetColor(255, 100, 100), TRUE);
+	player_grays.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 30.0f, GetColor(100, 100, 255));
 }
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-	anime += 2.5f;
+	input.Update();
 
-	test_one.SetRadius(anime);
-
-	collision.CircleAndCircleCollisionUpdata(&test_one, &test_two);
-
-	if (test_one.GetHitFlag() == true)
+	if (input.GetKey(KEY_INPUT_LSHIFT) == true)//¶ƒVƒtƒgƒL[‚ğ‰Ÿ‚µ‚½‚ç
 	{
-		test_one.SetColor(GetColor(0, 0, 0));
+		slow = 0.5f;//ƒvƒŒƒCƒ„[‚Ì‘¬‚³‚ğ0.5”{‚É		
+	}
+	else
+	{
+		slow = 1.0f;//ƒvƒŒƒCƒ„[‚Ì‘¬‚³‚ğ“™”{‚É
+	}
+		
+	if ((input.GetKey(KEY_INPUT_D) == true) || (input.GetKey(KEY_INPUT_RIGHT) == true))//DƒL[‚ğ‰Ÿ‚µ‚½‚ç
+	{
+		if (player_main.GetPosition().x < GetWindowSize().x - player_main.GetRadius())//‰æ–ÊŠO‚És‚©‚È‚¢‚æ‚¤‚É
+		{
+			//ƒvƒŒƒCƒ„[–{‘Ì‚ÌˆÚ“®
+			player_main.SetMoveSpeed(VGet(8.0f * slow, 0.0f, 0.0f));
+			player_main.MoveUpdata();
+
+			//ƒvƒŒƒCƒ„[ƒOƒŒƒCƒYˆæ‚ÌˆÚ“®
+			player_grays.SetMoveSpeed(VGet(8.0f * slow, 0.0f, 0.0f));
+			player_grays.MoveUpdata();
+
+		}
+	}
+
+	if ((input.GetKey(KEY_INPUT_A) == true) || (input.GetKey(KEY_INPUT_LEFT) == true))//AƒL[‚ğ‰Ÿ‚µ‚½‚ç
+	{
+		if (player_main.GetPosition().x > player_main.GetRadius())//‰æ–ÊŠO‚És‚©‚È‚¢‚æ‚¤‚É
+		{
+			//ƒvƒŒƒCƒ„[–{‘Ì‚ÌˆÚ“®
+			player_main.SetMoveSpeed(VGet(-8.0f * slow, 0.0f, 0.0f));
+			player_main.MoveUpdata();
+
+			//ƒvƒŒƒCƒ„[ƒOƒŒƒCƒYˆæ‚ÌˆÚ“®
+			player_grays.SetMoveSpeed(VGet(-8.0f * slow, 0.0f, 0.0f));
+			player_grays.MoveUpdata();
+
+		}
+	}
+
+	if ((input.GetKey(KEY_INPUT_W) == true) || (input.GetKey(KEY_INPUT_UP) == true))//WƒL[‚ğ‰Ÿ‚µ‚½‚ç
+	{
+		if (player_main.GetPosition().y > player_main.GetRadius())//‰æ–ÊŠO‚És‚©‚È‚¢‚æ‚¤‚É
+		{
+			//ƒvƒŒƒCƒ„[–{‘Ì‚ÌˆÚ“®
+			player_main.SetMoveSpeed(VGet(0.0f, -8.0f * slow, 0.0f));
+			player_main.MoveUpdata();
+
+			//ƒvƒŒƒCƒ„[ƒOƒŒƒCƒYˆæ‚ÌˆÚ“®
+			player_grays.SetMoveSpeed(VGet(0.0f, -8.0f * slow, 0.0f));
+			player_grays.MoveUpdata();
+		}
+	}
+
+	if ((input.GetKey(KEY_INPUT_S) == true) || (input.GetKey(KEY_INPUT_DOWN) == true))//SƒL[‚ğ‰Ÿ‚µ‚½‚ç
+	{
+		if (player_main.GetPosition().y < GetWindowSize().y - player_main.GetRadius())//‰æ–ÊŠO‚És‚©‚È‚¢‚æ‚¤‚É
+		{
+			//ƒvƒŒƒCƒ„[–{‘Ì‚ÌˆÚ“®
+			player_main.SetMoveSpeed(VGet(0.0f, 8.0f * slow, 0.0f));
+			player_main.MoveUpdata();
+
+			//ƒvƒŒƒCƒ„[ƒOƒŒƒCƒYˆæ‚ÌˆÚ“®
+			player_grays.SetMoveSpeed(VGet(0.0f, 8.0f * slow, 0.0f));
+			player_grays.MoveUpdata();
+		}
+	}
+
+
+	if (input.GetKey(KEY_INPUT_SPACE) == true)//SPACEƒL[‚ğ‰Ÿ‚µ‚½‚ç
+	{
+		is_count += 1;
+		if (is_count > 20 - (grays_count * 0.2))//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ª—­‚Ü‚Á‚Ä‚¢‚Á‚½‚ç‘Å‚¿o‚·‘¬“x‚ªƒAƒbƒv
+		{
+			//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğì¬
+			player_bullet_list.push_back(player_bullet);//’eŠÛ‚ğƒŠƒXƒg‚É’Ç‰Á
+			player_bullet_list.back().Init(VGet(player_main.GetPosition().x, player_main.GetPosition().y - player_grays.GetRadius(), 0.0f), 10.0f, GetColor(255, 255, 255), TRUE);//’eŠÛ‚ª”­Ë‚³‚ê‚éˆÊ’u‚ğİ’è
+			player_bullet_list.back().SetMoveSpeed(VGet((-GetRand(4) + GetRand(4)), -(GetRand(5) + 10), 0));//’eŠÛ‚Ì‘¬“x‚Æ•ûŒü‚ğİ’èB
+			is_count = 0;
+		}
+	}
+
+	//ƒvƒŒƒCƒ„[’eŠÛ‚ÌXV
+	for (auto& count : player_bullet_list)
+	{
+		count.MoveUpdata();//ƒvƒŒƒCƒ„[‚Ì’eŠÛˆÚ“®‚ÌXV
+
+		//ƒvƒŒƒCƒ„[’eŠÛ‚Ì‰æ–Ê’[‚Ì”½Ë
+		if (count.GetPosition().x < count.GetRadius())
+		{		
+			//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(-count.GetMoveSpeed().x, count.GetMoveSpeed().y, 0.0f));	
+			count.SetDestoryFlag(true);//íœƒtƒ‰ƒO‚ğƒIƒ“‚É‚·‚éB
+
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğì¬
+			grays_bullet_list.push_back(grays_bullet);
+			grays_bullet_list.back().Init(count.GetPosition(), count.GetRadius(), GetColor(255, 50, 50), TRUE);
+			grays_bullet_list.back().SetMoveSpeed(VGet(count.GetMoveSpeed().x * 0.3, count.GetMoveSpeed().y * 0.3, 0.0f));//‘¬“x‚ğ0.3”{‚ÉŒ¸‘¬
+		}
+
+		if (count.GetPosition().y < count.GetRadius())
+		{			
+			//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(count.GetMoveSpeed().x, -count.GetMoveSpeed().y, 0.0f));	
+			count.SetDestoryFlag(true);//íœƒtƒ‰ƒO‚ğƒIƒ“‚É‚·‚éB
+
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğì¬
+			grays_bullet_list.push_back(grays_bullet);
+			grays_bullet_list.back().Init(count.GetPosition(), count.GetRadius(), GetColor(255, 50, 50), TRUE);
+			grays_bullet_list.back().SetMoveSpeed(VGet(count.GetMoveSpeed().x * 0.3, count.GetMoveSpeed().y * 0.3, 0.0f));//‘¬“x‚ğ0.3”{‚ÉŒ¸‘¬
+		}
+
+		if (count.GetPosition().x > GetWindowSize().x - count.GetRadius())
+		{	
+			//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(-count.GetMoveSpeed().x, count.GetMoveSpeed().y, 0.0f));	
+			count.SetDestoryFlag(true);//íœƒtƒ‰ƒO‚ğƒIƒ“‚É‚·‚éB
+
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğì¬
+			grays_bullet_list.push_back(grays_bullet);
+			grays_bullet_list.back().Init(count.GetPosition(), count.GetRadius(), GetColor(255, 50, 50), TRUE);
+			grays_bullet_list.back().SetMoveSpeed(VGet(count.GetMoveSpeed().x * 0.3, count.GetMoveSpeed().y * 0.3, 0.0f));//‘¬“x‚ğ0.3”{‚ÉŒ¸‘¬
+		}
+
+		if (count.GetPosition().y > GetWindowSize().y - count.GetRadius())
+		{		
+			//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(count.GetMoveSpeed().x, -count.GetMoveSpeed().y, 0.0f));	
+			count.SetDestoryFlag(true);//íœƒtƒ‰ƒO‚ğƒIƒ“‚É‚·‚éB
+
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğì¬
+			grays_bullet_list.push_back(grays_bullet);
+			grays_bullet_list.back().Init(count.GetPosition(), count.GetRadius(), GetColor(255, 50, 50), TRUE);
+			grays_bullet_list.back().SetMoveSpeed(VGet(count.GetMoveSpeed().x * 0.3, count.GetMoveSpeed().y * 0.3, 0.0f));//‘¬“x‚ğ0.3”{‚ÉŒ¸‘¬
+		}
+	}
+
+	//ƒOƒŒƒCƒY—p’eŠÛ‚ÌXV
+	for (auto& count : grays_bullet_list)
+	{
+		count.MoveUpdata();//ƒOƒŒƒCƒY—p’eŠÛˆÚ“®‚ÌXV
+
+		//ƒOƒŒƒCƒY—p’eŠÛ‚Ì‰æ–Ê’[‚Ì”½Ë
+		if (count.GetPosition().x < 0)
+		{
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(-count.GetMoveSpeed().x, count.GetMoveSpeed().y, 0.0f));
+			count.AddLife(1.0f);
+		}
+
+		if (count.GetPosition().y < 0)
+		{
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(count.GetMoveSpeed().x, -count.GetMoveSpeed().y, 0.0f));
+			count.AddLife(1.0f);
+		}
+
+		if (count.GetPosition().x > GetWindowSize().x)
+		{
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(-count.GetMoveSpeed().x, count.GetMoveSpeed().y, 0.0f));
+			count.AddLife(1.0f);
+		}
+
+		if (count.GetPosition().y > GetWindowSize().y)
+		{
+			//ƒOƒŒƒCƒY—p’eŠÛ‚ğ”½Ë
+			count.SetMoveSpeed(VGet(count.GetMoveSpeed().x, -count.GetMoveSpeed().y, 0.0f));
+			count.AddLife(1.0f);
+		}
+
+	}
+
+	//ƒOƒŒƒCƒYˆæ‚Æ‚Ì“–‚½‚è”»’è
+	for (auto& count : grays_bullet_list)
+	{
+		collision.CircleAndCircleCollisionUpdata(&player_grays, &count);//ƒOƒŒƒCƒYˆæ‚Æ‚Ì“–‚½‚è”»’è
+
+		if (count.GetHitFlag() == true)
+		{
+			grays_is_count += 1;
+			if (grays_is_count > 10)
+			{
+				grays_count += 1;//ƒOƒŒƒCƒY‚µ‚Ä‚¢‚½‚çƒOƒŒƒCƒY‚ÌƒJƒEƒ“ƒ^[‚ğã‚°‚é
+				grays_is_count = 0;
+			}
+		}
 	}
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
-	test_one.Draw();
-	test_two.Draw();
+	//ƒOƒŒƒCƒY—p’eŠÛ’eŠÛ‚Ì•`‰æ
+	for (auto& count : grays_bullet_list)
+	{
+		count.Draw();//ƒOƒŒƒCƒY—p’eŠÛ‚Ì•`‰æ
+	}
 
+	//ƒvƒŒƒCƒ„[’eŠÛ‚Ì•`‰æ
+	for (auto& count : player_bullet_list)
+	{
+		count.Draw();//ƒvƒŒƒCƒ„[’eŠÛ‚Ì•`‰æ
+	}
+
+	player_main.Draw();//ƒvƒŒƒCƒ„[‚Ì•`‰æ
+	player_grays.Draw();//ƒvƒŒƒCƒ„[‚ÌƒOƒŒƒCƒYˆæ‚Ì•`‰æ
+
+	//ƒOƒŒƒCƒY‚µ‚½‚ç
+	for (auto& count : grays_bullet_list)
+	{
+		if (count.GetHitFlag() == true)
+		{
+			DrawString(player_main.GetPosition().x, player_main.GetPosition().y, "Grays!!", GetColor(255, 255, 255));//ƒOƒŒƒCƒY•¶š‚ğo‚·.
+
+		}
+	}
+
+	DrawFormatString(0, 20, GetColor(255, 255, 255), "Grays Count %d NOW!!", grays_count);//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚Ì•`‰æ
+}
+
+void DiploidEngineApp::Destory()//ƒ‹[ƒv’†‚Éíœ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚ª‚ ‚éê‡‚Í‚±‚±‚Åíœˆ—‚ğ‘‚­B
+{
+	//ƒvƒŒƒCƒ„[’eŠÛ‚Ìíœˆ—
+	if (!player_bullet_list.empty())
+	{
+		for (auto count = player_bullet_list.begin(); count != player_bullet_list.end();)
+		{
+			if (count->GetDestoryFlag() == true)//ƒfƒXƒgƒƒCƒtƒ‰ƒO‚ªtrue‚È‚ç’eŠÛ‚ğíœ
+			{
+				count = player_bullet_list.erase(count);
+				continue;
+			}
+			++count;
+		}
+	}
+
+	//ƒOƒŒƒCƒY—p’eŠÛ‚Ìíœˆ—
+	if (!grays_bullet_list.empty())
+	{
+		for (auto count = grays_bullet_list.begin(); count != grays_bullet_list.end();)
+		{
+			if (count->GetLife() >= 2.0f)//õ–½‚ª2.0fˆÈã‚È‚ç’eŠÛ‚ğíœ
+			{
+				count = grays_bullet_list.erase(count);
+				continue;
+			}
+			++count;
+		}
+	}
 }
 
 void DiploidEngineApp::End()//engineI—¹‘Oˆ—B

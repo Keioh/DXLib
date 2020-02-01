@@ -9,9 +9,11 @@ void DiploidCircleV2::Init(VECTOR pos, float radi, unsigned int color, bool fill
 	object_thickness = thickness;
 }
 
-void DiploidCircleV2::Updata()
+void DiploidCircleV2::MoveUpdata()
 {
-
+	this->position.x += this->move_speed.x;
+	this->position.y += this->move_speed.y;
+	this->position.z += this->move_speed.z;
 }
 
 void DiploidCircleV2::Draw(bool draw)
@@ -63,6 +65,40 @@ void DiploidCircleV2::SetHitFlag(bool new_hit_flag)
 	this->hit_flag = new_hit_flag;
 }
 
+void DiploidCircleV2::SetMoveSpeed(VECTOR new_move_speed)
+{
+	this->move_speed = new_move_speed;
+}
+
+void DiploidCircleV2::SetMoveSpeed(float angle, float new_move_speed)
+{
+	this->move_speed.x = cosf(angle) * new_move_speed;
+	this->move_speed.y = sinf(angle) * new_move_speed;
+
+	this->move_angle = angle;
+}
+
+void DiploidCircleV2::SetLife(float new_life)
+{
+	this->object_life = new_life;
+}
+
+void DiploidCircleV2::SetDestoryFlag(bool new_flag)
+{
+	this->destory_flag = new_flag;
+}
+
+
+void DiploidCircleV2::AddLife(float add_val)
+{
+	this->object_life += add_val;
+}
+
+void DiploidCircleV2::SubLife(float sub_val)
+{
+	this->object_life -= sub_val;
+}
+
 
 VECTOR DiploidCircleV2::GetPosition()
 {
@@ -102,4 +138,24 @@ int DiploidCircleV2::GetObjectNumber()
 bool DiploidCircleV2::GetHitFlag()
 {
 	return this->hit_flag;
+}
+
+VECTOR DiploidCircleV2::GetMoveSpeed()
+{
+	return this->move_speed;
+}
+
+float DiploidCircleV2::GetMoveAngle()
+{
+	return this->move_angle;
+}
+
+float DiploidCircleV2::GetLife()
+{
+	return this->object_life;
+}
+
+bool DiploidCircleV2::GetDestoryFlag()
+{
+	return this->destory_flag;
 }

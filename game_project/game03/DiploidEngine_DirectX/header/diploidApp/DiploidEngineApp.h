@@ -1,6 +1,6 @@
 //中枢です。
 #pragma once
-#include <vector>
+#include <list>
 #include <memory>
 #include "DxLib.h"//Dxlib本体
 #include "diploidApp\DiploidEngineMain.h"//心臓部分(必ず呼ぶ)
@@ -23,18 +23,30 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidCollision collision;
-	DiploidCircleV2 test_one, test_two;
+	DiploidCollision collision;//当たり判定の処理クラス
 
-	float anime;
+	DiploidCircleV2 player_main;//プレイヤー本体
+	DiploidCircleV2 player_grays;//プレイヤーのグレイズ域
+	DiploidCircleV2 player_bullet;//プレイヤーの弾丸
+	list<DiploidCircleV2> player_bullet_list;//プレイヤーの弾丸のリスト
+
+	DiploidCircleV2 grays_bullet;//グレイズ用の弾丸
+	list<DiploidCircleV2> grays_bullet_list;//敵に当たらないグレイズ用の弾丸のリスト
+
+	DiploidEngineInput input;
+
+	float slow = 1.0f;//プレイヤーの移動速度の倍率
+
+	int is_count = 20;//プレイヤー弾の発射頻度調整用
+	int grays_count = 0, grays_is_count = 10;//グレイズのカウント数。
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ
 	void Init();//最初に一回だけ初期化したい処理を記述。	
-	void LoadUpdata();//ループ中に一度だけデータをロードしたい処理を記述。(仮)
 	void Updata();//アニメーションなど連続して行いたい処理。
 	void Draw();//結果を描写する処理
+	void Destory();//削除する処理。
 	void End();//engine終了前処理。
 };
 

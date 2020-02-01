@@ -13,6 +13,11 @@ bool DiploidCollision::CircleAndCircleCollisionUpdata(DiploidCircleV2* circle_on
 
 		return true;
 	}
+	else
+	{
+		circle_one->SetHitFlag(false);//ヒットフラグをfalseに変更。
+		circle_two->SetHitFlag(false);//ヒットフラグをfalseに変更。
 
-	return false;
+		return false;
+	}
 }
