@@ -13,13 +13,14 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {
-	player_main.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 5.0f, GetColor(255, 100, 100), TRUE);
-	player_grays.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 30.0f, GetColor(100, 100, 255));
+	player_main.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 5.0f, GetColor(255, 100, 100), TRUE);//ƒvƒŒƒCƒ„[–{‘Ì
+	player_grays.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 30.0f, GetColor(100, 100, 255));//ƒvƒŒƒCƒ„[‚ÌƒOƒŒƒCƒYˆæ
 }
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
 	input.Update();
+
 
 	if (input.GetKey(KEY_INPUT_LSHIFT) == true)//¶ƒVƒtƒgƒL[‚ğ‰Ÿ‚µ‚½‚ç
 	{
@@ -28,8 +29,67 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 	else
 	{
 		slow = 1.0f;//ƒvƒŒƒCƒ„[‚Ì‘¬‚³‚ğ“™”{‚É
+	}				
+
+	if (input.GetReleaseKey(KEY_INPUT_LCONTROL) == true)//ƒRƒ“ƒgƒ[ƒ‹ƒL[‚ğ‰Ÿ‚µ‚½‚ç
+	{
+		if (grays_count > 50)//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ª50ˆÈã‚ ‚Á‚½‚ç
+		{
+			grays_count -= 50;//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ğ50Œ¸‚ç‚·
+
+			for (auto& count : grays_bullet_list)
+			{
+				if (count.GetHitFlag() == true)//ƒOƒŒƒCƒYˆæ‚É“ü‚Á‚Ä‚¢‚½‚ç
+				{
+
+
+					//ƒOƒŒƒCƒY—p’eŠÛ‚ğ”½Ë
+					count.SetMoveSpeed(VGet(-count.GetMoveSpeed().x, -count.GetMoveSpeed().y, 0.0f));
+					count.SetDestoryFlag(true);//íœƒtƒ‰ƒO‚ğƒIƒ“‚É‚·‚éB
+
+					//ƒvƒŒƒCƒ„[’eŠÛ‚ğì¬
+					player_bullet_list.push_back(player_bullet);//’eŠÛ‚ğƒŠƒXƒg‚É’Ç‰Á
+					player_bullet_list.back().Init(VGet(count.GetPosition().x, count.GetPosition().y, 0.0f), count.GetRadius(), GetColor(255, 255, 255), TRUE);//’eŠÛ‚ª”­Ë‚³‚ê‚éˆÊ’u‚ğİ’è
+					player_bullet_list.back().SetMoveSpeed(VGet((-GetRand(4) + GetRand(4)), -(GetRand(5) + 10), 0));//’eŠÛ‚Ì‘¬“x‚Æ•ûŒü‚ğİ’èB
+				}
+			}
+		}
 	}
-		
+
+	if (input.GetKey(KEY_INPUT_LCONTROL) == true)
+	{
+		ctr_count++;
+		if (ctr_count > 70)ctr_count = 70;
+		if ((ctr_count > 50) && (grays_count > 300))//ƒRƒ“ƒgƒ[ƒ‹ƒL[‚ğ20ƒ‹[ƒvˆÈã‚©‚ÂƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ª250ˆÈã‚È‚ç
+		{
+			grays_count -= 250;//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ğ250Œ¸‚ç‚·
+
+			for (auto& count : grays_bullet_list)
+			{
+				if (count.GetHitFlag() == true)//ƒOƒŒƒCƒYˆæ‚É“ü‚Á‚Ä‚¢‚½‚ç
+				{
+					count.SetMoveSpeed(VGet(0.0f, 0.0f, 0.0f));
+					count.SetDestoryFlag(true);//ƒOƒŒƒCƒY—p’eŠÛ‚Ìíœƒtƒ‰ƒO‚ğ—§‚Ä‚éB
+
+					//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğì¬
+					player_bullet_list.push_back(player_bullet);//’eŠÛ‚ğƒŠƒXƒg‚É’Ç‰Á
+					player_bullet_list.back().Init(VGet(player_main.GetPosition().x, player_main.GetPosition().y - player_grays.GetRadius(), 0.0f), 10.0f, GetColor(255, 255, 255), TRUE);//’eŠÛ‚ª”­Ë‚³‚ê‚éˆÊ’u‚ğİ’è
+					player_bullet_list.back().SetMoveSpeed(VGet((-GetRand(4) + GetRand(4)), -(GetRand(5) + 10), 0));//’eŠÛ‚Ì‘¬“x‚Æ•ûŒü‚ğİ’èB	
+					
+				}
+				else
+				{
+					count.SetMoveSpeed(VGet(-(count.GetPosition().x - player_main.GetPosition().x) / ctr_count, -(count.GetPosition().y - player_main.GetPosition().y) / ctr_count, 0.0f));
+				}
+			}
+		}
+	}
+	else
+	{		
+		ctr_count = 30;
+	}
+
+
 	if ((input.GetKey(KEY_INPUT_D) == true) || (input.GetKey(KEY_INPUT_RIGHT) == true))//DƒL[‚ğ‰Ÿ‚µ‚½‚ç
 	{
 		if (player_main.GetPosition().x < GetWindowSize().x - player_main.GetRadius())//‰æ–ÊŠO‚És‚©‚È‚¢‚æ‚¤‚É
@@ -92,7 +152,7 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 	if (input.GetKey(KEY_INPUT_SPACE) == true)//SPACEƒL[‚ğ‰Ÿ‚µ‚½‚ç
 	{
 		is_count += 1;
-		if (is_count > 20 - (grays_count * 0.2))//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ª—­‚Ü‚Á‚Ä‚¢‚Á‚½‚ç‘Å‚¿o‚·‘¬“x‚ªƒAƒbƒv
+		if (is_count > 0 - (grays_count * 0.2))//ƒOƒŒƒCƒYƒJƒEƒ“ƒ^[‚ª—­‚Ü‚Á‚Ä‚¢‚Á‚½‚ç‘Å‚¿o‚·‘¬“x‚ªƒAƒbƒv
 		{
 			//ƒvƒŒƒCƒ„[‚Ì’eŠÛ‚ğì¬
 			player_bullet_list.push_back(player_bullet);//’eŠÛ‚ğƒŠƒXƒg‚É’Ç‰Á
@@ -201,7 +261,8 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 		if (count.GetHitFlag() == true)
 		{
 			grays_is_count += 1;
-			if (grays_is_count > 10)
+
+			if (grays_is_count > 20)
 			{
 				grays_count += 1;//ƒOƒŒƒCƒY‚µ‚Ä‚¢‚½‚çƒOƒŒƒCƒY‚ÌƒJƒEƒ“ƒ^[‚ğã‚°‚é
 				grays_is_count = 0;
@@ -261,7 +322,13 @@ void DiploidEngineApp::Destory()//ƒ‹[ƒv’†‚Éíœ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚ª‚ ‚éê‡‚Í‚±
 	{
 		for (auto count = grays_bullet_list.begin(); count != grays_bullet_list.end();)
 		{
-			if (count->GetLife() >= 2.0f)//õ–½‚ª2.0fˆÈã‚È‚ç’eŠÛ‚ğíœ
+			if (count->GetDestoryFlag() == true)
+			{
+				count = grays_bullet_list.erase(count);
+				continue;
+			}
+
+			if (count->GetLife() >= 10.0f)//õ–½‚ª1.0fˆÈã‚È‚ç’eŠÛ‚ğíœ
 			{
 				count = grays_bullet_list.erase(count);
 				continue;

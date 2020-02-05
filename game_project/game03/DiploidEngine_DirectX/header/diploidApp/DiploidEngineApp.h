@@ -39,7 +39,7 @@ private:
 
 	int is_count = 20;//プレイヤー弾の発射頻度調整用
 	int grays_count = 0, grays_is_count = 10;//グレイズのカウント数。
-
+	int ctr_count = 30;//ctrボタンを押している時間を図る変数
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

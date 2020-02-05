@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <list>
 #include <math.h>
 #include "DxLib.h"
 
@@ -18,6 +19,8 @@ private:
 	float move_angle;//オブジェクトの移動方向
 	float radius;//円の半径(実質、Size)
 
+	list<VECTOR>::iterator hit_points_list_iterator = hit_points_list.begin();//hit_points_listのイテレータ
+
 	unsigned int object_color;//色
 	bool object_fill;//塗りつぶし
 	float object_thickness;//太さ
@@ -28,7 +31,9 @@ private:
 
 protected:
 
-public:
+public:	
+	list<VECTOR> hit_points_list;//当たっている場所の位置。(なるべく関数から呼び出す。)
+
 	void Init(VECTOR pos, float radi, unsigned int color, bool fill = FALSE, float thickness = 1.0f);
 	void MoveUpdata();//設定した移動速度を反映します。
 	void Draw(bool draw = true);//円を描画します。(drawにfalseを入れることで描画しない)
@@ -48,7 +53,7 @@ public:
 
 	void AddLife(float add_val);//寿命カウントを足します。
 	void SubLife(float sub_val);//寿命カウントを引きます。
-
+	
 	VECTOR GetPosition();//現在の位置を取得します。
 	float GetRadius();//現在の半径を取得します。
 	float GetThickness();//現在の線の太さを取得します。
@@ -61,4 +66,9 @@ public:
 	float GetMoveAngle();//現在のオブジェクトの移動している方角を取得します。(ラジアン)
 	float GetLife();//現在のオブジェクトの寿命を取得します。
 	bool GetDestoryFlag();//現在の削除フラグを取得します。(trueで削除対象オン)
+	size_t GetHitPointsVolume();//現在の当たっている場所の総数を取得します。
+	VECTOR GetHitPosition();//現在の当たっている場所の位置を取得します。
+	list<VECTOR>::iterator GetHitPointsListIterator(list<VECTOR>::iterator* pointer_to_iterator);//hit_points_listのイテレータを取得します。(使用非推奨:イテレータ指定版)
+	list<VECTOR>::iterator GetHitPointsListIterator();//hit_points_listのイテレータを取得します。(使用推奨：安全版。list<>::begin()が初期値)
+
 };

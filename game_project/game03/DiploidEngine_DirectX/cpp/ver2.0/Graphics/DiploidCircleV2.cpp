@@ -159,3 +159,45 @@ bool DiploidCircleV2::GetDestoryFlag()
 {
 	return this->destory_flag;
 }
+
+size_t DiploidCircleV2::GetHitPointsVolume()
+{
+	if (!hit_points_list.empty())
+	{
+		return this->hit_points_list.size();
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+VECTOR DiploidCircleV2::GetHitPosition()
+{
+	if (!hit_points_list.empty())
+	{
+		VECTOR buffer = { 0,0,0 };
+
+		buffer.x = hit_points_list_iterator->x;
+		buffer.y = hit_points_list_iterator->y;
+		buffer.z = hit_points_list_iterator->z;
+
+		return buffer;
+	}
+	else
+	{
+		return { -1,-1,-1 };
+	}
+}
+
+list<VECTOR>::iterator DiploidCircleV2::GetHitPointsListIterator(list<VECTOR>::iterator* pointer_to_iterator)
+{
+	pointer_to_iterator = &hit_points_list_iterator;
+
+	return this->hit_points_list_iterator;
+}
+
+list<VECTOR>::iterator DiploidCircleV2::GetHitPointsListIterator()
+{
+	return this->hit_points_list_iterator;
+}

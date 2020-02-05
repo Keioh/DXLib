@@ -13,5 +13,5 @@ protected:
 
 public:
 	bool CircleAndCircleCollisionUpdata(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two);//円と円の当たり判定を実行します。(戻り値は二つの円がヒットしていたらtrueを返します。)
-
+	
 };
