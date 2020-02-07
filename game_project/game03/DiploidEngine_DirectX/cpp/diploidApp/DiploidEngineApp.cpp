@@ -21,7 +21,6 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 {
 	input.Update();
 
-
 	if (input.GetKey(KEY_INPUT_LSHIFT) == true)//左シフトキーを押したら
 	{
 		slow = 0.5f;//プレイヤーの速さを0.5倍に		
@@ -257,8 +256,9 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 	for (auto& count : grays_bullet_list)
 	{
 		collision.CircleAndCircleCollisionUpdata(&player_grays, &count);//グレイズ域との当たり判定
+		collision.CircleAndCircleCollisionPointsUpdata(&player_grays, &count);//グレイズ域との当たった瞬間の位置の計算
 
-		if (count.GetHitFlag() == true)
+		if (player_grays.GetHitFlag() == true)
 		{
 			grays_is_count += 1;
 
@@ -291,10 +291,14 @@ void DiploidEngineApp::Draw()//結果を描写する処理
 	//グレイズしたら
 	for (auto& count : grays_bullet_list)
 	{
-		if (count.GetHitFlag() == true)
+		if (!count.GetHitPointsListPointer()->empty())//当たった瞬間の場所の表示
+		{
+			DrawCircle(count.GetHitPointsListIterator()->x, count.GetHitPointsListIterator()->y, 2, GetColor(0, 255, 0), TRUE);
+		}
+
+		if (count.GetHitFlag() == true)//当たっていたら
 		{
 			DrawString(player_main.GetPosition().x, player_main.GetPosition().y, "Grays!!", GetColor(255, 255, 255));//グレイズ文字を出す.
-
 		}
 	}
 

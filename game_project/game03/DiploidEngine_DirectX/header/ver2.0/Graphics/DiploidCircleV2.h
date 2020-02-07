@@ -19,6 +19,9 @@ private:
 	float move_angle;//オブジェクトの移動方向
 	float radius;//円の半径(実質、Size)
 
+	list<VECTOR> hit_points_list;//当たっている場所の位置。
+	list<VECTOR>* hit_points_list_pointer;//hit_points_listへのポインター(イテレータではない)
+	list<VECTOR>::iterator hit_points_list_iterator = hit_points_list.begin();//hit_points_listのイテレータ
 
 	unsigned int object_color;//色
 	bool object_fill;//塗りつぶし
@@ -30,9 +33,7 @@ private:
 
 protected:
 
-public:	
-	list<VECTOR> hit_points_list;//当たっている場所の位置。(なるべく関数から呼び出す。)
-	list<VECTOR>::iterator hit_points_list_iterator = hit_points_list.begin();//hit_points_listのイテレータ(なるべく関数から呼び出す。)
+public:
 
 	void Init(VECTOR pos, float radi, unsigned int color, bool fill = FALSE, float thickness = 1.0f);
 	void MoveUpdata();//設定した移動速度を反映します。
@@ -69,6 +70,6 @@ public:
 	size_t GetHitPointsVolume();//現在の当たっている場所の総数を取得します。
 	VECTOR GetHitPosition();//現在の当たっている場所の位置を取得します。
 	list<VECTOR>::iterator GetHitPointsListIterator(list<VECTOR>::iterator* pointer_to_iterator);//hit_points_listのイテレータを取得します。(使用非推奨:イテレータ指定版)
-	list<VECTOR>::iterator GetHitPointsListIterator();//hit_points_listのイテレータを取得します。(使用推奨：安全版。list<>::begin()が初期値)
-
+	list<VECTOR>::iterator GetHitPointsListIterator();//要検証：hit_points_listのイテレータを取得します。(使用推奨：安全版。list<>::begin()が初期値)
+	list<VECTOR>* GetHitPointsListPointer();//hit_points_listへのポインタを取得します。
 };

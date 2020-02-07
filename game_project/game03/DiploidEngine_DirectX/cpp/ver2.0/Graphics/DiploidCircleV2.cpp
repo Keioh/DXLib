@@ -192,6 +192,8 @@ VECTOR DiploidCircleV2::GetHitPosition()
 
 list<VECTOR>::iterator DiploidCircleV2::GetHitPointsListIterator(list<VECTOR>::iterator* pointer_to_iterator)
 {
+	hit_points_list_iterator = hit_points_list.begin();
+
 	pointer_to_iterator = &hit_points_list_iterator;
 
 	return this->hit_points_list_iterator;
@@ -199,5 +201,12 @@ list<VECTOR>::iterator DiploidCircleV2::GetHitPointsListIterator(list<VECTOR>::i
 
 list<VECTOR>::iterator DiploidCircleV2::GetHitPointsListIterator()
 {
-	return this->hit_points_list_iterator;
+	return this->hit_points_list_iterator = this->hit_points_list.begin();
+}
+
+list<VECTOR>* DiploidCircleV2::GetHitPointsListPointer()
+{
+	hit_points_list_pointer = &hit_points_list;
+
+	return hit_points_list_pointer;
 }
