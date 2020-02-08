@@ -268,6 +268,22 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 				grays_is_count = 0;
 			}
 		}
+	}	
+	
+
+	//カメラ設定と移動
+	camera.SetMainCameraPosition_DiploidCircleV2(&player_main);//メインカメラの設定
+
+	camera.SetOtherLookObjectPosition_DiploidCircleV2(&player_grays);//メインカメラ以外のオブジェクトの移動
+
+	for (auto& count : player_bullet_list)//プレイヤー弾丸
+	{
+		camera.SetOtherLookObjectPosition_DiploidCircleV2(&count);//メインカメラ以外のオブジェクトの移動
+	}
+
+	for (auto& count : grays_bullet_list)//グレイズ弾丸
+	{
+		camera.SetOtherLookObjectPosition_DiploidCircleV2(&count);//メインカメラ以外のオブジェクトの移動
 	}
 }
 

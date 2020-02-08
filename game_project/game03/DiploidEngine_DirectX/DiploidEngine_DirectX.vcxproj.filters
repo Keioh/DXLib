@@ -264,6 +264,9 @@
     <ClCompile Include="cpp\ver2.0\Main\Collision.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Camera.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -390,6 +393,9 @@
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="header\ver2.0\Main\Collision.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Main\Camera.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
     </ClInclude>
   </ItemGroup>

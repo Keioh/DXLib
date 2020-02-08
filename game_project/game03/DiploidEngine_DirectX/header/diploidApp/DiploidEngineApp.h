@@ -11,6 +11,7 @@
 
 #include "ver2.0/Graphics/DiploidCircleV2.h"//Ver2.0の円クラス
 #include "ver2.0/Main/Collision.h"//Ver2.0の当たり判定処理
+#include "ver2.0/Main/Camera.h"//Ver2.0の2Dにおけるカメラ処理
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
@@ -23,6 +24,7 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
+	DiploidCamera camera;
 	DiploidCollision collision;//当たり判定の処理クラス
 
 	DiploidCircleV2 player_main;//プレイヤー本体

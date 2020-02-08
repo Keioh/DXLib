@@ -30,6 +30,7 @@ private:
 
 	bool destory_flag = false;//削除フラグ(trueの場合、削除対象に)
 	bool hit_flag = false;//当たっているかのフラグ
+	bool main_camera = false;//メインカメラの追うオブジェクトかのフラグ
 
 protected:
 
@@ -51,6 +52,7 @@ public:
 	void SetMoveSpeed(float angle, float new_move_speed);//新しく移動する速度を設定します。(ラジアン角指定版)
 	void SetLife(float new_life);//新しく寿命を設定します。
 	void SetDestoryFlag(bool new_flag);//新しく削除フラグを設定します。
+	void SetMainCameraFlag(bool new_flag);//新しくメインカメラフラグを設定します。(Camera関数以外からの使用は控える)
 
 	void AddLife(float add_val);//寿命カウントを足します。
 	void SubLife(float sub_val);//寿命カウントを引きます。
@@ -66,7 +68,9 @@ public:
 	VECTOR GetMoveSpeed();//現在のオブジェクトの移動速度を取得します。
 	float GetMoveAngle();//現在のオブジェクトの移動している方角を取得します。(ラジアン)
 	float GetLife();//現在のオブジェクトの寿命を取得します。
-	bool GetDestoryFlag();//現在の削除フラグを取得します。(trueで削除対象オン)
+	bool GetDestoryFlag();//現在の削除フラグを取得します。(trueで削除対象オン)	
+	bool GetMainCameraFlag();//現在のオブジェクトがメインカメラの対象になっているかのフラグを取得します。
+
 	size_t GetHitPointsVolume();//現在の当たっている場所の総数を取得します。
 	VECTOR GetHitPosition();//現在の当たっている場所の位置を取得します。
 	list<VECTOR>::iterator GetHitPointsListIterator(list<VECTOR>::iterator* pointer_to_iterator);//hit_points_listのイテレータを取得します。(使用非推奨:イテレータ指定版)

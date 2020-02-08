@@ -88,6 +88,11 @@ void DiploidCircleV2::SetDestoryFlag(bool new_flag)
 	this->destory_flag = new_flag;
 }
 
+void DiploidCircleV2::SetMainCameraFlag(bool new_flag)
+{
+	this->main_camera = new_flag;
+}
+
 
 void DiploidCircleV2::AddLife(float add_val)
 {
@@ -159,6 +164,12 @@ bool DiploidCircleV2::GetDestoryFlag()
 {
 	return this->destory_flag;
 }
+
+bool DiploidCircleV2::GetMainCameraFlag()
+{
+	return this->main_camera;
+}
+
 
 size_t DiploidCircleV2::GetHitPointsVolume()
 {
