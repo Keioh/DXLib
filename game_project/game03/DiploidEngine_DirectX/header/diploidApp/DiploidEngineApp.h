@@ -2,6 +2,7 @@
 #pragma once
 #include <list>
 #include <memory>
+#include <unordered_map>
 #include "DxLib.h"//Dxlib本体
 #include "diploidApp\DiploidEngineMain.h"//心臓部分(必ず呼ぶ)
 #include "diploidObject\DiploidEngineObject.h"//円や四角や画像や音など、オブジェクト全般
@@ -12,6 +13,7 @@
 #include "ver2.0/Graphics/DiploidCircleV2.h"//Ver2.0の円クラス
 #include "ver2.0/Main/Collision.h"//Ver2.0の当たり判定処理
 #include "ver2.0/Main/Camera.h"//Ver2.0の2Dにおけるカメラ処理
+#include "ver2.0/Graphics/DiploidImageV2.h"//Ver2.0における画像クラス
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
@@ -24,6 +26,9 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
+	DiploidImageV2 image;
+
+	/*
 	DiploidCamera camera;
 	DiploidCollision collision;//当たり判定の処理クラス
 
@@ -42,6 +47,7 @@ private:
 	int is_count = 20;//プレイヤー弾の発射頻度調整用
 	int grays_count = 0, grays_is_count = 10;//グレイズのカウント数。
 	int ctr_count = 30;//ctrボタンを押している時間を図る変数
+	*/
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

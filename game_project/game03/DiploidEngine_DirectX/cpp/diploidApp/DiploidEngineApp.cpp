@@ -8,17 +8,22 @@ void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイルを作る処理。
 
 void DiploidEngineApp::Load()//ゲーム起動時に1回だけロードするデータ(音や画像やセーブデータやマップデータなど)
 {	
-
+	image.Load("texter/test.png");
 }
 
 void DiploidEngineApp::Init()//ゲーム起動時に一回だけ初期化したい処理を記述。
 {
+	image.Init(VGet(1280/2,720/2,0));
+
+	/*
 	player_main.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 5.0f, GetColor(255, 100, 100), TRUE);//プレイヤー本体
 	player_grays.Init(VGet(GetWindowSize().x / 2, 600, 0.0f), 30.0f, GetColor(100, 100, 255));//プレイヤーのグレイズ域
+	*/
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数値処理)
 {
+	/*
 	input.Update();
 
 	if (input.GetKey(KEY_INPUT_LSHIFT) == true)//左シフトキーを押したら
@@ -285,10 +290,14 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 	{
 		camera.SetOtherLookObjectPosition_DiploidCircleV2(&count);//メインカメラ以外のオブジェクトの移動
 	}
+	*/
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
+
+	image.Draw();
+	/*
 	//グレイズ用弾丸弾丸の描画
 	for (auto& count : grays_bullet_list)
 	{
@@ -319,10 +328,12 @@ void DiploidEngineApp::Draw()//結果を描写する処理
 	}
 
 	DrawFormatString(0, 20, GetColor(255, 255, 255), "Grays Count %d NOW!!", grays_count);//グレイズカウンターの描画
+	*/
 }
 
 void DiploidEngineApp::Destory()//ループ中に削除したいオブジェクトがある場合はここで削除処理を書く。
 {
+	/*
 	//プレイヤー弾丸の削除処理
 	if (!player_bullet_list.empty())
 	{
@@ -356,6 +367,7 @@ void DiploidEngineApp::Destory()//ループ中に削除したいオブジェクトがある場合はこ
 			++count;
 		}
 	}
+	*/
 }
 
 void DiploidEngineApp::End()//engine終了前処理。
