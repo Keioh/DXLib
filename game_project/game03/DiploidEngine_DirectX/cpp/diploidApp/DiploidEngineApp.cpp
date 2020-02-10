@@ -297,6 +297,7 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
 
 	image.Draw();
+
 	/*
 	//ƒOƒŒƒCƒY—p’eŠÛ’eŠÛ‚Ì•`‰æ
 	for (auto& count : grays_bullet_list)

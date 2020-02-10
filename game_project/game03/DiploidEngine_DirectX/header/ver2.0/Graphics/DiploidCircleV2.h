@@ -45,6 +45,7 @@ public:
 	void SetRadius(float new_radius);//新しい半径を設定します。
 	void SetFill(bool new_fill);//新たに塗りつぶしを設定します。
 	void SetThickness(float new_thickness);//新たに線の太さを設定します。
+
 	void SetName(string new_name);//新たにオブジェクトの名前を設定します。
 	void SetObjectNumber(int new_number);//新しいオブジェクト番号を設定します。
 	void SetHitFlag(bool new_hit_flag);//新しくヒットフラグを設定します。
@@ -62,6 +63,7 @@ public:
 	float GetThickness();//現在の線の太さを取得します。
 	unsigned int GetColor();//現在の色を取得します。
 	bool GetFill();//現在の塗りつぶしの設定を取得します。
+
 	string GetName();//現在のオブジェクトの名前を取得します。
 	int GetObjectNumber();//現在のオブジェクトの番号を取得します。
 	bool GetHitFlag();//現在のオブジェクトのヒットフラグを取得します。

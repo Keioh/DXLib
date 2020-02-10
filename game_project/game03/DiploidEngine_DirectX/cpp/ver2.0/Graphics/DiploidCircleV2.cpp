@@ -50,6 +50,7 @@ void DiploidCircleV2::SetThickness(float new_thickness)
 	this->object_thickness = new_thickness;
 }
 
+
 void DiploidCircleV2::SetName(string new_name)
 {
 	this->name = new_name;

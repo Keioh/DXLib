@@ -31,6 +31,13 @@ void DiploidImageV2::Init(VECTOR pos, bool shift_flag)
 	}
 }
 
+void DiploidImageV2::MoveUpdata()
+{
+	this->position.x += this->move_speed.x;
+	this->position.y += this->move_speed.y;
+	this->position.z += this->move_speed.z;
+}
+
 void DiploidImageV2::Draw(bool draw)
 {
 	DrawRotaGraph3(position.x, position.y, rotate_position.x, rotate_position.y, graphics_scale.x, graphics_scale.y, angle, graphics_handl, TRUE, turn);
@@ -68,6 +75,61 @@ void DiploidImageV2::SetRotatePosition(VECTOR new_position)
 }
 
 
+void DiploidImageV2::SetMoveSpeed(VECTOR new_move_speed)
+{
+	move_speed = new_move_speed;
+}
+
+void DiploidImageV2::SetMoveSpeed(float angle, float new_move_speed)
+{
+	move_speed.x = cosf(angle) * new_move_speed;
+	move_speed.y = sinf(angle) * new_move_speed;
+
+	move_angle = angle;
+}
+
+void DiploidImageV2::SetName(string new_name)
+{
+	name = new_name;
+}
+
+void DiploidImageV2::SetLife(float new_life)
+{
+	object_life = new_life;
+}
+
+void DiploidImageV2::SetDestoryFlag(bool new_flag)
+{
+	destory_flag = new_flag;
+}
+
+void DiploidImageV2::SetMainCameraFlag(bool new_flag)
+{
+	main_camera = new_flag;
+}
+
+void DiploidImageV2::SetObjectNumber(int new_number)
+{
+	object_number = new_number;
+}
+
+void DiploidImageV2::SetHitFlag(bool new_hit_flag)
+{
+	hit_flag = new_hit_flag;
+}
+
+
+void DiploidImageV2::AddLife(float add_val)
+{
+	this->object_life += add_val;
+}
+
+void DiploidImageV2::SubLife(float sub_val)
+{
+	this->object_life -= sub_val;
+}
+
+
 int DiploidImageV2::GetGraphicsHandl()
 {
 	return this->graphics_handl;
@@ -88,6 +150,14 @@ VECTOR DiploidImageV2::GetPosition()
 	return position;
 }
 
+VECTOR DiploidImageV2::GetCenterPosition()
+{
+	center_position.x = position.x + (graphics_x / 2);
+	center_position.y = position.y + (graphics_y / 2);
+
+	return center_position;
+}
+
 VECTOR DiploidImageV2::GetRotatePosition()
 {
 	return rotate_position;
@@ -101,4 +171,45 @@ float DiploidImageV2::GetAngle()
 bool DiploidImageV2::GetTurnFlag()
 {
 	return turn;
+}
+
+
+VECTOR DiploidImageV2::GetMoveSpeed()
+{
+	return this->move_speed;
+}
+
+float DiploidImageV2::GetMoveAngle()
+{
+	return this->move_angle;
+}
+
+string DiploidImageV2::GetName()
+{
+	return name;
+}
+
+float DiploidImageV2::GetLife()
+{
+	return this->object_life;
+}
+
+bool DiploidImageV2::GetDestoryFlag()
+{
+	return this->destory_flag;
+}
+
+bool DiploidImageV2::GetMainCameraFlag()
+{
+	return this->main_camera;
+}
+
+int DiploidImageV2::GetObjectNumber()
+{
+	return this->object_number;
+}
+
+bool DiploidImageV2::GetHitFlag()
+{
+	return this->hit_flag;
 }
