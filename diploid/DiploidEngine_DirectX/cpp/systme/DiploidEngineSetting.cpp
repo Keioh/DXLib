@@ -8,7 +8,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "Mikaitaku wo kaitaku suru! ver0.01";//Diploid Engine ver0.05
+	window_name = "DiploidEngine ver0.05";//Diploid Engine ver0.05
 }
 
 void DiploidEngineSetting::Init()

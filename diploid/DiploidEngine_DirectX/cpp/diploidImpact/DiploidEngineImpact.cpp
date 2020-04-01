@@ -170,7 +170,7 @@ void DiploidEngineImpact::DestoryCircle_Name_Tag(std::string name_tag)
 			}
 		}
 
-		if (box_itr->name_tag == name_tag)
+		if (circle_itr->name_tag == name_tag)
 		{
 			circle_vector.erase(circle_itr);
 		}
