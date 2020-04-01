@@ -32,7 +32,6 @@ private:
 	std::vector<DiploidPoint>::iterator point_itr;
 	std::vector<DiploidLine>::iterator line_itr;
 
-
 public:
 	DiploidEngineImpact();//コンストラクタ
 	~DiploidEngineImpact();//デストラクタ
@@ -46,6 +45,7 @@ public:
 	std::vector<DiploidPoint> point_vector;//点を保存しておく配列
 	std::vector<DiploidBox> box_vector;//四角を保存しておく配列
 	std::vector<DiploidLine> line_vector;//線分を保存しておく配列
+
 
 	void GetSize();//各配列の大きさを取得
 

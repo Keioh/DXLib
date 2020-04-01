@@ -133,6 +133,12 @@
     <Filter Include="ヘッダー ファイル\header\ver2.0\Graphics">
       <UniqueIdentifier>{e2cad86d-2690-466f-80b3-ce22363e0143}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Objects">
+      <UniqueIdentifier>{610868aa-3e45-4513-8410-9fef79cd10af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Objects">
+      <UniqueIdentifier>{e516299b-1a3f-4d06-bd8b-fd0278d33f1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -245,6 +251,30 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidGraphics\diploidPanel.cpp">
+      <Filter>ソース ファイル\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidCircleV2.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Collision.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Camera.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidImageV2.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Main\Layer.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidSystem\diploidSystem.cpp">
+      <Filter>ソース ファイル\cpp\system</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +391,30 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidGraphics\diploidPanel.h">
+      <Filter>ヘッダー ファイル\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\DiploidAll.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidCircleV2.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Main\Collision.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Main\Camera.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidImageV2.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Main\Layer.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidSystem\diploidSystem.h">
+      <Filter>ヘッダー ファイル\header\system</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

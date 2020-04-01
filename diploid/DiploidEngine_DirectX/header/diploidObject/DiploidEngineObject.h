@@ -6,6 +6,7 @@
 #include "diploidGraphics\diploidCircle.h"
 #include "diploidGraphics\diploidPoint.h"
 #include "diploidGraphics\diploidLine.h"
+#include "diploidGraphics\diploidPanel.h"
 #include "diploidGraphics\diploidImage.h"
 #include "diploidSound\diploidEnigneSound.h"
 #include "diploidInput\DiploidEngineInput.h"
@@ -23,6 +24,7 @@ public:
 	DiploidCircle circle;//円
 	DiploidPoint point;//点
 	DiploidLine line;//線分
+	DiploidPanel panel;//パネル(2ポリゴンの3D)
 
 	DiploidImage image;//画像
 

@@ -37,8 +37,8 @@ void DiploidBox::Update()
 	{
 		GetMousePoint(&mouse_position_x, &mouse_position_y);
 
-		position.x = mouse_position_x - (size.x / 2);
-		position.y = mouse_position_y - (size.y / 2);
+		position.x = mouse_position_x - (size.x / 2);//図形の中心から描画したい場合はサイズの1/2を引く。
+		position.y = mouse_position_y - (size.y / 2);//図形の中心から描画したい場合はサイズの1/2を引く。
 
 		anime_size = VAdd(anime_size, move_size);
 		size = VAdd(anime_size, origin_size);
