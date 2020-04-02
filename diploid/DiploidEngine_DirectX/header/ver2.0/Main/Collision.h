@@ -2,6 +2,7 @@
 #include <list>
 #include "DxLib.h"
 #include "ver2.0/Graphics/DiploidCircleV2.h"
+#include "ver2.0/Graphics/DiploidBoxV2.h"
 
 using namespace std;
 
@@ -16,5 +17,8 @@ public:
 	bool CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate = 0);//円と円の当たり判定を実行します。(戻り値は二つの円がヒットしていたらtrueを返します。)
 	VECTOR CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate = 0);//円と円が当たった瞬間の位置を得ます。(戻り値は当たった場所の位置を返します。zには半径が入っています。)
 	
+	bool BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x, int mouse_y, int updata_rate = 0);//四角とマウスの当たり判定を実行します。(戻り値はマウスと四角がヒットしていたらtrueを返します。)
+
+
 	int GetUpdateCounter();//更新頻度を数えるカウンターを取得します。
 };

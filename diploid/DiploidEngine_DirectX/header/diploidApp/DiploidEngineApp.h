@@ -14,6 +14,7 @@
 #include "ver2.0/Main/Collision.h"//Ver2.0の当たり判定処理
 #include "ver2.0/Main/Camera.h"//Ver2.0の2Dにおけるカメラ処理
 #include "ver2.0/Graphics/DiploidImageV2.h"//Ver2.0における画像クラス
+#include "ver2.0/Graphics/DiploidBoxV2.h"//Ver2.0における四角クラス
 
 
 //スタンドアローン関連
@@ -27,7 +28,6 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidSystem test;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
@@ -38,5 +38,3 @@ public:
 	void Destory();//削除する処理。
 	void End();//engine終了前処理。
 };
-
-//目標：グレイズで弾いて攻撃する、縦か横のシューティングゲーム

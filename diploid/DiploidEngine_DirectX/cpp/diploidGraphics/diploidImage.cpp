@@ -2,7 +2,10 @@
 
 void DiploidImage::Load(const char* path)
 {
+	SetUseASyncLoadFlag(FALSE);
 	handl = LoadGraph(path);
+	SetUseASyncLoadFlag(TRUE);
+
 }
 
 void DiploidImage::Init(VECTOR pos, double size_scale, double angle_scale)
@@ -16,7 +19,7 @@ void DiploidImage::Init(VECTOR pos, double size_scale, double angle_scale)
 
 void DiploidImage::Updata()
 {	
-	GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//‰æ‘œ‚Ì‘å‚«‚³‚ðŽæ“¾
+	//GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//‰æ‘œ‚Ì‘å‚«‚³‚ðŽæ“¾
 
 	if (mouse_point_move_flag == false)
 	{

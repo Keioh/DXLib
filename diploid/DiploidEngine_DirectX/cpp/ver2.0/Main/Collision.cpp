@@ -10,8 +10,15 @@ bool DiploidCollision::CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_on
 
 		if ((pow(x, 2) + pow(y, 2)) <= pow(r, 2))
 		{
-			circle_one->SetHitFlag(true);//ヒットフラグをtrueに変更。		
-			circle_two->SetHitFlag(true);//ヒットフラグをtrueに変更。
+			if (circle_one->GetHitFlag() != true)
+			{
+				circle_one->SetHitFlag(true);//ヒットフラグをtrueに変更。		
+			}
+
+			if (circle_two->GetHitFlag() != true)
+			{
+				circle_two->SetHitFlag(true);//ヒットフラグをtrueに変更。
+			}
 
 			upadata_count = 0;
 
@@ -19,8 +26,16 @@ bool DiploidCollision::CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_on
 		}
 		else
 		{
-			circle_one->SetHitFlag(false);//ヒットフラグをfalseに変更。
-			circle_two->SetHitFlag(false);//ヒットフラグをfalseに変更。
+			if (circle_one->GetHitFlag() != false)
+			{
+				circle_one->SetHitFlag(false);//ヒットフラグをfalseに変更。
+			}
+
+			if (circle_two->GetHitFlag() != false)
+			{
+				circle_two->SetHitFlag(false);//ヒットフラグをfalseに変更。
+			}
+
 			upadata_count = 0;
 
 			return false;
@@ -72,6 +87,37 @@ VECTOR DiploidCollision::CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* c
 	else
 	{
 		++upadata_count;//カウントを進める。
+	}
+}
+
+
+bool DiploidCollision::BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x, int mouse_y, int updata_rate)
+{
+	if (updata_rate <= upadata_count)
+	{
+		if ((box->GetPosition().x < mouse_x) && (box->GetPosition().x + box->GetSize().x > mouse_x)
+			&& (box->GetPosition().y < mouse_y) && (box->GetPosition().y + box->GetSize().y > mouse_y))
+		{
+			if (box->GetHitFlag() != true)
+			{
+				box->SetHitFlag(true);//ヒットフラグをtrueに変更
+			}
+
+			upadata_count = 0;
+
+			return true;
+		}
+		else
+		{
+			if (box->GetHitFlag() != false)
+			{
+				box->SetHitFlag(false);//ヒットフラグをfalseに変更
+			}
+
+			upadata_count = 0;
+
+			return false;
+		}
 	}
 }
 
