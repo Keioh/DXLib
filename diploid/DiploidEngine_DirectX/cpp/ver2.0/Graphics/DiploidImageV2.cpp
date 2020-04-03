@@ -77,6 +77,11 @@ void DiploidImageV2::SetRotatePosition(VECTOR new_position)
 	rotate_position = new_position;
 }
 
+void DiploidImageV2::SetBright(float scale)
+{
+	SetDrawBright(255 * scale, 255 * scale, 255 * scale);
+}
+
 
 void DiploidImageV2::SetMoveSpeed(VECTOR new_move_speed)
 {

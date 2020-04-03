@@ -45,6 +45,7 @@ public:
 	void SetPosition(VECTOR new_position);//新しく表示位置を設定します。
 	void SetTurnFlag(bool new_flag);//新しく画像反転フラグを設定します。
 	void SetRotatePosition(VECTOR new_position);//新しく回転軸を設定します。
+	void SetBright(float scale = 1.0f);//明るさを設定します。(1.0fで100%)
 
 	void SetMoveSpeed(VECTOR new_move_speed);//新しく移動する速度を設定します。(3軸指定版)
 	void SetMoveSpeed(float angle, float new_move_speed);//新しく移動する速度を設定します。(ラジアン角指定版)

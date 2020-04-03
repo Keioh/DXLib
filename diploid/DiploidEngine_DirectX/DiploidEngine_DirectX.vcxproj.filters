@@ -139,6 +139,12 @@
     <Filter Include="ヘッダー ファイル\header\ver2.0\Objects">
       <UniqueIdentifier>{e516299b-1a3f-4d06-bd8b-fd0278d33f1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\data\sim_data">
+      <UniqueIdentifier>{656882f5-7241-4703-b139-7e72e0f94e00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\sim_data">
+      <UniqueIdentifier>{05e65048-0c81-4a22-b17b-560cd00f6312}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -275,6 +281,9 @@
     </ClCompile>
     <ClCompile Include="cpp\diploidSystem\diploidSystem.cpp">
       <Filter>ソース ファイル\cpp\system</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\sim_data\fild.cpp">
+      <Filter>ソース ファイル\data\sim_data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -415,6 +424,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidSystem\diploidSystem.h">
       <Filter>ヘッダー ファイル\header\system</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\sim_data\fild.h">
+      <Filter>ヘッダー ファイル\data\sim_data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
