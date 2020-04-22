@@ -93,7 +93,8 @@ int DiploidEngineInput::GetWhellVolume()
 }
 
 float DiploidEngineInput::GetWhellVolume_Scale(float max, float min, float scale)
-{
+{	
+
 	if (max < mouse_whell_scale)
 	{
 		mouse_whell_scale = max;
@@ -104,7 +105,9 @@ float DiploidEngineInput::GetWhellVolume_Scale(float max, float min, float scale
 		mouse_whell_scale = min;
 	}
 
-	return mouse_whell_scale += mouse_whell_volume * scale;
+	mouse_whell_scale = GetMouseWheelRotVol() * scale;
+
+	return mouse_whell_scale;
 }
 
 

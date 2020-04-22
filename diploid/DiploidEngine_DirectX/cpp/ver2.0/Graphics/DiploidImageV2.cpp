@@ -5,7 +5,6 @@ void DiploidImageV2::Load(const char* path)
 {
 	SetUseASyncLoadFlag(FALSE);
 	graphics_handl = LoadGraph(path);
-	SetUseASyncLoadFlag(TRUE);
 
 	GetGraphSize(graphics_handl, &graphics_x, &graphics_y);
 
@@ -16,7 +15,9 @@ void DiploidImageV2::Load(const char* path)
 
 	//âÒì]ÇÃíÜêSì_Çê›íË
 	//rotate_position.x = graphics_x / 2;
-	//rotate_position.y = graphics_y / 2;
+	//rotate_position.y = graphics_y / 2;	
+	
+	SetUseASyncLoadFlag(TRUE);
 }
 
 void DiploidImageV2::Init(VECTOR pos, bool shift_flag)
@@ -43,9 +44,17 @@ void DiploidImageV2::MoveUpdate()
 
 void DiploidImageV2::Draw(bool draw)
 {
-	DrawRotaGraph3(position.x, position.y, rotate_position.x, rotate_position.y, graphics_scale.x, graphics_scale.y, angle, graphics_handl, TRUE, turn);
+	if (draw == true)
+	{
+		DrawRotaGraph3(position.x, position.y, rotate_position.x, rotate_position.y, graphics_scale.x, graphics_scale.y, angle, graphics_handl, TRUE, turn);
+	}
 }
 
+
+void DiploidImageV2::SetHandl(int new_handl)
+{
+	graphics_handl = new_handl;
+}
 
 void DiploidImageV2::SetScale(float scale_x, float scale_y)
 {
@@ -80,6 +89,11 @@ void DiploidImageV2::SetRotatePosition(VECTOR new_position)
 void DiploidImageV2::SetBright(float scale)
 {
 	SetDrawBright(255 * scale, 255 * scale, 255 * scale);
+}
+
+void DiploidImageV2::SetBright(int red, int green, int blue)
+{
+	SetDrawBright(red, green, blue);
 }
 
 

@@ -50,6 +50,7 @@
     <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -150,6 +151,8 @@
     <ClCompile Include="cpp\data\dice_result_bord.cpp" />
     <ClCompile Include="cpp\data\number.cpp" />
     <ClCompile Include="cpp\data\sim_data\fild.cpp" />
+    <ClCompile Include="cpp\data\sim_data\fild_map.cpp" />
+    <ClCompile Include="cpp\data\sim_data\home_country_ui.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
@@ -189,6 +192,7 @@
     <ClCompile Include="cpp\ver2.0\Main\Object.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +202,9 @@
     <ClInclude Include="header\data\dice_result_bord.h" />
     <ClInclude Include="header\data\number.h" />
     <ClInclude Include="header\data\sim_data\fild.h" />
+    <ClInclude Include="header\data\sim_data\fild_map.h" />
+    <ClInclude Include="header\data\sim_data\home_country_ui.h" />
+    <ClInclude Include="header\data\sim_data\sim_define.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
     <ClInclude Include="header\diploidGraphics\diploidBox.h" />
@@ -238,6 +245,7 @@
     <ClInclude Include="header\ver2.0\Main\Object.h" />
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

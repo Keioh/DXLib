@@ -1,10 +1,12 @@
 #include "ver2.0/Graphics/DiploidBoxV2.h"
 
 
-void DiploidBoxV2::Init(VECTOR pos, VECTOR size, unsigned int color, bool fill, float thickness)
+void DiploidBoxV2::Init(VECTOR pos, VECTOR size, unsigned int color, float scale, bool fill, float thickness)
 {
-	position = pos;
-	box_size = size;
+	position = pos;	
+	object_scale_x = scale;
+	object_scale_y = scale;
+	box_size = VGet(size.x * object_scale_x, size.y * object_scale_y, 0.0f);
 	object_color = color;
 	object_fill = fill;
 	object_thickness = thickness;
@@ -40,7 +42,13 @@ void DiploidBoxV2::SetPosition(VECTOR new_pos)
 
 void DiploidBoxV2::SetSize(VECTOR new_size)
 {
-	this->box_size = new_size;
+	this->box_size = VGet(new_size.x * object_scale_x, new_size.y * object_scale_y, 0.0f);
+}
+
+void DiploidBoxV2::SetScale(float new_scale_x, float new_scale_y)
+{
+	this->object_scale_x = new_scale_x;
+	this->object_scale_y = new_scale_y;
 }
 
 void DiploidBoxV2::SetFill(bool new_fill)
@@ -118,6 +126,16 @@ VECTOR DiploidBoxV2::GetPosition()
 VECTOR DiploidBoxV2::GetSize()
 {
 	return this->box_size;
+}
+
+float DiploidBoxV2::GetScaleX()
+{
+	return this->object_scale_x;
+}
+
+float DiploidBoxV2::GetScaleY()
+{
+	return this->object_scale_y;
 }
 
 float DiploidBoxV2::GetThickness()

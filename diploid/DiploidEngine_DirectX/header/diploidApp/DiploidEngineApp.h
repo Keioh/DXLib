@@ -22,17 +22,26 @@
 
 //ゲームデータ関連
 #include "data/number.h"
-#include "data/sim_data/fild.h"
 
+#include "data/sim_data/sim_define.h"
+#include "data/sim_data/fild.h"
+#include "data/sim_data/fild_map.h"
+#include "data/sim_data/home_country_ui.h"
 
 using namespace std;
 
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
+
+	int ui_type;
+	int ui_info_type;
+
 	DiploidEngineInput input;
 
-	Fild fild[5][10];
+	FildMap map;
+
+	CommandUI ui;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

@@ -93,30 +93,34 @@ VECTOR DiploidCollision::CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* c
 
 bool DiploidCollision::BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x, int mouse_y, int updata_rate)
 {
-	if (updata_rate <= upadata_count)
+	if ((box->GetPosition().x <= window_size_x) && (box->GetPosition().x + box->GetSize().x >= 0)
+		&& (box->GetPosition().y <= window_size_y) && (box->GetPosition().y + box->GetSize().y >= 0))
 	{
-		if ((box->GetPosition().x < mouse_x) && (box->GetPosition().x + box->GetSize().x > mouse_x)
-			&& (box->GetPosition().y < mouse_y) && (box->GetPosition().y + box->GetSize().y > mouse_y))
+		if (updata_rate <= upadata_count)
 		{
-			if (box->GetHitFlag() != true)
+			if ((box->GetPosition().x < mouse_x) && (box->GetPosition().x + box->GetSize().x > mouse_x)
+				&& (box->GetPosition().y < mouse_y) && (box->GetPosition().y + box->GetSize().y > mouse_y))
 			{
-				box->SetHitFlag(true);//ヒットフラグをtrueに変更
+				if (box->GetHitFlag() != true)
+				{
+					box->SetHitFlag(true);//ヒットフラグをtrueに変更
+				}
+
+				upadata_count = 0;
+
+				return true;
 			}
-
-			upadata_count = 0;
-
-			return true;
-		}
-		else
-		{
-			if (box->GetHitFlag() != false)
+			else
 			{
-				box->SetHitFlag(false);//ヒットフラグをfalseに変更
+				if (box->GetHitFlag() != false)
+				{
+					box->SetHitFlag(false);//ヒットフラグをfalseに変更
+				}
+
+				upadata_count = 0;
+
+				return false;
 			}
-
-			upadata_count = 0;
-
-			return false;
 		}
 	}
 }

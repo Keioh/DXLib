@@ -285,6 +285,15 @@
     <ClCompile Include="cpp\data\sim_data\fild.cpp">
       <Filter>ソース ファイル\data\sim_data</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\data\sim_data\home_country_ui.cpp">
+      <Filter>ソース ファイル\data\sim_data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\sim_data\fild_map.cpp">
+      <Filter>ソース ファイル\data\sim_data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -427,6 +436,18 @@
     </ClInclude>
     <ClInclude Include="header\data\sim_data\fild.h">
       <Filter>ヘッダー ファイル\data\sim_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\sim_data\sim_define.h">
+      <Filter>ヘッダー ファイル\data\sim_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\sim_data\home_country_ui.h">
+      <Filter>ヘッダー ファイル\data\sim_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\sim_data\fild_map.h">
+      <Filter>ヘッダー ファイル\data\sim_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

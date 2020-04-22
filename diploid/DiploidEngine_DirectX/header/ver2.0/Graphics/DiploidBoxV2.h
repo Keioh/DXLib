@@ -16,6 +16,8 @@ class DiploidBoxV2
 	float move_angle;//オブジェクトの移動方向
 	VECTOR box_size;//四角の大きさ
 
+	float object_scale_x = 1.0f;
+	float object_scale_y = 1.0f;
 	unsigned int object_color;//色
 	bool object_fill;//塗りつぶし
 	float object_thickness;//太さ
@@ -29,7 +31,7 @@ protected:
 
 public:
 
-	void Init(VECTOR pos, VECTOR size, unsigned int color, bool fill = FALSE, float thickness = 1.0f);
+	void Init(VECTOR pos, VECTOR size, unsigned int color, float scale = 1.0f, bool fill = FALSE, float thickness = 1.0f);
 	void MoveUpdate();//設定した移動速度を反映します。
 	void Draw(bool draw = true);//円を描画します。(drawにfalseを入れることで描画しない)
 
@@ -38,6 +40,7 @@ public:
 	void SetSize(VECTOR new_size);//新しい大きさを設定します。
 	void SetFill(bool new_fill);//新たに塗りつぶしを設定します。
 	void SetThickness(float new_thickness);//新たに線の太さを設定します。
+	void SetScale(float new_scale_x, float new_scale_y);//新たにスケール値を設定します。
 
 	void SetName(string new_name);//新たにオブジェクトの名前を設定します。
 	void SetObjectNumber(int new_number);//新しいオブジェクト番号を設定します。
@@ -53,6 +56,8 @@ public:
 
 	VECTOR GetPosition();//現在の位置を取得します。
 	VECTOR GetSize();//現在の大きさを取得します。
+	float GetScaleX();//現在のX方向のスケール値を取得します。
+	float GetScaleY();//現在のX方向のスケール値を取得します。
 	float GetThickness();//現在の線の太さを取得します。
 	unsigned int GetColor();//現在の色を取得します。
 	bool GetFill();//現在の塗りつぶしの設定を取得します。

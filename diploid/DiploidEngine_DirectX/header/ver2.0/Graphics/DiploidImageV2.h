@@ -40,12 +40,14 @@ public:
 	void MoveUpdate();//設定した移動速度を反映します。
 	void Draw(bool draw = true);//画像を描画します。
 
+	void SetHandl(int new_handl);//画像ハンドルを設定します。
 	void SetScale(float scale_x, float scale_y);//画像の表示倍率を変更します。
 	void SetAngle(float new_angle);//新しく回転角を設定します。
 	void SetPosition(VECTOR new_position);//新しく表示位置を設定します。
 	void SetTurnFlag(bool new_flag);//新しく画像反転フラグを設定します。
 	void SetRotatePosition(VECTOR new_position);//新しく回転軸を設定します。
 	void SetBright(float scale = 1.0f);//明るさを設定します。(1.0fで100%)
+	void SetBright(int red, int green, int blue);//明るさを指定します。
 
 	void SetMoveSpeed(VECTOR new_move_speed);//新しく移動する速度を設定します。(3軸指定版)
 	void SetMoveSpeed(float angle, float new_move_speed);//新しく移動する速度を設定します。(ラジアン角指定版)
