@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
 #include "diploidApp\DiploidEngineApp.h"
@@ -7,6 +8,8 @@
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	DiploidEngineApp *diploid_engine_app = new DiploidEngineApp();//ループなどの処理もろもろ
+	
+	//std::shared_ptr<DiploidEngineApp> diploid_engine_app;
 
 	diploid_engine_app->diploidEngineSetting.Init();//エンジン初期化
 	
@@ -52,7 +55,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		diploid_engine_app->diploidEngineScreen.Update();//FPSをアップデート
 
-		diploid_engine_app->diploidEngineScreen.Draw(800,0);//FPSを表示(debug情報あり)
+		diploid_engine_app->diploidEngineScreen.Draw(800,0,true);//FPSを表示(debug情報あり)
 
 		ScreenFlip();//表画面へ描写
 
@@ -68,6 +71,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	diploid_engine_app->diploidEngineSetting.End();//エンジンの終了
 
 	delete diploid_engine_app;
+
+	//diploid_engine_app.reset();
 
 	return 0;
 }

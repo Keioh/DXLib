@@ -13,6 +13,7 @@ void CommandUI::Load()
 	construction.Load(construction_graphics.GetGraphicsHandl());//建設コマンドの画像ハンドルを渡す。
 	politics.Load(politics_graphics.GetGraphicsHandl());//政治コマンドの画像ハンドルを渡す。
 
+	military_ui.Load();
 }
 
 void CommandUI::Init(VECTOR pos, float scale)
@@ -30,6 +31,9 @@ void CommandUI::Init(VECTOR pos, float scale)
 	//生産コマンド
 	production.Init(VGet(pos.x + (512 * scale), pos.y, 0.0f), VGet(512, 256, 0), scale);
 
+
+	//軍事コマンド表(仮)
+	military_ui.Init(VGet(pos.x + (1024 * scale), pos.y, 0.0f), 0.55f);
 }
 
 void CommandUI::Updata(DiploidEngineInput* input)
@@ -89,6 +93,12 @@ void CommandUI::Updata(DiploidEngineInput* input)
 			production.SetSelectedUI(-1);
 		}
 
+		//生産コマンドが選択されていたら
+		if (production.GetSelectedUI() == 1)
+		{
+			//軍事生産UIの更新
+			military_ui.Updata(input);
+		}
 
 		//建設コマンドが選択されていなかったら
 		if (construction.GetSelectedUI() == -1)
@@ -117,6 +127,11 @@ void CommandUI::Draw(bool draw, bool debug)
 		{
 			//生産コマンドの描画
 			production.Draw(draw, debug);
+
+			if (production.GetSelectedUI() == 1)
+			{
+				military_ui.Draw(draw, debug);
+			}
 		}
 	}
 }
@@ -124,7 +139,8 @@ void CommandUI::Draw(bool draw, bool debug)
 
 bool CommandUI::GetHit()
 {
-	if ((military.GetHit() || production.GetHit() || construction.GetHit() || politics.GetHit()) == true)
+	if ((military.GetHit() || production.GetHit() || construction.GetHit() || politics.GetHit() ||
+		military_ui.GetHit()) == true)
 	{
 		return true;
 	}

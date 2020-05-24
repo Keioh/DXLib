@@ -79,7 +79,7 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
-	bool debug = true;
+	bool debug = false;
 
 	map.Draw(true, debug);//マップの描画
 
@@ -112,7 +112,7 @@ void DiploidEngineApp::Draw()//結果を描写する処理
 
 }
 
-void DiploidEngineApp::Destory()//ループ中に削除したいオブジェクトがある場合はここで削除処理を書く。
+void DiploidEngineApp::Destory()//ループ中に削除したいオブジェクト(ver1.0)がある場合はここで削除処理を書く。
 {
 
 }

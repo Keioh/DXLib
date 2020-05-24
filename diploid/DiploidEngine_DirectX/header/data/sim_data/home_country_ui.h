@@ -5,6 +5,8 @@
 #include "ver2.0/Graphics/DiploidImageV2.h"
 #include "diploidInput/DiploidEngineInput.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
+#include "data/sim_data/military_ui.h"
+
 
 class CommandUI
 {
@@ -20,6 +22,8 @@ private:
 
 	int bright_red = 255, bright_green = 255, bright_blue = 255;//画像の輝度の数値
 
+
+	MilitaryUI military_ui;
 
 	DiploidImageV2 military_graphics;//軍事コマンドの画像
 	DiploidImageV2 production_graphics;//生産コマンドの画像

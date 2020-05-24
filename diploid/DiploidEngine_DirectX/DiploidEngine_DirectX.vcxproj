@@ -150,9 +150,11 @@
     <ClCompile Include="cpp\data\dice_3d6n.cpp" />
     <ClCompile Include="cpp\data\dice_result_bord.cpp" />
     <ClCompile Include="cpp\data\number.cpp" />
+    <ClCompile Include="cpp\data\sim_data\ConditionalButton.cpp" />
     <ClCompile Include="cpp\data\sim_data\fild.cpp" />
     <ClCompile Include="cpp\data\sim_data\fild_map.cpp" />
     <ClCompile Include="cpp\data\sim_data\home_country_ui.cpp" />
+    <ClCompile Include="cpp\data\sim_data\military_ui.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
@@ -201,9 +203,11 @@
     <ClInclude Include="header\data\dice_3d6n.h" />
     <ClInclude Include="header\data\dice_result_bord.h" />
     <ClInclude Include="header\data\number.h" />
+    <ClInclude Include="header\data\sim_data\ConditionalButton.h" />
     <ClInclude Include="header\data\sim_data\fild.h" />
     <ClInclude Include="header\data\sim_data\fild_map.h" />
     <ClInclude Include="header\data\sim_data\home_country_ui.h" />
+    <ClInclude Include="header\data\sim_data\military_ui.h" />
     <ClInclude Include="header\data\sim_data\sim_define.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />

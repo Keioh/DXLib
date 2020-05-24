@@ -803,6 +803,7 @@ void DiploidEngineImpact::AutoNumber()
 	int line_count = 0;
 
 	//box
+	#pragma omp parallel for
 	for (auto count = box_vector.begin(); count != box_vector.end(); ++count)
 	{
 		count->number = box_count;//オブジェクト番号を変更
@@ -812,6 +813,7 @@ void DiploidEngineImpact::AutoNumber()
 	point_count = box_count;//box_countの値をpoint_countに引き継ぐ
 
 	//point
+	#pragma omp parallel for
 	for (auto count = point_vector.begin(); count != point_vector.end(); ++count)
 	{
 		count->number = point_count + box_count;//オブジェクト番号を変更
@@ -821,6 +823,7 @@ void DiploidEngineImpact::AutoNumber()
 	circle_count = point_count;//point_countの値をcircle_countに引き継ぐ
 
 	//circle
+	#pragma omp parallel for
 	for (auto count = circle_vector.begin(); count != circle_vector.end(); ++count)
 	{
 		count->number = circle_count + box_count + point_count;//オブジェクト番号を変更
@@ -830,6 +833,7 @@ void DiploidEngineImpact::AutoNumber()
 	line_count = circle_count;//point_countの値をcircle_countに引き継ぐ
 
 	//line
+	#pragma omp parallel for
 	for (auto count = line_vector.begin(); count != line_vector.end(); ++count)
 	{
 		count->number = line_count + box_count + point_count + circle_count;//オブジェクト番号を変更
@@ -898,6 +902,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			//円がヒットしていたら
@@ -916,6 +921,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 
 	if (!point_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			//点がヒットしていたら
@@ -934,6 +940,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			//四角がヒットしていたら
@@ -952,6 +959,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 
 	if (!line_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			//線分がヒットしていたら
@@ -991,6 +999,7 @@ void DiploidEngineImpact::SetBoxPositionAnimation(int number, VECTOR move_speed)
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1005,6 +1014,7 @@ void DiploidEngineImpact::SetBoxPositionAnimationX(int number, float move_speed)
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1019,6 +1029,7 @@ void DiploidEngineImpact::SetBoxPositionAnimationY(int number, float move_speed)
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1033,6 +1044,7 @@ void DiploidEngineImpact::SetBoxPositionAnimationZ(int number, float move_speed)
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1048,6 +1060,7 @@ void DiploidEngineImpact::SetBoxPositionAnimation_Sreach_Object_Name(std::string
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->name_tag == name_tag)
@@ -1062,6 +1075,7 @@ void DiploidEngineImpact::SetBoxPositionAnimationX_Sreach_Object_Name(std::strin
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->name_tag == name_tag)
@@ -1076,6 +1090,7 @@ void DiploidEngineImpact::SetBoxPositionAnimationY_Sreach_Object_Name(std::strin
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->name_tag == name_tag)
@@ -1090,6 +1105,7 @@ void DiploidEngineImpact::SetBoxPositionAnimationZ_Sreach_Object_Name(std::strin
 {
 	if (!box_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->name_tag == name_tag)
@@ -1105,6 +1121,7 @@ void DiploidEngineImpact::SetCirclePositionAnimation(int number, VECTOR move_spe
 {
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1119,6 +1136,7 @@ void DiploidEngineImpact::SetCirclePositionAnimationX(int number, float move_spe
 {
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1133,6 +1151,7 @@ void DiploidEngineImpact::SetCirclePositionAnimationY(int number, float move_spe
 {
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1148,6 +1167,7 @@ void DiploidEngineImpact::SetCirclePositionAnimation_Sreach_Object_Name(std::str
 {
 	if (!circle_vector.empty())
 	{
+		#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->name_tag == name_tag)
@@ -1162,6 +1182,7 @@ void DiploidEngineImpact::SetCirclePositionAnimationX_Sreach_Object_Name(std::st
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->name_tag == name_tag)
@@ -1176,6 +1197,7 @@ void DiploidEngineImpact::SetCirclePositionAnimationY_Sreach_Object_Name(std::st
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->name_tag == name_tag)
@@ -1191,6 +1213,7 @@ void DiploidEngineImpact::SetPointPositionAnimation(int number, VECTOR move_spee
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
@@ -1205,6 +1228,7 @@ void DiploidEngineImpact::SetPointPositionAnimationX(int number, float move_spee
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
@@ -1219,6 +1243,7 @@ void DiploidEngineImpact::SetPointPositionAnimationY(int number, float move_spee
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
@@ -1234,6 +1259,7 @@ void DiploidEngineImpact::SetPointPositionAnimation_Sreach_Object_Name(std::stri
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->name_tag == name_tag)
@@ -1248,6 +1274,7 @@ void DiploidEngineImpact::SetPointPositionAnimationX_Sreach_Object_Name(std::str
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->name_tag == name_tag)
@@ -1262,6 +1289,7 @@ void DiploidEngineImpact::SetPointPositionAnimationY_Sreach_Object_Name(std::str
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->name_tag == name_tag)
@@ -1277,6 +1305,7 @@ void DiploidEngineImpact::SetBoxSizeAnimation(int number, VECTOR move_size)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1291,6 +1320,7 @@ void DiploidEngineImpact::SetCircleSizeAnimation(int number, float move_size)
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1306,6 +1336,7 @@ void DiploidEngineImpact::SetBoxPositionAdd(int number, VECTOR position)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1322,6 +1353,7 @@ void DiploidEngineImpact::SetBoxPositionYAdd(int number, float position)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1337,6 +1369,7 @@ void DiploidEngineImpact::SetBoxPosition(int number, VECTOR position)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1354,6 +1387,7 @@ void DiploidEngineImpact::SetCirclePositionAdd(int number, VECTOR position)
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1370,6 +1404,7 @@ void DiploidEngineImpact::SetPointPositionAdd(int number, VECTOR position)
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
@@ -1387,6 +1422,7 @@ VECTOR DiploidEngineImpact::GetBoxCenterPosition(int number)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1401,6 +1437,7 @@ VECTOR DiploidEngineImpact::GetCircleCenterPosition(int number)
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1415,6 +1452,7 @@ VECTOR DiploidEngineImpact::GetPointPosition(int number)
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
@@ -1788,6 +1826,7 @@ bool DiploidEngineImpact::GetBoxImpactFlag(int number)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->number == number)
@@ -1804,6 +1843,7 @@ bool DiploidEngineImpact::GetPointImpactFlag(int number)
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->number == number)
@@ -1820,6 +1860,7 @@ bool DiploidEngineImpact::GetCircleImpactFlag(int number)
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->number == number)
@@ -1836,6 +1877,7 @@ bool DiploidEngineImpact::GetLineImpactFlag(int number)
 {
 	if (!line_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			if (line->number == number)
@@ -1853,6 +1895,7 @@ bool DiploidEngineImpact::GetBoxImpactFlag_Sreach_Name_Tag(std::string name_tag)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			if (box->name_tag == name_tag)
@@ -1872,6 +1915,7 @@ bool DiploidEngineImpact::GetPointImpactFlag_Sreach_Name_Tag(std::string name_ta
 {
 	if (!point_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
 			if (point->name_tag == name_tag)
@@ -1891,6 +1935,7 @@ bool DiploidEngineImpact::GetCircleImpactFlag_Sreach_Name_Tag(std::string name_t
 {
 	if (!circle_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
 			if (circle->name_tag == name_tag)
@@ -1910,6 +1955,7 @@ bool DiploidEngineImpact::GetLineImpactFlag_Sreach_Name_Tag(std::string name_tag
 {
 	if (!line_vector.empty())
 	{
+#pragma omp parallel for
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			if (line->name_tag == name_tag)
@@ -1930,6 +1976,7 @@ DiploidBox DiploidEngineImpact::GetBoxInfo(int number)
 {
 	if (!box_vector.empty())
 	{
+#pragma omp parallel for
 		for (int count = 0; count != box_vector.size(); ++count)
 		{
 			if (box_vector[count].number == number)

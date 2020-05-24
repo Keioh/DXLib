@@ -60,19 +60,24 @@ void FildMap::Updata(DiploidEngineInput* input)
 	//カメラの移動
 	CameraInput(input);
 
+	#pragma omp parallel for
 	for (int x = 0; x != MAP_SIZE_X - 1; ++x)
 	{
+		#pragma omp parallel for
 		for (int y = 0; y != MAP_SIZE_Y - 1; ++y)
-		{
+		{	
+			
 			fild[y][x].Init(VGet((x * (1024 * (scale + mouse_scrole))) + camera_x + map_shift.x, (y * (1024 * (scale + mouse_scrole))) + camera_y + map_shift.y, 0.0f), scale + mouse_scrole);//地形の大きさと移動
-
 			fild[y][x].Updata(input);//地形の更新
+
 
 			//クリックされた場所以外のクリックフラグをfalseに
 			if (fild[y][x].GetClick() == 1)
 			{
+				#pragma omp parallel for
 				for (int X = 0; X != MAP_SIZE_X - 1; ++X)
 				{
+					#pragma omp parallel for
 					for (int Y = 0; Y != MAP_SIZE_Y - 1; ++Y)
 					{						
 						if ((X != x) || (Y != y))
@@ -82,7 +87,7 @@ void FildMap::Updata(DiploidEngineInput* input)
 					}
 				}
 			}	
-
+			
 			//自分の領域を更新
 			if (fild[y][x].GetBuildingType() == BUILDING_TYPE_MY_BASE)//自拠点が建っていたら周囲一マスを自分の領域にする。
 			{
@@ -107,8 +112,10 @@ void FildMap::Updata(DiploidEngineInput* input)
 
 void FildMap::Draw(bool draw, bool debug)
 {
+	#pragma omp parallel for
 	for (int x = 0; x != MAP_SIZE_X - 1; ++x)
 	{
+		#pragma omp parallel for
 		for (int y = 0; y != MAP_SIZE_Y - 1; ++y)
 		{
 			fild[y][x].Draw(draw, debug);//地形の描写
@@ -130,8 +137,10 @@ Fild FildMap::GetClickedFildInfomation()
 {
 	Fild buffer;
 
+	#pragma omp parallel for
 	for (int x = 0; x != MAP_SIZE_X - 1; ++x)
 	{
+		#pragma omp parallel for
 		for (int y = 0; y != MAP_SIZE_Y - 1; ++y)
 		{
 			if (fild[y][x].GetClick() == 1)
@@ -148,8 +157,10 @@ Fild FildMap::GetHitFildInfomation()
 {
 	Fild buffer;
 
+	#pragma omp parallel for
 	for (int x = 0; x != MAP_SIZE_X - 1; ++x)
 	{
+		#pragma omp parallel for
 		for (int y = 0; y != MAP_SIZE_Y - 1; ++y)
 		{
 			if (fild[y][x].GetHit() == true)
@@ -165,8 +176,10 @@ Fild FildMap::GetHitFildInfomation()
 
 void FildMap::SetCollisionActiveFlag(bool flag)
 {
+	#pragma omp parallel for
 	for (int x = 0; x != MAP_SIZE_X - 1; ++x)
 	{
+		#pragma omp parallel for
 		for (int y = 0; y != MAP_SIZE_Y - 1; ++y)
 		{
 			fild[y][x].SetCollisionActiveFlag(flag);

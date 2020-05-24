@@ -294,6 +294,12 @@
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\data\sim_data\military_ui.cpp">
+      <Filter>ソース ファイル\data\sim_data</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\sim_data\ConditionalButton.cpp">
+      <Filter>ソース ファイル\data\sim_data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -448,6 +454,12 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\sim_data\military_ui.h">
+      <Filter>ヘッダー ファイル\data\sim_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\sim_data\ConditionalButton.h">
+      <Filter>ヘッダー ファイル\data\sim_data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
