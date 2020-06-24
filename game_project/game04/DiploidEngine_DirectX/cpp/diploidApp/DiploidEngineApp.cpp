@@ -12,10 +12,14 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	hp_ui.LoadGraphics();
 	hp_ui.LoadGraphicsHandle();
 
+	//DP‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
+	dp_ui.LoadGraphics();
+	dp_ui.LoadGraphicsHandle();
+
 	ground_line.LoadGraphics();
 	forest.Load("texter/res/stage/forest.png");
 	
-	
+	/*
 	test.Load("texter/res/dp/0.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 
@@ -42,7 +46,7 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 	test.Load("texter/res/dp/8.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
-
+	*/
 
 	player.LoadGraphics();
 }
@@ -57,18 +61,21 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//ƒvƒŒƒCƒ„[‚Ì‰Šú‰»
 	player.Init(VGet(1280/2, ground_line.GetGroundLine() - player.GetPlayerSize(), 0));
 
-	hp_ui.Init(VGet(24, 24, 0), 1.5f);
+	//HP_UI‚Ì‰Šú‰»
+	hp_ui.Init(VGet(20, 20, 0), 1.5f);
+
+	//DP_UI‚Ì‰Šú‰»
+	dp_ui.Init(VGet(20, 100, 0), 1.5f);
 
 	for (int n = 0; n <= 5; ++n)
-	{	
-		
-		enemy_data.pos = VGet(GetRand(1280), ground_line.GetGroundLine() - 20, 0);
-		enemy_data.size = 20.0f;
+	{		
+		enemy_data.size = GetRand(10.0f) + 10.0f;		
+		enemy_data.pos = VGet(GetRand(1280), ground_line.GetGroundLine() - enemy_data.size, 0);
 		enemy_data.move_speed = 1.0f;
 		enemy_data.hit_point = 3;
 		enemy_data.attack_speed = 80.0f;
 		enemy_data.attack_size = enemy_data.size * 1.5f;
-		enemy_data.counter_time = 20.0f;
+		enemy_data.counter_time = 18.0f;
 		enemy_data.knock_back_scale = 50.0f;
 
 		test_enemy.LoadGraphics();
@@ -89,6 +96,7 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 	player.Updata();
 
 	hp_ui.Updata(player);
+	dp_ui.Updata(player);
 
 	enemy_manager.Updata();
 
@@ -156,6 +164,7 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	enemy_manager.Draw();
 
 	hp_ui.Draw();
+	dp_ui.Draw();
 
 	anime.Draw();
 }

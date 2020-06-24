@@ -26,6 +26,7 @@
 #include "data/res_data/enemy/enemy_manager.h"
 #include "data/res_data/enemy/test_enemy.h"
 #include "data/res_data/UI/hp_ui.h"
+#include "data/res_data/UI/dp_ui.h"
 
 using namespace std;
 
@@ -43,6 +44,7 @@ private:
 	GroundLine ground_line;//グラウンドライン
 
 	HpUI hp_ui;
+	DpUI dp_ui;
 
 	DiploidImageV2 forest;
 

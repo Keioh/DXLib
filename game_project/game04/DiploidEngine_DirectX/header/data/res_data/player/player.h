@@ -62,6 +62,7 @@ public:
 
 	void SetPlayerSize(float new_size);
 	float GetPlayerSize();
+	float GetPlayerDefensePoint();
 
 	DiploidCircleV2* PlayerCirclePtr();
 

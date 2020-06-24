@@ -208,6 +208,11 @@ float Player::GetPlayerSize()
 	return player_size;
 }
 
+float Player::GetPlayerDefensePoint()
+{
+	return defense_point;
+}
+
 
 DiploidCircleV2* Player::PlayerCirclePtr()
 {
