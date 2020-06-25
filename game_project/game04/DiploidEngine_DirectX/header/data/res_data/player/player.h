@@ -23,6 +23,7 @@ private:
 	float attack_range = 45.0f;//UŒ‚‹——£
 	float attack_size = 30.0f;//UŒ‚‚Ì‘å‚«‚³
 	float defense_size = 70.0f;//–hŒä‚Ì‘å‚«‚³
+	float enemy_destory_volume = 0.0f;
 
 	//Player–{‘Ì
 	DiploidCircleV2 player;
@@ -61,8 +62,11 @@ public:
 	void Draw(bool debug = false, bool draw = true);
 
 	void SetPlayerSize(float new_size);
+	void isEnemyDestoryHelthRecovery(float destory_enemy_volume);//“G‚ª“|‚³‚ê‚½‚Æ‚«‚É1‘«‚³‚ê‚é
+
 	float GetPlayerSize();
 	float GetPlayerDefensePoint();
+	float GetEnemyDestoryVolume();
 
 	DiploidCircleV2* PlayerCirclePtr();
 

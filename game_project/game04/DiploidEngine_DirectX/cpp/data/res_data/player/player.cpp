@@ -195,6 +195,8 @@ void Player::Draw(bool debug, bool draw)
 	//DrawFormatString(0, 20, GetColor(255, 255, 255), "HP = %.0f", player.GetLife());
 	//DrawFormatString(0, 40, GetColor(255, 255, 255), "Hit = %d", player.GetHitFlag());
 	//DrawFormatString(0, 60, GetColor(255, 255, 255), "DF = %.0f", defense_point);
+	//DrawFormatString(0, 80, GetColor(255, 255, 255), "EnemyDestroyVolumeOnHelthRecovery = %.0f", enemy_destory_volume);
+
 }
 
 
@@ -202,6 +204,12 @@ void Player::SetPlayerSize(float new_size)
 {
 	player_size = new_size;
 }
+
+void Player::isEnemyDestoryHelthRecovery(float destory_enemy_volume)
+{
+	enemy_destory_volume = destory_enemy_volume;
+}
+
 
 float Player::GetPlayerSize()
 {
@@ -211,6 +219,11 @@ float Player::GetPlayerSize()
 float Player::GetPlayerDefensePoint()
 {
 	return defense_point;
+}
+
+float Player::GetEnemyDestoryVolume()
+{
+	return enemy_destory_volume;
 }
 
 

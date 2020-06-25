@@ -27,6 +27,7 @@
 #include "data/res_data/enemy/test_enemy.h"
 #include "data/res_data/UI/hp_ui.h"
 #include "data/res_data/UI/dp_ui.h"
+#include "data/res_data/UI/enemy_destory_ui.h"
 
 using namespace std;
 
@@ -45,6 +46,7 @@ private:
 
 	HpUI hp_ui;
 	DpUI dp_ui;
+	EnemyDestoryUI enemy_destory_ui;
 
 	DiploidImageV2 forest;
 

@@ -72,7 +72,6 @@ void _TestEnemy::Updata()
 		data_buffer.attack_speed = 0.0f;//攻撃バッファを初期化
 		counter_flag = false;//カウンターフラグをfalseに
 		circle.SetHitFlag(false);//ヒットフラグをfalseに
-
 	}
 	else
 	{			
@@ -133,7 +132,7 @@ void _TestEnemy::Updata()
 			move_pattern.Destory();
 			circle.SetDestoryFlag(true);
 		}
-	}	
+	}
 }
 
 void _TestEnemy::Draw(bool draw)
@@ -158,6 +157,11 @@ void _TestEnemy::SetMoveSpeed(float new_speed)
 	data.move_speed = new_speed;
 }
 
+void _TestEnemy::isSetDestoryFlag(bool new_flag)
+{
+	destory_flag = new_flag;
+}
+
 
 EnemyData* _TestEnemy::GetDataPtr()
 {
@@ -168,6 +172,7 @@ bool _TestEnemy::GetCounterFlag()
 {
 	return counter_flag;
 }
+
 
 DiploidCircleV2* _TestEnemy::GetCirclePtr()
 {

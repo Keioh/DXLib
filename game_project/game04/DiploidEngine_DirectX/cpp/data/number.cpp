@@ -7,81 +7,101 @@ Number::Number()
 
 void Number::Load()
 {
-	number_1.image.Load("texter/number/1.png");
-	number_2.image.Load("texter/number/2.png");
-	number_3.image.Load("texter/number/3.png");
-	number_4.image.Load("texter/number/4.png");
-	number_5.image.Load("texter/number/5.png");
-	number_6.image.Load("texter/number/6.png");
-	number_7.image.Load("texter/number/7.png");
-	number_8.image.Load("texter/number/8.png");
-	number_9.image.Load("texter/number/9.png");
-	number_0.image.Load("texter/number/0.png");
+	number_1.Load("texter/number/1.png");
+	number_2.Load("texter/number/2.png");
+	number_3.Load("texter/number/3.png");
+	number_4.Load("texter/number/4.png");
+	number_5.Load("texter/number/5.png");
+	number_6.Load("texter/number/6.png");
+	number_7.Load("texter/number/7.png");
+	number_8.Load("texter/number/8.png");
+	number_9.Load("texter/number/9.png");
+	number_0.Load("texter/number/0.png");
 
 }
 
 void Number::Init(VECTOR pos, float scale)
 {
-	number_1.image.Init(pos, scale);
-	number_2.image.Init(pos, scale);
-	number_3.image.Init(pos, scale);
-	number_4.image.Init(pos, scale);
-	number_5.image.Init(pos, scale);
-	number_6.image.Init(pos, scale);
-	number_7.image.Init(pos, scale);
-	number_8.image.Init(pos, scale);
-	number_9.image.Init(pos, scale);
-	number_0.image.Init(pos, scale);
+	number_1.Init(pos, false);
+	number_1.SetScale(scale, scale);
+
+	number_2.Init(pos, false);
+	number_2.SetScale(scale, scale);
+
+	number_3.Init(pos, false);
+	number_3.SetScale(scale, scale);
+
+	number_4.Init(pos, false);
+	number_4.SetScale(scale, scale);
+
+	number_5.Init(pos, false);
+	number_5.SetScale(scale, scale);
+
+	number_6.Init(pos, false);
+	number_6.SetScale(scale, scale);
+
+	number_7.Init(pos, false);
+	number_7.SetScale(scale, scale);
+
+	number_8.Init(pos, false);
+	number_8.SetScale(scale, scale);
+
+	number_9.Init(pos, false);
+	number_9.SetScale(scale, scale);
+
+	number_0.Init(pos, false);
+	number_0.SetScale(scale, scale);
+
 
 }
 
-void Number::Update()
+void Number::Update(int number)
 {
-
+	case_number = number;
 }
 
-void Number::Draw(int number, bool draw)
+void Number::Draw(bool draw)
 {
-	switch (number)
+	switch (case_number)
 	{
 	case 0:
-		number_0.image.Draw(draw);
+		number_0.Draw(draw);
 		break;
 
 	case 1:
-		number_1.image.Draw(draw);
+		number_1.Draw(draw);
 		break;
 
 	case 2:
-		number_2.image.Draw(draw);
+		number_2.Draw(draw);
 		break;
 
 	case 3:
-		number_3.image.Draw(draw);
+		number_3.Draw(draw);
 		break;
 
 	case 4:
-		number_4.image.Draw(draw);
+		number_4.Draw(draw);
 		break;
 
 	case 5:
-		number_5.image.Draw(draw);
+		number_5.Draw(draw);
 		break;
 
 	case 6:
-		number_6.image.Draw(draw);
+		number_6.Draw(draw);
 		break;
 
 	case 7:
-		number_7.image.Draw(draw);
+		number_7.Draw(draw);
 		break;
 
 	case 8:
-		number_8.image.Draw(draw);
+		number_8.Draw(draw);
 		break;
 
 	case 9:
-		number_9.image.Draw(draw);
+		number_9.Draw(draw);
 		break;
 
 	default:
@@ -101,42 +121,46 @@ void Number1000::Load()
 	number_2.Load();
 	number_3.Load();
 	number_4.Load();
-
 }
 
 void Number1000::Init(VECTOR pos, float scale)
 {
-	number_1.Init(VAdd(pos, VGet(0 + (24 * 2), -72, 0)), scale);
-	number_2.Init(VAdd(pos, VGet(-24 + (24 * 2), -72, 0)), scale);
-	number_3.Init(VAdd(pos, VGet(-48 + (24 * 2), -72, 0)), scale);
-	number_4.Init(VAdd(pos, VGet(-72 + (24 * 2), -72, 0)), scale);
-
+	number_1.Init(pos, scale);
+	number_2.Init(VGet(pos.x - (24 * scale), pos.y, pos.z), scale);
+	number_3.Init(VGet(pos.x - ((24 * 2) * scale), pos.y, pos.z), scale);
+	number_4.Init(VGet(pos.x - ((24 * 3) * scale), pos.y, pos.z), scale);
 }
 
-void Number1000::Update()
+void Number1000::Update(int number)
 {
-
+	case_number = number;
+	number_1.Update(case_number % 10);
+	number_2.Update((case_number / 10) % 10);
+	number_3.Update((case_number / 100) % 10);
+	number_4.Update((case_number / 1000) % 10);
 }
 
-void Number1000::Draw(int number, bool draw)
+void Number1000::Draw(bool draw)
 {
-	if (number >= 0)
+	if (case_number >= 0)
 	{
-		number_1.Draw(number % 10);//”š‚ğ•\¦(‚P‚ÌˆÊ)
+		number_1.Draw(draw);//”š‚ğ•\¦(‚P‚ÌˆÊ)
 
-		if (number >= 10)
+		if (case_number >= 10)
 		{
-			number_2.Draw((number / 10) % 10);//”š‚ğ•\¦(‚P‚O‚ÌˆÊ)
+			number_2.Draw(draw);//”š‚ğ•\¦(‚P‚O‚ÌˆÊ)
 
-			if (number >= 100)
+			if (case_number >= 100)
 			{
-				number_3.Draw((number / 100) % 10);//”š‚ğ•\¦(‚P‚O‚O‚ÌˆÊ)
+				number_3.Draw(draw);//”š‚ğ•\¦(‚P‚O‚O‚ÌˆÊ)
 
-				if (number >= 1000)
+				if (case_number >= 1000)
 				{
-					number_4.Draw((number / 1000) % 10);//”š‚ğ•\¦(‚P‚O‚O‚O‚ÌˆÊ)
+					number_4.Draw(draw);//”š‚ğ•\¦(‚P‚O‚O‚O‚ÌˆÊ)
 				}
 			}
 		}
 	}
+
+	//DrawFormatString(0, 200, GetColor(255, 255, 255), "%d", case_number);
 }

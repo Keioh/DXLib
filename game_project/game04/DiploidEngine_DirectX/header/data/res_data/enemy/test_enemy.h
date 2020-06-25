@@ -27,6 +27,8 @@ private:
 	float counter_time_buffer;
 	bool counter_flag = false;
 
+	bool destory_flag = false;
+
 public:
 	void SetEnemyData(EnemyData new_data);
 	void LoadGraphics();
@@ -34,8 +36,10 @@ public:
 	void Updata();
 	void Draw(bool draw = true);
 
+	void isSetDestoryFlag(bool new_flag);
 	void SetMoveSpeed(float new_speed);
 	bool GetCounterFlag();
+
 
 	EnemyData* GetDataPtr();
 	DiploidCircleV2* GetCirclePtr();

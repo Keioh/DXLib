@@ -261,19 +261,7 @@
     <ClCompile Include="cpp\diploidPhysics\diploidPhysics.cpp">
       <Filter>ソース ファイル\cpp\diploidPhysics</Filter>
     </ClCompile>
-    <ClCompile Include="cpp\data\dice.cpp">
-      <Filter>ソース ファイル\data</Filter>
-    </ClCompile>
     <ClCompile Include="cpp\data\number.cpp">
-      <Filter>ソース ファイル\data</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\data\custom_number.cpp">
-      <Filter>ソース ファイル\data</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\data\dice_3d6n.cpp">
-      <Filter>ソース ファイル\data</Filter>
-    </ClCompile>
-    <ClCompile Include="cpp\data\dice_result_bord.cpp">
       <Filter>ソース ファイル\data</Filter>
     </ClCompile>
     <ClCompile Include="cpp\diploidStandalone\graphics\diploidBoxSA.cpp">
@@ -346,6 +334,15 @@
       <Filter>ソース ファイル\data\res_data\UI</Filter>
     </ClCompile>
     <ClCompile Include="cpp\data\res_data\UI\dp_ui.cpp">
+      <Filter>ソース ファイル\data\res_data\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\res_data\UI\enemy_destory_ui.cpp">
+      <Filter>ソース ファイル\data\res_data\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\res_data\UI\cp_recovery_ui.cpp">
+      <Filter>ソース ファイル\data\res_data\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\res_data\UI\hp_recovery_ui.cpp">
       <Filter>ソース ファイル\data\res_data\UI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -437,19 +434,7 @@
     <ClInclude Include="header\diploidPhysics\diploidPhysics.h">
       <Filter>ヘッダー ファイル\header\diploidPhysics</Filter>
     </ClInclude>
-    <ClInclude Include="header\data\dice.h">
-      <Filter>ヘッダー ファイル\data</Filter>
-    </ClInclude>
     <ClInclude Include="header\data\number.h">
-      <Filter>ヘッダー ファイル\data</Filter>
-    </ClInclude>
-    <ClInclude Include="header\data\custom_number.h">
-      <Filter>ヘッダー ファイル\data</Filter>
-    </ClInclude>
-    <ClInclude Include="header\data\dice_3d6n.h">
-      <Filter>ヘッダー ファイル\data</Filter>
-    </ClInclude>
-    <ClInclude Include="header\data\dice_result_bord.h">
       <Filter>ヘッダー ファイル\data</Filter>
     </ClInclude>
     <ClInclude Include="header\diploidStandalone\graphics\diploidBoxSA.h">
@@ -525,6 +510,15 @@
       <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
     </ClInclude>
     <ClInclude Include="header\data\res_data\UI\dp_ui.h">
+      <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\res_data\UI\enemy_destory_ui.h">
+      <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\res_data\UI\cp_recovery_ui.h">
+      <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\res_data\UI\hp_recovery_ui.h">
       <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
     </ClInclude>
   </ItemGroup>

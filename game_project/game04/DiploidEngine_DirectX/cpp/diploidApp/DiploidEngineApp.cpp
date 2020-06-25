@@ -16,6 +16,10 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	dp_ui.LoadGraphics();
 	dp_ui.LoadGraphicsHandle();
 
+	//EnemyDestory‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
+	enemy_destory_ui.LoadGraphics();
+
+	
 	ground_line.LoadGraphics();
 	forest.Load("texter/res/stage/forest.png");
 	
@@ -67,7 +71,10 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//DP_UI‚Ì‰Šú‰»
 	dp_ui.Init(VGet(20, 100, 0), 1.5f);
 
-	for (int n = 0; n <= 5; ++n)
+	//Œ‚”j”UI‚Ì‰Šú‰»
+	enemy_destory_ui.Init(VGet(1280 - 40 - (128 * 1.0f), 20, 0), 1.0f);
+
+	for (int n = 0; n < 30; ++n)
 	{		
 		enemy_data.size = GetRand(10.0f) + 10.0f;		
 		enemy_data.pos = VGet(GetRand(1280), ground_line.GetGroundLine() - enemy_data.size, 0);
@@ -95,12 +102,14 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 
 	player.Updata();
 
+	enemy_manager.Updata();
+	enemy_manager.DestoryEnemy();
+
+	player.isEnemyDestoryHelthRecovery(enemy_manager.GetDestoryEnemyVolume());
+
 	hp_ui.Updata(player);
 	dp_ui.Updata(player);
-
-	enemy_manager.Updata();
-
-	enemy_manager.DestoryEnemy();
+	enemy_destory_ui.Updata(player);
 
 
 	if (!enemy_manager.GetPtr()->empty())
@@ -109,12 +118,12 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 		{
 			//“G‚Ìlist‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·
 			for (auto enemy_manager_itr = enemy_manager.GetPtr()->begin(); enemy_manager_itr != enemy_manager.GetPtr()->end(); ++enemy_manager_itr)
-			{
+			{	
 				//ƒvƒŒƒCƒ„[‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
 				for (auto palyer_attack_itr = player.GetAttackListPtr()->begin(); palyer_attack_itr != player.GetAttackListPtr()->end(); ++palyer_attack_itr)
 				{
 					//ƒvƒŒƒCƒ„[‚ÌUŒ‚‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
-					collision.CircleAndCircleCollisionUpdate(palyer_attack_itr->GetAttackCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());
+					collision.CircleAndCircleCollisionUpdate(palyer_attack_itr->GetAttackCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());	
 				}
 			}
 		}
@@ -130,7 +139,7 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 					//ƒvƒŒƒCƒ„[‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
 					for (auto palyer_defense_itr = player.GetDefenseListPtr()->begin(); palyer_defense_itr != player.GetDefenseListPtr()->end(); ++palyer_defense_itr)
 					{
-						//ƒvƒŒƒCƒ„[‚ÌUŒ‚‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
+						//ƒvƒŒƒCƒ„[‚Ì–hŒä(ƒJƒEƒ“ƒ^[)‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
 						collision.CircleAndCircleCollisionUpdate(palyer_defense_itr->GetDefenseCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());
 					}
 				}
@@ -165,6 +174,7 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 
 	hp_ui.Draw();
 	dp_ui.Draw();
+	enemy_destory_ui.Draw();
 
 	anime.Draw();
 }
