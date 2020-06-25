@@ -56,7 +56,7 @@ private:
 	DiploidImageV2 forest;
 
 
-	DiploidImageV2 test;
+	DiploidImageV2 test[9];
 	Animation anime;
 
 public:

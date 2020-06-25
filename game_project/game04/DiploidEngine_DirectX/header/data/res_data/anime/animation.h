@@ -10,6 +10,7 @@ private:
 	DiploidImageV2* _image_ptr = &_image;
 
 	std::list<DiploidImageV2> image_list;
+	std::list<DiploidImageV2>* image_list_ptr = &image_list;
 	std::list<DiploidImageV2>::iterator image_list_itr = image_list.begin();
 
 	float time = 0.0f;

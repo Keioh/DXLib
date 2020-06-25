@@ -30,17 +30,17 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	forest.Load("texter/res/stage/forest.png");
 	
 
-	test.Load("texter/res/enemy/enemy_00/0.png");
-	anime.LoadHandles(test.GetGraphicsHandl());
+	//test[0].Load("texter/res/enemy/enemy_00/0.png");
+	//test_enemy.LoadHandles(test[0].GetGraphicsHandl());
 
-	test.Load("texter/res/enemy/enemy_00/1.png");
-	anime.LoadHandles(test.GetGraphicsHandl());
+	//test[1].Load("texter/res/enemy/enemy_00/1.png");
+	//test_enemy.LoadHandles(test[1].GetGraphicsHandl());
 
-	test.Load("texter/res/enemy/enemy_00/2.png");
-	anime.LoadHandles(test.GetGraphicsHandl());
+	//test[2].Load("texter/res/enemy/enemy_00/2.png");
+	//test_enemy.LoadHandles(test[2].GetGraphicsHandl());
 
-	test.Load("texter/res/enemy/enemy_00/3.png");
-	anime.LoadHandles(test.GetGraphicsHandl());
+	//test[3].Load("texter/res/enemy/enemy_00/3.png");
+	//test_enemy.LoadHandles(test[3].GetGraphicsHandl());
 		/*
 	test.Load("texter/res/dp/4.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
@@ -57,6 +57,7 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	test.Load("texter/res/dp/8.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 	*/
+
 	test_enemy.LoadGraphics();
 
 	player.LoadGraphics();
@@ -64,7 +65,7 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {		
-	anime.Init(VGet(200, 200, 0), 4.0f, 2.0f);
+	//anime.Init(VGet(200, 200, 0), 4.0f, 2.0f);
 
 	//ƒOƒ‰ƒ“ƒhƒ‰ƒCƒ“‚Ì‰Šú‰»
 	ground_line.Init(550.0f);
@@ -99,11 +100,8 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 		enemy_data.counter_time = 18.0f;
 		enemy_data.knock_back_scale = 50.0f;
 		enemy_data.enemy_type = 0;
-		enemy_data.scale = GetRand(2);
 
 		test_enemy.SetEnemyData(enemy_data);
-
-		test_enemy.LoadHandles();
 		test_enemy.Init();
 
 		enemy_manager.PushBackEnemy(test_enemy);

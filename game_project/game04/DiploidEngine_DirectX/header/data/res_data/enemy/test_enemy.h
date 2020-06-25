@@ -16,7 +16,13 @@ private:
 
 	DiploidCircleV2 circle;
 
-	DiploidImageV2 move_image[5];
+	//アニメ	
+	int anime_frame_volume = 4;//アニメーションに使う画像の枚数
+	int anime_time = 0;//コマ送りの待機時間
+	int play_time = 4;//アニメーション再生速度
+	int anime_count = 0;//現在のコマ	
+	DiploidImageV2 move_image[5];//アニメ用画像の読み込み
+
 
 	std::list<EnemyAttack> attack_list;
 	EnemyAttack attack;
@@ -33,14 +39,10 @@ private:
 	bool destory_flag = false;
 
 
-	int anime_time = 0;
-	int play_time = 5;
-	int anime_count = 0;
-
 public:
 	void SetEnemyData(EnemyData new_data);
 	void LoadGraphics();
-	void LoadHandles();
+	void LoadHandles(int handle);
 	void Init();
 	void Updata();
 	void Draw(bool draw = true);

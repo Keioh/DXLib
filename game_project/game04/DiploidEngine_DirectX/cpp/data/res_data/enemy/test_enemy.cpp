@@ -17,7 +17,7 @@ void _TestEnemy::LoadGraphics()
 	move_image[3].Load("texter/res/enemy/enemy_00/3.png");
 }
 
-void _TestEnemy::LoadHandles()
+void _TestEnemy::LoadHandles(int handle)
 {	
 
 }
@@ -28,12 +28,12 @@ void _TestEnemy::Init()
 	counter_icon_image.Init(VGet(data.pos.x, data.pos.y - (data.size + 10.0f), data.pos.z),false);
 	counter_icon_image.SetScale(1.0f, 1.0f);
 
-	//アニメ
-	for (int count = 0; count <= 4; ++count)
+	//アニメ	
+	for (int count = 0; count <= anime_frame_volume; ++count)
 	{
-		move_image[count].Init(circle.GetPosition(),false);
+		move_image[count].Init(circle.GetPosition(), false);
 	}
-
+	
 
 	//移動その1
 	move_data.move_time = 100.0f;
@@ -153,9 +153,9 @@ void _TestEnemy::Updata()
 		}
 	}
 
-	//アニメ
+	//アニメ	
 	++anime_time;
-	for (int count = 0; count <= 4; ++count)
+	for (int count = 0; count <= anime_frame_volume; ++count)
 	{
 		if (data.direction == 1)
 		{
@@ -180,12 +180,12 @@ void _TestEnemy::Draw(bool draw)
 		itr->Draw(draw);
 	}
 
-	//アニメ
+	//アニメ	
 	move_image[anime_count].Draw(draw);
 
 	if (anime_time >= play_time)
 	{
-		if (anime_count >= 3)
+		if (anime_count >= anime_frame_volume - 1)
 		{
 			anime_count = 0;
 			anime_time = 0;
@@ -196,6 +196,7 @@ void _TestEnemy::Draw(bool draw)
 			anime_time = 0;
 		}
 	}
+	
 
 	if (counter_flag == true)
 	{
