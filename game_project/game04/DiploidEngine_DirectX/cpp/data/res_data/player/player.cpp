@@ -60,6 +60,10 @@ void Player::Updata()
 	input_left.Update();
 	input_right.Update();
 
+	//撃破した際の回復確率の計算処理
+	HpRecoveryProbabilityUpdate();
+	CpRecoveryProbabilityUpdate();
+
 	//攻撃モーション(アニメーション)がtureなら(攻撃中なら)
 	if (is_attack == true)
 	{
@@ -195,19 +199,57 @@ void Player::Draw(bool debug, bool draw)
 	//DrawFormatString(0, 20, GetColor(255, 255, 255), "HP = %.0f", player.GetLife());
 	//DrawFormatString(0, 40, GetColor(255, 255, 255), "Hit = %d", player.GetHitFlag());
 	//DrawFormatString(0, 60, GetColor(255, 255, 255), "DF = %.0f", defense_point);
-	//DrawFormatString(0, 80, GetColor(255, 255, 255), "EnemyDestroyVolumeOnHelthRecovery = %.0f", enemy_destory_volume);
+	//DrawFormatString(0, 200, GetColor(255, 255, 255), "probability_buffer = %.0f", probability_buffer);
+	//DrawFormatString(0, 180, GetColor(255, 255, 255), "enemy_destory_flag_bffer = %d", enemy_destory_flag_bffer);
 
 }
 
+
+void Player::HpRecoveryProbabilityUpdate()
+{
+	if (enemy_destory_flag_bffer == true)
+	{
+		hp_probability_buffer = GetRand(100);
+
+		if (hp_probability_buffer <= hp_recovery_probability)
+		{
+			if (player.GetLife() < hit_point)
+			{
+				player.AddLife(1.0f);
+			}
+		}		
+	}
+}
+
+void Player::CpRecoveryProbabilityUpdate()
+{
+	if (enemy_destory_flag_bffer == true)
+	{
+		cp_probability_buffer = GetRand(100);
+
+		if (cp_probability_buffer <= cp_recovery_probability)
+		{
+			if (defense_point < 3)
+			{
+				defense_point += 1.0f;
+			}
+		}
+	}
+}
 
 void Player::SetPlayerSize(float new_size)
 {
 	player_size = new_size;
 }
 
-void Player::isEnemyDestoryHelthRecovery(float destory_enemy_volume)
+void Player::isEnemyDestoryVolume(float destory_enemy_volume)
 {
 	enemy_destory_volume = destory_enemy_volume;
+}
+
+void Player::isGetEnemyDestroyFlag(bool destory_enemy_flag)
+{
+	enemy_destory_flag_bffer = destory_enemy_flag;
 }
 
 
@@ -224,6 +266,16 @@ float Player::GetPlayerDefensePoint()
 float Player::GetEnemyDestoryVolume()
 {
 	return enemy_destory_volume;
+}
+
+float Player::GetHpRecoveryProbability()
+{
+	return hp_recovery_probability;
+}
+
+float Player::GetCpRecoveryProbability()
+{
+	return cp_recovery_probability;
 }
 
 

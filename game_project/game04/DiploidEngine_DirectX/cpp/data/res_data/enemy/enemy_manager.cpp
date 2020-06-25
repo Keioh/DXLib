@@ -14,6 +14,7 @@ void EnemyManager::DestoryEnemy()
 			if (itr->GetCirclePtr()->GetDestoryFlag() == true)
 			{
 				destory_enmey_volume += 1.0f;
+				destroy_flag = true;
 				itr = _test_enemy_list.erase(itr);
 			}
 			else
@@ -44,6 +45,8 @@ void EnemyManager::Draw(bool draw)
 			itr->Draw(draw);
 		}
 	}
+
+	destroy_flag = false;
 }
 
 
@@ -61,4 +64,9 @@ std::list<_TestEnemy>* EnemyManager::GetPtr()
 float EnemyManager::GetDestoryEnemyVolume()
 {
 	return destory_enmey_volume;
+}
+
+bool EnemyManager::GetDestoryFlag()
+{
+	return destroy_flag;
 }

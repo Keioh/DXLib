@@ -28,6 +28,9 @@
 #include "data/res_data/UI/hp_ui.h"
 #include "data/res_data/UI/dp_ui.h"
 #include "data/res_data/UI/enemy_destory_ui.h"
+#include "data/res_data/UI/hp_recovery_ui.h"
+#include "data/res_data/UI/cp_recovery_ui.h"
+
 
 using namespace std;
 
@@ -47,6 +50,8 @@ private:
 	HpUI hp_ui;
 	DpUI dp_ui;
 	EnemyDestoryUI enemy_destory_ui;
+	HpRecoveryUI hp_recovery_ui;
+	CpRecoveryUI cp_recovery_ui;
 
 	DiploidImageV2 forest;
 

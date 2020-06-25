@@ -23,12 +23,18 @@ private:
 	float attack_range = 45.0f;//UŒ‚‹——£
 	float attack_size = 30.0f;//UŒ‚‚Ì‘å‚«‚³
 	float defense_size = 70.0f;//–hŒä‚Ì‘å‚«‚³
-	float enemy_destory_volume = 0.0f;
+	int enemy_destory_volume = 0.0f;//“GŒ‚”j”
+	float hp_recovery_probability = 0.0f;//“G‚ğŒ‚”j‚µ‚½Û‚ÉHP‚ª‰ñ•œ‚·‚éŠm—¦B
+	float cp_recovery_probability = 0.0f;//İ’è‚µ‚½“GŒ‚”j”‚É’B¬‚µ‚½‚çCP‚ğ‰ñ•œ‚·‚éB
+
 
 	//Player–{‘Ì
 	DiploidCircleV2 player;
 	VECTOR player_pos;
 	float player_size = 35.0f;//ƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è‚Ì‘å‚«‚³
+	float hp_probability_buffer = 0.0f;//Šm—¦‚ğ•Û‘¶
+	float cp_probability_buffer = 0.0f;//Šm—¦‚ğ•Û‘¶
+	bool enemy_destory_flag_bffer;//enemy_manager‚©‚ç‚ÌƒfƒXƒgƒƒCƒtƒ‰ƒO‚Ì•Û‘¶—p
 
 	//Player‚ÌUŒ‚
 	std::list<PlayerAttack> attack_list;
@@ -61,12 +67,18 @@ public:
 	void Updata();
 	void Draw(bool debug = false, bool draw = true);
 
+	void HpRecoveryProbabilityUpdate();
+	void CpRecoveryProbabilityUpdate();
+
 	void SetPlayerSize(float new_size);
-	void isEnemyDestoryHelthRecovery(float destory_enemy_volume);//“G‚ª“|‚³‚ê‚½‚Æ‚«‚É1‘«‚³‚ê‚é
+	void isEnemyDestoryVolume(float destory_enemy_volume);//“G‚ª“|‚³‚ê‚½‚Æ‚«‚É1‘«‚³‚ê‚é
+	void isGetEnemyDestroyFlag(bool destory_enemy_flag);
 
 	float GetPlayerSize();
 	float GetPlayerDefensePoint();
 	float GetEnemyDestoryVolume();
+	float GetHpRecoveryProbability();
+	float GetCpRecoveryProbability();
 
 	DiploidCircleV2* PlayerCirclePtr();
 

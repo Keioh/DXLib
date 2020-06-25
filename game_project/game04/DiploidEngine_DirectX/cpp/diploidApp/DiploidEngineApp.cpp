@@ -19,7 +19,12 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	//EnemyDestory‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
 	enemy_destory_ui.LoadGraphics();
 
-	
+	//HP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
+	hp_recovery_ui.LoadGraphics();
+
+	//CP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
+	cp_recovery_ui.LoadGraphics();
+
 	ground_line.LoadGraphics();
 	forest.Load("texter/res/stage/forest.png");
 	
@@ -74,6 +79,12 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//Œ‚”j”UI‚Ì‰Šú‰»
 	enemy_destory_ui.Init(VGet(1280 - 40 - (128 * 1.0f), 20, 0), 1.0f);
 
+	//HP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
+	hp_recovery_ui.Init(VGet(1280 - 20 - (128 * 1.0f), 100, 0), 1.0f);
+
+	//CP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
+	cp_recovery_ui.Init(VGet(1280 - 20 - (128 * 1.0f), 180, 0), 1.0f);
+
 	for (int n = 0; n < 30; ++n)
 	{		
 		enemy_data.size = GetRand(10.0f) + 10.0f;		
@@ -105,11 +116,14 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 	enemy_manager.Updata();
 	enemy_manager.DestoryEnemy();
 
-	player.isEnemyDestoryHelthRecovery(enemy_manager.GetDestoryEnemyVolume());
+	player.isEnemyDestoryVolume(enemy_manager.GetDestoryEnemyVolume());
+	player.isGetEnemyDestroyFlag(enemy_manager.GetDestoryFlag());
 
 	hp_ui.Updata(player);
 	dp_ui.Updata(player);
 	enemy_destory_ui.Updata(player);
+	hp_recovery_ui.Updata(player);
+	cp_recovery_ui.Updata(player);
 
 
 	if (!enemy_manager.GetPtr()->empty())
@@ -175,6 +189,8 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	hp_ui.Draw();
 	dp_ui.Draw();
 	enemy_destory_ui.Draw();
+	hp_recovery_ui.Draw();
+	cp_recovery_ui.Draw();
 
 	anime.Draw();
 }
