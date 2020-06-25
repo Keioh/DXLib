@@ -7,6 +7,8 @@ class Animation
 {
 private:
 	DiploidImageV2 _image;
+	DiploidImageV2* _image_ptr = &_image;
+
 	std::list<DiploidImageV2> image_list;
 	std::list<DiploidImageV2>::iterator image_list_itr = image_list.begin();
 
@@ -18,7 +20,6 @@ public:
 	void LoadHandles(int handle);//ƒnƒ“ƒhƒ‹‚¾‚¯“Ç‚İ‚Ş(„§)
 
 	void Init(VECTOR pos, float play_speed, float scale, bool shift_flag = false);
-	void Updata();
 	void Draw(bool draw = true);
 
 	void SetGraphicsTrun(bool new_flag);

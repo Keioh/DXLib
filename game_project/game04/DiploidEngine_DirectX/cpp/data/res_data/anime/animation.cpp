@@ -8,8 +8,8 @@ void Animation::LoadPushImageV2(DiploidImageV2 imageV2)
 
 void Animation::LoadHandles(int handle)
 {
-	_image.SetHandl(handle);
-	image_list.push_back(_image);
+	_image_ptr->SetHandl(handle);
+	image_list.push_back(*_image_ptr);
 }
 
 void Animation::Init(VECTOR pos, float play_speed, float scale, bool shift_flag)
@@ -20,7 +20,6 @@ void Animation::Init(VECTOR pos, float play_speed, float scale, bool shift_flag)
 	{		
 		for (auto image = image_list.begin(); image != image_list.end(); ++image)
 		{
-
 			image->Init(pos, shift_flag);
 			image->SetScale(scale, scale);
 		}
@@ -60,29 +59,24 @@ void Animation::SetGraphicsAngle(bool new_angle)
 	}
 }
 
-void Animation::Updata()
-{
-
-}
-
 void Animation::Draw(bool draw)
 {
 	if (!image_list.empty())
-	{
+	{	
 		if (image_list_itr == image_list.end())
 		{			
 			image_list_itr = image_list.begin();
 		}
 
 		++time;
-
+		
 		image_list_itr->Draw(draw);
 
 		if (time >= play)
 		{
 			++image_list_itr;
 			time = 0;
-		}
+		}	
 	}
 }
 

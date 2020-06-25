@@ -7,7 +7,7 @@ using namespace std;
 class DiploidImageV2
 {
 private:
-	string name;//オブジェクトの名前(主に検索するときに使用)
+	string name = "no_name";//オブジェクトの名前(主に検索するときに使用)
 	int layer_number;//レイヤーの番号(主に当たり判定時にどの層に居るのか判別するのに使用)
 	int object_number;//オブジェクトの番号
 
@@ -72,6 +72,7 @@ public:
 	VECTOR GetDownCenterPosition();//現在の画像の左下の座標を取得します。
 	float GetAngle();//現在の画像の回転角を取得します。(ラジアン)
 	bool GetTurnFlag();//現在の画像反転フラグを取得します。(TRUEで反転)
+	bool GetActiveFlag();
 
 	VECTOR GetMoveSpeed();//現在のオブジェクトの移動速度を取得します。
 	float GetMoveAngle();//現在のオブジェクトの移動している方角を取得します。(ラジアン)

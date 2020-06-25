@@ -15,4 +15,8 @@ public:
 	float attack_renge;//攻撃の距離
 	float counter_time;//カウンター受付可能な時間
 	float knock_back_scale;//ノックバック倍率
+	int enemy_type;//敵の種類(画像が変わる)
+	int direction;//向いている方向(0で右、1で左)
+	bool is_ground;//地面に着いているか
+	float scale;
 };

@@ -25,22 +25,23 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	//CP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
 	cp_recovery_ui.LoadGraphics();
 
+	//ƒOƒ‰ƒEƒ“ƒhƒ‰ƒCƒ“‚Ì‰æ‘œ‚ğ“Ç‚İ‚Ş
 	ground_line.LoadGraphics();
 	forest.Load("texter/res/stage/forest.png");
 	
-	/*
-	test.Load("texter/res/dp/0.png");
+
+	test.Load("texter/res/enemy/enemy_00/0.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 
-	test.Load("texter/res/dp/1.png");
+	test.Load("texter/res/enemy/enemy_00/1.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 
-	test.Load("texter/res/dp/2.png");
+	test.Load("texter/res/enemy/enemy_00/2.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 
-	test.Load("texter/res/dp/3.png");
+	test.Load("texter/res/enemy/enemy_00/3.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
-
+		/*
 	test.Load("texter/res/dp/4.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 
@@ -56,6 +57,7 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	test.Load("texter/res/dp/8.png");
 	anime.LoadHandles(test.GetGraphicsHandl());
 	*/
+	test_enemy.LoadGraphics();
 
 	player.LoadGraphics();
 }
@@ -85,7 +87,8 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//CP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
 	cp_recovery_ui.Init(VGet(1280 - 20 - (128 * 1.0f), 180, 0), 1.0f);
 
-	for (int n = 0; n < 30; ++n)
+
+	for (int n = 0; n < 10; ++n)
 	{		
 		enemy_data.size = GetRand(10.0f) + 10.0f;		
 		enemy_data.pos = VGet(GetRand(1280), ground_line.GetGroundLine() - enemy_data.size, 0);
@@ -95,9 +98,12 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 		enemy_data.attack_size = enemy_data.size * 1.5f;
 		enemy_data.counter_time = 18.0f;
 		enemy_data.knock_back_scale = 50.0f;
+		enemy_data.enemy_type = 0;
+		enemy_data.scale = GetRand(2);
 
-		test_enemy.LoadGraphics();
 		test_enemy.SetEnemyData(enemy_data);
+
+		test_enemy.LoadHandles();
 		test_enemy.Init();
 
 		enemy_manager.PushBackEnemy(test_enemy);
@@ -192,7 +198,7 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	hp_recovery_ui.Draw();
 	cp_recovery_ui.Draw();
 
-	anime.Draw();
+	//anime.Draw();
 }
 
 void DiploidEngineApp::Destory()//ƒ‹[ƒv’†‚Éíœ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg(ver1.0)‚ª‚ ‚éê‡‚Í‚±‚±‚Åíœˆ—‚ğ‘‚­B

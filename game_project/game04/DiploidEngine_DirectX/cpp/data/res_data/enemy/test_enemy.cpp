@@ -10,6 +10,16 @@ void _TestEnemy::SetEnemyData(EnemyData new_data)
 void _TestEnemy::LoadGraphics()
 {
 	counter_icon_image.Load("texter/res/effect/exclamation/0.png");
+
+	move_image[0].Load("texter/res/enemy/enemy_00/0.png");
+	move_image[1].Load("texter/res/enemy/enemy_00/1.png");
+	move_image[2].Load("texter/res/enemy/enemy_00/2.png");
+	move_image[3].Load("texter/res/enemy/enemy_00/3.png");
+}
+
+void _TestEnemy::LoadHandles()
+{	
+
 }
 
 void _TestEnemy::Init()
@@ -17,6 +27,13 @@ void _TestEnemy::Init()
 	circle.Init(data.pos, data.size, GetColor(255, 0, 0), true);
 	counter_icon_image.Init(VGet(data.pos.x, data.pos.y - (data.size + 10.0f), data.pos.z),false);
 	counter_icon_image.SetScale(1.0f, 1.0f);
+
+	//アニメ
+	for (int count = 0; count <= 4; ++count)
+	{
+		move_image[count].Init(circle.GetPosition(),false);
+	}
+
 
 	//移動その1
 	move_data.move_time = 100.0f;
@@ -78,11 +95,13 @@ void _TestEnemy::Updata()
 		if (circle.GetPosition().x <= 1280 / 2 - 50)
 		{
 			circle.SetMoveSpeed(VGet(move_pattern.Move(), 0, 0));
+			data.direction = 0;
 			counter_flag = false;
 		}
 		else if (circle.GetPosition().x >= 1280 / 2 + 50)
 		{
-			circle.SetMoveSpeed(VGet(-move_pattern.Move(), 0, 0));
+			circle.SetMoveSpeed(VGet(-move_pattern.Move(), 0, 0));		
+			data.direction = 1;
 			counter_flag = false;
 		}
 		else
@@ -133,15 +152,49 @@ void _TestEnemy::Updata()
 			circle.SetDestoryFlag(true);
 		}
 	}
+
+	//アニメ
+	++anime_time;
+	for (int count = 0; count <= 4; ++count)
+	{
+		if (data.direction == 1)
+		{
+			move_image[count].SetTurnFlag(true);
+			move_image[count].SetPosition(VGet(circle.GetPosition().x - (10 * (data.size * 0.1f)), circle.GetPosition().y - (20 * (data.size * 0.1f)), circle.GetPosition().z));
+		}
+		else
+		{
+			move_image[count].SetTurnFlag(false);
+			move_image[count].SetPosition(VGet(circle.GetPosition().x - (20 * (data.size * 0.1f)), circle.GetPosition().y - (20 * (data.size * 0.1f)), circle.GetPosition().z));
+		}
+		move_image[count].SetScale(data.size * 0.1f, data.size * 0.1f);
+	}
 }
 
 void _TestEnemy::Draw(bool draw)
 {
-	circle.Draw(draw);
+	//circle.Draw(draw);
 
 	for (auto itr = attack_list.begin(); itr != attack_list.end(); ++itr)
 	{
 		itr->Draw(draw);
+	}
+
+	//アニメ
+	move_image[anime_count].Draw(draw);
+
+	if (anime_time >= play_time)
+	{
+		if (anime_count >= 3)
+		{
+			anime_count = 0;
+			anime_time = 0;
+		}
+		else
+		{
+			++anime_count;
+			anime_time = 0;
+		}
 	}
 
 	if (counter_flag == true)

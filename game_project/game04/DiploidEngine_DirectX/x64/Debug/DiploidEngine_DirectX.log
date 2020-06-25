@@ -1,27 +1,12 @@
 ﻿  WindowsMain.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-  cp_recovery_ui.cpp
-c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\ui\cp_recovery_ui.cpp(26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  dp_ui.cpp
-c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-  enemy_destory_ui.cpp
-c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\ui\enemy_destory_ui.cpp(27): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  hp_recovery_ui.cpp
-c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\ui\hp_recovery_ui.cpp(26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  hp_ui.cpp
-c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-  player.cpp
-c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(212): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(228): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(247): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(268): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
+  enemy_manager.cpp
+  test_enemy.cpp
+c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\enemy\test_enemy.cpp(7): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   DiploidEngineApp.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(90): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(91): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(93): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(94): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(102): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   コードを生成中...
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\game04\x64\Debug\DiploidEngine_DirectX.exe

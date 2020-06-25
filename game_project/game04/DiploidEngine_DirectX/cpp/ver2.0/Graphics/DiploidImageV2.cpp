@@ -248,3 +248,8 @@ bool DiploidImageV2::GetHitFlag()
 {
 	return this->hit_flag;
 }
+
+bool DiploidImageV2::GetActiveFlag()
+{
+	return this->active;
+}
