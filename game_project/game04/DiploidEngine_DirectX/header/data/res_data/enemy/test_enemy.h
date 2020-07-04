@@ -44,6 +44,7 @@ public:
 	void LoadGraphics();
 	void LoadHandles(int handle);
 	void Init();
+	void PushBackMoveDate(MoveData date);//Init()‚ÌŒã‚ÉŒÄ‚Ño‚·‚±‚Æ
 	void Updata();
 	void Draw(bool draw = true);
 

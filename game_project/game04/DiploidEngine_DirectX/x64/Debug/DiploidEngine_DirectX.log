@@ -1,3 +1,2 @@
-﻿  test_enemy.cpp
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\enemy\test_enemy.cpp(7): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+﻿  result_ui.cpp
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\game04\x64\Debug\DiploidEngine_DirectX.exe

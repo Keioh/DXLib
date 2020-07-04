@@ -345,6 +345,12 @@
     <ClCompile Include="cpp\data\res_data\UI\hp_recovery_ui.cpp">
       <Filter>ソース ファイル\data\res_data\UI</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\data\res_data\UI\day_ui.cpp">
+      <Filter>ソース ファイル\data\res_data\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\res_data\UI\result_ui.cpp">
+      <Filter>ソース ファイル\data\res_data\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -519,6 +525,12 @@
       <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
     </ClInclude>
     <ClInclude Include="header\data\res_data\UI\hp_recovery_ui.h">
+      <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\res_data\UI\day_ui.h">
+      <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\res_data\UI\result_ui.h">
       <Filter>ヘッダー ファイル\data\res_data\UI</Filter>
     </ClInclude>
   </ItemGroup>

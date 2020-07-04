@@ -22,6 +22,13 @@ void _TestEnemy::LoadHandles(int handle)
 
 }
 
+void _TestEnemy::PushBackMoveDate(MoveData date)
+{
+	move_data = date;
+
+	move_pattern.PushBack(move_data);
+}
+
 void _TestEnemy::Init()
 {
 	circle.Init(data.pos, data.size, GetColor(255, 0, 0), true);
@@ -34,7 +41,7 @@ void _TestEnemy::Init()
 		move_image[count].Init(circle.GetPosition(), false);
 	}
 	
-
+	
 	//ˆÚ“®‚»‚Ì1
 	move_data.move_time = 100.0f;
 	move_data.speed = data.move_speed;
@@ -52,6 +59,7 @@ void _TestEnemy::Init()
 	move_data.speed = data.move_speed * 0.5f;
 	move_data.wait_time = 60;
 	move_pattern.PushBack(move_data);
+	
 }
 
 void _TestEnemy::Updata()

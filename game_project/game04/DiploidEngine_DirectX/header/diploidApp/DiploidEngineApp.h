@@ -30,6 +30,11 @@
 #include "data/res_data/UI/enemy_destory_ui.h"
 #include "data/res_data/UI/hp_recovery_ui.h"
 #include "data/res_data/UI/cp_recovery_ui.h"
+#include "data/res_data/enemy/move_pattern.h"
+
+#include "data/res_data/UI/day_ui.h"
+
+#include "data/res_data/UI/result_ui.h"
 
 
 using namespace std;
@@ -43,6 +48,7 @@ private:
 	EnemyManager enemy_manager;//敵の管理
 	_TestEnemy test_enemy;//敵オブジェクト
 	EnemyData enemy_data;
+	MoveData move_data;
 
 	Player player;//プレイヤー
 	GroundLine ground_line;//グラウンドライン
@@ -52,6 +58,9 @@ private:
 	EnemyDestoryUI enemy_destory_ui;
 	HpRecoveryUI hp_recovery_ui;
 	CpRecoveryUI cp_recovery_ui;
+	DayUI day_ui;
+
+	ResultUI result_ui;
 
 	DiploidImageV2 forest;
 

@@ -156,10 +156,12 @@
     <ClCompile Include="cpp\data\res_data\player\player_attack.cpp" />
     <ClCompile Include="cpp\data\res_data\player\player_defense.cpp" />
     <ClCompile Include="cpp\data\res_data\UI\cp_recovery_ui.cpp" />
+    <ClCompile Include="cpp\data\res_data\UI\day_ui.cpp" />
     <ClCompile Include="cpp\data\res_data\UI\dp_ui.cpp" />
     <ClCompile Include="cpp\data\res_data\UI\enemy_destory_ui.cpp" />
     <ClCompile Include="cpp\data\res_data\UI\hp_recovery_ui.cpp" />
     <ClCompile Include="cpp\data\res_data\UI\hp_ui.cpp" />
+    <ClCompile Include="cpp\data\res_data\UI\result_ui.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
@@ -215,10 +217,12 @@
     <ClInclude Include="header\data\res_data\player\player_attack.h" />
     <ClInclude Include="header\data\res_data\player\player_defense.h" />
     <ClInclude Include="header\data\res_data\UI\cp_recovery_ui.h" />
+    <ClInclude Include="header\data\res_data\UI\day_ui.h" />
     <ClInclude Include="header\data\res_data\UI\dp_ui.h" />
     <ClInclude Include="header\data\res_data\UI\enemy_destory_ui.h" />
     <ClInclude Include="header\data\res_data\UI\hp_recovery_ui.h" />
     <ClInclude Include="header\data\res_data\UI\hp_ui.h" />
+    <ClInclude Include="header\data\res_data\UI\result_ui.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
     <ClInclude Include="header\diploidGraphics\diploidBox.h" />

@@ -61,6 +61,10 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 	test_enemy.LoadGraphics();
 
 	player.LoadGraphics();
+
+	day_ui.Load();
+
+	result_ui.Load();
 }
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
@@ -88,6 +92,10 @@ void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 	//CP Recovery‚ÌUI‰æ‘œ‚ğ“Ç‚İ‚Ş
 	cp_recovery_ui.Init(VGet(1280 - 20 - (128 * 1.0f), 180, 0), 1.0f);
 
+	//Day‚ÌUI‚Ì‰Šú‰»
+	day_ui.Init(VGet(1280 / 2 - (32 * 2.0f), 720 / 2 - (16 * 2.0f), 0), 2.0f);
+
+	result_ui.Init(VGet(0,0,0));
 
 	for (int n = 0; n < 10; ++n)
 	{		
@@ -115,69 +123,77 @@ void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”
 {
 	input.Update();
 
-	player.Updata();
-
-	enemy_manager.Updata();
-	enemy_manager.DestoryEnemy();
-
-	player.isEnemyDestoryVolume(enemy_manager.GetDestoryEnemyVolume());
-	player.isGetEnemyDestroyFlag(enemy_manager.GetDestoryFlag());
-
-	hp_ui.Updata(player);
-	dp_ui.Updata(player);
-	enemy_destory_ui.Updata(player);
-	hp_recovery_ui.Updata(player);
-	cp_recovery_ui.Updata(player);
-
-
-	if (!enemy_manager.GetPtr()->empty())
+	if (result_ui.GetActiveFlag() == false)
 	{
-		if (!player.GetAttackListPtr()->empty())
+		player.Updata();
+
+		enemy_manager.Updata();
+		enemy_manager.DestoryEnemy();
+
+		player.isEnemyDestoryVolume(enemy_manager.GetDestoryEnemyVolume());
+		player.isGetEnemyDestroyFlag(enemy_manager.GetDestoryFlag());
+
+		hp_ui.Updata(player);
+		dp_ui.Updata(player);
+		enemy_destory_ui.Updata(player);
+		hp_recovery_ui.Updata(player);
+		cp_recovery_ui.Updata(player);
+		day_ui.Update(0);
+
+
+		if (!enemy_manager.GetPtr()->empty())
 		{
-			//“G‚Ìlist‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·
-			for (auto enemy_manager_itr = enemy_manager.GetPtr()->begin(); enemy_manager_itr != enemy_manager.GetPtr()->end(); ++enemy_manager_itr)
-			{	
-				//ƒvƒŒƒCƒ„[‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
-				for (auto palyer_attack_itr = player.GetAttackListPtr()->begin(); palyer_attack_itr != player.GetAttackListPtr()->end(); ++palyer_attack_itr)
+			if (!player.GetAttackListPtr()->empty())
+			{
+				//“G‚Ìlist‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·
+				for (auto enemy_manager_itr = enemy_manager.GetPtr()->begin(); enemy_manager_itr != enemy_manager.GetPtr()->end(); ++enemy_manager_itr)
 				{
-					//ƒvƒŒƒCƒ„[‚ÌUŒ‚‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
-					collision.CircleAndCircleCollisionUpdate(palyer_attack_itr->GetAttackCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());	
+					//ƒvƒŒƒCƒ„[‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
+					for (auto palyer_attack_itr = player.GetAttackListPtr()->begin(); palyer_attack_itr != player.GetAttackListPtr()->end(); ++palyer_attack_itr)
+					{
+						//ƒvƒŒƒCƒ„[‚ÌUŒ‚‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
+						collision.CircleAndCircleCollisionUpdate(palyer_attack_itr->GetAttackCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());
+					}
 				}
 			}
-		}
 
-		if (!player.GetDefenseListPtr()->empty())
-		{
+			if (!player.GetDefenseListPtr()->empty())
+			{
+				//“G‚Ìlist‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·
+				for (auto enemy_manager_itr = enemy_manager.GetPtr()->begin(); enemy_manager_itr != enemy_manager.GetPtr()->end(); ++enemy_manager_itr)
+				{
+					//ƒJƒEƒ“ƒ^[ƒtƒ‰ƒO‚ªtrue‚È‚ç
+					if (enemy_manager_itr->GetCounterFlag() == true)
+					{
+						//ƒvƒŒƒCƒ„[‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
+						for (auto palyer_defense_itr = player.GetDefenseListPtr()->begin(); palyer_defense_itr != player.GetDefenseListPtr()->end(); ++palyer_defense_itr)
+						{
+							//ƒvƒŒƒCƒ„[‚Ì–hŒä(ƒJƒEƒ“ƒ^[)‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
+							collision.CircleAndCircleCollisionUpdate(palyer_defense_itr->GetDefenseCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());
+						}
+					}
+				}
+			}
+
 			//“G‚Ìlist‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·
 			for (auto enemy_manager_itr = enemy_manager.GetPtr()->begin(); enemy_manager_itr != enemy_manager.GetPtr()->end(); ++enemy_manager_itr)
 			{
-				//ƒJƒEƒ“ƒ^[ƒtƒ‰ƒO‚ªtrue‚È‚ç
-				if (enemy_manager_itr->GetCounterFlag() == true)
+				if (!enemy_manager_itr->GetAttackListPtr()->empty())
 				{
-					//ƒvƒŒƒCƒ„[‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
-					for (auto palyer_defense_itr = player.GetDefenseListPtr()->begin(); palyer_defense_itr != player.GetDefenseListPtr()->end(); ++palyer_defense_itr)
+					//“G‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
+					for (auto enemy_attack_itr = enemy_manager_itr->GetAttackListPtr()->begin(); enemy_attack_itr != enemy_manager_itr->GetAttackListPtr()->end(); ++enemy_attack_itr)
 					{
-						//ƒvƒŒƒCƒ„[‚Ì–hŒä(ƒJƒEƒ“ƒ^[)‚Æ“G–{‘Ì‚Æ‚Ì“–‚½‚è”»’è
-						collision.CircleAndCircleCollisionUpdate(palyer_defense_itr->GetDefenseCircleObjectPtr(), enemy_manager_itr->GetCirclePtr());
+						//ƒvƒŒƒCƒ„[–{‘Ì‚Æ“G‚ÌUŒ‚‚Æ‚Ì“–‚½‚è”»’è
+						collision.CircleAndCircleCollisionUpdate(player.PlayerCirclePtr(), enemy_attack_itr->GetCirclePtr());
 					}
 				}
 			}
 		}
-
-		//“G‚Ìlist‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·
-		for (auto enemy_manager_itr = enemy_manager.GetPtr()->begin(); enemy_manager_itr != enemy_manager.GetPtr()->end(); ++enemy_manager_itr)
-		{
-			if (!enemy_manager_itr->GetAttackListPtr()->empty())
-			{
-				//“G‚ÌUŒ‚list‚ÌƒCƒeƒŒ[ƒ^‚ğæ“¾‚µA‰ñ‚·B
-				for (auto enemy_attack_itr = enemy_manager_itr->GetAttackListPtr()->begin(); enemy_attack_itr != enemy_manager_itr->GetAttackListPtr()->end(); ++enemy_attack_itr)
-				{
-					//ƒvƒŒƒCƒ„[–{‘Ì‚Æ“G‚ÌUŒ‚‚Æ‚Ì“–‚½‚è”»’è
-					collision.CircleAndCircleCollisionUpdate(player.PlayerCirclePtr(), enemy_attack_itr->GetCirclePtr());
-				}
-			}
-		}
-	}	
+	}
+	else
+	{
+		result_ui.Update();
+	}
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
@@ -195,6 +211,9 @@ void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 	enemy_destory_ui.Draw();
 	hp_recovery_ui.Draw();
 	cp_recovery_ui.Draw();
+	day_ui.Draw();
+
+	result_ui.Draw();
 
 	//anime.Draw();
 }
