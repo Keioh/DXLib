@@ -26,6 +26,7 @@ public:
 	void SetAcitiveFlag(bool new_active_flag);
 	void SetSpeed(int new_speed);
 	void SetActiveTime(int new_time);//•\¦ŠÔ‚ğİ’è‚µ‚Ü‚·B
+	void AddDay(int add_day);
 
 	int GetDay();
 	bool GetActiveFlag();

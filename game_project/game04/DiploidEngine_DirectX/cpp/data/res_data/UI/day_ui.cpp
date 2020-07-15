@@ -17,7 +17,7 @@ void DayUI::Init(VECTOR pos, float scale)
 
 void DayUI::Update(int days)
 {	
-	day = days;
+	//day = days;
 
 	number.Update(day);
 
@@ -73,6 +73,11 @@ void DayUI::SetSpeed(int new_speed)
 void DayUI::SetActiveTime(int new_time)
 {
 	set_active_time = new_time;
+}
+
+void DayUI::AddDay(int add_day)
+{
+	day += add_day;
 }
 
 

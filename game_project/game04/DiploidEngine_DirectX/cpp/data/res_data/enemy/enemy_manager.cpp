@@ -61,6 +61,12 @@ std::list<_TestEnemy>* EnemyManager::GetPtr()
 }
 
 
+void EnemyManager::SetDestroyEnemyVolume(float new_vol)
+{
+	destory_enmey_volume = new_vol;
+}
+
+
 float EnemyManager::GetDestoryEnemyVolume()
 {
 	return destory_enmey_volume;

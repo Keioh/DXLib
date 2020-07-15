@@ -18,7 +18,7 @@ private:
 	//Playerのステータス
 	float hit_point = 3.0f;//体力
 	float defense_point = 3.0f;//防御可能数(カウンター)
-	float attack_speed = 3.0f;//攻撃速度
+	float attack_speed = 8.0f;//攻撃速度
 	float defense_speed = 3.0f;//防御速度
 	float attack_range = 45.0f;//攻撃距離
 	float attack_size = 30.0f;//攻撃の大きさ
@@ -79,6 +79,11 @@ public:
 	float GetEnemyDestoryVolume();
 	float GetHpRecoveryProbability();
 	float GetCpRecoveryProbability();
+
+	void SetAttackSpeed(float new_vol);
+	void AddAttackSpeed(float add_vol);//ASに足す
+	void AddHpRecoveryProbability(float add_vol);//HP回復確率に足す
+	void AddCpRecoveryProbability(float add_vol);//CP回復確率に足す
 
 	DiploidCircleV2* PlayerCirclePtr();
 

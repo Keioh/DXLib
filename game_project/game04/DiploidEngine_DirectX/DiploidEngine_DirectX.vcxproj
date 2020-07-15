@@ -215,6 +215,7 @@
     <ClInclude Include="header\data\res_data\enemy\move_pattern.h" />
     <ClInclude Include="header\data\res_data\enemy\test_enemy.h" />
     <ClInclude Include="header\data\res_data\field\ground_line.h" />
+    <ClInclude Include="header\data\res_data\game_define.h" />
     <ClInclude Include="header\data\res_data\player\player.h" />
     <ClInclude Include="header\data\res_data\player\player_attack.h" />
     <ClInclude Include="header\data\res_data\player\player_defense.h" />

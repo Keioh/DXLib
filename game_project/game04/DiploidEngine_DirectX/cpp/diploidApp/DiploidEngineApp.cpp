@@ -138,7 +138,14 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 		enemy_destory_ui.Updata(player);
 		hp_recovery_ui.Updata(player);
 		cp_recovery_ui.Updata(player);
-		day_ui.Update(0);
+		day_ui.Update();
+
+		//敵を一定数倒したら
+		if (enemy_manager.GetDestoryEnemyVolume() >= 10)
+		{
+			enemy_manager.SetDestroyEnemyVolume(0);
+			result_ui.SetActiveFlag(true);
+		}
 
 
 		if (!enemy_manager.GetPtr()->empty())
@@ -192,7 +199,7 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 	}
 	else
 	{
-		result_ui.Update();
+		result_ui.Update(&player, &day_ui);
 	}
 }
 

@@ -20,6 +20,8 @@ public:
 	void Updata();
 	void Draw(bool draw = true);
 
+	void SetDestroyEnemyVolume(float new_vol);
+
 	float GetDestoryEnemyVolume();
 
 	bool GetDestoryFlag();

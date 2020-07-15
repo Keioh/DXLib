@@ -551,6 +551,9 @@
     <ClInclude Include="header\ver2.0\UI\SwitchButtonBoxV2.h">
       <Filter>ヘッダー ファイル\header\ver2.0\UI</Filter>
     </ClInclude>
+    <ClInclude Include="header\data\res_data\game_define.h">
+      <Filter>ヘッダー ファイル\data\res_data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DiploidEngine_DirectX.rc">

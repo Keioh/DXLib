@@ -1,9 +1,17 @@
-﻿  WindowsMain.cpp
+﻿  animation.cpp
+  enemy_manager.cpp
+  test_enemy.cpp
+c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\enemy\test_enemy.cpp(7): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  player.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-  number.cpp
+c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(212): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(228): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(247): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(268): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
   cp_recovery_ui.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
 c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\ui\cp_recovery_ui.cpp(26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  day_ui.cpp
   dp_ui.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
   enemy_destory_ui.cpp
@@ -14,36 +22,26 @@ c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h
 c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\ui\hp_recovery_ui.cpp(26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   hp_ui.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-  animation.cpp
-  enemy_attack.cpp
-  enemy_manager.cpp
-  test_enemy.cpp
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\enemy\test_enemy.cpp(7): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-  ground_line.cpp
-  player.cpp
+  result_ui.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(212): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(228): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(247): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\data\res_data\player\player.cpp(268): warning C4244: 'return': 'int' から 'float' への変換です。データが失われる可能性があります。
   DiploidEngineApp.cpp
 c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(93): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(94): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(102): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-  DiploidImageV2.cpp
-c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\graphics\diploidimagev2.cpp(12): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\graphics\diploidimagev2.cpp(13): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\graphics\diploidimagev2.cpp(49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\graphics\diploidimagev2.cpp(96): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-  Layer.cpp
+c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(102): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\diploidapp\diploidengineapp.cpp(103): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  DiploidEngineSetting.cpp
   DiploidSelectedUIV2.cpp
-c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\objects\diploidselecteduiv2.cpp(61): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\objects\diploidselecteduiv2.cpp(82): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\objects\diploidselecteduiv2.cpp(66): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
 c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\objects\diploidselecteduiv2.cpp(87): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\objects\diploidselecteduiv2.cpp(92): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  PressButtonBoxV2.cpp
+  SwitchButtonBoxV2.cpp
+c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\ui\switchbuttonboxv2.cpp(20): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  WindowsMain.cpp
+c:\gameproject\game04\diploidengine_directx\header\data\res_data\player\player.h(26): warning C4244: '初期化中': 'float' から 'int' への変換です。データが失われる可能性があります。
   コード生成しています。
-  114 of 1580 functions ( 7.2%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    92 functions had inline decision re-evaluated but remain unchanged
+c:\gameproject\game04\diploidengine_directx\cpp\ver2.0\main\collision.cpp(126): warning C4715: 'DiploidCollision::BoxAndMouseCollisionUpdate': 値を返さないコントロール パスがあります。
+  122 of 1621 functions ( 7.5%) were compiled, the rest were copied from previous compilation.
+    25 functions were new in current compilation
+    42 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\game04\x64\Release\DiploidEngine_DirectX.exe

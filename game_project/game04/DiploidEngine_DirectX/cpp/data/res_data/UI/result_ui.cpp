@@ -17,6 +17,9 @@ void ResultUI::Load()
 	cp_up_image.Load("texter/res/result/cp_up.png");
 	cp_up_button.Load(cp_up_image.GetGraphicsHandl());
 
+	confirm_image.Load("texter/res/result/confirm.png");
+	confirm_button.Load(confirm_image.GetGraphicsHandl());
+
 }
 
 void ResultUI::Init(VECTOR pos)
@@ -38,9 +41,10 @@ void ResultUI::Init(VECTOR pos)
 	hp_up_button.Init(VGet(1280 / 2 - ((128 * 1.5f) / 2), 720 / 2, 0), VGet(128, 64, 0), 1.5f);
 	cp_up_button.Init(VGet(1280 / 2 - ((128 * 1.5f) / 2) + (128 * 1.5f) + 48, 720 / 2, 0), VGet(128, 64, 0), 1.5f);
 
+	confirm_button.Init(VGet(1280 / 2 - ((128 * 1.0f) / 2), 720 - (64 + 24), 0), VGet(128, 64, 0), 1.0f);
 }
 
-void ResultUI::Update()
+void ResultUI::Update(Player* player, DayUI* day_ui)
 {
 	if (active_flag == true)
 	{
@@ -50,28 +54,86 @@ void ResultUI::Update()
 		hp_up_button.Updata(&input);
 		cp_up_button.Updata(&input);
 
+
 		//ASアップボタンを押したら
-		if (as_up_button.GetSelectedUI() == 1)
+		if ((as_up_button.GetClick() == true) && (as_up_button.GetHit() == true))
 		{
+			any_button_active_flags = AS_UP_SELECTED;
+
 			//他のボタンをオフにする
 			hp_up_button.SetSelectedUI(-1);
 			cp_up_button.SetSelectedUI(-1);
 		}
 
 		//HPアップボタンを押したら
-		if (hp_up_button.GetSelectedUI() == 1)
+		if ((hp_up_button.GetClick() == true) && (hp_up_button.GetHit() == true))
 		{
+			any_button_active_flags = HP_UP_SELECTED;
+
 			//他のボタンをオフにする
 			as_up_button.SetSelectedUI(-1);
 			cp_up_button.SetSelectedUI(-1);
 		}
 
 		//CPアップボタンを押したら
-		if (cp_up_button.GetSelectedUI() == 1)
+		if ((cp_up_button.GetClick() == true) && (cp_up_button.GetHit() == true))
 		{
+			any_button_active_flags = CP_UP_SELECTED;
+
 			//他のボタンをオフにする
 			as_up_button.SetSelectedUI(-1);
 			hp_up_button.SetSelectedUI(-1);
+		}
+
+		//どの強化ボタンも押されていなかったら
+		if ((as_up_button.GetSelectedUI() == -1) && (hp_up_button.GetSelectedUI() == -1) && (cp_up_button.GetSelectedUI() == -1))
+		{
+			any_button_active_flags = NO_SELECTED;
+		}
+
+
+		//○○アップボタンが有効になっていたら
+		if (any_button_active_flags != 0)
+		{
+			//決定ボタンの処理を始める
+			confirm_button.Updata(&input);
+
+			if (confirm_button.GetSelectedUI() == 1)
+			{
+				//playerのASを1上げる
+				if (any_button_active_flags == AS_UP_SELECTED)
+				{
+					player->AddAttackSpeed(1);
+				}
+
+				//playerのHP回復確率を1上げる
+				if (any_button_active_flags == HP_UP_SELECTED)
+				{
+					player->AddHpRecoveryProbability(1);
+				}
+
+				//playerのCP回復確率を1上げる
+				if (any_button_active_flags == CP_UP_SELECTED)
+				{
+					player->AddCpRecoveryProbability(1);
+				}
+				
+				day_ui->AddDay(1);//日付を進める
+				day_ui->SetAcitiveFlag(true);//DayUIを有効にする。
+
+				//状態を保存
+				state = any_button_active_flags;
+
+				//ボタンを初期化
+				as_up_button.SetSelectedUI(-1);
+				hp_up_button.SetSelectedUI(-1);
+				cp_up_button.SetSelectedUI(-1);
+
+				confirm_button.SetSelectedUI(-1);
+
+				//UIを非アクティブに
+				active_flag = false;
+			}
 		}
 	}
 }
@@ -101,6 +163,11 @@ void ResultUI::Draw(bool draw)
 		{
 			string_02_image.Draw(draw);
 		}
+
+		if (any_button_active_flags != 0)
+		{
+			confirm_button.Draw(draw, true);
+		}
 	}
 }
 
@@ -108,6 +175,12 @@ void ResultUI::Draw(bool draw)
 void ResultUI::SetActiveFlag(bool new_flag)
 {
 	active_flag = new_flag;
+}
+
+
+int ResultUI::GetState()
+{
+	return state;
 }
 
 bool ResultUI::GetActiveFlag()

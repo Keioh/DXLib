@@ -279,6 +279,27 @@ float Player::GetCpRecoveryProbability()
 }
 
 
+void Player::SetAttackSpeed(float new_vol)
+{
+	attack_speed = new_vol;
+}
+
+void Player::AddAttackSpeed(float add_vol)
+{
+	attack_speed -= add_vol;
+}
+
+void Player::AddHpRecoveryProbability(float add_vol)
+{
+	hp_recovery_probability += add_vol;
+}
+
+void Player::AddCpRecoveryProbability(float add_vol)
+{
+	cp_recovery_probability += add_vol;
+}
+
+
 DiploidCircleV2* Player::PlayerCirclePtr()
 {
 	return& player;
