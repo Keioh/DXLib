@@ -45,6 +45,11 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 
 		hit = false;
 	}
+
+	if (selected == 1)
+	{
+		box.SetColor(GetColor(0, 255, 0));
+	}
 }
 
 void DiploidSelectedUIV2::Draw(bool draw, bool debug)

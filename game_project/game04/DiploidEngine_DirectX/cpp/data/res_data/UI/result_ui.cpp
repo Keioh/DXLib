@@ -49,6 +49,30 @@ void ResultUI::Update()
 		as_up_button.Updata(&input);
 		hp_up_button.Updata(&input);
 		cp_up_button.Updata(&input);
+
+		//ASアップボタンを押したら
+		if (as_up_button.GetSelectedUI() == 1)
+		{
+			//他のボタンをオフにする
+			hp_up_button.SetSelectedUI(-1);
+			cp_up_button.SetSelectedUI(-1);
+		}
+
+		//HPアップボタンを押したら
+		if (hp_up_button.GetSelectedUI() == 1)
+		{
+			//他のボタンをオフにする
+			as_up_button.SetSelectedUI(-1);
+			cp_up_button.SetSelectedUI(-1);
+		}
+
+		//CPアップボタンを押したら
+		if (cp_up_button.GetSelectedUI() == 1)
+		{
+			//他のボタンをオフにする
+			as_up_button.SetSelectedUI(-1);
+			hp_up_button.SetSelectedUI(-1);
+		}
 	}
 }
 
@@ -57,9 +81,9 @@ void ResultUI::Draw(bool draw)
 	if (active_flag == true)
 	{
 		back_image.Draw(draw);
-		as_up_button.Draw(draw);
-		hp_up_button.Draw(draw);
-		cp_up_button.Draw(draw);
+		as_up_button.Draw(draw, true);
+		hp_up_button.Draw(draw, true);
+		cp_up_button.Draw(draw, true);
 
 		string_image.Draw(draw);
 
