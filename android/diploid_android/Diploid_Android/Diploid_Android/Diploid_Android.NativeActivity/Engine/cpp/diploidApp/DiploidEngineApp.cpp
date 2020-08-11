@@ -13,17 +13,41 @@ void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒ
 
 void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
 {		
-
+	box.Init(VGet(200, 1000, 0), VGet(500, 300, 0), GetColor(255, 255, 255));
+	box.SetFill(true);
 }
 
 void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
 {
-
+	input.Update();
+	
+	if (collision.BoxAndTouchCollisionUpdate(&box, input.GetTouchPositionX(), input.GetTouchPositionY()) == true)
+	{			
+		if (input.GetReleaseTouch() == true)
+		{
+			box.SetColor(GetColor(255, 255, 255));
+		}
+		else
+		{
+			box.SetColor(GetColor(255, 0, 0));
+		}
+	}
+	else
+	{
+		box.SetColor(GetColor(0, 0, 255));
+	}
 }
 
 void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
 {
-	DrawCircleAA(GetWindowSize().x / 2, GetWindowSize().y / 2, 200, 64, GetColor(255, 255, 255));
+	box.Draw();
+
+	SetFontSize(50);
+
+	DrawFormatStringF(0, 50, GetColor(255, 255, 255), "touch_release = %d", input.GetTouchReleaseFlag());
+	DrawFormatStringF(0, 50 * 2, GetColor(255, 255, 255), "touch_x = %d", input.GetTouchPositionX());
+	DrawFormatStringF(0, 50 * 3, GetColor(255, 255, 255), "touch_y = %d", input.GetTouchPositionY());
+
 }
 
 void DiploidEngineApp::Destory()//ƒ‹[ƒv’†‚Éíœ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg(ver1.0)‚ª‚ ‚éê‡‚Í‚±‚±‚Åíœˆ—‚ğ‘‚­B

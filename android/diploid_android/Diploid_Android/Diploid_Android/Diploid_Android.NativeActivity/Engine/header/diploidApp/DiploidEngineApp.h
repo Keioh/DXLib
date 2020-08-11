@@ -28,6 +28,12 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
+	bool test;
+
+	DiploidEngineInput input;
+
+	DiploidBoxV2 box;
+	DiploidCollision collision;
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

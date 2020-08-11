@@ -30,7 +30,12 @@ private:
 	//タッチ関連
 	int touch_position_x;//タッチしているX座標
 	int touch_position_y;//タッチしているY座標
+	int touch_id;//タッチID
+	int touch_device_id;//デバイスID
 
+	int touch_size;//タッチしている数
+
+	int touch_release_flag;
 
 
 public:	
@@ -71,5 +76,8 @@ public:
 	VECTOR GetMousePosition();//現在のマウス座標の取得。
 
 	bool GetReleaseTouch();//指が離された瞬間の判定。(離した瞬間にtrueが返る。)
+	int GetTouchPositionX();//タッチされた瞬間のX座標
+	int GetTouchPositionY();//タッチされた瞬間のY座標
 
+	int GetTouchReleaseFlag();
 };

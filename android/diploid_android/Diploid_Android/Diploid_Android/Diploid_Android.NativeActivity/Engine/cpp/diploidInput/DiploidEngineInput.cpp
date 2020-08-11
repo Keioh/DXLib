@@ -9,6 +9,18 @@ void DiploidEngineInput::Update()
 {
 	GetHitKeyStateAll(Key);//キーの状態を確認
 
+	touch_size = GetTouchInputNum();//タッチされている数を取得
+				
+	if (touch_size != 0)
+	{
+		GetTouchInput(0, &touch_position_x, &touch_position_y, &touch_id, &touch_device_id);//0番のタッチ情報を取得
+	}
+	else
+	{
+	}
+
+
+
 	Check_Mouse = GetMouseInputLog2(&MOUSE_BUTTON, &CLICK_X, &CLICK_Y, &LOG_TYPE, TRUE);//マウスの状態を確認
 
 	GetMousePoint(&mouse_pos_adr_x, &mouse_pos_adr_y);//現在のマウス座標を取得
@@ -200,5 +212,44 @@ VECTOR DiploidEngineInput::GetMousePosition()
 
 bool DiploidEngineInput::GetReleaseTouch()
 {
-	return true;
+	//画面がタッチされていたら
+	if (touch_size != 0)
+	{
+		touch_release_flag = 1;
+
+		return false;
+	}
+	else
+	{			
+		touch_position_x = -1;
+		touch_position_y = -1;
+
+		if (touch_release_flag == 1)
+		{
+			touch_release_flag = -1;
+
+			return true;
+		}
+		else
+		{
+			touch_release_flag = -1;
+
+			return false;
+		}
+	}
+}
+
+int DiploidEngineInput::GetTouchPositionX()
+{
+	return touch_position_x;
+}
+
+int DiploidEngineInput::GetTouchPositionY()
+{
+	return touch_position_y;
+}
+
+int DiploidEngineInput::GetTouchReleaseFlag()
+{
+	return touch_release_flag;
 }

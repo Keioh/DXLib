@@ -125,6 +125,40 @@ bool DiploidCollision::BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x
 	}
 }
 
+bool DiploidCollision::BoxAndTouchCollisionUpdate(DiploidBoxV2* box, int touch_x, int touch_y, int updata_rate)
+{
+	if ((box->GetPosition().x <= window_size_x) && (box->GetPosition().x + box->GetSize().x >= 0)
+		&& (box->GetPosition().y <= window_size_y) && (box->GetPosition().y + box->GetSize().y >= 0))
+	{
+		if (updata_rate <= upadata_count)
+		{
+			if ((box->GetPosition().x < touch_x) && (box->GetPosition().x + box->GetSize().x > touch_x)
+				&& (box->GetPosition().y < touch_y) && (box->GetPosition().y + box->GetSize().y > touch_y))
+			{
+				if (box->GetHitFlag() != true)
+				{
+					box->SetHitFlag(true);//ヒットフラグをtrueに変更
+				}
+
+				upadata_count = 0;
+
+				return true;
+			}
+			else
+			{
+				if (box->GetHitFlag() != false)
+				{
+					box->SetHitFlag(false);//ヒットフラグをfalseに変更
+				}
+
+				upadata_count = 0;
+
+				return false;
+			}
+		}
+	}
+}
+
 
 int DiploidCollision::GetUpdateCounter()
 {
