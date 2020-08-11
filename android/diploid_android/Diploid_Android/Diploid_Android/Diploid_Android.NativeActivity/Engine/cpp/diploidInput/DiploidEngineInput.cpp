@@ -196,3 +196,9 @@ VECTOR DiploidEngineInput::GetMousePosition()
 
 	return pos;
 }
+
+
+bool DiploidEngineInput::GetReleaseTouch()
+{
+	return true;
+}

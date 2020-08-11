@@ -27,6 +27,11 @@ private:
 	int press_time = 0;//押している時間
 	int release_time = 0;//離している時間
 
+	//タッチ関連
+	int touch_position_x;//タッチしているX座標
+	int touch_position_y;//タッチしているY座標
+
+
 
 public:	
 
@@ -64,5 +69,7 @@ public:
 	VECTOR GetMousePressPosition();//押した瞬間のマウス座標の取得。
 	VECTOR GetMouseReleasePosition();//離した瞬間のマウス座標の取得。
 	VECTOR GetMousePosition();//現在のマウス座標の取得。
+
+	bool GetReleaseTouch();//指が離された瞬間の判定。(離した瞬間にtrueが返る。)
 
 };
