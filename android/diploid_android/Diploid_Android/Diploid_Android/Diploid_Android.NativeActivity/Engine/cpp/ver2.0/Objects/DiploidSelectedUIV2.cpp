@@ -5,7 +5,7 @@ void DiploidSelectedUIV2::Load(int graphics_handl)
 	image.SetHandl(graphics_handl);	
 }
 
-void DiploidSelectedUIV2::Init(VECTOR pos, VECTOR size, float scale)
+void DiploidSelectedUIV2::Init(VECTOR pos, VECTOR size, float scale, bool touch)
 {
 	object_scale = scale;
 	object_size = size;
@@ -13,11 +13,22 @@ void DiploidSelectedUIV2::Init(VECTOR pos, VECTOR size, float scale)
 
 	image.Init(VGet(pos.x + (image.GetSize().x / 2), pos.y + (image.GetSize().y / 2), 0), false);
 	image.SetScale(scale, scale);
+
+	touch_flag = touch;
 }
 
 void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 {
-	GetMousePoint(&mouse_x, &mouse_y);//マウス座標を取得
+	if (touch_flag == false)
+	{
+		GetMousePoint(&mouse_x, &mouse_y);//マウス座標を取得
+	}
+	else
+	{
+		//タッチ座標を取得
+		mouse_x = input->GetTouchPositionX();
+		mouse_y = input->GetTouchPositionY();
+	}
 
 	//BOXに当たっていたら
 	if (collision.BoxAndMouseCollisionUpdate(&box, mouse_x, mouse_y) == true)
@@ -26,17 +37,35 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 
 		hit = true;
 
-		//クリックしたら
-		if (input->GetPressMouse(MOUSE_INPUT_LEFT) == true)
+		if (touch_flag == false)
 		{
-			box.SetColor(GetColor(0, 255, 0));
+			//クリックしたら
+			if (input->GetPressMouse(MOUSE_INPUT_LEFT) == true)
+			{
+				box.SetColor(GetColor(0, 255, 0));
 
-			click = true;
-			selected *= -1;
+				click = true;
+				selected *= -1;
+			}
+			else
+			{
+				click = false;
+			}
 		}
 		else
 		{
-			click = false;
+			//タッチしたら
+			if (input->GetReleaseTouch() == true)
+			{
+				box.SetColor(GetColor(0, 255, 0));
+
+				click = true;
+				selected *= -1;
+			}
+			else
+			{
+				click = false;
+			}
 		}
 	}
 	else
@@ -100,6 +129,11 @@ void DiploidSelectedUIV2::SetScale(float new_scale)
 void DiploidSelectedUIV2::SetSelectedUI(int new_flag)
 {
 	selected = new_flag;
+}
+
+void DiploidSelectedUIV2::SetTouchFlag(bool new_flag)
+{
+	touch_flag = new_flag;
 }
 
 

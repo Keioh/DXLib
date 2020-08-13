@@ -97,12 +97,6 @@
     <ClCompile Include="Engine\cpp\ver2.0\Main\Transform.cpp">
       <Filter>Engine\cpp\ver2.0\Main</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\cpp\ver2.0\UI\PressButtonBoxV2.cpp">
-      <Filter>Engine\cpp\ver2.0\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\ver2.0\UI\SwitchButtonBoxV2.cpp">
-      <Filter>Engine\cpp\ver2.0\UI</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidAll.cpp">
       <Filter>Engine\cpp\ver2.0\Object</Filter>
     </ClCompile>
@@ -132,54 +126,6 @@
     </ClCompile>
     <ClCompile Include="Engine\cpp\data\number.cpp">
       <Filter>Engine\cpp\data</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\anime\animation.cpp">
-      <Filter>Engine\cpp\data\res_data\anime</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\enemy_attack.cpp">
-      <Filter>Engine\cpp\data\res_data\enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\enemy_manager.cpp">
-      <Filter>Engine\cpp\data\res_data\enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\move_pattern.cpp">
-      <Filter>Engine\cpp\data\res_data\enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\test_enemy.cpp">
-      <Filter>Engine\cpp\data\res_data\enemy</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\field\ground_line.cpp">
-      <Filter>Engine\cpp\data\res_data\field</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\cp_recovery_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\day_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\dp_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\enemy_destory_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\hp_recovery_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\hp_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\UI\result_ui.cpp">
-      <Filter>Engine\cpp\data\res_data\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\player\player.cpp">
-      <Filter>Engine\cpp\data\res_data\player</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\player\player_attack.cpp">
-      <Filter>Engine\cpp\data\res_data\player</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\cpp\data\res_data\player\player_defense.cpp">
-      <Filter>Engine\cpp\data\res_data\player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -330,36 +276,6 @@
     <Filter Include="Engine\header\diploidStandalone\impact">
       <UniqueIdentifier>{f3f390fe-da4a-42ae-a1e7-01fea37e2b54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\cpp\data\res_data\anime">
-      <UniqueIdentifier>{c0eaeee2-5193-4149-bda9-c2018e4d727c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\cpp\data\res_data\enemy">
-      <UniqueIdentifier>{0532815a-f368-4fce-8043-244446a73241}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\cpp\data\res_data\field">
-      <UniqueIdentifier>{bdb7829c-be82-4810-bbfb-f7c4920feec9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\cpp\data\res_data\player">
-      <UniqueIdentifier>{d3b5a199-5a54-4c50-a49e-9442a1a7ce64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\cpp\data\res_data\UI">
-      <UniqueIdentifier>{11d5dfe1-7a08-4a93-9a09-d87d515fced7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\header\data\res_data\anime">
-      <UniqueIdentifier>{dff17ca1-8f24-4bfd-9338-3c1a6d07e2fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\header\data\res_data\enemy">
-      <UniqueIdentifier>{b58c2b5f-2f15-4e49-a916-f6ddb7822e40}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\header\data\res_data\field">
-      <UniqueIdentifier>{feb1f420-6c10-469c-9500-58e6f4d49391}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\header\data\res_data\player">
-      <UniqueIdentifier>{66b2890d-fdc3-44b1-b06d-85d34be8174d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\header\data\res_data\UI">
-      <UniqueIdentifier>{3859a906-cefe-4a1e-9822-4df06b2c318f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineApp.h">
@@ -470,12 +386,6 @@
     <ClInclude Include="Engine\header\ver2.0\Objects\DiploidSelectedUIV2.h">
       <Filter>Engine\header\ver2.0\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\header\ver2.0\UI\PressButtonBoxV2.h">
-      <Filter>Engine\header\ver2.0\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\ver2.0\UI\SwitchButtonBoxV2.h">
-      <Filter>Engine\header\ver2.0\UI</Filter>
-    </ClInclude>
     <ClInclude Include="Engine\header\diploidStandalone\base_standalone.h">
       <Filter>Engine\header\diploidStandalone</Filter>
     </ClInclude>
@@ -494,56 +404,8 @@
     <ClInclude Include="Engine\header\data\number.h">
       <Filter>Engine\header\data</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\anime\animation.h">
-      <Filter>Engine\header\data\res_data\anime</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\enemy\enemy_attack.h">
-      <Filter>Engine\header\data\res_data\enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\enemy\enemy_data.h">
-      <Filter>Engine\header\data\res_data\enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\enemy\enemy_manager.h">
-      <Filter>Engine\header\data\res_data\enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\enemy\move_pattern.h">
-      <Filter>Engine\header\data\res_data\enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\enemy\test_enemy.h">
-      <Filter>Engine\header\data\res_data\enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\field\ground_line.h">
-      <Filter>Engine\header\data\res_data\field</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\cp_recovery_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\day_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\dp_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\enemy_destory_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\hp_recovery_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\hp_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\UI\result_ui.h">
-      <Filter>Engine\header\data\res_data\UI</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\player\player.h">
-      <Filter>Engine\header\data\res_data\player</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\player\player_attack.h">
-      <Filter>Engine\header\data\res_data\player</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\header\data\res_data\player\player_defense.h">
-      <Filter>Engine\header\data\res_data\player</Filter>
+    <ClInclude Include="Engine\header\data\res_data\game_define.h">
+      <Filter>Engine\header\data\res_data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

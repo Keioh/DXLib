@@ -16,6 +16,8 @@
 #include "ver2.0/Graphics/DiploidImageV2.h"//Ver2.0における画像クラス
 #include "ver2.0/Graphics/DiploidBoxV2.h"//Ver2.0における四角クラス
 
+#include "ver2.0/Objects/DiploidSelectedUIV2.h"
+
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
@@ -28,13 +30,9 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	bool test;
-
+	DiploidSelectedUIV2 button;
 	DiploidEngineInput input;
-
-	DiploidBoxV2 box;
-	DiploidCollision collision;
-
+	
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

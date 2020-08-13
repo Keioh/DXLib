@@ -236,22 +236,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\cpp\data\number.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\anime\animation.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\enemy_attack.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\enemy_manager.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\move_pattern.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\enemy\test_enemy.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\field\ground_line.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\player\player.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\player\player_attack.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\player\player_defense.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\cp_recovery_ui.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\day_ui.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\dp_ui.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\enemy_destory_ui.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\hp_recovery_ui.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\hp_ui.cpp" />
-    <ClCompile Include="Engine\cpp\data\res_data\UI\result_ui.cpp" />
     <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="Engine\cpp\diploidGraphics\diploidBox.cpp" />
@@ -292,29 +276,11 @@
     <ClCompile Include="Engine\cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidAll.cpp" />
     <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
-    <ClCompile Include="Engine\cpp\ver2.0\UI\PressButtonBoxV2.cpp" />
-    <ClCompile Include="Engine\cpp\ver2.0\UI\SwitchButtonBoxV2.cpp" />
     <ClCompile Include="Engine\AndroidMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\header\data\number.h" />
-    <ClInclude Include="Engine\header\data\res_data\anime\animation.h" />
-    <ClInclude Include="Engine\header\data\res_data\enemy\enemy_attack.h" />
-    <ClInclude Include="Engine\header\data\res_data\enemy\enemy_data.h" />
-    <ClInclude Include="Engine\header\data\res_data\enemy\enemy_manager.h" />
-    <ClInclude Include="Engine\header\data\res_data\enemy\move_pattern.h" />
-    <ClInclude Include="Engine\header\data\res_data\enemy\test_enemy.h" />
-    <ClInclude Include="Engine\header\data\res_data\field\ground_line.h" />
-    <ClInclude Include="Engine\header\data\res_data\player\player.h" />
-    <ClInclude Include="Engine\header\data\res_data\player\player_attack.h" />
-    <ClInclude Include="Engine\header\data\res_data\player\player_defense.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\cp_recovery_ui.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\day_ui.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\dp_ui.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\enemy_destory_ui.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\hp_recovery_ui.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\hp_ui.h" />
-    <ClInclude Include="Engine\header\data\res_data\UI\result_ui.h" />
+    <ClInclude Include="Engine\header\data\res_data\game_define.h" />
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineMain.h" />
     <ClInclude Include="Engine\header\diploidGraphics\diploidBox.h" />
@@ -356,8 +322,6 @@
     <ClInclude Include="Engine\header\ver2.0\Main\Transform.h" />
     <ClInclude Include="Engine\header\ver2.0\Objects\DiploidAll.h" />
     <ClInclude Include="Engine\header\ver2.0\Objects\DiploidSelectedUIV2.h" />
-    <ClInclude Include="Engine\header\ver2.0\UI\PressButtonBoxV2.h" />
-    <ClInclude Include="Engine\header\ver2.0\UI\SwitchButtonBoxV2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

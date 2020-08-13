@@ -25,10 +25,12 @@ private:
 	bool click = false;
 	int selected = -1;
 
+	bool touch_flag = false;
+
 public:
 
 	void Load(int graphics_handl);
-	void Init(VECTOR pos, VECTOR size, float scale = 1.0f);//UIを初期化します。
+	void Init(VECTOR pos, VECTOR size, float scale = 1.0f, bool touch = false);//UIを初期化します。
 	void Updata(DiploidEngineInput* input);//UIを更新します。
 	void Draw(bool draw = true, bool debug = false);//UIを描画します。
 
@@ -36,6 +38,7 @@ public:
 	void SetSize(int size_x, int size_y);//新しく大きさを設定します。(バグ)
 	void SetScale(float new_scale);//新しくスケール値を設定します。(バグ)
 	void SetSelectedUI(int new_flag);
+	void SetTouchFlag(bool new_flag);
 
 	VECTOR GetPosition();//現在のUIの位置(左上)の座標を取得します。
 	VECTOR GetSize();//現在のUIの大きさを取得します。
