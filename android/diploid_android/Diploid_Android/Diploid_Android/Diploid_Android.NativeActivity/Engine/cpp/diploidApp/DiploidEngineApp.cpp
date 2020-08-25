@@ -27,6 +27,7 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
 	button.Draw(true, true);
+	DrawFormatString(0, 60, GetColor(255, 255, 255), "%d", button.GetTime());
 }
 
 void DiploidEngineApp::Destory()//ループ中に削除したいオブジェクト(ver1.0)がある場合はここで削除処理を書く。

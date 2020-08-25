@@ -17,6 +17,7 @@
 #include "ver2.0/Graphics/DiploidBoxV2.h"//Ver2.0における四角クラス
 
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
+#include "ver2.0/Objects/DiploidTouchUI.h"
 
 
 //スタンドアローン関連
@@ -30,7 +31,7 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidSelectedUIV2 button;
+	DiploidTouchUI button;
 	DiploidEngineInput input;
 	
 public:

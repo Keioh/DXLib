@@ -277,6 +277,7 @@
     <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidAll.cpp" />
     <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
     <ClCompile Include="Engine\AndroidMain.cpp" />
+    <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidTouchUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\header\data\number.h" />
@@ -322,6 +323,7 @@
     <ClInclude Include="Engine\header\ver2.0\Main\Transform.h" />
     <ClInclude Include="Engine\header\ver2.0\Objects\DiploidAll.h" />
     <ClInclude Include="Engine\header\ver2.0\Objects\DiploidSelectedUIV2.h" />
+    <ClInclude Include="Engine\header\ver2.0\Objects\DiploidTouchUI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

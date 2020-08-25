@@ -210,6 +210,19 @@ VECTOR DiploidEngineInput::GetMousePosition()
 }
 
 
+bool DiploidEngineInput::GetTouch()
+{
+	//画面がタッチされていたら
+	if (touch_size > 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 bool DiploidEngineInput::GetReleaseTouch()
 {
 	//画面がタッチされていたら

@@ -75,6 +75,7 @@ public:
 	VECTOR GetMouseReleasePosition();//離した瞬間のマウス座標の取得。
 	VECTOR GetMousePosition();//現在のマウス座標の取得。
 
+	bool GetTouch();//タッチしている間、trueが返る。
 	bool GetReleaseTouch();//指が離された瞬間の判定。(離した瞬間にtrueが返る。)
 	int GetTouchPositionX();//タッチされた瞬間のX座標
 	int GetTouchPositionY();//タッチされた瞬間のY座標

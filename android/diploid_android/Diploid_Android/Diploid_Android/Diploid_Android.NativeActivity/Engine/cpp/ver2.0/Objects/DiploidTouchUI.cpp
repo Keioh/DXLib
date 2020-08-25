@@ -1,11 +1,11 @@
-#include "ver2.0/Objects/DiploidSelectedUIV2.h"
+#include "ver2.0/Objects/DiploidTouchUI.h"
 
-void DiploidSelectedUIV2::Load(int graphics_handl)
+void DiploidTouchUI::Load(int graphics_handl)
 {
-	image.SetHandl(graphics_handl);	
+	image.SetHandl(graphics_handl);
 }
 
-void DiploidSelectedUIV2::Init(VECTOR pos, VECTOR size, float scale, bool touch)
+void DiploidTouchUI::Init(VECTOR pos, VECTOR size, float scale, bool touch)
 {
 	object_scale = scale;
 	object_size = size;
@@ -17,8 +17,14 @@ void DiploidSelectedUIV2::Init(VECTOR pos, VECTOR size, float scale, bool touch)
 	touch_flag = touch;
 }
 
-void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
+void DiploidTouchUI::Updata(DiploidEngineInput* input)
 {
+	//9999を超えるなら
+	if (time > 9999)
+	{
+		time = 9999;//9999で止める。
+	}
+
 	if (touch_flag == false)
 	{
 		GetMousePoint(&mouse_x, &mouse_y);//マウス座標を取得
@@ -39,6 +45,15 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 
 		if (touch_flag == false)
 		{
+			if (input->GetMouse(MOUSE_INPUT_LEFT) == true)
+			{
+				time += 1;
+			}
+			else
+			{
+				time = 0;
+			}
+
 			//クリックしたら
 			if (input->GetPressMouse(MOUSE_INPUT_LEFT) == true)
 			{
@@ -46,21 +61,32 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 
 				click = true;
 				selected *= -1;
+
 			}
 			else
 			{
 				click = false;
+
 			}
 		}
 		else
 		{
+			if (input->GetTouch() == true)
+			{
+				time += 1;
+			}
+			else
+			{
+				time = 0;
+			}
+
 			//タッチしたら
 			if (input->GetReleaseTouch() == true)
 			{
 				box.SetColor(GetColor(0, 255, 0));
 
 				click = true;
-				selected *= -1;
+				selected *= -1;				
 			}
 			else
 			{
@@ -72,18 +98,18 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 	{
 		box.SetColor(GetColor(0, 0, 255));
 
-		click = false;
-
 		hit = false;
+		click = false;
+		time = 0;
 	}
 
-	if (selected == 1)
+	if (click == 1)
 	{
 		box.SetColor(GetColor(0, 255, 0));
 	}
 }
 
-void DiploidSelectedUIV2::Draw(bool draw, bool debug)
+void DiploidTouchUI::Draw(bool draw, bool debug)
 {
 	if (draw == true)
 	{
@@ -113,63 +139,68 @@ void DiploidSelectedUIV2::Draw(bool draw, bool debug)
 }
 
 
-void DiploidSelectedUIV2::SetPosition(int pos_x, int pos_y)
+void DiploidTouchUI::SetPosition(int pos_x, int pos_y)
 {
 	position = VGet(pos_x, pos_y, 0);
 }
 
-void DiploidSelectedUIV2::SetSize(int size_x, int size_y)
+void DiploidTouchUI::SetSize(int size_x, int size_y)
 {
 	object_size = VGet(size_x, size_y, 0);
 }
 
-void DiploidSelectedUIV2::SetScale(float new_scale)
+void DiploidTouchUI::SetScale(float new_scale)
 {
 	object_scale = new_scale;
 }
 
-void DiploidSelectedUIV2::SetSelectedUI(int new_flag)
+void DiploidTouchUI::SetSelectedUI(int new_flag)
 {
 	selected = new_flag;
 }
 
-void DiploidSelectedUIV2::SetTouchFlag(bool new_flag)
+void DiploidTouchUI::SetTouchFlag(bool new_flag)
 {
 	touch_flag = new_flag;
 }
 
 
-VECTOR DiploidSelectedUIV2::GetPosition()
+VECTOR DiploidTouchUI::GetPosition()
 {
 	return position;
 }
 
-VECTOR DiploidSelectedUIV2::GetSize()
+VECTOR DiploidTouchUI::GetSize()
 {
 	return object_size;
 }
 
-float DiploidSelectedUIV2::GetScale()
+float DiploidTouchUI::GetScale()
 {
 	return object_scale;
 }
 
-VECTOR DiploidSelectedUIV2::GetGraphicsSize()
+VECTOR DiploidTouchUI::GetGraphicsSize()
 {
 	return image.GetSize();
 }
 
-bool DiploidSelectedUIV2::GetHit()
+bool DiploidTouchUI::GetHit()
 {
 	return hit;
 }
 
-bool DiploidSelectedUIV2::GetClick()
+bool DiploidTouchUI::GetClick()
 {
 	return click;
 }
 
-int DiploidSelectedUIV2::GetSelectedUI()
+int DiploidTouchUI::GetSelectedUI()
 {
 	return selected;
+}
+
+int DiploidTouchUI::GetTime()
+{
+	return time;
 }

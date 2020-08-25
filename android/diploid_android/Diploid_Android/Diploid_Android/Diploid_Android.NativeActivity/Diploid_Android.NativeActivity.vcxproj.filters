@@ -127,6 +127,9 @@
     <ClCompile Include="Engine\cpp\data\number.cpp">
       <Filter>Engine\cpp\data</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidTouchUI.cpp">
+      <Filter>Engine\cpp\ver2.0\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -406,6 +409,9 @@
     </ClInclude>
     <ClInclude Include="Engine\header\data\res_data\game_define.h">
       <Filter>Engine\header\data\res_data</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Objects\DiploidTouchUI.h">
+      <Filter>Engine\header\ver2.0\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
