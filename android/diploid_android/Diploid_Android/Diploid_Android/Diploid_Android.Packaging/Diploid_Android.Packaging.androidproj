@@ -144,6 +144,9 @@
   <ItemGroup>
     <Folder Include="assets\res\" />
   </ItemGroup>
+  <ItemGroup>
+    <JavaCompile Include="src\com\Diploid_Android\Packaging\Diploid_Android.java" />
+  </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>

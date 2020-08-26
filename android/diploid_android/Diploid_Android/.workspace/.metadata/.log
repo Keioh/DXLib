@@ -1,0 +1,10 @@
+!SESSION 2020-08-26 20:05:40.435 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_261
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ja_JP
+Framework arguments:  -application com.microsoft.javapkgsrv.application javapkgsrv-2378e5cb-0530-4690-ac10-e8764f360bf4
+Command-line arguments:  -consoleLog -application com.microsoft.javapkgsrv.application -data C:\GameProject\android\diploid_android\Diploid_Android\.workspace javapkgsrv-2378e5cb-0530-4690-ac10-e8764f360bf4
+
+!ENTRY org.eclipse.core.resources 2 10035 2020-08-26 20:08:11.076
+!MESSAGE The workspace will exit with unsaved changes in this session.

@@ -3,6 +3,7 @@
 DiploidEngineSetting::DiploidEngineSetting()
 {
 	//window関連
+
 	window_x = 1080;
 	window_y = 1920;
 	window_bit = 32;
@@ -25,6 +26,7 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {
+
 	SetUseCharCodeFormat(DX_CHARCODEFORMAT_SHIFTJIS);
 	//SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//文字コード変更	
 	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//フォントの描画の仕方
