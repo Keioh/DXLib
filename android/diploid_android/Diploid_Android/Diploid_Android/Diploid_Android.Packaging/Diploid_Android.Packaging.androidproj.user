@@ -10,6 +10,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebuggerFlavor>AndroidDebugger</DebuggerFlavor>
-    <AndroidDeviceID>emulator-####;test-x86_64</AndroidDeviceID>
+    <AndroidDeviceID>emulator-5554;tablet</AndroidDeviceID>
   </PropertyGroup>
 </Project>

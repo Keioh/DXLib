@@ -130,6 +130,9 @@
     <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidTouchUI.cpp">
       <Filter>Engine\cpp\ver2.0\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidScreen\DiploidEngineAndroidScreen.cpp">
+      <Filter>Engine\cpp\diploidScreen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -412,6 +415,9 @@
     </ClInclude>
     <ClInclude Include="Engine\header\ver2.0\Objects\DiploidTouchUI.h">
       <Filter>Engine\header\ver2.0\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidScreen\DiploidEngineAndroidScreen.h">
+      <Filter>Engine\header\diploidScreen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

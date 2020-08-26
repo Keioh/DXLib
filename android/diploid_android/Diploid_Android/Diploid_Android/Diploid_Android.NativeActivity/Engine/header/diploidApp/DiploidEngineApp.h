@@ -19,6 +19,8 @@
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidTouchUI.h"
 
+#include "diploidScreen/DiploidEngineAndroidScreen.h"
+
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
@@ -34,6 +36,8 @@ private:
 	DiploidTouchUI button;
 	DiploidEngineInput input;
 	
+	DiploidEngineAndroidScreen test;
+
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。
 	void Load();//ゲーム起動時にロードするデータ

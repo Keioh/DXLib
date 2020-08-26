@@ -4,8 +4,8 @@ DiploidEngineSetting::DiploidEngineSetting()
 {
 	//windowŠÖ˜A
 
-	window_x = 1080;
-	window_y = 1920;
+	window_x = android_screen.GetScreenSizeX();
+	window_y = android_screen.GetScreenSizeY();
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
@@ -58,7 +58,6 @@ void DiploidEngineSetting::SetEnd()
 {
 	SetDrawScreen(DX_SCREEN_BACK);//— ‰æ–Êˆ—‚ğƒIƒ“
 	SetCameraNearFar(0.1f, 10000.0f);
-
 }
 
 void DiploidEngineSetting::End()

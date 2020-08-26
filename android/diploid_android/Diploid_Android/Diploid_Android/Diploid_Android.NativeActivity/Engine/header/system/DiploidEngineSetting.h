@@ -5,10 +5,12 @@
 
 #pragma once
 #include "DxLib.h"
+#include "diploidScreen/DiploidEngineAndroidScreen.h"
 
 class DiploidEngineSetting
 {
 private:
+	DiploidEngineAndroidScreen android_screen;//Androidデバイスのディスプレイステータス確認
 
 public:
 	DiploidEngineSetting();
