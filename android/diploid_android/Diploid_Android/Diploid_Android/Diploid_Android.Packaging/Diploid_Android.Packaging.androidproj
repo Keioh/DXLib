@@ -129,6 +129,10 @@
     <Content Include="assets\number\7.png" />
     <Content Include="assets\number\8.png" />
     <Content Include="assets\number\9.png" />
+    <Content Include="assets\res\button\down.png" />
+    <Content Include="assets\res\button\up.png" />
+    <Content Include="assets\res\test_image.png" />
+    <Content Include="assets\text\ja.txt" />
     <Content Include="res\values\strings.xml" />
     <AntBuildXml Include="build.xml" />
     <AndroidManifest Include="AndroidManifest.xml">
@@ -140,9 +144,6 @@
     <ProjectReference Include="..\Diploid_Android.NativeActivity\Diploid_Android.NativeActivity.vcxproj">
       <Project>{4cba3908-9647-4ac1-8773-0369ee01b463}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\res\" />
   </ItemGroup>
   <ItemGroup>
     <JavaCompile Include="src\com\Diploid_Android\Packaging\Diploid_Android.java" />

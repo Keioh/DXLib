@@ -5,6 +5,7 @@
 class DiploidEngineAndroidScreen
 {
 private:
+	//JNI関連
 	JNIEnv *env;
 	const ANativeActivity *NativeActivity;
 
@@ -14,6 +15,7 @@ private:
 	jfieldID jfieldID_ScreenX;
 	jfieldID jfieldID_ScreenY;
 
+	//ウィンドウサイズ保存用変数
 	int window_x;
 	int window_y;
 

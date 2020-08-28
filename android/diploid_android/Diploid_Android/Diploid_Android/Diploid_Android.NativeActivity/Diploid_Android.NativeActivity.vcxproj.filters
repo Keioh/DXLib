@@ -133,6 +133,15 @@
     <ClCompile Include="Engine\cpp\diploidScreen\DiploidEngineAndroidScreen.cpp">
       <Filter>Engine\cpp\diploidScreen</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidEffect.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\data\res_data\parameter\base_parameter_ui.cpp">
+      <Filter>Engine\cpp\data\res_data\parameter</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\data\res_data\parameter\patameter_screen.cpp">
+      <Filter>Engine\cpp\data\res_data\parameter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -282,6 +291,12 @@
     <Filter Include="Engine\header\diploidStandalone\impact">
       <UniqueIdentifier>{f3f390fe-da4a-42ae-a1e7-01fea37e2b54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\cpp\data\res_data\parameter">
+      <UniqueIdentifier>{53706000-70d9-4e27-944a-5d9cced7a1a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\data\res_data\parameter">
+      <UniqueIdentifier>{579a74ec-c3e0-4a3c-9bb4-e3ceca42a6de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineApp.h">
@@ -418,6 +433,15 @@
     </ClInclude>
     <ClInclude Include="Engine\header\diploidScreen\DiploidEngineAndroidScreen.h">
       <Filter>Engine\header\diploidScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidEffect.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\data\res_data\parameter\base_parameter_ui.h">
+      <Filter>Engine\header\data\res_data\parameter</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\data\res_data\parameter\patameter_screen.h">
+      <Filter>Engine\header\data\res_data\parameter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

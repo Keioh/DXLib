@@ -1,5 +1,6 @@
 //中枢です。
 #pragma once
+#include <string>
 #include <list>
 #include <memory>
 #include <unordered_map>
@@ -19,24 +20,28 @@
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidTouchUI.h"
 
-#include "diploidScreen/DiploidEngineAndroidScreen.h"
+#include "diploidScreen/DiploidEngineAndroidScreen.h"//Androidデバイスの画面情報取得クラス
 
 
 //スタンドアローン関連
 #include "diploidStandalone\standalone.h"//未実装
 
 //ゲームデータ関連
-
+//#include "diploidGraphics/diploidEffect.h"
+//#include "data/res_data/parameter/base_parameter_ui.h"
+#include "data/res_data/parameter/patameter_screen.h"
 
 using namespace std;
 
 class DiploidEngineApp : public DiploidEngineMain
 {
-private:
-	DiploidTouchUI button;
+private:	
+	DiploidEngineAndroidScreen android_screen;//Androidデバイスの画面情報
 	DiploidEngineInput input;
-	
-	DiploidEngineAndroidScreen test;
+
+	ParameterScreen test;
+
+
 
 public:
 	void FileCreate();//ゲーム起動時に一度だけファイルを作る処理。

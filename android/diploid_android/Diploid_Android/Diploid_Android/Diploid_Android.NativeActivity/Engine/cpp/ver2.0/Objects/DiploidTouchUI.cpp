@@ -19,6 +19,8 @@ void DiploidTouchUI::Init(VECTOR pos, VECTOR size, float scale, bool touch)
 
 void DiploidTouchUI::Updata(DiploidEngineInput* input)
 {
+	position = box.GetPosition();
+
 	//9999‚ð’´‚¦‚é‚È‚ç
 	if (time > 9999)
 	{
@@ -113,7 +115,7 @@ void DiploidTouchUI::Draw(bool draw, bool debug)
 {
 	if (draw == true)
 	{
-		if (selected == 1)
+		if (click == 1)
 		{
 			image.SetBright(bright_red, bright_green, bright_blue);
 			image.Draw(draw);

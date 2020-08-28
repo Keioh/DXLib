@@ -236,10 +236,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\cpp\data\number.cpp" />
+    <ClCompile Include="Engine\cpp\data\res_data\parameter\base_parameter_ui.cpp" />
+    <ClCompile Include="Engine\cpp\data\res_data\parameter\patameter_screen.cpp" />
     <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="Engine\cpp\diploidGraphics\diploidBox.cpp" />
     <ClCompile Include="Engine\cpp\diploidGraphics\diploidCircle.cpp" />
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidEffect.cpp" />
     <ClCompile Include="Engine\cpp\diploidGraphics\diploidImage.cpp" />
     <ClCompile Include="Engine\cpp\diploidGraphics\diploidLine.cpp" />
     <ClCompile Include="Engine\cpp\diploidGraphics\diploidPanel.cpp" />
@@ -283,10 +286,13 @@
   <ItemGroup>
     <ClInclude Include="Engine\header\data\number.h" />
     <ClInclude Include="Engine\header\data\res_data\game_define.h" />
+    <ClInclude Include="Engine\header\data\res_data\parameter\base_parameter_ui.h" />
+    <ClInclude Include="Engine\header\data\res_data\parameter\patameter_screen.h" />
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineMain.h" />
     <ClInclude Include="Engine\header\diploidGraphics\diploidBox.h" />
     <ClInclude Include="Engine\header\diploidGraphics\diploidCircle.h" />
+    <ClInclude Include="Engine\header\diploidGraphics\diploidEffect.h" />
     <ClInclude Include="Engine\header\diploidGraphics\diploidImage.h" />
     <ClInclude Include="Engine\header\diploidGraphics\diploidLine.h" />
     <ClInclude Include="Engine\header\diploidGraphics\diploidPanel.h" />
