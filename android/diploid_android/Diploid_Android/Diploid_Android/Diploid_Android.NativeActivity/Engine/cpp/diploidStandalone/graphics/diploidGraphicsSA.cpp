@@ -1,4 +1,4 @@
-#include "diploidStandalone\graphics\diploidGraphicsSA.h"
+﻿#include "diploidStandalone\graphics\diploidGraphicsSA.h"
 
 DiploidGraphicsStandalone::DiploidGraphicsStandalone()
 {

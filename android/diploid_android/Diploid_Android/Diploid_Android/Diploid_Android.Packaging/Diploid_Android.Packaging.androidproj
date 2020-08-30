@@ -130,6 +130,9 @@
     <Content Include="assets\number\8.png" />
     <Content Include="assets\number\9.png" />
     <Content Include="assets\res\button\down.png" />
+    <Content Include="assets\res\button\info.png" />
+    <Content Include="assets\res\button\info_value.png" />
+    <Content Include="assets\res\button\parameter_back.png" />
     <Content Include="assets\res\button\up.png" />
     <Content Include="assets\res\test_image.png" />
     <Content Include="assets\text\ja.txt" />

@@ -1,4 +1,4 @@
-#include "diploidInput\DiploidEngineInput.h"
+ï»¿#include "diploidInput\DiploidEngineInput.h"
 
 void DiploidEngineInput::Init()
 {
@@ -7,13 +7,13 @@ void DiploidEngineInput::Init()
 
 void DiploidEngineInput::Update()
 {
-	GetHitKeyStateAll(Key);//ƒL[‚Ìó‘Ô‚ğŠm”F
+	GetHitKeyStateAll(Key);//ã‚­ãƒ¼ã®çŠ¶æ…‹ã‚’ç¢ºèª
 
-	touch_size = GetTouchInputNum();//ƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚é”‚ğæ“¾
+	touch_size = GetTouchInputNum();//ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã‚‹æ•°ã‚’å–å¾—
 				
 	if (touch_size != 0)
 	{
-		GetTouchInput(0, &touch_position_x, &touch_position_y, &touch_id, &touch_device_id);//0”Ô‚Ìƒ^ƒbƒ`î•ñ‚ğæ“¾
+		GetTouchInput(0, &touch_position_x, &touch_position_y, &touch_id, &touch_device_id);//0ç•ªã®ã‚¿ãƒƒãƒæƒ…å ±ã‚’å–å¾—
 	}
 	else
 	{
@@ -21,18 +21,18 @@ void DiploidEngineInput::Update()
 
 
 
-	Check_Mouse = GetMouseInputLog2(&MOUSE_BUTTON, &CLICK_X, &CLICK_Y, &LOG_TYPE, TRUE);//ƒ}ƒEƒX‚Ìó‘Ô‚ğŠm”F
+	Check_Mouse = GetMouseInputLog2(&MOUSE_BUTTON, &CLICK_X, &CLICK_Y, &LOG_TYPE, TRUE);//ãƒã‚¦ã‚¹ã®çŠ¶æ…‹ã‚’ç¢ºèª
 
-	GetMousePoint(&mouse_pos_adr_x, &mouse_pos_adr_y);//Œ»İ‚Ìƒ}ƒEƒXÀ•W‚ğæ“¾
+	GetMousePoint(&mouse_pos_adr_x, &mouse_pos_adr_y);//ç¾åœ¨ã®ãƒã‚¦ã‚¹åº§æ¨™ã‚’å–å¾—
 
-	//‰Ÿ‚µ‚½‚Æ‚«‚ÌÀ•W
+	//æŠ¼ã—ãŸã¨ãã®åº§æ¨™
 	if (LOG_TYPE == MOUSE_INPUT_LOG_DOWN)
 	{
 		press_click_position_x = CLICK_X;
 		press_click_position_y = CLICK_Y;
 	}
 
-	//—£‚µ‚½‚Æ‚«‚ÌÀ•W
+	//é›¢ã—ãŸã¨ãã®åº§æ¨™
 	if (LOG_TYPE == MOUSE_INPUT_LOG_UP)
 	{
 		release_click_position_x = CLICK_X;
@@ -127,7 +127,7 @@ bool DiploidEngineInput::GetKey(int DXLIB_KEY_CODE)
 {
 	if (Key[DXLIB_KEY_CODE] != 0)
 	{
-		return true;//ƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚½‚çtrue‚ğ•Ô‚·B
+		return true;//ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ãŸã‚‰trueã‚’è¿”ã™ã€‚
 	}
 
 	return false;
@@ -137,11 +137,11 @@ bool DiploidEngineInput::GetPressKey(int DXLIB_KEY_CODE)
 {
 	if (Key[DXLIB_KEY_CODE] != 0)
 	{
-		press_time++;//‰Ÿ‚µ‚Ä‚¢‚éƒtƒŒ[ƒ€‚ğ”‚¦‚éB
+		press_time++;//æŠ¼ã—ã¦ã„ã‚‹ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ•°ãˆã‚‹ã€‚
 
 		if (press_time <= 1)
 		{
-			return true;//ƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚½‚çtrue‚ğ•Ô‚·B
+			return true;//ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ãŸã‚‰trueã‚’è¿”ã™ã€‚
 		}
 		else if (press_time >= 2)
 		{
@@ -212,7 +212,7 @@ VECTOR DiploidEngineInput::GetMousePosition()
 
 bool DiploidEngineInput::GetTouch()
 {
-	//‰æ–Ê‚ªƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚½‚ç
+	//ç”»é¢ãŒã‚¿ãƒƒãƒã•ã‚Œã¦ã„ãŸã‚‰
 	if (touch_size > 0)
 	{
 		return true;
@@ -225,7 +225,7 @@ bool DiploidEngineInput::GetTouch()
 
 bool DiploidEngineInput::GetReleaseTouch()
 {
-	//‰æ–Ê‚ªƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚½‚ç
+	//ç”»é¢ãŒã‚¿ãƒƒãƒã•ã‚Œã¦ã„ãŸã‚‰
 	if (touch_size != 0)
 	{
 		touch_release_flag = 1;

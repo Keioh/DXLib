@@ -1,4 +1,4 @@
-#include "ver2.0/Main/Layer.h"
+ï»¿#include "ver2.0/Main/Layer.h"
 
 
 void DiploidLayerV2::Update()
@@ -11,18 +11,18 @@ void DiploidLayerV2::Update()
 
 			if (count->GetPosition().y < next_count->GetPosition().y)
 			{
-				buffer.SetAngle(count->GetAngle());//Šp“x
-				buffer.SetDestoryFlag(count->GetDestoryFlag());//íœƒtƒ‰ƒO
-				buffer.SetHitFlag(count->GetHitFlag());//ƒqƒbƒgƒtƒ‰ƒO
-				buffer.SetLife(count->GetLife());//õ–½
-				buffer.SetMainCameraFlag(count->GetMainCameraFlag());//ƒƒCƒ“ƒJƒƒ‰ƒtƒ‰ƒO
-				buffer.SetMoveSpeed(count->GetMoveSpeed());//ˆÚ“®‘¬“x
-				buffer.SetName(count->GetName());//–¼‘O
-				buffer.SetObjectNumber(count->GetObjectNumber());//ƒIƒuƒWƒFƒNƒg”Ô†
-				buffer.SetPosition(count->GetPosition());//ˆÊ’u
-				buffer.SetRotatePosition(count->GetRotatePosition());//‰ñ“]²‚Ì’†S“_
-				buffer.SetScale(count->GetScale().x, count->GetScale().y);//ƒXƒP[ƒ‹
-				buffer.SetTurnFlag(count->GetTurnFlag());//”½“]ƒtƒ‰ƒO
+				buffer.SetAngle(count->GetAngle());//è§’åº¦
+				buffer.SetDestoryFlag(count->GetDestoryFlag());//å‰Šé™¤ãƒ•ãƒ©ã‚°
+				buffer.SetHitFlag(count->GetHitFlag());//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°
+				buffer.SetLife(count->GetLife());//å¯¿å‘½
+				buffer.SetMainCameraFlag(count->GetMainCameraFlag());//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ãƒ•ãƒ©ã‚°
+				buffer.SetMoveSpeed(count->GetMoveSpeed());//ç§»å‹•é€Ÿåº¦
+				buffer.SetName(count->GetName());//åå‰
+				buffer.SetObjectNumber(count->GetObjectNumber());//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·
+				buffer.SetPosition(count->GetPosition());//ä½ç½®
+				buffer.SetRotatePosition(count->GetRotatePosition());//å›è»¢è»¸ã®ä¸­å¿ƒç‚¹
+				buffer.SetScale(count->GetScale().x, count->GetScale().y);//ã‚¹ã‚±ãƒ¼ãƒ«
+				buffer.SetTurnFlag(count->GetTurnFlag());//åè»¢ãƒ•ãƒ©ã‚°
 
 				count = image_list.insert(next_count, buffer);
 				count = image_list.erase(--count);

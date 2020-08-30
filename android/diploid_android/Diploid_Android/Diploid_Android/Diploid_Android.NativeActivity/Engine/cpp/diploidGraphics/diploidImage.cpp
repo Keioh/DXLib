@@ -1,4 +1,4 @@
-#include "diploidGraphics\diploidImage.h"
+ï»¿#include "diploidGraphics\diploidImage.h"
 
 void DiploidImage::Load(const char* path)
 {
@@ -10,16 +10,16 @@ void DiploidImage::Load(const char* path)
 
 void DiploidImage::Init(VECTOR pos, double size_scale, double angle_scale)
 {
-	position = origin_position = pos;//ƒ|ƒWƒVƒ‡ƒ“‚ðpos‚Å‰Šú‰»
-	scale = origin_size = size_scale;//‘å‚«‚³‚ðŽw’èB
-	angle = origin_angle = angle_scale;//Šp“x‚ðŽw’èB
+	position = origin_position = pos;//ãƒã‚¸ã‚·ãƒ§ãƒ³ã‚’posã§åˆæœŸåŒ–
+	scale = origin_size = size_scale;//å¤§ãã•ã‚’æŒ‡å®šã€‚
+	angle = origin_angle = angle_scale;//è§’åº¦ã‚’æŒ‡å®šã€‚
 
-	GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//‰æ‘œ‚Ì‘å‚«‚³‚ðŽæ“¾
+	GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//ç”»åƒã®å¤§ãã•ã‚’å–å¾—
 }
 
 void DiploidImage::Updata()
 {	
-	//GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//‰æ‘œ‚Ì‘å‚«‚³‚ðŽæ“¾
+	//GetGraphSize(handl, &GRAPHICS_SIZE_X, &GRAPHICS_SIZE_Y);//ç”»åƒã®å¤§ãã•ã‚’å–å¾—
 
 	if (mouse_point_move_flag == false)
 	{
@@ -62,7 +62,7 @@ void DiploidImage::Updata()
 		blue_bright += blue_bright_speed;
 	}
 
-	//‰æ‘œ‚Ì–¾‚é‚³‚Ì’l‚ªˆê’è’l‚ð’´‚¦‚½ê‡A’´‰ß‚µ‚È‚¢‚æ‚¤‚Éˆ—B
+	//ç”»åƒã®æ˜Žã‚‹ã•ã®å€¤ãŒä¸€å®šå€¤ã‚’è¶…ãˆãŸå ´åˆã€è¶…éŽã—ãªã„ã‚ˆã†ã«å‡¦ç†ã€‚
 	if (red_bright > 255)
 	{
 		red_bright = 255;
@@ -90,7 +90,7 @@ void DiploidImage::Updata()
 		blue_bright = 0;
 	}
 
-	//Šp“x‚ª360“x‚ð’´‚¦‚½‚ç0“x‚Å‰Šú‰»
+	//è§’åº¦ãŒ360åº¦ã‚’è¶…ãˆãŸã‚‰0åº¦ã§åˆæœŸåŒ–
 	if (angle > (2 * DX_PI))
 	{
 		angle = anime_angle = 0;
@@ -101,7 +101,7 @@ void DiploidImage::Updata()
 		angle = anime_angle = 0;
 	}
 
-	//Å‘å’l‚ð’´‚¦‚½‚ç255‚Å‰Šú‰»
+	//æœ€å¤§å€¤ã‚’è¶…ãˆãŸã‚‰255ã§åˆæœŸåŒ–
 	if (blend_volume > 255)
 	{
 		blend_volume = 255;

@@ -1,4 +1,4 @@
-#include "diploidApp\DiploidEngineMain.h"
+ï»¿#include "diploidApp\DiploidEngineMain.h"
 
 
 VECTOR DiploidEngineMain::GetWindowSize()
@@ -13,27 +13,27 @@ VECTOR DiploidEngineMain::GetWindowSize()
 }
 
 
-void DiploidEngineMain::DestorySync()//Õ“Ëˆ—‚ÆƒŒƒCƒ„[ˆ—‚Ìíœ“¯Šúˆ—
+void DiploidEngineMain::DestorySync()//è¡çªå‡¦ç†ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼å‡¦ç†ã®å‰Šé™¤åŒæœŸå‡¦ç†
 {
-	LayerTOP_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	LayerMID_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	LayerBOT_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	LayerUI_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	LayerTOP_ImapctBOX_Sync();//å››è§’ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼TOPã®å‡¦ç†
+	LayerMID_ImapctBOX_Sync();//å››è§’ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼MIDã®å‡¦ç†
+	LayerBOT_ImapctBOX_Sync();//å››è§’ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼BOTã®å‡¦ç†
+	LayerUI_ImapctBOX_Sync();//å››è§’ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼UIã®å‡¦ç†
 
-	LayerTOP_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	LayerMID_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	LayerBOT_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	LayerUI_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	LayerTOP_ImapctCIRCLE_Sync();//å††ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼TOPã®å‡¦ç†
+	LayerMID_ImapctCIRCLE_Sync();//å††ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼MIDã®å‡¦ç†
+	LayerBOT_ImapctCIRCLE_Sync();//å††ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼BOTã®å‡¦ç†
+	LayerUI_ImapctCIRCLE_Sync();//å††ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼UIã®å‡¦ç†
 
-	LayerTOP_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	LayerMID_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	LayerBOT_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	LayerUI_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	LayerTOP_ImapctPOINT_Sync();//ç‚¹ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼TOPã®å‡¦ç†
+	LayerMID_ImapctPOINT_Sync();//ç‚¹ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼MIDã®å‡¦ç†
+	LayerBOT_ImapctPOINT_Sync();//ç‚¹ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼BOTã®å‡¦ç†
+	LayerUI_ImapctPOINT_Sync();//ç‚¹ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼UIã®å‡¦ç†
 
-	LayerTOP_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	LayerMID_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	LayerBOT_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	LayerUI_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	LayerTOP_ImapctLINE_Sync();//ç·šåˆ†ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼TOPã®å‡¦ç†
+	LayerMID_ImapctLINE_Sync();//ç·šåˆ†ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼MIDã®å‡¦ç†
+	LayerBOT_ImapctLINE_Sync();//ç·šåˆ†ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼BOTã®å‡¦ç†
+	LayerUI_ImapctLINE_Sync();//ç·šåˆ†ã¨ãƒ¬ã‚¤ãƒ¤ãƒ¼UIã®å‡¦ç†
 }
 
 
@@ -41,19 +41,19 @@ void DiploidEngineMain::LayerTOP_ImapctPOINT_Sync()
 {
 	if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.point_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_top_vector.begin(); image != diploidEngineLayer.image_top_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.point_vector.begin(); impact != diploidEngineImpact.point_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -79,19 +79,19 @@ void DiploidEngineMain::LayerMID_ImapctPOINT_Sync()
 {
 	if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.point_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_mid_vector.begin(); image != diploidEngineLayer.image_mid_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.point_vector.begin(); impact != diploidEngineImpact.point_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.point_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -117,19 +117,19 @@ void DiploidEngineMain::LayerBOT_ImapctPOINT_Sync()
 {
 	if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.point_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_bot_vector.begin(); image != diploidEngineLayer.image_bot_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.point_vector.begin(); impact != diploidEngineImpact.point_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.point_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -155,19 +155,19 @@ void DiploidEngineMain::LayerUI_ImapctPOINT_Sync()
 {
 	if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.point_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_ui_vector.begin(); image != diploidEngineLayer.image_ui_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.point_vector.begin(); impact != diploidEngineImpact.point_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.point_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -194,19 +194,19 @@ void DiploidEngineMain::LayerTOP_ImapctCIRCLE_Sync()
 {
 	if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_top_vector.begin(); image != diploidEngineLayer.image_top_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.circle_vector.begin(); impact != diploidEngineImpact.circle_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -232,19 +232,19 @@ void DiploidEngineMain::LayerMID_ImapctCIRCLE_Sync()
 {
 	if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_mid_vector.begin(); image != diploidEngineLayer.image_mid_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.circle_vector.begin(); impact != diploidEngineImpact.circle_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -270,19 +270,19 @@ void DiploidEngineMain::LayerBOT_ImapctCIRCLE_Sync()
 {
 	if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_bot_vector.begin(); image != diploidEngineLayer.image_bot_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.circle_vector.begin(); impact != diploidEngineImpact.circle_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -308,19 +308,19 @@ void DiploidEngineMain::LayerUI_ImapctCIRCLE_Sync()
 {
 	if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_ui_vector.begin(); image != diploidEngineLayer.image_ui_vector.end(); ++image)
 		{
-			//‰~ƒqƒbƒgƒ{ƒbƒNƒX
+			//å††ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.circle_vector.begin(); impact != diploidEngineImpact.circle_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.circle_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -347,19 +347,19 @@ void DiploidEngineMain::LayerTOP_ImapctBOX_Sync()
 {
 	if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.box_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_top_vector.begin(); image != diploidEngineLayer.image_top_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.box_vector.begin(); impact != diploidEngineImpact.box_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -385,19 +385,19 @@ void DiploidEngineMain::LayerMID_ImapctBOX_Sync()
 {
 	if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.box_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_mid_vector.begin(); image != diploidEngineLayer.image_mid_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.box_vector.begin(); impact != diploidEngineImpact.box_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -423,19 +423,19 @@ void DiploidEngineMain::LayerBOT_ImapctBOX_Sync()
 {
 	if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.box_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_bot_vector.begin(); image != diploidEngineLayer.image_bot_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.box_vector.begin(); impact != diploidEngineImpact.box_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -461,19 +461,19 @@ void DiploidEngineMain::LayerUI_ImapctBOX_Sync()
 {
 	if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.box_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_ui_vector.begin(); image != diploidEngineLayer.image_ui_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.box_vector.begin(); impact != diploidEngineImpact.box_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.box_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -500,19 +500,19 @@ void DiploidEngineMain::LayerTOP_ImapctLINE_Sync()
 {
 	if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.line_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_top_vector.begin(); image != diploidEngineLayer.image_top_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.line_vector.begin(); impact != diploidEngineImpact.line_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_top_vector.empty() || !diploidEngineImpact.line_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -538,19 +538,19 @@ void DiploidEngineMain::LayerMID_ImapctLINE_Sync()
 {
 	if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.line_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_mid_vector.begin(); image != diploidEngineLayer.image_mid_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.line_vector.begin(); impact != diploidEngineImpact.line_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_mid_vector.empty() || !diploidEngineImpact.line_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -576,19 +576,19 @@ void DiploidEngineMain::LayerBOT_ImapctLINE_Sync()
 {
 	if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.line_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_bot_vector.begin(); image != diploidEngineLayer.image_bot_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.line_vector.begin(); impact != diploidEngineImpact.line_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_bot_vector.empty() || !diploidEngineImpact.line_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)
@@ -614,19 +614,19 @@ void DiploidEngineMain::LayerUI_ImapctLINE_Sync()
 {
 	if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.line_vector.empty())
 	{
-		//‰æ‘œTOP
+		//ç”»åƒTOP
 		for (auto image = diploidEngineLayer.image_ui_vector.begin(); image != diploidEngineLayer.image_ui_vector.end(); ++image)
 		{
-			//lŠpƒqƒbƒgƒ{ƒbƒNƒX
+			//å››è§’ãƒ’ãƒƒãƒˆãƒœãƒƒã‚¯ã‚¹
 			for (auto impact = diploidEngineImpact.line_vector.begin(); impact != diploidEngineImpact.line_vector.end(); ++impact)
 			{
-				//ƒGƒ‰[‰ñ”ğ‚Ì‚½‚ß‚Ìˆ—
+				//ã‚¨ãƒ©ãƒ¼å›é¿ã®ãŸã‚ã®å‡¦ç†
 				if (!diploidEngineLayer.image_ui_vector.empty() || !diploidEngineImpact.line_vector.empty())
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (image->layer_number == impact->layer_number)
 					{
-						//Å‰Fƒgƒbƒv”z—ñ‰æ‘œƒIƒuƒWƒFƒNƒg”Ô†‚ÆÕ“Ë”z—ñlŠpƒIƒuƒWƒFƒNƒg”Ô†‚ªˆê@‚©‚Â@ÅŒãFlŠpƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+						//æœ€åˆï¼šãƒˆãƒƒãƒ—é…åˆ—ç”»åƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã¨è¡çªé…åˆ—å››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ãŒä¸€ç·’ã€€ã‹ã¤ã€€æœ€å¾Œï¼šå››è§’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 						if ((image->number == impact->number))
 						{
 							if (impact->impacted == true)

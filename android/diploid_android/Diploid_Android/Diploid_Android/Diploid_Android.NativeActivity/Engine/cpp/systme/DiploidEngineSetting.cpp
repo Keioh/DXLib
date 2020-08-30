@@ -1,8 +1,8 @@
-#include "system\DiploidEngineSetting.h"
+ï»¿#include "system\DiploidEngineSetting.h"
 
 DiploidEngineSetting::DiploidEngineSetting()
 {
-	//windowŠÖ˜A
+	//windowé–¢é€£
 
 	window_x = android_screen.GetScreenSizeX();
 	window_y = android_screen.GetScreenSizeY();
@@ -14,40 +14,40 @@ DiploidEngineSetting::DiploidEngineSetting()
 
 void DiploidEngineSetting::Init()
 {
-	DiploidEngineSetting::SetBegin();//DXLIB‰Šú‰»‚æ‚è‘O‚Éİ’è‚·‚éˆ—B
+	DiploidEngineSetting::SetBegin();//DXLIBåˆæœŸåŒ–ã‚ˆã‚Šå‰ã«è¨­å®šã™ã‚‹å‡¦ç†ã€‚
 
 	if (DxLib_Init() == -1)
 	{
 		DxLib_End();
 	}
 
-	DiploidEngineSetting::SetEnd();//DXLIB‰Šú‰»‚æ‚èŒã‚Éİ’è‚·‚éˆ—B
+	DiploidEngineSetting::SetEnd();//DXLIBåˆæœŸåŒ–ã‚ˆã‚Šå¾Œã«è¨­å®šã™ã‚‹å‡¦ç†ã€‚
 }
 
 void DiploidEngineSetting::SetBegin()
 {
 
 	SetUseCharCodeFormat(DX_CHARCODEFORMAT_SHIFTJIS);
-	//SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//•¶šƒR[ƒh•ÏX	
-	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//ƒtƒHƒ“ƒg‚Ì•`‰æ‚Ìd•û
-	SetFontThickness(1);//ƒtƒHƒ“ƒg‚Ì‘¾‚³‚ğİ’è
-	ChangeFont("ƒƒCƒŠƒI");//ƒtƒHƒ“ƒg‚Ìí—Ş‚Ìİ’è
-	SetFontSize(50);//ƒtƒHƒ“ƒg‚Ì‘å‚«‚³‚ğİ’è
+	//SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//æ–‡å­—ã‚³ãƒ¼ãƒ‰å¤‰æ›´	
+	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//ãƒ•ã‚©ãƒ³ãƒˆã®æç”»ã®ä»•æ–¹
+	SetFontThickness(1);//ãƒ•ã‚©ãƒ³ãƒˆã®å¤ªã•ã‚’è¨­å®š
+	ChangeFont("ãƒ¡ã‚¤ãƒªã‚ª");//ãƒ•ã‚©ãƒ³ãƒˆã®ç¨®é¡ã®è¨­å®š
+	SetFontSize(50);//ãƒ•ã‚©ãƒ³ãƒˆã®å¤§ãã•ã‚’è¨­å®š
 	SetBackgroundColor(50, 50, 50);
-	SetOutApplicationLogValidFlag(FALSE);//ƒƒOo—ÍŠÖ˜A
-	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//‰ğ‘œ“x•ÏX
-	//ChangeWindowMode(window_mode);//ƒEƒBƒ“ƒhƒEƒ‚[ƒh•ÏX
-	//SetMainWindowText(window_name);//ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì–¼‘O‚ğ•ÏX
+	SetOutApplicationLogValidFlag(FALSE);//ãƒ­ã‚°å‡ºåŠ›é–¢é€£
+	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//è§£åƒåº¦å¤‰æ›´
+	//ChangeWindowMode(window_mode);//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰å¤‰æ›´
+	//SetMainWindowText(window_name);//ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®åå‰ã‚’å¤‰æ›´
 
-	SetUseASyncLoadFlag(TRUE);//”ñ“¯Šú“Ç‚İ‚İ
-	SetUseDXArchiveFlag(TRUE);//DXƒA[ƒJƒCƒu“Ç‚İ‚İ
-	SetAlwaysRunFlag(TRUE);//ƒEƒBƒ“ƒhƒE”ñƒAƒNƒeƒBƒu‚Åˆ—‚ğÀs
+	SetUseASyncLoadFlag(TRUE);//éåŒæœŸèª­ã¿è¾¼ã¿
+	SetUseDXArchiveFlag(TRUE);//DXã‚¢ãƒ¼ã‚«ã‚¤ãƒ–èª­ã¿è¾¼ã¿
+	SetAlwaysRunFlag(TRUE);//ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã§å‡¦ç†ã‚’å®Ÿè¡Œ
 
-	SetFullScreenScalingMode(DX_FSSCALINGMODE_BILINEAR);//‰æ–Ê•âŠÔ‚Ì•ÏX ‚­‚Á‚«‚è(DX_FSSCALINGMODE_NEAREST) ‚Ú‚ñ‚í‚è(DX_FSSCALINGMODE_BILINEAR)
-	SetDrawMode(DX_DRAWMODE_NEAREST);//‰æ‘œŠg‘å‚Ì•âŠÔ•ÏX
-	SetFullSceneAntiAliasingMode(4, 2);//AAİ’è
+	SetFullScreenScalingMode(DX_FSSCALINGMODE_BILINEAR);//ç”»é¢è£œé–“ã®å¤‰æ›´ ãã£ãã‚Š(DX_FSSCALINGMODE_NEAREST) ã¼ã‚“ã‚ã‚Š(DX_FSSCALINGMODE_BILINEAR)
+	SetDrawMode(DX_DRAWMODE_NEAREST);//ç”»åƒæ‹¡å¤§æ™‚ã®è£œé–“å¤‰æ›´
+	SetFullSceneAntiAliasingMode(4, 2);//AAè¨­å®š
 
-	//SetEnableXAudioFlag(TRUE);//XAudioƒtƒ‰ƒO
+	//SetEnableXAudioFlag(TRUE);//XAudioãƒ•ãƒ©ã‚°
 
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
@@ -56,7 +56,7 @@ void DiploidEngineSetting::SetBegin()
 
 void DiploidEngineSetting::SetEnd()
 {
-	SetDrawScreen(DX_SCREEN_BACK);//— ‰æ–Êˆ—‚ğƒIƒ“
+	SetDrawScreen(DX_SCREEN_BACK);//è£ç”»é¢å‡¦ç†ã‚’ã‚ªãƒ³
 	SetCameraNearFar(0.1f, 10000.0f);
 }
 

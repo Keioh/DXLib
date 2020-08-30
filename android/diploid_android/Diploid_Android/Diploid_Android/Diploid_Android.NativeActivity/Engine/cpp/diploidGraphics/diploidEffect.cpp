@@ -1,14 +1,14 @@
-#include "diploidGraphics/diploidEffect.h"
+﻿#include "diploidGraphics/diploidEffect.h"
 
 void DiploidEffect::PushImage(DiploidImageV2 image)
 {
-	//�摜�f�[�^���v�b�V��
+	//画像データをプッシュ
 	image_vector.push_back(image);
 }
 
 void DiploidEffect::PushCirlce(DiploidCircleV2 circle)
 {
-	//�~�f�[�^���v�b�V��
+	//円データをプッシュ
 	circle_vector.push_back(circle);
 }
 
@@ -18,7 +18,7 @@ void DiploidEffect::UpdateImage()
 	{
 		for (auto itr = image_vector.begin(); itr != image_vector.end(); itr++)
 		{
-			itr->MoveUpdate();//�ړ��̃A�b�v�f�[�g
+			itr->MoveUpdate();//移動のアップデート
 		}
 	}
 }

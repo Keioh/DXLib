@@ -1,4 +1,4 @@
-#include "diploidImpact/DiploidEngineImpact.h"
+ï»¿#include "diploidImpact/DiploidEngineImpact.h"
 
 DiploidEngineImpact::DiploidEngineImpact()
 {
@@ -220,16 +220,16 @@ void DiploidEngineImpact::ImpactCirclePoint()
 {
 	if (!point_vector.empty() == !circle_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
-				//‰~‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+				//å††ãŒç”»é¢å†…ã«ã‚ã£ãŸã‚‰
 				if ((circle->position.x >= -200 - circle->position.x) && (circle->position.y >= -200 - circle->position.y) && (circle->position.x <= screen_size_x + circle->position.x) && (circle->position.y <= screen_size_y + circle->position.y))
 				{
-					//“_‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+					//ç‚¹ãŒç”»é¢å†…ã«ã‚ã£ãŸã‚‰
 					if ((point->position.x >= -200) && (point->position.y >= -200) && (point->position.x <= screen_size_x) && (point->position.y <= screen_size_y))
 					{
 						float x = 0, y = 0;
@@ -239,16 +239,16 @@ void DiploidEngineImpact::ImpactCirclePoint()
 
 						if (std::pow(x, 2) + std::pow(y, 2) <= std::pow(circle->size.z, 2))
 						{
-							//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+							//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 							if (circle->layer_number == point->layer_number)
 							{
-								//“_‚Æ‰~‚Ì”»’èi“_—Dæj‚ğ—LŒø‚É‚µ‚Ä‚¢‚é‚È‚ç
+								//ç‚¹ã¨å††ã®åˆ¤å®šï¼ˆç‚¹å„ªå…ˆï¼‰ã‚’æœ‰åŠ¹ã«ã—ã¦ã„ã‚‹ãªã‚‰
 								if ((point->impact_point_circle_flag == true) )
 								{
 									point->impacted = true;
 								}
 
-								//“_‚Æ‰~‚Ì”»’èi‰~—Dæj‚ğ—LŒø‚É‚µ‚Ä‚¢‚é‚È‚ç
+								//ç‚¹ã¨å††ã®åˆ¤å®šï¼ˆå††å„ªå…ˆï¼‰ã‚’æœ‰åŠ¹ã«ã—ã¦ã„ã‚‹ãªã‚‰
 								if (circle->impact_circle_point_flag == true)
 								{
 									circle->impacted = true;
@@ -266,15 +266,15 @@ void DiploidEngineImpact::ImpactCircleCircle()
 {
 	if (!circle_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (size_t circle_one = 0; circle_one != circle_vector.size(); ++circle_one)
 		{
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (size_t circle_two = 1; circle_two != circle_vector.size(); ++circle_two)
 			{
 				float x = 0, y = 0, r = 0;
 
-				if (circle_one == circle_two)//“¯‚¶’l‚È‚çŒvZ‚µ‚È‚¢
+				if (circle_one == circle_two)//åŒã˜å€¤ãªã‚‰è¨ˆç®—ã—ãªã„
 				{
 					//x = 0;
 					//y = 0;
@@ -288,7 +288,7 @@ void DiploidEngineImpact::ImpactCircleCircle()
 
 					if ((std::pow(x, 2) + std::pow(y, 2)) <= std::pow(r, 2))
 					{
-						//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+						//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 						if (circle_vector[circle_one].layer_number == circle_vector[circle_two].layer_number)
 						{
 							if (circle_vector[circle_one].impact_circle_circle_flag == true)
@@ -312,16 +312,16 @@ void DiploidEngineImpact::ImpactBoxPoint()
 {
 	if (!point_vector.empty() == !box_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
-				//box‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+				//boxãŒç”»é¢å†…ã«ã‚ã£ãŸã‚‰
 				if ((box->position.x >= -200) && (box->position.y >= -200) && (box->position.x + box->size.x <= screen_size_x) && (box->position.y + box->size.y <= screen_size_y))
 				{
-					//point‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+					//pointãŒç”»é¢å†…ã«ã‚ã£ãŸã‚‰
 					if ((point->position.x >= -200) && (point->position.y >= -200) && (point->position.x <= screen_size_x) && (point->position.y <= screen_size_y))
 					{
 
@@ -329,7 +329,7 @@ void DiploidEngineImpact::ImpactBoxPoint()
 						{
 							if ((box->position.y <= point->position.y) && ((box->position.y + box->size.y) >= point->position.y))
 							{
-								//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+								//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 								if (point->layer_number == box->layer_number)
 								{
 									if (point->impact_point_box_flag == true)
@@ -355,25 +355,25 @@ void DiploidEngineImpact::ImpactBoxBox()
 {
 	if (!box_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto box_one = box_vector.begin(); box_one != box_vector.end(); ++box_one)
 		{
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto box_two = box_vector.begin(); box_two != box_vector.end(); ++box_two)
 			{
-				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 				if (box_one->layer_number == box_two->layer_number)
 				{
-					if (box_one == box_two)//“¯‚¶’l‚È‚çŒvZ‚µ‚È‚¢
+					if (box_one == box_two)//åŒã˜å€¤ãªã‚‰è¨ˆç®—ã—ãªã„
 					{
 
 					}
 					else
 					{
-						//one‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+						//oneãŒç”»é¢å†…ã«ã‚ã£ãŸã‚‰
 						if ((box_one->position.x >= -200) && (box_one->position.y >= -200) && (box_one->position.x + box_one->size.x <= screen_size_x) && (box_one->position.y + box_one->size.y <= screen_size_y))
 						{
-							//two‚ª‰æ–Ê“à‚É‚ ‚Á‚½‚ç
+							//twoãŒç”»é¢å†…ã«ã‚ã£ãŸã‚‰
 							if ((box_two->position.x >= -200) && (box_two->position.y >= -200) && (box_two->position.x + box_two->size.x <= screen_size_x) && (box_two->position.y + box_two->size.y <= screen_size_y))
 							{
 								//one
@@ -407,17 +407,17 @@ void DiploidEngineImpact::ImpactBoxCircle()
 	if (!box_vector.empty() == !circle_vector.empty())
 	{
 		//BOX
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
 			//Circle
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
-				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 				if (box->layer_number == circle->layer_number)
 				{
-					//y•ûŒü‚Ö‚Ì–ÊÏŒvZ(A)
+					//yæ–¹å‘ã¸ã®é¢ç©è¨ˆç®—(A)
 					if ((circle->position.x > box->position.x) &&
 						(circle->position.x < (box->position.x + box->size.x)) &&
 						(circle->position.y > (box->position.y - circle->size.z)) &&
@@ -440,7 +440,7 @@ void DiploidEngineImpact::ImpactBoxCircle()
 						}
 					}
 
-					//X•ûŒü‚Ö‚Ì–ÊÏŒvZ(B)
+					//Xæ–¹å‘ã¸ã®é¢ç©è¨ˆç®—(B)
 					if ((circle->position.x > (box->position.x - circle->size.z)) &&
 						(circle->position.x < ((box->position.x + box->size.x) + circle->size.z) &&
 						(circle->position.y > box->position.y) &&
@@ -463,7 +463,7 @@ void DiploidEngineImpact::ImpactBoxCircle()
 						}
 					}
 
-					//BOX¶ã‚Ì–ÊÏŒvZ(C)
+					//BOXå·¦ä¸Šã®é¢ç©è¨ˆç®—(C)
 					if ((std::pow((box->position.x - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
 						if (circle->impacted == false)
@@ -483,7 +483,7 @@ void DiploidEngineImpact::ImpactBoxCircle()
 						}
 					}
 
-					//BOX‰Eã‚Ì–ÊÏŒvZ(D)
+					//BOXå³ä¸Šã®é¢ç©è¨ˆç®—(D)
 					if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow((box->position.y - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
 						if (circle->impacted == false)
@@ -503,7 +503,7 @@ void DiploidEngineImpact::ImpactBoxCircle()
 						}
 					}
 
-					//BOX‰E‰º‚Ì–ÊÏŒvZ(E)
+					//BOXå³ä¸‹ã®é¢ç©è¨ˆç®—(E)
 					if ((std::pow(((box->position.x + box->size.x) - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
 						if (circle->impacted == false)
@@ -523,7 +523,7 @@ void DiploidEngineImpact::ImpactBoxCircle()
 						}
 					}
 
-					//BOX¶‰º‚Ì–ÊÏŒvZ(F)
+					//BOXå·¦ä¸‹ã®é¢ç©è¨ˆç®—(F)
 					if ((std::pow((box->position.x - circle->position.x), 2) + std::pow(((box->position.y + box->size.y) - circle->position.y), 2)) < std::pow(circle->size.z, 2))
 					{
 						if (circle->impacted == false)
@@ -553,14 +553,14 @@ void DiploidEngineImpact::ImpactCircleLine()
 	if (!line_vector.empty() == !circle_vector.empty())
 	{
 		//LINE
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			//Circle
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 			{
-				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 				if (line->layer_number == circle->layer_number)
 				{
 					if (HitCheck_Line_Sphere(line->Position_one, line->Position_two, circle->position, circle->size.z) == true)
@@ -579,14 +579,14 @@ void DiploidEngineImpact::ImpactPointLine()
 	if (!line_vector.empty() == !point_vector.empty())
 	{
 		//LINE
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
 			//POINT
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 			{
-				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 				if (point->layer_number == line->layer_number)
 				{
 					if (Segment_Point_MinLength(line->Position_one, line->Position_two, point->position) < 2)
@@ -604,15 +604,15 @@ void DiploidEngineImpact::ImpactLineLine()
 {
 	if (!line_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto line_one = line_vector.begin(); line_one != line_vector.end(); ++line_one)
 		{
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto line_two = line_vector.begin(); line_two != line_vector.end(); ++line_two)
 			{
 				float x = 0, y = 0, r = 0;
 
-				if (line_one == line_two)//“¯‚¶’l‚È‚çŒvZ‚µ‚È‚¢
+				if (line_one == line_two)//åŒã˜å€¤ãªã‚‰è¨ˆç®—ã—ãªã„
 				{
 					//x = 0;
 					//y = 0;
@@ -620,7 +620,7 @@ void DiploidEngineImpact::ImpactLineLine()
 				}
 				else if (Segment_Segment_MinLength(line_one->Position_one, line_one->Position_two, line_two->Position_one, line_two->Position_two) < 1)
 				{
-					//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+					//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 					if (line_one->layer_number == line_two->layer_number)
 					{
 						line_one->impacted = true;
@@ -636,40 +636,40 @@ void DiploidEngineImpact::ImpactLineBox()
 {
 	if (!line_vector.empty() == !box_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
-			#pragma omp parallel for//•À—ñˆ—
+			#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 			for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 			{
-				//¯•Ê”Ô†‚ª“¯‚¶‚È‚ç
+				//è­˜åˆ¥ç•ªå·ãŒåŒã˜ãªã‚‰
 				if (box->layer_number == line->layer_number)
 				{
 					float hit_a, hit_b;
 
 					VECTOR pos_a, pos_b, pos_c, pos_d;
 
-					//¶ã
+					//å·¦ä¸Š
 					pos_a.x = box->position.x;
 					pos_a.y = box->position.y;
 					pos_a.z = 0.0f;
 
-					//¶‰º
+					//å·¦ä¸‹
 					pos_b.x = box->position.x;
 					pos_b.y = box->position.y + box->size.y;
 					pos_b.z = 0.0f;
 
-					//‰Eã
+					//å³ä¸Š
 					pos_c.x = box->position.x + box->size.x;
 					pos_c.y = box->position.y;
 					pos_c.z = 0.0f;
 
-					//‰E‰º
+					//å³ä¸‹
 					pos_d.x = box->position.x + box->size.x;
 					pos_d.y = box->position.y + box->size.y;
 					pos_d.z = 0.0f;
 
-					//“–‚½‚è”»’è
+					//å½“ãŸã‚Šåˆ¤å®š
 					hit_a = Segment_Triangle_MinLength(line->Position_one, line->Position_two, pos_a, pos_b, pos_c);
 					hit_b = Segment_Triangle_MinLength(line->Position_one, line->Position_two, pos_d, pos_b, pos_c);
 
@@ -708,80 +708,80 @@ void DiploidEngineImpact::ImpactLineBox()
 
 void DiploidEngineImpact::Updata()
 {
-	//‰~‚ÌXVˆ—
+	//å††ã®æ›´æ–°å‡¦ç†
 	if (!circle_vector.empty())
 	{	
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
-			circle->Update();//ƒAƒjƒƒAƒvƒf
+			circle->Update();//ã‚¢ãƒ‹ãƒ¡ã‚¢ãƒ—ãƒ‡
 		}
 	}
 
-	//“_‚ÌXVˆ—
+	//ç‚¹ã®æ›´æ–°å‡¦ç†
 	if (!point_vector.empty())
 	{	
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
-			point->Update();//ƒAƒjƒƒAƒvƒf
+			point->Update();//ã‚¢ãƒ‹ãƒ¡ã‚¢ãƒ—ãƒ‡
 		}
 	}
 
-	//lŠp‚ÌXVˆ—
+	//å››è§’ã®æ›´æ–°å‡¦ç†
 	if (!box_vector.empty())
 	{	
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
-			box->Update();//ƒAƒjƒƒAƒvƒf
+			box->Update();//ã‚¢ãƒ‹ãƒ¡ã‚¢ãƒ—ãƒ‡
 		}
 	}
 
-	//ü•ª‚ÌXVˆ—
+	//ç·šåˆ†ã®æ›´æ–°å‡¦ç†
 	if (!line_vector.empty())
 	{	
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
-			line->Update();//ƒAƒjƒƒAƒvƒf
+			line->Update();//ã‚¢ãƒ‹ãƒ¡ã‚¢ãƒ—ãƒ‡
 		}
 	}
 	
 
-	ImpactCirclePoint();//‰~‚Æ“_‚ÌÕ“ËŒvZ
-	ImpactBoxPoint();//lŠp‚Æ“_‚ÌÕ“ËŒvZ
-	ImpactCircleCircle();//‰~‚Æ‰~‚ÌÕ“ËŒvZ
-	ImpactBoxBox();//lŠp‚ÆlŠp‚ÌÕ“ËŒvZ
-	ImpactBoxCircle();//lŠp‚Æ‰~‚ÌÕ“ËŒvZ
-	ImpactPointLine();//“_‚Æü•ª‚ÌÕ“Ë”»’è
-	ImpactCircleLine();//‰~‚Æü•ª‚ÌÕ“Ë”»’è
-	ImpactLineLine();//ü•ª‚Æü•ª‚ÌÕ“Ë”»’è
-	ImpactLineBox();//ü•ª‚ÆlŠp‚ÌÕ“Ë”»’è
+	ImpactCirclePoint();//å††ã¨ç‚¹ã®è¡çªè¨ˆç®—
+	ImpactBoxPoint();//å››è§’ã¨ç‚¹ã®è¡çªè¨ˆç®—
+	ImpactCircleCircle();//å††ã¨å††ã®è¡çªè¨ˆç®—
+	ImpactBoxBox();//å››è§’ã¨å››è§’ã®è¡çªè¨ˆç®—
+	ImpactBoxCircle();//å››è§’ã¨å††ã®è¡çªè¨ˆç®—
+	ImpactPointLine();//ç‚¹ã¨ç·šåˆ†ã®è¡çªåˆ¤å®š
+	ImpactCircleLine();//å††ã¨ç·šåˆ†ã®è¡çªåˆ¤å®š
+	ImpactLineLine();//ç·šåˆ†ã¨ç·šåˆ†ã®è¡çªåˆ¤å®š
+	ImpactLineBox();//ç·šåˆ†ã¨å››è§’ã®è¡çªåˆ¤å®š
 	
-	//Threadˆ—
+	//Threadå‡¦ç†
 	/*
-	std::thread thread_box_point([this]() { this->ImpactBoxPoint(); });//lŠp‚Æ“_‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_circle_point([this]() { this->ImpactCirclePoint(); });//‰~‚Æ“_‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_circle_circle([this]() { this->ImpactCircleCircle(); });//‰~‚Æ‰~‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_box_box([this]() { this->ImpactBoxBox(); });//lŠp‚ÆlŠp‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_box_circle([this]() { this->ImpactBoxCircle(); });//lŠp‚Æ‰~‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_point_line([this]() { this->ImpactPointLine(); });//“_‚Æü•ª‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_circle_line([this]() { this->ImpactCircleLine(); });//‰~‚Æü•ª‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_line_line([this]() { this->ImpactLineLine(); });//ü•ª‚Æü•ª‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
-	std::thread thread_line_box([this]() { this->ImpactLineBox(); });//ü•ª‚ÆlŠp‚ÌÕ“ËŒvZ‚Ì•À—ñˆ—‚ÌÀs
+	std::thread thread_box_point([this]() { this->ImpactBoxPoint(); });//å››è§’ã¨ç‚¹ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_circle_point([this]() { this->ImpactCirclePoint(); });//å††ã¨ç‚¹ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_circle_circle([this]() { this->ImpactCircleCircle(); });//å††ã¨å††ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_box_box([this]() { this->ImpactBoxBox(); });//å››è§’ã¨å››è§’ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_box_circle([this]() { this->ImpactBoxCircle(); });//å››è§’ã¨å††ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_point_line([this]() { this->ImpactPointLine(); });//ç‚¹ã¨ç·šåˆ†ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_circle_line([this]() { this->ImpactCircleLine(); });//å††ã¨ç·šåˆ†ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_line_line([this]() { this->ImpactLineLine(); });//ç·šåˆ†ã¨ç·šåˆ†ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
+	std::thread thread_line_box([this]() { this->ImpactLineBox(); });//ç·šåˆ†ã¨å››è§’ã®è¡çªè¨ˆç®—ã®ä¸¦åˆ—å‡¦ç†ã®å®Ÿè¡Œ
 
-	thread_circle_point.join();//‰~‚Æ“_‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_box_point.join();//lŠp‚Æ“_‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_circle_circle.join();//‰~‚Æ‰~‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_box_box.join();//lŠp‚ÆlŠp‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_box_circle.join();//lŠp‚Æ‰~‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_point_line.join();//“_‚Æü•ª‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_circle_line.join();//‰~‚Æü•ª‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_line_line.join();//ü•ª‚Æü•ª‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
-	thread_line_box.join();//ü•ª‚ÆlŠp‚ÌÕ“ËŒvZ‚ğ‘Ò‚Â
+	thread_circle_point.join();//å††ã¨ç‚¹ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_box_point.join();//å››è§’ã¨ç‚¹ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_circle_circle.join();//å††ã¨å††ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_box_box.join();//å››è§’ã¨å››è§’ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_box_circle.join();//å››è§’ã¨å††ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_point_line.join();//ç‚¹ã¨ç·šåˆ†ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_circle_line.join();//å††ã¨ç·šåˆ†ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_line_line.join();//ç·šåˆ†ã¨ç·šåˆ†ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
+	thread_line_box.join();//ç·šåˆ†ã¨å››è§’ã®è¡çªè¨ˆç®—ã‚’å¾…ã¤
 
-	//asyncˆ—	
+	//asyncå‡¦ç†	
 	auto box_point = std::async([this]() { this->ImpactBoxPoint(); });
 	auto circle_point = std::async([this]() { this->ImpactCirclePoint(); });
 	auto circle_circle = std::async([this]() { this->ImpactCircleCircle(); });
@@ -796,7 +796,7 @@ void DiploidEngineImpact::Updata()
 
 void DiploidEngineImpact::AutoNumber()
 {
-	//Še”z—ñ‚ÌƒJƒEƒ“ƒg”‚ğ•Û‘¶‚·‚é•Ï”
+	//å„é…åˆ—ã®ã‚«ã‚¦ãƒ³ãƒˆæ•°ã‚’ä¿å­˜ã™ã‚‹å¤‰æ•°
 	int box_count = 0;
 	int point_count = 0;
 	int circle_count = 0;
@@ -806,38 +806,38 @@ void DiploidEngineImpact::AutoNumber()
 	#pragma omp parallel for
 	for (auto count = box_vector.begin(); count != box_vector.end(); ++count)
 	{
-		count->number = box_count;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ•ÏX
-		box_count += 1;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ‘«‚·B
+		count->number = box_count;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’å¤‰æ›´
+		box_count += 1;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’è¶³ã™ã€‚
 	}
 
-	point_count = box_count;//box_count‚Ì’l‚ğpoint_count‚Éˆø‚«Œp‚®
+	point_count = box_count;//box_countã®å€¤ã‚’point_countã«å¼•ãç¶™ã
 
 	//point
 	#pragma omp parallel for
 	for (auto count = point_vector.begin(); count != point_vector.end(); ++count)
 	{
-		count->number = point_count + box_count;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ•ÏX
-		point_count += 1;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ‘«‚·B
+		count->number = point_count + box_count;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’å¤‰æ›´
+		point_count += 1;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’è¶³ã™ã€‚
 	}
 
-	circle_count = point_count;//point_count‚Ì’l‚ğcircle_count‚Éˆø‚«Œp‚®
+	circle_count = point_count;//point_countã®å€¤ã‚’circle_countã«å¼•ãç¶™ã
 
 	//circle
 	#pragma omp parallel for
 	for (auto count = circle_vector.begin(); count != circle_vector.end(); ++count)
 	{
-		count->number = circle_count + box_count + point_count;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ•ÏX
-		circle_count += 1;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ‘«‚·B
+		count->number = circle_count + box_count + point_count;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’å¤‰æ›´
+		circle_count += 1;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’è¶³ã™ã€‚
 	}
 
-	line_count = circle_count;//point_count‚Ì’l‚ğcircle_count‚Éˆø‚«Œp‚®
+	line_count = circle_count;//point_countã®å€¤ã‚’circle_countã«å¼•ãç¶™ã
 
 	//line
 	#pragma omp parallel for
 	for (auto count = line_vector.begin(); count != line_vector.end(); ++count)
 	{
-		count->number = line_count + box_count + point_count + circle_count;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ•ÏX
-		line_count += 1;//ƒIƒuƒWƒFƒNƒg”Ô†‚ğ‘«‚·B
+		count->number = line_count + box_count + point_count + circle_count;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’å¤‰æ›´
+		line_count += 1;//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç•ªå·ã‚’è¶³ã™ã€‚
 	}
 }
 
@@ -845,10 +845,10 @@ void DiploidEngineImpact::Init()
 {
 	if (!circle_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
-			//‰~‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//å††ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (circle->impacted == true)
 			{
 				circle->impacted = false;
@@ -858,10 +858,10 @@ void DiploidEngineImpact::Init()
 
 	if (!point_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
-			//“_‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//ç‚¹ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (point->impacted == true)
 			{
 				point->impacted = false;
@@ -871,10 +871,10 @@ void DiploidEngineImpact::Init()
 
 	if (!box_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
-			//lŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//å››è§’ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (box->impacted == true)
 			{
 				box->impacted = false;
@@ -884,10 +884,10 @@ void DiploidEngineImpact::Init()
 
 	if (!line_vector.empty())
 	{
-		#pragma omp parallel for//•À—ñˆ—
+		#pragma omp parallel for//ä¸¦åˆ—å‡¦ç†
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
-			//ü•ª‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//ç·šåˆ†ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (line->impacted == true)
 			{
 				line->impacted = false;
@@ -898,14 +898,14 @@ void DiploidEngineImpact::Init()
 
 void DiploidEngineImpact::Draw(bool wire, bool debug)
 {
-	GetSize();//Še”z—ñ‚Ì‘å‚«‚³‚ğæ“¾
+	GetSize();//å„é…åˆ—ã®å¤§ãã•ã‚’å–å¾—
 
 	if (!circle_vector.empty())
 	{
 		#pragma omp parallel for
 		for (auto circle = circle_vector.begin(); circle != circle_vector.end(); ++circle)
 		{
-			//‰~‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//å††ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (circle->impacted == true)
 			{
 				circle->color = GetColor(255, 0, 0);
@@ -924,7 +924,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 		#pragma omp parallel for
 		for (auto point = point_vector.begin(); point != point_vector.end(); ++point)
 		{
-			//“_‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//ç‚¹ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (point->impacted == true)
 			{
 				point->color = GetColor(255, 0, 0);
@@ -943,7 +943,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 		#pragma omp parallel for
 		for (auto box = box_vector.begin(); box != box_vector.end(); ++box)
 		{
-			//lŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//å››è§’ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (box->impacted == true)
 			{
 				box->color = GetColor(255, 0, 0);
@@ -962,7 +962,7 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 		#pragma omp parallel for
 		for (auto line = line_vector.begin(); line != line_vector.end(); ++line)
 		{
-			//ü•ª‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç
+			//ç·šåˆ†ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰
 			if (line->impacted == true)
 			{
 				line->color = GetColor(255, 0, 0);
@@ -988,10 +988,10 @@ void DiploidEngineImpact::Draw(bool wire, bool debug)
 
 void DiploidEngineImpact::Destory()
 {
-	DestoryCircle();//‰~‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç‰~”z—ñ‚©‚çíœ
-	DestoryPoint();//“_‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚ç“_”z—ñ‚©‚çíœ
-	DestoryBox();//lŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çlŠp”z—ñ‚©‚çíœ
-	DestoryLine();//ü•ª‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çü•ª”z—ñ‚©‚çíœ
+	DestoryCircle();//å††ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰å††é…åˆ—ã‹ã‚‰å‰Šé™¤
+	DestoryPoint();//ç‚¹ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰ç‚¹é…åˆ—ã‹ã‚‰å‰Šé™¤
+	DestoryBox();//å››è§’ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰å››è§’é…åˆ—ã‹ã‚‰å‰Šé™¤
+	DestoryLine();//ç·šåˆ†ãŒãƒ’ãƒƒãƒˆã—ã¦ã„ãŸã‚‰ç·šåˆ†é…åˆ—ã‹ã‚‰å‰Šé™¤
 }
 
 
@@ -1511,25 +1511,25 @@ int DiploidEngineImpact::GetMaxBoxNumber()
 	size_t circle_buffer = -1;
 	size_t line_buffer = -1;
 
-	//box”z—ñŠî€
+	//boxé…åˆ—åŸºæº–
 	if (!box_vector.empty())
 	{
-		if (box_vector.size() > point_vector.size())//“_”z—ñ
+		if (box_vector.size() > point_vector.size())//ç‚¹é…åˆ—
 		{
 			point_buffer = box_vector.size();
 		}
 
-		if (box_vector.size() > circle_vector.size())//‰~”z—ñ
+		if (box_vector.size() > circle_vector.size())//å††é…åˆ—
 		{
 			circle_buffer = box_vector.size();
 		}
 
-		if (box_vector.size() > line_vector.size())//ü”z—ñ
+		if (box_vector.size() > line_vector.size())//ç·šé…åˆ—
 		{
 			line_buffer = box_vector.size();
 		}
 
-		//“_”z—ñ‚Æ‰~”z—ñ‚Å”ä‚×‚½ê‡
+		//ç‚¹é…åˆ—ã¨å††é…åˆ—ã§æ¯”ã¹ãŸå ´åˆ
 		if (line_buffer && point_buffer && circle_buffer)
 		{
 			return box_vector.size();
@@ -1545,25 +1545,25 @@ int DiploidEngineImpact::GetMaxPointNumber()
 	size_t circle_buffer = -1;
 	size_t line_buffer = -1;
 
-	//point”z—ñŠî€
+	//pointé…åˆ—åŸºæº–
 	if (!point_vector.empty())
 	{
-		if (point_vector.size() > box_vector.size())//” ”z—ñ
+		if (point_vector.size() > box_vector.size())//ç®±é…åˆ—
 		{
 			box_buffer = point_vector.size();
 		}
 
-		if (point_vector.size() > circle_vector.size())//‰~”z—ñ
+		if (point_vector.size() > circle_vector.size())//å††é…åˆ—
 		{
 			circle_buffer = point_vector.size();
 		}
 
-		if (point_vector.size() > line_vector.size())//ü”z—ñ
+		if (point_vector.size() > line_vector.size())//ç·šé…åˆ—
 		{
 			line_buffer = point_vector.size();
 		}
 
-		//“_”z—ñ‚Æ‰~”z—ñ‚Å”ä‚×‚½ê‡
+		//ç‚¹é…åˆ—ã¨å††é…åˆ—ã§æ¯”ã¹ãŸå ´åˆ
 		if (line_buffer && box_buffer && circle_buffer)
 		{
 			return point_vector.size();
@@ -1578,25 +1578,25 @@ int DiploidEngineImpact::GetMaxCircleNumber()
 	size_t point_buffer = -1;
 	size_t line_buffer = -1;
 
-	//point”z—ñŠî€
+	//pointé…åˆ—åŸºæº–
 	//if (!point_vector.empty())
 	{
-		if (circle_vector.size() > box_vector.size())//” ”z—ñ
+		if (circle_vector.size() > box_vector.size())//ç®±é…åˆ—
 		{
 			box_buffer = circle_vector.size();
 		}
 
-		if (circle_vector.size() > point_vector.size())//“_”z—ñ
+		if (circle_vector.size() > point_vector.size())//ç‚¹é…åˆ—
 		{
 			point_buffer = circle_vector.size();
 		}
 
-		if (circle_vector.size() > line_vector.size())//ü”z—ñ
+		if (circle_vector.size() > line_vector.size())//ç·šé…åˆ—
 		{
 			line_buffer = circle_vector.size();
 		}
 
-		//“_”z—ñ‚Æ‰~”z—ñ‚Å”ä‚×‚½ê‡
+		//ç‚¹é…åˆ—ã¨å††é…åˆ—ã§æ¯”ã¹ãŸå ´åˆ
 		if (line_buffer && box_buffer && point_buffer)
 		{
 			return circle_vector.size();
@@ -1612,25 +1612,25 @@ int DiploidEngineImpact::GetMaxLineNumber()
 	size_t point_buffer = -1;
 	size_t circle_buffer = -1;
 
-	//point”z—ñŠî€
+	//pointé…åˆ—åŸºæº–
 	//if (!point_vector.empty())
 	{
-		if (line_vector.size() > box_vector.size())//” ”z—ñ
+		if (line_vector.size() > box_vector.size())//ç®±é…åˆ—
 		{
 			box_buffer = line_vector.size();
 		}
 
-		if (line_vector.size() > point_vector.size())//“_”z—ñ
+		if (line_vector.size() > point_vector.size())//ç‚¹é…åˆ—
 		{
 			point_buffer = line_vector.size();
 		}
 
-		if (line_vector.size() > circle_vector.size())//‰~”z—ñ
+		if (line_vector.size() > circle_vector.size())//å††é…åˆ—
 		{
 			circle_buffer = line_vector.size();
 		}
 
-		//“_”z—ñ‚Æ‰~”z—ñ‚Å”ä‚×‚½ê‡
+		//ç‚¹é…åˆ—ã¨å††é…åˆ—ã§æ¯”ã¹ãŸå ´åˆ
 		if (circle_buffer && box_buffer && point_buffer)
 		{
 			return circle_vector.size();
@@ -1643,25 +1643,25 @@ int DiploidEngineImpact::GetMaxLineNumber()
 
 int DiploidEngineImpact::GetMaxArrayNumber()
 {
-	//boxŠî€
+	//boxåŸºæº–
 	if ((GetMaxBoxNumber() > GetMaxPointNumber()) && (GetMaxBoxNumber() > GetMaxCircleNumber()) && (GetMaxBoxNumber() > GetMaxLineNumber()))
 	{
 		return GetMaxBoxNumber();
 	}
 
-	//circleŠî€
+	//circleåŸºæº–
 	if ((GetMaxCircleNumber() > GetMaxBoxNumber()) && (GetMaxCircleNumber() > GetMaxPointNumber()) && (GetMaxCircleNumber() > GetMaxLineNumber()))
 	{
 		return GetMaxCircleNumber();
 	}
 
-	//pointŠî€
+	//pointåŸºæº–
 	if ((GetMaxPointNumber() > GetMaxBoxNumber()) && (GetMaxPointNumber() > GetMaxCircleNumber()) && (GetMaxPointNumber() > GetMaxLineNumber()))
 	{
 		return GetMaxPointNumber();
 	}
 
-	//lineŠî€
+	//lineåŸºæº–
 	if ((GetMaxLineNumber() > GetMaxBoxNumber()) && (GetMaxLineNumber() > GetMaxCircleNumber()) && (GetMaxLineNumber() > GetMaxPointNumber()))
 	{
 		return GetMaxLineNumber();
@@ -1719,30 +1719,30 @@ int DiploidEngineImpact::GetLineNumber(int target)
 
 void DiploidEngineImpact::SetBoxNumber(int target_number, int set_number)
 {
-	std::vector<DiploidBox>::iterator itr = box_vector.begin() + target_number;//boxƒCƒeƒŒ[ƒ^
+	std::vector<DiploidBox>::iterator itr = box_vector.begin() + target_number;//boxã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 	
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineImpact::SetCircleNumber(int target_number, int set_number)
 {
-	std::vector<DiploidCircle>::iterator itr = circle_vector.begin() + target_number;//circleƒCƒeƒŒ[ƒ^
+	std::vector<DiploidCircle>::iterator itr = circle_vector.begin() + target_number;//circleã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineImpact::SetPointNumber(int target_number, int set_number)
 {
-	std::vector<DiploidPoint>::iterator itr = point_vector.begin() + target_number;//pointƒCƒeƒŒ[ƒ^
+	std::vector<DiploidPoint>::iterator itr = point_vector.begin() + target_number;//pointã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineImpact::SetLineNumber(int target_number, int set_number)
 {
-	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineƒCƒeƒŒ[ƒ^
+	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineImpact::SetNumber(int number)
@@ -1794,31 +1794,31 @@ int DiploidEngineImpact::GetLineLayerNumber(int target)
 
 void DiploidEngineImpact::SetBoxLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidBox>::iterator itr = box_vector.begin() + target_number;//boxƒCƒeƒŒ[ƒ^
+	std::vector<DiploidBox>::iterator itr = box_vector.begin() + target_number;//boxã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineImpact::SetCircleLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidCircle>::iterator itr = circle_vector.begin() + target_number;//circleƒCƒeƒŒ[ƒ^
+	std::vector<DiploidCircle>::iterator itr = circle_vector.begin() + target_number;//circleã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 
 }
 
 void DiploidEngineImpact::SetPointLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidPoint>::iterator itr = point_vector.begin() + target_number;//pointƒCƒeƒŒ[ƒ^
+	std::vector<DiploidPoint>::iterator itr = point_vector.begin() + target_number;//pointã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineImpact::SetLineLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineƒCƒeƒŒ[ƒ^
+	std::vector<DiploidLine>::iterator itr = line_vector.begin() + target_number;//lineã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 

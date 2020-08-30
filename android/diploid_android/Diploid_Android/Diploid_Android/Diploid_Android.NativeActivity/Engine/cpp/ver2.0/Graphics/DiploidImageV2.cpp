@@ -1,4 +1,4 @@
-#include "ver2.0/Graphics/DiploidImageV2.h"
+ï»¿#include "ver2.0/Graphics/DiploidImageV2.h"
 
 
 void DiploidImageV2::Load(const char* path)
@@ -8,12 +8,12 @@ void DiploidImageV2::Load(const char* path)
 
 	GetGraphSize(graphics_handl, &graphics_x, &graphics_y);
 
-	//‰æ‘œ‚Ì‘å‚«‚³‚ğ•Û‘¶
+	//ç”»åƒã®å¤§ãã•ã‚’ä¿å­˜
 	graphics_size.x = graphics_x;
 	graphics_size.y = graphics_y;
 
 
-	//‰ñ“]‚Ì’†S“_‚ğİ’è
+	//å›è»¢ã®ä¸­å¿ƒç‚¹ã‚’è¨­å®š
 	//rotate_position.x = graphics_x / 2;
 	//rotate_position.y = graphics_y / 2;	
 	
@@ -22,7 +22,7 @@ void DiploidImageV2::Load(const char* path)
 
 void DiploidImageV2::Init(VECTOR pos, bool shift_flag)
 {
-	if (shift_flag == true)//‰æ‘œ‚Ì’†S‚É‡‚í‚¹‚½•`‰æ‚Ì
+	if (shift_flag == true)//ç”»åƒã®ä¸­å¿ƒã«åˆã‚ã›ãŸæç”»ã®æ™‚
 	{
 		position.x = pos.x - (graphics_x / 2);
 		position.y = pos.y - (graphics_y / 2);
@@ -66,7 +66,7 @@ void DiploidImageV2::SetScale(float scale_x, float scale_y)
 	graphics_scale.x = scale_x;
 	graphics_scale.y = scale_y;
 
-	//‚¢‚ë‚¢‚ë•ÏX‚µ‚½‚ ‚Æ‚Ì‘å‚«‚³‚ğ•Û‘¶
+	//ã„ã‚ã„ã‚å¤‰æ›´ã—ãŸã‚ã¨ã®å¤§ãã•ã‚’ä¿å­˜
 	graphics_size.x = graphics_scale.x * graphics_x;
 	graphics_size.y = graphics_scale.y * graphics_y;
 }

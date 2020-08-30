@@ -1,4 +1,4 @@
-#include "ver2.0/Main/Collision.h"
+ï»¿#include "ver2.0/Main/Collision.h"
 
 bool DiploidCollision::CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate)
 {
@@ -12,12 +12,12 @@ bool DiploidCollision::CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_on
 		{
 			if (circle_one->GetHitFlag() != true)
 			{
-				circle_one->SetHitFlag(true);//ƒqƒbƒgƒtƒ‰ƒO‚ğtrue‚É•ÏXB		
+				circle_one->SetHitFlag(true);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’trueã«å¤‰æ›´ã€‚		
 			}
 
 			if (circle_two->GetHitFlag() != true)
 			{
-				circle_two->SetHitFlag(true);//ƒqƒbƒgƒtƒ‰ƒO‚ğtrue‚É•ÏXB
+				circle_two->SetHitFlag(true);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’trueã«å¤‰æ›´ã€‚
 			}
 
 			upadata_count = 0;
@@ -28,12 +28,12 @@ bool DiploidCollision::CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_on
 		{
 			if (circle_one->GetHitFlag() != false)
 			{
-				circle_one->SetHitFlag(false);//ƒqƒbƒgƒtƒ‰ƒO‚ğfalse‚É•ÏXB
+				circle_one->SetHitFlag(false);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’falseã«å¤‰æ›´ã€‚
 			}
 
 			if (circle_two->GetHitFlag() != false)
 			{
-				circle_two->SetHitFlag(false);//ƒqƒbƒgƒtƒ‰ƒO‚ğfalse‚É•ÏXB
+				circle_two->SetHitFlag(false);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’falseã«å¤‰æ›´ã€‚
 			}
 
 			upadata_count = 0;
@@ -43,7 +43,7 @@ bool DiploidCollision::CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_on
 	}
 	else
 	{
-		++upadata_count;//ƒJƒEƒ“ƒg‚ği‚ß‚éB
+		++upadata_count;//ã‚«ã‚¦ãƒ³ãƒˆã‚’é€²ã‚ã‚‹ã€‚
 	}
 }
 
@@ -57,7 +57,7 @@ VECTOR DiploidCollision::CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* c
 
 		if ((pow(x, 2) + pow(y, 2)) <= pow(r, 2))
 		{
-			//“–‚½‚Á‚½êŠ‚ğ•Û‘¶
+			//å½“ãŸã£ãŸå ´æ‰€ã‚’ä¿å­˜
 			circle_one->GetHitPointsListPointer()->push_back({ circle_one->GetPosition().x, circle_one->GetPosition().y, 0 });
 			circle_two->GetHitPointsListPointer()->push_back({ circle_two->GetPosition().x, circle_two->GetPosition().y, 0 });
 
@@ -68,7 +68,7 @@ VECTOR DiploidCollision::CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* c
 		}
 		else
 		{
-			//“–‚½‚Á‚½êŠ‚Ìíœ
+			//å½“ãŸã£ãŸå ´æ‰€ã®å‰Šé™¤
 			if (!circle_one->GetHitPointsListPointer()->empty())
 			{
 				circle_one->GetHitPointsListPointer()->clear();
@@ -86,7 +86,7 @@ VECTOR DiploidCollision::CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* c
 	}
 	else
 	{
-		++upadata_count;//ƒJƒEƒ“ƒg‚ği‚ß‚éB
+		++upadata_count;//ã‚«ã‚¦ãƒ³ãƒˆã‚’é€²ã‚ã‚‹ã€‚
 	}
 }
 
@@ -103,7 +103,7 @@ bool DiploidCollision::BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x
 			{
 				if (box->GetHitFlag() != true)
 				{
-					box->SetHitFlag(true);//ƒqƒbƒgƒtƒ‰ƒO‚ğtrue‚É•ÏX
+					box->SetHitFlag(true);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’trueã«å¤‰æ›´
 				}
 
 				upadata_count = 0;
@@ -114,7 +114,7 @@ bool DiploidCollision::BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x
 			{
 				if (box->GetHitFlag() != false)
 				{
-					box->SetHitFlag(false);//ƒqƒbƒgƒtƒ‰ƒO‚ğfalse‚É•ÏX
+					box->SetHitFlag(false);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’falseã«å¤‰æ›´
 				}
 
 				upadata_count = 0;
@@ -137,7 +137,7 @@ bool DiploidCollision::BoxAndTouchCollisionUpdate(DiploidBoxV2* box, int touch_x
 			{
 				if (box->GetHitFlag() != true)
 				{
-					box->SetHitFlag(true);//ƒqƒbƒgƒtƒ‰ƒO‚ğtrue‚É•ÏX
+					box->SetHitFlag(true);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’trueã«å¤‰æ›´
 				}
 
 				upadata_count = 0;
@@ -148,7 +148,7 @@ bool DiploidCollision::BoxAndTouchCollisionUpdate(DiploidBoxV2* box, int touch_x
 			{
 				if (box->GetHitFlag() != false)
 				{
-					box->SetHitFlag(false);//ƒqƒbƒgƒtƒ‰ƒO‚ğfalse‚É•ÏX
+					box->SetHitFlag(false);//ãƒ’ãƒƒãƒˆãƒ•ãƒ©ã‚°ã‚’falseã«å¤‰æ›´
 				}
 
 				upadata_count = 0;

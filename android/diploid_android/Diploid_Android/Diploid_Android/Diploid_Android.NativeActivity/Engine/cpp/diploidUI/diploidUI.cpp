@@ -1,4 +1,4 @@
-#include "diploidUI/diploidUI.h"
+ï»¿#include "diploidUI/diploidUI.h"
 
 DiploidUI::DiploidUI()
 {
@@ -10,14 +10,14 @@ DiploidUI::~DiploidUI()
 
 }
 
-//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“
+//ãƒ¯ãƒ³ã‚¯ãƒªãƒƒã‚¯ãƒœã‚¿ãƒ³
 void DiploidUI::OneClickButtonBOX_Load(const char* path, int size_x, int size_y)
 {
 	image.Load(path);
 	image_size = VGet(size_x, size_y, 0.0f);
 }
 
-void DiploidUI::OneClickButtonBOX_Load(const char* path_1, const char* path_2, const char* path_3, int size_x, int size_y)//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“‚Ì“Ç‚İ‚İˆ—(3‚Â)
+void DiploidUI::OneClickButtonBOX_Load(const char* path_1, const char* path_2, const char* path_3, int size_x, int size_y)//ãƒ¯ãƒ³ã‚¯ãƒªãƒƒã‚¯ãƒœã‚¿ãƒ³ã®èª­ã¿è¾¼ã¿å‡¦ç†(3ã¤)
 {
 	image.Load(path_1);
 	image_size = VGet(size_x, size_y, 0.0f);
@@ -87,17 +87,17 @@ bool DiploidUI::OneClickButtonBOX_Update(int mouse_input_button_type, DiploidEng
 
 void DiploidUI::OneClickButtonBOX_Draw(int image_number, bool image_draw, bool draw)
 {
-	//’ŠÛ‰æ‚Ì•\¦
+	//æŠ½è±¡ç”»ã®è¡¨ç¤º
 	if (draw == true)
 	{
 		box.fill = TRUE;
 		box.Draw();
 	}
 
-	//‰æ‘œ‚Ì•\¦
+	//ç”»åƒã®è¡¨ç¤º
 	if (image_draw == true)
 	{
-		//G‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚Ì–¾‚é‚³(ˆê”ÔˆÃ‚¢)
+		//è§¦ã‚Œã¦ã„ãªã„ã¨ãã®æ˜ã‚‹ã•(ä¸€ç•ªæš—ã„)
 		if (bright_one == true)
 		{
 			image.blue_bright = 255 * 0.6f;
@@ -154,7 +154,7 @@ void DiploidUI::OneClickButtonBOX_Draw(int image_number, bool image_draw, bool d
 
 		}
 
-		//G‚ê‚Ä‚¢‚é‚Æ‚«‚Ì–¾‚é‚³(ˆÃ‚¢)
+		//è§¦ã‚Œã¦ã„ã‚‹ã¨ãã®æ˜ã‚‹ã•(æš—ã„)
 		if (bright_two == true)
 		{
 			image.blue_bright = 255 * 0.8f;
@@ -211,7 +211,7 @@ void DiploidUI::OneClickButtonBOX_Draw(int image_number, bool image_draw, bool d
 
 		}
 
-		//ƒNƒŠƒbƒN‚Æƒtƒ‰ƒO‚ªƒIƒ“‚Ì‚Æ‚«‚Ì–¾‚é‚³(–¾“xƒ}ƒbƒNƒX)
+		//ã‚¯ãƒªãƒƒã‚¯ã¨ãƒ•ãƒ©ã‚°ãŒã‚ªãƒ³ã®ã¨ãã®æ˜ã‚‹ã•(æ˜åº¦ãƒãƒƒã‚¯ã‚¹)
 		if (bright_three == true || button_flag == true)
 		{
 			image.blue_bright = 255;
@@ -275,7 +275,7 @@ bool DiploidUI:: GetOneClickButton_HitFlag()
 }
 
 
-//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“(‰Ÿ‚µ‚Ä‚·‚®‚ÉŒ³‚É–ß‚éƒ{ƒ^ƒ“)
+//ãƒ¯ãƒ³ã‚¯ãƒªãƒƒã‚¯ãƒœã‚¿ãƒ³(æŠ¼ã—ã¦ã™ãã«å…ƒã«æˆ»ã‚‹ãƒœã‚¿ãƒ³)
 void DiploidUI::OneClickButtonCIRCLE_Init(VECTOR position, float radius, std::string name_tag, int layer_number)
 {
 	circle.Init(position, radius);
@@ -319,7 +319,7 @@ void DiploidUI::OneClickButtonCIRCLE_Draw()
 }
 
 
-//ƒƒ“ƒNƒŠƒbƒNƒ{ƒ^ƒ“” (‰Ÿ‚·‚ÆƒIƒ“ƒIƒtØ‚è‘Ö‚í‚éƒ{ƒ^ƒ“)
+//ãƒ¯ãƒ³ã‚¯ãƒªãƒƒã‚¯ãƒœã‚¿ãƒ³ç®±(æŠ¼ã™ã¨ã‚ªãƒ³ã‚ªãƒ•åˆ‡ã‚Šæ›¿ã‚ã‚‹ãƒœã‚¿ãƒ³)
 void DiploidUI::SwitchButtonBOX_Init(VECTOR position, VECTOR size, std::string name_tag, int layer_number)
 {
 	box.Init(position, size);
@@ -343,7 +343,7 @@ void DiploidUI::SwitchButtonBOX_Load(const char* path, int size_x, int size_y)
 	image_size = VGet(size_x, size_y, 0.0f);
 }
 
-void DiploidUI::SwitchButtonBOX_Load(const char* path_1, const char* path_2, const char* path_3, int size_x, int size_y)//ƒXƒCƒbƒ`ƒ{ƒ^ƒ“‚Ì“Ç‚İ‚İˆ—(3‚Â)
+void DiploidUI::SwitchButtonBOX_Load(const char* path_1, const char* path_2, const char* path_3, int size_x, int size_y)//ã‚¹ã‚¤ãƒƒãƒãƒœã‚¿ãƒ³ã®èª­ã¿è¾¼ã¿å‡¦ç†(3ã¤)
 {
 	image.Load(path_1);
 	image_size = VGet(size_x, size_y, 0.0f);
@@ -355,7 +355,7 @@ void DiploidUI::SwitchButtonBOX_Load(const char* path_1, const char* path_2, con
 	image_size_2 = VGet(size_x, size_y, 0.0f);
 }
 
-void DiploidUI::SwitchButtonBOX_Load(const char* path_1, const char* path_2, const char* path_3, const char* path_4, int size_x, int size_y)//ƒXƒCƒbƒ`ƒ{ƒ^ƒ“‚Ì“Ç‚İ‚İˆ—(•¡”)
+void DiploidUI::SwitchButtonBOX_Load(const char* path_1, const char* path_2, const char* path_3, const char* path_4, int size_x, int size_y)//ã‚¹ã‚¤ãƒƒãƒãƒœã‚¿ãƒ³ã®èª­ã¿è¾¼ã¿å‡¦ç†(è¤‡æ•°)
 {
 	image.Load(path_1);
 	image_size = VGet(size_x, size_y, 0.0f);
@@ -397,7 +397,7 @@ bool DiploidUI::SwitchButtonBOX_Update(int mouse_input_button_type, DiploidEngin
 			bright_two = false;
 			bright_three = true;
 
-			//button_flag‚ªfalse‚È‚ç
+			//button_flagãŒfalseãªã‚‰
 			if (button_flag == false)
 			{
 				button_flag = true;	
@@ -421,17 +421,17 @@ bool DiploidUI::SwitchButtonBOX_Update(int mouse_input_button_type, DiploidEngin
 
 void DiploidUI::SwitchButtonBOX_Draw(int image_number, bool image_draw, bool draw)
 {
-	//’ŠÛ‰æ‚Ì•\¦
+	//æŠ½è±¡ç”»ã®è¡¨ç¤º
 	if (draw == true)
 	{
 		box.fill = TRUE;
 		box.Draw();
 	}
 
-	//‰æ‘œ‚Ì•\¦
+	//ç”»åƒã®è¡¨ç¤º
 	if (image_draw == true)
 	{
-		//G‚ê‚Ä‚¢‚È‚¢‚Æ‚«‚Ì–¾‚é‚³(ˆê”ÔˆÃ‚¢)
+		//è§¦ã‚Œã¦ã„ãªã„ã¨ãã®æ˜ã‚‹ã•(ä¸€ç•ªæš—ã„)
 		if (bright_one == true)
 		{
 			image.blue_bright = 255 * 0.6f;
@@ -488,7 +488,7 @@ void DiploidUI::SwitchButtonBOX_Draw(int image_number, bool image_draw, bool dra
 
 		}
 
-		//G‚ê‚Ä‚¢‚é‚Æ‚«‚Ì–¾‚é‚³(ˆÃ‚¢)
+		//è§¦ã‚Œã¦ã„ã‚‹ã¨ãã®æ˜ã‚‹ã•(æš—ã„)
 		if (bright_two == true)
 		{
 			image.blue_bright = 255 * 0.8f;
@@ -545,7 +545,7 @@ void DiploidUI::SwitchButtonBOX_Draw(int image_number, bool image_draw, bool dra
 
 		}
 
-		//ƒNƒŠƒbƒN‚Æƒtƒ‰ƒO‚ªƒIƒ“‚Ì‚Æ‚«‚Ì–¾‚é‚³(–¾“xƒ}ƒbƒNƒX)
+		//ã‚¯ãƒªãƒƒã‚¯ã¨ãƒ•ãƒ©ã‚°ãŒã‚ªãƒ³ã®ã¨ãã®æ˜ã‚‹ã•(æ˜åº¦ãƒãƒƒã‚¯ã‚¹)
 		if (bright_three == true || button_flag == true)
 		{
 			image.blue_bright = 255;

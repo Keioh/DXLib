@@ -1,4 +1,4 @@
-#include "diploidInput\DiploidEnigneFile.h"
+ï»¿#include "diploidInput\DiploidEnigneFile.h"
 
 
 int DiploidEngineFile::Craete(const char* path)
@@ -17,9 +17,9 @@ int DiploidEngineFile::Craete(const char* path)
 
 int DiploidEngineFile::Load(const char* path)
 {
-	file_handl = FileRead_open(path, TRUE);//ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+	file_handl = FileRead_open(path, TRUE);//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 
-	//FileRead_close(file_handl);//ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	//FileRead_close(file_handl);//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 
 	if (file_handl > 0)
 	{
@@ -31,7 +31,7 @@ int DiploidEngineFile::Load(const char* path)
 
 int DiploidEngineFile::WriteINT(const char* path, const char* name, int data)
 {
-	output_file.open(path, std::ios::app);//’Ç‹Lƒ‚[ƒh‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	output_file.open(path, std::ios::app);//è¿½è¨˜ãƒ¢ãƒ¼ãƒ‰ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 
 	if (output_file)
 	{
@@ -49,7 +49,7 @@ int DiploidEngineFile::WriteINT(const char* path, const char* name, int data)
 
 float DiploidEngineFile::WriteFLOAT(const char* path, const char* name, float data)
 {
-	output_file.open(path, std::ios::app);//’Ç‹Lƒ‚[ƒh‚Åƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	output_file.open(path, std::ios::app);//è¿½è¨˜ãƒ¢ãƒ¼ãƒ‰ã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 
 	if (output_file)
 	{

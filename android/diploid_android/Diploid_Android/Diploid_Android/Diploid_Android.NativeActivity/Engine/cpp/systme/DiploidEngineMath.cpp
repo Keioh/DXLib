@@ -1,4 +1,4 @@
-#include "system\DiploidEngineMath.h"
+﻿#include "system\DiploidEngineMath.h"
 
 float DiploidEngineMath::VectorAdd(float a, float b)
 {

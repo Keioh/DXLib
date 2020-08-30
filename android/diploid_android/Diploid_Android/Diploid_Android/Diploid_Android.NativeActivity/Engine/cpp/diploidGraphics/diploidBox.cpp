@@ -1,9 +1,9 @@
-#include "diploidGraphics\diploidBox.h"
+ï»¿#include "diploidGraphics\diploidBox.h"
 
 DiploidBox::DiploidBox()
 {
 	DiploidBox::mouse_point_move_flag = false;
-	DiploidBox::center_position_draw_flag = false;//ƒ}ƒEƒX’Ç]‚Ìê‡‚Í–³Œø
+	DiploidBox::center_position_draw_flag = false;//ãƒã‚¦ã‚¹è¿½å¾“ã®å ´åˆã¯ç„¡åŠ¹
 }
 
 DiploidBox::~DiploidBox()
@@ -37,8 +37,8 @@ void DiploidBox::Update()
 	{
 		GetMousePoint(&mouse_position_x, &mouse_position_y);
 
-		position.x = mouse_position_x - (size.x / 2);//}Œ`‚Ì’†S‚©‚ç•`‰æ‚µ‚½‚¢ê‡‚ÍƒTƒCƒY‚Ì1/2‚ğˆø‚­B
-		position.y = mouse_position_y - (size.y / 2);//}Œ`‚Ì’†S‚©‚ç•`‰æ‚µ‚½‚¢ê‡‚ÍƒTƒCƒY‚Ì1/2‚ğˆø‚­B
+		position.x = mouse_position_x - (size.x / 2);//å›³å½¢ã®ä¸­å¿ƒã‹ã‚‰æç”»ã—ãŸã„å ´åˆã¯ã‚µã‚¤ã‚ºã®1/2ã‚’å¼•ãã€‚
+		position.y = mouse_position_y - (size.y / 2);//å›³å½¢ã®ä¸­å¿ƒã‹ã‚‰æç”»ã—ãŸã„å ´åˆã¯ã‚µã‚¤ã‚ºã®1/2ã‚’å¼•ãã€‚
 
 		anime_size = VAdd(anime_size, move_size);
 		size = VAdd(anime_size, origin_size);
@@ -77,7 +77,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 {
 	VECTOR buffer;
 
-	//¶ã
+	//å·¦ä¸Š
 	if ((get_pos.x == 0) && (get_pos.y == 0))
 	{
 		buffer = DiploidBox::position;
@@ -85,7 +85,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 		return buffer;
 	}
 
-	//‰Eã
+	//å³ä¸Š
 	if ((get_pos.x == 1) && (get_pos.y == 0))
 	{
 		buffer.x = DiploidBox::position.x + DiploidBox::size.x;
@@ -96,7 +96,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 		return buffer;
 	}
 
-	//¶‰º
+	//å·¦ä¸‹
 	if ((get_pos.x == 0) && (get_pos.y == 1))
 	{
 		buffer.x = DiploidBox::position.x;
@@ -107,7 +107,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 		return buffer;
 	}
 
-	//‰E‰º
+	//å³ä¸‹
 	if ((get_pos.x == 1) && (get_pos.y == 1))
 	{
 		buffer.x = DiploidBox::position.x + DiploidBox::size.x;

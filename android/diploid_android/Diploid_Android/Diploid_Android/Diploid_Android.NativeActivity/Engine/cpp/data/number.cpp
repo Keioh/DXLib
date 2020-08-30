@@ -1,4 +1,4 @@
-#include "data/number.h"
+ï»¿#include "data/number.h"
 
 Number::Number()
 {
@@ -144,19 +144,19 @@ void Number1000::Draw(bool draw)
 {
 	if (case_number >= 0)
 	{
-		number_1.Draw(draw);//”š‚ğ•\¦(‚P‚ÌˆÊ)
+		number_1.Draw(draw);//æ•°å­—ã‚’è¡¨ç¤º(ï¼‘ã®ä½)
 
 		if (case_number >= 10)
 		{
-			number_2.Draw(draw);//”š‚ğ•\¦(‚P‚O‚ÌˆÊ)
+			number_2.Draw(draw);//æ•°å­—ã‚’è¡¨ç¤º(ï¼‘ï¼ã®ä½)
 
 			if (case_number >= 100)
 			{
-				number_3.Draw(draw);//”š‚ğ•\¦(‚P‚O‚O‚ÌˆÊ)
+				number_3.Draw(draw);//æ•°å­—ã‚’è¡¨ç¤º(ï¼‘ï¼ï¼ã®ä½)
 
 				if (case_number >= 1000)
 				{
-					number_4.Draw(draw);//”š‚ğ•\¦(‚P‚O‚O‚O‚ÌˆÊ)
+					number_4.Draw(draw);//æ•°å­—ã‚’è¡¨ç¤º(ï¼‘ï¼ï¼ï¼ã®ä½)
 				}
 			}
 		}

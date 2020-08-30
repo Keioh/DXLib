@@ -1,4 +1,4 @@
-#include "diploidScreen\DiploidEngineScreen.h"
+ï»¿#include "diploidScreen\DiploidEngineScreen.h"
 
 void DiploidEngineScreen::Init(int setting_fps)
 {
@@ -7,12 +7,12 @@ void DiploidEngineScreen::Init(int setting_fps)
 
 void DiploidEngineScreen::Update()
 {
-	if (Count == 0)//1ƒtƒŒ[ƒ€–Ú‚È‚çŽž‚ð‹L‰¯
+	if (Count == 0)//1ãƒ•ãƒ¬ãƒ¼ãƒ ç›®ãªã‚‰æ™‚åˆ»ã‚’è¨˜æ†¶
 	{ 
 		StartTime = GetNowCount();
 	}
 
-	if (Count == AvrSample) //60ƒtƒŒ[ƒ€–Ú‚È‚ç•½‹Ï‚ðŒvŽZ‚·‚é
+	if (Count == AvrSample) //60ãƒ•ãƒ¬ãƒ¼ãƒ ç›®ãªã‚‰å¹³å‡ã‚’è¨ˆç®—ã™ã‚‹
 	{
 		int t = GetNowCount();
 		Fps = 1000.f / ((t - StartTime) / (float)AvrSample);
@@ -33,12 +33,12 @@ void DiploidEngineScreen::Draw(int x, int y, bool debug)
 
 void DiploidEngineScreen::Wait()
 {
-	int tookTime = GetNowCount() - StartTime;	//‚©‚©‚Á‚½ŽžŠÔ
+	int tookTime = GetNowCount() - StartTime;	//ã‹ã‹ã£ãŸæ™‚é–“
 
-	int waitTime = Count * 1000 / AvrSample - tookTime;	//‘Ò‚Â‚×‚«ŽžŠÔ
+	int waitTime = Count * 1000 / AvrSample - tookTime;	//å¾…ã¤ã¹ãæ™‚é–“
 
 	if (waitTime > 0) 
 	{
-		WaitTimer(waitTime);	//‘Ò‹@
+		WaitTimer(waitTime);	//å¾…æ©Ÿ
 	}
 }

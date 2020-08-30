@@ -1,8 +1,8 @@
-#include "ver2.0/Main/Camera.h"
+ï»¿#include "ver2.0/Main/Camera.h"
 
 void DiploidCamera::SetMainCameraPosition(VECTOR* target)
 {
-	//ƒJƒƒ‰‚Ì’†‰›À•W‚Æƒ^[ƒQƒbƒg‚ÌŒ»İ‚ÌˆÊ’u‚Ì·‚ğŒvZ
+	//ã‚«ãƒ¡ãƒ©ã®ä¸­å¤®åº§æ¨™ã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ç¾åœ¨ã®ä½ç½®ã®å·®ã‚’è¨ˆç®—
 	origin_pos_sub_new_pos.x = target->x - camera_center_position.x;
 	origin_pos_sub_new_pos.y = target->y - camera_center_position.y;
 	origin_pos_sub_new_pos.z = target->z - camera_center_position.z;
@@ -13,11 +13,11 @@ void DiploidCamera::SetMainCameraPosition(VECTOR* target)
 
 void DiploidCamera::SetMainCameraPosition_DiploidCircleV2(DiploidCircleV2* target)
 {
-	//ƒƒCƒ“ƒJƒƒ‰‚Ìƒtƒ‰ƒO‚ğ—§‚Ä‚é
+	//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 	//target->SetMainCameraFlag(true);
 
-	//ƒJƒƒ‰‚Ì’†‰›À•W‚Æƒ^[ƒQƒbƒg‚ÌŒ»İ‚ÌˆÊ’u‚Ì·‚ğŒvZ
-	if (target->GetMainCameraFlag() == true)//ƒƒCƒ“ƒJƒƒ‰‚Ìƒtƒ‰ƒO‚ªtrue‚È‚ç
+	//ã‚«ãƒ¡ãƒ©ã®ä¸­å¤®åº§æ¨™ã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ç¾åœ¨ã®ä½ç½®ã®å·®ã‚’è¨ˆç®—
+	if (target->GetMainCameraFlag() == true)//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ãƒ•ãƒ©ã‚°ãŒtrueãªã‚‰
 	{
 		origin_pos_sub_new_pos.x = target->GetPosition().x - camera_center_position.x;
 		origin_pos_sub_new_pos.y = target->GetPosition().y - camera_center_position.y;
@@ -29,25 +29,25 @@ void DiploidCamera::SetMainCameraPosition_DiploidCircleV2(DiploidCircleV2* targe
 
 void DiploidCamera::SetOtherLookObjectPosition_DiploidCircleV2(DiploidCircleV2* target)
 {
-	if (target->GetMainCameraFlag() == false)//ƒƒCƒ“ƒJƒƒ‰‚Ìƒtƒ‰ƒO‚ªfalse‚È‚ç
+	if (target->GetMainCameraFlag() == false)//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ãƒ•ãƒ©ã‚°ãŒfalseãªã‚‰
 	{
-		//·‚ğtarget‚ÌˆÊ’u‚©‚çˆø‚­B
+		//å·®ã‚’targetã®ä½ç½®ã‹ã‚‰å¼•ãã€‚
 		other_position.x = target->GetPosition().x - origin_pos_sub_new_pos.x;
 		other_position.y = target->GetPosition().y - origin_pos_sub_new_pos.y;
 		other_position.z = target->GetPosition().z - origin_pos_sub_new_pos.z;
 
-		target->SetPosition(other_position);//ˆÊ’u‚ğİ’èB
+		target->SetPosition(other_position);//ä½ç½®ã‚’è¨­å®šã€‚
 	}
 }
 
 
 void DiploidCamera::SetMainCameraPosition_DiploidBoxV2(DiploidBoxV2* target)
 {
-	//ƒƒCƒ“ƒJƒƒ‰‚Ìƒtƒ‰ƒO‚ğ—§‚Ä‚é
+	//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 	//target->SetMainCameraFlag(true);
 
-	//ƒJƒƒ‰‚Ì’†‰›À•W‚Æƒ^[ƒQƒbƒg‚ÌŒ»İ‚ÌˆÊ’u‚Ì·‚ğŒvZ
-	if (target->GetMainCameraFlag() == true)//ƒƒCƒ“ƒJƒƒ‰‚Ìƒtƒ‰ƒO‚ªtrue‚È‚ç
+	//ã‚«ãƒ¡ãƒ©ã®ä¸­å¤®åº§æ¨™ã¨ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ç¾åœ¨ã®ä½ç½®ã®å·®ã‚’è¨ˆç®—
+	if (target->GetMainCameraFlag() == true)//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ãƒ•ãƒ©ã‚°ãŒtrueãªã‚‰
 	{
 		origin_pos_sub_new_pos.x = target->GetPosition().x - camera_center_position.x;
 		origin_pos_sub_new_pos.y = target->GetPosition().y - camera_center_position.y;
@@ -59,14 +59,14 @@ void DiploidCamera::SetMainCameraPosition_DiploidBoxV2(DiploidBoxV2* target)
 
 void DiploidCamera::SetOtherLookObjectPosition_DiploidBoxV2(DiploidBoxV2* target)
 {
-	if (target->GetMainCameraFlag() == false)//ƒƒCƒ“ƒJƒƒ‰‚Ìƒtƒ‰ƒO‚ªfalse‚È‚ç
+	if (target->GetMainCameraFlag() == false)//ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ã®ãƒ•ãƒ©ã‚°ãŒfalseãªã‚‰
 	{
-		//·‚ğtarget‚ÌˆÊ’u‚©‚çˆø‚­B
+		//å·®ã‚’targetã®ä½ç½®ã‹ã‚‰å¼•ãã€‚
 		other_position.x = target->GetPosition().x - origin_pos_sub_new_pos.x;
 		other_position.y = target->GetPosition().y - origin_pos_sub_new_pos.y;
 		other_position.z = target->GetPosition().z - origin_pos_sub_new_pos.z;
 
-		target->SetPosition(other_position);//ˆÊ’u‚ğİ’èB
+		target->SetPosition(other_position);//ä½ç½®ã‚’è¨­å®šã€‚
 	}
 }
 

@@ -1,8 +1,8 @@
-#include "diploidGraphics\diploidPanel.h"
+Ôªø#include "diploidGraphics\diploidPanel.h"
 
 void DiploidPanel::Init(VECTOR position, VECTOR rotation, VECTOR scale)
 {
-	//í∏ì_à íu
+	//È†ÇÁÇπ‰ΩçÁΩÆ
 	vertex[0].pos = VGet(-1.0f, 1.0f, 0.0f);
 	vertex[1].pos = VGet(1.0f, 1.0f, 0.0f);
 	vertex[2].pos = VGet(-1.0f, -1.0f, 0.0f);
@@ -12,7 +12,7 @@ void DiploidPanel::Init(VECTOR position, VECTOR rotation, VECTOR scale)
 	vertex[5].pos = VGet(1.0f, -1.0f, 0.0f);
 
 
-	//ñ@ê¸
+	//Ê≥ïÁ∑ö
 	vertex[0].norm = VGet(0.0f, 0.0f, -1.0f);
 	vertex[1].norm = VGet(0.0f, 0.0f, -1.0f);
 	vertex[2].norm = VGet(0.0f, 0.0f, -1.0f);
@@ -22,7 +22,7 @@ void DiploidPanel::Init(VECTOR position, VECTOR rotation, VECTOR scale)
 	vertex[5].norm = VGet(0.0f, 0.0f, -1.0f);
 
 
-	//ÉfÉtÉÖÅ[ÉYÉJÉâÅ[
+	//„Éá„Éï„É•„Éº„Ç∫„Ç´„É©„Éº
 	vertex[0].dif = GetColorU8(255, 255, 255, 255);
 	vertex[1].dif = GetColorU8(255, 255, 255, 255);
 	vertex[2].dif = GetColorU8(255, 255, 255, 255);
@@ -32,24 +32,24 @@ void DiploidPanel::Init(VECTOR position, VECTOR rotation, VECTOR scale)
 	vertex[5].dif = GetColorU8(255, 255, 255, 255);
 
 
-	//ÉeÉNÉXÉ`ÉÉÅ[à íu
-	vertex[0].u = 0.0f;//ç∂è„
+	//„ÉÜ„ÇØ„Çπ„ÉÅ„É£„Éº‰ΩçÁΩÆ
+	vertex[0].u = 0.0f;//Â∑¶‰∏ä
 	vertex[0].v = 0.0f;
 
-	vertex[1].u = 1.0f;//âEè„
+	vertex[1].u = 1.0f;//Âè≥‰∏ä
 	vertex[1].v = 0.0f;
 
-	vertex[2].u = 0.0f;//ç∂â∫
+	vertex[2].u = 0.0f;//Â∑¶‰∏ã
 	vertex[2].v = 1.0f;
 
 
-	vertex[3].u = 1.0f;//âEè„
+	vertex[3].u = 1.0f;//Âè≥‰∏ä
 	vertex[3].v = 0.0f;
 
-	vertex[4].u = 0.0f;//âEè„
+	vertex[4].u = 0.0f;//Âè≥‰∏ä
 	vertex[4].v = 1.0f;
 
-	vertex[5].u = 1.0f;//âEâ∫
+	vertex[5].u = 1.0f;//Âè≥‰∏ã
 	vertex[5].v = 1.0f;
 
 
@@ -89,7 +89,7 @@ void DiploidPanel::Init(VECTOR position, VECTOR rotation, VECTOR scale)
 	}
 
 
-	//êîílÇï‘ä“
+	//Êï∞ÂÄ§„ÇíËøîÈÇÑ
 	for (int count = 0; count < 6; ++count)
 	{
 		vertex[count].pos = vertex_scale[count].pos;

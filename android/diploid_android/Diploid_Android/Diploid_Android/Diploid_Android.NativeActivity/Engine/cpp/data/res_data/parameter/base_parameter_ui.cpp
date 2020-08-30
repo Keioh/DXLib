@@ -1,82 +1,110 @@
-#include "data/res_data/parameter/base_parameter_ui.h"
+ï»¿#include "data/res_data/parameter/base_parameter_ui.h"
 
 
 void BaseParameterUI::Load()
 {
-	//‰æ‘œ‚Ì“Ç‚İ‚İ
+	//ç”»åƒã®èª­ã¿è¾¼ã¿
+	image_info_back.Load("res/button/info_value.png");
+	image_info.Load("res/button/info.png");
 	image_down.Load("res/button/down.png");
 	image_up.Load("res/button/up.png");
+	image_parameter_ui_back.Load("res/button/parameter_back.png");
 
-	//ƒOƒ‰ƒtƒBƒbƒNƒnƒ“ƒhƒ‹‚ğ“Ç‚İ‚Ş
+
+	//ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ãƒãƒ³ãƒ‰ãƒ«ã‚’èª­ã¿è¾¼ã‚€	
+	selected_ui_info.Load(image_info.GetGraphicsHandl());
 	touch_ui_down.Load(image_down.GetGraphicsHandl());	
 	touch_ui_up.Load(image_up.GetGraphicsHandl());
 }
 
-void BaseParameterUI::Init(VECTOR pos, VECTOR size, const char* name)
+void BaseParameterUI::Init(VECTOR pos, VECTOR size, const char* name, bool value_draw_flag)
 {
-	//–¼‘O‚ğ•Ï‚¦‚é
+	draw_value_flag = value_draw_flag;
+
+	//åå‰ã‚’å¤‰ãˆã‚‹
 	string = name;
 
-	//ƒ{ƒ^ƒ“‚Ì‰ŠúˆÊ’u‚Æ‘å‚«‚³‚ğŒˆ’è
-	touch_ui_down.Init(pos, size);
-	touch_ui_up.Init(VGet(pos.x + 256, pos.y, pos.z), size);	
+	ui_size.x = image_info_back.GetSize().x + image_info.GetSize().x + image_down.GetSize().x + image_up.GetSize().x + 20;
+	ui_size.y = image_info_back.GetSize().y + image_info.GetSize().y + image_down.GetSize().y + image_up.GetSize().y + 20;
+	ui_size.z = image_info_back.GetSize().z + image_info.GetSize().z + image_down.GetSize().z + image_up.GetSize().z;
+
+	//ãƒœã‚¿ãƒ³ã®åˆæœŸä½ç½®ã¨å¤§ãã•ã‚’æ±ºå®š
+	image_parameter_ui_back.Init(pos);
+	image_info_back.Init(VGet(pos.x + 10, pos.y + 10, pos.z));
+	selected_ui_info.Init(VGet(pos.x + 10, pos.y + image_info_back.GetSize().y + 10, pos.z), size);
+	touch_ui_down.Init(VGet(pos.x + image_info.GetSize().x + 10, pos.y + image_info_back.GetSize().y + 10, pos.z), size);
+	touch_ui_up.Init(VGet(pos.x + (image_down.GetSize().x + image_info.GetSize().x) + 10, pos.y + image_info_back.GetSize().y + 10, pos.z), size);
 	
-	//ƒ^ƒbƒ`‘€ì—p‚Éƒ{ƒ^ƒ“d—l‚ğ•ÏX
+	//ã‚¿ãƒƒãƒæ“ä½œç”¨ã«ãƒœã‚¿ãƒ³ä»•æ§˜ã‚’å¤‰æ›´
 	touch_ui_down.SetTouchFlag(true);	
 	touch_ui_up.SetTouchFlag(true);
+	selected_ui_info.SetTouchFlag(true);
+
 }
 
 void BaseParameterUI::Update(DiploidEngineInput* input)
 {
-	//‚»‚ê‚¼‚ê‚Ìƒ{ƒ^ƒ“‚ÌÀ•W‚ğ•Û‘¶
+	//ãã‚Œãã‚Œã®ãƒœã‚¿ãƒ³ã®åº§æ¨™ã‚’ä¿å­˜
+	ui_back_position = image_parameter_ui_back.GetPosition();
+	info_back_position = image_info_back.GetPosition();
+	info_position = selected_ui_info.GetPosition();
 	down_position = touch_ui_down.GetPosition();
 	up_position = touch_ui_up.GetPosition();
 
 
-	//Å‘å’l‚ğ’´‚¦‚È‚¢‚æ‚¤‚É
+	//æœ€å¤§å€¤ã‚’è¶…ãˆãªã„ã‚ˆã†ã«
 	if (max_value < parameter)
 	{
-		parameter = max_value;//’´‚¦‚½ê‡‚Íİ’è‚µ‚½max_value‚Ì’l‚ğ“ü‚ê‚éB
+		parameter = max_value;//è¶…ãˆãŸå ´åˆã¯è¨­å®šã—ãŸmax_valueã®å€¤ã‚’å…¥ã‚Œã‚‹ã€‚
 	}
 
-	//Å¬’l‚ğ’´‚¦‚È‚¢‚æ‚¤‚É
+	//æœ€å°å€¤ã‚’è¶…ãˆãªã„ã‚ˆã†ã«
 	if (mini_value > parameter)
 	{
-		parameter = mini_value;//’´‚¦‚½ê‡‚Íİ’è‚µ‚½mini_value‚Ì’l‚ğ“ü‚ê‚éB
+		parameter = mini_value;//è¶…ãˆãŸå ´åˆã¯è¨­å®šã—ãŸmini_valueã®å€¤ã‚’å…¥ã‚Œã‚‹ã€‚
 	}
 
-
+	image_parameter_ui_back.MoveUpdate();
+	image_info_back.MoveUpdate();
+	selected_ui_info.Updata(input);
 	touch_ui_down.Updata(input);
 	touch_ui_up.Updata(input);
 
-	//‰º‚°‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ—
+	//ä¸‹ã’ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®å‡¦ç†
 	if (touch_ui_down.GetClick() == true)
 	{
-		//İ’è‚µ‚½Å¬’l‚æ‚è¬‚³‚­‚È‚¯‚ê‚Î
+		//è¨­å®šã—ãŸæœ€å°å€¤ã‚ˆã‚Šå°ã•ããªã‘ã‚Œã°
 		if (mini_value < parameter)
 		{
-			SubValue(1);//”’l‚ğ‰º‚°‚é
+			SubValue(1);//æ•°å€¤ã‚’ä¸‹ã’ã‚‹
 		}
 	}
 
-	//ã‚°‚éƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚Æ‚«‚Ìˆ—
+	//ä¸Šã’ã‚‹ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸã¨ãã®å‡¦ç†
 	if (touch_ui_up.GetClick() == true)
 	{
-		//İ’è‚µ‚½Å‘å’l‚æ‚è‘å‚«‚­‚È‚¯‚ê‚Î
+		//è¨­å®šã—ãŸæœ€å¤§å€¤ã‚ˆã‚Šå¤§ãããªã‘ã‚Œã°
 		if (max_value > parameter)
 		{
-			AddValue(1);//”’l‚ğã‚°‚é
+			AddValue(1);//æ•°å€¤ã‚’ä¸Šã’ã‚‹
 		}
 	}
 }
 
 void BaseParameterUI::Draw(bool draw, bool debug)
 {
-	touch_ui_down.Draw(draw, debug);//‰º‚°‚éƒ{ƒ^ƒ“‚Ì•`‰æ
-	touch_ui_up.Draw(draw, debug);//ã‚°‚éƒ{ƒ^ƒ“‚Ì•`‰æ
+	image_parameter_ui_back.Draw(draw);
+	image_info_back.Draw(draw);
+	selected_ui_info.Draw(draw, debug);//æƒ…å ±ãƒœã‚¿ãƒ³ã®æç”»
+	touch_ui_down.Draw(draw, debug);//ä¸‹ã’ã‚‹ãƒœã‚¿ãƒ³ã®æç”»
+	touch_ui_up.Draw(draw, debug);//ä¸Šã’ã‚‹ãƒœã‚¿ãƒ³ã®æç”»
 
-	DrawString(down_position.x + 24, down_position.y + 24, string, GetColor(255, 255, 255));//ƒpƒ‰ƒ[ƒ^‚Ì–¼‘O(¶)
-	DrawFormatString(up_position.x + 24, up_position.y + 24, GetColor(255, 255, 255), "%d", BaseParameterUI::GetParameterValue());//ƒpƒ‰ƒ[ƒ^’l(¶)
+	DrawString(info_back_position.x + 16, info_back_position.y, string, GetColor(255, 255, 255));//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®åå‰(å·¦)
+
+	if (draw_value_flag == true)
+	{
+		DrawFormatString(info_back_position.x + 300, info_back_position.y, GetColor(255, 255, 255), "%d", BaseParameterUI::GetParameterValue());//ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤(å³)
+	}
 
 	/*
 	DrawFormatString(0, 240, GetColor(255, 255, 255), "DownButtonTouchTime:%d", touch_ui_down.GetTime());
@@ -118,7 +146,30 @@ void BaseParameterUI::SubValue(int sub_value)
 	parameter -= sub_value;
 }
 
+
 int BaseParameterUI::GetParameterValue()
 {
 	return parameter;
+}
+
+int BaseParameterUI::GetParameterMaxValue()
+{
+	return max_value;
+}
+
+int BaseParameterUI::GetParameterMiniValue()
+{
+	return mini_value;
+}
+
+
+VECTOR BaseParameterUI::GetSize()
+{
+	return ui_size;
+}
+
+
+DiploidSelectedUIV2* BaseParameterUI::GetInfoButtonPtr()
+{
+	return& selected_ui_info;
 }

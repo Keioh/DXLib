@@ -1,4 +1,4 @@
-#include "diploidObject\DiploidMap.h"
+﻿#include "diploidObject\DiploidMap.h"
 
 void DiploidMap::SetMapChipSize(int size)
 {

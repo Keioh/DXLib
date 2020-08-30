@@ -1,4 +1,4 @@
-#include "ver2.0/Graphics/DiploidBoxV2.h"
+﻿#include "ver2.0/Graphics/DiploidBoxV2.h"
 
 
 void DiploidBoxV2::Init(VECTOR pos, VECTOR size, unsigned int color, float scale, bool fill, float thickness)

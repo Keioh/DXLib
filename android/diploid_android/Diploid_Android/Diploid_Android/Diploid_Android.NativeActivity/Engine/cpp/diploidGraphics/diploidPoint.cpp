@@ -1,4 +1,4 @@
-#include "diploidGraphics\diploidPoint.h"
+ï»¿#include "diploidGraphics\diploidPoint.h"
 
 void DiploidPoint::Init(VECTOR position)
 {
@@ -7,11 +7,11 @@ void DiploidPoint::Init(VECTOR position)
 
 void DiploidPoint::Update()
 {
-	//ƒAƒjƒ[ƒVƒ‡ƒ“—LŒø
+	//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³æœ‰åŠ¹æ™‚
 	if (mouse_point_move_flag == false)
 	{
-		anime_position = VAdd(anime_position, move_speed);//ƒAƒjƒ[ƒVƒ‡ƒ“‚ÅˆÚ“®‚µ‚½•ª‚ğ•Û‘¶
-		position = VAdd(center_position, anime_position);//ƒIƒuƒWƒFƒNƒg‚ğ•`Ê‚µ‚½ˆÊ’u‚ÆˆÚ“®‚µ‚½•ª‚ğ•Û‘¶
+		anime_position = VAdd(anime_position, move_speed);//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã§ç§»å‹•ã—ãŸåˆ†ã‚’ä¿å­˜
+		position = VAdd(center_position, anime_position);//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æå†™ã—ãŸä½ç½®ã¨ç§»å‹•ã—ãŸåˆ†ã‚’ä¿å­˜
 
 		move_speed = VGet(0, 0, 0);
 	}

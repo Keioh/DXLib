@@ -1,43 +1,43 @@
-#include "diploidApp\DiploidEngineApp.h"
+ï»¿#include "diploidApp\DiploidEngineApp.h"
 
 
-void DiploidEngineApp::FileCreate()//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ƒtƒ@ƒCƒ‹‚ğì‚éˆ—B
+void DiploidEngineApp::FileCreate()//ã‚²ãƒ¼ãƒ èµ·å‹•æ™‚ã«ä¸€åº¦ã ã‘ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‹å‡¦ç†ã€‚
 {
 
 }
 
-void DiploidEngineApp::Load()//ƒQ[ƒ€‹N“®‚É1‰ñ‚¾‚¯ƒ[ƒh‚·‚éƒf[ƒ^(‰¹‚â‰æ‘œ‚âƒZ[ƒuƒf[ƒ^‚âƒ}ƒbƒvƒf[ƒ^‚È‚Ç)
+void DiploidEngineApp::Load()//ã‚²ãƒ¼ãƒ èµ·å‹•æ™‚ã«1å›ã ã‘ãƒ­ãƒ¼ãƒ‰ã™ã‚‹ãƒ‡ãƒ¼ã‚¿(éŸ³ã‚„ç”»åƒã‚„ã‚»ãƒ¼ãƒ–ãƒ‡ãƒ¼ã‚¿ã‚„ãƒãƒƒãƒ—ãƒ‡ãƒ¼ã‚¿ãªã©)
 {	
 	test.Load();
 }
 
-void DiploidEngineApp::Init()//ƒQ[ƒ€‹N“®‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB
+void DiploidEngineApp::Init()//ã‚²ãƒ¼ãƒ èµ·å‹•æ™‚ã«ä¸€å›ã ã‘åˆæœŸåŒ–ã—ãŸã„å‡¦ç†ã‚’è¨˜è¿°ã€‚
 {
 	test.Init();
 }
 
-void DiploidEngineApp::Updata()//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B(å‚É”’lˆ—)
+void DiploidEngineApp::Updata()//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãªã©é€£ç¶šã—ã¦è¡Œã„ãŸã„å‡¦ç†ã€‚(ä¸»ã«æ•°å€¤å‡¦ç†)
 {
 	input.Update();
 
 	test.Update(&input);
 }
 
-void DiploidEngineApp::Draw()//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
+void DiploidEngineApp::Draw()//çµæœã‚’æå†™ã™ã‚‹å‡¦ç†
 {
 	test.Draw(true);
 
-	//‰æ–Êî•ñ
-	DrawFormatString(0, 120, GetColor(255, 255, 255), "ScreenSizeX:%d", android_screen.GetScreenSizeX());
-	DrawFormatString(0, 180, GetColor(255, 255, 255), "ScreenSizeY:%d", android_screen.GetScreenSizeY());
+	//ç”»é¢æƒ…å ±
+	//DrawFormatString(0, 120, GetColor(255, 255, 255), "ScreenSizeX:%d", android_screen.GetScreenSizeX());
+	//DrawFormatString(0, 180, GetColor(255, 255, 255), "ScreenSizeY:%d", android_screen.GetScreenSizeY());
 }
 
-void DiploidEngineApp::Destory()//ƒ‹[ƒv’†‚Éíœ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg(ver1.0)‚ª‚ ‚éê‡‚Í‚±‚±‚Åíœˆ—‚ğ‘‚­B
+void DiploidEngineApp::Destory()//ãƒ«ãƒ¼ãƒ—ä¸­ã«å‰Šé™¤ã—ãŸã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ(ver1.0)ãŒã‚ã‚‹å ´åˆã¯ã“ã“ã§å‰Šé™¤å‡¦ç†ã‚’æ›¸ãã€‚
 {
 
 }
 
-void DiploidEngineApp::End()//engineI—¹‘Oˆ—B
+void DiploidEngineApp::End()//engineçµ‚äº†å‰å‡¦ç†ã€‚
 {
 
 }

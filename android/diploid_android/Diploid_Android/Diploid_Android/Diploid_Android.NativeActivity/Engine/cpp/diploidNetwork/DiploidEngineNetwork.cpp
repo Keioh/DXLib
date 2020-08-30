@@ -1,12 +1,12 @@
-#include "diploidNetwork\DiploidEngineNetwork.h"
+ï»¿#include "diploidNetwork\DiploidEngineNetwork.h"
 
 void DiploidEngineNetwork::Init()
 {
-	//WSAStartup(MAKEWORD(2, 0), &winsock2);//winsock2‚Ì‰Šú‰»
+	//WSAStartup(MAKEWORD(2, 0), &winsock2);//winsock2ã®åˆæœŸåŒ–
 
 }
 
-IPDATA DiploidEngineNetwork::GetMyAddr_IPv4()//©•ª‚ÌIPƒAƒhƒŒƒX(IPv4)‚ğæ“¾‚µ‚Ü‚·B
+IPDATA DiploidEngineNetwork::GetMyAddr_IPv4()//è‡ªåˆ†ã®IPã‚¢ãƒ‰ãƒ¬ã‚¹(IPv4)ã‚’å–å¾—ã—ã¾ã™ã€‚
 {
 	IPDATA buffer = {0,0,0,0};
 	return buffer;
@@ -22,6 +22,6 @@ void DiploidEngineNetwork::Draw(bool debug)
 
 void DiploidEngineNetwork::End()
 {
-	//WSACleanup();//winsock2‚ÌI—¹ˆ—
+	//WSACleanup();//winsock2ã®çµ‚äº†å‡¦ç†
 
 }

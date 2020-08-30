@@ -1,6 +1,6 @@
-#include "diploidScreen\DiploidEngineScene.h"
+ï»¿#include "diploidScreen\DiploidEngineScene.h"
 
-int DiploidEngineScene::SceneLoad()//ƒV[ƒ“‚É•Ï‰»‚ª‚ ‚Á‚½Û‚ÉŸ‚ÌƒV[ƒ“‚Ìƒf[ƒ^‚ğ“Ç‚İ‚Ş‚½‚ß‚ÌŠÖ”B
+int DiploidEngineScene::SceneLoad()//ã‚·ãƒ¼ãƒ³ã«å¤‰åŒ–ãŒã‚ã£ãŸéš›ã«æ¬¡ã®ã‚·ãƒ¼ãƒ³ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ãŸã‚ã®é–¢æ•°ã€‚
 {
 	return 0;
 }

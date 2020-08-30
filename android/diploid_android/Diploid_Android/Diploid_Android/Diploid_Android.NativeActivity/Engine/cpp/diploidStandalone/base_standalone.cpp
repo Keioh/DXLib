@@ -1,4 +1,4 @@
-#include "diploidStandalone\base_standalone.h"
+﻿#include "diploidStandalone\base_standalone.h"
 
 BaseStandalone::BaseStandalone()
 {

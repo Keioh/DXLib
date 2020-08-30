@@ -1,4 +1,4 @@
-#include "ver2.0/Objects/DiploidTouchUI.h"
+ï»¿#include "ver2.0/Objects/DiploidTouchUI.h"
 
 void DiploidTouchUI::Load(int graphics_handl)
 {
@@ -21,24 +21,24 @@ void DiploidTouchUI::Updata(DiploidEngineInput* input)
 {
 	position = box.GetPosition();
 
-	//9999‚ð’´‚¦‚é‚È‚ç
+	//9999ã‚’è¶…ãˆã‚‹ãªã‚‰
 	if (time > 9999)
 	{
-		time = 9999;//9999‚ÅŽ~‚ß‚éB
+		time = 9999;//9999ã§æ­¢ã‚ã‚‹ã€‚
 	}
 
 	if (touch_flag == false)
 	{
-		GetMousePoint(&mouse_x, &mouse_y);//ƒ}ƒEƒXÀ•W‚ðŽæ“¾
+		GetMousePoint(&mouse_x, &mouse_y);//ãƒžã‚¦ã‚¹åº§æ¨™ã‚’å–å¾—
 	}
 	else
 	{
-		//ƒ^ƒbƒ`À•W‚ðŽæ“¾
+		//ã‚¿ãƒƒãƒåº§æ¨™ã‚’å–å¾—
 		mouse_x = input->GetTouchPositionX();
 		mouse_y = input->GetTouchPositionY();
 	}
 
-	//BOX‚É“–‚½‚Á‚Ä‚¢‚½‚ç
+	//BOXã«å½“ãŸã£ã¦ã„ãŸã‚‰
 	if (collision.BoxAndMouseCollisionUpdate(&box, mouse_x, mouse_y) == true)
 	{
 		box.SetColor(GetColor(255, 0, 0));
@@ -56,7 +56,7 @@ void DiploidTouchUI::Updata(DiploidEngineInput* input)
 				time = 0;
 			}
 
-			//ƒNƒŠƒbƒN‚µ‚½‚ç
+			//ã‚¯ãƒªãƒƒã‚¯ã—ãŸã‚‰
 			if (input->GetPressMouse(MOUSE_INPUT_LEFT) == true)
 			{
 				box.SetColor(GetColor(0, 255, 0));
@@ -82,7 +82,7 @@ void DiploidTouchUI::Updata(DiploidEngineInput* input)
 				time = 0;
 			}
 
-			//ƒ^ƒbƒ`‚µ‚½‚ç
+			//ã‚¿ãƒƒãƒã—ãŸã‚‰
 			if (input->GetReleaseTouch() == true)
 			{
 				box.SetColor(GetColor(0, 255, 0));

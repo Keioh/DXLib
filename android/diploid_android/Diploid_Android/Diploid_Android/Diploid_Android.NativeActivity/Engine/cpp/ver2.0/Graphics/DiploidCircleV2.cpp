@@ -1,4 +1,4 @@
-#include "ver2.0/Graphics/DiploidCircleV2.h"
+﻿#include "ver2.0/Graphics/DiploidCircleV2.h"
 
 void DiploidCircleV2::Init(VECTOR pos, float radi, unsigned int color, bool fill, float thickness)
 {

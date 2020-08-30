@@ -1,4 +1,4 @@
-#include "diploidGraphics\diploidLine.h"
+ï»¿#include "diploidGraphics\diploidLine.h"
 
 void DiploidLine::Init(VECTOR position_one, VECTOR position_two)
 {
@@ -8,7 +8,7 @@ void DiploidLine::Init(VECTOR position_one, VECTOR position_two)
 
 void DiploidLine::Update()
 {
-	if (mouse_point_move_flag == true)//ƒ}ƒEƒX’Ç]‚Ìê‡‚Í‰æ–Ê¶ã‚ğ’†S‚É•`Ê‚·‚é‚Ì‚Å¶‚É50A‰E‚É50ƒhƒbƒg•\¦‚µ‚½‚¢ê‡‚ÍInit(VGet(-50,0,0), VGet(50,0,0))‚Æ‚·‚é‚±‚Æ
+	if (mouse_point_move_flag == true)//ãƒã‚¦ã‚¹è¿½å¾“ã®å ´åˆã¯ç”»é¢å·¦ä¸Šã‚’ä¸­å¿ƒã«æå†™ã™ã‚‹ã®ã§å·¦ã«50ã€å³ã«50ãƒ‰ãƒƒãƒˆè¡¨ç¤ºã—ãŸã„å ´åˆã¯Init(VGet(-50,0,0), VGet(50,0,0))ã¨ã™ã‚‹ã“ã¨
 	{
 		GetMousePoint(&mouse_position_x, &mouse_position_y);
 		Position_one.x = mouse_position_x + POSITION_ONE.x;
@@ -20,11 +20,11 @@ void DiploidLine::Update()
 	}
 	else
 	{
-		anime_position_one = VAdd(anime_position_one, move_speed);//ƒAƒjƒ[ƒVƒ‡ƒ“‚ÅˆÚ“®‚µ‚½•ª‚ğ•Û‘¶
-		Position_one = VAdd(POSITION_ONE, anime_position_one);//ƒIƒuƒWƒFƒNƒg‚ğ•`Ê‚µ‚½ˆÊ’u‚ÆˆÚ“®‚µ‚½•ª‚ğ•Û‘¶
+		anime_position_one = VAdd(anime_position_one, move_speed);//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã§ç§»å‹•ã—ãŸåˆ†ã‚’ä¿å­˜
+		Position_one = VAdd(POSITION_ONE, anime_position_one);//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æå†™ã—ãŸä½ç½®ã¨ç§»å‹•ã—ãŸåˆ†ã‚’ä¿å­˜
 
-		anime_position_two = VAdd(anime_position_two, move_speed);//ƒAƒjƒ[ƒVƒ‡ƒ“‚ÅˆÚ“®‚µ‚½•ª‚ğ•Û‘¶
-		Position_two = VAdd(POSITION_TWO, anime_position_two);//ƒIƒuƒWƒFƒNƒg‚ğ•`Ê‚µ‚½ˆÊ’u‚ÆˆÚ“®‚µ‚½•ª‚ğ•Û‘¶
+		anime_position_two = VAdd(anime_position_two, move_speed);//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã§ç§»å‹•ã—ãŸåˆ†ã‚’ä¿å­˜
+		Position_two = VAdd(POSITION_TWO, anime_position_two);//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æå†™ã—ãŸä½ç½®ã¨ç§»å‹•ã—ãŸåˆ†ã‚’ä¿å­˜
 	}
 }
 

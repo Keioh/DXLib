@@ -1,4 +1,4 @@
-#include "ver2.0/Objects/DiploidSelectedUIV2.h"
+ï»¿#include "ver2.0/Objects/DiploidSelectedUIV2.h"
 
 void DiploidSelectedUIV2::Load(int graphics_handl)
 {
@@ -21,16 +21,16 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 {
 	if (touch_flag == false)
 	{
-		GetMousePoint(&mouse_x, &mouse_y);//ƒ}ƒEƒXÀ•W‚ðŽæ“¾
+		GetMousePoint(&mouse_x, &mouse_y);//ãƒžã‚¦ã‚¹åº§æ¨™ã‚’å–å¾—
 	}
 	else
 	{
-		//ƒ^ƒbƒ`À•W‚ðŽæ“¾
+		//ã‚¿ãƒƒãƒåº§æ¨™ã‚’å–å¾—
 		mouse_x = input->GetTouchPositionX();
 		mouse_y = input->GetTouchPositionY();
 	}
 
-	//BOX‚É“–‚½‚Á‚Ä‚¢‚½‚ç
+	//BOXã«å½“ãŸã£ã¦ã„ãŸã‚‰
 	if (collision.BoxAndMouseCollisionUpdate(&box, mouse_x, mouse_y) == true)
 	{
 		box.SetColor(GetColor(255, 0, 0));
@@ -39,7 +39,7 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 
 		if (touch_flag == false)
 		{
-			//ƒNƒŠƒbƒN‚µ‚½‚ç
+			//ã‚¯ãƒªãƒƒã‚¯ã—ãŸã‚‰
 			if (input->GetPressMouse(MOUSE_INPUT_LEFT) == true)
 			{
 				box.SetColor(GetColor(0, 255, 0));
@@ -54,7 +54,7 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 		}
 		else
 		{
-			//ƒ^ƒbƒ`‚µ‚½‚ç
+			//ã‚¿ãƒƒãƒã—ãŸã‚‰
 			if (input->GetReleaseTouch() == true)
 			{
 				box.SetColor(GetColor(0, 255, 0));

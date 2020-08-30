@@ -1,14 +1,14 @@
-#include "data/res_data/parameter/patameter_screen.h"
+﻿#include "data/res_data/parameter/patameter_screen.h"
 
 void ParameterScreen::Load()
 {
+	//パラメータ関連
 	str_button.Load();
 	dex_button.Load();
 	con_button.Load();
 	int_button.Load();
 	luk_button.Load();
-	agi_button.Load();
-
+	agi_button.Load();	
 	res_button.Load();
 	atk_button.Load();
 	cri_button.Load();
@@ -16,35 +16,44 @@ void ParameterScreen::Load()
 	san_button.Load();
 	will_button.Load();
 
+	//職業
+	profession_button.Load();
+
 }
 
 void ParameterScreen::Init()
 {
-	str_button.Init(VGet(0, 500, 0), VGet(256, 128, 0), "STR");
-	dex_button.Init(VGet(0, 500 + 128, 0), VGet(256, 128, 0), "DEX");
-	con_button.Init(VGet(0, 500 + (128 * 2), 0), VGet(256, 128, 0), "CON");
-	int_button.Init(VGet(0, 500 + (128 * 3), 0), VGet(256, 128, 0), "INT");
-	luk_button.Init(VGet(0, 500 + (128 * 4), 0), VGet(256, 128, 0), "LUK");
-	agi_button.Init(VGet(0, 500 + (128 * 5), 0), VGet(256, 128, 0), "AGI");
+	profession_button.Init(VGet(player_info_pos.x, player_info_pos.y, 0), VGet(192, 128, 0), "職業", false);	
+	profession_button.SetMaxValue(PROFESSION_VALUE);
+	profession_button.SetMiniValue(-1);
 
-	res_button.Init(VGet(512 + 40, 500, 0), VGet(256, 128, 0), "RES");
-	atk_button.Init(VGet(512 + 40, 500 + 128, 0), VGet(256, 128, 0), "ATK");
-	cri_button.Init(VGet(512 + 40, 500 + (128 * 2), 0), VGet(256, 128, 0), "CRI");
-	def_button.Init(VGet(512 + 40, 500 + (128 * 3), 0), VGet(256, 128, 0), "DEF");
-	san_button.Init(VGet(512 + 40, 500 + (128 * 4), 0), VGet(256, 128, 0), "SAN");
-	will_button.Init(VGet(512 + 40, 500 + (128 * 5), 0), VGet(256, 128, 0), "WILL");
+	str_button.Init(VGet(0, parameter_pos.y, 0), VGet(192, 128, 0), "STR");
+	dex_button.Init(VGet(0, parameter_pos.y + (128 + 64 + 20), 0), VGet(192, 128, 0), "DEX");
+	con_button.Init(VGet(0, parameter_pos.y + ((128 + 64 + 20) * 2), 0), VGet(192, 128, 0), "CON");
+	int_button.Init(VGet(0, parameter_pos.y + ((128 + 64 + 20) * 3), 0), VGet(192, 128, 0), "INT");
+	luk_button.Init(VGet(0, parameter_pos.y + ((128 + 64 + 20) * 4), 0), VGet(192, 128, 0), "LUK");
+	agi_button.Init(VGet(0, parameter_pos.y + ((128 + 64 + 20) * 5), 0), VGet(192, 128, 0), "AGI");
+	res_button.Init(VGet(512 + 40, parameter_pos.y, 0), VGet(192, 128, 0), "RES");
+	atk_button.Init(VGet(512 + 40, parameter_pos.y + (128 + 64 + 20), 0), VGet(192, 128, 0), "ATK");
+	cri_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 2), 0), VGet(192, 128, 0), "CRI");
+	def_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 3), 0), VGet(192, 128, 0), "DEF");
+	san_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 4), 0), VGet(192, 128, 0), "SAN");
+	will_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 5), 0), VGet(192, 128, 0), "WIL");
 
 }
 
 void ParameterScreen::Update(DiploidEngineInput* input)
 {
+	//職業ボタン判定処理
+	profession_button.Update(input);
+
+	//パラメータ関連のボタン判定処理
 	str_button.Update(input);
 	dex_button.Update(input);
 	con_button.Update(input);
 	int_button.Update(input);
 	luk_button.Update(input);
 	agi_button.Update(input);
-
 	res_button.Update(input);
 	atk_button.Update(input);
 	cri_button.Update(input);
@@ -52,22 +61,371 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 	san_button.Update(input);
 	will_button.Update(input);
 
+	//職業ボタンの数値処理
+	profession_update();
+
+	//ボタンオフ処理
+	profession_button_update();
+	str_button_update();//ここから下はパラメータ関連
+	dex_button_update();
+	con_button_update();
+	int_button_update();
+	luk_button_update();
+	agi_button_update();
+	res_button_update();
+	atk_button_update();
+	cri_button_update();
+	def_button_update();
+	san_button_update();
+	will_button_update();
 }
 
 void ParameterScreen::Draw(bool draw, bool debug)
 {
+	//職業ボタンの描画
+	profession_button_draw(draw, debug);
+
+	//パラメータボタンの描画
 	str_button.Draw(draw, debug);
 	dex_button.Draw(draw, debug);
 	con_button.Draw(draw, debug);
 	int_button.Draw(draw, debug);
 	luk_button.Draw(draw, debug);
 	agi_button.Draw(draw, debug);
-
 	res_button.Draw(draw, debug);
 	atk_button.Draw(draw, debug);
 	cri_button.Draw(draw, debug);
 	def_button.Draw(draw, debug);
 	san_button.Draw(draw, debug);
 	will_button.Draw(draw, debug);
+
+}
+
+
+void ParameterScreen::profession_button_update()
+{
+	//職業の情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((profession_button.GetInfoButtonPtr()->GetClick() == true) && (profession_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::str_button_update()
+{
+	//STRの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((str_button.GetInfoButtonPtr()->GetClick() == true) && (str_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::dex_button_update()
+{
+	//DEXの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((dex_button.GetInfoButtonPtr()->GetClick() == true) && (dex_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::con_button_update()
+{
+	//CONの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((con_button.GetInfoButtonPtr()->GetClick() == true) && (con_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::int_button_update()
+{
+	//INTの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((int_button.GetInfoButtonPtr()->GetClick() == true) && (int_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::luk_button_update()
+{
+	//LUKの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((luk_button.GetInfoButtonPtr()->GetClick() == true) && (luk_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::agi_button_update()
+{
+	//AGIの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((agi_button.GetInfoButtonPtr()->GetClick() == true) && (agi_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::res_button_update()
+{
+	//RESの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((res_button.GetInfoButtonPtr()->GetClick() == true) && (res_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::atk_button_update()
+{
+	//ATKの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((atk_button.GetInfoButtonPtr()->GetClick() == true) && (atk_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::cri_button_update()
+{
+	//CRIの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((cri_button.GetInfoButtonPtr()->GetClick() == true) && (cri_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::def_button_update()
+{
+	//DEFの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((def_button.GetInfoButtonPtr()->GetClick() == true) && (def_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::san_button_update()
+{
+	//SANの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((san_button.GetInfoButtonPtr()->GetClick() == true) && (san_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::will_button_update()
+{
+	//WILLの情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((will_button.GetInfoButtonPtr()->GetClick() == true) && (will_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+
+void ParameterScreen::profession_update()
+{
+	if (profession_button.GetParameterValue() >= profession_button.GetParameterMaxValue())
+	{
+		profession_button.SetParameterValue(0);
+	}
+
+	if (profession_button.GetParameterValue() <= profession_button.GetParameterMiniValue())
+	{
+		profession_button.SetParameterValue(PROFESSION_VALUE - 1);
+	}
+}
+
+void ParameterScreen::profession_button_draw(bool draw, bool debug)
+{
+	profession_button.Draw(draw, debug);
+
+	switch (profession_button.GetParameterValue())
+	{
+	case 0:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8,"虚無", GetColor(255, 255, 255));
+		break;
+
+	case 1:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "剣に生きる者", GetColor(255, 255, 255));
+		break;
+
+	case 2:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "魔に生きる者", GetColor(255, 255, 255));
+		break;
+
+	case 3:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "知に生きる者", GetColor(255, 255, 255));
+		break;
+
+	case 4:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "守に生きる者", GetColor(255, 255, 255));
+		break;
+
+	default:
+		break;
+	}
 
 }

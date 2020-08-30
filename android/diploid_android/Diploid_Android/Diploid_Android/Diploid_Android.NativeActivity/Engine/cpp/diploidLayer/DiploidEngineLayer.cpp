@@ -1,4 +1,4 @@
-#include "diploidLayer\DiploidEngineLayer.h"
+ï»¿#include "diploidLayer\DiploidEngineLayer.h"
 
 void DiploidEngineLayer::GetSize()
 {
@@ -70,7 +70,7 @@ void DiploidEngineLayer::Updata()
 
 void DiploidEngineLayer::Draw(bool debug, bool draw)
 {
-	GetSize();//Še”z—ñ‚Ì‘å‚«‚³‚ğæ“¾
+	GetSize();//å„é…åˆ—ã®å¤§ãã•ã‚’å–å¾—
 
 	if (!image_mid_vector.empty())
 	{
@@ -104,7 +104,7 @@ void DiploidEngineLayer::Draw(bool debug, bool draw)
 		}
 	}
 
-	//ƒfƒoƒbƒOî•ñ
+	//ãƒ‡ãƒãƒƒã‚°æƒ…å ±
 	if (debug == true)
 	{
 		DrawFormatString(0, 100, GetColor(255, 255, 255), "top layer vector size : %.6f MB   objects : %d", top_byte / 1000000, top_size);
@@ -117,9 +117,9 @@ void DiploidEngineLayer::Draw(bool debug, bool draw)
 
 void DiploidEngineLayer::Destory()
 {
-	DestoryTop();//top”z—ñ‚©‚ç—v‘f‚ğíœ
-	DestoryMid();//mid”z—ñ‚©‚ç—v‘f‚ğíœ
-	DestoryBot();//bot”z—ñ‚©‚ç—v‘f‚ğíœ
+	DestoryTop();//topé…åˆ—ã‹ã‚‰è¦ç´ ã‚’å‰Šé™¤
+	DestoryMid();//midé…åˆ—ã‹ã‚‰è¦ç´ ã‚’å‰Šé™¤
+	DestoryBot();//boté…åˆ—ã‹ã‚‰è¦ç´ ã‚’å‰Šé™¤
 }
 
 void DiploidEngineLayer::DestoryTop()
@@ -475,23 +475,23 @@ int DiploidEngineLayer::GetBOTNumber(int target)
 
 void DiploidEngineLayer::SetTOPNumber(int target_number, int set_number)
 {
-	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target_number;//topƒCƒeƒŒ[ƒ^
+	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target_number;//topã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineLayer::SetMIDNumber(int target_number, int set_number)
 {
-	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target_number;//midƒCƒeƒŒ[ƒ^
+	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target_number;//midã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineLayer::SetBOTNumber(int target_number, int set_number)
 {
-	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target_number;//botƒCƒeƒŒ[ƒ^
+	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target_number;//botã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 
@@ -528,21 +528,21 @@ int DiploidEngineLayer::GetBOTLayerNumber(int target)
 
 void DiploidEngineLayer::SetTOPLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target_number;//topƒCƒeƒŒ[ƒ^
+	std::vector<DiploidImage>::iterator itr = image_top_vector.begin() + target_number;//topã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineLayer::SetMIDLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target_number;//topƒCƒeƒŒ[ƒ^
+	std::vector<DiploidImage>::iterator itr = image_mid_vector.begin() + target_number;//topã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }
 
 void DiploidEngineLayer::SetBOTLayerNumber(int target_number, int set_number)
 {
-	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target_number;//topƒCƒeƒŒ[ƒ^
+	std::vector<DiploidImage>::iterator itr = image_bot_vector.begin() + target_number;//topã‚¤ãƒ†ãƒ¬ãƒ¼ã‚¿
 
-	itr->layer_number = set_number;//V‚µ‚¢’l‚ğ‘ã“ü
+	itr->layer_number = set_number;//æ–°ã—ã„å€¤ã‚’ä»£å…¥
 }

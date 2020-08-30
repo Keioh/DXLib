@@ -1,74 +1,74 @@
-#pragma once
+ï»¿#pragma once
 #include <memory>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
 #include "diploidApp\DiploidEngineApp.h"
 
-//debugî•ñ‚ ‚è‚Æ‘‚©‚ê‚Ä‚¢‚é•¨‚ÍƒŠƒŠ[ƒX‚·‚é‚Æ‚«‚Éfalse‚É‚·‚é‚±‚ÆB
+//debugæƒ…å ±ã‚ã‚Šã¨æ›¸ã‹ã‚Œã¦ã„ã‚‹ç‰©ã¯ãƒªãƒªãƒ¼ã‚¹ã™ã‚‹ã¨ãã«falseã«ã™ã‚‹ã“ã¨ã€‚
 int android_main(void)
 {
-	DiploidEngineApp *diploid_engine_app = new DiploidEngineApp();//ƒ‹[ƒv‚È‚Ç‚Ìˆ—‚à‚ë‚à‚ë
+	DiploidEngineApp *diploid_engine_app = new DiploidEngineApp();//ãƒ«ãƒ¼ãƒ—ãªã©ã®å‡¦ç†ã‚‚ã‚ã‚‚ã‚
 	
 	//std::shared_ptr<DiploidEngineApp> diploid_engine_app;
 
-	diploid_engine_app->diploidEngineSetting.Init();//ƒGƒ“ƒWƒ“‰Šú‰»
+	diploid_engine_app->diploidEngineSetting.Init();//ã‚¨ãƒ³ã‚¸ãƒ³åˆæœŸåŒ–
 	
-	diploid_engine_app->FileCreate();//ƒQ[ƒ€‹N“®‚Éƒtƒ@ƒCƒ‹‚ğì¬
+	diploid_engine_app->FileCreate();//ã‚²ãƒ¼ãƒ èµ·å‹•æ™‚ã«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆ
 
-	diploid_engine_app->Load();//ƒQ[ƒ€‹N“®‚Éƒf[ƒ^‚ğ“Ç‚İ‚Şˆ—
+	diploid_engine_app->Load();//ã‚²ãƒ¼ãƒ èµ·å‹•æ™‚ã«ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€å‡¦ç†
 
-	diploid_engine_app->Init();//ƒGƒ“ƒWƒ“‰Šú‰»Œãˆê‰ñ‚¾‚¯‰Šú‰»‚·‚éˆ—
+	diploid_engine_app->Init();//ã‚¨ãƒ³ã‚¸ãƒ³åˆæœŸåŒ–å¾Œä¸€å›ã ã‘åˆæœŸåŒ–ã™ã‚‹å‡¦ç†
 
-	diploid_engine_app->diploidEngineNetwork.Init();//ƒlƒbƒgˆ—‰Šú‰»
+	diploid_engine_app->diploidEngineNetwork.Init();//ãƒãƒƒãƒˆå‡¦ç†åˆæœŸåŒ–
 
-	diploid_engine_app->diploidEngineInput.Init();//“ü—Í‹@Ší‰Šú‰»
+	diploid_engine_app->diploidEngineInput.Init();//å…¥åŠ›æ©Ÿå™¨åˆæœŸåŒ–
 
 	while (ProcessMessage() == 0)
 	{		
-		diploid_engine_app->diploidEngineScreen.Init();//FPS‰Šú‰»
+		diploid_engine_app->diploidEngineScreen.Init();//FPSåˆæœŸåŒ–
 
-		diploid_engine_app->diploidEngineNetwork.Update();//ƒlƒbƒgˆ—‚ÌXV
+		diploid_engine_app->diploidEngineNetwork.Update();//ãƒãƒƒãƒˆå‡¦ç†ã®æ›´æ–°
 
-		diploid_engine_app->DestorySync();//ƒfƒXƒgƒƒCˆ—‚ğ“¯Šú(“¯Šú‘ÎÛFImpact / Layer)
-		diploid_engine_app->diploidEngineLayer.Destory();//destory•Ï”‚ªtrue‚Ì‚à‚Ì‚ğíœ(Impactˆ—‚æ‚è‘O‚É‹Lq)
-		diploid_engine_app->diploidEngineImpact.Destory();//Õ“Ë‚µ‚Ä‚¢‚é‚à‚Ì‚ğíœ
+		diploid_engine_app->DestorySync();//ãƒ‡ã‚¹ãƒˆãƒ­ã‚¤å‡¦ç†ã‚’åŒæœŸ(åŒæœŸå¯¾è±¡ï¼šImpact / Layer)
+		diploid_engine_app->diploidEngineLayer.Destory();//destoryå¤‰æ•°ãŒtrueã®ã‚‚ã®ã‚’å‰Šé™¤(Impactå‡¦ç†ã‚ˆã‚Šå‰ã«è¨˜è¿°)
+		diploid_engine_app->diploidEngineImpact.Destory();//è¡çªã—ã¦ã„ã‚‹ã‚‚ã®ã‚’å‰Šé™¤
 
-		diploid_engine_app->diploidEngineImpact.Init();//Õ“Ëˆ—‚Ì‰Šú‰»
+		diploid_engine_app->diploidEngineImpact.Init();//è¡çªå‡¦ç†ã®åˆæœŸåŒ–
 
-		ClearDrawScreen();//‰æ–Ê‚É•`Ê‚³‚ê‚Ä‚¢‚é‚à‚Ì‚ğíœ
+		ClearDrawScreen();//ç”»é¢ã«æå†™ã•ã‚Œã¦ã„ã‚‹ã‚‚ã®ã‚’å‰Šé™¤
 
-		diploid_engine_app->diploidEngineImpact.Updata();//Õ“Ë”»’è
-		diploid_engine_app->diploidEngineLayer.Updata();//ƒŒƒCƒ„[‰æ‘œ‚ğƒAƒbƒvƒf[ƒg
+		diploid_engine_app->diploidEngineImpact.Updata();//è¡çªåˆ¤å®š
+		diploid_engine_app->diploidEngineLayer.Updata();//ãƒ¬ã‚¤ãƒ¤ãƒ¼ç”»åƒã‚’ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 
-		diploid_engine_app->Updata();//ƒƒCƒ“ƒ‹[ƒv
+		diploid_engine_app->Updata();//ãƒ¡ã‚¤ãƒ³ãƒ«ãƒ¼ãƒ—
 		
-		diploid_engine_app->diploidEngineInput.Update();//“ü—Í‹@ŠíƒAƒbƒvƒf[ƒg
+		diploid_engine_app->diploidEngineInput.Update();//å…¥åŠ›æ©Ÿå™¨ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 
-		diploid_engine_app->diploidEngineLayer.Draw(false);//ƒŒƒCƒ„[‰æ‘œ‚ğ•\¦(debugî•ñ‚ ‚è)
-		diploid_engine_app->diploidEngineImpact.Draw(true);//Õ“Ë”ÍˆÍ‚ğ•`Ê(debugî•ñ‚ ‚è)
+		diploid_engine_app->diploidEngineLayer.Draw(false);//ãƒ¬ã‚¤ãƒ¤ãƒ¼ç”»åƒã‚’è¡¨ç¤º(debugæƒ…å ±ã‚ã‚Š)
+		diploid_engine_app->diploidEngineImpact.Draw(true);//è¡çªç¯„å›²ã‚’æå†™(debugæƒ…å ±ã‚ã‚Š)Ver1.0
 
-		diploid_engine_app->Draw();//ƒƒCƒ“•`Ê
+		diploid_engine_app->Draw();//ãƒ¡ã‚¤ãƒ³æå†™
 
-		diploid_engine_app->Destory();//ƒQ[ƒ€’†‚Ì“®“Iíœˆ—B
+		diploid_engine_app->Destory();//ã‚²ãƒ¼ãƒ ä¸­ã®å‹•çš„å‰Šé™¤å‡¦ç†ã€‚
 
-		diploid_engine_app->diploidEngineInput.Draw(1000, 0);//“ü—Í”»’è‚Ì•\¦(debugî•ñ‚ ‚è)
+		diploid_engine_app->diploidEngineInput.Draw(1000, 0);//å…¥åŠ›åˆ¤å®šã®è¡¨ç¤º(debugæƒ…å ±ã‚ã‚Š)
 
-		diploid_engine_app->diploidEngineScreen.Update();//FPS‚ğƒAƒbƒvƒf[ƒg
+		diploid_engine_app->diploidEngineScreen.Update();//FPSã‚’ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
 
-		diploid_engine_app->diploidEngineScreen.Draw(0,0,true);//FPS‚ğ•\¦(debugî•ñ‚ ‚è)
+		diploid_engine_app->diploidEngineScreen.Draw(0,0,false);//FPSã‚’è¡¨ç¤º(debugæƒ…å ±ã‚ã‚Š)
 
-		ScreenFlip();//•\‰æ–Ê‚Ö•`Ê
+		ScreenFlip();//è¡¨ç”»é¢ã¸æå†™
 
-		diploid_engine_app->diploidEngineScreen.Wait();//FPS‘Ò‹@
+		diploid_engine_app->diploidEngineScreen.Wait();//FPSå¾…æ©Ÿ
 	}
 
-	diploid_engine_app->End();//ƒGƒ“ƒWƒ“I—¹‘Oˆ—B
-	diploid_engine_app->diploidEngineNetwork.End();//ƒlƒbƒgˆ—‚ÌI—¹
-	InitSoftImage();//ƒƒ‚ƒŠã‚É‚ ‚éƒ\ƒtƒgƒEƒFƒA‰æ‘œ‚ğ‚·‚×‚Äíœ
-	InitGraph();//ƒƒ‚ƒŠã‚É‚ ‚é‰æ‘œƒf[ƒ^‚ğ‚·‚×‚Äíœ
-	InitSoundMem();//ƒƒ‚ƒŠ‚É‚ ‚éƒTƒEƒ“ƒh‚ğ‚·‚×‚Äíœ
-	//InitKeyInput();//‚·‚×‚Ä‚ÌƒL[“ü—Í‚ğíœ
-	diploid_engine_app->diploidEngineSetting.End();//ƒGƒ“ƒWƒ“‚ÌI—¹
+	diploid_engine_app->End();//ã‚¨ãƒ³ã‚¸ãƒ³çµ‚äº†å‰å‡¦ç†ã€‚
+	diploid_engine_app->diploidEngineNetwork.End();//ãƒãƒƒãƒˆå‡¦ç†ã®çµ‚äº†
+	InitSoftImage();//ãƒ¡ãƒ¢ãƒªä¸Šã«ã‚ã‚‹ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ç”»åƒã‚’ã™ã¹ã¦å‰Šé™¤
+	InitGraph();//ãƒ¡ãƒ¢ãƒªä¸Šã«ã‚ã‚‹ç”»åƒãƒ‡ãƒ¼ã‚¿ã‚’ã™ã¹ã¦å‰Šé™¤
+	InitSoundMem();//ãƒ¡ãƒ¢ãƒªã«ã‚ã‚‹ã‚µã‚¦ãƒ³ãƒ‰ã‚’ã™ã¹ã¦å‰Šé™¤
+	//InitKeyInput();//ã™ã¹ã¦ã®ã‚­ãƒ¼å…¥åŠ›ã‚’å‰Šé™¤
+	diploid_engine_app->diploidEngineSetting.End();//ã‚¨ãƒ³ã‚¸ãƒ³ã®çµ‚äº†
 
 	delete diploid_engine_app;
 

@@ -38,7 +38,7 @@ protected:
 
 public:
 	void Load(const char* path);//画像を読み込みます。
-	void Init(VECTOR pos, bool shift_flag = true);//読み込んだ画像を初期化します。(shift_flagがtrueで画像を中心にして描画します。)
+	void Init(VECTOR pos, bool shift_flag = false);//読み込んだ画像を初期化します。(shift_flagがtrueで画像を中心にして描画します。)
 	void MoveUpdate();//設定した移動速度を反映します。
 	void Draw(bool draw = true);//画像を描画します。
 

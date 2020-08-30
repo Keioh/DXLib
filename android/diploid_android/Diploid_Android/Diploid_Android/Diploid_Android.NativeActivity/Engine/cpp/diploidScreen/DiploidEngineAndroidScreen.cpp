@@ -1,4 +1,4 @@
-#include "diploidScreen/DiploidEngineAndroidScreen.h"
+ï»¿#include "diploidScreen/DiploidEngineAndroidScreen.h"
 
 int DiploidEngineAndroidScreen::GetScreenSizeX()
 {
@@ -9,25 +9,25 @@ int DiploidEngineAndroidScreen::GetScreenSizeX()
 		return -1;
 	}
 
-	//java‚ÌƒNƒ‰ƒX‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã‚’å–å¾—
 	jclass_Diploid_Android = env->GetObjectClass(NativeActivity->clazz);
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒoŠÖ”‚ÌID‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒé–¢æ•°ã®IDã‚’å–å¾—
 	jmethodID_Diploid_Android_RealScreenSize = env->GetMethodID(jclass_Diploid_Android, "RealScreenSize", "()V");
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒoŠÖ”‚©‚çvoidŠÖ”‚ðˆ—
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒé–¢æ•°ã‹ã‚‰voidé–¢æ•°ã‚’å‡¦ç†
 	env->CallVoidMethod(NativeActivity->clazz, jmethodID_Diploid_Android_RealScreenSize);
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒo•Ï”‚ÌID‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒå¤‰æ•°ã®IDã‚’å–å¾—
 	jfieldID_ScreenX = env->GetFieldID(jclass_Diploid_Android, "window_x", "I");
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒo•Ï”‚©‚çî•ñ‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒå¤‰æ•°ã‹ã‚‰æƒ…å ±ã‚’å–å¾—
 	window_x = env->GetIntField(NativeActivity->clazz, jfieldID_ScreenX);
 
-	//java‚ÌƒNƒ‰ƒX‚ÌŽQÆ‚ðíœ
+	//javaã®ã‚¯ãƒ©ã‚¹ã®å‚ç…§ã‚’å‰Šé™¤
 	env->DeleteLocalRef(jclass_Diploid_Android);
 
-	// JavaVM ‚Æƒ\ƒtƒgŽÀs—pƒXƒŒƒbƒh‚ÌŠÖ˜A•t‚¯I—¹
+	// JavaVM ã¨ã‚½ãƒ•ãƒˆå®Ÿè¡Œç”¨ã‚¹ãƒ¬ãƒƒãƒ‰ã®é–¢é€£ä»˜ã‘çµ‚äº†
 	NativeActivity->vm->DetachCurrentThread();
 
 	return window_x;
@@ -42,25 +42,25 @@ int DiploidEngineAndroidScreen::GetScreenSizeY()
 		return -1;
 	}
 
-	//java‚ÌƒNƒ‰ƒX‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã‚’å–å¾—
 	jclass_Diploid_Android = env->GetObjectClass(NativeActivity->clazz);
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒoŠÖ”‚ÌID‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒé–¢æ•°ã®IDã‚’å–å¾—
 	jmethodID_Diploid_Android_RealScreenSize = env->GetMethodID(jclass_Diploid_Android, "RealScreenSize", "()V");
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒoŠÖ”‚©‚çvoidŠÖ”‚ðˆ—
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒé–¢æ•°ã‹ã‚‰voidé–¢æ•°ã‚’å‡¦ç†
 	env->CallVoidMethod(NativeActivity->clazz, jmethodID_Diploid_Android_RealScreenSize);
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒo•Ï”‚ÌID‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒå¤‰æ•°ã®IDã‚’å–å¾—
 	jfieldID_ScreenY = env->GetFieldID(jclass_Diploid_Android, "window_y", "I");
 
-	//java‚ÌƒNƒ‰ƒX‚Ìƒƒ“ƒo•Ï”‚©‚çî•ñ‚ðŽæ“¾
+	//javaã®ã‚¯ãƒ©ã‚¹ã®ãƒ¡ãƒ³ãƒå¤‰æ•°ã‹ã‚‰æƒ…å ±ã‚’å–å¾—
 	window_y = env->GetIntField(NativeActivity->clazz, jfieldID_ScreenY);
 
-	//java‚ÌƒNƒ‰ƒX‚ÌŽQÆ‚ðíœ
+	//javaã®ã‚¯ãƒ©ã‚¹ã®å‚ç…§ã‚’å‰Šé™¤
 	env->DeleteLocalRef(jclass_Diploid_Android);
 
-	// JavaVM ‚Æƒ\ƒtƒgŽÀs—pƒXƒŒƒbƒh‚ÌŠÖ˜A•t‚¯I—¹
+	// JavaVM ã¨ã‚½ãƒ•ãƒˆå®Ÿè¡Œç”¨ã‚¹ãƒ¬ãƒƒãƒ‰ã®é–¢é€£ä»˜ã‘çµ‚äº†
 	NativeActivity->vm->DetachCurrentThread();
 
 	return window_y;
