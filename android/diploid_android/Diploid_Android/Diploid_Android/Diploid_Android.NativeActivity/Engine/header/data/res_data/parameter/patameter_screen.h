@@ -9,6 +9,7 @@ class ParameterScreen
 private:
 	//プレイヤー情報関連
 	BaseParameterUI profession_button;//職業
+	BaseParameterUI birth_button;//生まれ
 
 	//パラメータ値関連
 	BaseParameterUI str_button;
@@ -28,8 +29,10 @@ private:
 	VECTOR player_info_pos = { 0, 0, 0 };
 
 	int profession = PROFESSUON_NONE;
+	int birth = BIRTH_NONE;
 
 	//ボタンオフ処理関数
+	void birth_button_update();
 	void profession_button_update();
 	void str_button_update();//ここから下はパラメータ関連
 	void dex_button_update();
@@ -47,9 +50,17 @@ private:
 	void profession_update();//職業数値のアップデート
 	void profession_button_draw(bool draw, bool debug);//職業の表示
 
+	void birth_update();//生まれ数値のアップデート
+	void birth_button_draw(bool draw, bool debug);//生まれの表示
+
+
 public:
 	void Load();
 	void Init();
 	void Update(DiploidEngineInput* input);
 	void Draw(bool draw = true, bool debug = false);
+
+	int GetProfessionValue();//選択中の職業の値を返す。
+	int GetBirthValue();//選択中の生まれの値を返す。
+
 };

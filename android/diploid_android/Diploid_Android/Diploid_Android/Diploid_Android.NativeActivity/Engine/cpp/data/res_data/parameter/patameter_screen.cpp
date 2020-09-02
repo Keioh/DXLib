@@ -19,6 +19,9 @@ void ParameterScreen::Load()
 	//職業
 	profession_button.Load();
 
+	//生まれ
+	birth_button.Load();
+
 }
 
 void ParameterScreen::Init()
@@ -26,6 +29,11 @@ void ParameterScreen::Init()
 	profession_button.Init(VGet(player_info_pos.x, player_info_pos.y, 0), VGet(192, 128, 0), "職業", false);	
 	profession_button.SetMaxValue(PROFESSION_VALUE);
 	profession_button.SetMiniValue(-1);
+
+	birth_button.Init(VGet(player_info_pos.x, player_info_pos.y + (128 + 64 + 20), 0), VGet(192, 128, 0), "出生", false);
+	birth_button.SetMaxValue(BIRTH_VALUE);
+	birth_button.SetMiniValue(-1);
+
 
 	str_button.Init(VGet(0, parameter_pos.y, 0), VGet(192, 128, 0), "STR");
 	dex_button.Init(VGet(0, parameter_pos.y + (128 + 64 + 20), 0), VGet(192, 128, 0), "DEX");
@@ -47,6 +55,10 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 	//職業ボタン判定処理
 	profession_button.Update(input);
 
+	//生まれボタン判定処理
+	birth_button.Update(input);
+
+
 	//パラメータ関連のボタン判定処理
 	str_button.Update(input);
 	dex_button.Update(input);
@@ -64,7 +76,11 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 	//職業ボタンの数値処理
 	profession_update();
 
+	//生まれボタンの数値処理
+	birth_update();
+
 	//ボタンオフ処理
+	birth_button_update();
 	profession_button_update();
 	str_button_update();//ここから下はパラメータ関連
 	dex_button_update();
@@ -85,6 +101,10 @@ void ParameterScreen::Draw(bool draw, bool debug)
 	//職業ボタンの描画
 	profession_button_draw(draw, debug);
 
+	//生まれボタンの描画
+	birth_button_draw(draw, debug);
+
+
 	//パラメータボタンの描画
 	str_button.Draw(draw, debug);
 	dex_button.Draw(draw, debug);
@@ -98,15 +118,38 @@ void ParameterScreen::Draw(bool draw, bool debug)
 	def_button.Draw(draw, debug);
 	san_button.Draw(draw, debug);
 	will_button.Draw(draw, debug);
-
 }
 
+void ParameterScreen::birth_button_update()
+{
+	//職業の情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((birth_button.GetInfoButtonPtr()->GetClick() == true) && (birth_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+
+}
 
 void ParameterScreen::profession_button_update()
 {
 	//職業の情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((profession_button.GetInfoButtonPtr()->GetClick() == true) && (profession_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -127,6 +170,7 @@ void ParameterScreen::str_button_update()
 	//STRの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((str_button.GetInfoButtonPtr()->GetClick() == true) && (str_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -148,6 +192,7 @@ void ParameterScreen::dex_button_update()
 	//DEXの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((dex_button.GetInfoButtonPtr()->GetClick() == true) && (dex_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -170,6 +215,7 @@ void ParameterScreen::con_button_update()
 	//CONの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((con_button.GetInfoButtonPtr()->GetClick() == true) && (con_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -192,6 +238,7 @@ void ParameterScreen::int_button_update()
 	//INTの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((int_button.GetInfoButtonPtr()->GetClick() == true) && (int_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -214,6 +261,7 @@ void ParameterScreen::luk_button_update()
 	//LUKの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((luk_button.GetInfoButtonPtr()->GetClick() == true) && (luk_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -236,6 +284,7 @@ void ParameterScreen::agi_button_update()
 	//AGIの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((agi_button.GetInfoButtonPtr()->GetClick() == true) && (agi_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -258,6 +307,7 @@ void ParameterScreen::res_button_update()
 	//RESの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((res_button.GetInfoButtonPtr()->GetClick() == true) && (res_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -280,6 +330,7 @@ void ParameterScreen::atk_button_update()
 	//ATKの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((atk_button.GetInfoButtonPtr()->GetClick() == true) && (atk_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -302,6 +353,7 @@ void ParameterScreen::cri_button_update()
 	//CRIの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((cri_button.GetInfoButtonPtr()->GetClick() == true) && (cri_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -324,6 +376,7 @@ void ParameterScreen::def_button_update()
 	//DEFの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((def_button.GetInfoButtonPtr()->GetClick() == true) && (def_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -346,6 +399,7 @@ void ParameterScreen::san_button_update()
 	//SANの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((san_button.GetInfoButtonPtr()->GetClick() == true) && (san_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -368,6 +422,7 @@ void ParameterScreen::will_button_update()
 	//WILLの情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((will_button.GetInfoButtonPtr()->GetClick() == true) && (will_button.GetInfoButtonPtr()->GetHit() == true))
 	{
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -409,23 +464,99 @@ void ParameterScreen::profession_button_draw(bool draw, bool debug)
 		break;
 
 	case 1:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "剣に生きる者", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "剣聖", GetColor(255, 255, 255));
 		break;
 
 	case 2:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "魔に生きる者", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "魔者", GetColor(255, 255, 255));
 		break;
 
 	case 3:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "知に生きる者", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "賢者", GetColor(255, 255, 255));
 		break;
 
 	case 4:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "守に生きる者", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8, "守護者", GetColor(255, 255, 255));
+		break;
+
+	default:
+		break;
+	}
+}
+
+
+void ParameterScreen::birth_update()
+{
+	if (birth_button.GetParameterValue() >= birth_button.GetParameterMaxValue())
+	{
+		birth_button.SetParameterValue(0);
+	}
+
+	if (birth_button.GetParameterValue() <= birth_button.GetParameterMiniValue())
+	{
+		birth_button.SetParameterValue(BIRTH_VALUE - 1);
+	}
+}
+
+void ParameterScreen::birth_button_draw(bool draw, bool debug)
+{
+	birth_button.Draw(draw, debug);
+
+	switch (birth_button.GetParameterValue())
+	{
+	case 0:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "虚無", GetColor(255, 255, 255));
+		break;
+
+	case 1:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "転生者", GetColor(255, 255, 255));
+		break;
+
+	case 2:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "転移者", GetColor(255, 255, 255));
+		break;
+
+	case 3:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "商人", GetColor(255, 255, 255));
+		break;
+
+	case 4:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "武人", GetColor(255, 255, 255));
+		break;
+
+	case 5:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "貧民", GetColor(255, 255, 255));
+		break;
+
+	case 6:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "王族", GetColor(255, 255, 255));
+		break;
+
+	case 7:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "奴隷", GetColor(255, 255, 255));
+		break;
+
+	case 8:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "貴族", GetColor(255, 255, 255));
+		break;
+
+	case 9:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "平民", GetColor(255, 255, 255));
 		break;
 
 	default:
 		break;
 	}
 
+}
+
+
+int ParameterScreen::GetProfessionValue()
+{
+	return profession_button.GetParameterValue();
+}
+
+int ParameterScreen::GetBirthValue()
+{
+	return birth_button.GetParameterValue();
 }
