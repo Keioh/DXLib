@@ -15,7 +15,10 @@ class DiploidBoxV2
 	VECTOR position;//オブジェクトの位置
 	VECTOR move_speed;//オブジェクトの移動スピード
 	float move_angle;//オブジェクトの移動方向
+	VECTOR size_speed;//オブジェクトの拡大縮小スピード
+
 	VECTOR box_size;//四角の大きさ
+	VECTOR original_box_size;//最初に設定した大きさを保存
 
 	float object_scale_x = 1.0f;
 	float object_scale_y = 1.0f;
@@ -23,6 +26,7 @@ class DiploidBoxV2
 	bool object_fill;//塗りつぶし
 	float object_thickness;//太さ
 	float object_life;//寿命
+	float original_object_life;//オリジナルの寿命の保存用
 
 	bool destory_flag = false;//削除フラグ(trueの場合、削除対象に)
 	bool hit_flag = false;//当たっているかのフラグ
@@ -34,6 +38,7 @@ public:
 
 	void Init(VECTOR pos, VECTOR size, unsigned int color, float scale = 1.0f, bool fill = FALSE, float thickness = 1.0f);
 	void MoveUpdate();//設定した移動速度を反映します。
+	void SizeUpdate();//設定した拡大縮小速度を反映します。
 	void Draw(bool draw = true);//円を描画します。(drawにfalseを入れることで描画しない)
 
 	void SetColor(unsigned int new_color);//新しい色を設定します。
@@ -48,6 +53,7 @@ public:
 	void SetHitFlag(bool new_hit_flag);//新しくヒットフラグを設定します。
 	void SetMoveSpeed(VECTOR new_move_speed);//新しく移動する速度を設定します。(3軸指定版)
 	void SetMoveSpeed(float angle, float new_move_speed);//新しく移動する速度を設定します。(ラジアン角指定版)
+	void SetSizeSpeed(VECTOR new_size_speed);//新しく拡大縮小する測度を設定します。
 	void SetLife(float new_life);//新しく寿命を設定します。
 	void SetDestoryFlag(bool new_flag);//新しく削除フラグを設定します。
 	void SetMainCameraFlag(bool new_flag);//新しくメインカメラフラグを設定します。(Camera関数以外からの使用は控える)
@@ -71,5 +77,6 @@ public:
 	float GetLife();//現在のオブジェクトの寿命を取得します。
 	bool GetDestoryFlag();//現在の削除フラグを取得します。(trueで削除対象オン)	
 	bool GetMainCameraFlag();//現在のオブジェクトがメインカメラの対象になっているかのフラグを取得します。
-
+	VECTOR GetSizeSpeed();//現在のオブジェクトの拡大縮小の速度を取得します。
+	VECTOR GetOriginalSize();//初期化時の大きさを返す。(一番最初に設定した大きさ)
 };

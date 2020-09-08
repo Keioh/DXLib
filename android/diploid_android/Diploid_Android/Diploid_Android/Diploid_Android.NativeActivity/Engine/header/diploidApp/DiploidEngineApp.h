@@ -39,8 +39,7 @@ private:
 	DiploidEngineAndroidScreen android_screen;//Androidデバイスの画面情報
 	DiploidEngineInput input;
 
-	ParameterScreen test;
-
+	ParameterScreen parameter_screen;
 
 
 public:

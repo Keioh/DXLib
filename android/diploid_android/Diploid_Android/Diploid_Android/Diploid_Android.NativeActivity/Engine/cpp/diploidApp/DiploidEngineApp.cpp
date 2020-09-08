@@ -8,24 +8,26 @@ void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイ�
 
 void DiploidEngineApp::Load()//ゲーム起動時に1回だけロードするデータ(音や画像やセーブデータやマップデータなど)
 {	
-	test.Load();
+	parameter_screen.Load();
 }
 
 void DiploidEngineApp::Init()//ゲーム起動時に一回だけ初期化したい処理を記述。
 {
-	test.Init();
+	parameter_screen.Init();
 }
 
 void DiploidEngineApp::Updata()//アニメーションなど連続して行いたい処理。(主に数値処理)
 {
 	input.Update();
 
-	test.Update(&input);
+	parameter_screen.Update(&input);
+
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
-	test.Draw(true);
+	parameter_screen.Draw(true);
+
 
 	//画面情報
 	//DrawFormatString(0, 120, GetColor(255, 255, 255), "ScreenSizeX:%d", android_screen.GetScreenSizeX());

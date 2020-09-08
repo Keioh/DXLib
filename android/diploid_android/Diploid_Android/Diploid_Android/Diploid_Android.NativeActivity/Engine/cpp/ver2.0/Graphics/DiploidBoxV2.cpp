@@ -6,7 +6,7 @@ void DiploidBoxV2::Init(VECTOR pos, VECTOR size, unsigned int color, float scale
 	position = pos;	
 	object_scale_x = scale;
 	object_scale_y = scale;
-	box_size = VGet(size.x * object_scale_x, size.y * object_scale_y, 0.0f);
+	original_box_size = box_size = VGet(size.x * object_scale_x, size.y * object_scale_y, 0.0f);
 	object_color = color;
 	object_fill = fill;
 	object_thickness = thickness;
@@ -18,7 +18,16 @@ void DiploidBoxV2::MoveUpdate()
 	this->position.y += this->move_speed.y;
 	this->position.z += this->move_speed.z;
 
-	move_speed = VGet(0, 0, 0);
+	//move_speed = VGet(0, 0, 0);
+}
+
+void DiploidBoxV2::SizeUpdate()
+{
+	this->box_size.x += this->size_speed.x;
+	this->box_size.y += this->size_speed.y;
+	this->box_size.z += this->size_speed.z;
+
+	//size_speed = VGet(0, 0, 0);
 }
 
 void DiploidBoxV2::Draw(bool draw)
@@ -106,6 +115,11 @@ void DiploidBoxV2::SetMainCameraFlag(bool new_flag)
 	this->main_camera = new_flag;
 }
 
+void DiploidBoxV2::SetSizeSpeed(VECTOR new_size_speed)
+{
+	this->size_speed = new_size_speed;
+}
+
 
 void DiploidBoxV2::AddLife(float add_val)
 {
@@ -191,4 +205,14 @@ bool DiploidBoxV2::GetDestoryFlag()
 bool DiploidBoxV2::GetMainCameraFlag()
 {
 	return this->main_camera;
+}
+
+VECTOR DiploidBoxV2::GetSizeSpeed()
+{
+	return size_speed;
+}
+
+VECTOR DiploidBoxV2::GetOriginalSize()
+{
+	return original_box_size;
 }

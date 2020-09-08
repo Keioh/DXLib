@@ -287,6 +287,7 @@
     <ClInclude Include="Engine\header\data\number.h" />
     <ClInclude Include="Engine\header\data\res_data\game_define.h" />
     <ClInclude Include="Engine\header\data\res_data\parameter\base_parameter_ui.h" />
+    <ClInclude Include="Engine\header\data\res_data\parameter\character_data.h" />
     <ClInclude Include="Engine\header\data\res_data\parameter\patameter_screen.h" />
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="Engine\header\diploidApp\DiploidEngineMain.h" />

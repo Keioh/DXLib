@@ -443,5 +443,8 @@
     <ClInclude Include="Engine\header\data\res_data\parameter\patameter_screen.h">
       <Filter>Engine\header\data\res_data\parameter</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\header\data\res_data\parameter\character_data.h">
+      <Filter>Engine\header\data\res_data\parameter</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

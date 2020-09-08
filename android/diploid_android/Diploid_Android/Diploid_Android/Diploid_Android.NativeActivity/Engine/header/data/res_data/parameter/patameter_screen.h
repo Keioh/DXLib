@@ -3,13 +3,26 @@
 #include "DxLib.h"
 #include "data/res_data/parameter/base_parameter_ui.h"
 #include "diploidInput/DiploidEngineInput.h"
+#include "diploidScreen/DiploidEngineAndroidScreen.h"
+
+#include  "data/res_data/parameter/character_data.h"
 
 class ParameterScreen
 {
 private:
+	//説明文背景(仮)
+	DiploidEngineAndroidScreen android_screen;
+	DiploidBoxV2 ui_box;
+
+
+	//キャラクターの情報を保存する用
+	CharacterData character_data;
+
 	//プレイヤー情報関連
 	BaseParameterUI profession_button;//職業
 	BaseParameterUI birth_button;//生まれ
+	BaseParameterUI sex_button;//性別
+	BaseParameterUI age_button;//年齢
 
 	//パラメータ値関連
 	BaseParameterUI str_button;
@@ -30,8 +43,11 @@ private:
 
 	int profession = PROFESSUON_NONE;
 	int birth = BIRTH_NONE;
+	int sex = SEX_NONE;
 
 	//ボタンオフ処理関数
+	void age_button_update();
+	void sex_button_update();
 	void birth_button_update();
 	void profession_button_update();
 	void str_button_update();//ここから下はパラメータ関連
@@ -53,6 +69,9 @@ private:
 	void birth_update();//生まれ数値のアップデート
 	void birth_button_draw(bool draw, bool debug);//生まれの表示
 
+	void sex_update();//性別数値のアップデート
+	void sex_button_draw(bool draw, bool debug);//性別の表示
+
 
 public:
 	void Load();
@@ -63,4 +82,6 @@ public:
 	int GetProfessionValue();//選択中の職業の値を返す。
 	int GetBirthValue();//選択中の生まれの値を返す。
 
+	CharacterData GetCharacterData();//キャラクターのパラメータ値などの情報を返す。
+	CharacterData* GetCharacterDataPtr();//キャラクターデータへのポインタを返す。(使用非推奨)
 };

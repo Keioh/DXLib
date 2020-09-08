@@ -22,6 +22,12 @@ void ParameterScreen::Load()
 	//生まれ
 	birth_button.Load();
 
+	//性別
+	sex_button.Load();
+
+	//年齢
+	age_button.Load();
+
 }
 
 void ParameterScreen::Init()
@@ -33,6 +39,14 @@ void ParameterScreen::Init()
 	birth_button.Init(VGet(player_info_pos.x, player_info_pos.y + (128 + 64 + 20), 0), VGet(192, 128, 0), "出生", false);
 	birth_button.SetMaxValue(BIRTH_VALUE);
 	birth_button.SetMiniValue(-1);
+
+	sex_button.Init(VGet(player_info_pos.x + (512 + 40), player_info_pos.y + (128 + 64 + 20), 0), VGet(192, 128, 0), "性別", false);
+	sex_button.SetMaxValue(SEX_VALUE);
+	sex_button.SetMiniValue(-1);
+
+	age_button.Init(VGet(player_info_pos.x + (512 + 40), player_info_pos.y, 0), VGet(192, 128, 0), "年齢");
+	age_button.SetMaxValue(9999);
+	age_button.SetMiniValue(0);
 
 
 	str_button.Init(VGet(0, parameter_pos.y, 0), VGet(192, 128, 0), "STR");
@@ -48,6 +62,10 @@ void ParameterScreen::Init()
 	san_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 4), 0), VGet(192, 128, 0), "SAN");
 	will_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 5), 0), VGet(192, 128, 0), "WIL");
 
+
+	ui_box.Init(VGet(0, android_screen.GetScreenSizeY() - 300, 0), VGet(android_screen.GetScreenSizeX(), android_screen.GetScreenSizeY(), 0), GetColor(20, 20, 20));
+	ui_box.SetFill(true);
+
 }
 
 void ParameterScreen::Update(DiploidEngineInput* input)
@@ -57,6 +75,12 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 
 	//生まれボタン判定処理
 	birth_button.Update(input);
+
+	//性別ボタン判定処理
+	sex_button.Update(input);
+
+	//年齢ボタン判定処理
+	age_button.Update(input);
 
 
 	//パラメータ関連のボタン判定処理
@@ -79,7 +103,13 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 	//生まれボタンの数値処理
 	birth_update();
 
-	//ボタンオフ処理
+	//性別ボタンの数値処理
+	sex_update();
+
+
+	//ボタンオフ処理	
+	age_button_update();
+	sex_button_update();
 	birth_button_update();
 	profession_button_update();
 	str_button_update();//ここから下はパラメータ関連
@@ -94,6 +124,21 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 	def_button_update();
 	san_button_update();
 	will_button_update();
+
+	//値の代入
+	character_data.parameter_str = str_button.GetParameterValue();//STR
+	character_data.parameter_dex = dex_button.GetParameterValue();//DEX
+	character_data.parameter_con = con_button.GetParameterValue();//CON
+	character_data.parameter_int = int_button.GetParameterValue();//INT
+	character_data.parameter_luk = luk_button.GetParameterValue();//LUK
+	character_data.parameter_agi = agi_button.GetParameterValue();//AGI
+	character_data.parameter_res = res_button.GetParameterValue();//RES
+	character_data.parameter_atk = atk_button.GetParameterValue();//ATK
+	character_data.parameter_cri = cri_button.GetParameterValue();//CRI
+	character_data.parameter_def = def_button.GetParameterValue();//DEF
+	character_data.parameter_san = san_button.GetParameterValue();//SAN
+	character_data.parameter_will = will_button.GetParameterValue();//WILL
+
 }
 
 void ParameterScreen::Draw(bool draw, bool debug)
@@ -104,6 +149,11 @@ void ParameterScreen::Draw(bool draw, bool debug)
 	//生まれボタンの描画
 	birth_button_draw(draw, debug);
 
+	//性別ボタンの描画
+	sex_button_draw(draw, debug);
+
+	//年齢ボタンの描画
+	age_button.Draw(draw, debug);
 
 	//パラメータボタンの描画
 	str_button.Draw(draw, debug);
@@ -118,14 +168,23 @@ void ParameterScreen::Draw(bool draw, bool debug)
 	def_button.Draw(draw, debug);
 	san_button.Draw(draw, debug);
 	will_button.Draw(draw, debug);
+
+	if (str_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+	{
+		ui_box.Draw(draw);
+		DrawString(30, android_screen.GetScreenSizeY() - 240, "STRは筋力を表す。", GetColor(200, 200, 200));
+	}
 }
 
-void ParameterScreen::birth_button_update()
+void ParameterScreen::age_button_update()
 {
-	//職業の情報ボタンを押したら他の情報ボタンをオフにする。
-	if ((birth_button.GetInfoButtonPtr()->GetClick() == true) && (birth_button.GetInfoButtonPtr()->GetHit() == true))
+	//年齢の情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((age_button.GetInfoButtonPtr()->GetClick() == true) && (age_button.GetInfoButtonPtr()->GetHit() == true))
 	{
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -143,12 +202,64 @@ void ParameterScreen::birth_button_update()
 
 }
 
+void ParameterScreen::sex_button_update()
+{	
+	//性別の情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((sex_button.GetInfoButtonPtr()->GetClick() == true) && (sex_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+void ParameterScreen::birth_button_update()
+{
+	//職業の情報ボタンを押したら他の情報ボタンをオフにする。
+	if ((birth_button.GetInfoButtonPtr()->GetClick() == true) && (birth_button.GetInfoButtonPtr()->GetHit() == true))
+	{
+		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
+
+		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		int_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		luk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		agi_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		res_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		atk_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		will_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
 void ParameterScreen::profession_button_update()
 {
 	//職業の情報ボタンを押したら他の情報ボタンをオフにする。
 	if ((profession_button.GetInfoButtonPtr()->GetClick() == true) && (profession_button.GetInfoButtonPtr()->GetHit() == true))
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -172,6 +283,9 @@ void ParameterScreen::str_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		con_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -194,6 +308,9 @@ void ParameterScreen::dex_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
@@ -217,6 +334,9 @@ void ParameterScreen::con_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -240,6 +360,8 @@ void ParameterScreen::int_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -262,7 +384,10 @@ void ParameterScreen::luk_button_update()
 	if ((luk_button.GetInfoButtonPtr()->GetClick() == true) && (luk_button.GetInfoButtonPtr()->GetHit() == true))
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -286,6 +411,9 @@ void ParameterScreen::agi_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -309,6 +437,9 @@ void ParameterScreen::res_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -332,6 +463,9 @@ void ParameterScreen::atk_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -355,6 +489,9 @@ void ParameterScreen::cri_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -378,6 +515,9 @@ void ParameterScreen::def_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -401,6 +541,9 @@ void ParameterScreen::san_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -424,6 +567,9 @@ void ParameterScreen::will_button_update()
 	{
 		birth_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		profession_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		sex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+		age_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+
 
 		str_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		dex_button.GetInfoButtonPtr()->SetSelectedUI(-1);
@@ -436,6 +582,56 @@ void ParameterScreen::will_button_update()
 		cri_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		def_button.GetInfoButtonPtr()->SetSelectedUI(-1);
 		san_button.GetInfoButtonPtr()->SetSelectedUI(-1);
+	}
+}
+
+
+
+void ParameterScreen::sex_update()
+{
+	if (sex_button.GetParameterValue() >= sex_button.GetParameterMaxValue())
+	{
+		sex_button.SetParameterValue(0);
+	}
+
+	if (sex_button.GetParameterValue() <= sex_button.GetParameterMiniValue())
+	{
+		sex_button.SetParameterValue(SEX_VALUE - 1);
+	}
+}
+
+void ParameterScreen::sex_button_draw(bool draw, bool debug)
+{
+	sex_button.Draw(draw, debug);
+
+	switch (sex_button.GetParameterValue())
+	{
+	case 0:
+		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "無性", GetColor(255, 255, 255));
+		break;
+
+	case 1:
+		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "男", GetColor(255, 255, 255));
+		break;
+
+	case 2:
+		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "女", GetColor(255, 255, 255));
+		break;
+
+	case 3:
+		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "元男", GetColor(255, 255, 255));
+		break;
+
+	case 4:
+		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "元女", GetColor(255, 255, 255));
+		break;
+
+	case 5:
+		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "両性", GetColor(255, 255, 255));
+		break;
+
+	default:
+		break;
 	}
 }
 
@@ -544,11 +740,16 @@ void ParameterScreen::birth_button_draw(bool draw, bool debug)
 		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "平民", GetColor(255, 255, 255));
 		break;
 
+	case 10:
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "不死者", GetColor(255, 255, 255));
+		break;
+
 	default:
 		break;
 	}
 
 }
+
 
 
 int ParameterScreen::GetProfessionValue()
@@ -559,4 +760,14 @@ int ParameterScreen::GetProfessionValue()
 int ParameterScreen::GetBirthValue()
 {
 	return birth_button.GetParameterValue();
+}
+
+CharacterData ParameterScreen::GetCharacterData()
+{
+	return character_data;
+}
+
+CharacterData* ParameterScreen::GetCharacterDataPtr()
+{
+	return& character_data;
 }
