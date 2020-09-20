@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineApp.cpp">
+      <Filter>Engine\cpp\diploidApp</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineMain.cpp">
+      <Filter>Engine\cpp\diploidApp</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidBox.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidCircle.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidImage.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidLine.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidPanel.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidPoint.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidImpact\DiploidEngineImpact.cpp">
+      <Filter>Engine\cpp\diploidImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidInput\DiploidEngineInput.cpp">
+      <Filter>Engine\cpp\diploidInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidInput\DiploidEnigneFile.cpp">
+      <Filter>Engine\cpp\diploidInput</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidLayer\DiploidEngineLayer.cpp">
+      <Filter>Engine\cpp\diploidLayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidNetwork\DiploidEngineNetwork.cpp">
+      <Filter>Engine\cpp\diploidNetwork</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidObject\DiploidEngineObject.cpp">
+      <Filter>Engine\cpp\diploidObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidObject\DiploidEngineObjectInformation.cpp">
+      <Filter>Engine\cpp\diploidObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidObject\DiploidEngineTag.cpp">
+      <Filter>Engine\cpp\diploidObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidObject\DiploidMap.cpp">
+      <Filter>Engine\cpp\diploidObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidPhysics\diploidPhysics.cpp">
+      <Filter>Engine\cpp\diploidPhysics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidScreen\DiploidEngineScene.cpp">
+      <Filter>Engine\cpp\diploidScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidScreen\DiploidEngineScreen.cpp">
+      <Filter>Engine\cpp\diploidScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidSound\diploidEngineSoundLoader.cpp">
+      <Filter>Engine\cpp\diploidSound</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidSound\diploidEnigneSound.cpp">
+      <Filter>Engine\cpp\diploidSound</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidSystem\diploidSystem.cpp">
+      <Filter>Engine\cpp\diploidSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidUI\diploidUI.cpp">
+      <Filter>Engine\cpp\diploidUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Graphics\DiploidBoxV2.cpp">
+      <Filter>Engine\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Graphics\DiploidCircleV2.cpp">
+      <Filter>Engine\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Graphics\DiploidImageV2.cpp">
+      <Filter>Engine\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Main\Camera.cpp">
+      <Filter>Engine\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Main\Collision.cpp">
+      <Filter>Engine\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Main\Layer.cpp">
+      <Filter>Engine\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Main\Object.cpp">
+      <Filter>Engine\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Main\Transform.cpp">
+      <Filter>Engine\cpp\ver2.0\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidAll.cpp">
+      <Filter>Engine\cpp\ver2.0\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp">
+      <Filter>Engine\cpp\ver2.0\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\systme\DiploidEngineMath.cpp">
+      <Filter>Engine\cpp\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\systme\DiploidEngineSetting.cpp">
+      <Filter>Engine\cpp\system</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidStandalone\base_standalone.cpp">
+      <Filter>Engine\cpp\diploidStandalone</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidStandalone\graphics\diploidBoxSA.cpp">
+      <Filter>Engine\cpp\diploidStandalone\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidStandalone\graphics\diploidGraphicsSA.cpp">
+      <Filter>Engine\cpp\diploidStandalone\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidStandalone\impact\diploidImpactSA.cpp">
+      <Filter>Engine\cpp\diploidStandalone\impact</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\AndroidMain.cpp">
+      <Filter>Engine\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\data\number.cpp">
+      <Filter>Engine\cpp\data</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\ver2.0\Objects\DiploidTouchUI.cpp">
+      <Filter>Engine\cpp\ver2.0\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidScreen\DiploidEngineAndroidScreen.cpp">
+      <Filter>Engine\cpp\diploidScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidGraphics\diploidEffect.cpp">
+      <Filter>Engine\cpp\diploidGraphics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{63d3b676-1ccd-437b-8217-08eeca591a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp">
+      <UniqueIdentifier>{cdcbfa1d-782c-4dc4-b463-954714d4fd0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header">
+      <UniqueIdentifier>{56112860-9d5e-449e-b97a-3a06138bd5f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidApp">
+      <UniqueIdentifier>{31355238-b577-4f31-9b17-dd7d0f9688de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidGraphics">
+      <UniqueIdentifier>{67ae05ae-eb65-4814-914e-34139a603ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidImpact">
+      <UniqueIdentifier>{f2faff8a-fe0d-4631-84a2-7cc05d5164dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidInput">
+      <UniqueIdentifier>{702ba902-a506-4a0b-8ec9-136fe4f4ac6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidLayer">
+      <UniqueIdentifier>{fb8fc4f8-b5fc-4f7a-b1c4-7d6a282a18e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidNetwork">
+      <UniqueIdentifier>{ff8fd99f-9bc9-43f6-87aa-32b8fa7da1a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidObject">
+      <UniqueIdentifier>{a21063bf-9a63-4bc5-bab7-8a5057c6231a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidPhysics">
+      <UniqueIdentifier>{cff17d92-d069-4418-a7bb-6a2432c90800}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidScreen">
+      <UniqueIdentifier>{62c19777-c7d8-4885-9fba-716b0a7a5667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidSound">
+      <UniqueIdentifier>{fcd77b5b-de01-4235-a241-bc985a8e767c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidStandalone">
+      <UniqueIdentifier>{630aee6f-de05-4d91-bb6f-77b86cde6d6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidSystem">
+      <UniqueIdentifier>{af09cabd-bb6e-4e24-ab5e-9eb534fff96f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidUI">
+      <UniqueIdentifier>{e6163de9-ae20-4c08-ae96-832121ba3b43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\system">
+      <UniqueIdentifier>{05a3b3a2-b5f9-4113-a342-09c93de5feeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\ver2.0">
+      <UniqueIdentifier>{ef16a502-fa1f-4e85-84a9-78ebbf16ab86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\data">
+      <UniqueIdentifier>{059882c1-b812-4cb3-98b3-558208557ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\data\res_data">
+      <UniqueIdentifier>{a9b070f4-1f60-4e4b-b227-2566dc7ea72e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\ver2.0\Graphics">
+      <UniqueIdentifier>{a2dac96d-b02c-475c-a2c6-b963d51d145f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\ver2.0\Main">
+      <UniqueIdentifier>{d885c08f-efc1-49f5-ba14-c8dd4b3456cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\ver2.0\Object">
+      <UniqueIdentifier>{160db9c1-1c6c-4134-a225-001be15179af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\ver2.0\UI">
+      <UniqueIdentifier>{bef0b5f1-bc3f-4f9e-b273-06b21ad5735f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidApp">
+      <UniqueIdentifier>{088fddd9-de5f-47f8-b59a-c06e23ec419d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidGraphics">
+      <UniqueIdentifier>{df8526e2-5842-4bc9-8c99-585c3d16dfb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidImpact">
+      <UniqueIdentifier>{b106d567-80a4-466c-b969-5ddf9400ea43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidInput">
+      <UniqueIdentifier>{66566ea0-e629-4513-801f-8308f7798663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidLayer">
+      <UniqueIdentifier>{430e0cd9-a2af-4ba5-a3fe-a1d4f53ad55e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidNetwork">
+      <UniqueIdentifier>{66e45081-2392-483f-b0dd-d864c8cd95fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidObject">
+      <UniqueIdentifier>{c6c59ef0-1c41-43a9-a0df-904dc12e70c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidPhysics">
+      <UniqueIdentifier>{2dd7a780-53a4-42b8-8c53-6043ef814252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidScreen">
+      <UniqueIdentifier>{8fd1a45b-23ee-4a65-9ff4-1e5bf9e38392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidSound">
+      <UniqueIdentifier>{4eb20e6d-3ce7-484d-b523-7bb38dc9f92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidStandalone">
+      <UniqueIdentifier>{e92f8ae2-b8c5-4a0d-b99a-49e403c8aba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidSystem">
+      <UniqueIdentifier>{69f62c84-4a45-442b-8cba-9cb1af40638a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidUI">
+      <UniqueIdentifier>{e683da9e-6719-4c82-b70a-c99e3a42a176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\data">
+      <UniqueIdentifier>{c057dbb9-fc68-4d9d-a020-694a556a0a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\ver2.0">
+      <UniqueIdentifier>{bf7c984c-7f4f-4e82-a5eb-596439fdab5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\system">
+      <UniqueIdentifier>{a0bbb32d-ef8c-4d5a-93e9-509659630f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\data\res_data">
+      <UniqueIdentifier>{a16f0ce1-6b0e-49f3-a361-8a96ec7ffd7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\ver2.0\Graphics">
+      <UniqueIdentifier>{29e7accb-6b07-4a27-b6da-e348f2e6ea1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\ver2.0\Main">
+      <UniqueIdentifier>{1322d7d5-7c82-46d5-bb49-2671e140217c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\ver2.0\UI">
+      <UniqueIdentifier>{57c40c97-d420-41d1-8f07-376727d0f213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\ver2.0\Object">
+      <UniqueIdentifier>{3ee49c80-1f95-4448-a06e-205afb0e0837}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidStandalone\graphics">
+      <UniqueIdentifier>{b5c4a17d-37d3-49a8-a9bc-0179302350a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\cpp\diploidStandalone\impact">
+      <UniqueIdentifier>{fcc559d3-2122-4265-851d-b14f4e2d83bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidStandalone\graphics">
+      <UniqueIdentifier>{0f7f3192-c002-41e5-9a33-e4861117e20c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\header\diploidStandalone\impact">
+      <UniqueIdentifier>{f3f390fe-da4a-42ae-a1e7-01fea37e2b54}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\header\diploidApp\DiploidEngineApp.h">
+      <Filter>Engine\header\diploidApp</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidApp\DiploidEngineMain.h">
+      <Filter>Engine\header\diploidApp</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidBox.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidCircle.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidImage.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidLine.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidPanel.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidPoint.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidImpact\DiploidEngineImpact.h">
+      <Filter>Engine\header\diploidImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidInput\DiploidEngineInput.h">
+      <Filter>Engine\header\diploidInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidInput\DiploidEnigneFile.h">
+      <Filter>Engine\header\diploidInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidLayer\DiploidEngineLayer.h">
+      <Filter>Engine\header\diploidLayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidNetwork\DiploidEngineNetwork.h">
+      <Filter>Engine\header\diploidNetwork</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidObject\DiploidEngineObject.h">
+      <Filter>Engine\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidObject\DiploidEngineObjectInformation.h">
+      <Filter>Engine\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidObject\DiploidEngineTag.h">
+      <Filter>Engine\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidObject\DiploidMap.h">
+      <Filter>Engine\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidPhysics\diploidPhysics.h">
+      <Filter>Engine\header\diploidPhysics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidScreen\DiploidEngineScene.h">
+      <Filter>Engine\header\diploidScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidScreen\DiploidEngineScreen.h">
+      <Filter>Engine\header\diploidScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidSound\diploidEngineSoundLoader.h">
+      <Filter>Engine\header\diploidSound</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidSound\diploidEnigneSound.h">
+      <Filter>Engine\header\diploidSound</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidSystem\diploidSystem.h">
+      <Filter>Engine\header\diploidSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidUI\diploidUI.h">
+      <Filter>Engine\header\diploidUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\system\DiploidEngineMath.h">
+      <Filter>Engine\header\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\system\DiploidEngineSetting.h">
+      <Filter>Engine\header\system</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Graphics\DiploidBoxV2.h">
+      <Filter>Engine\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Graphics\DiploidCircleV2.h">
+      <Filter>Engine\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Graphics\DiploidImageV2.h">
+      <Filter>Engine\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Main\Camera.h">
+      <Filter>Engine\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Main\Collision.h">
+      <Filter>Engine\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Main\Layer.h">
+      <Filter>Engine\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Main\Object.h">
+      <Filter>Engine\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Main\Transform.h">
+      <Filter>Engine\header\ver2.0\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Objects\DiploidAll.h">
+      <Filter>Engine\header\ver2.0\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Objects\DiploidSelectedUIV2.h">
+      <Filter>Engine\header\ver2.0\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidStandalone\base_standalone.h">
+      <Filter>Engine\header\diploidStandalone</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidStandalone\standalone.h">
+      <Filter>Engine\header\diploidStandalone</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidStandalone\graphics\diploidBoxSA.h">
+      <Filter>Engine\header\diploidStandalone\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidStandalone\graphics\diploidGraphicsSA.h">
+      <Filter>Engine\header\diploidStandalone\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidStandalone\impact\diploidImpactSA.h">
+      <Filter>Engine\header\diploidStandalone\impact</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\data\number.h">
+      <Filter>Engine\header\data</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\data\res_data\game_define.h">
+      <Filter>Engine\header\data\res_data</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\ver2.0\Objects\DiploidTouchUI.h">
+      <Filter>Engine\header\ver2.0\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidScreen\DiploidEngineAndroidScreen.h">
+      <Filter>Engine\header\diploidScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidGraphics\diploidEffect.h">
+      <Filter>Engine\header\diploidGraphics</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
