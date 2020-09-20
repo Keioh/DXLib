@@ -1,3 +1,0 @@
-INDEX VERSION 1.127+C:\GameProject\android\diploid_android\Diploid_Android\.workspace\.metadata\.plugins\org.eclipse.jdt.core
-986075599.index
-971027901.index
