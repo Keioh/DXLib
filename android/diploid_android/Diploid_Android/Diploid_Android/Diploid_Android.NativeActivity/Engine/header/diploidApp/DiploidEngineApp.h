@@ -1,32 +1,32 @@
-//’†•‚Å‚·B
+//ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½B
 #pragma once
 #include <string>
 #include <list>
 #include <memory>
 #include <unordered_map>
-#include "DxLib.h"//Dxlib–{‘Ì
-#include "diploidApp\DiploidEngineMain.h"//S‘Ÿ•”•ª(•K‚¸ŒÄ‚Ô)
-#include "diploidObject\DiploidEngineObject.h"//‰~‚âlŠp‚â‰æ‘œ‚â‰¹‚È‚ÇAƒIƒuƒWƒFƒNƒg‘S”Ê
-#include "system\DiploidEngineMath.h"//”Šw®ŠÖ˜A(DxLib‚à‚µ‚­‚ÍC++•W€‚à‚µ‚­‚Í‚»‚Ì‘¼‚Ì”Šwƒ‰ƒCƒuƒ‰ƒŠ‚Ìg—p‚ğ„§)
+#include "DxLib.h"//Dxlibï¿½{ï¿½ï¿½
+#include "diploidApp\DiploidEngineMain.h"//ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Kï¿½ï¿½ï¿½Ä‚ï¿½)
+#include "diploidObject\DiploidEngineObject.h"//ï¿½~ï¿½ï¿½lï¿½pï¿½ï¿½æ‘œï¿½â‰¹ï¿½È‚ÇAï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Sï¿½ï¿½
+#include "system\DiploidEngineMath.h"//ï¿½ï¿½ï¿½wï¿½ï¿½ï¿½Ö˜A(DxLibï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½C++ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ì‘ï¿½ï¿½Ìï¿½ï¿½wï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Ìgï¿½pï¿½ğ„ï¿½)
 #include "diploidUI/diploidUI.h"
-#include "diploidSystem/diploidSystem.h"//ˆê‰ñ‚¾‚¯ƒf[ƒ^‚ğ“Ç‚İ‚Ş‚½‚ß‚Ìˆ—ŒQ
+#include "diploidSystem/diploidSystem.h"//ï¿½ï¿½ñ‚¾‚ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½Ç‚İï¿½ï¿½Ş‚ï¿½ï¿½ß‚Ìï¿½ï¿½ï¿½ï¿½Q
 
-#include "ver2.0/Graphics/DiploidCircleV2.h"//Ver2.0‚Ì‰~ƒNƒ‰ƒX
-#include "ver2.0/Main/Collision.h"//Ver2.0‚Ì“–‚½‚è”»’èˆ—
-#include "ver2.0/Main/Camera.h"//Ver2.0‚Ì2D‚É‚¨‚¯‚éƒJƒƒ‰ˆ—
-#include "ver2.0/Graphics/DiploidImageV2.h"//Ver2.0‚É‚¨‚¯‚é‰æ‘œƒNƒ‰ƒX
-#include "ver2.0/Graphics/DiploidBoxV2.h"//Ver2.0‚É‚¨‚¯‚élŠpƒNƒ‰ƒX
+#include "ver2.0/Graphics/DiploidCircleV2.h"//Ver2.0ï¿½Ì‰~ï¿½Nï¿½ï¿½ï¿½X
+#include "ver2.0/Main/Collision.h"//Ver2.0ï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½èˆï¿½ï¿½
+#include "ver2.0/Main/Camera.h"//Ver2.0ï¿½ï¿½2Dï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+#include "ver2.0/Graphics/DiploidImageV2.h"//Ver2.0ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½æ‘œï¿½Nï¿½ï¿½ï¿½X
+#include "ver2.0/Graphics/DiploidBoxV2.h"//Ver2.0ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½pï¿½Nï¿½ï¿½ï¿½X
 
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidTouchUI.h"
 
-#include "diploidScreen/DiploidEngineAndroidScreen.h"//AndroidƒfƒoƒCƒX‚Ì‰æ–Êî•ñæ“¾ƒNƒ‰ƒX
+#include "diploidScreen/DiploidEngineAndroidScreen.h"//Androidï¿½fï¿½oï¿½Cï¿½Xï¿½Ì‰ï¿½Êï¿½ï¿½æ“¾ï¿½Nï¿½ï¿½ï¿½X
+#include "diploidObject/DiploidCreator.h"
 
+//ï¿½Xï¿½^ï¿½ï¿½ï¿½hï¿½Aï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ö˜A
+#include "diploidStandalone\standalone.h"//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-//ƒXƒ^ƒ“ƒhƒAƒ[ƒ“ŠÖ˜A
-#include "diploidStandalone\standalone.h"//–¢À‘•
-
-//ƒQ[ƒ€ƒf[ƒ^ŠÖ˜A
+//ï¿½Qï¿½[ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Ö˜A
 //#include "diploidGraphics/diploidEffect.h"
 //#include "data/res_data/parameter/base_parameter_ui.h"
 #include "data/res_data/parameter/patameter_screen.h"
@@ -36,18 +36,22 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:	
-	DiploidEngineAndroidScreen android_screen;//AndroidƒfƒoƒCƒX‚Ì‰æ–Êî•ñ
+	DiploidEngineAndroidScreen android_screen;//Androidï¿½fï¿½oï¿½Cï¿½Xï¿½Ì‰ï¿½Êï¿½ï¿½
 	DiploidEngineInput input;
 
 	ParameterScreen parameter_screen;
 
+	DiploidBoxV2 *box;
+	DiploidCreator<DiploidBoxV2> box_creator;
+
+	int time = 0;
 
 public:
-	void FileCreate();//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ƒtƒ@ƒCƒ‹‚ğì‚éˆ—B
-	void Load();//ƒQ[ƒ€‹N“®‚Éƒ[ƒh‚·‚éƒf[ƒ^
-	void Init();//Å‰‚Éˆê‰ñ‚¾‚¯‰Šú‰»‚µ‚½‚¢ˆ—‚ğ‹LqB	
-	void Updata();//ƒAƒjƒ[ƒVƒ‡ƒ“‚È‚Ç˜A‘±‚µ‚Äs‚¢‚½‚¢ˆ—B
-	void Draw();//Œ‹‰Ê‚ğ•`Ê‚·‚éˆ—
-	void Destory();//íœ‚·‚éˆ—B
-	void End();//engineI—¹‘Oˆ—B
+	void FileCreate();//ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Éˆï¿½xï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½éˆï¿½ï¿½ï¿½B
+	void Load();//ï¿½Qï¿½[ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½Éƒï¿½ï¿½[ï¿½hï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^
+	void Init();//ï¿½Åï¿½ï¿½Éˆï¿½ñ‚¾‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½qï¿½B	
+	void Updata();//ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½È‚Ç˜Aï¿½ï¿½ï¿½ï¿½ï¿½Äsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+	void Draw();//ï¿½ï¿½ï¿½Ê‚ï¿½`ï¿½Ê‚ï¿½ï¿½éˆï¿½ï¿½
+	void Destory();//ï¿½íœï¿½ï¿½ï¿½éˆï¿½ï¿½ï¿½B
+	void End();//engineï¿½Iï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½B
 };

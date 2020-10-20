@@ -142,6 +142,9 @@
     <ClCompile Include="Engine\cpp\data\res_data\parameter\patameter_screen.cpp">
       <Filter>Engine\cpp\data\res_data\parameter</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\cpp\diploidObject\DiploidCreator.cpp">
+      <Filter>Engine\cpp\diploidObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -445,6 +448,9 @@
     </ClInclude>
     <ClInclude Include="Engine\header\data\res_data\parameter\character_data.h">
       <Filter>Engine\header\data\res_data\parameter</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\header\diploidObject\DiploidCreator.h">
+      <Filter>Engine\header\diploidObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

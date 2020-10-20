@@ -252,6 +252,7 @@
     <ClCompile Include="Engine\cpp\diploidInput\DiploidEnigneFile.cpp" />
     <ClCompile Include="Engine\cpp\diploidLayer\DiploidEngineLayer.cpp" />
     <ClCompile Include="Engine\cpp\diploidNetwork\DiploidEngineNetwork.cpp" />
+    <ClCompile Include="Engine\cpp\diploidObject\DiploidCreator.cpp" />
     <ClCompile Include="Engine\cpp\diploidObject\DiploidEngineObject.cpp" />
     <ClCompile Include="Engine\cpp\diploidObject\DiploidEngineObjectInformation.cpp" />
     <ClCompile Include="Engine\cpp\diploidObject\DiploidEngineTag.cpp" />
@@ -303,6 +304,7 @@
     <ClInclude Include="Engine\header\diploidInput\DiploidEnigneFile.h" />
     <ClInclude Include="Engine\header\diploidLayer\DiploidEngineLayer.h" />
     <ClInclude Include="Engine\header\diploidNetwork\DiploidEngineNetwork.h" />
+    <ClInclude Include="Engine\header\diploidObject\DiploidCreator.h" />
     <ClInclude Include="Engine\header\diploidObject\DiploidEngineObject.h" />
     <ClInclude Include="Engine\header\diploidObject\DiploidEngineObjectInformation.h" />
     <ClInclude Include="Engine\header\diploidObject\DiploidEngineTag.h" />

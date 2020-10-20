@@ -10,21 +10,21 @@
 class ParameterScreen
 {
 private:
-	//à–¾•¶”wŒi(‰¼)
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½wï¿½i(ï¿½ï¿½)
 	DiploidEngineAndroidScreen android_screen;
 	DiploidBoxV2 ui_box;
 
 
-	//ƒLƒƒƒ‰ƒNƒ^[‚Ìî•ñ‚ğ•Û‘¶‚·‚é—p
+	//ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Ìï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½p
 	CharacterData character_data;
 
-	//ƒvƒŒƒCƒ„[î•ñŠÖ˜A
-	BaseParameterUI profession_button;//E‹Æ
-	BaseParameterUI birth_button;//¶‚Ü‚ê
-	BaseParameterUI sex_button;//«•Ê
-	BaseParameterUI age_button;//”N—î
+	//ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ö˜A
+	BaseParameterUI profession_button;//ï¿½Eï¿½ï¿½
+	BaseParameterUI birth_button;//ï¿½ï¿½ï¿½Ü‚ï¿½
+	BaseParameterUI sex_button;//ï¿½ï¿½ï¿½ï¿½
+	BaseParameterUI age_button;//ï¿½Nï¿½ï¿½
 
-	//ƒpƒ‰ƒ[ƒ^’lŠÖ˜A
+	//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½Ö˜A
 	BaseParameterUI str_button;
 	BaseParameterUI dex_button;
 	BaseParameterUI con_button;
@@ -45,12 +45,12 @@ private:
 	int birth = BIRTH_NONE;
 	int sex = SEX_NONE;
 
-	//ƒ{ƒ^ƒ“ƒIƒtˆ—ŠÖ”
+	//ï¿½{ï¿½^ï¿½ï¿½ï¿½Iï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Öï¿½
 	void age_button_update();
 	void sex_button_update();
 	void birth_button_update();
 	void profession_button_update();
-	void str_button_update();//‚±‚±‚©‚ç‰º‚Íƒpƒ‰ƒ[ƒ^ŠÖ˜A
+	void str_button_update();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç‰ºï¿½Íƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ö˜A
 	void dex_button_update();
 	void con_button_update();
 	void int_button_update();
@@ -63,14 +63,14 @@ private:
 	void san_button_update();
 	void will_button_update();
 
-	void profession_update();//E‹Æ”’l‚ÌƒAƒbƒvƒf[ƒg
-	void profession_button_draw(bool draw, bool debug);//E‹Æ‚Ì•\¦
+	void profession_update();//ï¿½Eï¿½Æï¿½ï¿½lï¿½ÌƒAï¿½bï¿½vï¿½fï¿½[ï¿½g
+	void profession_button_draw(bool draw, bool debug);//ï¿½Eï¿½Æ‚Ì•\ï¿½ï¿½
 
-	void birth_update();//¶‚Ü‚ê”’l‚ÌƒAƒbƒvƒf[ƒg
-	void birth_button_draw(bool draw, bool debug);//¶‚Ü‚ê‚Ì•\¦
+	void birth_update();//ï¿½ï¿½ï¿½Ü‚ê”ï¿½lï¿½ÌƒAï¿½bï¿½vï¿½fï¿½[ï¿½g
+	void birth_button_draw(bool draw, bool debug);//ï¿½ï¿½ï¿½Ü‚ï¿½Ì•\ï¿½ï¿½
 
-	void sex_update();//«•Ê”’l‚ÌƒAƒbƒvƒf[ƒg
-	void sex_button_draw(bool draw, bool debug);//«•Ê‚Ì•\¦
+	void sex_update();//ï¿½ï¿½ï¿½Êï¿½ï¿½lï¿½ÌƒAï¿½bï¿½vï¿½fï¿½[ï¿½g
+	void sex_button_draw(bool draw, bool debug);//ï¿½ï¿½ï¿½Ê‚Ì•\ï¿½ï¿½
 
 
 public:
@@ -79,9 +79,9 @@ public:
 	void Update(DiploidEngineInput* input);
 	void Draw(bool draw = true, bool debug = false);
 
-	int GetProfessionValue();//‘I‘ğ’†‚ÌE‹Æ‚Ì’l‚ğ•Ô‚·B
-	int GetBirthValue();//‘I‘ğ’†‚Ì¶‚Ü‚ê‚Ì’l‚ğ•Ô‚·B
+	int GetProfessionValue();//ï¿½Iï¿½ğ’†‚ÌEï¿½Æ‚Ì’lï¿½ï¿½Ô‚ï¿½ï¿½B
+	int GetBirthValue();//ï¿½Iï¿½ğ’†‚Ìï¿½ï¿½Ü‚ï¿½Ì’lï¿½ï¿½Ô‚ï¿½ï¿½B
 
-	CharacterData GetCharacterData();//ƒLƒƒƒ‰ƒNƒ^[‚Ìƒpƒ‰ƒ[ƒ^’l‚È‚Ç‚Ìî•ñ‚ğ•Ô‚·B
-	CharacterData* GetCharacterDataPtr();//ƒLƒƒƒ‰ƒNƒ^[ƒf[ƒ^‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğ•Ô‚·B(g—p”ñ„§)
+	CharacterData GetCharacterData();//ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Ìƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½È‚Ç‚Ìï¿½ï¿½ï¿½Ô‚ï¿½ï¿½B
+	CharacterData* GetCharacterDataPtr();//ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½fï¿½[ï¿½^ï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½Ô‚ï¿½ï¿½B(ï¿½gï¿½pï¿½ñ„ï¿½)
 };
