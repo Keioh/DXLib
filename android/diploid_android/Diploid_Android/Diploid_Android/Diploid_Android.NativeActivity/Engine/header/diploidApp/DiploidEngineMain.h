@@ -1,4 +1,4 @@
-//‚±‚Ìƒtƒ@ƒCƒ‹‚Å‚·‚×‚Ä‚Ìˆ—‚ğ‚Ü‚Æ‚ß‚ÄDiploidEngineApp‚É“n‚·
+//ï¿½ï¿½ï¿½Ìƒtï¿½@ï¿½Cï¿½ï¿½ï¿½Å‚ï¿½ï¿½×‚Ä‚Ìï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Æ‚ß‚ï¿½DiploidEngineAppï¿½É“nï¿½ï¿½
 
 #pragma once
 #include "DxLib.h"
@@ -17,46 +17,46 @@ class DiploidEngineMain
 {
 private:
 
-	void LayerTOP_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	void LayerMID_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	void LayerBOT_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	void LayerUI_ImapctBOX_Sync();//lŠp‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	void LayerTOP_ImapctBOX_Sync();//ï¿½lï¿½pï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[TOPï¿½Ìï¿½ï¿½ï¿½
+	void LayerMID_ImapctBOX_Sync();//ï¿½lï¿½pï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[MIDï¿½Ìï¿½ï¿½ï¿½
+	void LayerBOT_ImapctBOX_Sync();//ï¿½lï¿½pï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[BOTï¿½Ìï¿½ï¿½ï¿½
+	void LayerUI_ImapctBOX_Sync();//ï¿½lï¿½pï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[UIï¿½Ìï¿½ï¿½ï¿½
 
-	void LayerTOP_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	void LayerMID_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	void LayerBOT_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	void LayerUI_ImapctCIRCLE_Sync();//‰~‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	void LayerTOP_ImapctCIRCLE_Sync();//ï¿½~ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[TOPï¿½Ìï¿½ï¿½ï¿½
+	void LayerMID_ImapctCIRCLE_Sync();//ï¿½~ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[MIDï¿½Ìï¿½ï¿½ï¿½
+	void LayerBOT_ImapctCIRCLE_Sync();//ï¿½~ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[BOTï¿½Ìï¿½ï¿½ï¿½
+	void LayerUI_ImapctCIRCLE_Sync();//ï¿½~ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[UIï¿½Ìï¿½ï¿½ï¿½
 
-	void LayerTOP_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	void LayerMID_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	void LayerBOT_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	void LayerUI_ImapctPOINT_Sync();//“_‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	void LayerTOP_ImapctPOINT_Sync();//ï¿½_ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[TOPï¿½Ìï¿½ï¿½ï¿½
+	void LayerMID_ImapctPOINT_Sync();//ï¿½_ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[MIDï¿½Ìï¿½ï¿½ï¿½
+	void LayerBOT_ImapctPOINT_Sync();//ï¿½_ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[BOTï¿½Ìï¿½ï¿½ï¿½
+	void LayerUI_ImapctPOINT_Sync();//ï¿½_ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[UIï¿½Ìï¿½ï¿½ï¿½
 
-	void LayerTOP_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[TOP‚Ìˆ—
-	void LayerMID_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[MID‚Ìˆ—
-	void LayerBOT_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[BOT‚Ìˆ—
-	void LayerUI_ImapctLINE_Sync();//ü•ª‚ÆƒŒƒCƒ„[UI‚Ìˆ—
+	void LayerTOP_ImapctLINE_Sync();//ï¿½ï¿½ï¿½ï¿½ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[TOPï¿½Ìï¿½ï¿½ï¿½
+	void LayerMID_ImapctLINE_Sync();//ï¿½ï¿½ï¿½ï¿½ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[MIDï¿½Ìï¿½ï¿½ï¿½
+	void LayerBOT_ImapctLINE_Sync();//ï¿½ï¿½ï¿½ï¿½ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[BOTï¿½Ìï¿½ï¿½ï¿½
+	void LayerUI_ImapctLINE_Sync();//ï¿½ï¿½ï¿½ï¿½ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[UIï¿½Ìï¿½ï¿½ï¿½
 
 
 public:	
 
-	DiploidEngineTag diploidEngineTag;//ƒ^ƒO–¼‚Åg—p
+	DiploidEngineTag diploidEngineTag;//ï¿½^ï¿½Oï¿½ï¿½ï¿½Ågï¿½p
 
-	DiploidEngineSound diploidEngineSound;//‰¹ŠÖ˜A
+	DiploidEngineSound diploidEngineSound;//ï¿½ï¿½ï¿½Ö˜A
 
-	DiploidEngineInput diploidEngineInput;//ƒL[“ü—Í‚Æƒ}ƒEƒX“ü—Í‚ÆƒWƒ‡ƒCƒpƒbƒg“ü—ÍŠÖ˜A
+	DiploidEngineInput diploidEngineInput;//ï¿½Lï¿½[ï¿½ï¿½ï¿½Í‚Æƒ}ï¿½Eï¿½Xï¿½ï¿½ï¿½Í‚ÆƒWï¿½ï¿½ï¿½Cï¿½pï¿½bï¿½gï¿½ï¿½ï¿½ÍŠÖ˜A
 
-	DiploidEngineScreen diploidEngineScreen;//FPSƒJƒEƒ“ƒ^°‚È‚ÇƒtƒŒ[ƒ€ŠÖ˜A
+	DiploidEngineScreen diploidEngineScreen;//FPSï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½ï¿½È‚Çƒtï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ö˜A
 
-	DiploidEngineSetting diploidEngineSetting;//ƒGƒ“ƒWƒ“‰Šú‰»‚âİ’è‚È‚Ç‚Ìˆ—B
-	DiploidEngineLayer diploidEngineLayer;//ƒŒƒCƒ„[ƒVƒXƒeƒ€ˆ—
-	DiploidEngineImpact diploidEngineImpact;//Õ“Ëˆ—
-	DiploidEngineNetwork diploidEngineNetwork;//ƒlƒbƒgƒ[ƒN‹@”\ˆ—
+	DiploidEngineSetting diploidEngineSetting;//ï¿½Gï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ’ï¿½È‚Ç‚Ìï¿½ï¿½ï¿½ï¿½B
+	DiploidEngineLayer diploidEngineLayer;//ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	DiploidEngineImpact diploidEngineImpact;//ï¿½Õ“Ëï¿½ï¿½ï¿½
+	DiploidEngineNetwork diploidEngineNetwork;//ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½@ï¿½\ï¿½ï¿½ï¿½ï¿½
 
-	DiploidEngineFile diploidEngineFile;//ƒtƒ@ƒCƒ‹“üo—Í
+	DiploidEngineFile diploidEngineFile;//ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½
 
-	//ˆÈ‰ºA‚æ‚­g‚¤•Ï”‚ğŠÖ”‚Æ‚µ‚Ä“o˜^
-	VECTOR GetWindowSize();//windowƒTƒCƒY‚ğæ“¾(z’l‚ÍBIT)
+	//ï¿½È‰ï¿½ï¿½Aï¿½æ‚­ï¿½gï¿½ï¿½ï¿½Ïï¿½ï¿½ï¿½Öï¿½ï¿½Æ‚ï¿½ï¿½Ä“oï¿½^
+	VECTOR GetWindowSize();//windowï¿½Tï¿½Cï¿½Yï¿½ï¿½æ“¾(zï¿½lï¿½ï¿½BIT)
 
-	void DestorySync();//‰¼:Õ“Ëˆ—‚ÆƒŒƒCƒ„[ˆ—‚Ìíœ“¯Šúˆ—(‚È‚­‚È‚éŠÖ”‚©‚à‚µ‚ê‚È‚¢)
+	void DestorySync();//ï¿½ï¿½:ï¿½Õ“Ëï¿½ï¿½ï¿½ï¿½Æƒï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ìíœï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½È‚ï¿½ï¿½È‚ï¿½Öï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½)
 };

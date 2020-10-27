@@ -5,32 +5,66 @@ template<typename new_object_date>
 class DiploidCreator
 {
 private:
-	bool created_flag = false;
+	int create_time = 0;
+	int destroy_time = 0;
 
-	new_object_date* pointer;
+	new_object_date* pointer = nullptr;
 
 public:
 	~DiploidCreator()
 	{
-		delete[] pointer;
+		if (pointer != nullptr)
+		{
+			delete pointer;
+		}
+
+		pointer = nullptr;
+		create_time = 0;
+		destroy_time = 0;
 	}
 
-	new_object_date* Create()
+	new_object_date* Create(int time = 0)
 	{
-		pointer = new new_object_date;
+		if (pointer == nullptr)
+		{
+			create_time++;
 
-		created_flag = true;
+			if (create_time > time)
+			{
+				pointer = new new_object_date;
 
-		return pointer;
+				return pointer;
+			}
+			else
+			{
+				return pointer;
+			}
+		}
+		else
+		{
+			create_time = 0;
+			return pointer;
+		}
 	}
 
-	void ReCreate()
+	new_object_date* Get()
 	{
-		created_flag = false;
+		return  pointer;
 	}
 
-	void Destory()
+	void Destroy(int time = 0)
 	{
-		delete[] pointer;
+		if (pointer != nullptr)
+		{
+			destroy_time++;
+
+			if (destroy_time > time)
+			{
+				delete pointer;
+				pointer = nullptr;
+				create_time = 0;
+				destroy_time = 0;
+			}
+		}
 	}
 };

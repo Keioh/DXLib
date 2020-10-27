@@ -45,6 +45,7 @@ private:
 	DiploidCreator<DiploidBoxV2> box_creator;
 
 	int time = 0;
+	int cre = 0;
 
 public:
 	void FileCreate();//�Q�[���N�����Ɉ�x�����t�@�C�����鏈���B
