@@ -1,8 +1,8 @@
-#define PROFESSION_VALUE 5//E‹Æ‚Ì”
-#define PROFESSUON_NONE 0//‰½‚à‚È‚¢‘¶Ý‚µ‚È‚¢A‹•–³‚ÈE‹ÆB
+#define PROFESSION_VALUE 5//è·æ¥­ã®ç·æ•°
+#define PROFESSUON_NONE 0//è™šç„¡
 
-#define BIRTH_VALUE 11//¶‚Ü‚ê‚Ì”
-#define BIRTH_NONE 0//‰½ŽÒ‚Å‚à‚È‚¢¶‚Ü‚ê‚Ä‚¢‚È‚¢‘¶Ý‚¾‚Á‚½B
+#define BIRTH_VALUE 11//ç”Ÿã¾ã‚Œã®ç·æ•°
+#define BIRTH_NONE 0//è™šç„¡
 
-#define SEX_VALUE 6//«•Ê‚Ì”
+#define SEX_VALUE 6//æ€§åˆ¥ã®ç·æ•°
 #define SEX_NONE 0

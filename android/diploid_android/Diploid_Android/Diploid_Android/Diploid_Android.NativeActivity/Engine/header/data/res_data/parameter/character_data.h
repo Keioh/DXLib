@@ -1,7 +1,7 @@
 #pragma  once
 #include "DxLib.h"
 
-//ƒLƒƒƒ‰ƒNƒ^[‚Ìƒf[ƒ^(ƒpƒ‰ƒ[ƒ^’l‚È‚Ç)
+//ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Ìƒfï¿½[ï¿½^(ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½È‚ï¿½)
 class CharacterData
 {
 private:

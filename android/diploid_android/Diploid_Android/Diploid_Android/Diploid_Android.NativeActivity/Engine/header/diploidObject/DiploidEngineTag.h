@@ -3,11 +3,11 @@
 #include <vector>
 #include <string>
 
-//•ÏX”ñ„§ƒ}ƒNƒ
-//ƒŒƒCƒ„[”Ô†(0`4)
-#define DIPLOID_LAYER_00 0//ƒRƒ}ƒ“ƒhUI‚Ì“–‚½‚è”»’è
-#define DIPLOID_LAYER_01 1//ƒ}ƒbƒvƒ`ƒbƒv‚ÆƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è
-#define DIPLOID_LAYER_02 2//“G‚ÆƒvƒŒƒCƒ„[‚Ì“–‚½‚è”»’è
+//ï¿½ÏXï¿½ñ„ï¿½ï¿½}ï¿½Nï¿½ï¿½
+//ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ôï¿½(0ï¿½`4)
+#define DIPLOID_LAYER_00 0//ï¿½Rï¿½}ï¿½ï¿½ï¿½hUIï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½
+#define DIPLOID_LAYER_01 1//ï¿½}ï¿½bï¿½vï¿½`ï¿½bï¿½vï¿½Æƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½
+#define DIPLOID_LAYER_02 2//ï¿½Gï¿½Æƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½
 #define DIPLOID_LAYER_03 3
 #define DIPLOID_LAYER_04 4
 #define DIPLOID_LAYER_05 5
@@ -16,15 +16,15 @@
 #define DIPLOID_LAYER_08 8
 
 
-//‰¼ƒ}ƒNƒ(ƒ_ƒCƒXƒvƒƒOƒ‰ƒ€‚Åg—p)
-#define OBJECT_NUMBER_POINT 0//ƒ|ƒCƒ“ƒg
-#define OBJECT_NUMBER_PLUS_BUTTON 1//ƒvƒ‰ƒXƒ{ƒ^ƒ“
-#define OBJECT_NUMBER_MINUS_BUTTON 2//ƒ}ƒCƒiƒXƒ{ƒ^ƒ“
-#define OBJECT_NUMBER_CUSTOM_NUMBER_BUTTON 3//ƒJƒXƒ^ƒ€ƒiƒ“ƒo[ƒ{ƒ^ƒ“
-#define OBJECT_NUMBER_CLEAR_BUTTON 4//ƒNƒŠƒAƒ{ƒ^ƒ“
+//ï¿½ï¿½ï¿½}ï¿½Nï¿½ï¿½(ï¿½_ï¿½Cï¿½Xï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ågï¿½p)
+#define OBJECT_NUMBER_POINT 0//ï¿½|ï¿½Cï¿½ï¿½ï¿½g
+#define OBJECT_NUMBER_PLUS_BUTTON 1//ï¿½vï¿½ï¿½ï¿½Xï¿½{ï¿½^ï¿½ï¿½
+#define OBJECT_NUMBER_MINUS_BUTTON 2//ï¿½}ï¿½Cï¿½iï¿½Xï¿½{ï¿½^ï¿½ï¿½
+#define OBJECT_NUMBER_CUSTOM_NUMBER_BUTTON 3//ï¿½Jï¿½Xï¿½^ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½oï¿½[ï¿½{ï¿½^ï¿½ï¿½
+#define OBJECT_NUMBER_CLEAR_BUTTON 4//ï¿½Nï¿½ï¿½ï¿½Aï¿½{ï¿½^ï¿½ï¿½
 
-//“ú•tŠÖ˜A
-//‹Gß
+//ï¿½ï¿½ï¿½tï¿½Ö˜A
+//ï¿½Gï¿½ï¿½
 const int NEXT_DAY = 1;
 const int NEXT_SEASON = 1;
 const int SPRING_SEASON = 1;
@@ -32,70 +32,70 @@ const int RAINY_SEASON = 2;
 const int SUMMER_SEASON = 3;
 const int WINTER_SEASON = 4;
 
-//Œ(“)
+//ï¿½ï¿½(ï¿½ï¿½)
 const int NEXT_MONTH = 1;
 const int TANTOU_NO_TUKI = 1;
 const int KOUTOU_NO_TUKI = 2;
 const int NOUTOU_NO_TUKI = 3;
 
-//Œ(Â)
+//ï¿½ï¿½(ï¿½ï¿½)
 const int TANSEI_NO_TUKI = 4;
 const int KOUSEI_NO_TUKI = 5;
 const int NOUSEI_NO_TUKI = 6;
 
-//Œ(Ô)
+//ï¿½ï¿½(ï¿½ï¿½)
 const int TANSEKI_NO_TUKI = 7;
 const int KOUSEKI_NO_TUKI = 8;
 const int NOUSEKI_NO_TUKI = 9;
 
-//Œ(”’)
+//ï¿½ï¿½(ï¿½ï¿½)
 const int TANHAKU_NO_TUKI = 10;
 const int KOUPAKU_NO_TUKI = 11;
 const int NOUHAKU_NO_TUKI = 12;
 
 
-//å—vƒRƒ}ƒ“ƒhŠÖ˜A
-const int NO_COMMAND		  = 0;//ƒRƒ}ƒ“ƒh‘I‘ğ‚È‚µ
-const int CAMP_COMMAND		  = 1;//–ì‰cƒRƒ}ƒ“ƒh
-const int INFORMATION_COMMAND = 2;//î•ñƒRƒ}ƒ“ƒh
-const int MOVE_COMMAND		  = 3;//ˆÚ“®ƒRƒ}ƒ“ƒh
-const int PRODUCTION_COMMAND  = 4;//»ìƒRƒ}ƒ“ƒh
-const int RESEARCH_COMMAND	  = 5;//Œ¤‹†ƒRƒ}ƒ“ƒh
-const int EXPLORE_COMMAND	  = 6;//’TõƒRƒ}ƒ“ƒh
+//ï¿½ï¿½vï¿½Rï¿½}ï¿½ï¿½ï¿½hï¿½Ö˜A
+const int NO_COMMAND		  = 0;//ï¿½Rï¿½}ï¿½ï¿½ï¿½hï¿½Iï¿½ï¿½È‚ï¿½
+const int CAMP_COMMAND		  = 1;//ï¿½ï¿½cï¿½Rï¿½}ï¿½ï¿½ï¿½h
+const int INFORMATION_COMMAND = 2;//ï¿½ï¿½ï¿½Rï¿½}ï¿½ï¿½ï¿½h
+const int MOVE_COMMAND		  = 3;//ï¿½Ú“ï¿½ï¿½Rï¿½}ï¿½ï¿½ï¿½h
+const int PRODUCTION_COMMAND  = 4;//ï¿½ï¿½ï¿½ï¿½Rï¿½}ï¿½ï¿½ï¿½h
+const int RESEARCH_COMMAND	  = 5;//ï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½}ï¿½ï¿½ï¿½h
+const int EXPLORE_COMMAND	  = 6;//ï¿½Tï¿½ï¿½ï¿½Rï¿½}ï¿½ï¿½ï¿½h
 
 
-//ƒvƒŒ[ƒ„[‚ÌŒü‚¢‚Ä‚¢‚é•ûŒü
-const int PLAYER_DIRECTION_UP = 0;//ã
-const int PLAYER_DIRECTION_DOWN = 1;//‰º
-const int PLAYER_DIRECTION_LEFT = 2;//¶
-const int PLAYER_DIRECTION_RIGHT = 3;//‰E
-const int PLAYER_DIRECTION_LEFT_UP = 4;//¶ã
-const int PLAYER_DIRECTION_RIGHT_UP = 5;//‰Eã
-const int PLAYER_DIRECTION_RIGHT_DOWN = 6;//‰E‰º
-const int PLAYER_DIRECTION_LEFT_DOWN = 7;//¶‰º
+//ï¿½vï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½ÌŒï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+const int PLAYER_DIRECTION_UP = 0;//ï¿½ï¿½
+const int PLAYER_DIRECTION_DOWN = 1;//ï¿½ï¿½
+const int PLAYER_DIRECTION_LEFT = 2;//ï¿½ï¿½
+const int PLAYER_DIRECTION_RIGHT = 3;//ï¿½E
+const int PLAYER_DIRECTION_LEFT_UP = 4;//ï¿½ï¿½ï¿½ï¿½
+const int PLAYER_DIRECTION_RIGHT_UP = 5;//ï¿½Eï¿½ï¿½
+const int PLAYER_DIRECTION_RIGHT_DOWN = 6;//ï¿½Eï¿½ï¿½
+const int PLAYER_DIRECTION_LEFT_DOWN = 7;//ï¿½ï¿½ï¿½ï¿½
 
-//ƒvƒŒ[ƒ„[‚ÌˆÚ“®ó‘Ô
-const int PLAYER_WAIT = 0;//‘Ò‹@
-const int PLAYER_WALK = 1;//•à‚«
-const int PLAYER_RUN = 2;//‘–‚è
+//ï¿½vï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½[ï¿½ÌˆÚ“ï¿½ï¿½ï¿½ï¿½
+const int PLAYER_WAIT = 0;//ï¿½Ò‹@
+const int PLAYER_WALK = 1;//ï¿½ï¿½ï¿½
+const int PLAYER_RUN = 2;//ï¿½ï¿½ï¿½ï¿½
 
-//ƒXƒe[ƒ^ƒXˆÙíŠÖ˜A
-const int STATUS_INJURY_LV1 = 0;//•‰LV1
-const int STATUS_INJURY_LV2 = 1;//•‰LV2
-const int STATUS_INJURY_LV3 = 2;//•‰LV3
-const int STATUS_INJURY_LV4 = 3;//•‰LV4
-const int STATUS_INJURY_LV5 = 4;//•‰LV5
+//ï¿½Xï¿½eï¿½[ï¿½^ï¿½Xï¿½Ùï¿½Ö˜A
+const int STATUS_INJURY_LV1 = 0;//ï¿½ï¿½ï¿½ï¿½LV1
+const int STATUS_INJURY_LV2 = 1;//ï¿½ï¿½ï¿½ï¿½LV2
+const int STATUS_INJURY_LV3 = 2;//ï¿½ï¿½ï¿½ï¿½LV3
+const int STATUS_INJURY_LV4 = 3;//ï¿½ï¿½ï¿½ï¿½LV4
+const int STATUS_INJURY_LV5 = 4;//ï¿½ï¿½ï¿½ï¿½LV5
 
 
-//ƒ^ƒOî•ñ\‘¢‘Ì
+//ï¿½^ï¿½Oï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½
 struct Tag
 {
-	int object_number;//ƒIƒuƒWƒFƒNƒg”Ô†
-	int layer_number;//ƒŒƒCƒ„[”Ô†
-	std::string name_tag;//ƒIƒuƒWƒFƒNƒg–¼
+	int object_number;//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ôï¿½
+	int layer_number;//ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ôï¿½
+	std::string name_tag;//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½
 };
 
-//PushŠÖ”ˆÈŠO–¢À‘•
+//Pushï¿½Öï¿½ï¿½ÈŠOï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 class DiploidEngineTag
 {
 private:
@@ -106,25 +106,25 @@ public:
 	~DiploidEngineTag() {};
 
 
-	int GetNumber(int target);//tag_vector‚Ì‘O‚©‚çtarget”Ô–Ú‚Ìobject_number‚ğ•Ô‚µ‚Ü‚·B
-	std::string GetObjectName(int target);//tag_vector‚Ì‘O‚©‚çtarget”Ô–Ú‚Ìobject_name‚ğ•Ô‚µ‚Ü‚·B
+	int GetNumber(int target);//tag_vectorï¿½Ì‘Oï¿½ï¿½ï¿½ï¿½targetï¿½Ô–Ú‚ï¿½object_numberï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+	std::string GetObjectName(int target);//tag_vectorï¿½Ì‘Oï¿½ï¿½ï¿½ï¿½targetï¿½Ô–Ú‚ï¿½object_nameï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	int GetNumber_tag_vector(int object_number);//object_number‚Åw’è‚µ‚½”z—ñ‚ª‘O‚©‚ç‰½”Ô–Ú‚È‚Ì‚©‚ğ•Ô‚µ‚Ü‚·B
-	int GetNameTag_tag_vector(std::string object_name);//object_name‚Åw’è‚µ‚½”z—ñ‚ª‘O‚©‚ç‰½”Ô–Ú‚È‚Ì‚©‚ğ•Ô‚µ‚Ü‚·B
+	int GetNumber_tag_vector(int object_number);//object_numberï¿½Åwï¿½è‚µï¿½ï¿½ï¿½zï¿½ñ‚ª‘Oï¿½ï¿½ï¿½ç‰½ï¿½Ô–Ú‚È‚Ì‚ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+	int GetNameTag_tag_vector(std::string object_name);//object_nameï¿½Åwï¿½è‚µï¿½ï¿½ï¿½zï¿½ñ‚ª‘Oï¿½ï¿½ï¿½ç‰½ï¿½Ô–Ú‚È‚Ì‚ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	void SortOnObjectNumber();//object_number‚ğŠî€‚É¸‡‚É•À‚×‘Ö‚¦‚Ü‚·B
+	void SortOnObjectNumber();//object_numberï¿½ï¿½î€ï¿½Éï¿½ï¿½ï¿½ï¿½É•ï¿½ï¿½×‘Ö‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	//ˆÈ‰ºg—p•p“x‚ª‚‚­‚È‚é‚Å‚ ‚ë‚¤ŠÖ”
-	Tag GetTag_target(int target);//tag_vector‚Ì‘O‚©‚çtarget”Ô–Ú‚Ìtag‚ğ•Ô‚µ‚Ü‚·B
-	Tag GetTag_object_number(int object_number);//object_number‚Åw’è‚µ‚½”z—ñ‚ğŒ©‚Â‚¯o‚µ‚»‚Ìtag‚ğ•Ô‚µ‚Ü‚·B
-	Tag GetTag_name_tag(std::string object_name);//object_name‚Åw’è‚µ‚½”z—ñ‚ğŒ©‚Â‚¯o‚µ‚»‚Ìtag‚ğ•Ô‚µ‚Ü‚·B
+	//ï¿½È‰ï¿½ï¿½gï¿½pï¿½pï¿½xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½Å‚ï¿½ï¿½ë‚¤ï¿½Öï¿½
+	Tag GetTag_target(int target);//tag_vectorï¿½Ì‘Oï¿½ï¿½ï¿½ï¿½targetï¿½Ô–Ú‚ï¿½tagï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+	Tag GetTag_object_number(int object_number);//object_numberï¿½Åwï¿½è‚µï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tagï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+	Tag GetTag_name_tag(std::string object_name);//object_nameï¿½Åwï¿½è‚µï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½tagï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	int FindOnTagVector(Tag tag);//tag_vector‚©‚çtag‚ğŒ©‚Â‚¯o‚µ‘O‚©‚ç‰½”Ô–Ú‚È‚Ì‚©‚ğ•Ô‚µ‚Ü‚·B
+	int FindOnTagVector(Tag tag);//tag_vectorï¿½ï¿½ï¿½ï¿½tagï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½oï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ç‰½ï¿½Ô–Ú‚È‚Ì‚ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	void Push(Tag tag);//ƒ^ƒO‚ğ“o˜^‚µ‚Ü‚·B
+	void Push(Tag tag);//ï¿½^ï¿½Oï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	void Destory_target(int target);//tag_vector‚Ì‘O‚©‚çtarget”Ô–Ú‚ÌTag‚ğíœ‚µ‚Ü‚·B
-	void Destory_object_number(int object_number);//tag_vector‚Ì’†‚©‚çobject_number‚ğŒ©‚Â‚¯o‚µíœ‚µ‚Ü‚·B
-	void Destory_name_tag(std::string object_name);//tag_vector‚Ì’†‚©‚çobject_name‚ğŒ©‚Â‚¯o‚µíœ‚µ‚Ü‚·B
+	void Destory_target(int target);//tag_vectorï¿½Ì‘Oï¿½ï¿½ï¿½ï¿½targetï¿½Ô–Ú‚ï¿½Tagï¿½ï¿½íœï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+	void Destory_object_number(int object_number);//tag_vectorï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½object_numberï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½oï¿½ï¿½ï¿½íœï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+	void Destory_name_tag(std::string object_name);//tag_vectorï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½object_nameï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½oï¿½ï¿½ï¿½íœï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
 };

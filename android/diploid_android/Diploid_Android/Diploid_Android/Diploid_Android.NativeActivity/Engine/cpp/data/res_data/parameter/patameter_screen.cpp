@@ -172,7 +172,7 @@ void ParameterScreen::Draw(bool draw, bool debug)
 	if (str_button.GetInfoButtonPtr()->GetSelectedUI() == true)
 	{
 		ui_box.Draw(draw);
-		DrawString(30, android_screen.GetScreenSizeY() - 240, "STRは筋力を表す。", GetColor(200, 200, 200));
+		DrawString(30, android_screen.GetScreenSizeY() - 240, "STRは筋力を表し、攻撃力に影響する。", GetColor(200, 200, 200));
 	}
 }
 

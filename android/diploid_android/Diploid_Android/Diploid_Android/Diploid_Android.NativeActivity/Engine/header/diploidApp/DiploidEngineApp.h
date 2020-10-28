@@ -41,11 +41,8 @@ private:
 
 	ParameterScreen parameter_screen;
 
-	DiploidBoxV2 *box;
-	DiploidCreator<DiploidBoxV2> box_creator;
+	//DiploidCreator<ParameterScreen> parameter_screen;
 
-	int time = 0;
-	int cre = 0;
 
 public:
 	void FileCreate();//�Q�[���N�����Ɉ�x�����t�@�C�����鏈���B

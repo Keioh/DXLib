@@ -49,7 +49,14 @@ public:
 
 	new_object_date* Get()
 	{
-		return  pointer;
+		if (pointer != nullptr)
+		{
+			return  pointer;
+		}
+		else
+		{
+			return  nullptr;
+		}
 	}
 
 	void Destroy(int time = 0)

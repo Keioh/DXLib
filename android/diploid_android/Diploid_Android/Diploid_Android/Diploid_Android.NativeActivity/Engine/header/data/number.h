@@ -2,8 +2,8 @@
 #include "diploidObject/DiploidEngineObject.h"
 #include "ver2.0/Graphics/DiploidImageV2.h"
 
-//”š•\¦ˆ—
-class Number//ˆêŒ…—p
+//ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+class Number//ï¿½êŒ…ï¿½p
 {
 private:
 	
@@ -31,7 +31,7 @@ public:
 	void Draw(bool draw = true);
 };
 
-class Number1000//4Œ…—p
+class Number1000//4ï¿½ï¿½ï¿½p
 {
 private:
 	Number number_1;

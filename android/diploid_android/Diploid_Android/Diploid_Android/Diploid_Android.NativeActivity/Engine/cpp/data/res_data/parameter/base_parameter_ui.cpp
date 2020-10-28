@@ -39,7 +39,6 @@ void BaseParameterUI::Init(VECTOR pos, VECTOR size, const char* name, bool value
 	touch_ui_down.SetTouchFlag(true);	
 	touch_ui_up.SetTouchFlag(true);
 	selected_ui_info.SetTouchFlag(true);
-
 }
 
 void BaseParameterUI::Update(DiploidEngineInput* input)

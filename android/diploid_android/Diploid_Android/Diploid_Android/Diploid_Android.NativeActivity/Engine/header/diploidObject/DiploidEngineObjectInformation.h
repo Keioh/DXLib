@@ -7,66 +7,66 @@ class DiploidEngineObjectInformation
 private:
 
 public:
-	std::string name_tag = "no_name";//•t‚¯‚½‚¢–¼‘O‚ğ“ü‚ê‚éBŒ^‚ÍstringŒ^‚Å‚·B
+	std::string name_tag = "no_name";//ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½^ï¿½ï¿½stringï¿½^ï¿½Å‚ï¿½ï¿½B
 
-	bool mouse_point_move_flag = false;//true‚É‚·‚é‚Æƒ}ƒEƒX‚É’Ç]
-	bool center_position_draw_flag = false;//true‚É‚·‚é‚Æ’†‰›‚Éİ’è‚³‚ê‚Ä‚¢‚éêŠ‚É“_‚ª•\¦‚³‚ê‚é(ƒ}ƒEƒX’Ç]‚Ìê‡‚Í–³Œø)
-	VECTOR position;//ˆÊ’u
-	VECTOR size;//‘å‚«‚³(z‚Í‰~‚Ì”¼Œa)	
-	int mouse_position_x, mouse_position_y;//ƒ}ƒEƒX‚ÌŒ»İ‚ÌˆÊ’u
-	unsigned int color;//F
-	int fill;//“h‚è‚Â‚Ô‚µ
-	int thickness;//‘¾‚³
+	bool mouse_point_move_flag = false;//trueï¿½É‚ï¿½ï¿½ï¿½Æƒ}ï¿½Eï¿½Xï¿½É’Ç]
+	bool center_position_draw_flag = false;//trueï¿½É‚ï¿½ï¿½ï¿½Æ’ï¿½ï¿½ï¿½ï¿½Éİ’è‚³ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½êŠï¿½É“_ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½}ï¿½Eï¿½Xï¿½Ç]ï¿½Ìê‡ï¿½Í–ï¿½ï¿½ï¿½)
+	VECTOR position;//ï¿½Ê’u
+	VECTOR size;//ï¿½å‚«ï¿½ï¿½(zï¿½Í‰~ï¿½Ì”ï¿½ï¿½a)	
+	int mouse_position_x, mouse_position_y;//ï¿½}ï¿½Eï¿½Xï¿½ÌŒï¿½ï¿½İ‚ÌˆÊ’u
+	unsigned int color;//ï¿½F
+	int fill;//ï¿½hï¿½ï¿½Â‚Ô‚ï¿½
+	int thickness;//ï¿½ï¿½ï¿½ï¿½
 
-	//ÀÛ‚É“®‚©‚·‚Æ‚«‚É•ÏX‚·‚é•Ï”
-	VECTOR move_speed;//ˆÚ“®‘¬“x
-	VECTOR move_size;//‘å‚«‚³•ÏX
+	//ï¿½ï¿½ï¿½Û‚É“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½É•ÏXï¿½ï¿½ï¿½ï¿½Ïï¿½
+	VECTOR move_speed;//ï¿½Ú“ï¿½ï¿½ï¿½ï¿½x
+	VECTOR move_size;//ï¿½å‚«ï¿½ï¿½ï¿½ÏX
 
-	//Impact‚µ‚½‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
-	bool impacted = false;//true‚Å“–‚½‚Á‚Ä‚¢‚é
-	bool destory = false;//true‚Åíœ
+	//Impactï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½Ìƒtï¿½ï¿½ï¿½O
+	bool impacted = false;//trueï¿½Å“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+	bool destory = false;//trueï¿½Åíœ
 
-	int name_tag_flag = false;//name_tag‚Ì•\¦ƒtƒ‰ƒO
+	int name_tag_flag = false;//name_tagï¿½Ì•\ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O
 
 
-	//—á)1-29@¨@¯•Ê”Ô† - ƒIƒuƒWƒFƒNƒg”Ô†
-	//¯•Ê”Ô†‚ÍUI‚È‚Ì‚©ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚È‚Ì‚©‚È‚Ç‚ğ”»•Ê‚·‚é‚½‚ß‚Ì•Ï”B
-	//¯•Ê”Ô†‚Ì’†‚Å‰½ŒÂ–Ú‚ÌƒIƒuƒWƒFƒNƒg‚È‚Ì‚©‚Ì”»•Ê‚·‚é‚½‚ß‚Ì•Ï”B
-	int number;//ƒIƒuƒWƒFƒNƒg”Ô†(”Ô†‚Í‚È‚é‚×‚­‚©‚Ô‚ç‚È‚¢‚æ‚¤‚É)
-	int layer_number;//¯•Ê”Ô†
+	//ï¿½ï¿½)1-29ï¿½@ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½Ê”Ôï¿½ - ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ôï¿½
+	//ï¿½ï¿½ï¿½Ê”Ôï¿½ï¿½ï¿½UIï¿½È‚Ì‚ï¿½ï¿½Qï¿½[ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½È‚Ì‚ï¿½ï¿½È‚Ç‚ğ”»•Ê‚ï¿½ï¿½é‚½ï¿½ß‚Ì•Ïï¿½ï¿½B
+	//ï¿½ï¿½ï¿½Ê”Ôï¿½ï¿½Ì’ï¿½ï¿½Å‰ï¿½ï¿½Â–Ú‚ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½È‚Ì‚ï¿½ï¿½Ì”ï¿½ï¿½Ê‚ï¿½ï¿½é‚½ï¿½ß‚Ì•Ïï¿½ï¿½B
+	int number;//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ôï¿½(ï¿½Ôï¿½ï¿½Í‚È‚ï¿½×‚ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½È‚ï¿½ï¿½æ‚¤ï¿½ï¿½)
+	int layer_number;//ï¿½ï¿½ï¿½Ê”Ôï¿½
 
-	//‰~ŠÖ˜A‚Ì“–‚½‚è”»’è‚ğ‚·‚é‚©‚Ìƒtƒ‰ƒO
+	//ï¿½~ï¿½Ö˜Aï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ìƒtï¿½ï¿½ï¿½O
 	bool impact_circle_point_flag = true;
 	bool impact_circle_box_flag = true;
 	bool impact_circle_circle_flag = true;
 	bool impact_circle_line_flag = true;
 
-	//” ŠÖ˜A‚Ì“–‚½‚è”»’è‚ğ‚·‚é‚©‚Ìƒtƒ‰ƒO
+	//ï¿½ï¿½ï¿½Ö˜Aï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ìƒtï¿½ï¿½ï¿½O
 	bool impact_box_point_flag = true;
 	bool impact_box_box_flag = true;
 	bool impact_box_circle_flag = true;
 	bool impact_box_line_flag = true;
 
-	//“_ŠÖ˜A‚Ì“–‚½‚è”»’è‚ğ‚·‚é‚©‚Ìƒtƒ‰ƒO
+	//ï¿½_ï¿½Ö˜Aï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ìƒtï¿½ï¿½ï¿½O
 	bool impact_point_point_flag = true;
 	bool impact_point_box_flag = true;
 	bool impact_point_circle_flag = true;
 	bool impact_point_line_flag = true;
 
-	//ü•ªŠÖ˜A‚Ì“–‚½‚è”»’è‚ğ‚·‚é‚©‚Ìƒtƒ‰ƒO(impactˆ—‚Ì‚Ù‚¤‚É‚Í‚Ü‚¾À‘•‚µ‚Ä‚È‚¢)
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ö˜Aï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½Ìƒtï¿½ï¿½ï¿½O(impactï¿½ï¿½ï¿½ï¿½ï¿½Ì‚Ù‚ï¿½ï¿½É‚Í‚Ü‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚È‚ï¿½)
 	bool impact_line_point_flag = true;
 	bool impact_line_box_flag = true;
 	bool impact_line_circle_flag = true;
 	bool impact_line_line_flag = true;
 
 
-	//‰¼’Ç‰Á(ƒGƒ‰[‚ªo‚éê‡‚Ííœ)
-	DiploidEngineObjectInformation();//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	~DiploidEngineObjectInformation();//ƒfƒXƒgƒ‰ƒNƒ^
+	//ï¿½ï¿½ï¿½Ç‰ï¿½(ï¿½Gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½oï¿½ï¿½ê‡ï¿½Ííœ)
+	DiploidEngineObjectInformation();//ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
+	~DiploidEngineObjectInformation();//ï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 
 	virtual void Init() {};
 	virtual void Update() {};
 	virtual void Draw() {};
 
-	virtual void Destory() { impacted = destory = true; };//ƒIƒuƒWƒFƒNƒgíœŠÖ”
+	virtual void Destory() { impacted = destory = true; };//ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½íœï¿½Öï¿½
 };

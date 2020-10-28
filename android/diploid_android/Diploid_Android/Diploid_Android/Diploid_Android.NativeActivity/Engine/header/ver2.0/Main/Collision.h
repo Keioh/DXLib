@@ -9,18 +9,18 @@ using namespace std;
 class DiploidCollision
 {
 private:
-	int upadata_count;//‚¢‚ÂXV‚·‚é‚©‚ÌƒJƒEƒ“ƒg(‰æ–ÊŠO‚È‚ÇA•p”É‚É”»’è‚ğ‚µ‚½‚­‚È‚¢êŠ‚ÅŒvZ‰ñ”‚ğŒ¸‚ç‚·‚½‚ß‚Ì•Ï”)
+	int upadata_count;//ï¿½ï¿½ï¿½ÂXï¿½Vï¿½ï¿½ï¿½é‚©ï¿½ÌƒJï¿½Eï¿½ï¿½ï¿½g(ï¿½ï¿½ÊŠOï¿½È‚ÇAï¿½pï¿½É‚É”ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½êŠï¿½ÅŒvï¿½Zï¿½ñ”‚ï¿½ï¿½ï¿½ç‚·ï¿½ï¿½ï¿½ß‚Ì•Ïï¿½)
 	int window_size_x = 1080, window_size_y = 1920;
 
 protected:
 
 public:
-	bool CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate = 0);//‰~‚Æ‰~‚Ì“–‚½‚è”»’è‚ğÀs‚µ‚Ü‚·B(–ß‚è’l‚Í“ñ‚Â‚Ì‰~‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çtrue‚ğ•Ô‚µ‚Ü‚·B)
-	VECTOR CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate = 0);//‰~‚Æ‰~‚ª“–‚½‚Á‚½uŠÔ‚ÌˆÊ’u‚ğ“¾‚Ü‚·B(–ß‚è’l‚Í“–‚½‚Á‚½êŠ‚ÌˆÊ’u‚ğ•Ô‚µ‚Ü‚·Bz‚É‚Í”¼Œa‚ª“ü‚Á‚Ä‚¢‚Ü‚·B)
+	bool CircleAndCircleCollisionUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate = 0);//ï¿½~ï¿½Æ‰~ï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½ß‚ï¿½lï¿½Í“ï¿½Â‚Ì‰~ï¿½ï¿½ï¿½qï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B)
+	VECTOR CircleAndCircleCollisionPointsUpdate(DiploidCircleV2* circle_one, DiploidCircleV2* circle_two, int updata_rate = 0);//ï¿½~ï¿½Æ‰~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½Ô‚ÌˆÊ’uï¿½ğ“¾‚Ü‚ï¿½ï¿½B(ï¿½ß‚ï¿½lï¿½Í“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½êŠï¿½ÌˆÊ’uï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½Bzï¿½É‚Í”ï¿½ï¿½aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½B)
 	
-	bool BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x, int mouse_y, int updata_rate = 0);//lŠp‚Æƒ}ƒEƒX‚Ì“–‚½‚è”»’è‚ğÀs‚µ‚Ü‚·B(–ß‚è’l‚Íƒ}ƒEƒX‚ÆlŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çtrue‚ğ•Ô‚µ‚Ü‚·B)
-	bool BoxAndTouchCollisionUpdate(DiploidBoxV2* box, int touch_x, int touch_y, int updata_rate = 0);//lŠp‚Æƒ^ƒbƒ`‚Ì“–‚½‚è”»’è‚ğÀs‚µ‚Ü‚·B(–ß‚è’l‚Íƒ^ƒbƒ`‚ÆlŠp‚ªƒqƒbƒg‚µ‚Ä‚¢‚½‚çtrue‚ğ•Ô‚µ‚Ü‚·B)
+	bool BoxAndMouseCollisionUpdate(DiploidBoxV2* box, int mouse_x, int mouse_y, int updata_rate = 0);//ï¿½lï¿½pï¿½Æƒ}ï¿½Eï¿½Xï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½ß‚ï¿½lï¿½Íƒ}ï¿½Eï¿½Xï¿½Ælï¿½pï¿½ï¿½ï¿½qï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B)
+	bool BoxAndTouchCollisionUpdate(DiploidBoxV2* box, int touch_x, int touch_y, int updata_rate = 0);//ï¿½lï¿½pï¿½Æƒ^ï¿½bï¿½`ï¿½Ì“ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½ß‚ï¿½lï¿½Íƒ^ï¿½bï¿½`ï¿½Ælï¿½pï¿½ï¿½ï¿½qï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½trueï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B)
 
 
-	int GetUpdateCounter();//XV•p“x‚ğ”‚¦‚éƒJƒEƒ“ƒ^[‚ğæ“¾‚µ‚Ü‚·B
+	int GetUpdateCounter();//ï¿½Xï¿½Vï¿½pï¿½xï¿½ğ”‚ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 };

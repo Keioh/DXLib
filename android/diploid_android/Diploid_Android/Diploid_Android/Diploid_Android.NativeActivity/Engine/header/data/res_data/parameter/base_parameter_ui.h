@@ -9,20 +9,20 @@
 class BaseParameterUI
 {
 private:
-	DiploidTouchUI touch_ui_up;//”’l‚ğã‚°‚éƒ{ƒ^ƒ“—p
-	DiploidTouchUI touch_ui_down;//”’l‚ğ‰º‚°‚éƒ{ƒ^ƒ“—p
-	DiploidSelectedUIV2 selected_ui_info;//î•ñƒ{ƒ^ƒ“—p
+	DiploidTouchUI touch_ui_up;//ï¿½ï¿½ï¿½lï¿½ï¿½ã‚°ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½p
+	DiploidTouchUI touch_ui_down;//ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½p
+	DiploidSelectedUIV2 selected_ui_info;//ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½p
 
-	DiploidImageV2 image_up;//”’l‚ğã‚°‚éƒ{ƒ^ƒ“‚Ì‰æ‘œ
-	DiploidImageV2 image_down;//”’l‚ğ‰º‚°‚éƒ{ƒ^ƒ“‚Ì‰æ‘œ
-	DiploidImageV2 image_info;//ƒpƒ‰ƒ[ƒ^‚Ìî•ñ‚É‚Â‚¢‚Ä‚Ìƒ{ƒ^ƒ“‚Ì‰æ‘œ
-	DiploidImageV2 image_info_back;//”’l‚âƒpƒ‰ƒ[ƒ^‚Ì–¼‘O‚Ì•\¦”wŒi‚Ì‰æ‘œ
-	DiploidImageV2 image_parameter_ui_back;//”wŒi‰æ‘œ
+	DiploidImageV2 image_up;//ï¿½ï¿½ï¿½lï¿½ï¿½ã‚°ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Ì‰æ‘œ
+	DiploidImageV2 image_down;//ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Ì‰æ‘œ
+	DiploidImageV2 image_info;//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ìï¿½ï¿½É‚Â‚ï¿½ï¿½Ä‚Ìƒ{ï¿½^ï¿½ï¿½ï¿½Ì‰æ‘œ
+	DiploidImageV2 image_info_back;//ï¿½ï¿½ï¿½lï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½Ì–ï¿½ï¿½Oï¿½Ì•\ï¿½ï¿½ï¿½wï¿½iï¿½Ì‰æ‘œ
+	DiploidImageV2 image_parameter_ui_back;//ï¿½wï¿½iï¿½æ‘œ
 
-	int parameter = 0;//ƒpƒ‰ƒ[ƒ^’l•Û‘¶—p
+	int parameter = 0;//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½Û‘ï¿½ï¿½p
 
-	int max_value = 9999;//ƒpƒ‰ƒ[ƒ^‚ÌÅ‘å’l
-	int mini_value = 0;//ƒpƒ‰ƒ[ƒ^‚ÌÅ¬’l
+	int max_value = 9999;//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ÌÅ‘ï¿½l
+	int mini_value = 0;//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½ÌÅï¿½ï¿½l
 
 	const char* string = "no_name_parameter";
 	bool draw_value_flag = true;
@@ -42,19 +42,19 @@ public:
 	void Update(DiploidEngineInput* input);
 	void Draw(bool draw = true, bool debug = false);
 
-	void SetParameterValue(int new_value);//ƒpƒ‰ƒ[ƒ^’l‚ğV‚µ‚­İ’è‚µ‚Ü‚·B
-	void SetMaxValue(int new_max_value);//ƒpƒ‰ƒ[ƒ^’l‚ÌÅ‘åãŒÀ‚ğİ’è‚µ‚Ü‚·B
-	void SetMiniValue(int new_mini_value);//ƒpƒ‰ƒ[ƒ^’l‚ÌÅ¬‰ºŒÀ’l‚ğİ’è‚µ‚Ü‚·B
+	void SetParameterValue(int new_value);//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½İ’è‚µï¿½Ü‚ï¿½ï¿½B
+	void SetMaxValue(int new_max_value);//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ÌÅ‘ï¿½ï¿½ï¿½ï¿½ï¿½İ’è‚µï¿½Ü‚ï¿½ï¿½B
+	void SetMiniValue(int new_mini_value);//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ÌÅï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½İ’è‚µï¿½Ü‚ï¿½ï¿½B
 	void SetParameterName(const char* new_stirng);
 
-	void AddValue(int add_value);//ƒpƒ‰ƒ[ƒ^’l‚ğadd_value‚¾‚¯‘‚â‚µ‚Ü‚·B
-	void SubValue(int sub_value);//ƒpƒ‰ƒ[ƒ^’l‚ğadd_value‚¾‚¯Œ¸‚ç‚µ‚Ü‚·B
+	void AddValue(int add_value);//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ï¿½add_valueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â‚µï¿½Ü‚ï¿½ï¿½B
+	void SubValue(int sub_value);//ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ï¿½add_valueï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç‚µï¿½Ü‚ï¿½ï¿½B
 
-	int GetParameterValue();//Œ»İ‚Ìƒpƒ‰ƒ[ƒ^’l‚ğ“¾‚Ü‚·B
-	int GetParameterMaxValue();//Œ»İ‚Ìƒpƒ‰ƒ[ƒ^’l‚ÌÅ‘å’l‚ğ“¾‚Ü‚·B
-	int GetParameterMiniValue();//Œ»İ‚Ìƒpƒ‰ƒ[ƒ^’l‚ÌÅ¬’l‚ğ“¾‚Ü‚·B
+	int GetParameterValue();//ï¿½ï¿½ï¿½İ‚Ìƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ğ“¾‚Ü‚ï¿½ï¿½B
+	int GetParameterMaxValue();//ï¿½ï¿½ï¿½İ‚Ìƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ÌÅ‘ï¿½lï¿½ğ“¾‚Ü‚ï¿½ï¿½B
+	int GetParameterMiniValue();//ï¿½ï¿½ï¿½İ‚Ìƒpï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½^ï¿½lï¿½ÌÅï¿½ï¿½lï¿½ğ“¾‚Ü‚ï¿½ï¿½B
 
-	VECTOR GetSize();//UI‚Ì‘å‚«‚³‚ğæ“¾‚µ‚Ü‚·B
+	VECTOR GetSize();//UIï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 
-	DiploidSelectedUIV2* GetInfoButtonPtr();//î•ñƒ{ƒ^ƒ“ƒIƒuƒWƒFƒNƒg‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ğ•Ô‚µ‚Ü‚·B
+	DiploidSelectedUIV2* GetInfoButtonPtr();//ï¿½ï¿½ï¿½{ï¿½^ï¿½ï¿½ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ö‚Ìƒ|ï¿½Cï¿½ï¿½ï¿½^ï¿½ï¿½Ô‚ï¿½ï¿½Ü‚ï¿½ï¿½B
 };

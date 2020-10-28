@@ -8,7 +8,7 @@ void DiploidEngineApp::FileCreate()//ゲーム起動時に一度だけファイ�
 
 void DiploidEngineApp::Load()//ゲーム起動時に1回だけロードするデータ(音や画像やセーブデータやマップデータなど)
 {	
-	parameter_screen.Load();
+	parameter_screen.Load();	
 }
 
 void DiploidEngineApp::Init()//ゲーム起動時に一回だけ初期化したい処理を記述。
@@ -22,26 +22,11 @@ void DiploidEngineApp::Updata()//アニメーションなど連続して行い�
 
 	parameter_screen.Update(&input);
 
-	box_creator.Create(20);
-		
-
-	if (box_creator.Get() != nullptr)
-	{
-		box_creator.Get()->Init(VGet(200, 200, 0), VGet(300, 300, 0), GetColor(255, 255, 0));
-		box_creator.Get()->SetFill(true);
-
-		box_creator.Destroy(60);
-	}
 }
 
 void DiploidEngineApp::Draw()//結果を描写する処理
 {
 	parameter_screen.Draw(true);
-
-	if (box_creator.Get() != nullptr)
-	{
-		box_creator.Get()->Draw(true);
-	}
 
 	//画面情報
 	//DrawFormatString(0, 120, GetColor(255, 255, 255), "ScreenSizeX:%d", android_screen.GetScreenSizeX());
@@ -54,5 +39,5 @@ void DiploidEngineApp::Destory()//ループ中に削除したいオブジェク�
 
 void DiploidEngineApp::End()//engine終了前処理。
 {
-	box_creator.Destroy();
+
 }

@@ -8,16 +8,16 @@
 class DiploidSelectedUIV2
 {
 private:
-	VECTOR position;//UI‚ÌˆÊ’u(¶ã‚ªŠî€)
-	VECTOR object_size;//UI‚Ì‘å‚«‚³
+	VECTOR position;//UIï¿½ÌˆÊ’u(ï¿½ï¿½ï¿½ã‚ªï¿½î€)
+	VECTOR object_size;//UIï¿½Ì‘å‚«ï¿½ï¿½
 	float object_scale = 1.0f;
 
-	DiploidBoxV2 box;//“–‚½‚è”»’è—pBOXB
-	DiploidCollision collision;//“–‚½‚è”»’èˆ——p•Ï”B
-	DiploidImageV2 image;//‰æ‘œƒnƒ“ƒhƒ‹
+	DiploidBoxV2 box;//ï¿½ï¿½ï¿½ï¿½ï¿½è”»ï¿½ï¿½pBOXï¿½B
+	DiploidCollision collision;//ï¿½ï¿½ï¿½ï¿½ï¿½è”»ï¿½èˆï¿½ï¿½ï¿½pï¿½Ïï¿½ï¿½B
+	DiploidImageV2 image;//ï¿½æ‘œï¿½nï¿½ï¿½ï¿½hï¿½ï¿½
 
-	float on_hit_color_scale = 0.8f;//box‚Æƒ}ƒEƒX‚ª“–‚½‚Á‚Ä‚¢‚È‚¢‚Æ‚«‚ÌF‚ÌˆÃ‚³(1.0f‚Å100%)
-	int bright_red = 255, bright_green = 255, bright_blue = 255;//‰æ‘œ‚Ì‹P“x‚Ì”’l
+	float on_hit_color_scale = 0.8f;//boxï¿½Æƒ}ï¿½Eï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½Æ‚ï¿½ï¿½ÌFï¿½ÌˆÃ‚ï¿½(1.0fï¿½ï¿½100%)
+	int bright_red = 255, bright_green = 255, bright_blue = 255;//ï¿½æ‘œï¿½Ì‹Pï¿½xï¿½Ìï¿½ï¿½l
 
 	int mouse_x, mouse_y;
 
@@ -30,21 +30,21 @@ private:
 public:
 
 	void Load(int graphics_handl);
-	void Init(VECTOR pos, VECTOR size, float scale = 1.0f, bool touch = false);//UI‚ğ‰Šú‰»‚µ‚Ü‚·B
-	void Updata(DiploidEngineInput* input);//UI‚ğXV‚µ‚Ü‚·B
-	void Draw(bool draw = true, bool debug = false);//UI‚ğ•`‰æ‚µ‚Ü‚·B
+	void Init(VECTOR pos, VECTOR size, float scale = 1.0f, bool touch = false);//UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+	void Updata(DiploidEngineInput* input);//UIï¿½ï¿½Xï¿½Vï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+	void Draw(bool draw = true, bool debug = false);//UIï¿½ï¿½`ï¿½æ‚µï¿½Ü‚ï¿½ï¿½B
 
-	void SetPosition(int pos_x, int pos_y);//V‚µ‚­ˆÊ’u‚ğİ’è‚µ‚Ü‚·B(¶ãŠî€)
-	void SetSize(int size_x, int size_y);//V‚µ‚­‘å‚«‚³‚ğİ’è‚µ‚Ü‚·B(ƒoƒO)
-	void SetScale(float new_scale);//V‚µ‚­ƒXƒP[ƒ‹’l‚ğİ’è‚µ‚Ü‚·B(ƒoƒO)
+	void SetPosition(int pos_x, int pos_y);//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ê’uï¿½ï¿½İ’è‚µï¿½Ü‚ï¿½ï¿½B(ï¿½ï¿½ï¿½ï¿½î€)
+	void SetSize(int size_x, int size_y);//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½å‚«ï¿½ï¿½ï¿½ï¿½İ’è‚µï¿½Ü‚ï¿½ï¿½B(ï¿½oï¿½O)
+	void SetScale(float new_scale);//ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½Pï¿½[ï¿½ï¿½ï¿½lï¿½ï¿½İ’è‚µï¿½Ü‚ï¿½ï¿½B(ï¿½oï¿½O)
 	void SetSelectedUI(int new_flag);
 	void SetTouchFlag(bool new_flag);
 
-	VECTOR GetPosition();//Œ»İ‚ÌUI‚ÌˆÊ’u(¶ã)‚ÌÀ•W‚ğæ“¾‚µ‚Ü‚·B
-	VECTOR GetSize();//Œ»İ‚ÌUI‚Ì‘å‚«‚³‚ğæ“¾‚µ‚Ü‚·B
+	VECTOR GetPosition();//ï¿½ï¿½ï¿½İ‚ï¿½UIï¿½ÌˆÊ’u(ï¿½ï¿½ï¿½ï¿½)ï¿½Ìï¿½ï¿½Wï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+	VECTOR GetSize();//ï¿½ï¿½ï¿½İ‚ï¿½UIï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
 	float GetScale();
-	VECTOR GetGraphicsSize();//‰æ‘œ‚Ì‘å‚«‚³‚ğæ“¾‚µ‚Ü‚·B
-	bool GetHit();//Œ»İAUI‚Éƒ}ƒEƒX‚ªƒqƒbƒg‚µ‚Ä‚¢‚é‚©‚Ìƒtƒ‰ƒO‚ğæ“¾‚µ‚Ü‚·B(ƒqƒbƒg‚µ‚Ä‚¢‚ê‚Îtrue)
-	bool GetClick();//UI‚ªƒNƒŠƒbƒN‚³‚ê‚½‚©‚Ìƒtƒ‰ƒO‚ğæ“¾‚µ‚Ü‚·B(ƒNƒŠƒbƒN‚³‚ê‚é‚Ætrue)
-	int GetSelectedUI();//UI‚ª‘I‘ğ‚³‚ê‚Ä‚¢‚é‚©‚Ìƒtƒ‰ƒO‚ğæ“¾‚µ‚Ü‚·B(‘I‘ğ‚³‚ê‚Ä‚¢‚ê‚Îtrue)
+	VECTOR GetGraphicsSize();//ï¿½æ‘œï¿½Ì‘å‚«ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B
+	bool GetHit();//ï¿½ï¿½ï¿½İAUIï¿½Éƒ}ï¿½Eï¿½Xï¿½ï¿½ï¿½qï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ìƒtï¿½ï¿½ï¿½Oï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½qï¿½bï¿½gï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½true)
+	bool GetClick();//UIï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½Ìƒtï¿½ï¿½ï¿½Oï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½true)
+	int GetSelectedUI();//UIï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ìƒtï¿½ï¿½ï¿½Oï¿½ï¿½æ“¾ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½B(ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½true)
 };
