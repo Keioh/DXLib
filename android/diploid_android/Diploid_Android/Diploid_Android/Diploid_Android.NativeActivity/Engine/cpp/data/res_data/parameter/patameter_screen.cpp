@@ -63,7 +63,7 @@ void ParameterScreen::Init()
 	will_button.Init(VGet(512 + 40, parameter_pos.y + ((128 + 64 + 20) * 5), 0), VGet(192, 128, 0), "WIL");
 
 
-	ui_box.Init(VGet(0, android_screen.GetScreenSizeY() - 300, 0), VGet(android_screen.GetScreenSizeX(), android_screen.GetScreenSizeY(), 0), GetColor(20, 20, 20));
+	ui_box.Init(VGet(0, android_screen.GetScreenSizeY() - 222, 0), VGet(android_screen.GetScreenSizeX(), android_screen.GetScreenSizeY(), 0), GetColor(20, 20, 20));
 	ui_box.SetFill(true);
 
 }
@@ -81,6 +81,10 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 
 	//年齢ボタン判定処理
 	age_button.Update(input);
+
+
+	//職業、生まれ、性別、年齢から基礎ステータスと使用可能ポイントを決める。
+	parameter_update();
 
 
 	//パラメータ関連のボタン判定処理
@@ -138,7 +142,6 @@ void ParameterScreen::Update(DiploidEngineInput* input)
 	character_data.parameter_def = def_button.GetParameterValue();//DEF
 	character_data.parameter_san = san_button.GetParameterValue();//SAN
 	character_data.parameter_will = will_button.GetParameterValue();//WILL
-
 }
 
 void ParameterScreen::Draw(bool draw, bool debug)
@@ -169,12 +172,67 @@ void ParameterScreen::Draw(bool draw, bool debug)
 	san_button.Draw(draw, debug);
 	will_button.Draw(draw, debug);
 
-	if (str_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+	//パラメータポイントなどの表示
+	ui_draw(draw);
+
+	//情報の表示
+	info_ui_draw(draw);
+}
+
+
+void ParameterScreen::parameter_update()
+{
+	switch (birth_button.GetParameterValue())
 	{
-		ui_box.Draw(draw);
-		DrawString(30, android_screen.GetScreenSizeY() - 240, "STRは筋力を表し、攻撃力に影響する。", GetColor(200, 200, 200));
+	case BIRTH_NONE://生まれが虚無なら
+		character_data.parameter_points = 6;
+		break;
+
+	case BIRTH_REINCARNATION://生まれが転生者なら
+		character_data.parameter_points = 48;
+		break;
+
+	case BIRTH_TRANSFER_LOCATION://生まれが転移者なら
+		character_data.parameter_points = 6;
+		break;
+
+	case BIRTH_HUMAN://生まれが人族なら
+		character_data.parameter_points = 12;
+		break;
+
+	case BIRTH_BEASTMAN://生まれが獣人族なら
+		character_data.parameter_points = 12;
+		break;
+
+	case BIRTH_SPIRITS://生まれが精霊族なら
+		character_data.parameter_points = 12;
+		break;
+
+	case BIRTH_CAVE_TRIBE://生まれが岩窟族なら
+		character_data.parameter_points = 12;
+		break;
+
+	case BIRTH_DEMONIC://生まれが魔族なら
+		character_data.parameter_points = 24;
+		break;
+
+	case BIRTH_ROYAL_FALMILY://生まれが王族なら
+		character_data.parameter_points = 12;
+		break;
+
+	case BIRTH_FAMILY_OF_GODS://生まれが神族なら
+		character_data.parameter_points = 36;
+		break;
+
+	case BIRTH_IMMORTAL://生まれが不死者なら
+		character_data.parameter_points = 48;
+		break;
+
+	default:
+		break;
 	}
 }
+
 
 void ParameterScreen::age_button_update()
 {
@@ -713,31 +771,31 @@ void ParameterScreen::birth_button_draw(bool draw, bool debug)
 		break;
 
 	case 3:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "商人", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "人族", GetColor(255, 255, 255));
 		break;
 
 	case 4:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "武人", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "獣人族", GetColor(255, 255, 255));
 		break;
 
 	case 5:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "貧民", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "精霊族", GetColor(255, 255, 255));
 		break;
 
 	case 6:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "王族", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "岩窟族", GetColor(255, 255, 255));
 		break;
 
 	case 7:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "奴隷", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "魔族", GetColor(255, 255, 255));
 		break;
 
 	case 8:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "貴族", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "王族", GetColor(255, 255, 255));
 		break;
 
 	case 9:
-		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "平民", GetColor(255, 255, 255));
+		DrawString(player_info_pos.x + 160, player_info_pos.y + 8 + (128 + 64 + 20), "神族", GetColor(255, 255, 255));
 		break;
 
 	case 10:
@@ -750,6 +808,168 @@ void ParameterScreen::birth_button_draw(bool draw, bool debug)
 
 }
 
+
+void ParameterScreen::ui_draw(bool draw)
+{
+	ui_box.Draw(draw);
+
+	if (draw == true)
+	{
+		DrawFormatString(30, android_screen.GetScreenSizeY() - 215, GetColor(200, 200, 200), "使用可能ポイント：%d", character_data.parameter_points);
+		DrawFormatString(30, android_screen.GetScreenSizeY() - (215 - 60), GetColor(200, 200, 200),"基礎ステータス合計値：%d", character_data.GetParameterAllPoints());
+		//DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "", GetColor(200, 200, 200));
+	}
+}
+
+void ParameterScreen::info_ui_draw(bool draw)
+{
+	if (draw == true)
+	{
+		//STR
+		if (str_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[STR]は筋力を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "攻撃力や最大装備重量に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//DEX
+		if (dex_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[DEX]は器用さを表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "攻撃力や鍵開けなどに影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//CON
+		if (con_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[CON]は体幹を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "体力や最大装備重量に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//INT
+		if (int_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[INT]は知識を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "魔法攻撃力や鑑定に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//LUK
+		if (luk_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[LUK]は幸運を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "回避や発見に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//AGI
+		if (agi_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[AGI]は素早さを表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "回避や移動力に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+
+		//職業
+		if (profession_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[職業]は初期に持つ特技を決める。", GetColor(200, 200, 200));
+		}
+
+		//生まれ
+		if (birth_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawFormatString(30, android_screen.GetScreenSizeY() - 215, GetColor(200, 200, 200),"[生まれ]は使用可能ポイントを決める。: %d", character_data.parameter_points);
+
+			switch (birth_button.GetParameterValue())
+			{
+			case BIRTH_NONE://生まれが虚無なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "自分が誰から生まれたのかすら分からない。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "本当に虚無から生まれたのかもしれない。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_REINCARNATION://生まれが転生者なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "別世界、別次元の魂を持つ。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "この世界で生まれ育つ。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_TRANSFER_LOCATION://生まれが転移者なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "別世界、別次元の魂と肉体を持つ。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "別世界で生れ、この世界で生きる。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_HUMAN://生まれが人族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "この世界の3割を占める種族。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "他種族より全体の基礎能力が劣る。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_BEASTMAN://生まれが獣人族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "この世界の3割を占める種族。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "他種族より器用で俊敏な傾向にある。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_SPIRITS://生まれが精霊族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "この世界の2割を占める種族。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "他種族より知性と意志に恵まれる。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_CAVE_TRIBE://生まれが岩窟族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "この世界の1割を占める種族。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "他種族より体力が高い。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_DEMONIC://生まれが魔族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "この世界の1割を占める種族。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "他種族より全体の基礎能力が高い。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_ROYAL_FALMILY://生まれが王族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "太古より一国を治めてきた一族。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "王としての誇りを持つ。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_FAMILY_OF_GODS://生まれが神族なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "世界を創造した神々の子孫。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "今は神話として知られる存在。", GetColor(150, 55, 55));
+				break;
+
+			case BIRTH_IMMORTAL://生まれが不死者なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "何時代を生きているのか。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "死を求めているのかもしれない。", GetColor(150, 55, 55));
+				break;
+
+			default:
+				break;
+			}
+		}
+
+		//性別
+		if (sex_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[性別]は会話する相手への印象に影響する。", GetColor(200, 200, 200));
+		}
+
+		//年齢
+		if (age_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[年齢]は一部のパラメータに影響を及ぼす。", GetColor(200, 200, 200));
+		}
+	}
+}
 
 
 int ParameterScreen::GetProfessionValue()

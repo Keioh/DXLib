@@ -237,6 +237,7 @@
   <ItemGroup>
     <ClCompile Include="Engine\cpp\data\number.cpp" />
     <ClCompile Include="Engine\cpp\data\res_data\parameter\base_parameter_ui.cpp" />
+    <ClCompile Include="Engine\cpp\data\res_data\parameter\character_data.cpp" />
     <ClCompile Include="Engine\cpp\data\res_data\parameter\patameter_screen.cpp" />
     <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="Engine\cpp\diploidApp\DiploidEngineMain.cpp" />

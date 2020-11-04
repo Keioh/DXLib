@@ -14,7 +14,6 @@ private:
 	DiploidEngineAndroidScreen android_screen;
 	DiploidBoxV2 ui_box;
 
-
 	//�L�����N�^�[�̏���ۑ�����p
 	CharacterData character_data;
 
@@ -38,12 +37,15 @@ private:
 	BaseParameterUI san_button;
 	BaseParameterUI will_button;
 
-	VECTOR parameter_pos = { 0, 512, 0 };
+	VECTOR parameter_pos = { 0, (128 + 64 + 20) * 2, 0 };
 	VECTOR player_info_pos = { 0, 0, 0 };
 
 	int profession = PROFESSUON_NONE;
 	int birth = BIRTH_NONE;
 	int sex = SEX_NONE;
+
+	//職業、生まれ、性別、年齢から基礎ステータスと使用可能ポイントを決める。
+	void parameter_update();
 
 	//�{�^���I�t�����֐�
 	void age_button_update();
@@ -71,6 +73,9 @@ private:
 
 	void sex_update();//���ʐ��l�̃A�b�v�f�[�g
 	void sex_button_draw(bool draw, bool debug);//���ʂ̕\��
+
+	void ui_draw(bool draw);//使用可能なポイントなどのUI描画
+	void info_ui_draw(bool draw);//パラメータの説明UIの描画
 
 
 public:

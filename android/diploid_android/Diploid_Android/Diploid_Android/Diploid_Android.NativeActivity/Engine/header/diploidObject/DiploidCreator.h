@@ -29,7 +29,7 @@ public:
 		{
 			create_time++;
 
-			if (create_time > time)
+			if (create_time >= time)
 			{
 				pointer = new new_object_date;
 
@@ -65,7 +65,7 @@ public:
 		{
 			destroy_time++;
 
-			if (destroy_time > time)
+			if (destroy_time >= time)
 			{
 				delete pointer;
 				pointer = nullptr;

@@ -145,6 +145,9 @@
     <ClCompile Include="Engine\cpp\diploidObject\DiploidCreator.cpp">
       <Filter>Engine\cpp\diploidObject</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\cpp\data\res_data\parameter\character_data.cpp">
+      <Filter>Engine\cpp\data\res_data\parameter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
