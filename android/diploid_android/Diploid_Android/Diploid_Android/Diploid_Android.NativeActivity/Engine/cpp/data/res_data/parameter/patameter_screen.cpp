@@ -677,14 +677,6 @@ void ParameterScreen::sex_button_draw(bool draw, bool debug)
 		break;
 
 	case 3:
-		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "元男", GetColor(255, 255, 255));
-		break;
-
-	case 4:
-		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "元女", GetColor(255, 255, 255));
-		break;
-
-	case 5:
 		DrawString(player_info_pos.x + (512 + 40) + 160, player_info_pos.y + (128 + 64 + 20) + 8, "両性", GetColor(255, 255, 255));
 		break;
 
@@ -879,6 +871,60 @@ void ParameterScreen::info_ui_draw(bool draw)
 			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
 		}
 
+		//RES
+		if (res_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[RES]は属性防御を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "属性攻撃に対して軽減する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//ATK
+		if (atk_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[ATK]は攻撃力を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "攻撃力に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//CRI
+		if (cri_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[CRI]は致命率を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "致命発生率に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//DEF
+		if (def_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[DEF]は物理防御を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "物理攻撃に対して軽減する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//SAN
+		if (san_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[SAN]は正気を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "自分の理性に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
+		//WILL
+		if (will_button.GetInfoButtonPtr()->GetSelectedUI() == true)
+		{
+			ui_box.Draw(draw);
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[意志]は意志を表す。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "正気に対する影響を軽減する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "ステータス補正タイプ：固定値", GetColor(200, 200, 200));
+		}
+
 
 		//職業
 		if (profession_button.GetInfoButtonPtr()->GetSelectedUI() == true)
@@ -891,8 +937,9 @@ void ParameterScreen::info_ui_draw(bool draw)
 		if (birth_button.GetInfoButtonPtr()->GetSelectedUI() == true)
 		{
 			ui_box.Draw(draw);
-			DrawFormatString(30, android_screen.GetScreenSizeY() - 215, GetColor(200, 200, 200),"[生まれ]は使用可能ポイントを決める。: %d", character_data.parameter_points);
+			DrawFormatString(30, android_screen.GetScreenSizeY() - 215, GetColor(200, 200, 200), "[生まれ]は使用可能ポイントを決める。: %d", character_data.parameter_points);
 
+			//フレーバー文
 			switch (birth_button.GetParameterValue())
 			{
 			case BIRTH_NONE://生まれが虚無なら
@@ -959,7 +1006,34 @@ void ParameterScreen::info_ui_draw(bool draw)
 		if (sex_button.GetInfoButtonPtr()->GetSelectedUI() == true)
 		{
 			ui_box.Draw(draw);
-			DrawString(30, android_screen.GetScreenSizeY() - 215, "[性別]は会話する相手への印象に影響する。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - 215, "[性別]は一人称に影響する。", GetColor(200, 200, 200));
+
+			//フレーバー文
+			switch (sex_button.GetParameterValue())
+			{
+			case SEX_NONE://性別が無性なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "生れながら無性だった。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：我, 己, 自分", GetColor(150, 55, 55));
+				break;
+
+			case SEX_MALE://性別が男性なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "男の象徴が存在する。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：俺, 僕, 自分, 儂", GetColor(150, 55, 55));
+				break;
+
+			case SEX_FEMALE://性別が女性なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "生命を生み出す存在。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：私, わらわ, 僕", GetColor(150, 55, 55));
+				break;
+
+			case SEX_FORMER_AMPHOTERIC://性別が両性なら
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "生命の神秘を感じる。", GetColor(150, 55, 55));
+				DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：自分, 私, 僕", GetColor(150, 55, 55));
+				break;
+
+			default:
+				break;
+			}
 		}
 
 		//年齢
@@ -967,6 +1041,82 @@ void ParameterScreen::info_ui_draw(bool draw)
 		{
 			ui_box.Draw(draw);
 			DrawString(30, android_screen.GetScreenSizeY() - 215, "[年齢]は一部のパラメータに影響を及ぼす。", GetColor(200, 200, 200));
+			DrawString(30, android_screen.GetScreenSizeY() - (215 - 60), "年齢によって一人称が変わる。", GetColor(200, 200, 200));
+
+			//性別と年齢による一人称
+			switch (sex_button.GetParameterValue())
+			{
+			case SEX_NONE://性別が無性なら
+				if ((age_button.GetParameterValue() >= 0) && (age_button.GetParameterValue() < 30))//０歳以上３０歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：自分", GetColor(200, 200, 200));
+				}
+
+				if ((age_button.GetParameterValue() >= 30) && (age_button.GetParameterValue() < 50))//３０歳以上５０歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：我", GetColor(200, 200, 200));
+				}
+
+				if (age_button.GetParameterValue() >= 50)//５０歳以上
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：己", GetColor(200, 200, 200));
+				}
+				break;
+
+			case SEX_MALE://性別が男性なら
+				if ((age_button.GetParameterValue() >= 0) && (age_button.GetParameterValue() < 15))//０歳以上15歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：僕", GetColor(200, 200, 200));
+				}
+
+				if ((age_button.GetParameterValue() >= 15) && (age_button.GetParameterValue() < 50))//15歳以上5０歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：俺", GetColor(200, 200, 200));
+				}
+
+				if (age_button.GetParameterValue() >= 50)//50歳以上
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：儂", GetColor(200, 200, 200));
+				}
+				break;
+
+			case SEX_FEMALE://性別が女性なら
+				if ((age_button.GetParameterValue() >= 0) && (age_button.GetParameterValue() < 15))//０歳以上15歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：僕", GetColor(200, 200, 200));
+				}
+
+				if ((age_button.GetParameterValue() >= 15) && (age_button.GetParameterValue() < 50))//15歳以上5０歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：私", GetColor(200, 200, 200));
+				}
+
+				if (age_button.GetParameterValue() >= 50)//50歳以上
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：わらわ", GetColor(200, 200, 200));
+				}
+				break;
+
+			case SEX_FORMER_AMPHOTERIC://性別が両性なら
+				if ((age_button.GetParameterValue() >= 0) && (age_button.GetParameterValue() < 15))//０歳以上15歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：僕", GetColor(200, 200, 200));
+				}
+
+				if ((age_button.GetParameterValue() >= 15) && (age_button.GetParameterValue() < 50))//15歳以上5０歳未満
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：私", GetColor(200, 200, 200));
+				}
+
+				if (age_button.GetParameterValue() >= 50)//50歳以上
+				{
+					DrawString(30, android_screen.GetScreenSizeY() - (215 - 60 * 2), "一人称：自分", GetColor(200, 200, 200));
+				}
+				break;
+
+			default:
+				break;
+			}
 		}
 	}
 }

@@ -14,5 +14,8 @@
 #define BIRTH_FAMILY_OF_GODS 9//神族
 #define BIRTH_IMMORTAL 10//不死者
 
-#define SEX_VALUE 6//性別の総数
-#define SEX_NONE 0
+#define SEX_VALUE 4//性別の総数
+#define SEX_NONE 0//無性
+#define SEX_MALE 1//男性
+#define SEX_FEMALE 2//女性
+#define SEX_FORMER_AMPHOTERIC 3//両性
