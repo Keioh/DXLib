@@ -300,6 +300,9 @@
     <ClCompile Include="cpp\data\sim_data\ConditionalButton.cpp">
       <Filter>ソース ファイル\data\sim_data</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidSoftImage.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -460,6 +463,12 @@
     </ClInclude>
     <ClInclude Include="header\data\sim_data\ConditionalButton.h">
       <Filter>ヘッダー ファイル\data\sim_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImage.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImageDraw.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

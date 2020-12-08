@@ -3,7 +3,7 @@
 DiploidBox::DiploidBox()
 {
 	DiploidBox::mouse_point_move_flag = false;
-	DiploidBox::center_position_draw_flag = false;//マウス追従の場合は無効
+	DiploidBox::center_position_draw_flag = false;//?}?E?X??]????????
 }
 
 DiploidBox::~DiploidBox()
@@ -37,8 +37,8 @@ void DiploidBox::Update()
 	{
 		GetMousePoint(&mouse_position_x, &mouse_position_y);
 
-		position.x = mouse_position_x - (size.x / 2);//図形の中心から描画したい場合はサイズの1/2を引く。
-		position.y = mouse_position_y - (size.y / 2);//図形の中心から描画したい場合はサイズの1/2を引く。
+		position.x = mouse_position_x - (size.x / 2);//?}?`????S????`?悵????????T?C?Y??1/2??????B
+		position.y = mouse_position_y - (size.y / 2);//?}?`????S????`?悵????????T?C?Y??1/2??????B
 
 		anime_size = VAdd(anime_size, move_size);
 		size = VAdd(anime_size, origin_size);
@@ -77,7 +77,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 {
 	VECTOR buffer;
 
-	//左上
+	//????
 	if ((get_pos.x == 0) && (get_pos.y == 0))
 	{
 		buffer = DiploidBox::position;
@@ -85,7 +85,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 		return buffer;
 	}
 
-	//右上
+	//?E??
 	if ((get_pos.x == 1) && (get_pos.y == 0))
 	{
 		buffer.x = DiploidBox::position.x + DiploidBox::size.x;
@@ -96,7 +96,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 		return buffer;
 	}
 
-	//左下
+	//????
 	if ((get_pos.x == 0) && (get_pos.y == 1))
 	{
 		buffer.x = DiploidBox::position.x;
@@ -107,7 +107,7 @@ VECTOR DiploidBox::GetPosition(VECTOR get_pos)
 		return buffer;
 	}
 
-	//右下
+	//?E??
 	if ((get_pos.x == 1) && (get_pos.y == 1))
 	{
 		buffer.x = DiploidBox::position.x + DiploidBox::size.x;
