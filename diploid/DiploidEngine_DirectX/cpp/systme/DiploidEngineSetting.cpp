@@ -54,6 +54,9 @@ void DiploidEngineSetting::SetBegin()
 
 void DiploidEngineSetting::SetEnd()
 {
+	//screen_handle = MakeScreen(window_x, window_y, FALSE);
+	//SetDrawScreen(screen_handle);//— ‰æ–Êˆ—‚ğƒIƒ“
+
 	SetDrawScreen(DX_SCREEN_BACK);//— ‰æ–Êˆ—‚ğƒIƒ“
 	SetCameraNearFar(0.1f, 10000.0f);
 

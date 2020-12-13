@@ -303,6 +303,9 @@
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidSoftImage.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -468,6 +471,9 @@
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImageDraw.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidScreenGraphics.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
   </ItemGroup>

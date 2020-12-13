@@ -36,6 +36,9 @@ private:
 	std::vector<SoftImageData> data;
 	std::vector<DiploidBoxV2> image_box;
 
+
+	std::vector<SoftImageData> screen_0, screen_1, screen_2, screen_3;
+
 public:
 	void Load(const char* path);
 
@@ -43,7 +46,6 @@ public:
 
 	void CreatSoftImage(float x = 1, float y = 1);//BOXを用いて描画する際のデータを作成します。(x,yには１ドットの大きさを指定,resizeは1以上を指定)
 	void CreatGraphicsImage(int x = 1, int y = 1);//Imageを用いて描画する際のデータを作成します。(x,yには１ドットの大きさを指定,resizeは1以上を指定)
-
 
 
 	void SetSoftPixelSize(float x, float y);//描画で使用しているBOXの大きさを変更します。(非推奨)

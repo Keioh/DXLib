@@ -188,6 +188,7 @@
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidCircleV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidImageV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidSoftImage.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Camera.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Collision.cpp" />
@@ -244,6 +245,7 @@
     <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidCircleV2.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidImageV2.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidScreenGraphics.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImage.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImageDraw.h" />
     <ClInclude Include="header\ver2.0\Main\Camera.h" />

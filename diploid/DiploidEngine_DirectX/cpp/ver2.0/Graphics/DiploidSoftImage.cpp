@@ -68,7 +68,6 @@ void DiploidSoftImage::CreatSoftImage(float x, float y)
 
 void DiploidSoftImage::CreatGraphicsImage(int x, int y)
 {
-
 	//画像からデータを取得
 	for (int count_x = 0; count_x != graphics_size_x; count_x++)
 	{
@@ -115,7 +114,6 @@ void DiploidSoftImage::CreatGraphicsImage(int x, int y)
 
 			DeleteSoftImage(data[count].soft_handle);//ソフト画像のハンドルを削除
 		}
-
 	}
 }
 
@@ -193,6 +191,7 @@ void DiploidSoftImage::GraphicsDraw(bool debug)
 {
 	if (!data.empty())
 	{
+		#pragma omp parallel for
 		for (int count = 0; count != data.size(); count++)
 		{
 			DrawRotaGraph3(data[count].pos.x, data[count].pos.y, 
