@@ -54,6 +54,13 @@ void DiploidImageV2::Draw(bool draw)
 void DiploidImageV2::SetHandl(int new_handl)
 {
 	graphics_handl = new_handl;
+
+	GetGraphSize(graphics_handl, &graphics_x, &graphics_y);
+
+	//‰æ‘œ‚Ì‘å‚«‚³‚ð•Û‘¶
+	graphics_size.x = graphics_x;
+	graphics_size.y = graphics_y;
+
 }
 
 void DiploidImageV2::SetScale(float scale_x, float scale_y)

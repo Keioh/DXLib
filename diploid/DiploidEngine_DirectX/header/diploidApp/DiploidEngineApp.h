@@ -25,7 +25,8 @@ class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 	DiploidSoftImage soft_date;
-	float test = 0.f;
+	float test = 0.f, a = 0, test_2 = 0.f;
+
 
 public:
 	void FileCreate();

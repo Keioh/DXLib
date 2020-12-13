@@ -31,7 +31,7 @@ void DiploidEngineSetting::SetBegin()
 	SetFontThickness(1);//フォントの太さを設定
 	ChangeFont("メイリオ");//フォントの種類の設定
 	SetFontSize(15);//フォントの大きさを設定
-	SetBackgroundColor(50, 50, 50);
+	SetBackgroundColor(0, 0, 0);
 	SetOutApplicationLogValidFlag(FALSE);//ログ出力関連
 	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
 	ChangeWindowMode(window_mode);//ウィンドウモード変更

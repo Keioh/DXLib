@@ -8,26 +8,27 @@ void DiploidEngineApp::FileCreate()
 
 void DiploidEngineApp::Load()
 {	
-	soft_date.Load("texter/a.jpg");
+	soft_date.Load("texter/test.png");
 }
 
 void DiploidEngineApp::Init()
 {	
-	soft_date.CreatSoftImage(1.5f,1.5f);
-	//soft_date.SetFill(true);
+	soft_date.CreatGraphicsImage(8,8);
 }
 
 void DiploidEngineApp::Updata()
 {
-	test += 0.25f;
-	//soft_date.SetPosition(VGet(100, 100, 0));	
-	//soft_date.SetPixelSize(test, test);
+	test = std::sin(a)/8 + 1.0f;
 
+
+	soft_date.SetGraphicsScale(test,test);
+
+	a += 0.01f;
 }
 
 void DiploidEngineApp::Draw()
 {
-	soft_date.SoftwareDraw();
+	soft_date.GraphicsDraw();
 }
 
 void DiploidEngineApp::Destory()
