@@ -168,6 +168,7 @@
     <ClCompile Include="cpp\diploidInput\DiploidEnigneFile.cpp" />
     <ClCompile Include="cpp\diploidLayer\DiploidEngineLayer.cpp" />
     <ClCompile Include="cpp\diploidNetwork\DiploidEngineNetwork.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidCreator.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineObjectInformation.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidEngineTag.cpp" />
@@ -190,6 +191,7 @@
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidImageV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidSoftImage.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidStrings.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Camera.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Collision.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Layer.cpp" />
@@ -197,6 +199,8 @@
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\TitleScene.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +228,7 @@
     <ClInclude Include="header\diploidInput\DiploidEnigneFile.h" />
     <ClInclude Include="header\diploidLayer\DiploidEngineLayer.h" />
     <ClInclude Include="header\diploidNetwork\DiploidEngineNetwork.h" />
+    <ClInclude Include="header\diploidObject\DiploidCreator.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineObject.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineObjectInformation.h" />
     <ClInclude Include="header\diploidObject\DiploidEngineTag.h" />
@@ -248,6 +253,7 @@
     <ClInclude Include="header\ver2.0\Graphics\DiploidScreenGraphics.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImage.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImageDraw.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidStrings.h" />
     <ClInclude Include="header\ver2.0\Main\Camera.h" />
     <ClInclude Include="header\ver2.0\Main\Collision.h" />
     <ClInclude Include="header\ver2.0\Main\Layer.h" />
@@ -255,6 +261,8 @@
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
+    <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\TitleScene.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,12 @@
-﻿  DiploidEngineApp.cpp
+﻿  WindowsMain.cpp
+  DiploidEngineApp.cpp
+  TitleScene.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\titlescene.cpp(24): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\titlescene.cpp(27): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\titlescene.cpp(64): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   コード生成しています。
-  2 of 931 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  6 of 878 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Release\DiploidEngine_DirectX.exe

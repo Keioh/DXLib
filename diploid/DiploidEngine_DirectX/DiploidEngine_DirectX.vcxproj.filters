@@ -306,6 +306,18 @@
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidStrings.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidObject\DiploidCreator.cpp">
+      <Filter>ソース ファイル\cpp\diploidObject</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\TitleScene.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -475,6 +487,18 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Graphics\DiploidScreenGraphics.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidStrings.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\LogoScene.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidObject\DiploidCreator.h">
+      <Filter>ヘッダー ファイル\header\diploidObject</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\TitleScene.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,8 @@ void DiploidSelectedUIV2::Init(VECTOR pos, VECTOR size, float scale)
 	object_size = size;
 	box.Init(pos, object_size, GetColor(200, 200, 200), object_scale);
 
-	image.Init(VGet(pos.x + (image.GetSize().x / 2), pos.y + (image.GetSize().y / 2), 0), false);
+	//image.Init(VGet(pos.x + (image.GetSize().x / 2), pos.y + (image.GetSize().y / 2), 0), false);
+	image.Init(VGet(pos.x , pos.y, 0), false);
 	image.SetScale(scale, scale);
 }
 
@@ -78,17 +79,25 @@ void DiploidSelectedUIV2::Draw(bool draw, bool debug)
 
 
 void DiploidSelectedUIV2::SetPosition(int pos_x, int pos_y)
-{
+{	
+	image.SetPosition(VGet(pos_x, pos_y, 0));
+	box.SetPosition(VGet(pos_x, pos_y, 0));
+
 	position = VGet(pos_x, pos_y, 0);
 }
 
 void DiploidSelectedUIV2::SetSize(int size_x, int size_y)
 {
+	//box.SetSize(VGet(size_x, size_y, 0));
+
 	object_size = VGet(size_x, size_y, 0);
 }
 
 void DiploidSelectedUIV2::SetScale(float new_scale)
 {
+	//image.SetScale(new_scale, new_scale);
+	//box.SetScale(new_scale, new_scale);
+
 	object_scale = new_scale;
 }
 

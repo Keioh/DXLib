@@ -27,6 +27,7 @@ private:
 	bool turn = FALSE;//左右反転のフラグ
 
 	float object_life;//寿命
+	int alpha = 255;//透過度
 
 	bool destory_flag = false;//削除フラグ(trueの場合、削除対象に)
 	bool hit_flag = false;//当たっているかのフラグ
@@ -36,7 +37,7 @@ protected:
 
 public:
 	void Load(const char* path);//画像を読み込みます。
-	void Init(VECTOR pos, bool shift_flag = true);//読み込んだ画像を初期化します。(shift_flagがtrueで画像を中心にして描画します。)
+	void Init(VECTOR pos, bool shift_flag = false);//読み込んだ画像を初期化します。(shift_flagがtrueで画像を中心にして描画します。)
 	void MoveUpdate();//設定した移動速度を反映します。
 	void Draw(bool draw = true);//画像を描画します。
 
@@ -48,6 +49,7 @@ public:
 	void SetRotatePosition(VECTOR new_position);//新しく回転軸を設定します。
 	void SetBright(float scale = 1.0f);//明るさを設定します。(1.0fで100%)
 	void SetBright(int red, int green, int blue);//明るさを指定します。
+	void SetAlpha(int pal);//透過度を設定します。
 
 	void SetMoveSpeed(VECTOR new_move_speed);//新しく移動する速度を設定します。(3軸指定版)
 	void SetMoveSpeed(float angle, float new_move_speed);//新しく移動する速度を設定します。(ラジアン角指定版)

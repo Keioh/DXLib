@@ -8,53 +8,42 @@ void DiploidEngineApp::FileCreate()
 
 void DiploidEngineApp::Load()
 {	
-	//soft_date.Load("texter/test.png");
-
-	image.Load("texter/hd.jpg");
+	logo_scene.Load();
+	title_scene.Load();
 }
 
 void DiploidEngineApp::Init()
 {	
-	//soft_date.CreatGraphicsImage(8,8);
-
-	image.Init(VGet(0, 0, 0), false);
-
-	circle.Init(VGet(1280/2, 720/2, 0), 50, GetColor(50, 255, 50), true);
+	logo_scene.Init();
+	title_scene.Init();
 }
 
 void DiploidEngineApp::Updata()
 {	
-	input.Update();
-
-	circle.SetPosition(input.GetMousePosition());
-
-	//scr_gra.Creat(160, 90);
-
-	//test = std::sin(a);
-
-	//circle.SetMoveSpeed(VGet(2.f, 0, 0));
-	//circle.MoveUpdate();
-	//soft_date.SetGraphicsScale(test,test);
-
-	a += 0.001f;
-
-	if (a > 1)
+	if (logo_scene.GetFinalScene() == false)
 	{
-		a = 0.0f;
+		logo_scene.Updata();
 	}
+	else
+	{
+		title_scene.Updata();
 
+	}
 }
 
 void DiploidEngineApp::Draw()
 {
-	//soft_date.GraphicsDraw();
+	if (logo_scene.GetFinalScene() == false)
+	{
+		logo_scene.Draw();
+	}
+	else
+	{
+		title_scene.Draw();
+	}
 
-	image.Draw();
-	circle.Draw();
 
-	scr_gra.Draw(a);
-
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "モザイク度:%.3f (1.0fが最大値)", a);
+	//scr_gra.Draw(0.3f);
 }
 
 void DiploidEngineApp::Destory()

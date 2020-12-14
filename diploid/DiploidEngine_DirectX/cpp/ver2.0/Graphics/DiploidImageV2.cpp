@@ -46,7 +46,9 @@ void DiploidImageV2::Draw(bool draw)
 {
 	if (draw == true)
 	{
+		SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 		DrawRotaGraph3(position.x, position.y, rotate_position.x, rotate_position.y, graphics_scale.x, graphics_scale.y, angle, graphics_handl, TRUE, turn);
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 	}
 }
 
@@ -101,6 +103,11 @@ void DiploidImageV2::SetBright(float scale)
 void DiploidImageV2::SetBright(int red, int green, int blue)
 {
 	SetDrawBright(red, green, blue);
+}
+
+void DiploidImageV2::SetAlpha(int pal)
+{
+	alpha = pal;
 }
 
 

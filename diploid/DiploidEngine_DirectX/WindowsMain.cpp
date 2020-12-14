@@ -68,6 +68,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	InitGraph();//メモリ上にある画像データをすべて削除
 	InitSoundMem();//メモリにあるサウンドをすべて削除
 	InitKeyInput();//すべてのキー入力を削除
+	InitFontToHandle();//すべてのフォントハンドルを削除
 	diploid_engine_app->diploidEngineSetting.End();//エンジンの終了
 
 	delete diploid_engine_app;
