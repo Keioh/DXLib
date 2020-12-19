@@ -500,6 +500,9 @@
     <ClInclude Include="header\ver2.0\Objects\TitleScene.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="header\system\define.h">
+      <Filter>ヘッダー ファイル\header\system</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DiploidEngine_DirectX.rc">

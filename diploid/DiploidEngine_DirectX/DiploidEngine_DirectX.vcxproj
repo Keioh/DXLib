@@ -245,6 +245,7 @@
     <ClInclude Include="header\diploidStandalone\standalone.h" />
     <ClInclude Include="header\diploidSystem\diploidSystem.h" />
     <ClInclude Include="header\diploidUI\diploidUI.h" />
+    <ClInclude Include="header\system\define.h" />
     <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h" />

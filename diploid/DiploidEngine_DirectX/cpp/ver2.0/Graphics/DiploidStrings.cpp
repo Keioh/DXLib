@@ -47,6 +47,12 @@ void DiploidStrings::SetSpeed(int speed)
 	next_speed = speed;
 }
 
+void DiploidStrings::Reset()
+{
+	count = 0;
+	next_time = 0;
+}
+
 
 void DiploidStrings::Draw(float x, float y)
 {

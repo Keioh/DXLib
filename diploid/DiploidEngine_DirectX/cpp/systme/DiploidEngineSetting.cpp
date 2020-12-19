@@ -66,3 +66,13 @@ void DiploidEngineSetting::End()
 {
 	DxLib_End();
 }
+
+void DiploidEngineSetting::SetExit(int flag)
+{
+	exit = flag;
+}
+
+int DiploidEngineSetting::GetExit()
+{
+	return exit;
+}

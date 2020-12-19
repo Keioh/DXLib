@@ -7,7 +7,7 @@
 #include "ver2.0/Graphics/DiploidScreenGraphics.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
-
+#include "system/define.h"
 
 class TitleScene
 {
@@ -24,6 +24,8 @@ private:
 
 	//各種ボタンの文字列
 	DiploidStrings start_string;
+	DiploidStrings load_string;
+	DiploidStrings option_string;
 	DiploidStrings exit_string;
 
 	//各種ボタンの画像
@@ -31,6 +33,8 @@ private:
 
 	//各種ボタン
 	DiploidSelectedUIV2 start_button;
+	DiploidSelectedUIV2 load_button;
+	DiploidSelectedUIV2 option_button;
 	DiploidSelectedUIV2 exit_button;
 
 	//透過値とそのスピード
@@ -49,6 +53,6 @@ public:
 
 	void Draw();
 
-	bool GetFinalScene();
+	int GetFinalScene();//最後に押したボタンがどれかを取得する。(値はdefine.hを参照)
 
 };

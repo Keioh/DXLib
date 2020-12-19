@@ -23,7 +23,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app->diploidEngineInput.Init();//入力機器初期化
 
-	while (ProcessMessage() == 0)
+	while ((ProcessMessage() == 0) && (diploid_engine_app->diploidEngineSetting.GetExit() == 0))
 	{		
 		diploid_engine_app->diploidEngineScreen.Init();//FPS初期化
 
@@ -40,7 +40,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app->diploidEngineImpact.Updata();//衝突判定
 		diploid_engine_app->diploidEngineLayer.Updata();//レイヤー画像をアップデート
 
-		diploid_engine_app->Updata();//メインループ
+		diploid_engine_app->Updata(&diploid_engine_app->diploidEngineSetting, &diploid_engine_app->diploidEngineInput);//メインループ
 		
 		diploid_engine_app->diploidEngineInput.Update();//入力機器アップデート
 
