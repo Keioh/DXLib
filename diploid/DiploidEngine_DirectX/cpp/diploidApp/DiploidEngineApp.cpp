@@ -1,24 +1,24 @@
 #include "diploidApp\DiploidEngineApp.h"
 
 
-void DiploidEngineApp::FileCreate()
+void DiploidEngineApp::FileCreate(DiploidEngineApp* app)
 {
 
 }
 
-void DiploidEngineApp::Load()
+void DiploidEngineApp::Load(DiploidEngineApp* app)
 {	
 	logo_scene.Load();
 	title_scene.Load();
 }
 
-void DiploidEngineApp::Init()
+void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
 	logo_scene.Init();
 	title_scene.Init();
 }
 
-void DiploidEngineApp::Updata(DiploidEngineSetting* setting, DiploidEngineInput* input)
+void DiploidEngineApp::Updata(DiploidEngineApp* app)
 {	
 	if (logo_scene.GetFinalScene() == false)
 	{
@@ -49,7 +49,7 @@ void DiploidEngineApp::Updata(DiploidEngineSetting* setting, DiploidEngineInput*
 		//I—¹ƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚Æ‚«
 		if (title_scene.GetFinalScene() == GAME_EXIT)
 		{
-			setting->SetExit(1);
+			app->diploidEngineSetting.SetExit(1);
 		}
 
 		//‰½‚à‰Ÿ‚µ‚Ä‚¢‚È‚¢Žž
@@ -60,7 +60,7 @@ void DiploidEngineApp::Updata(DiploidEngineSetting* setting, DiploidEngineInput*
 	}
 }
 
-void DiploidEngineApp::Draw()
+void DiploidEngineApp::Draw(DiploidEngineApp* app)
 {
 	if (logo_scene.GetFinalScene() == false)
 	{
@@ -74,12 +74,12 @@ void DiploidEngineApp::Draw()
 	//scr_gra.Draw(0.3f);
 }
 
-void DiploidEngineApp::Destory()
+void DiploidEngineApp::Destory(DiploidEngineApp* app)
 {
 
 }
 
-void DiploidEngineApp::End()
+void DiploidEngineApp::End(DiploidEngineApp* app)
 {
 
 }

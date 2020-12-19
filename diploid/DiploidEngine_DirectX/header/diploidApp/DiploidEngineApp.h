@@ -32,8 +32,6 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidEngineSetting test;
-
 	DiploidScreenGraphics scr_gra;
 
 
@@ -42,11 +40,11 @@ private:
 
 
 public:
-	void FileCreate();
-	void Load();
-	void Init();
-	void Updata(DiploidEngineSetting* setting, DiploidEngineInput* input);
-	void Draw();
-	void Destory();
-	void End();
+	void FileCreate(DiploidEngineApp* app);
+	void Load(DiploidEngineApp* app);
+	void Init(DiploidEngineApp* app);
+	void Updata(DiploidEngineApp* app);
+	void Draw(DiploidEngineApp* app);
+	void Destory(DiploidEngineApp* app);
+	void End(DiploidEngineApp* app);
 };

@@ -51,6 +51,11 @@ void TitleScene::Updata()
 	exit_button.Updata(&input);
 
 
+	if (start_button.GetHit() == true)
+	{
+		start_string.Reset();
+	}
+
 	if (alpha <= 0)//透過値フロー処理
 	{
 		alpha = 0;
@@ -87,7 +92,8 @@ void TitleScene::Draw()
 	exit_button.Draw();
 	exit_string.Draw(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 3));
 
-	scr_gra.Draw(mosaic);
+	//モザイク処理
+	//scr_gra.Draw(mosaic);
 
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);

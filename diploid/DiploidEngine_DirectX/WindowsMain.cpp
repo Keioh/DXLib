@@ -13,11 +13,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app->diploidEngineSetting.Init();//エンジン初期化
 	
-	diploid_engine_app->FileCreate();//ゲーム起動時にファイルを作成
+	diploid_engine_app->FileCreate(diploid_engine_app);//ゲーム起動時にファイルを作成
 
-	diploid_engine_app->Load();//ゲーム起動時にデータを読み込む処理
+	diploid_engine_app->Load(diploid_engine_app);//ゲーム起動時にデータを読み込む処理
 
-	diploid_engine_app->Init();//エンジン初期化後一回だけ初期化する処理
+	diploid_engine_app->Init(diploid_engine_app);//エンジン初期化後一回だけ初期化する処理
 
 	diploid_engine_app->diploidEngineNetwork.Init();//ネット処理初期化
 
@@ -40,16 +40,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app->diploidEngineImpact.Updata();//衝突判定
 		diploid_engine_app->diploidEngineLayer.Updata();//レイヤー画像をアップデート
 
-		diploid_engine_app->Updata(&diploid_engine_app->diploidEngineSetting, &diploid_engine_app->diploidEngineInput);//メインループ
+		diploid_engine_app->Updata(diploid_engine_app);//メインループ
 		
 		diploid_engine_app->diploidEngineInput.Update();//入力機器アップデート
 
 		diploid_engine_app->diploidEngineLayer.Draw(false);//レイヤー画像を表示(debug情報あり)
 		diploid_engine_app->diploidEngineImpact.Draw(true);//衝突範囲を描写(debug情報あり)
 
-		diploid_engine_app->Draw();//メイン描写
+		diploid_engine_app->Draw(diploid_engine_app);//メイン描写
 
-		diploid_engine_app->Destory();//ゲーム中の動的削除処理。
+		diploid_engine_app->Destory(diploid_engine_app);//ゲーム中の動的削除処理。
 
 		diploid_engine_app->diploidEngineInput.Draw(1000, 0);//入力判定の表示(debug情報あり)
 
@@ -62,7 +62,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app->diploidEngineScreen.Wait();//FPS待機
 	}
 
-	diploid_engine_app->End();//エンジン終了前処理。
+	diploid_engine_app->End(diploid_engine_app);//エンジン終了前処理。
 	diploid_engine_app->diploidEngineNetwork.End();//ネット処理の終了
 	InitSoftImage();//メモリ上にあるソフトウェア画像をすべて削除
 	InitGraph();//メモリ上にある画像データをすべて削除

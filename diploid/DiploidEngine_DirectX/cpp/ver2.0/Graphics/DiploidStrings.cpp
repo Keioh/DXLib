@@ -51,6 +51,11 @@ void DiploidStrings::Reset()
 {
 	count = 0;
 	next_time = 0;
+
+	for (int count_str = 0; count_str != 128; count_str++)
+	{
+		strings[count] = 0;
+	}
 }
 
 
