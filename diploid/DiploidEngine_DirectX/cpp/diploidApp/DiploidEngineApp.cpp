@@ -10,12 +10,14 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 {	
 	logo_scene.Load();
 	title_scene.Load();
+	game_scene.Load();
 }
 
 void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
 	logo_scene.Init();
 	title_scene.Init();
+	game_scene.Init();
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
@@ -26,12 +28,10 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 	}
 	else
 	{		
-		title_scene.Updata();
-
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
 		{
-
+			game_scene.Updata();
 		}
 
 		//ロードボタンを押したとき
@@ -53,9 +53,9 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		}
 
 		//何も押していない時
-		if (title_scene.GetFinalScene() == GAME_NONE)
+		if (title_scene.GetFinalScene() == GAME_TITLE)
 		{
-
+			title_scene.Updata();
 		}
 	}
 }
@@ -69,7 +69,7 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 	else
 	{
 		//何も押していない時
-		if (title_scene.GetFinalScene() == GAME_NONE)
+		if (title_scene.GetFinalScene() == GAME_TITLE)
 		{
 			title_scene.Draw();
 		}
@@ -77,7 +77,7 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
 		{
-
+			game_scene.Draw();
 		}
 
 		//ロードボタンを押したとき

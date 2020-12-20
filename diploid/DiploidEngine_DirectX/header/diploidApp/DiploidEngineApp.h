@@ -25,7 +25,7 @@
 
 #include "ver2.0/Objects/LogoScene.h"
 #include "ver2.0/Objects/TitleScene.h"
-
+#include "ver2.0/Objects/GameScene.h"
 
 using namespace std;
 
@@ -34,6 +34,7 @@ class DiploidEngineApp : public DiploidEngineMain
 private:
 	LogoScene logo_scene;
 	TitleScene title_scene;
+	GameScene game_scene;
 
 public:
 	void FileCreate(DiploidEngineApp* app);

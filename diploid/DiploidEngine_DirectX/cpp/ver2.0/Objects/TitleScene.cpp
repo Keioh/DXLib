@@ -50,18 +50,55 @@ void TitleScene::Updata()
 	option_button.Updata(&input);
 	exit_button.Updata(&input);
 
-
-	if (start_button.GetHit() == true)
+	//どのボタンも押されていなかったら
+	if (button_click == GAME_TITLE)
 	{
-		//start_string.Reset();
+		//スタートボタンを押した
+		if (start_button.GetClick() == true)
+		{
+			start_button.SetSelectedUI(false);
+			button_click = GAME_START;
+		}
+
+		//読み込みボタンを押した
+		if (load_button.GetClick() == true)
+		{
+			load_button.SetSelectedUI(false);
+			button_click = GAME_LOAD;
+		}
+
+		//オプションボタンを押した
+		if (option_button.GetClick() == true)
+		{
+			option_button.SetSelectedUI(false);
+			button_click = GAME_OPTION;
+		}
+
+		//ゲーム終了ボタンを押した。
+		if (exit_button.GetClick() == true)
+		{
+			exit_button.SetSelectedUI(false);
+			button_click = GAME_EXIT;
+		}
 	}
 
-	if (alpha <= 0)//透過値フロー処理
+	//ボタンを押したら
+	if (button_click != GAME_TITLE)
 	{
-		alpha = 0;
+		alpha += alpha_speed;//透過値を変更
+
+		if (alpha > 255)//透過値フロー処理
+		{
+			alpha = 255;
+			secen_select = button_click;//押したボタンの種類を代入
+		}
 	}
 	else
-	{		
+	{
+		if (alpha <= 0)//透過値フロー処理
+		{
+			alpha = 0;
+		}
 		alpha -= alpha_speed;//透過値を変更
 	}
 
@@ -103,33 +140,11 @@ void TitleScene::Draw()
 
 int TitleScene::GetFinalScene()
 {
-	//スタートボタンを押した
-	if (start_button.GetClick() == true)
-	{		
-		start_button.SetSelectedUI(false);
-		return GAME_START;
-	}
+	return secen_select;
+}
 
-	//読み込みボタンを押した
-	if (load_button.GetClick() == true)
-	{	
-		load_button.SetSelectedUI(false);
-		return GAME_LOAD;
-	}
-
-	//オプションボタンを押した
-	if (option_button.GetClick() == true)
-	{
-		option_button.SetSelectedUI(false);
-		return GAME_OPTION;
-	}
-
-	//ゲーム終了ボタンを押した。
-	if (exit_button.GetClick() == true)
-	{	
-		exit_button.SetSelectedUI(false);
-		return GAME_EXIT;
-	}
-
-	return GAME_NONE;
+void TitleScene::SetSecne(int scene_type)
+{
+	secen_select = scene_type;
+	button_click = scene_type;
 }

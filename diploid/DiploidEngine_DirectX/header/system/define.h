@@ -1,5 +1,5 @@
 //ゲーム開始の各シーケンス
-#define GAME_NONE 0
+#define GAME_TITLE 0
 #define GAME_START 1
 #define GAME_LOAD 2
 #define GAME_SAVE 3

@@ -38,10 +38,13 @@ private:
 	DiploidSelectedUIV2 exit_button;
 
 	//透過値とそのスピード
-	int alpha = 255, alpha_speed = 5;
+	int alpha = 255, alpha_speed = 10;
 
 	//モザイク値とそのスピードとモザイク最大値
 	float mosaic = 0.0f, mosaic_speed = 0.01f, mosaic_max = 0.4f;
+
+	int secen_select = GAME_TITLE;//どのボタンを押したかのか
+	int button_click = 0;//各ボタンのどれかを押したら1が返る。
 
 public:
 
@@ -54,5 +57,5 @@ public:
 	void Draw();
 
 	int GetFinalScene();//最後に押したボタンがどれかを取得する。(値はdefine.hを参照)
-
+	void SetSecne(int scene_type);//defineファイルに記載されているマクロにしたがってシーンを変更します。(GAME_TITLEでタイトル画面)
 };

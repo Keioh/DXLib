@@ -6,8 +6,8 @@
 class DiploidStrings
 {
 private:
-	char strings[6][256];
-	char load_strings[5][256];
+	char strings[6][256];//実際に表示される文字列の配列
+	char load_strings[5][256];//読み込んだ文字列
 	int line = 0;//行
 	int word_count = 0;//行のない文字列のカウント
 
