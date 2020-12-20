@@ -53,7 +53,7 @@ void TitleScene::Updata()
 
 	if (start_button.GetHit() == true)
 	{
-		start_string.Reset();
+		//start_string.Reset();
 	}
 
 	if (alpha <= 0)//“§‰ß’lƒtƒ[ˆ—

@@ -68,10 +68,30 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 	}
 	else
 	{
-		title_scene.Draw();
-	}
+		//何も押していない時
+		if (title_scene.GetFinalScene() == GAME_NONE)
+		{
+			title_scene.Draw();
+		}
 
-	//scr_gra.Draw(0.3f);
+		//スタートボタンを押したとき
+		if (title_scene.GetFinalScene() == GAME_START)
+		{
+
+		}
+
+		//ロードボタンを押したとき
+		if (title_scene.GetFinalScene() == GAME_LOAD)
+		{
+
+		}
+
+		//オプションボタンを押したとき
+		if (title_scene.GetFinalScene() == GAME_OPTION)
+		{
+
+		}
+	}
 }
 
 void DiploidEngineApp::Destory(DiploidEngineApp* app)

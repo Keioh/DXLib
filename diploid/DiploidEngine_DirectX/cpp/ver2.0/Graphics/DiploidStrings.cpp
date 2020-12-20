@@ -14,11 +14,23 @@ int DiploidStrings::GetHandle()
 }
 
 void DiploidStrings::Load(const char* str)
-{
-	for (int count_str = 0; count_str != 128; count_str++)
+{	
+	for (int count = 0; count != 256; count++)
 	{
-		load_strings[count_str] = str[count_str];
+		if (str[word_count] == '\n')
+		{	
+			//count++;
+			count = 0;
+			line++;
+		}
+
+		load_strings[line][count] = str[word_count];
+
+		word_count++;
 	}
+
+	word_count = 0;
+	line = 0;
 }
 
 void DiploidStrings::Init(float x, float y, int new_font_handle)
@@ -39,6 +51,8 @@ void DiploidStrings::Init(float x, float y)
 void DiploidStrings::ChangeFont(int handle)
 {
 	font_handle = handle;
+
+	GetFontStateToHandle(&font_name, &size, &thick, font_handle);
 }
 
 
@@ -52,10 +66,24 @@ void DiploidStrings::Reset()
 	count = 0;
 	next_time = 0;
 
-	for (int count_str = 0; count_str != 128; count_str++)
+	//for (int count_str = 0; count_str != 256; count_str++)
 	{
-		strings[count] = 0;
+		//strings[count] = 0;
 	}
+}
+
+int DiploidStrings::GetEnd()
+{
+	if (line == 6)
+	{
+		end_flag = 1;
+	}
+	else
+	{
+		end_flag = 0;
+	}
+
+	return end_flag;
 }
 
 
@@ -63,45 +91,43 @@ void DiploidStrings::Draw(float x, float y)
 {
 	pos_x = x;
 	pos_y = y;
-
-	if (count != 128)
+	
+	if (count != 256)
 	{
-		strings[count] = load_strings[count];
+		strings[line][count] = load_strings[line][count];//文字列の移し替え。
 
-		DrawStringToHandle(pos_x, pos_y, strings, GetColor(255, 255, 255), font_handle);
-
-		next_time++;
+		next_time++;//アニメーションを進める。
 
 		if (next_time > next_speed)
 		{
-			count++;
-			next_time = 0;
+			count++;//文字を進める。
+
+			next_time = 0;//アニメーションの時間をリセット
 		}
-	}
-	else
-	{
-		DrawStringToHandle(pos_x, pos_y, strings, GetColor(255, 255, 255), font_handle);
-	}
-}
 
-void DiploidStrings::DrawStrings(int x, int y, const char* str)
-{
-	if (count != 128)
-	{
-		strings[count] = str[count];
-
-		DrawString(x, y, strings, GetColor(255, 255, 255));
-
-		next_time++;
-
-		if (next_time > next_speed)
+		if (load_strings[line][count] == '\0')//読み込んだ現在位置の文字列が\0なら
 		{
-			count++;
-			next_time = 0;
+			if (line != 6)
+			{
+				line++;//行を進める
+			}
+
+			count = 0;//最前列に移動
 		}
 	}
-	else
-	{
-		DrawStringToHandle(pos_x, pos_y, strings, GetColor(255, 255, 255), font_handle);
-	}
+	
+
+	GetFontStateToHandle(NULL, &size, NULL, font_handle);
+
+	DrawStringToHandle(pos_x, pos_y, strings[0], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 0), strings[1], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 1), strings[2], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 2), strings[3], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 3), strings[4], GetColor(255, 255, 255), font_handle);
+
+
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", GetEnd());
+	//DrawFormatString(0, 20, GetColor(255, 255, 255), "%d", count);
+	//DrawFormatString(0, 40, GetColor(255, 255, 255), "%d", line);
+
 }

@@ -32,12 +32,8 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
-	DiploidScreenGraphics scr_gra;
-
-
 	LogoScene logo_scene;
 	TitleScene title_scene;
-
 
 public:
 	void FileCreate(DiploidEngineApp* app);
