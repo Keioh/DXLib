@@ -15,6 +15,19 @@ int DiploidStrings::GetHandle()
 
 void DiploidStrings::Load(const char* str)
 {	
+	word_count = 0;
+	line = 0;
+	count = 0;
+
+	//バグ回避用
+	for (int count = 0; count != 512; count++)
+	{
+		string_data[count] = str[count];
+	}
+
+
+
+
 	for (int count = 0; count != 512; count++)
 	{
 		if (str[word_count] == '\n')
@@ -27,6 +40,14 @@ void DiploidStrings::Load(const char* str)
 		load_strings[line][count] = str[word_count];
 
 		word_count++;
+	}
+
+	for (int count = 0; count != 5; count++)
+	{
+		if (load_strings[count][0] != '\0')
+		{
+			line_count++;
+		}
 	}
 
 	word_count = 0;
@@ -120,30 +141,44 @@ void DiploidStrings::Draw()
 		{
 			if (line != 6)
 			{
-				line++;//行を進める
+				//if (load_strings[line][0] != '\0')
+				{
+					line++;//行を進める
+				}
 			}
 
 			count = 0;//最前列に移動
 		}
 	}
-	
+
 
 	GetFontStateToHandle(NULL, &size, NULL, font_handle);
-	
+
+	DrawStringToHandle(pos_x, pos_y, string_data, GetColor(255, 255, 255), font_handle);//バグ回避(文字送りなし)
+
+/*
 	DrawStringToHandle(pos_x, pos_y, strings[0], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 0) + line_spacing, strings[1], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 1) + (line_spacing * 2), strings[2], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 2) + (line_spacing * 3), strings[3], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 3) + (line_spacing * 4), strings[4], GetColor(255, 255, 255), font_handle);
-	
-	for (int count = 0; count != 5; count++)
-	{
-		//DrawStringToHandle(pos_x, pos_y + (size * count), strings[count], GetColor(255, 255, 255), font_handle);
-	}
+		
+	DrawStringToHandle(pos_x, pos_y, load_strings[0], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 0) + line_spacing, load_strings[1], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 1) + (line_spacing * 2), load_strings[2], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 2) + (line_spacing * 3), load_strings[3], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 3) + (line_spacing * 4), load_strings[4], GetColor(255, 255, 255), font_handle);
 
+
+	for (int count = 0; count <= line_count; count++)
+	{
+		DrawStringToHandle(pos_x, pos_y + (size * count), strings[count], GetColor(255, 255, 255), font_handle);
+	}
+*/
 
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", GetEnd());
 	//DrawFormatString(0, 20, GetColor(255, 255, 255), "%d", count);
 	//DrawFormatString(0, 40, GetColor(255, 255, 255), "%d", line);
+	//DrawFormatString(0, 60, GetColor(255, 255, 255), "%d", line_count);
 
 }

@@ -11,14 +11,13 @@ void TitleScene::Load()
 	exit_button.Load(button_back_image.GetGraphicsHandl());//終了ボタンの画像ハンドルの読み込み。
 
 
-	start_string.CreateFontData(50, 5, DX_FONTTYPE_NORMAL);//フォント作成
+	start_string.CreateFontData(50, 10, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォント作成
 
 	//文字の読み込み
 	start_string.Load("Start");//スタートボタンの文字列の設定
 	load_string.Load("Load");
 	option_string.Load("Option");
 	exit_string.Load("Exit");//終了ボタンの文字列の設定
-
 }
 
 void TitleScene::Init()
