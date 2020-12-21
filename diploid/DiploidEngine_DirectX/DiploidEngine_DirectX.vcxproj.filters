@@ -145,6 +145,12 @@
     <Filter Include="ヘッダー ファイル\data\sim_data">
       <UniqueIdentifier>{05e65048-0c81-4a22-b17b-560cd00f6312}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\data\text_data">
+      <UniqueIdentifier>{0c4a7040-b87a-400f-a7de-ed7b543f71c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\text_data">
+      <UniqueIdentifier>{dd43b484-3004-44fb-820d-9591865cfdb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -320,6 +326,9 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\data\text_data\ja.cpp">
+      <Filter>ソース ファイル\data\text_data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -508,6 +517,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\GameScene.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\text_data\ja.h">
+      <Filter>ヘッダー ファイル\data\text_data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -9,9 +9,16 @@
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "system/define.h"
 
+#include "data/text_data/ja.h"
+
 class GameScene
 {
 private:
+	ja_text jp;
+
+	DiploidEngineInput input;
+
+	int click = 0;
 
 public:
 	void Load();

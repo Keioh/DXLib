@@ -155,6 +155,7 @@
     <ClCompile Include="cpp\data\sim_data\fild_map.cpp" />
     <ClCompile Include="cpp\data\sim_data\home_country_ui.cpp" />
     <ClCompile Include="cpp\data\sim_data\military_ui.cpp" />
+    <ClCompile Include="cpp\data\text_data\ja.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
     <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
     <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
@@ -216,6 +217,7 @@
     <ClInclude Include="header\data\sim_data\home_country_ui.h" />
     <ClInclude Include="header\data\sim_data\military_ui.h" />
     <ClInclude Include="header\data\sim_data\sim_define.h" />
+    <ClInclude Include="header\data\text_data\ja.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
     <ClInclude Include="header\diploidGraphics\diploidBox.h" />

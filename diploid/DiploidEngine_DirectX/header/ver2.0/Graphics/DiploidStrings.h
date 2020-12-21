@@ -10,6 +10,7 @@ private:
 	char load_strings[5][256];//読み込んだ文字列
 	int line = 0;//行
 	int word_count = 0;//行のない文字列のカウント
+	int line_count = 0;
 
 	char font_name;
 	int size;
@@ -29,7 +30,7 @@ public:
 	int CreateFontData(int Size, int Thick, int FontType, char *FontName = NULL);//DXLIBを参照
 	int GetHandle();
 
-	void Load(const char* str);//\nで改行、\fで文の終了を表す。GetEnd()関数を使用する場合は文の終わりに\fを付けること。(1行256文字、５改行まで)
+	void Load(const char* str);//\nで改行を表す。(1行256文字、５改行まで)
 	void Init(float x, float y, int new_font_handle);
 	void Init(float x, float y);
 

@@ -118,12 +118,17 @@ void DiploidStrings::Draw(float x, float y)
 	
 
 	GetFontStateToHandle(NULL, &size, NULL, font_handle);
-
+	
 	DrawStringToHandle(pos_x, pos_y, strings[0], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 0), strings[1], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 1), strings[2], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 2), strings[3], GetColor(255, 255, 255), font_handle);
 	DrawStringToHandle(pos_x, pos_y + (size * 3), strings[4], GetColor(255, 255, 255), font_handle);
+	
+	for (int count = 0; count != 5; count++)
+	{
+		//DrawStringToHandle(pos_x, pos_y + (size * count), strings[count], GetColor(255, 255, 255), font_handle);
+	}
 
 
 	//DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", GetEnd());
