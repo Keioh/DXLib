@@ -4,8 +4,7 @@ void ja_text::Load()
 {
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 
-
-	data[0].Load("???\n「......。」");
+	data[0].Load("???\n「......。」");	
 	//data[0].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[0]);
 

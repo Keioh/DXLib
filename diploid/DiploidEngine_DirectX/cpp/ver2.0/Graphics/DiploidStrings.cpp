@@ -15,43 +15,10 @@ int DiploidStrings::GetHandle()
 
 void DiploidStrings::Load(const char* str)
 {	
-	word_count = 0;
-	line = 0;
-	count = 0;
-
-	//バグ回避用
 	for (int count = 0; count != 512; count++)
 	{
-		string_data[count] = str[count];
+		load_string[count] = str[count];
 	}
-
-
-
-
-	for (int count = 0; count != 512; count++)
-	{
-		if (str[word_count] == '\n')
-		{	
-			//count++;
-			count = 0;
-			line++;
-		}
-
-		load_strings[line][count] = str[word_count];
-
-		word_count++;
-	}
-
-	for (int count = 0; count != 5; count++)
-	{
-		if (load_strings[count][0] != '\0')
-		{
-			line_count++;
-		}
-	}
-
-	word_count = 0;
-	line = 0;
 }
 
 void DiploidStrings::Init(float x, float y, int new_font_handle)
@@ -60,6 +27,9 @@ void DiploidStrings::Init(float x, float y, int new_font_handle)
 	pos_y = y;
 
 	font_handle = new_font_handle;
+
+	GetFontStateToHandle(&font_name, &size, &thick, font_handle);
+
 }
 
 void DiploidStrings::Init(float x, float y)
@@ -95,28 +65,20 @@ void DiploidStrings::Reset()
 
 void DiploidStrings::AllIn()
 {
-	for (int x = 0; x != 512; x++)
+	for (int count = 0; count != 512; count++)
 	{
-		for (int y = 0; y != 5; y++)
-		{
-			strings[y][x] = load_strings[y][x];//文字列の移し替え。
-		}
+
+		string[count] = load_string[count];
+
 	}
 
-	line = 6;
+	end_flag = 1;
+	string_all = 512;
 }
 
 
 int DiploidStrings::GetEnd()
 {
-	if (line == 6)
-	{
-		end_flag = 1;
-	}
-	else
-	{
-		end_flag = 0;
-	}
 
 	return end_flag;
 }
@@ -124,37 +86,33 @@ int DiploidStrings::GetEnd()
 
 void DiploidStrings::Draw()
 {	
-	if (count != 512)
+	if (load_string[string_all] != '\0')
 	{
-		strings[line][count] = load_strings[line][count];//文字列の移し替え。
-
-		next_time++;//アニメーションを進める。
-
-		if (next_time > next_speed)
+		if (string_all != 512)
 		{
-			count++;//文字を進める。
+			time += next_speed;
 
-			next_time = 0;//アニメーションの時間をリセット
-		}
-
-		if (load_strings[line][count] == '\0')//読み込んだ現在位置の文字列が\0なら
-		{
-			if (line != 6)
+			if (time > next_time)
 			{
-				//if (load_strings[line][0] != '\0')
-				{
-					line++;//行を進める
-				}
-			}
+				string[string_all] = load_string[string_all];
 
-			count = 0;//最前列に移動
+				if (string[string_all] == '\0')
+				{
+					end_flag = 1;
+				}
+
+				string_all++;
+				time = 0;
+			}
 		}
 	}
+	else
+	{
+		end_flag = 1;
+	}
 
+	DrawStringToHandle(pos_x, pos_y, string, GetColor(255, 255, 255), font_handle);
 
-	GetFontStateToHandle(NULL, &size, NULL, font_handle);
-
-	DrawStringToHandle(pos_x, pos_y, string_data, GetColor(255, 255, 255), font_handle);//バグ回避(文字送りなし)
 
 /*
 	DrawStringToHandle(pos_x, pos_y, strings[0], GetColor(255, 255, 255), font_handle);
@@ -176,9 +134,9 @@ void DiploidStrings::Draw()
 	}
 */
 
-	//DrawFormatString(0, 0, GetColor(255, 255, 255), "%d", GetEnd());
-	//DrawFormatString(0, 20, GetColor(255, 255, 255), "%d", count);
-	//DrawFormatString(0, 40, GetColor(255, 255, 255), "%d", line);
-	//DrawFormatString(0, 60, GetColor(255, 255, 255), "%d", line_count);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "end %d", GetEnd());
+	//DrawFormatString(0, 20, GetColor(255, 255, 255), "time %d", time);
+	//DrawFormatString(0, 40, GetColor(255, 255, 255), "speed %d", next_speed);
+	//DrawFormatString(0, 60, GetColor(255, 255, 255), "all %d", string_all);
 
 }

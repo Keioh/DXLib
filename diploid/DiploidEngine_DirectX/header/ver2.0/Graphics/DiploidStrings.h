@@ -2,32 +2,30 @@
 #include <string>
 #include <vector>
 #include "DxLib.h"
+#include "system\DiploidEngineSetting.h"
+
 
 class DiploidStrings
 {
 private:
-	char strings[6][512];//実際に表示される文字列の配列
-	char load_strings[5][512];//読み込んだ文字列
-	char string_data[512];//バグ回避用文字送りなし配列用
-	int line = 0;//行
-	int word_count = 0;//行のない文字列のカウント
-	int line_count = 0;
+	char string[512];//出力用
+	char load_string[512];//読み込み用
 
 	char font_name;
 	int size;
 	int thick;
 	int line_spacing = 10;
 	int end_flag = 0;//描画が終わったのかのフラグ
+	int string_all = 0;//現在の文字の位置を保存
 
 	int font_handle;
 	float pos_x, pos_y;
 
 	int count = 0;//文字列配列の現在位置
-	int next_time;//次の文字を表示する時間
+	int next_time = 100;//次の文字を表示する時間
+	int time;//時間保存用
 
-	int next_speed = 0;//文字送りの速度
-
-	bool test = true;
+	int next_speed = 50;//文字送りの速度
 
 public:
 
