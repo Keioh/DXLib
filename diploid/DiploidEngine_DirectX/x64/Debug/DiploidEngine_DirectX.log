@@ -1,3 +1,7 @@
-﻿  GameScene.cpp
-c:\gameproject\diploid\diploidengine_directx\header\data\text_data\ja.h(1): warning C4068: 不明なプラグマがありました。
+﻿  DiploidStrings.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(139): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(140): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(141): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(142): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(143): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Debug\DiploidEngine_DirectX.exe

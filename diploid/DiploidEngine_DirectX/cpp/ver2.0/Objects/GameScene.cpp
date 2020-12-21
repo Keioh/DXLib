@@ -16,9 +16,16 @@ void GameScene::Updata()
 
 	if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
 	{
-		if ((jp.string.size() - 1) != click)
+		if (jp.string[click].GetEnd() == 0)
 		{
-			click++;
+			jp.string[click].AllIn();
+		}
+		else
+		{
+			if ((jp.string.size() - 1) != click)
+			{
+				click++;
+			}
 		}
 	}
 }

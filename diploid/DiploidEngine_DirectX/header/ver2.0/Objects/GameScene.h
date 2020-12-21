@@ -18,7 +18,7 @@ private:
 
 	DiploidEngineInput input;
 
-	int click = 0;
+	int click = 0;//現在のテキスト位置
 
 public:
 	void Load();

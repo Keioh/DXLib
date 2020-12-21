@@ -15,7 +15,7 @@ int DiploidStrings::GetHandle()
 
 void DiploidStrings::Load(const char* str)
 {	
-	for (int count = 0; count != 256; count++)
+	for (int count = 0; count != 512; count++)
 	{
 		if (str[word_count] == '\n')
 		{	
@@ -61,16 +61,30 @@ void DiploidStrings::SetSpeed(int speed)
 	next_speed = speed;
 }
 
+void DiploidStrings::SetLineSpaceing(int space)
+{
+	line_spacing = space;
+}
+
+
 void DiploidStrings::Reset()
 {
-	count = 0;
-	next_time = 0;
 
-	//for (int count_str = 0; count_str != 256; count_str++)
-	{
-		//strings[count] = 0;
-	}
 }
+
+void DiploidStrings::AllIn()
+{
+	for (int x = 0; x != 512; x++)
+	{
+		for (int y = 0; y != 5; y++)
+		{
+			strings[y][x] = load_strings[y][x];//ï∂éöóÒÇÃà⁄Çµë÷Ç¶ÅB
+		}
+	}
+
+	line = 6;
+}
+
 
 int DiploidStrings::GetEnd()
 {
@@ -87,12 +101,9 @@ int DiploidStrings::GetEnd()
 }
 
 
-void DiploidStrings::Draw(float x, float y)
-{
-	pos_x = x;
-	pos_y = y;
-	
-	if (count != 256)
+void DiploidStrings::Draw()
+{	
+	if (count != 512)
 	{
 		strings[line][count] = load_strings[line][count];//ï∂éöóÒÇÃà⁄Çµë÷Ç¶ÅB
 
@@ -120,10 +131,10 @@ void DiploidStrings::Draw(float x, float y)
 	GetFontStateToHandle(NULL, &size, NULL, font_handle);
 	
 	DrawStringToHandle(pos_x, pos_y, strings[0], GetColor(255, 255, 255), font_handle);
-	DrawStringToHandle(pos_x, pos_y + (size * 0), strings[1], GetColor(255, 255, 255), font_handle);
-	DrawStringToHandle(pos_x, pos_y + (size * 1), strings[2], GetColor(255, 255, 255), font_handle);
-	DrawStringToHandle(pos_x, pos_y + (size * 2), strings[3], GetColor(255, 255, 255), font_handle);
-	DrawStringToHandle(pos_x, pos_y + (size * 3), strings[4], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 0) + line_spacing, strings[1], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 1) + (line_spacing * 2), strings[2], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 2) + (line_spacing * 3), strings[3], GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y + (size * 3) + (line_spacing * 4), strings[4], GetColor(255, 255, 255), font_handle);
 	
 	for (int count = 0; count != 5; count++)
 	{

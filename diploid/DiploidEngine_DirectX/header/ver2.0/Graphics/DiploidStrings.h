@@ -6,8 +6,8 @@
 class DiploidStrings
 {
 private:
-	char strings[6][256];//実際に表示される文字列の配列
-	char load_strings[5][256];//読み込んだ文字列
+	char strings[6][512];//実際に表示される文字列の配列
+	char load_strings[5][512];//読み込んだ文字列
 	int line = 0;//行
 	int word_count = 0;//行のない文字列のカウント
 	int line_count = 0;
@@ -15,6 +15,7 @@ private:
 	char font_name;
 	int size;
 	int thick;
+	int line_spacing = 10;
 	int end_flag = 0;//描画が終わったのかのフラグ
 
 	int font_handle;
@@ -38,7 +39,10 @@ public:
 	void Reset();//文字配列の中を削除し、再び文字送り描画をします。(バグにつき使用不可)
 	int GetEnd();//文字列の描画が終わったかのステータスを取得します。(1で描画終了、0で描画中)
 
+	void AllIn();//全ての文字を表示します。(読み込んだ文字列を全て表示用配列にコピーします。)
+
+	void SetLineSpaceing(int space);
 	void SetSpeed(int speed);//文字送りの速度を設定します。
 
-	void Draw(float x = 0, float y = 0);//Load関数で読み込んだ文字列を表示する。(1行256文字、５改行まで)
+	void Draw();//Load関数で読み込んだ文字列を表示する。(1行256文字、５改行まで)
 };
