@@ -60,7 +60,9 @@ void DiploidStrings::SetLineSpaceing(int space)
 
 void DiploidStrings::Reset()
 {
-
+	string_all = 0;
+	end_flag = 0;
+	time = 0;
 }
 
 void DiploidStrings::AllIn()
@@ -79,7 +81,6 @@ void DiploidStrings::AllIn()
 
 int DiploidStrings::GetEnd()
 {
-
 	return end_flag;
 }
 

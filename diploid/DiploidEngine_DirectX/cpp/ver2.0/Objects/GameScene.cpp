@@ -16,15 +16,15 @@ void GameScene::Updata()
 
 	if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
 	{
-		if (jp.string[click].GetEnd() == 0)
+		if (jp.string[click].GetEnd() == 0)//ÅŒã‚Ü‚Å•\¦‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚ç
 		{
-			jp.string[click].AllIn();
+			jp.string[click].AllIn();//ÅŒã‚Ì•¶š‚Ü‚Å•\¦
 		}
 		else
 		{
 			if ((jp.string.size() - 1) != click)
 			{
-				click++;
+				click++;//Ÿ‚Ì•¶‚ğ•\¦
 			}
 		}
 	}
