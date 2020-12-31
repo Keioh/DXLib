@@ -19,6 +19,7 @@ private:
 
 public:
 	void Load();
+	void SetSpeed(int new_speed);
 
 	std::vector<DiploidStrings> string;
 };

@@ -69,9 +69,7 @@ void DiploidStrings::AllIn()
 {
 	for (int count = 0; count != 512; count++)
 	{
-
 		string[count] = load_string[count];
-
 	}
 
 	end_flag = 1;

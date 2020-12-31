@@ -4,15 +4,15 @@ void ja_text::Load()
 {
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 
-	data[0].Load("???\n「......。」");	
+	data[0].Load("青く光るPCのディスプレイが灯りの無い部屋を照らす。");	
 	//data[0].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[0]);
 
-	data[1].Load("???\n「......あっ。」");
+	data[1].Load("ディスプレイの両端にはコンポに使われるスピーカーが置かれ、\nそこからはドビュッシーのピアノ曲が流れている。");
 	//data[1].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[1]);
 
-	data[2].Load("???\n「」");
+	data[2].Load("深緑色の少女\n「......ん。」");
 	//data[2].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[2]);
 
@@ -48,4 +48,15 @@ void ja_text::Load()
 	FileRead_close(file_handle);
 	SetUseASyncLoadFlag(TRUE);	
 	*/
+}
+
+void ja_text::SetSpeed(int new_speed)
+{
+	if (!string.empty())
+	{
+		for (int count = 0; count != string.size(); count++)
+		{
+			string[count].SetSpeed(new_speed);
+		}
+	}
 }

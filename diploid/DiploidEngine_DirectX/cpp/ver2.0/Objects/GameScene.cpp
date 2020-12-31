@@ -3,34 +3,75 @@
 void GameScene::Load()
 {
 	jp.Load();
+
+	image_00.Load("texter/novel/00.png");
 }
 
-void GameScene::Init()
+void GameScene::Init(DiploidEngineSetting& setting)
 {
+	image_00.Init(VGet(0,0,0));
 
+	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
+	box.SetFill(true);
+
+	jp.SetSpeed(100);
 }
 
-void GameScene::Updata()
+void GameScene::Updata(DiploidEngineInput& input)
 {
-	input.Update();
-
-	if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
+	if (box_draw_flag == 1)//フェードアウト完了していたら
 	{
-		if (jp.string[click].GetEnd() == 0)//最後まで表示されていなかったら
+		if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
 		{
-			jp.string[click].AllIn();//最後の文字まで表示
-		}
-		else
-		{
-			if ((jp.string.size() - 1) != click)
+			if (jp.string[click].GetEnd() == 0)//最後まで表示されていなかったら
 			{
-				click++;//次の文を表示
+				jp.string[click].AllIn();//最後の文字まで表示
 			}
+			else
+			{
+				if ((jp.string.size() - 1) != click)
+				{
+					click++;//次の文を表示
+				}
+			}
+		}
+	}
+
+	//シーンが始まったら
+	if (box_draw_flag == 0)//フェードアウト始め
+	{
+		alpha -= alpha_speed;//透過値を変更
+
+		if (alpha <= 0)//透過値フロー処理
+		{
+			alpha = 0;
+			box_draw_flag = 1;//フェードアウト完了
+		}
+	}
+	
+	if(box_draw_flag == 2)//フェードイン始め
+	{	
+		alpha -= alpha_speed;//透過値を変更
+
+		if (alpha > 255)//透過値フロー処理
+		{
+			alpha = 255;
+			box_draw_flag = 3;//フェードイン完了
 		}
 	}
 }
 
 void GameScene::Draw()
 {
-	jp.string[click].Draw();
+	image_00.Draw();
+
+	if (box_draw_flag == 1)
+	{
+		jp.string[click].Draw();
+	}
+
+	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
+	box.Draw();
+	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+
 }

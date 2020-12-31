@@ -17,7 +17,7 @@ void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
 	logo_scene.Init();
 	title_scene.Init();
-	game_scene.Init();
+	game_scene.Init(app->diploidEngineSetting);
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
@@ -31,7 +31,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
 		{
-			game_scene.Updata();
+			game_scene.Updata(app->diploidEngineInput);
 		}
 
 		//ロードボタンを押したとき
