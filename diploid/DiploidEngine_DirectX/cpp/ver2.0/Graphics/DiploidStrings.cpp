@@ -74,6 +74,18 @@ void DiploidStrings::AllIn()
 
 	end_flag = 1;
 	string_all = 512;
+
+	complete = true;
+}
+
+bool DiploidStrings::GetCompleteFlag()
+{
+	return complete;
+}
+
+void DiploidStrings::SetCompleteFlag(bool new_flag)
+{
+	complete = new_flag;
 }
 
 
@@ -98,6 +110,7 @@ void DiploidStrings::Draw()
 				if (string[string_all] == '\0')
 				{
 					end_flag = 1;
+					complete = true;
 				}
 
 				string_all++;

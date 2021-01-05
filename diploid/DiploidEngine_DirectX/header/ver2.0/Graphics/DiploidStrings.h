@@ -27,6 +27,8 @@ private:
 
 	int next_speed = 50;//文字送りの速度
 
+	bool complete = false;//既読済みかどうか(trueで既読)
+
 public:
 
 	int CreateFontData(int Size, int Thick, int FontType, char *FontName = NULL);//DXLIBを参照
@@ -41,6 +43,8 @@ public:
 	int GetEnd();//文字列の描画が終わったかのステータスを取得します。(1で描画終了、0で描画中)
 
 	void AllIn();//全ての文字を表示します。(読み込んだ文字列を全て表示用配列にコピーします。)
+	bool GetCompleteFlag();//既読かどうかのフラグを得ます。
+	void SetCompleteFlag(bool new_flag);
 
 	void SetLineSpaceing(int space);
 	void SetSpeed(int speed);//文字送りの速度を設定します。
