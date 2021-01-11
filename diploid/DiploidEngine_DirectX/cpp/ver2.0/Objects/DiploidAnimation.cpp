@@ -52,6 +52,11 @@ void DiploidAnimation::SetNextAnimationTime(int new_time)
 	next_time = new_time;
 }
 
+void DiploidAnimation::SetAnimationSpeed(int new_Speed)
+{
+	animation_speed = new_Speed;
+}
+
 
 void DiploidAnimation::Draw(bool debug)
 {

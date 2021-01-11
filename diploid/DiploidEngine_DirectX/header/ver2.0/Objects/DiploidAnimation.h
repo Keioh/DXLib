@@ -26,6 +26,7 @@ public:
 	void SetPosition(VECTOR  new_pos);
 	void SetScale(float new_x, float new_y);
 	void SetNextAnimationTime(int new_time);//次の画像へ行く時間を設定する。
+	void SetAnimationSpeed(int new_Speed);//アニメーションのスピードを設定する。
 
 	void Draw(bool debug = false);//一枚づつ描画
 	void StackDraw(bool debug = false);//重ねて描画
