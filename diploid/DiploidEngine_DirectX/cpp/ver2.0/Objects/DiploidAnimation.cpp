@@ -58,6 +58,17 @@ void DiploidAnimation::SetAnimationSpeed(int new_Speed)
 }
 
 
+int DiploidAnimation::GetAnimationNumber()
+{
+	return animation_image_number;
+}
+
+int DiploidAnimation::GetAnimationSpeed()
+{
+	return animation_speed;
+}
+
+
 void DiploidAnimation::Draw(bool debug)
 {
 	if (!images.empty())
