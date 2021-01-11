@@ -121,6 +121,7 @@ void DiploidStrings::Draw()
 	else
 	{
 		end_flag = 1;
+		complete = true;
 	}
 
 	DrawStringToHandle(pos_x, pos_y, string, GetColor(255, 255, 255), font_handle);

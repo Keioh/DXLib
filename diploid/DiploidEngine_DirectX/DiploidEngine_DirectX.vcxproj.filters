@@ -330,6 +330,9 @@
     <ClCompile Include="cpp\data\text_data\ja.cpp">
       <Filter>ソース ファイル\data\text_data</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidAnimation.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -520,6 +523,9 @@
     </ClInclude>
     <ClInclude Include="header\data\text_data\ja.h">
       <Filter>ヘッダー ファイル\data\text_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\DiploidAnimation.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

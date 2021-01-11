@@ -199,6 +199,7 @@
     <ClCompile Include="cpp\ver2.0\Main\Object.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidAnimation.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="header\ver2.0\Main\Object.h" />
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidAnimation.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
     <ClInclude Include="header\ver2.0\Objects\GameScene.h" />
     <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />

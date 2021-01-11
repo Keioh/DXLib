@@ -5,6 +5,18 @@ void GameScene::Load()
 	jp.Load();
 
 	image_00.Load("texter/novel/00.png");
+
+	anime.Load("texter/novel/icon/128_128/0.png");
+	anime.Load("texter/novel/icon/128_128/1.png");
+	anime.Load("texter/novel/icon/128_128/2.png");
+	anime.Load("texter/novel/icon/128_128/3.png");
+	anime.Load("texter/novel/icon/128_128/4.png");
+	anime.Load("texter/novel/icon/128_128/5.png");
+	anime.Load("texter/novel/icon/128_128/6.png");
+	anime.Load("texter/novel/icon/128_128/7.png");
+	anime.Load("texter/novel/icon/128_128/8.png");
+	anime.Load("texter/novel/icon/128_128/9.png");
+
 }
 
 void GameScene::Init(DiploidEngineSetting& setting)
@@ -15,6 +27,8 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	box.SetFill(true);
 
 	jp.SetSpeed(100);
+
+	anime.Init(VGet(0, 0, 0),0.5f,0.5f);
 }
 
 void GameScene::Updata(DiploidEngineInput& input)
@@ -70,8 +84,9 @@ void GameScene::Draw()
 		jp.string[click].Draw();
 	}
 
+	anime.StackDraw();
+
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 	box.Draw();
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
-
 }

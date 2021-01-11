@@ -9,6 +9,7 @@
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "system/define.h"
+#include "ver2.0/Objects/DiploidAnimation.h"
 
 #include "data/text_data/ja.h"
 
@@ -18,6 +19,8 @@ private:
 	ja_text jp;//テキストデータ
 
 	DiploidBoxV2 box;//フェード用BOX
+
+	DiploidAnimation anime;//anime
 
 	DiploidImageV2 image_00;//背景画像(仮)
 
