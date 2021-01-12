@@ -22,6 +22,11 @@ private:
 
 	DiploidAnimation anime;//anime
 
+	DiploidImageV2 string_back_wall;//文字列の後ろの黒いやつ
+	DiploidImageV2 data_back_wall;//日付の後ろの赤いやつ
+	DiploidImageV2 data_test;//test日付
+	DiploidImageV2 place_test;//test場所
+
 	DiploidImageV2 image_00;//背景画像(仮)
 
 	int click = 0;//現在のテキスト位置

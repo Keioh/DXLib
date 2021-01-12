@@ -4,31 +4,34 @@ void GameScene::Load()
 {
 	jp.Load();
 
+	string_back_wall.Load("texter/novel/basic/string_back_wall.png");
+	data_back_wall.Load("texter/novel/basic/data_ui.png");
+	data_test.Load("texter/novel/date/test.png");
+	place_test.Load("texter/novel/place/test.png");
+
 	image_00.Load("texter/novel/00.png");
 
-	anime.Load("texter/novel/icon/128_128/0.png");
-	anime.Load("texter/novel/icon/128_128/1.png");
-	anime.Load("texter/novel/icon/128_128/2.png");
-	anime.Load("texter/novel/icon/128_128/3.png");
-	anime.Load("texter/novel/icon/128_128/4.png");
-	anime.Load("texter/novel/icon/128_128/5.png");
-	anime.Load("texter/novel/icon/128_128/6.png");
-	anime.Load("texter/novel/icon/128_128/7.png");
-	anime.Load("texter/novel/icon/128_128/8.png");
-	anime.Load("texter/novel/icon/128_128/9.png");
+	anime.Load("texter/novel/icon/64_64/0.png");
+	anime.Load("texter/novel/icon/64_64/1.png");
+	anime.Load("texter/novel/icon/64_64/2.png");
+	anime.Load("texter/novel/icon/64_64/3.png");
 
 }
 
 void GameScene::Init(DiploidEngineSetting& setting)
 {
 	image_00.Init(VGet(0,0,0));
+	string_back_wall.Init(VGet(0, 0, 0));
+	data_back_wall.Init(VGet(0, 0, 0));
+	data_test.Init(VGet(0, 0, 0));
+	place_test.Init(VGet(0, 0, 0));
 
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
 	jp.SetSpeed(100);
 
-	anime.Init(VGet(0, 0, 0),0.5f,0.5f);
+	anime.Init(VGet(setting.window_x * 0.8f, setting.window_y - 64, 0),0.5f,0.5f);
 }
 
 void GameScene::Updata(DiploidEngineInput& input)
@@ -79,12 +82,21 @@ void GameScene::Draw()
 {
 	image_00.Draw();
 
+	data_back_wall.Draw();
+	data_test.Draw();
+	place_test.Draw();
+
+	string_back_wall.Draw();
+
 	if (box_draw_flag == 1)
 	{
 		jp.string[click].Draw();
 	}
 
-	anime.StackDraw();
+	if (jp.string[click].GetEnd() == 1)
+	{
+		anime.StackDraw();
+	}
 
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 	box.Draw();
