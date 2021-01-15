@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "system\DiploidEngineSetting.h"
 

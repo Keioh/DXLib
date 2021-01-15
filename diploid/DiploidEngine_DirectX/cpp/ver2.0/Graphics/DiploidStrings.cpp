@@ -94,6 +94,17 @@ int DiploidStrings::GetEnd()
 	return end_flag;
 }
 
+std::string DiploidStrings::GetSceneName()
+{
+	return scene_number;
+}
+
+void DiploidStrings::SetSceneName(std::string name)
+{
+	scene_number = name;
+}
+
+
 
 void DiploidStrings::Draw()
 {	

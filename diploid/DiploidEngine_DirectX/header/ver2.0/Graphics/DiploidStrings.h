@@ -29,6 +29,9 @@ private:
 
 	bool complete = false;//既読済みかどうか(trueで既読)
 
+	std::string scene_number;
+
+
 public:
 
 	int CreateFontData(int Size, int Thick, int FontType, char *FontName = NULL);//DXLIBを参照
@@ -41,6 +44,8 @@ public:
 	void ChangeFont(int handle);
 	void Reset();//文字配列の中を削除し、再び文字送り描画をします。(バグにつき使用不可)
 	int GetEnd();//文字列の描画が終わったかのステータスを取得します。(1で描画終了、0で描画中)
+	std::string GetSceneName();
+	void SetSceneName(std::string name);
 
 	void AllIn();//全ての文字を表示します。(読み込んだ文字列を全て表示用配列にコピーします。)
 	bool GetCompleteFlag();//既読かどうかのフラグを得ます。

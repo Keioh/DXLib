@@ -17,6 +17,8 @@
 class GameScene
 {
 private:
+	DiploidScreenGraphics test;
+
 	ja_text jp;//テキストデータ
 
 	DiploidBoxV2 box;//フェード用BOX

@@ -37,7 +37,10 @@ void DiploidNovelScene::SetDrawName(std::string name)
 		{
 			if (itr->first != object_name)
 			{
-				itr->second.SetActive(false);				
+				if (itr->second.GetActiveFlag() == true)
+				{
+					itr->second.SetActive(false);
+				}
 			}
 		}
 	}
@@ -72,7 +75,6 @@ void DiploidNovelScene::Update()
 		{
 			if (obj_itr->second.GetActiveFlag() == false)
 			{
-
 				obj_itr->second.SetAlpha(map_alpha[obj_itr->second.GetName()]);
 
 				if (map_alpha[obj_itr->second.GetName()] <= 0)

@@ -41,7 +41,7 @@ void DiploidEngineSetting::SetBegin()
 	SetUseDXArchiveFlag(TRUE);//DXアーカイブ読み込み
 	SetAlwaysRunFlag(TRUE);//ウィンドウ非アクティブで処理を実行
 
-	SetFullScreenScalingMode(DX_FSSCALINGMODE_NEAREST);//画面補間の変更
+	SetFullScreenScalingMode(DX_FSSCALINGMODE_NEAREST);//画面補間の変更 DX_FSSCALINGMODE_NEAREST DX_FSSCALINGMODE_BILINEAR
 	SetDrawMode(DX_DRAWMODE_NEAREST);//画像拡大時の補間変更
 	SetFullSceneAntiAliasingMode(4, 2);//AA設定
 

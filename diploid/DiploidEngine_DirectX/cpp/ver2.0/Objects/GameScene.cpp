@@ -21,7 +21,6 @@ void GameScene::Load()
 
 void GameScene::Init(DiploidEngineSetting& setting)
 {
-	//image_00.Init(VGet(0,0,0));
 	novel_scene.Init(VGet(0, 0, 0));
 
 	string_back_wall.Init(VGet(0, 0, 0));
@@ -58,6 +57,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 		}
 	}
 
+	
 	//場面切り替え
 	switch (click)
 	{
@@ -67,6 +67,8 @@ void GameScene::Updata(DiploidEngineInput& input)
 
 	default: break;
 	}
+	
+	novel_scene.SetDrawName(jp.string[click].GetSceneName());
 
 	novel_scene.Update();//場面切り替えのアップデート
 
@@ -96,14 +98,16 @@ void GameScene::Updata(DiploidEngineInput& input)
 
 void GameScene::Draw()
 {
-	//image_00.Draw();
 	novel_scene.Draw();
 
 	data_back_wall.Draw();
 	data_test.Draw();
 	place_test.Draw();
 
+	//test.Draw(0.1f);
+
 	string_back_wall.Draw();
+
 
 	if (box_draw_flag == 1)
 	{
