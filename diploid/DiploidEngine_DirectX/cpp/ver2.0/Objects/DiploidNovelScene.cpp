@@ -126,3 +126,19 @@ void DiploidNovelScene::SetAlphaSpeed(int new_speed)
 {
 	alpha_speed = new_speed;
 }
+
+void DiploidNovelScene::AlphaMax()
+{
+	if (image_map[object_name].GetActiveFlag() == true)
+	{
+		map_alpha[object_name] = 255;
+	}
+
+	for (auto obj_itr = image_map.begin(); obj_itr != image_map.end(); ++obj_itr)
+	{
+		if (obj_itr->second.GetActiveFlag() == false)
+		{
+			map_alpha[obj_itr->second.GetName()] = 0;
+		}
+	}
+}

@@ -27,5 +27,7 @@ public:
 	void Update();//場面の切り替え処理
 	void Draw(bool draw = true);
 
+	void AlphaMax();//アルファ値を最大にします。
+
 	void NameDraw(std::string name, bool draw = true);//オブジェクトの名前を指定して描画(非推奨)
 };

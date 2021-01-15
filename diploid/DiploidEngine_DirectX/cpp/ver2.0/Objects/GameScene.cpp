@@ -46,6 +46,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 			if (jp.string[click].GetEnd() == 0)//最後まで表示されていなかったら
 			{
 				jp.string[click].AllIn();//最後の文字まで表示
+				novel_scene.AlphaMax();//背景を完全表示
 			}
 			else
 			{
@@ -57,17 +58,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 		}
 	}
 
-	
-	//場面切り替え
-	switch (click)
-	{
-	case 0:	novel_scene.SetDrawName("1"); break;
-	case 1:	novel_scene.SetDrawName("2"); break;
-	case 2:	novel_scene.SetDrawName("1"); break;
-
-	default: break;
-	}
-	
+	//場面の切り替え
 	novel_scene.SetDrawName(jp.string[click].GetSceneName());
 
 	novel_scene.Update();//場面切り替えのアップデート
