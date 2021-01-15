@@ -9,7 +9,8 @@ void GameScene::Load()
 	data_test.Load("texter/novel/date/test.png");
 	place_test.Load("texter/novel/place/test.png");
 
-	image_00.Load("texter/novel/00.png");
+	novel_scene.Load("texter/novel/00.png", "1");
+	novel_scene.Load("texter/novel/02.png", "2");
 
 	anime.Load("texter/novel/icon/64_64/0.png");
 	anime.Load("texter/novel/icon/64_64/1.png");
@@ -20,7 +21,9 @@ void GameScene::Load()
 
 void GameScene::Init(DiploidEngineSetting& setting)
 {
-	image_00.Init(VGet(0,0,0));
+	//image_00.Init(VGet(0,0,0));
+	novel_scene.Init(VGet(0, 0, 0));
+
 	string_back_wall.Init(VGet(0, 0, 0));
 	data_back_wall.Init(VGet(0, 0, 0));
 	data_test.Init(VGet(0, 0, 0));
@@ -36,6 +39,7 @@ void GameScene::Init(DiploidEngineSetting& setting)
 
 void GameScene::Updata(DiploidEngineInput& input)
 {
+
 	if (box_draw_flag == 1)//フェードアウト完了していたら
 	{
 		if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
@@ -53,6 +57,18 @@ void GameScene::Updata(DiploidEngineInput& input)
 			}
 		}
 	}
+
+	//場面切り替え
+	switch (click)
+	{
+	case 0:	novel_scene.SetDrawName("1"); break;
+	case 1:	novel_scene.SetDrawName("2"); break;
+	case 2:	novel_scene.SetDrawName("1"); break;
+
+	default: break;
+	}
+
+	novel_scene.Update();//場面切り替えのアップデート
 
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
@@ -80,7 +96,8 @@ void GameScene::Updata(DiploidEngineInput& input)
 
 void GameScene::Draw()
 {
-	image_00.Draw();
+	//image_00.Draw();
+	novel_scene.Draw();
 
 	data_back_wall.Draw();
 	data_test.Draw();

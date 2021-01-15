@@ -32,6 +32,7 @@ private:
 	bool destory_flag = false;//削除フラグ(trueの場合、削除対象に)
 	bool hit_flag = false;//当たっているかのフラグ
 	bool main_camera = false;//メインカメラの追うオブジェクトかのフラグ
+	bool active = true;//アクティブかどうかのフラグ
 
 protected:
 
@@ -50,6 +51,7 @@ public:
 	void SetBright(float scale = 1.0f);//明るさを設定します。(1.0fで100%)
 	void SetBright(int red, int green, int blue);//明るさを指定します。
 	void SetAlpha(int pal);//透過度を設定します。
+	void SetActive(bool flag);//アクティブフラグを設定します。
 
 	void SetMoveSpeed(VECTOR new_move_speed);//新しく移動する速度を設定します。(3軸指定版)
 	void SetMoveSpeed(float angle, float new_move_speed);//新しく移動する速度を設定します。(ラジアン角指定版)
@@ -72,6 +74,7 @@ public:
 	VECTOR GetDownCenterPosition();//現在の画像の左下の座標を取得します。
 	float GetAngle();//現在の画像の回転角を取得します。(ラジアン)
 	bool GetTurnFlag();//現在の画像反転フラグを取得します。(TRUEで反転)
+	int GetAplha();
 
 	VECTOR GetMoveSpeed();//現在のオブジェクトの移動速度を取得します。
 	float GetMoveAngle();//現在のオブジェクトの移動している方角を取得します。(ラジアン)
@@ -81,5 +84,5 @@ public:
 	bool GetMainCameraFlag();//現在のオブジェクトがメインカメラの対象になっているかのフラグを取得します。
 	int GetObjectNumber();//現在のオブジェクトの番号を取得します。
 	bool GetHitFlag();//現在のオブジェクトのヒットフラグを取得します。
-
+	bool GetActiveFlag();//現在のオブジェクトのアクティブフラグを取得します。
 };

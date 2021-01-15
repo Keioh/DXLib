@@ -13,6 +13,7 @@ private:
 	int make_graphics_handl, graphics_handle, final_graphics;
 	int x, y;
 
+
 public:
 
 	//void Creat(float scale);

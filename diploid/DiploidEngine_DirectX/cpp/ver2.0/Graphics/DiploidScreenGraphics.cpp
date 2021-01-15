@@ -4,6 +4,7 @@
 
 void DiploidScreenGraphics::Draw(float scale)
 {
+
 	SetUseASyncLoadFlag(FALSE);
 
 	make_graphics_handl = MakeGraph(setting.window_x, setting.window_y);
@@ -28,4 +29,5 @@ void DiploidScreenGraphics::Draw(float scale)
 	DeleteGraph(graphics_handle);
 
 	SetUseASyncLoadFlag(TRUE);
+
 }

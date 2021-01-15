@@ -10,6 +10,7 @@
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "system/define.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
+#include "ver2.0/Objects/DiploidNovelScene.h"
 
 #include "data/text_data/ja.h"
 
@@ -21,6 +22,8 @@ private:
 	DiploidBoxV2 box;//フェード用BOX
 
 	DiploidAnimation anime;//anime
+
+	DiploidNovelScene novel_scene;
 
 	DiploidImageV2 string_back_wall;//文字列の後ろの黒いやつ
 	DiploidImageV2 data_back_wall;//日付の後ろの赤いやつ

@@ -17,7 +17,7 @@ void DiploidCamera::SetMainCameraPosition_DiploidCircleV2(DiploidCircleV2* targe
 	//target->SetMainCameraFlag(true);
 
 	//カメラの中央座標とターゲットの現在の位置の差を計算
-	if (target->GetMainCameraFlag() == true)//メインカメラのフラグがtrueなら
+	if (target->GetMainCameraFlag() == true)//objectのメインカメラのフラグがtrueなら
 	{
 		origin_pos_sub_new_pos.x = target->GetPosition().x - camera_center_position.x;
 		origin_pos_sub_new_pos.y = target->GetPosition().y - camera_center_position.y;

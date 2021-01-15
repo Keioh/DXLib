@@ -154,6 +154,11 @@ void DiploidImageV2::SetHitFlag(bool new_hit_flag)
 	hit_flag = new_hit_flag;
 }
 
+void DiploidImageV2::SetActive(bool flag)
+{
+	active = flag;
+}
+
 
 void DiploidImageV2::AddLife(float add_val)
 {
@@ -217,6 +222,11 @@ bool DiploidImageV2::GetTurnFlag()
 	return turn;
 }
 
+int DiploidImageV2::GetAplha()
+{
+	return alpha;
+}
+
 
 VECTOR DiploidImageV2::GetMoveSpeed()
 {
@@ -256,4 +266,9 @@ int DiploidImageV2::GetObjectNumber()
 bool DiploidImageV2::GetHitFlag()
 {
 	return this->hit_flag;
+}
+
+bool DiploidImageV2::GetActiveFlag()
+{
+	return active;
 }
