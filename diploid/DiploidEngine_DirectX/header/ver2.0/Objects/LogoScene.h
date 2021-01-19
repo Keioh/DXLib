@@ -5,6 +5,7 @@
 #include "ver2.0/Graphics/DiploidSoftImage.h"
 #include "system\DiploidEngineSetting.h"
 #include "ver2.0/Graphics/DiploidScreenGraphics.h"
+#include "diploidScreen\DiploidEngineScreen.h"
 
 class LogoScene
 {
@@ -32,12 +33,13 @@ private:
 	int r = 255, g = 255, b = 255;
 	int back_ground_speed = 15;//îwåiêFÇÃïœâªë¨ìx
 
+
 public:
 	void Load();
 
 	void Init();
 
-	void Updata();
+	void Updata(DiploidEngineScreen& screen);
 
 	void Draw();
 

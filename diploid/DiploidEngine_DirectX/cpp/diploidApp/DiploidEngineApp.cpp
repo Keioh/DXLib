@@ -24,7 +24,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 {	
 	if (logo_scene.GetFinalScene() == false)
 	{
-		logo_scene.Updata();
+		logo_scene.Updata(app->diploidEngineScreen);
 	}
 	else
 	{		

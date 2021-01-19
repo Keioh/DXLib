@@ -12,12 +12,13 @@ void LogoScene::Init()
 	logo_lib.Init(VGet(0, 0, 0), false);
 }
 
-void LogoScene::Updata()
+void LogoScene::Updata(DiploidEngineScreen& screen)
 {
 	input.Update();
 
 	logo.SetAlpha(alpha);
 	logo_lib.SetAlpha(alpha);
+
 
 
 	if (alpha > 255)
@@ -94,6 +95,7 @@ void LogoScene::Draw()
 	{
 		SetBackgroundColor(r, g, b);
 	}
+
 }
 
 

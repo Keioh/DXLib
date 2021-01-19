@@ -9,6 +9,7 @@ void GameScene::Load()
 	data_test.Load("texter/novel/date/test.png");
 	place_test.Load("texter/novel/place/test.png");
 
+	novel_scene.Load("texter/novel/clock.png", "clock");
 	novel_scene.Load("texter/novel/00.png", "1");
 	novel_scene.Load("texter/novel/02.png", "2");
 
@@ -91,9 +92,9 @@ void GameScene::Draw()
 {
 	novel_scene.Draw();
 
-	data_back_wall.Draw();
-	data_test.Draw();
-	place_test.Draw();
+	//data_back_wall.Draw();
+	//data_test.Draw();
+	//place_test.Draw();
 
 	//test.Draw(0.1f);
 

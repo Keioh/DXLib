@@ -25,7 +25,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while ((ProcessMessage() == 0) && (diploid_engine_app->diploidEngineSetting.GetExit() == 0))
 	{		
-		diploid_engine_app->diploidEngineScreen.Init();//FPS初期化
+		diploid_engine_app->diploidEngineScreen.Init(diploid_engine_app->diploidEngineSetting.refresh_rate);//FPS初期化
 
 		diploid_engine_app->diploidEngineNetwork.Update();//ネット処理の更新
 

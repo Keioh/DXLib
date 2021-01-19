@@ -4,28 +4,28 @@ void ja_text::Load()
 {
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 
-	data[0].Load("青く光るPCのディスプレイが灯りの無い部屋を照らす。");
-	data[0].SetSceneName("1");
+	data[0].Load("高くない壁に大きな振り子時計が掛けられていた。");
+	data[0].SetSceneName("clock");
 	//data[0].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[0]);
 
-	data[1].Load("ディスプレイの両端にはコンポに使われるスピーカーが置かれ、\nそこからはドビュッシーのピアノ曲が流れている。");
-	data[1].SetSceneName("1");
+	data[1].Load("ゼンマイばねから送られた力がエスケープメントに伝わり、\n振り子を揺らしてチクタクと音を鳴らす。");
+	data[1].SetSceneName("clock");
 	//data[1].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[1]);
 
-	data[2].Load("深緑色の少女\n「......ん。」");
-	data[2].SetSceneName("2");
+	data[2].Load("一定間隔の音が数回響いた後、分針が進む。");
+	data[2].SetSceneName("clock");
 	//data[2].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[2]);
 
 	data[3].Load("???\n「」");
-	data[3].SetSceneName("1");
+	data[3].SetSceneName("clock");
 	//data[3].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[3]);
 
 	data[4].Load("???\n「」");
-	data[4].SetSceneName("2");
+	data[4].SetSceneName("clock");
 	//data[4].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[4]);
 
