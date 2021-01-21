@@ -1,7 +1,13 @@
-﻿  ja.cpp
+﻿  WindowsMain.cpp
+  DiploidEngineApp.cpp
+  DiploidEngineMain.cpp
+  DiploidEngineScreen.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\diploidscreen\diploidenginescreen.cpp(7): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  DiploidEngineSetting.cpp
+  LogoScene.cpp
   コード生成しています。
-  1 of 1525 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  33 of 1525 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Release\DiploidEngine_DirectX.exe

@@ -15,8 +15,10 @@ private:
 
 	float deltatime = 0.0f;
 	float deltatime_start, deltatime_complate;
+	float flip_count;
 
 public:
+	void FrameCount();
 
 	void Init(int setting_fps = 60);
 	void Update();

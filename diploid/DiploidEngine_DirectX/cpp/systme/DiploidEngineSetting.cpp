@@ -8,7 +8,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "DiploidEngine";//Diploid Engine ver0.05
+	window_name = "Title(DiploidEngine version 0.8.0)";
 }
 
 void DiploidEngineSetting::Init()
@@ -25,6 +25,7 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {
+	SetWaitVSyncFlag(TRUE);//垂直同期信号を待つかのflag
 	SetUseCharCodeFormat(DX_CHARCODEFORMAT_SHIFTJIS);
 	//SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//文字コード変更	
 	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//フォントの描画の仕方
