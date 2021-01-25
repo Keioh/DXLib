@@ -75,7 +75,7 @@ void DiploidStrings::AllIn()
 	end_flag = 1;
 	string_all = 512;
 
-	complete = true;
+	//complete = true;
 }
 
 bool DiploidStrings::GetCompleteFlag()
@@ -121,7 +121,7 @@ void DiploidStrings::Draw()
 				if (string[string_all] == '\0')
 				{
 					end_flag = 1;
-					complete = true;
+					//complete = true;
 				}
 
 				string_all++;
@@ -132,7 +132,7 @@ void DiploidStrings::Draw()
 	else
 	{
 		end_flag = 1;
-		complete = true;
+		//complete = true;
 	}
 
 	DrawStringToHandle(pos_x, pos_y, string, GetColor(255, 255, 255), font_handle);

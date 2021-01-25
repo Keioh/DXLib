@@ -27,11 +27,13 @@ public:
 	void SetScale(float new_x, float new_y);
 	void SetNextAnimationTime(int new_time);//次の画像へ行く時間を設定する。
 	void SetAnimationSpeed(int new_Speed);//アニメーションのスピードを設定する。
+	void Reset();//アニメーションを最初から再生(番号初期化)
 
 	int GetAnimationNumber();//描画しているコマが何番目なのかを調べます。
 	int GetAnimationSpeed();//現在のアニメーションのスピードを調べます。
 
 	void Draw(bool debug = false);//一枚づつ描画
+	void OneCellDraw(int number = 0, bool draw = true);//一枚だけ描画
 	void StackDraw(bool debug = false);//重ねて描画
 
 };

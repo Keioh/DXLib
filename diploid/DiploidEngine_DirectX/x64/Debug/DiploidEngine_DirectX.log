@@ -1,2 +1,6 @@
-﻿  LogoScene.cpp
+﻿  GameScene.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Debug\DiploidEngine_DirectX.exe

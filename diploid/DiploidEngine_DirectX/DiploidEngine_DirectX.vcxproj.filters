@@ -151,6 +151,12 @@
     <Filter Include="ヘッダー ファイル\data\text_data">
       <UniqueIdentifier>{dd43b484-3004-44fb-820d-9591865cfdb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\button">
+      <UniqueIdentifier>{245699b5-1739-4472-ae4d-bb43b11edc75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Objects\button">
+      <UniqueIdentifier>{f9a96589-72d5-41a8-80cc-907b8e97ac5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -335,6 +341,12 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Objects\DiploidNovelScene.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\AutoNovel.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\SkipNovel.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -532,6 +544,12 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\DiploidNovelScene.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\AutoNovel.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\SkipNovel.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

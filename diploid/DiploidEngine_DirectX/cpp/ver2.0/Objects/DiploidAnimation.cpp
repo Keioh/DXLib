@@ -57,6 +57,12 @@ void DiploidAnimation::SetAnimationSpeed(int new_Speed)
 	animation_speed = new_Speed;
 }
 
+void DiploidAnimation::Reset()
+{
+	animation_image_number = 1;
+	time = 0;
+}
+
 
 int DiploidAnimation::GetAnimationNumber()
 {
@@ -68,6 +74,11 @@ int DiploidAnimation::GetAnimationSpeed()
 	return animation_speed;
 }
 
+
+void DiploidAnimation::OneCellDraw(int number, bool draw)
+{
+	images[number].Draw();
+}
 
 void DiploidAnimation::Draw(bool debug)
 {
@@ -81,7 +92,7 @@ void DiploidAnimation::Draw(bool debug)
 		{
 			animation_image_number++;
 
-			if ((images.size() + 1) <= (animation_image_number))
+			if ((images.size() + 1) <= animation_image_number)
 			{
 				animation_image_number = 1;
 			}
@@ -92,7 +103,7 @@ void DiploidAnimation::Draw(bool debug)
 }
 
 void DiploidAnimation::StackDraw(bool debug)
-{
+{	
 	if (!images.empty())
 	{
 		for (int count = 0; count != animation_image_number; count++)
@@ -114,5 +125,5 @@ void DiploidAnimation::StackDraw(bool debug)
 			time = 0;
 		}
 
-	}
+	}	
 }

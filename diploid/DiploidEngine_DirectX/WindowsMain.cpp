@@ -11,6 +11,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	
 	//std::shared_ptr<DiploidEngineApp> diploid_engine_app;
 
+	//DiploidEngineApp diploid_engine_app;
+
 	diploid_engine_app->diploidEngineSetting.Init();//エンジン初期化
 	
 	diploid_engine_app->FileCreate(diploid_engine_app);//ゲーム起動時にファイルを作成

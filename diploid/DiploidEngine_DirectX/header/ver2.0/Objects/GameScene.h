@@ -12,18 +12,24 @@
 #include "ver2.0/Objects/DiploidAnimation.h"
 #include "ver2.0/Objects/DiploidNovelScene.h"
 
+#include "ver2.0/Objects/button/AutoNovel.h"
+#include "ver2.0/Objects/button/SkipNovel.h"
+
 #include "data/text_data/ja.h"
 
 class GameScene
 {
 private:
-	DiploidScreenGraphics test;
+	DiploidScreenGraphics test;//モザイク処理
+
+	AutoNovel auto_button;//オートボタン
+	SkipNovel skip_button;//スキップボタン
 
 	ja_text jp;//テキストデータ
 
 	DiploidBoxV2 box;//フェード用BOX
 
-	DiploidAnimation anime;//anime
+	DiploidAnimation end_anime;//anime
 
 	DiploidNovelScene novel_scene;
 

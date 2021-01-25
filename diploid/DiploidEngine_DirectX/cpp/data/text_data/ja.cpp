@@ -4,27 +4,27 @@ void ja_text::Load()
 {
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 
-	data[0].Load("高くない壁に大きな振り子時計が掛けられていた。");
+	data[0].Load("昔の人は地震や嵐といった自然現象に畏怖を込めて、\nそれらの事象に「神(Kami)」が宿るという信仰を持っていた。");
 	data[0].SetSceneName("clock");
 	//data[0].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[0]);
 
-	data[1].Load("ゼンマイばねから送られた力がエスケープメントに伝わり、\n振り子を揺らしてチクタクと音を鳴らす。");
+	data[1].Load("やがて人々はこれを「八百万の神」と呼ぶようになり、\n現在に至るまでその信仰は続いている。");
 	data[1].SetSceneName("clock");
 	//data[1].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[1]);
 
-	data[2].Load("一定間隔の音が数回響いた後、分針が進む。");
+	data[2].Load("");
 	data[2].SetSceneName("clock");
 	//data[2].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[2]);
 
-	data[3].Load("???\n「」");
+	data[3].Load("");
 	data[3].SetSceneName("clock");
 	//data[3].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[3]);
 
-	data[4].Load("???\n「」");
+	data[4].Load("");
 	data[4].SetSceneName("clock");
 	//data[4].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[4]);
@@ -38,6 +38,7 @@ void ja_text::Load()
 
 
 	/*
+	//ファイル読み込み
 	SetUseASyncLoadFlag(FALSE);
 	file_handle = FileRead_open("text/jp.txt");
 
@@ -51,7 +52,7 @@ void ja_text::Load()
 	}
 
 	FileRead_close(file_handle);
-	SetUseASyncLoadFlag(TRUE);	
+	SetUseASyncLoadFlag(TRUE);
 	*/
 }
 

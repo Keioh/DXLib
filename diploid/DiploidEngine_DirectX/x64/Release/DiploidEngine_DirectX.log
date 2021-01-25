@@ -1,13 +1,29 @@
-﻿  WindowsMain.cpp
+﻿  ja.cpp
   DiploidEngineApp.cpp
   DiploidEngineMain.cpp
   DiploidEngineScreen.cpp
-c:\gameproject\diploid\diploidengine_directx\cpp\diploidscreen\diploidenginescreen.cpp(7): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\diploidscreen\diploidenginescreen.cpp(8): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   DiploidEngineSetting.cpp
+  DiploidStrings.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(138): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  AutoNovel.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\autonovel.cpp(80): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\autonovel.cpp(86): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  SkipNovel.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\skipnovel.cpp(63): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\skipnovel.cpp(69): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  DiploidAnimation.cpp
+  GameScene.cpp
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   LogoScene.cpp
+  WindowsMain.cpp
   コード生成しています。
-  33 of 1525 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\main\collision.cpp(126): warning C4715: 'DiploidCollision::BoxAndMouseCollisionUpdate': 値を返さないコントロール パスがあります。
+  93 of 1554 functions ( 6.0%) were compiled, the rest were copied from previous compilation.
+    23 functions were new in current compilation
+    17 functions had inline decision re-evaluated but remain unchanged
   コード生成が終了しました。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Release\DiploidEngine_DirectX.exe
