@@ -200,6 +200,7 @@
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\AutoNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\Back.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Save.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\SkipNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAnimation.cpp" />
@@ -271,6 +272,7 @@
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="header\ver2.0\Objects\button\AutoNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\button\Back.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Save.h" />
     <ClInclude Include="header\ver2.0\Objects\button\SkipNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAnimation.h" />

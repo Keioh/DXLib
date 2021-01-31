@@ -6,6 +6,7 @@
 #include "ver2.0/Objects/DiploidAnimation.h"
 
 #include "ver2.0/Objects/button/Back.h"
+#include "ver2.0/Objects/button/Save.h"
 
 class OptionScene
 {
@@ -14,6 +15,7 @@ private:
 	DiploidBoxV2 box;//フェード用BOX
 
 	Back back_button;//戻るボタン
+	Save save_button;//保存ボタン
 
 
 	//透過処理の変数

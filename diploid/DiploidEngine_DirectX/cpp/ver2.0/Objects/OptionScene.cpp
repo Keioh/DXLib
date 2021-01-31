@@ -4,6 +4,9 @@ void OptionScene::Load()
 {
 	//戻るボタンの読み込み
 	back_button.Load();
+
+	//保存ボタンの読み込み
+	save_button.Load();
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
@@ -14,6 +17,10 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 	//戻るボタン
 	back_button.Init(VGet(setting.window_x - (128 + 4), setting.window_y - (32 + 4), 0));
+
+	//保存ボタン
+	save_button.Init(VGet(setting.window_x - ((128 * 2) + 4), setting.window_y - (32 + 4), 0));
+
 }
 
 void OptionScene::Updata(DiploidEngineInput& input)
@@ -21,10 +28,13 @@ void OptionScene::Updata(DiploidEngineInput& input)
 	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
 
 
+	save_button.Update(input);//保存ボタンの更新処理
+
 	back_button.Update(input);//戻るボタンの更新処理
 
 	if (back_button.GetClick() == true)//戻るボタンがクリックされたら
 	{
+		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める
 	}
 	
@@ -55,6 +65,9 @@ void OptionScene::Updata(DiploidEngineInput& input)
 
 void OptionScene::Draw(bool draw, bool debug)
 {
+	//保存ボタン
+	save_button.Draw(draw, debug);
+
 	//戻るボタン
 	back_button.Draw(draw, debug);
 
