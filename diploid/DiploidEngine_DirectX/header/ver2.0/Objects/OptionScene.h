@@ -10,7 +10,17 @@
 class OptionScene
 {
 private:
+
+	DiploidBoxV2 box;//フェード用BOX
+
 	Back back_button;//戻るボタン
+
+
+	//透過処理の変数
+	int alpha = 255;
+	int alpha_speed = 8;//透過速度
+
+	int box_draw_flag = 0;//0でフェードアウト、1でフェードアウト完了、2でフェードイン、3でフェードイン完了
 
 public:
 

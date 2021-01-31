@@ -89,7 +89,7 @@ void TitleScene::Updata()
 		if (alpha > 255)//透過値フロー処理
 		{
 			alpha = 255;
-			secen_select = button_click;//押したボタンの種類を代入
+			secen_select = button_click;//押したボタンのシーン種類を代入
 		}
 	}
 	else

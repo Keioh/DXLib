@@ -1,6 +1,0 @@
-﻿  DiploidEngineSetting.cpp
-  OptionScene.cpp
-C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(10,71): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(10,41): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-  コードを生成中...
-  DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Debug\DiploidEngine_DirectX.exe

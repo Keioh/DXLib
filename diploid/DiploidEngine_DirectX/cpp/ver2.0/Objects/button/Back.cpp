@@ -77,3 +77,14 @@ bool Back::GetClick()
 {
 	return return_button.GetClick();
 }
+
+int Back::GetSelected()
+{
+	return return_button.GetSelectedUI();
+}
+
+
+void Back::SetSelectedFlag(int new_flag)
+{
+	return_button.SetSelectedUI(new_flag);
+}

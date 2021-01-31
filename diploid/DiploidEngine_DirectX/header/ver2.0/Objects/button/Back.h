@@ -17,4 +17,7 @@ public:
 
 	bool GetHit();//カーソルが当たっているか
 	bool GetClick();//クリックされたか
+	int GetSelected();//選択状態か
+
+	void SetSelectedFlag(int new_flag);
 };
