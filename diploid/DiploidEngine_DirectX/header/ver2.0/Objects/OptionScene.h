@@ -5,11 +5,12 @@
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
 
+#include "ver2.0/Objects/button/Back.h"
+
 class OptionScene
 {
 private:
-	DiploidAnimation return_button_animation;//戻るボタンのアニメーション画像
-	DiploidSelectedUIV2 return_button;//戻るボタン
+	Back back_button;//戻るボタン
 
 public:
 
