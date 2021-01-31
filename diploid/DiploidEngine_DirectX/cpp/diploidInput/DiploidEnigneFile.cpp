@@ -1,87 +1,32 @@
 #include "diploidInput\DiploidEnigneFile.h"
 
 
-int DiploidEngineFile::Craete(const char* path)
+void DiploidEngineFile::Load(const char* path, unsigned int mode, size_t char_size)
 {
-	output_file.open(path);
+	file_in.open(path, mode);
 
-	if (!output_file)
+	while (!file_in.eof())
 	{
-		return 0;
-	}
+		std::getline(file_in, strings);
 
-	output_file.close();
+		//str_data.push_back(strings);
 
-	return 1;
-}
-
-int DiploidEngineFile::Load(const char* path)
-{
-	file_handl = FileRead_open(path, TRUE);//ファイルを読み込む
-
-	//FileRead_close(file_handl);//ファイルを閉じる
-
-	if (file_handl > 0)
-	{
-		return file_handl;
-	}
-
-	return 0;
-}
-
-int DiploidEngineFile::WriteINT(const char* path, const char* name, int data)
-{
-	output_file.open(path, std::ios::app);//追記モードでファイルを開く
-
-	if (output_file)
-	{
-		output_file << name << '=' << data << std::endl;	
 		
-		output_file.close();
+		for (int i = 0; i != (512 / char_size); i++)
+		{
+			buffer[i] = *strings.substr(i * char_size, char_size).c_str();
+		}
 
-		return data;
+		data.push_back(*buffer);
+		
 	}
 
-	output_file.close();
 
-	return data;
-}
-
-float DiploidEngineFile::WriteFLOAT(const char* path, const char* name, float data)
-{
-	output_file.open(path, std::ios::app);//追記モードでファイルを開く
-
-	if (output_file)
-	{
-		output_file << name << '=' << data << std::endl;
-
-		output_file.close();
-
-		return data;
-	}
-
-	output_file.close();
-
-	return data;
-}
-
-void DiploidEngineFile::Read(int handl)
-{
-	FileRead_gets(strings, 256, handl);
-}
-
-void DiploidEngineFile::Close(int handl)
-{
-	FileRead_close(handl);
+	file_in.close();
 }
 
 
-void DiploidEngineFile::LoadJSON(const char* path)
+void DiploidEngineFile::Close()
 {
-	json_file.open(path);
-
-	if (!json_file)
-	{
-		std::exit(EXIT_FAILURE);
-	}
+	file_in.close();
 }

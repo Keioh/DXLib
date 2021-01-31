@@ -11,6 +11,7 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 	logo_scene.Load();
 	title_scene.Load();
 	game_scene.Load();
+	option_scene.Load();
 }
 
 void DiploidEngineApp::Init(DiploidEngineApp* app)
@@ -18,6 +19,7 @@ void DiploidEngineApp::Init(DiploidEngineApp* app)
 	logo_scene.Init();
 	title_scene.Init();
 	game_scene.Init(app->diploidEngineSetting);
+	option_scene.Init(app->diploidEngineSetting);
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
@@ -43,7 +45,13 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//オプションボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_OPTION)
 		{
+			option_scene.Updata(app->diploidEngineInput);
 
+			//戻るボタンが押されていたらタイトルに戻る。
+			if (option_scene.GetReturnFlag() == true)
+			{
+				title_scene.SetSecne(GAME_TITLE);
+			}
 		}
 
 		//終了ボタンを押したとき
@@ -62,11 +70,12 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 
 void DiploidEngineApp::Draw(DiploidEngineApp* app)
 {
+	//ロゴシーンがまだ描画中なら
 	if (logo_scene.GetFinalScene() == false)
 	{
 		logo_scene.Draw();
 	}
-	else
+	else//描画が完了していたら(タイトル画面の表示からの遷移)
 	{
 		//何も押していない時
 		if (title_scene.GetFinalScene() == GAME_TITLE)
@@ -89,7 +98,7 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		//オプションボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_OPTION)
 		{
-
+			option_scene.Draw();
 		}
 	}
 }

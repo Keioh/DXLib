@@ -243,7 +243,7 @@ void DiploidEngineImpact::ImpactCirclePoint()
 							if (circle->layer_number == point->layer_number)
 							{
 								//点と円の判定（点優先）を有効にしているなら
-								if ((point->impact_point_circle_flag == true) )
+								if ((point->impact_point_circle_flag == true))
 								{
 									point->impacted = true;
 								}

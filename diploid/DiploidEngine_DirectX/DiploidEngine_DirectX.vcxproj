@@ -41,13 +41,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <CLRSupport>false</CLRSupport>
@@ -199,6 +199,7 @@
     <ClCompile Include="cpp\ver2.0\Main\Object.cpp" />
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\AutoNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Back.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\SkipNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAnimation.cpp" />
@@ -206,6 +207,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\OptionScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\TitleScene.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
   </ItemGroup>
@@ -268,6 +270,7 @@
     <ClInclude Include="header\ver2.0\Main\Object.h" />
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="header\ver2.0\Objects\button\AutoNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Back.h" />
     <ClInclude Include="header\ver2.0\Objects\button\SkipNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAnimation.h" />
@@ -275,6 +278,7 @@
     <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
     <ClInclude Include="header\ver2.0\Objects\GameScene.h" />
     <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\OptionScene.h" />
     <ClInclude Include="header\ver2.0\Objects\TitleScene.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>

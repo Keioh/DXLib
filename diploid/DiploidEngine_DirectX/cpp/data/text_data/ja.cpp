@@ -2,8 +2,9 @@
 
 void ja_text::Load()
 {
-	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 
+	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
+	
 	data[0].Load("昔の人は地震や嵐といった自然現象に畏怖を込めて、\nそれらの事象に「神(Kami)」が宿るという信仰を持っていた。");
 	data[0].SetSceneName("clock");
 	//data[0].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
@@ -35,25 +36,27 @@ void ja_text::Load()
 		data[count].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 		string.push_back(data[count]);
 	}
+	
+/*
+	//ファイル読み込み	
+	file.Load("text/jp.txt");
 
-
-	/*
-	//ファイル読み込み
 	SetUseASyncLoadFlag(FALSE);
-	file_handle = FileRead_open("text/jp.txt");
+	//file_handle = FileRead_open("text/jp.txt");
 
-	for (int count = 0; count != 2; count++)
+	for (int count = 0; count != file.data.size(); count++)
 	{
-		FileRead_gets(string_data, 512, file_handle);
+		//FileRead_gets(string_data, 512, file_handle);
 
-		data[0].Load(string_data);
-		data[0].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
-		string.push_back(data[0]);
+		data[count].Load(&file.data[count]);
+		data[count].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
+		string.push_back(data[count]);
 	}
 
-	FileRead_close(file_handle);
+	//FileRead_close(file_handle);
 	SetUseASyncLoadFlag(TRUE);
-	*/
+*/
+
 }
 
 void ja_text::SetSpeed(int new_speed)

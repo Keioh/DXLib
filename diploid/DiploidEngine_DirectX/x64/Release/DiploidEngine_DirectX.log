@@ -1,29 +1,302 @@
-﻿  ja.cpp
+﻿  custom_number.cpp
+  dice.cpp
+  dice_3d6n.cpp
+  dice_result_bord.cpp
+  number.cpp
+  ConditionalButton.cpp
+  fild.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(161,110): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(161,76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(161,41): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(182,109): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(182,75): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(182,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(203,113): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(203,79): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(203,44): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(225,108): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(225,74): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\fild.cpp(225,39): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  fild_map.cpp
+  home_country_ui.cpp
+  military_ui.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\military_ui.cpp(78,103): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\data\sim_data\military_ui.cpp(78,74): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  ja.cpp
   DiploidEngineApp.cpp
   DiploidEngineMain.cpp
+  diploidBox.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(52,67): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(52,46): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(52,31): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(52,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(56,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(56,30): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(138,11): warning C4068: 不明な pragma 'acc'
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(141,60): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidBox.cpp(141,31): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  diploidCircle.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(38,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(39,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(47,65): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(51,35): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(51,23): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(76,71): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidCircle.cpp(76,36): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  diploidImage.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(38,33): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(39,37): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(40,35): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(49,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(50,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(60,33): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(61,37): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(62,35): warning C4244: '+=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(121,32): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(122,37): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(122,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(155,49): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidImage.cpp(155,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  diploidLine.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidLine.cpp(35,72): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidLine.cpp(35,56): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidLine.cpp(35,40): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidLine.cpp(35,24): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidLine.cpp(58,57): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidLine.cpp(58,29): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  diploidPanel.cpp
+  diploidPoint.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidPoint.cpp(21,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidPoint.cpp(22,16): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidPoint.cpp(28,32): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidGraphics\diploidPoint.cpp(28,20): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  DiploidEngineImpact.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(16,36): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(17,34): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(18,30): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(19,32): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(21,28): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(22,26): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(23,22): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(24,24): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(566,112): warning C4805: '==': 演算中の 'int' 型と 'bool' 型の混用は安全ではありません
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1471,27): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1481,30): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1491,29): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1501,28): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1535,28): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1569,30): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1602,31): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1636,31): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidImpact\DiploidEngineImpact.cpp(1675,92): warning C4267: 'return': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+  コンパイル中...
+  DiploidEngineInput.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(36,24): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(36,21): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(92,49): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(92,28): warning C4244: 'return': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(171,10): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(172,10): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(182,10): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(183,10): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(193,10): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidInput\DiploidEngineInput.cpp(194,10): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  DiploidEnigneFile.cpp
+  DiploidEngineLayer.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidLayer\DiploidEngineLayer.cpp(5,36): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidLayer\DiploidEngineLayer.cpp(6,36): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidLayer\DiploidEngineLayer.cpp(7,36): warning C4267: '=': 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidLayer\DiploidEngineLayer.cpp(9,22): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidLayer\DiploidEngineLayer.cpp(10,22): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidLayer\DiploidEngineLayer.cpp(11,22): warning C4244: '=': 'size_t' から 'float' への変換です。データが失われる可能性があります。
+  DiploidEngineNetwork.cpp
+  DiploidCreator.cpp
+  DiploidEngineObject.cpp
+  DiploidEngineObjectInformation.cpp
+  DiploidEngineTag.cpp
+  DiploidMap.cpp
+  diploidPhysics.cpp
+  DiploidEngineScene.cpp
   DiploidEngineScreen.cpp
-c:\gameproject\diploid\diploidengine_directx\cpp\diploidscreen\diploidenginescreen.cpp(8): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidScreen\DiploidEngineScreen.cpp(8,31): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+  diploidEngineSoundLoader.cpp
+  diploidEnigneSound.cpp
+  base_standalone.cpp
+  diploidBoxSA.cpp
+  diploidGraphicsSA.cpp
+  diploidImpactSA.cpp
+  diploidSystem.cpp
+  diploidUI.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(17,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(17,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(23,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(23,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(26,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(26,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(29,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(29,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(103,28): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(104,27): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(105,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(107,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(108,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(109,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(111,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(112,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(113,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(115,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(116,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(117,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(160,28): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(161,27): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(162,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(164,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(165,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(166,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(168,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(169,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(170,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(172,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(173,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(174,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(343,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(343,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(349,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(349,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(352,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(352,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(355,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(355,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(361,28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(361,20): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(364,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(364,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(367,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(367,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(370,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(370,22): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(437,28): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(438,27): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(439,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(441,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(442,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(443,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(445,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(446,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(447,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(449,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(450,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(451,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(494,28): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(495,27): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(496,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(498,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(499,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(500,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(502,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(503,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(504,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(506,30): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(507,29): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\diploidUI\diploidUI.cpp(508,31): warning C4244: '=': 'float' から 'int' への変換です。データが失われる可能性があります。
+  コンパイル中...
+  DiploidEngineMath.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\systme\DiploidEngineMath.cpp(36,21): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\systme\DiploidEngineMath.cpp(45,21): warning C4244: '=': 'double' から 'float' への変換です。データが失われる可能性があります。
   DiploidEngineSetting.cpp
+  DiploidBoxV2.cpp
+  DiploidCircleV2.cpp
+  DiploidImageV2.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(12,20): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(13,20): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(50,76): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(50,57): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(50,38): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(50,26): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(63,20): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(64,20): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(100,46): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(100,33): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidImageV2.cpp(100,20): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  DiploidScreenGraphics.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp(14,67): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp(14,41): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp(17,73): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp(17,47): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp(19,70): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp(19,44): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  DiploidSoftImage.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidSoftImage.cpp(87,32): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidSoftImage.cpp(88,32): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidSoftImage.cpp(92,25): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidSoftImage.cpp(93,25): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidSoftImage.cpp(197,53): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidSoftImage.cpp(197,34): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
   DiploidStrings.cpp
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\graphics\diploidstrings.cpp(138): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidStrings.cpp(138,28): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Graphics\DiploidStrings.cpp(138,21): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Camera.cpp
+  Collision.cpp
+  Layer.cpp
+  Object.cpp
+  Transform.cpp
   AutoNovel.cpp
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\autonovel.cpp(80): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\autonovel.cpp(86): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\AutoNovel.cpp(80,47): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\AutoNovel.cpp(80,35): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\AutoNovel.cpp(80,24): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\AutoNovel.cpp(86,46): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\AutoNovel.cpp(86,35): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\AutoNovel.cpp(86,24): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  Back.cpp
   SkipNovel.cpp
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\skipnovel.cpp(63): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\button\skipnovel.cpp(69): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\SkipNovel.cpp(63,47): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\SkipNovel.cpp(63,35): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\SkipNovel.cpp(63,24): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\SkipNovel.cpp(69,46): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\SkipNovel.cpp(69,35): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\button\SkipNovel.cpp(69,24): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  DiploidAll.cpp
   DiploidAnimation.cpp
+  DiploidNovelScene.cpp
+  DiploidSelectedUIV2.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(62,100): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(62,66): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(62,31): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(83,32): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(83,25): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(84,30): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(84,23): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(86,25): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(86,18): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(93,29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp(93,21): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  コンパイル中...
   GameScene.cpp
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(28): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(29): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\objects\gamescene.cpp(43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(28,64): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(28,41): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(29,70): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(29,41): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(38,56): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(38,38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\GameScene.cpp(43,64): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   LogoScene.cpp
+  OptionScene.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(28,77): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(28,53): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(31,67): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(31,43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(55,44): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(55,33): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(55,22): warning C4244: '引数': 'double' から 'int' への変換です。データが失われる可能性があります。
+  TitleScene.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\TitleScene.cpp(26,56): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\TitleScene.cpp(26,38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\TitleScene.cpp(30,47): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\TitleScene.cpp(35,80): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
   WindowsMain.cpp
   コード生成しています。
-c:\gameproject\diploid\diploidengine_directx\cpp\ver2.0\main\collision.cpp(126): warning C4715: 'DiploidCollision::BoxAndMouseCollisionUpdate': 値を返さないコントロール パスがあります。
-  93 of 1554 functions ( 6.0%) were compiled, the rest were copied from previous compilation.
-    23 functions were new in current compilation
-    17 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Main\Collision.cpp(126): warning C4715: 'DiploidCollision::BoxAndMouseCollisionUpdate': 値を返さないコントロール パスがあります。
+  All 1204 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   コード生成が終了しました。
   DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Release\DiploidEngine_DirectX.exe

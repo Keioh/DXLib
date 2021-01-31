@@ -26,6 +26,7 @@
 #include "ver2.0/Objects/LogoScene.h"
 #include "ver2.0/Objects/TitleScene.h"
 #include "ver2.0/Objects/GameScene.h"
+#include "ver2.0/Objects/OptionScene.h"
 
 using namespace std;
 
@@ -35,13 +36,14 @@ private:
 	LogoScene logo_scene;
 	TitleScene title_scene;
 	GameScene game_scene;
+	OptionScene option_scene;
 
 public:
 	void FileCreate(DiploidEngineApp* app);
-	void Load(DiploidEngineApp* app);
-	void Init(DiploidEngineApp* app);
-	void Updata(DiploidEngineApp* app);
-	void Draw(DiploidEngineApp* app);
-	void Destory(DiploidEngineApp* app);
-	void End(DiploidEngineApp* app);
+	void Load(DiploidEngineApp* app);//一回だけ読み込む
+	void Init(DiploidEngineApp* app);//一回だけ初期化
+	void Updata(DiploidEngineApp* app);//ループ処理(fps依存)
+	void Draw(DiploidEngineApp* app);//描画
+	void Destory(DiploidEngineApp* app);//ver1.0の機能でのオブジェクト削除
+	void End(DiploidEngineApp* app);//ゲーム終了時の処理
 };

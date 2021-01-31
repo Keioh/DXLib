@@ -20,7 +20,7 @@
 class GameScene
 {
 private:
-	DiploidScreenGraphics test;//モザイク処理
+	DiploidScreenGraphics screen_graphics;//モザイク処理とか
 
 	AutoNovel auto_button;//オートボタン
 	SkipNovel skip_button;//スキップボタン
@@ -34,6 +34,7 @@ private:
 	DiploidNovelScene novel_scene;
 
 	DiploidImageV2 string_back_wall;//文字列の後ろの黒いやつ
+
 	DiploidImageV2 data_back_wall;//日付の後ろの赤いやつ
 	DiploidImageV2 data_test;//test日付
 	DiploidImageV2 place_test;//test場所

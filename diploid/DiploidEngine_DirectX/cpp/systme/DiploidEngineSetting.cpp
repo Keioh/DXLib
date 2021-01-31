@@ -8,7 +8,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "Title(DiploidEngine version 0.8.0)";
+	window_name = "Title(DiploidEngine version 0.8.2)";
 }
 
 void DiploidEngineSetting::Init()

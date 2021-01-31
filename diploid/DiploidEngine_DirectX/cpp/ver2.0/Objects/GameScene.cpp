@@ -82,8 +82,8 @@ void GameScene::Updata(DiploidEngineInput& input)
 			}
 		}
 
-		//スキップボタンにカーソルが触れ、かつ選択状態なら
-		if (skip_button.GetHit() == true)
+		//スキップボタンにカーソルがクリックされ、かつ選択状態なら
+		if (skip_button.GetClick() == true)
 		{
 			if (skip_button.GetSelected() == 1)
 			{
@@ -91,8 +91,8 @@ void GameScene::Updata(DiploidEngineInput& input)
 			}
 		}
 
-		//オートボタンにカーソルが触れ、かつ選択状態なら
-		if (auto_button.GetHit() == true)
+		//オートボタンにカーソルがクリックされ、かつ選択状態なら
+		if (auto_button.GetClick() == true)
 		{
 			if (auto_button.GetSelected() == 1)
 			{
@@ -170,7 +170,7 @@ void GameScene::Draw()
 	//data_test.Draw();
 	//place_test.Draw();
 
-	//test.Draw(0.1f);
+	//screen_graphics.Draw(0.1f);
 
 	//文字表示の背景の描画
 	string_back_wall.Draw();
