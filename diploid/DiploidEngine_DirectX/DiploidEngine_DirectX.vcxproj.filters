@@ -157,6 +157,18 @@
     <Filter Include="ソース ファイル\cpp\ver2.0\Objects\button">
       <UniqueIdentifier>{f9a96589-72d5-41a8-80cc-907b8e97ac5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Objects\string_image">
+      <UniqueIdentifier>{c9aa0d0c-455d-4503-9be2-4937986da118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\string_image">
+      <UniqueIdentifier>{9fd2dc36-a2f5-4fed-989f-62a33172e99b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\string_image\option">
+      <UniqueIdentifier>{60975f46-82de-44a2-86d4-da1e8e700486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Objects\string_image\option">
+      <UniqueIdentifier>{144ed29b-e1ac-4baf-b0d8-31205d5a9da6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -359,6 +371,9 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Objects\button\WindowSize.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\option\option_string_image.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\string_image\option</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -574,6 +589,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\button\WindowSize.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\string_image\option\option_string_image.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\string_image\option</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

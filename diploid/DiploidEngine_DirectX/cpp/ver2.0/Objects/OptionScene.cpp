@@ -14,10 +14,15 @@ void OptionScene::Load()
 	window_resize_button_1600_900.Load("texter/basic/button/display/1600_900.png");
 	window_resize_button_1920_1080.Load("texter/basic/button/display/1920_1080.png");
 
+	//Optionのタイトル画像
+	option_string_image.Load();
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
 {
+	//Optionのタイトル画像
+	option_string_image.Init(VGet(0, 0, 0));
+
 	//フェード用BOX
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
@@ -48,6 +53,9 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting)
 {
 	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
+
+	//Optionのタイトル画像
+	option_string_image.Updata();
 
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.Update(input);
@@ -85,8 +93,8 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	//ウィンドウサイズ変更ボタン(1600_900)がクリックされたとき
 	if (window_resize_button_1600_900.GetClick() == true)
 	{
-		window_resize_button_1600_900.SetSelectedFlag(1);	
-		
+		window_resize_button_1600_900.SetSelectedFlag(1);
+
 		window_resize_button_960_540.SetSelectedFlag(-1);
 		window_resize_button_1280_720.SetSelectedFlag(-1);
 		window_resize_button_1920_1080.SetSelectedFlag(-1);
@@ -146,7 +154,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める
 	}
-	
+
 
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
@@ -174,6 +182,9 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 void OptionScene::Draw(bool draw, bool debug)
 {	
+	//Optionのタイトル画像
+	option_string_image.Draw(draw, debug);
+
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.Draw(draw, debug);
 
@@ -204,6 +215,8 @@ bool OptionScene::GetReturnFlag()
 {
 	if ((back_button.GetSelected() == 1) && (box_draw_flag == 3))
 	{
+		option_string_image.Reset();//Optionタイトル画像のアニメーションをリセット
+
 		box_draw_flag = 0;//フェードアウトのflagを立てる
 		back_button.SetSelectedFlag(-1);//ボタンの選択状態を-1(初期化)にする。
 		return true;

@@ -9,6 +9,7 @@
 #include "ver2.0/Objects/button/Save.h"
 #include "ver2.0/Objects/button/WindowSize.h"
 
+#include "ver2.0/Objects/string_image/option/option_string_image.h"
 
 class OptionScene
 {
@@ -24,6 +25,10 @@ private:
 	WindowSize window_resize_button_1600_900;//ウィンドウサイズ変更ボタン(1600_900)
 	WindowSize window_resize_button_1920_1080;//ウィンドウサイズ変更ボタン(1920_1080)
 
+
+	//Optionの画像
+	OptionStringImage option_string_image;
+	VECTOR position = VGet(0,0,0);
 
 	//ウィンドウサイズ変更ボタン群の位置
 	int window_resize_button_position_x = 100;
