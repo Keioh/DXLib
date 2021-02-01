@@ -7,6 +7,9 @@ void OptionScene::Load()
 
 	//保存ボタンの読み込み
 	save_button.Load();
+
+	window_resize_button_1280_720.Load("texter/basic/button/display/1280_720.png");
+	window_resize_button_1600_900.Load("texter/basic/button/display/1600_900.png");
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
@@ -21,19 +24,69 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 	//保存ボタン
 	save_button.Init(VGet(setting.window_x - ((128 * 2) + 4), setting.window_y - (32 + 4), 0));
 
+	//ウィンドウサイズ変更ボタン(1280_720)
+	window_resize_button_1280_720.SetWindowSize(1280, 720);//ターゲットとなるウィンドウサイズを指定
+	window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y, 0), setting);
+
+	//ウィンドウサイズ変更ボタン(1600_900)	
+	window_resize_button_1600_900.SetWindowSize(1600, 900);//ターゲットとなるウィンドウサイズを指定
+	window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
+
 }
 
-void OptionScene::Updata(DiploidEngineInput& input)
+void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting)
 {
 	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
 
+	//ウィンドウサイズ変更ボタン(1280_720)
+	window_resize_button_1280_720.Update(input);
+
+	//ウィンドウサイズ変更ボタン(1600_900)
+	window_resize_button_1600_900.Update(input);
+
+
+	//ウィンドウサイズ変更ボタン(1280_720)がクリックされたとき
+	if (window_resize_button_1280_720.GetClick() == true)
+	{
+		window_resize_button_1280_720.SetSelectedFlag(1);
+
+		window_resize_button_1600_900.SetSelectedFlag(-1);
+	}
+
+	//ウィンドウサイズ変更ボタン(1600_900)がクリックされたとき
+	if (window_resize_button_1600_900.GetClick() == true)
+	{
+		window_resize_button_1600_900.SetSelectedFlag(1);	
+		
+		window_resize_button_1280_720.SetSelectedFlag(-1);
+	}
 
 	save_button.Update(input);//保存ボタンの更新処理
+
+	if ((save_button.GetClick() == true) && (save_button.GetHit() == true))//保存ボタンを押したとき
+	{
+		//ウィンドウサイズ1280_720が選択状態なら
+		if (window_resize_button_1280_720.GetSelected() == 1)
+		{
+			setting.SetWindowSize(1280, 720);//解像度を変更
+		}
+
+		//ウィンドウサイズ1600_900が選択状態なら
+		if (window_resize_button_1600_900.GetSelected() == 1)
+		{
+			setting.SetWindowSize(1600, 900);//解像度を変更
+		}
+	}
+
 
 	back_button.Update(input);//戻るボタンの更新処理
 
 	if (back_button.GetClick() == true)//戻るボタンがクリックされたら
 	{
+		//現在の解像度のボタンにチェックを付けなおす。
+		window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y, 0), setting);
+		window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
+
 		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める
 	}
@@ -64,7 +117,14 @@ void OptionScene::Updata(DiploidEngineInput& input)
 }
 
 void OptionScene::Draw(bool draw, bool debug)
-{
+{	
+	//ウィンドウサイズ変更ボタン(1280_720)
+	window_resize_button_1280_720.Draw(draw, debug);
+
+	//ウィンドウサイズ変更ボタン(1600_900)
+	window_resize_button_1600_900.Draw(draw, debug);
+
+
 	//保存ボタン
 	save_button.Draw(draw, debug);
 

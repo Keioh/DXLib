@@ -12,19 +12,23 @@ class ja_text
 private:
 	DiploidEngineFile file;
 
-	DiploidEngineSetting setting;
+	//DiploidEngineSetting setting;
 
 	DiploidStrings font;
 	DiploidStrings data[256];
 
-	float x_scale = 0.2f;
-	float y_scale = 0.8f;
+	float x_scale = 0.225f;
+	float y_scale = 22 * 6;//暫定：文字サイズ*行数
 
 	int file_handle;
 	char string_data[512];
 
+	int string_data_line = 256;//読み込みデータの総行数
+
 public:
 	void Load();
+	void Init(DiploidEngineSetting& setting);
+
 	void SetSpeed(int new_speed);
 
 	std::vector<DiploidStrings> string;

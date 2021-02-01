@@ -2,13 +2,15 @@
 
 DiploidEngineSetting::DiploidEngineSetting()
 {
+	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
+
 	//window関連
 	window_x = 1280;
 	window_y = 720;
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.4)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.7)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;
@@ -73,12 +75,44 @@ void DiploidEngineSetting::End()
 	DxLib_End();
 }
 
+
+void DiploidEngineSetting::Updata()
+{
+	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
+
+	if ((buffer_window_x != window_x) || (buffer_window_y != window_y))
+	{
+		SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
+
+		reload = true;
+	}
+}
+
+
 void DiploidEngineSetting::SetExit(int flag)
 {
 	exit = flag;
 }
 
+void DiploidEngineSetting::SetWindowSize(int new_window_x, int new_window_y)
+{
+	window_x = new_window_x;
+	window_y = new_window_y;
+}
+
+
 int DiploidEngineSetting::GetExit()
 {
 	return exit;
+}
+
+
+bool DiploidEngineSetting::GetReloadFlag()
+{
+	return reload;
+}
+
+void DiploidEngineSetting::SetReloadFlag(bool new_flag)
+{
+	reload = new_flag;
 }

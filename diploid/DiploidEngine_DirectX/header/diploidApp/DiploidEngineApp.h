@@ -40,8 +40,10 @@ private:
 
 public:
 	void FileCreate(DiploidEngineApp* app);
-	void Load(DiploidEngineApp* app);//一回だけ読み込む
-	void Init(DiploidEngineApp* app);//一回だけ初期化
+	void SoundLoad(DiploidEngineApp* app);//一回だけ音を読み込む
+	void GraphicsLoad(DiploidEngineApp* app);//一回だけ画像を読み込む(解像度を変更した際にも呼ばれます。)
+	void SoundInit(DiploidEngineApp* app);//一回だけ音を初期化
+	void GraphicsInit(DiploidEngineApp* app);//一回だけ画像を初期化(解像度を変更した際にも呼ばれます。再読み込み時に値を変更したくない場合はUpdata()関数で処理をすること。)
 	void Updata(DiploidEngineApp* app);//ループ処理(fps依存)
 	void Draw(DiploidEngineApp* app);//描画
 	void Destory(DiploidEngineApp* app);//ver1.0の機能でのオブジェクト削除

@@ -7,10 +7,17 @@ void DiploidAnimation::Load(const char* path)
 	images.push_back(image);
 }
 
-void DiploidAnimation::Init(VECTOR pos, float scale_x, float scale_y)
+void DiploidAnimation::Init(VECTOR pos, int sheet,  float scale_x, float scale_y)
 {
+	sheets = sheet;
+
 	if (!images.empty())
 	{
+		if (images.size() > sheets)
+		{
+			images.erase(images.begin(), (images.begin() + sheets));//不必要になった配列を削除
+		}
+
 		for (int count = 0; count != images.size(); count++)
 		{
 			images[count].Init(pos);
@@ -124,6 +131,18 @@ void DiploidAnimation::StackDraw(bool debug)
 
 			time = 0;
 		}
-
 	}	
+}
+
+void DiploidAnimation::AllPop()
+{
+	if (!images.empty())
+	{
+		images.clear();
+	}
+}
+
+size_t DiploidAnimation::GetImagesVectorSize()
+{
+	return images.size();
 }

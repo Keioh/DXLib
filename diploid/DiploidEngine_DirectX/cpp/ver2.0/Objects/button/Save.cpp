@@ -20,7 +20,7 @@ void Save::Load()
 
 void Save::Init(VECTOR pos)
 {
-	button_animation.Init(pos);
+	button_animation.Init(pos, 14);
 	button_animation.SetAnimationSpeed(8);
 
 	button.Init(pos, VGet(128, 32, 0));
@@ -28,7 +28,7 @@ void Save::Init(VECTOR pos)
 
 void Save::Update(DiploidEngineInput& input)
 {
-	button_animation.Update();
+	//button_animation.Update();
 	button.Updata(&input);
 }
 
@@ -66,11 +66,14 @@ void Save::Draw(bool draw, bool debug)
 
 			SetDrawBright(255, 255, 255);
 		}
+
+
 	}
 
 	if (debug == true)
-	{
-		button.Draw();
+	{		
+		button.Draw(true, true);	
+		//DrawFormatString(0, 100, GetColor(0, 0, 0), "size = %d", button_animation.GetImagesVectorSize());
 	}
 }
 
@@ -94,4 +97,10 @@ int Save::GetSelected()
 void Save::SetSelectedFlag(int new_flag)
 {
 	button.SetSelectedUI(new_flag);
+}
+
+void Save::SetPosition(VECTOR new_pos)
+{
+	button_animation.SetPosition(new_pos);
+	button.SetPosition(new_pos.x, new_pos.y);
 }

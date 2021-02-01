@@ -3,6 +3,7 @@
 #include "DxLib.h"
 #include "ver2.0/Graphics/DiploidCircleV2.h"
 #include "ver2.0/Graphics/DiploidBoxV2.h"
+#include "system\DiploidEngineSetting.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ class DiploidCollision
 {
 private:
 	int upadata_count;//いつ更新するかのカウント(画面外など、頻繁に判定をしたくない場所で計算回数を減らすための変数)
-	int window_size_x = 1280, window_size_y = 720;
+	int window_size_x = 1920, window_size_y = 1080;
 
 protected:
 

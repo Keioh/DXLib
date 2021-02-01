@@ -357,6 +357,9 @@
     <ClCompile Include="cpp\ver2.0\Objects\button\Save.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\WindowSize.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -567,6 +570,9 @@
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\button\Save.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\WindowSize.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
     </ClInclude>
   </ItemGroup>

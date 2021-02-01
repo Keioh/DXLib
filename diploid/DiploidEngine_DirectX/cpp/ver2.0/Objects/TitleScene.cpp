@@ -36,7 +36,6 @@ void TitleScene::Init()
 	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + (button_back_image.GetSize().y + 20), start_string.GetHandle());
 	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 2), start_string.GetHandle());
 	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), start_string.GetHandle());
-
 }
 
 void TitleScene::Updata()

@@ -7,6 +7,8 @@
 
 #include "ver2.0/Objects/button/Back.h"
 #include "ver2.0/Objects/button/Save.h"
+#include "ver2.0/Objects/button/WindowSize.h"
+
 
 class OptionScene
 {
@@ -16,6 +18,14 @@ private:
 
 	Back back_button;//戻るボタン
 	Save save_button;//保存ボタン
+
+	WindowSize window_resize_button_1280_720;//ウィンドウサイズ変更ボタン(1280_720)
+	WindowSize window_resize_button_1600_900;//ウィンドウサイズ変更ボタン(1600_900)
+
+
+	//ウィンドウサイズ変更ボタン群の位置
+	int window_resize_button_position_x = 100;
+	int window_resize_button_position_y = 100;
 
 
 	//透過処理の変数
@@ -28,7 +38,7 @@ public:
 
 	void Load();
 	void Init(DiploidEngineSetting& setting);
-	void Updata(DiploidEngineInput& input);
+	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting);
 	void Draw(bool draw = true, bool debug = false);
 
 	bool GetReturnFlag();//戻るボタンが押されたらtrueが返る。

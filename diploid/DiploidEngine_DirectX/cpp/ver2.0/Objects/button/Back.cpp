@@ -24,7 +24,7 @@ void Back::Load()
 
 void Back::Init(VECTOR pos)
 {
-	return_button_animation.Init(pos);
+	return_button_animation.Init(pos, 18);
 	return_button_animation.SetAnimationSpeed(10);
 
 	return_button.Init(pos, VGet(128, 32, 0));

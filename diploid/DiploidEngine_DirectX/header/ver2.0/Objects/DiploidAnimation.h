@@ -16,11 +16,12 @@ private:
 	int time;
 	int next_time = 60;
 
+	int sheets;
 public:
 
 	void Load(const char* path);
 
-	void Init(VECTOR pos, float scale_x = 1.0f, float scale_y = 1.0f);
+	void Init(VECTOR pos, int sheet, float scale_x = 1.0f, float scale_y = 1.0f);
 
 	void Update();
 	void SetPosition(VECTOR  new_pos);
@@ -36,4 +37,7 @@ public:
 	void OneCellDraw(int number = 0, bool draw = true);//àÍñáÇæÇØï`âÊ
 	void StackDraw(bool debug = false);//èdÇÀÇƒï`âÊ
 
+	void AllPop();
+
+	size_t GetImagesVectorSize();
 };

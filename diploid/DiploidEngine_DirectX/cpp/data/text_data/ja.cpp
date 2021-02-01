@@ -2,7 +2,6 @@
 
 void ja_text::Load()
 {
-
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 	
 	data[0].Load("昔の人は地震や嵐といった自然現象に畏怖を込めて、\nそれらの事象に「神(Kami)」が宿るという信仰を持っていた。");
@@ -30,13 +29,19 @@ void ja_text::Load()
 	//data[4].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 	//string.push_back(data[4]);
 
+
+
 	//上記のデータを配列にpush
 	for (int count = 0; count != 256; count++)
 	{
-		data[count].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
+		//data[count].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
 		string.push_back(data[count]);
 	}
-	
+
+	if (string.size() > 256)
+	{
+		string.erase(string.begin(), string.begin() + 256);
+	}
 /*
 	//ファイル読み込み	
 	file.Load("text/jp.txt");
@@ -57,6 +62,14 @@ void ja_text::Load()
 	SetUseASyncLoadFlag(TRUE);
 */
 
+}
+
+void ja_text::Init(DiploidEngineSetting& setting)
+{
+	for (int count = 0; count != 256; count++)
+	{
+		string[count].Init(setting.window_x * x_scale, setting.window_y - y_scale, font.GetHandle());
+	}
 }
 
 void ja_text::SetSpeed(int new_speed)

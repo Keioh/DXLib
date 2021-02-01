@@ -25,6 +25,8 @@ void GameScene::Load()
 
 void GameScene::Init(DiploidEngineSetting& setting)
 {
+	jp.Init(setting);
+
 	auto_button.Init(VGet(setting.window_x - 64, setting.window_y - 16, 0));
 	skip_button.Init(VGet(setting.window_x - (64 * 2), setting.window_y - 16, 0));
 
@@ -40,7 +42,7 @@ void GameScene::Init(DiploidEngineSetting& setting)
 
 	jp.SetSpeed(100);
 
-	end_anime.Init(VGet(setting.window_x * 0.8f, setting.window_y - 64, 0),0.5f,0.5f);
+	end_anime.Init(VGet(setting.window_x * 0.8f, setting.window_y - 64, 0), 4, 0.5f, 0.5f);
 }
 
 void GameScene::Updata(DiploidEngineInput& input)

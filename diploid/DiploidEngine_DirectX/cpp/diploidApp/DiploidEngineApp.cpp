@@ -6,7 +6,12 @@ void DiploidEngineApp::FileCreate(DiploidEngineApp* app)
 
 }
 
-void DiploidEngineApp::Load(DiploidEngineApp* app)
+void DiploidEngineApp::SoundLoad(DiploidEngineApp* app)
+{
+
+}
+
+void DiploidEngineApp::GraphicsLoad(DiploidEngineApp* app)
 {	
 	logo_scene.Load();
 	title_scene.Load();
@@ -14,7 +19,12 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 	option_scene.Load();
 }
 
-void DiploidEngineApp::Init(DiploidEngineApp* app)
+void DiploidEngineApp::SoundInit(DiploidEngineApp* app)
+{
+
+}
+
+void DiploidEngineApp::GraphicsInit(DiploidEngineApp* app)
 {	
 	logo_scene.Init();
 	title_scene.Init();
@@ -45,7 +55,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//オプションボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_OPTION)
 		{
-			option_scene.Updata(app->diploidEngineInput);
+			option_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting);
 
 			//戻るボタンが押されていたらタイトルに戻る。
 			if (option_scene.GetReturnFlag() == true)

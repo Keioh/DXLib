@@ -17,7 +17,7 @@ void AutoNovel::Load()
 void AutoNovel::Init(VECTOR pos)
 {
 	button.Init(pos, VGet(64, 16, 0));//ボタンの初期化
-	anime.Init(pos);//アニメーションの初期化
+	anime.Init(pos, 8);//アニメーションの初期化
 
 	box.Init(VGet(pos.x, pos.y - 10, pos.z), VGet(0, 8, 0), GetColor(250, 250, 250));
 	box.SetFill(true);
