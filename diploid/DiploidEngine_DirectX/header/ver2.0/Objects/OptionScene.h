@@ -19,8 +19,10 @@ private:
 	Back back_button;//戻るボタン
 	Save save_button;//保存ボタン
 
+	WindowSize window_resize_button_960_540;//ウィンドウサイズ変更ボタン(960_540)
 	WindowSize window_resize_button_1280_720;//ウィンドウサイズ変更ボタン(1280_720)
 	WindowSize window_resize_button_1600_900;//ウィンドウサイズ変更ボタン(1600_900)
+	WindowSize window_resize_button_1920_1080;//ウィンドウサイズ変更ボタン(1920_1080)
 
 
 	//ウィンドウサイズ変更ボタン群の位置

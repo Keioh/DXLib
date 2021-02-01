@@ -1,0 +1,27 @@
+﻿  WindowsMain.cpp
+  DiploidEngineApp.cpp
+  OptionScene.cpp
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(22,56): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(22,38): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(26,71): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(26,41): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(29,77): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(29,41): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(33,74): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(33,41): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(37,107): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(37,42): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(41,107): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(41,42): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(45,108): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(45,43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(141,75): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(141,42): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(142,108): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(142,43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(143,108): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(143,43): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(144,109): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\GameProject\diploid\DiploidEngine_DirectX\cpp\ver2.0\Objects\OptionScene.cpp(144,44): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  コードを生成中...
+  DiploidEngine_DirectX.vcxproj -> C:\GameProject\diploid\x64\Debug\DiploidEngine_DirectX.exe

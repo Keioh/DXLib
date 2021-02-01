@@ -44,8 +44,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			diploid_engine_app->diploidEngineSetting.SetReloadFlag(false);//flagをfalseに
 		}
-		else if(diploid_engine_app->diploidEngineSetting.GetReloadFlag() == false)
-		{
+		//else if(diploid_engine_app->diploidEngineSetting.GetReloadFlag() == false)
+		//{
 			diploid_engine_app->diploidEngineSetting.Updata();
 
 			diploid_engine_app->diploidEngineScreen.Init(diploid_engine_app->diploidEngineSetting.refresh_rate);//FPS初期化
@@ -83,7 +83,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			ScreenFlip();//表画面へ描写
 
 			diploid_engine_app->diploidEngineScreen.Wait();//FPS待機
-		}
+		//}
 	}
 
 	diploid_engine_app->End(diploid_engine_app);//エンジン終了前処理。

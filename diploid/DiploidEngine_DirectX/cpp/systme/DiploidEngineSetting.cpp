@@ -67,6 +67,7 @@ void DiploidEngineSetting::SetEnd()
 
 	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
 	SetCameraNearFar(0.1f, 10000.0f);
+	SetMouseDispFlag(TRUE);//マウスカーソルの表示
 
 }
 
