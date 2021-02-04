@@ -16,12 +16,72 @@ void OptionScene::Load()
 
 	//Optionのタイトル画像
 	option_string_image.Load();
+
+	//OptionのDisplay画像
+	display_string_image.Load();
+
+
+	if (triangle_vector.empty() == true)
+	{
+		for (int count_x = 0; count_x != 75; count_x++)
+		{
+			for (int count_y = 0; count_y != 50; count_y++)
+			{
+				if ((count_y % 2) == 0)//偶数なら表示をずらさない
+				{
+					triangle_data.point_one = VGet(0 + (50 * count_x), 0 + (43.3 * count_y), 0);
+					triangle_data.point_two = VGet(-25 + (50 * count_x), 43.3 + (43.3 * count_y), 0);
+					triangle_data.point_three = VGet(25 + (50 * count_x), 43.3 + (43.3 * count_y), 0);
+
+					triangle.Init(triangle_data, GetColor(100, 100, 100));
+					triangle.SetFill(true);
+
+					triangle_vector.push_back(triangle);
+
+
+					triangle_data.point_one = VGet(0 + (50 * count_x), 0 + (43.3 * count_y), 0);
+					triangle_data.point_two = VGet(50 + (50 * count_x), 0 + (43.3 * count_y), 0);
+					triangle_data.point_three = VGet(25 + (50 * count_x), 43.3 + (43.3 * count_y), 0);
+
+					triangle.Init(triangle_data, GetColor(0, 0, 0));
+					triangle.SetFill(true);
+
+					triangle_vector.push_back(triangle);
+				}
+				else//奇数なら表示をずらす
+				{
+					triangle_data.point_one = VGet(0 + (50 * count_x) - 25, 0 + (43.3 * count_y), 0);
+					triangle_data.point_two = VGet(-25 + (50 * count_x) - 25, 43.3 + (43.3 * count_y), 0);
+					triangle_data.point_three = VGet(25 + (50 * count_x) - 25, 43.3 + (43.3 * count_y), 0);
+
+					triangle.Init(triangle_data, GetColor(100, 100, 100));
+					triangle.SetFill(true);
+
+					triangle_vector.push_back(triangle);
+
+
+					triangle_data.point_one = VGet(0 + (50 * count_x) - 25, 0 + (43.3 * count_y), 0);
+					triangle_data.point_two = VGet(50 + (50 * count_x) - 25, 0 + (43.3 * count_y), 0);
+					triangle_data.point_three = VGet(25 + (50 * count_x) - 25, 43.3 + (43.3 * count_y), 0);
+
+					triangle.Init(triangle_data, GetColor(0, 0, 0));
+					triangle.SetFill(true);
+
+					triangle_vector.push_back(triangle);
+				}
+			}
+		}
+	}
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
 {
+
 	//Optionのタイトル画像
 	option_string_image.Init(VGet(0, 0, 0));
+
+	//OptionのDisplay画像
+	display_string_image.Init(VGet(window_resize_button_position_x, window_resize_button_position_y, 0));
 
 	//フェード用BOX
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
@@ -35,27 +95,56 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.SetWindowSize(960, 540);//ターゲットとなるウィンドウサイズを指定
-	window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y, 0), setting);
+	window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
 
 	//ウィンドウサイズ変更ボタン(1280_720)
 	window_resize_button_1280_720.SetWindowSize(1280, 720);//ターゲットとなるウィンドウサイズを指定
-	window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
+	window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4) * 2, 0), setting);
 
 	//ウィンドウサイズ変更ボタン(1600_900)	
 	window_resize_button_1600_900.SetWindowSize(1600, 900);//ターゲットとなるウィンドウサイズを指定
-	window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 2), 0), setting);
+	window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
 
 	//ウィンドウサイズ変更ボタン(1920_1080)	
 	window_resize_button_1920_1080.SetWindowSize(1920, 1080);//ターゲットとなるウィンドウサイズを指定
-	window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
+	window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
 }
 
 void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting)
 {
 	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
 
+	if (!triangle_vector.empty())
+	{
+		for (int count_x = 0; count_x != 75 * 50; count_x++)
+		{
+			pos.x = input.GetMousePosition().x - triangle_vector[count_x].GetCenterPosition().x;
+				pos.y = input.GetMousePosition().y - triangle_vector[count_x].GetCenterPosition().y;
+				pos.z = sqrtf((powf(pos.x, 2) + powf(pos.y, 2))) * (2 + anime);
+
+				color = abs(pos.z);
+
+				anime = sin(add);
+
+			if (color > 255) color = 255;
+			if (color < 255 * 0.3) color = 255 * 0.3;
+
+			triangle_vector[count_x].SetColor(GetColor(color, color, color));
+		}
+
+		add += 0.01f;
+
+		if ((2 * DX_PI) < add)
+		{
+			add = 0;
+		}
+	}
+
 	//Optionのタイトル画像
 	option_string_image.Updata();
+
+	//OptionのDisplay画像
+	display_string_image.Updata();
 
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.Update(input);
@@ -146,10 +235,10 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	if (back_button.GetClick() == true)//戻るボタンがクリックされたら
 	{
 		//現在の解像度のボタンにチェックを付けなおす。
-		window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y, 0), setting);
-		window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
-		window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 2), 0), setting);
-		window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
+		window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
+		window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4) * 2, 0), setting);
+		window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
+		window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
 
 		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める
@@ -182,8 +271,19 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 void OptionScene::Draw(bool draw, bool debug)
 {	
+	if (!triangle_vector.empty())
+	{
+		for (int count_x = 0; count_x != 75 * 50; count_x++)
+		{
+			triangle_vector[count_x].Draw(draw);
+		}
+	}
+
+
 	//Optionのタイトル画像
 	option_string_image.Draw(draw, debug);
+
+	display_string_image.Draw(draw, debug);
 
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.Draw(draw, debug);
@@ -216,6 +316,7 @@ bool OptionScene::GetReturnFlag()
 	if ((back_button.GetSelected() == 1) && (box_draw_flag == 3))
 	{
 		option_string_image.Reset();//Optionタイトル画像のアニメーションをリセット
+		display_string_image.Reset();//Option:Display画像のアニメーションをリセット
 
 		box_draw_flag = 0;//フェードアウトのflagを立てる
 		back_button.SetSelectedFlag(-1);//ボタンの選択状態を-1(初期化)にする。

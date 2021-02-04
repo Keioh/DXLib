@@ -10,10 +10,21 @@
 #include "ver2.0/Objects/button/WindowSize.h"
 
 #include "ver2.0/Objects/string_image/option/option_string_image.h"
+#include "ver2.0/Objects/string_image/option/display_string_image.h"
+
+#include "ver2.0/Graphics/DiploidTriangle.h"
+
 
 class OptionScene
 {
 private:
+
+	std::vector<DiploidTriangle> triangle_vector;
+	TRIANGLE triangle_data;
+	DiploidTriangle triangle;
+	unsigned int color;
+	VECTOR pos;
+	float anime, add;
 
 	DiploidBoxV2 box;//フェード用BOX
 
@@ -28,6 +39,8 @@ private:
 
 	//Optionの画像
 	OptionStringImage option_string_image;
+	DisplayStringImage display_string_image;
+
 	VECTOR position = VGet(0,0,0);
 
 	//ウィンドウサイズ変更ボタン群の位置

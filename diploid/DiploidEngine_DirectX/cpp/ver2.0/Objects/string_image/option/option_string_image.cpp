@@ -2,13 +2,13 @@
 
 void OptionStringImage::Load()
 {
-	option_string_images[0].Load("texter/basic/option/line.png");
-	option_string_images[1].Load("texter/basic/option/o.png");
-	option_string_images[2].Load("texter/basic/option/p.png");
-	option_string_images[3].Load("texter/basic/option/t.png");
-	option_string_images[4].Load("texter/basic/option/i.png");
-	option_string_images[5].Load("texter/basic/option/o_2.png");
-	option_string_images[6].Load("texter/basic/option/n.png");
+	option_string_images[0].Load("texter/basic/option/title/line.png");
+	option_string_images[1].Load("texter/basic/option/title/o.png");
+	option_string_images[2].Load("texter/basic/option/title/p.png");
+	option_string_images[3].Load("texter/basic/option/title/t.png");
+	option_string_images[4].Load("texter/basic/option/title/i.png");
+	option_string_images[5].Load("texter/basic/option/title/o_2.png");
+	option_string_images[6].Load("texter/basic/option/title/n.png");
 }
 
 void OptionStringImage::Init(VECTOR pos)
@@ -17,7 +17,7 @@ void OptionStringImage::Init(VECTOR pos)
 
 	for (int count = 0; count != 7; count++)
 	{
-		position_animation_x[count] = -25;
+		position_animation_x[count] = anime_pos_init;
 		option_string_alpha[count] = 0;
 		option_string_images[count].Init(position);
 	}
@@ -101,7 +101,7 @@ void OptionStringImage::Reset()
 {
 	for (int count = 0; count != 7; count++)
 	{
-		position_animation_x[count] = -25;
+		position_animation_x[count] = anime_pos_init;
 		option_string_alpha[count] = 0;
 	}
 }
