@@ -46,3 +46,21 @@ float DiploidEngineMath::ToRadian(float degree_angle)
 
 	return ans;
 }
+
+float DiploidEngineMath::EquilateralTriangleHeight(float length)
+{
+	float ans = 0.0f;
+
+	ans = (sqrt(3) / 2) * length;
+
+	return ans;
+}
+
+float DiploidEngineMath::EquilateralTriangleLength(float height)
+{
+	float ans = 0.0f;
+
+	ans = (2 * height) / sqrt(3);
+
+	return ans;
+}

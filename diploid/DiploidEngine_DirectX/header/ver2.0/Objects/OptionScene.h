@@ -4,6 +4,7 @@
 #include "system\DiploidEngineSetting.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
+#include "system\DiploidEngineMath.h"
 
 #include "ver2.0/Objects/button/Back.h"
 #include "ver2.0/Objects/button/Save.h"
@@ -13,18 +14,15 @@
 #include "ver2.0/Objects/string_image/option/display_string_image.h"
 
 #include "ver2.0/Graphics/DiploidTriangle.h"
+#include "ver2.0/Objects/ContinuousTriangle.h"
 
 
 class OptionScene
 {
 private:
+	DiploidEngineMath math;
 
-	std::vector<DiploidTriangle> triangle_vector;
-	TRIANGLE triangle_data;
-	DiploidTriangle triangle;
-	unsigned int color;
-	VECTOR pos;
-	float anime, add;
+	ContinuousTriangle continuous_triangle;
 
 	DiploidBoxV2 box;//フェード用BOX
 

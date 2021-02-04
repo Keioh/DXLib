@@ -20,62 +20,12 @@ void OptionScene::Load()
 	//Option‚ÌDisplay‰æ‘œ
 	display_string_image.Load();
 
-
-	if (triangle_vector.empty() == true)
-	{
-		for (int count_x = 0; count_x != 75; count_x++)
-		{
-			for (int count_y = 0; count_y != 50; count_y++)
-			{
-				if ((count_y % 2) == 0)//‹ô”‚È‚ç•\Ž¦‚ð‚¸‚ç‚³‚È‚¢
-				{
-					triangle_data.point_one = VGet(0 + (50 * count_x), 0 + (43.3 * count_y), 0);
-					triangle_data.point_two = VGet(-25 + (50 * count_x), 43.3 + (43.3 * count_y), 0);
-					triangle_data.point_three = VGet(25 + (50 * count_x), 43.3 + (43.3 * count_y), 0);
-
-					triangle.Init(triangle_data, GetColor(100, 100, 100));
-					triangle.SetFill(true);
-
-					triangle_vector.push_back(triangle);
-
-
-					triangle_data.point_one = VGet(0 + (50 * count_x), 0 + (43.3 * count_y), 0);
-					triangle_data.point_two = VGet(50 + (50 * count_x), 0 + (43.3 * count_y), 0);
-					triangle_data.point_three = VGet(25 + (50 * count_x), 43.3 + (43.3 * count_y), 0);
-
-					triangle.Init(triangle_data, GetColor(0, 0, 0));
-					triangle.SetFill(true);
-
-					triangle_vector.push_back(triangle);
-				}
-				else//Šï”‚È‚ç•\Ž¦‚ð‚¸‚ç‚·
-				{
-					triangle_data.point_one = VGet(0 + (50 * count_x) - 25, 0 + (43.3 * count_y), 0);
-					triangle_data.point_two = VGet(-25 + (50 * count_x) - 25, 43.3 + (43.3 * count_y), 0);
-					triangle_data.point_three = VGet(25 + (50 * count_x) - 25, 43.3 + (43.3 * count_y), 0);
-
-					triangle.Init(triangle_data, GetColor(100, 100, 100));
-					triangle.SetFill(true);
-
-					triangle_vector.push_back(triangle);
-
-
-					triangle_data.point_one = VGet(0 + (50 * count_x) - 25, 0 + (43.3 * count_y), 0);
-					triangle_data.point_two = VGet(50 + (50 * count_x) - 25, 0 + (43.3 * count_y), 0);
-					triangle_data.point_three = VGet(25 + (50 * count_x) - 25, 43.3 + (43.3 * count_y), 0);
-
-					triangle.Init(triangle_data, GetColor(0, 0, 0));
-					triangle.SetFill(true);
-
-					triangle_vector.push_back(triangle);
-				}
-			}
-		}
-	}
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
 {
+	//ŽOŠpŒ`‚Ì“®“I”wŒi
+	continuous_triangle.Init(VGet(0, 0, 0), 50, 100, 30);
 
 	//Option‚Ìƒ^ƒCƒgƒ‹‰æ‘œ
 	option_string_image.Init(VGet(0, 0, 0));
@@ -114,31 +64,8 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 {
 	SetBackgroundColor(255, 255, 255);//Window”wŒiF‚ð”’F‚É•ÏX
 
-	if (!triangle_vector.empty())
-	{
-		for (int count_x = 0; count_x != 75 * 50; count_x++)
-		{
-			pos.x = input.GetMousePosition().x - triangle_vector[count_x].GetCenterPosition().x;
-				pos.y = input.GetMousePosition().y - triangle_vector[count_x].GetCenterPosition().y;
-				pos.z = sqrtf((powf(pos.x, 2) + powf(pos.y, 2))) * (2 + anime);
-
-				color = abs(pos.z);
-
-				anime = sin(add);
-
-			if (color > 255) color = 255;
-			if (color < 255 * 0.3) color = 255 * 0.3;
-
-			triangle_vector[count_x].SetColor(GetColor(color, color, color));
-		}
-
-		add += 0.01f;
-
-		if ((2 * DX_PI) < add)
-		{
-			add = 0;
-		}
-	}
+	//ŽOŠpŒ`‚Ì“®“I”wŒi
+	continuous_triangle.Updata(input);
 
 	//Option‚Ìƒ^ƒCƒgƒ‹‰æ‘œ
 	option_string_image.Updata();
@@ -271,14 +198,8 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 void OptionScene::Draw(bool draw, bool debug)
 {	
-	if (!triangle_vector.empty())
-	{
-		for (int count_x = 0; count_x != 75 * 50; count_x++)
-		{
-			triangle_vector[count_x].Draw(draw);
-		}
-	}
-
+	//ŽOŠpŒ`‚Ì“®“I”wŒi
+	continuous_triangle.Draw(draw, true);
 
 	//Option‚Ìƒ^ƒCƒgƒ‹‰æ‘œ
 	option_string_image.Draw(draw, debug);
@@ -308,6 +229,7 @@ void OptionScene::Draw(bool draw, bool debug)
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 	box.Draw();
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+
 }
 
 

@@ -24,5 +24,9 @@ public:
 
 	float ToDegree(float radian_angle);//ラジアンを度数に変換
 	float ToRadian(float degree_angle);//度数をラジアンに変換
+
+	float EquilateralTriangleHeight(float length);//斜辺の長さから正三角形の高さを計算します。
+	float EquilateralTriangleLength(float height);//高さから正三角形の斜辺の長さを計算します。
+
 };
 
