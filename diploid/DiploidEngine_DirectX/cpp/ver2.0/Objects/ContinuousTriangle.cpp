@@ -1,11 +1,11 @@
 #include "ver2.0/Objects/ContinuousTriangle.h"
 
-void ContinuousTriangle::Init(VECTOR pos, float lenght, int size_x, int size_y)
+void ContinuousTriangle::Init(VECTOR pos, float length, int size_x, int size_y)
 {
 	triangle_size_x = size_x;
 	triangle_size_y = size_y;
 
-	triangle_lenght = lenght;
+	triangle_lenght = length;
 	triangle_height = math.EquilateralTriangleHeight(triangle_lenght);
 
 	/*
@@ -100,8 +100,6 @@ void ContinuousTriangle::Updata(DiploidEngineInput& input)
 
 				triangle_vector[count_y][count_x].SetColor(GetColor(color, color, color));
 			}
-
-
 		}
 
 		sin_add += 0.01f;
@@ -133,4 +131,10 @@ void ContinuousTriangle::Draw(bool draw, bool debug)
 		DrawFormatString(0, 220, GetColor(0, 0, 0), "size_y = %d", triangle_vector.size());
 		DrawFormatString(0, 240, GetColor(0, 0, 0), "size_xy = %d", triangle_vector.size() * triangle_vector[0].size());
 	}
+}
+
+
+void ContinuousTriangle::SetSize()
+{
+
 }

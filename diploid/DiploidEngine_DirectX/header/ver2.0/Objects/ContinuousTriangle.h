@@ -19,6 +19,7 @@ private:
 
 	float triangle_height;
 	float triangle_lenght;
+	float size = 50;
 
 	unsigned int color;
 	float max_color_scale = 0.3f;
@@ -30,7 +31,10 @@ private:
 	int triangle_size_x = 16, triangle_size_y = 9;
 
 public:
-	void Init(VECTOR pos, float lenght ,int size_x, int size_y);
+	void Init(VECTOR pos, float length,int size_x, int size_y);
 	void Updata(DiploidEngineInput& input);
 	void Draw(bool draw = true, bool debug = false);
+
+	void SetSize();
+
 };

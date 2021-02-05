@@ -199,7 +199,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 void OptionScene::Draw(bool draw, bool debug)
 {	
 	//三角形の動的背景
-	continuous_triangle.Draw(draw, true);
+	continuous_triangle.Draw(draw, debug);
 
 	//Optionのタイトル画像
 	option_string_image.Draw(draw, debug);
