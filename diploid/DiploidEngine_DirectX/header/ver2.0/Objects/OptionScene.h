@@ -5,6 +5,7 @@
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
 #include "system\DiploidEngineMath.h"
+#include "ver2.0/Objects/DiploidSliderObject.h"
 
 #include "ver2.0/Objects/button/Back.h"
 #include "ver2.0/Objects/button/Save.h"
@@ -20,9 +21,11 @@
 class OptionScene
 {
 private:
-	DiploidEngineMath math;
+	DiploidSliderObject test;
 
-	ContinuousTriangle continuous_triangle;
+	DiploidEngineMath math;//数学関数
+
+	ContinuousTriangle continuous_triangle;//連続した三角形
 
 	DiploidBoxV2 box;//フェード用BOX
 

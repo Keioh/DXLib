@@ -20,10 +20,13 @@ void OptionScene::Load()
 	//Option‚ÌDisplay‰æ‘œ
 	display_string_image.Load();
 
+	
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
 {
+	test.Init(VGet(300, 200, 0), VGet(16, 32, 0));
+
 	//OŠpŒ`‚Ì“®“I”wŒi
 	continuous_triangle.Init(VGet(0, 0, 0), 50, 100, 30);
 
@@ -63,6 +66,8 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting)
 {
 	SetBackgroundColor(255, 255, 255);//Window”wŒiF‚ğ”’F‚É•ÏX
+
+	test.Updata(&input);
 
 	//OŠpŒ`‚Ì“®“I”wŒi
 	continuous_triangle.Updata(input);
@@ -200,6 +205,8 @@ void OptionScene::Draw(bool draw, bool debug)
 {	
 	//OŠpŒ`‚Ì“®“I”wŒi
 	continuous_triangle.Draw(draw, debug);
+
+	test.Draw(true, true);
 
 	//Option‚Ìƒ^ƒCƒgƒ‹‰æ‘œ
 	option_string_image.Draw(draw, debug);
