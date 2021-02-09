@@ -22,7 +22,7 @@ private:
 	float size = 50;
 
 	unsigned int color;
-	float max_color_scale = 0.3f;
+	float max_color_scale = 0.7f;
 
 	VECTOR pos;//‹——£‘ª‚é—p
 	float sin_anime, sin_add;

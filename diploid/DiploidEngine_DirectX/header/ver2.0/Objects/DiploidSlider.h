@@ -6,6 +6,8 @@
 #include "ver2.0/Objects/DiploidAnimation.h"
 #include "system\DiploidEngineMath.h"
 #include "ver2.0/Objects/DiploidSliderObject.h"
+#include "ver2.0/Graphics/DiploidTriangle.h"
+
 
 //現状はx軸方向のスライドのみサポート
 class DiploidSlider
@@ -14,6 +16,8 @@ private:
 	DiploidImageV2 slider_image;
 	DiploidSliderObject slider_button;
 
+	DiploidTriangle triangle;
+	TRIANGLE t_data;
 	DiploidBoxV2 box;
 
 	VECTOR position;//UIの位置(左上が基準)

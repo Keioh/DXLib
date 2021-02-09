@@ -60,9 +60,14 @@ void DiploidStrings::SetLineSpaceing(int space)
 
 void DiploidStrings::Reset()
 {
+	for (int count = 0; count != 512; count++)
+	{
+		string[count] = '\0';
+	}
+
 	string_all = 0;
+	time = 0;	
 	end_flag = 0;
-	time = 0;
 }
 
 void DiploidStrings::AllIn()

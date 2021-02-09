@@ -15,8 +15,15 @@ void DiploidSlider::Init(VECTOR pos, VECTOR size, int slider_type, float scale)
 
 	slider_button.Init(position, VGet(16 * object_scale, 32 * object_scale, 0), slider_object_type, object_scale);
 
-	box.Init(VGet(position.x, position.y + (14 * object_scale), position.z), VGet(object_size.x + (16 * object_scale), object_size.y + (4 * object_scale), object_size.z), GetColor(150, 150, 150));
+	box.Init(VGet(position.x, position.y + (16 * object_scale), position.z), VGet(object_size.x + (16 * object_scale), object_size.y + (4 * object_scale), object_size.z), GetColor(150, 150, 150));
 	box.SetFill(true);
+
+	t_data.point_one = VGet(position.x, position.y + (16 * object_scale), position.z);
+	t_data.point_two = VGet(object_size.x + position.x + (16 * object_scale), position.y + object_size.y + (8 * object_scale), object_size.z);
+	t_data.point_three = VGet(object_size.x + position.x + (16 * object_scale), position.y + object_size.y + (24 * object_scale), object_size.z);
+
+	triangle.Init(t_data, GetColor(150, 150, 150));
+	triangle.SetFill(true);
 }
 
 void DiploidSlider::Updata()
@@ -36,7 +43,8 @@ void DiploidSlider::Updata()
 
 void DiploidSlider::Draw(bool draw, bool debug)
 {
-	box.Draw(draw);
+	//box.Draw(draw);
+	triangle.Draw(draw);
 
 	slider_button.Draw(draw, debug);
 

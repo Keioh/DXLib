@@ -18,11 +18,24 @@
 #include "ver2.0/Graphics/DiploidTriangle.h"
 #include "ver2.0/Objects/ContinuousTriangle.h"
 
+#include "ver2.0/Graphics/DiploidStrings.h"
+
 
 class OptionScene
 {
 private:
-	DiploidSlider test;
+	DiploidSlider test;//文字速度変更スライダー
+	DiploidSlider auto_test;//オート速度変更スライダー
+	DiploidStrings test_string;//変更確認用文字
+	DiploidBoxV2 test_string_box;//オート速度確認用BOX
+	float auto_speed;//時間に加算する量
+	float time;//現在の加算された時間の保存用
+	float target_time = 64;//この時間になったらnext_flagを立てる
+	bool next_flag = false;//次に行っていいよのflag
+	DiploidImageV2 draw_speed_image;
+	DiploidImageV2 auto_speed_image;
+
+
 
 	DiploidEngineMath math;//数学関数
 
@@ -45,6 +58,11 @@ private:
 	//ウィンドウサイズ変更ボタン群の位置
 	int window_resize_button_position_x = 100;
 	int window_resize_button_position_y = 100;
+
+	//文字表示速度、オート速度変更ボタン群の位置
+	int string_speed_button_position_x = 300;
+	int string_speed_button_position_y = 100;
+
 
 
 	//透過処理の変数
