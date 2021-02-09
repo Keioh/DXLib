@@ -26,18 +26,23 @@ private:
 	bool hit = false;
 	bool click = false;
 	int selected = -1;
+	bool no_hit_flag = false;
+
+	DiploidEngineInput input;
 
 public:
 
 	void Load(int graphics_handl);
 	void Init(VECTOR pos, VECTOR size, int slider_type = 0, float scale = 1.0f);//UIを初期化します。
-	void Updata(DiploidEngineInput* input);//UIを更新します。
+	void Updata(DiploidEngineInput& input);//UIを更新します。
+	void Updata();//UIを更新します。
 	void Draw(bool draw = true, bool debug = false);//UIを描画します。
 
 	void SetPosition(int pos_x, int pos_y);//新しく位置を設定します。(左上基準)
 	void SetSize(int size_x, int size_y);//新しく大きさを設定します。(バグ)
 	void SetScale(float new_scale);//新しくスケール値を設定します。(バグ)
 	void SetSelectedUI(int new_flag);
+	void SetSliderType(int new_type);
 
 	VECTOR GetPosition();//現在のUIの位置(左上)の座標を取得します。
 	VECTOR GetSize();//現在のUIの大きさを取得します。
@@ -46,4 +51,5 @@ public:
 	bool GetHit();//現在、UIにマウスがヒットしているかのフラグを取得します。(ヒットしていればtrue)
 	bool GetClick();//UIがクリックされたかのフラグを取得します。(クリックされるとtrue)
 	int GetSelectedUI();//UIが選択されているかのフラグを取得します。(選択されていればtrue)
+	int GetSliderType();
 };

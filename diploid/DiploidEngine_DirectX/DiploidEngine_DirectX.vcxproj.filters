@@ -387,6 +387,9 @@
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSliderObject.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSlider.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -615,6 +618,9 @@
       <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\DiploidSliderObject.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\DiploidSlider.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
     </ClInclude>
   </ItemGroup>

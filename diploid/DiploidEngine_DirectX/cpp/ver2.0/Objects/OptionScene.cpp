@@ -19,13 +19,14 @@ void OptionScene::Load()
 
 	//Option‚ÌDisplay‰æ‘œ
 	display_string_image.Load();
-
 	
+	test.Load();
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
 {
-	test.Init(VGet(300, 200, 0), VGet(16, 32, 0));
+	test.Init(VGet(300, 200, 0), VGet(200, 0, 0));
+	test.SetParameter(VGet(100, 0, 0));
 
 	//OŠpŒ`‚Ì“®“I”wŒi
 	continuous_triangle.Init(VGet(0, 0, 0), 50, 100, 30);
@@ -67,7 +68,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 {
 	SetBackgroundColor(255, 255, 255);//Window”wŒiF‚ğ”’F‚É•ÏX
 
-	test.Updata(&input);
+	test.Updata();
 
 	//OŠpŒ`‚Ì“®“I”wŒi
 	continuous_triangle.Updata(input);
@@ -206,7 +207,7 @@ void OptionScene::Draw(bool draw, bool debug)
 	//OŠpŒ`‚Ì“®“I”wŒi
 	continuous_triangle.Draw(draw, debug);
 
-	test.Draw(true, true);
+	test.Draw(draw, debug);
 
 	//Option‚Ìƒ^ƒCƒgƒ‹‰æ‘œ
 	option_string_image.Draw(draw, debug);
@@ -236,6 +237,14 @@ void OptionScene::Draw(bool draw, bool debug)
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 	box.Draw();
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+
+
+	//DrawFormatString(300, 0, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetSelected());
+	//DrawFormatString(300, 20, GetColor(0, 0, 0), "%d", window_resize_button_1280_720.GetSelected());
+	//DrawFormatString(300, 40, GetColor(0, 0, 0), "%d", window_resize_button_1600_900.GetSelected());
+	//DrawFormatString(300, 60, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetHit());
+	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetClick());
+	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%f", test.GetParameter().x);
 
 }
 

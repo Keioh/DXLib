@@ -42,7 +42,7 @@ public:
 	void Init(float x, float y);
 
 	void ChangeFont(int handle);
-	void Reset();//文字配列の中を削除し、再び文字送り描画をします。(バグにつき使用不可)
+	void Reset();//文字配列の中を削除し、再び文字送り描画をします。
 	int GetEnd();//文字列の描画が終わったかのステータスを取得します。(1で描画終了、0で描画中)
 	std::string GetSceneName();
 	void SetSceneName(std::string name);
@@ -54,5 +54,5 @@ public:
 	void SetLineSpaceing(int space);
 	void SetSpeed(int speed);//文字送りの速度を設定します。
 
-	void Draw();//Load関数で読み込んだ文字列を表示する。(1行512文字、５改行まで)
+	void Draw();//Load関数で読み込んだ文字列を表示する。(1行512文字)
 };

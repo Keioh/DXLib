@@ -48,6 +48,40 @@ void DiploidSelectedUIV2::Updata(DiploidEngineInput* input)
 	}
 }
 
+void DiploidSelectedUIV2::Updata()
+{
+	GetMousePoint(&mouse_x, &mouse_y);//マウス座標を取得
+
+	input_obj.Update();
+
+	//BOXに当たっていたら
+	if (collision.BoxAndMouseCollisionUpdate(&box, mouse_x, mouse_y) == true)
+	{
+		box.SetColor(GetColor(255, 0, 0));
+
+		hit = true;
+
+		//クリックしたら
+		if (input_obj.GetPressMouse(MOUSE_INPUT_LEFT) == true)
+		{
+			box.SetColor(GetColor(0, 255, 0));
+
+			click = true;
+			selected *= -1;
+		}
+		else
+		{
+			click = false;
+		}
+	}
+	else
+	{
+		box.SetColor(GetColor(0, 0, 255));
+
+		hit = false;
+	}
+}
+
 void DiploidSelectedUIV2::Draw(bool draw, bool debug)
 {
 	if (draw == true)

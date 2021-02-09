@@ -6,6 +6,7 @@
 #include "ver2.0/Objects/DiploidAnimation.h"
 #include "system\DiploidEngineMath.h"
 #include "ver2.0/Objects/DiploidSliderObject.h"
+#include "ver2.0/Objects/DiploidSlider.h"
 
 #include "ver2.0/Objects/button/Back.h"
 #include "ver2.0/Objects/button/Save.h"
@@ -21,7 +22,7 @@
 class OptionScene
 {
 private:
-	DiploidSliderObject test;
+	DiploidSlider test;
 
 	DiploidEngineMath math;//êîäwä÷êî
 

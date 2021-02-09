@@ -25,11 +25,14 @@ private:
 	bool click = false;
 	int selected = -1;
 
+	DiploidEngineInput input_obj;
+
 public:
 
 	void Load(int graphics_handl);
 	void Init(VECTOR pos, VECTOR size, float scale = 1.0f);//UIを初期化します。
 	void Updata(DiploidEngineInput* input);//UIを更新します。
+	void Updata();//UIを更新します。
 	void Draw(bool draw = true, bool debug = false);//UIを描画します。
 
 	void SetPosition(int pos_x, int pos_y);//新しく位置を設定します。(左上基準)

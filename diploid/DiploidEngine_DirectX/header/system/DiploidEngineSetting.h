@@ -37,6 +37,6 @@ public:
 
 	int GetExit();//終了フラグを取得する。
 
-	bool GetReloadFlag();
-	void SetReloadFlag(bool new_flag);
+	bool GetReloadFlag();//再度画像を読み込むflagを取得する。
+	void SetReloadFlag(bool new_flag);//再度画像を読み込むflagを変更する。
 };
