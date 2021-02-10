@@ -20,8 +20,8 @@ void OptionScene::Load()
 	//OptionのDisplay画像
 	display_string_image.Load();
 	
-	test.Load();
-	auto_test.Load();
+	string_speed_slider.Load();
+	auto_speed_slider.Load();
 
 	test_string.CreateFontData(20, 2, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
 	test_string.Load("現在の表示速度です。\nThis is Test.");
@@ -34,16 +34,16 @@ void OptionScene::Load()
 void OptionScene::Init(DiploidEngineSetting& setting)
 {	
 	draw_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55, 0));
-	test.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55, 0), VGet(200, 0, 0));
-	test.SetParameter(VGet(25, 0, 0));
+	string_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55, 0), VGet(200, 0, 0));
+	string_speed_slider.SetParameter(VGet(25, 0, 0));
 
 	test_string.Init(string_speed_button_position_x, string_speed_button_position_y);
 
 	test_string_box.Init(VGet(string_speed_button_position_x + 152, string_speed_button_position_y + 36, 0), VGet(0, 8, 0), GetColor(100, 100, 100));
 	test_string_box.SetFill(true);
 
-	auto_test.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95, 0), VGet(200, 0, 0));
-	auto_test.SetParameter(VGet(50, 0, 0));
+	auto_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95, 0), VGet(200, 0, 0));
+	auto_speed_slider.SetParameter(VGet(50, 0, 0));
 	auto_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95, 0));
 
 
@@ -87,10 +87,10 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 {
 	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
 
-	test.Updata();
-	auto_test.Updata();
+	string_speed_slider.Updata();
+	auto_speed_slider.Updata();
 	
-	test_string.SetSpeed(test.GetParameter().x);
+	test_string.SetSpeed(string_speed_slider.GetParameter().x);
 
 	if (next_flag == true)
 	{
@@ -116,7 +116,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		next_flag = false;
 	}
 
-	auto_speed = auto_test.GetParameter().x / 100.0f;//オート速度を変更
+	auto_speed = auto_speed_slider.GetParameter().x / 100.0f;//オート速度を変更
 
 	test_string_box.SetSize(VGet(time, 8, 0));//オートのtimeをビジュアルに反映
 
@@ -258,11 +258,11 @@ void OptionScene::Draw(bool draw, bool debug)
 	//三角形の動的背景
 	continuous_triangle.Draw(draw, debug);
 
-	test.Draw(draw, debug);
+	string_speed_slider.Draw(draw, debug);
 	test_string.Draw();
 	draw_speed_image.Draw(draw);
 
-	auto_test.Draw(draw, debug);
+	auto_speed_slider.Draw(draw, debug);
 	test_string_box.Draw(draw);
 	auto_speed_image.Draw(draw);
 
