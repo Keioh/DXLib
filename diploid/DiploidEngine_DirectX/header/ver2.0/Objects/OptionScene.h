@@ -14,6 +14,7 @@
 
 #include "ver2.0/Objects/string_image/option/option_string_image.h"
 #include "ver2.0/Objects/string_image/option/display_string_image.h"
+#include "ver2.0/Objects/string_image/option/game_play_string_image.h"
 
 #include "ver2.0/Graphics/DiploidTriangle.h"
 #include "ver2.0/Objects/ContinuousTriangle.h"
@@ -54,6 +55,7 @@ private:
 	//Optionの画像
 	OptionStringImage option_string_image;
 	DisplayStringImage display_string_image;
+	GamePlayStringImage game_play_string_image;
 
 	//ウィンドウサイズ変更ボタン群の位置
 	int window_resize_button_position_x = 100;

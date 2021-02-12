@@ -20,6 +20,10 @@ void OptionScene::Load()
 	//OptionのDisplay画像
 	display_string_image.Load();
 	
+	//OptionのGamePlay画像
+	game_play_string_image.Load();
+
+
 	string_speed_slider.Load();
 	auto_speed_slider.Load();
 
@@ -33,18 +37,18 @@ void OptionScene::Load()
 
 void OptionScene::Init(DiploidEngineSetting& setting)
 {	
-	draw_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55, 0));
-	string_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55, 0), VGet(200, 0, 0));
+	draw_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55 + (32 + 4), 0));
+	string_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55 + (32 + 4), 0), VGet(200, 0, 0));
 	string_speed_slider.SetParameter(VGet(25, 0, 0));
 
-	test_string.Init(string_speed_button_position_x, string_speed_button_position_y);
+	test_string.Init(string_speed_button_position_x, string_speed_button_position_y + (32 + 4));
 
-	test_string_box.Init(VGet(string_speed_button_position_x + 152, string_speed_button_position_y + 36, 0), VGet(0, 8, 0), GetColor(100, 100, 100));
+	test_string_box.Init(VGet(string_speed_button_position_x + 152, string_speed_button_position_y + 36 + (32 + 4), 0), VGet(0, 8, 0), GetColor(100, 100, 100));
 	test_string_box.SetFill(true);
 
-	auto_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95, 0), VGet(200, 0, 0));
+	auto_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95 + (32 + 4), 0), VGet(200, 0, 0));	
+	auto_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95 + (32 + 4), 0));
 	auto_speed_slider.SetParameter(VGet(50, 0, 0));
-	auto_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95, 0));
 
 
 	//三角形の動的背景
@@ -55,6 +59,9 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 	//OptionのDisplay画像
 	display_string_image.Init(VGet(window_resize_button_position_x, window_resize_button_position_y, 0));
+
+	//OptionのGamePlay画像
+	game_play_string_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y, 0));
 
 	//フェード用BOX
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
@@ -129,6 +136,10 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 	//OptionのDisplay画像
 	display_string_image.Updata();
+
+	//OptionのGamePlay画像
+	game_play_string_image.Updata();
+
 
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.Update(input);
@@ -271,6 +282,9 @@ void OptionScene::Draw(bool draw, bool debug)
 
 	display_string_image.Draw(draw, debug);
 
+	game_play_string_image.Draw(draw, debug);
+
+
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.Draw(draw, debug);
 
@@ -312,6 +326,7 @@ bool OptionScene::GetReturnFlag()
 	{
 		option_string_image.Reset();//Optionタイトル画像のアニメーションをリセット
 		display_string_image.Reset();//Option:Display画像のアニメーションをリセット
+		game_play_string_image.Reset();//Option:Display画像のアニメーションをリセット
 
 		box_draw_flag = 0;//フェードアウトのflagを立てる
 		back_button.SetSelectedFlag(-1);//ボタンの選択状態を-1(初期化)にする。
