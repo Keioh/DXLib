@@ -21,6 +21,8 @@
 
 #include "ver2.0/Graphics/DiploidStrings.h"
 
+#include "ver2.0/Objects/ui/text_speed_auto_setting_ui.h"
+
 
 class OptionScene
 {
@@ -51,6 +53,8 @@ private:
 	WindowSize window_resize_button_1280_720;//ウィンドウサイズ変更ボタン(1280_720)
 	WindowSize window_resize_button_1600_900;//ウィンドウサイズ変更ボタン(1600_900)
 	WindowSize window_resize_button_1920_1080;//ウィンドウサイズ変更ボタン(1920_1080)
+
+	TextSpeedAutoSettingUI text_speed_auto_setting_ui;
 
 	//Optionの画像
 	OptionStringImage option_string_image;

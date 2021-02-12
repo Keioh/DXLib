@@ -14,6 +14,9 @@ void OptionScene::Load()
 	window_resize_button_1600_900.Load("texter/basic/button/display/1600_900.png");
 	window_resize_button_1920_1080.Load("texter/basic/button/display/1920_1080.png");
 
+	//文字表示速度とオート速度の変更UI群
+	text_speed_auto_setting_ui.Load();
+
 	//Optionのタイトル画像
 	option_string_image.Load();
 
@@ -23,34 +26,10 @@ void OptionScene::Load()
 	//OptionのGamePlay画像
 	game_play_string_image.Load();
 
-
-	string_speed_slider.Load();
-	auto_speed_slider.Load();
-
-	test_string.CreateFontData(20, 2, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	test_string.Load("現在の表示速度です。\nThis is Test.");
-
-	draw_speed_image.Load("texter/basic/option/game_play/draw_speed.png");
-	auto_speed_image.Load("texter/basic/option/game_play/auto_speed.png");
-
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
-{	
-	draw_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55 + (32 + 4), 0));
-	string_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 55 + (32 + 4), 0), VGet(200, 0, 0));
-	string_speed_slider.SetParameter(VGet(25, 0, 0));
-
-	test_string.Init(string_speed_button_position_x, string_speed_button_position_y + (32 + 4));
-
-	test_string_box.Init(VGet(string_speed_button_position_x + 152, string_speed_button_position_y + 36 + (32 + 4), 0), VGet(0, 8, 0), GetColor(100, 100, 100));
-	test_string_box.SetFill(true);
-
-	auto_speed_slider.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95 + (32 + 4), 0), VGet(200, 0, 0));	
-	auto_speed_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y + 95 + (32 + 4), 0));
-	auto_speed_slider.SetParameter(VGet(50, 0, 0));
-
-
+{
 	//三角形の動的背景
 	continuous_triangle.Init(VGet(0, 0, 0), 50, 100, 30);
 
@@ -88,45 +67,15 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 	//ウィンドウサイズ変更ボタン(1920_1080)	
 	window_resize_button_1920_1080.SetWindowSize(1920, 1080);//ターゲットとなるウィンドウサイズを指定
 	window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
+
+	//文字表示速度とオート速度の変更UI群
+	text_speed_auto_setting_ui.Init(VGet(string_speed_button_position_x, string_speed_button_position_y, 0));
+
 }
 
 void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting)
 {
 	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
-
-	string_speed_slider.Updata();
-	auto_speed_slider.Updata();
-	
-	test_string.SetSpeed(string_speed_slider.GetParameter().x);
-
-	if (next_flag == true)
-	{
-		test_string.Reset();//文字列データをリセットする
-	}
-
-	//文字の描画が完了していたら
-	if (test_string.GetEnd() == 1)
-	{
-		if (time >= target_time)
-		{
-			next_flag = true;//次へ行くflagを立てる
-			time = 0;
-		}
-		else
-		{
-			next_flag = false;
-			time += auto_speed;//オートの時間を進める。
-		}
-	}
-	else
-	{
-		next_flag = false;
-	}
-
-	auto_speed = auto_speed_slider.GetParameter().x / 100.0f;//オート速度を変更
-
-	test_string_box.SetSize(VGet(time, 8, 0));//オートのtimeをビジュアルに反映
-
 
 	//三角形の動的背景
 	continuous_triangle.Updata(input);
@@ -139,6 +88,9 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 	//OptionのGamePlay画像
 	game_play_string_image.Updata();
+
+	//文字表示速度とオート速度の変更UI群
+	text_speed_auto_setting_ui.Update();
 
 
 	//ウィンドウサイズ変更ボタン(960_540)
@@ -269,19 +221,13 @@ void OptionScene::Draw(bool draw, bool debug)
 	//三角形の動的背景
 	continuous_triangle.Draw(draw, debug);
 
-	string_speed_slider.Draw(draw, debug);
-	test_string.Draw();
-	draw_speed_image.Draw(draw);
-
-	auto_speed_slider.Draw(draw, debug);
-	test_string_box.Draw(draw);
-	auto_speed_image.Draw(draw);
-
 	//Optionのタイトル画像
 	option_string_image.Draw(draw, debug);
 
+	//OptionのDisplay画像
 	display_string_image.Draw(draw, debug);
 
+	//OptionのGamePlay画像
 	game_play_string_image.Draw(draw, debug);
 
 
@@ -296,6 +242,9 @@ void OptionScene::Draw(bool draw, bool debug)
 
 	//ウィンドウサイズ変更ボタン(1920_1080)
 	window_resize_button_1920_1080.Draw(draw, debug);
+
+	//文字表示速度とオート速度の変更UI群
+	text_speed_auto_setting_ui.Draw(draw, debug);
 
 
 	//保存ボタン

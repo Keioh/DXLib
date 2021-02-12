@@ -1,4 +1,0 @@
-・DxlibをCドライブ直下に入れる。(C:\DxLib_VC)
-・Cドライブ直下にGameProjectフォルダを作る。(c:\GameProject)
-・GameProjectフォルダにDLしたdiploidフォルダを移動する。(c:\GameProject\diploid)
-・diploidフォルダ内のDiploidEngine_DirectX.slnを起動する。(c:\GameProject\diploid\DiploidEngine_DirectX.sln)

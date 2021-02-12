@@ -1,5 +1,0 @@
-start
-point 100 300
-speed 5
-point 400 200
-end
