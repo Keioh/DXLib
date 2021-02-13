@@ -72,6 +72,7 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 	text_speed_auto_setting_ui.Init(VGet(string_speed_button_position_x, string_speed_button_position_y, 0));
 	text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
 	text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
+	text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
 
 }
 
@@ -180,7 +181,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		//文字描画速度とオート速度を変更して保存する。
 		draw_speed = text_speed_auto_setting_ui.GetParameterAbsoluteDrawSpeed();//文字描画速度
 		auto_speed = text_speed_auto_setting_ui.GetParameterAbsoluteAutoSpeed();//オート速度
-
+		background_alpha = text_speed_auto_setting_ui.GetParameterAbsoluteBackGroundAlpha();//透過度
 	}
 
 
@@ -197,6 +198,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		//文字描画速度とオート速度を保存した設定に戻す。
 		text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
 		text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
+		text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
 
 		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める

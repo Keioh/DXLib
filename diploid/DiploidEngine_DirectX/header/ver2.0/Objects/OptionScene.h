@@ -28,8 +28,6 @@ class OptionScene
 {
 private:
 
-	DiploidStrings test_string;
-
 	DiploidEngineMath math;//数学関数
 
 	ContinuousTriangle continuous_triangle;//連続した三角形
@@ -63,7 +61,7 @@ private:
 	//値の保存用
 	float draw_speed = 25.0f;//設定した現在の文字描画速度
 	float auto_speed = 95.0f;//設定した現在のオート速度
-
+	float background_alpha = 100.0f;//設定した現在の文字背景の透過度
 
 	//透過処理の変数
 	int alpha = 255;

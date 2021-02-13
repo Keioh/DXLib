@@ -18,6 +18,12 @@ private:
 	bool next_flag = false;//次に行っていいよのflag
 	DiploidImageV2 draw_speed_image;//文字速度変更スライダーの画像
 	DiploidImageV2 auto_speed_image;//オート速度変更スライダーの画像
+	DiploidBoxV2 string_background_box;//文字の背景
+
+
+	DiploidSlider string_background_alpha_slider;//文字背景透過度変更スライダー
+	DiploidImageV2 string_background_alpha_image;//文字背景透過度変更画像
+	int background_alpha;
 
 public:
 	void Load();
@@ -31,11 +37,15 @@ public:
 
 	void SetParameterAutoSpeed(float new_parameter);
 	void SetParameterDrawSpeed(float new_parameter);
+	void SetParameterBackGroundAlpha(float new_parameter);
 
 	float GetParameterAutoSpeed();//変更された相対値を得る。(オートスピード)
 	float GetParameterDrawSpeed();//変更された相対値を得る。(描画スピード)
+	float GetParameterBackGroundAlpha();//変更された相対値を得る。(文字背景の透過値)
+
 
 	float GetParameterAbsoluteAutoSpeed();//スクリーン座標からの絶対値を得る。(オートスピード)
 	float GetParameterAbsoluteDrawSpeed();//スクリーン座標からの絶対値を得る。(描画スピード)
+	float GetParameterAbsoluteBackGroundAlpha();//スクリーン座標からの絶対値を得る。(文字背景の透過値)
 
 };
