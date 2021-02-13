@@ -93,6 +93,11 @@ void DiploidStrings::SetCompleteFlag(bool new_flag)
 	complete = new_flag;
 }
 
+void DiploidStrings::SetColor(unsigned int new_color)
+{
+	color = new_color;
+}
+
 
 int DiploidStrings::GetEnd()
 {
@@ -140,7 +145,7 @@ void DiploidStrings::Draw()
 		//complete = true;
 	}
 
-	DrawStringToHandle(pos_x, pos_y, string, GetColor(255, 255, 255), font_handle);
+	DrawStringToHandle(pos_x, pos_y, string, color, font_handle);
 
 
 /*

@@ -27,18 +27,8 @@
 class OptionScene
 {
 private:
-	DiploidSlider string_speed_slider;//文字速度変更スライダー
-	DiploidSlider auto_speed_slider;//オート速度変更スライダー
-	DiploidStrings test_string;//変更確認用文字
-	DiploidBoxV2 test_string_box;//オート速度確認用BOX
-	float auto_speed;//時間に加算する量
-	float time;//現在の加算された時間の保存用
-	float target_time = 64;//この時間になったらnext_flagを立てる
-	bool next_flag = false;//次に行っていいよのflag
-	DiploidImageV2 draw_speed_image;//文字速度変更スライダーの画像
-	DiploidImageV2 auto_speed_image;//オート速度変更スライダーの画像
 
-
+	DiploidStrings test_string;
 
 	DiploidEngineMath math;//数学関数
 
@@ -69,6 +59,10 @@ private:
 	int string_speed_button_position_x = 300;
 	int string_speed_button_position_y = 100;
 
+
+	//値の保存用
+	float draw_speed = 25.0f;//設定した現在の文字描画速度
+	float auto_speed = 95.0f;//設定した現在のオート速度
 
 
 	//透過処理の変数

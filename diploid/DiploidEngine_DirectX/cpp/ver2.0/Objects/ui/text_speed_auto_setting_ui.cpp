@@ -139,3 +139,14 @@ float TextSpeedAutoSettingUI::GetParameterDrawSpeed()
 {
 	return string_speed_slider.GetParameter().x;
 }
+
+
+float TextSpeedAutoSettingUI::GetParameterAbsoluteAutoSpeed()
+{
+	return auto_speed_slider.GetParameter().x;
+}
+
+float TextSpeedAutoSettingUI::GetParameterAbsoluteDrawSpeed()
+{
+	return string_speed_slider.GetParameter().x;
+}

@@ -32,7 +32,10 @@ public:
 	void SetParameterAutoSpeed(float new_parameter);
 	void SetParameterDrawSpeed(float new_parameter);
 
-	float GetParameterAutoSpeed();
-	float GetParameterDrawSpeed();
+	float GetParameterAutoSpeed();//変更された相対値を得る。(オートスピード)
+	float GetParameterDrawSpeed();//変更された相対値を得る。(描画スピード)
+
+	float GetParameterAbsoluteAutoSpeed();//スクリーン座標からの絶対値を得る。(オートスピード)
+	float GetParameterAbsoluteDrawSpeed();//スクリーン座標からの絶対値を得る。(描画スピード)
 
 };

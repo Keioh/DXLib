@@ -70,6 +70,8 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 	//文字表示速度とオート速度の変更UI群
 	text_speed_auto_setting_ui.Init(VGet(string_speed_button_position_x, string_speed_button_position_y, 0));
+	text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
+	text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
 
 }
 
@@ -174,6 +176,11 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		{
 			setting.SetWindowSize(1920, 1080);//解像度を変更
 		}
+
+		//文字描画速度とオート速度を変更して保存する。
+		draw_speed = text_speed_auto_setting_ui.GetParameterAbsoluteDrawSpeed();//文字描画速度
+		auto_speed = text_speed_auto_setting_ui.GetParameterAbsoluteAutoSpeed();//オート速度
+
 	}
 
 
@@ -186,6 +193,10 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4) * 2, 0), setting);
 		window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
 		window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
+
+		//文字描画速度とオート速度を保存した設定に戻す。
+		text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
+		text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
 
 		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める
@@ -265,7 +276,6 @@ void OptionScene::Draw(bool draw, bool debug)
 	//DrawFormatString(300, 60, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetHit());
 	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetClick());
 	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%f", test.GetParameter().x);
-
 }
 
 

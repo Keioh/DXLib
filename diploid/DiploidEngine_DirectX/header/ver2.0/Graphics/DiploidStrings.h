@@ -18,6 +18,8 @@ private:
 	int end_flag = 0;//描画が終わったのかのフラグ
 	int string_all = 0;//現在の文字の位置を保存
 
+	unsigned int color = GetColor(255, 255, 255);//文字の色
+
 	int font_handle;
 	float pos_x, pos_y;
 
@@ -53,6 +55,7 @@ public:
 
 	void SetLineSpaceing(int space);
 	void SetSpeed(int speed);//文字送りの速度を設定します。
+	void SetColor(unsigned int new_color);//新しく文字の色を設定します。
 
 	void Draw();//Load関数で読み込んだ文字列を表示する。(1行512文字)
 };
