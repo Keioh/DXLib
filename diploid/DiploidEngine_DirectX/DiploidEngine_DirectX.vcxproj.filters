@@ -402,6 +402,9 @@
     <ClCompile Include="cpp\ver2.0\Objects\ui\text_speed_auto_setting_ui.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\ui</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\Reset.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -640,6 +643,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\ui\text_speed_auto_setting_ui.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\Reset.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

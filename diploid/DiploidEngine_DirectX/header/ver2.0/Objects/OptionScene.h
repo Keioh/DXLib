@@ -10,6 +10,7 @@
 
 #include "ver2.0/Objects/button/Back.h"
 #include "ver2.0/Objects/button/Save.h"
+#include "ver2.0/Objects/button/Reset.h"
 #include "ver2.0/Objects/button/WindowSize.h"
 
 #include "ver2.0/Objects/string_image/option/option_string_image.h"
@@ -36,6 +37,7 @@ private:
 
 	Back back_button;//戻るボタン
 	Save save_button;//保存ボタン
+	Reset reset_button;//リセットボタン
 
 	WindowSize window_resize_button_960_540;//ウィンドウサイズ変更ボタン(960_540)
 	WindowSize window_resize_button_1280_720;//ウィンドウサイズ変更ボタン(1280_720)

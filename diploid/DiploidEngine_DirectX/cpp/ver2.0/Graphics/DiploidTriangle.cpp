@@ -18,12 +18,20 @@ void DiploidTriangle::MoveUpdate()
 	move_speed = VGet(0, 0, 0);
 }
 
-void DiploidTriangle::Draw(bool draw)
+void DiploidTriangle::Draw(bool draw, bool aa)
 {
 	if (draw == true)
 	{
-		DrawTriangleAA(triangle_position.point_one.x, triangle_position.point_one.y, triangle_position.point_two.x, triangle_position.point_two.y, 
-			triangle_position.point_three.x, triangle_position.point_three.y, object_color, object_fill);
+		if (aa == false)
+		{
+			DrawTriangle(triangle_position.point_one.x, triangle_position.point_one.y, triangle_position.point_two.x, triangle_position.point_two.y,
+				triangle_position.point_three.x, triangle_position.point_three.y, object_color, object_fill);
+		}
+		else
+		{
+			DrawTriangleAA(triangle_position.point_one.x, triangle_position.point_one.y, triangle_position.point_two.x, triangle_position.point_two.y,
+				triangle_position.point_three.x, triangle_position.point_three.y, object_color, object_fill);
+		}
 	}
 }
 

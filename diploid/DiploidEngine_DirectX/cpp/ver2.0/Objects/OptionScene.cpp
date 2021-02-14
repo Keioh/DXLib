@@ -8,6 +8,8 @@ void OptionScene::Load()
 	//保存ボタンの読み込み
 	save_button.Load();
 
+	reset_button.Load();
+
 	//ウィンドウサイズ変更ボタンの画像読み込み
 	window_resize_button_960_540.Load("texter/basic/button/display/960_540.png");
 	window_resize_button_1280_720.Load("texter/basic/button/display/1280_720.png");
@@ -51,6 +53,10 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 	//保存ボタン
 	save_button.Init(VGet(setting.window_x - ((128 * 2) + 4), setting.window_y - (32 + 4), 0));
+
+	//リセットボタン
+	reset_button.Init(VGet(4, setting.window_y - (32 + 4), 0));
+
 
 	//ウィンドウサイズ変更ボタン(960_540)
 	window_resize_button_960_540.SetWindowSize(960, 540);//ターゲットとなるウィンドウサイズを指定
@@ -205,6 +211,24 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	}
 
 
+	reset_button.Update(input);//リセットボタンの更新処理
+
+	if (reset_button.GetClick() == true)//リセットボタンがクリックされたら
+	{
+		//文字描画速度とオート速度を1つ前に保存した設定に戻す。
+		text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
+		text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
+		text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
+
+		//現在の解像度のボタンにチェックを付けなおす。
+		window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
+		window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4) * 2, 0), setting);
+		window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
+		window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
+	}
+
+
+
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
 	{
@@ -265,6 +289,10 @@ void OptionScene::Draw(bool draw, bool debug)
 
 	//戻るボタン
 	back_button.Draw(draw, debug);
+
+	//リセットボタン
+	reset_button.Draw(draw, debug);
+
 
 	//フェードアウト用BOX
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);

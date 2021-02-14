@@ -48,7 +48,7 @@ public:
 
 	void Init(TRIANGLE pos, unsigned int color, float rotation = 0, bool fill = FALSE, float thickness = 1.0f);
 	void MoveUpdate();//設定した移動速度を反映します。
-	void Draw(bool draw = true);//円を描画します。(drawにfalseを入れることで描画しない)
+	void Draw(bool draw = true, bool aa = true);//円を描画します。(drawにfalseを入れることで描画しない)
 
 	void SetColor(unsigned int new_color);//新しい色を設定します。
 	void SetPosition(TRIANGLE new_pos);//新しい位置を設定します。

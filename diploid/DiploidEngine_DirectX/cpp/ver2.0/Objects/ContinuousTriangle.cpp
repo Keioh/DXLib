@@ -120,7 +120,7 @@ void ContinuousTriangle::Draw(bool draw, bool debug)
 		{
 			for (int count_x = 0; count_x != triangle_size_x; count_x++)
 			{
-				triangle_vector[count_y][count_x].Draw(draw);
+				triangle_vector[count_y][count_x].Draw(draw, false);
 			}
 		}
 	}
