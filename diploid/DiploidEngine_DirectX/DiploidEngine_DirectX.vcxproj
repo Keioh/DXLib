@@ -206,6 +206,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\button\Reset.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\Save.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\SkipNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Title.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\WindowSize.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\ContinuousTriangle.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
@@ -288,6 +289,7 @@
     <ClInclude Include="header\ver2.0\Objects\button\Reset.h" />
     <ClInclude Include="header\ver2.0\Objects\button\Save.h" />
     <ClInclude Include="header\ver2.0\Objects\button\SkipNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Title.h" />
     <ClInclude Include="header\ver2.0\Objects\button\WindowSize.h" />
     <ClInclude Include="header\ver2.0\Objects\ContinuousTriangle.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />

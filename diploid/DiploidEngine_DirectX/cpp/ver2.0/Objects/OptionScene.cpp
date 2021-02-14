@@ -8,7 +8,12 @@ void OptionScene::Load()
 	//保存ボタンの読み込み
 	save_button.Load();
 
+	//タイトルボタンの読み込み
+	title_button.Load();
+
+	//リセットボタンの読み込み
 	reset_button.Load();
+
 
 	//ウィンドウサイズ変更ボタンの画像読み込み
 	window_resize_button_960_540.Load("texter/basic/button/display/960_540.png");
@@ -54,8 +59,12 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 	//保存ボタン
 	save_button.Init(VGet(setting.window_x - ((128 * 2) + 4), setting.window_y - (32 + 4), 0));
 
+	//タイトルボタン
+	title_button.Init(VGet(setting.window_x - ((128 * 3) + 4), setting.window_y - (32 + 4), 0));
+
 	//リセットボタン
 	reset_button.Init(VGet(4, setting.window_y - (32 + 4), 0));
+
 
 
 	//ウィンドウサイズ変更ボタン(960_540)
@@ -211,6 +220,14 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	}
 
 
+	title_button.Update(input);//タイトルボタンの更新処理
+
+	if (title_button.GetClick() == true)//タイトルボタンがクリックされたら
+	{
+
+	}
+
+
 	reset_button.Update(input);//リセットボタンの更新処理
 
 	if (reset_button.GetClick() == true)//リセットボタンがクリックされたら
@@ -289,6 +306,9 @@ void OptionScene::Draw(bool draw, bool debug)
 
 	//戻るボタン
 	back_button.Draw(draw, debug);
+
+	//タイトルボタン
+	title_button.Draw(draw, debug);
 
 	//リセットボタン
 	reset_button.Draw(draw, debug);
