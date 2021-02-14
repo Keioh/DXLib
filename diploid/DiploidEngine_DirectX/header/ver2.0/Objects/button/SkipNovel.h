@@ -10,7 +10,7 @@ private:
 	DiploidSelectedUIV2 button;
 	DiploidBoxV2 box;
 	
-	float skip_speed = 1;
+	float skip_speed = 5;
 	float next_time = 60;
 	float time;
 
@@ -21,6 +21,9 @@ public:
 	void Init(VECTOR pos);
 	void Update(DiploidEngineInput& input);
 	void Draw(bool draw = true,  bool debug = false);
+
+
+	void Reset();
 
 
 	void SetSelected(int new_flag);

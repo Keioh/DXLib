@@ -98,6 +98,13 @@ void AutoNovel::Draw(bool draw, bool debug)
 }
 
 
+void AutoNovel::Reset()
+{
+	time = 0;
+	button.SetSelectedUI(-1);
+}
+
+
 void AutoNovel::SetSpeed(float new_speed)
 {
 	auto_speed = new_speed;

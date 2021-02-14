@@ -82,3 +82,14 @@ void ja_text::SetSpeed(int new_speed)
 		}
 	}
 }
+
+void ja_text::Reset()
+{
+	if (!string.empty())
+	{
+		for (int count = 0; count != string.size(); count++)
+		{
+			string[count].Reset();
+		}
+	}
+}

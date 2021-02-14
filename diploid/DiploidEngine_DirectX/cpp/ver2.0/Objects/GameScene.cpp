@@ -223,6 +223,18 @@ void GameScene::Draw()
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 }
 
+void GameScene::Reset()
+{
+	//各ボタンのパラメーターと状態をリセットする
+	auto_button.Reset();
+	skip_button.Reset();
+	option_button.Reset();
+
+	//文字列データを最初からにする
+	click = 0;
+	jp.Reset();
+}
+
 
 void GameScene::SetInGameFlag(bool new_flag)
 {

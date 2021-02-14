@@ -22,6 +22,8 @@ public:
 	void Update(DiploidEngineInput& input,int string_get_end_flag);
 	void Draw(bool draw = true,  bool debug = false);
 
+	void Reset();
+
 	void SetSpeed(float new_speed);
 	void SetSelected(int new_flag);
 

@@ -57,6 +57,12 @@ void OptionNovel::Draw(bool draw, bool debug)
 }
 
 
+void OptionNovel::Reset()
+{
+	button.SetSelectedUI(-1);
+}
+
+
 void OptionNovel::SetSelected(int new_flag)
 {
 	button.SetSelectedUI(new_flag);

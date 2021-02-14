@@ -81,6 +81,15 @@ void SkipNovel::Draw(bool draw, bool debug)
 }
 
 
+void SkipNovel::Reset()
+{
+	time = 0;
+	next_flag = -1;
+
+	button.SetSelectedUI(-1);
+}
+
+
 void SkipNovel::SetSelected(int new_flag)
 {
 	if (new_flag == 1)

@@ -62,6 +62,7 @@ public:
 
 	void Draw();
 
+	void Reset();//文字列データを最初から描画するように設定します。
 
 	void SetInGameFlag(bool new_flag);//ゲーム中かのフラグを変更します。
 	bool GetInGameFlag();//ゲーム中かのフラグを取得します

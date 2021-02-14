@@ -71,6 +71,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 			//タイトルに戻る。
 			case GAME_TITLE:game_scene.SetOptionButtonFlag(-1);//game_sceneのオプションボタンの選択フラグを-1に変更(ボタンを初期化)	
 							game_scene.SetInGameFlag(false);//ゲーム中フラグをfalseにする
+							game_scene.Reset();//ゲームをリセットする。
 							title_scene.SetSecne(GAME_TITLE);//シーン変更
 							break;
 			//ゲームに戻る。

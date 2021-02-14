@@ -30,6 +30,7 @@ public:
 	void Init(DiploidEngineSetting& setting);
 
 	void SetSpeed(int new_speed);
+	void Reset();
 
 	std::vector<DiploidStrings> string;
 };

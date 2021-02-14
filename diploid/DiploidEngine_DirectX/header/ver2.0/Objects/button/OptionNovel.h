@@ -15,6 +15,8 @@ public:
 	void Update(DiploidEngineInput& input);
 	void Draw(bool draw = true,  bool debug = false);
 
+	void Reset();
+
 	void SetSelected(int new_flag);
 
 	bool GetHit();//ƒJ[ƒ\ƒ‹‚ª“–‚½‚Á‚Ä‚¢‚é‚©
