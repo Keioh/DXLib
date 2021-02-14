@@ -34,6 +34,7 @@ void DiploidEngineApp::GraphicsInit(DiploidEngineApp* app)
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
 {	
+
 	if (logo_scene.GetFinalScene() == false)
 	{
 		logo_scene.Updata(app->diploidEngineScreen);
@@ -42,8 +43,15 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 	{		
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
-		{
-			game_scene.Updata(app->diploidEngineInput);
+		{	
+			game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
+			game_scene.Updata(app->diploidEngineInput);//ゲーム画面を更新
+
+			//オプションボタンが押されていたら
+			if (game_scene.GetOptionButtonFlag() == true)
+			{
+				title_scene.SetSecne(GAME_OPTION);//シーン変更
+			}
 		}
 
 		//ロードボタンを押したとき
@@ -55,25 +63,35 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//オプションボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_OPTION)
 		{
-			option_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting);
+			option_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting, game_scene.GetInGameFlag());//オプション画面を更新(最後の引数にはgame_sceneのInGameflagを入れる。)		
 
-			//戻るボタンが押されていたらタイトルに戻る。
-			if (option_scene.GetReturnFlag() == true)
+			//戻るボタンを押していたら
+			switch (option_scene.GetReturnFlag())
 			{
-				title_scene.SetSecne(GAME_TITLE);
+			//タイトルに戻る。
+			case GAME_TITLE:game_scene.SetOptionButtonFlag(-1);//game_sceneのオプションボタンの選択フラグを-1に変更(ボタンを初期化)	
+							game_scene.SetInGameFlag(false);//ゲーム中フラグをfalseにする
+							title_scene.SetSecne(GAME_TITLE);//シーン変更
+							break;
+			//ゲームに戻る。
+			case GAME_START:game_scene.SetOptionButtonFlag(-1);//game_sceneのオプションボタンの選択フラグを-1に変更(ボタンを初期化)	
+							game_scene.SetInGameFlag(true);//ゲーム中フラグをfalseにする
+							title_scene.SetSecne(GAME_START);//シーン変更
+							break;
+			default:break;
 			}
 		}
 
 		//終了ボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_EXIT)
 		{
-			app->diploidEngineSetting.SetExit(1);
+			app->diploidEngineSetting.SetExit(1);//終了する。
 		}
 
 		//何も押していない時
 		if (title_scene.GetFinalScene() == GAME_TITLE)
 		{
-			title_scene.Updata();
+			title_scene.Updata();//タイトル画面を更新
 		}
 	}
 }
@@ -111,6 +129,10 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 			option_scene.Draw();
 		}
 	}
+
+	//DrawFormatString(0, 200, GetColor(100, 100, 100), "scene = %d", title_scene.GetFinalScene());
+	//DrawFormatString(0, 220, GetColor(100, 100, 100), "%d", game_scene.GetOptionButtonFlag());
+
 }
 
 void DiploidEngineApp::Destory(DiploidEngineApp* app)

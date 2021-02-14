@@ -91,9 +91,11 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 }
 
-void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting)
+void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, bool in_game_flag)
 {
-	SetBackgroundColor(255, 255, 255);//Window背景色を白色に変更
+	SetBackgroundColor(0, 0, 0);//Window背景色を白色に変更
+
+	in_game_flag_buffer = in_game_flag;//ゲーム中かのフラグを保存
 
 	//三角形の動的背景
 	continuous_triangle.Updata(input);
@@ -220,14 +222,6 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	}
 
 
-	title_button.Update(input);//タイトルボタンの更新処理
-
-	if (title_button.GetClick() == true)//タイトルボタンがクリックされたら
-	{
-
-	}
-
-
 	reset_button.Update(input);//リセットボタンの更新処理
 
 	if (reset_button.GetClick() == true)//リセットボタンがクリックされたら
@@ -245,6 +239,28 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	}
 
 
+	//ゲーム中のflagがtrueだったら
+	if (in_game_flag_buffer == true)
+	{
+		title_button.Update(input);//タイトルボタンの更新処理
+
+		if (title_button.GetClick() == true)//タイトルボタンがクリックされたら
+		{
+			//現在の解像度のボタンにチェックを付けなおす。
+			window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
+			window_resize_button_1280_720.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4) * 2, 0), setting);
+			window_resize_button_1600_900.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 3), 0), setting);
+			window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
+
+			//文字描画速度とオート速度を保存した設定に戻す。
+			text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
+			text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
+			text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
+
+			title_button.SetSelectedFlag(1);//選択状態を1を維持
+			box_draw_flag = 2;//フェードインを始める
+		}
+	}
 
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
@@ -307,12 +323,14 @@ void OptionScene::Draw(bool draw, bool debug)
 	//戻るボタン
 	back_button.Draw(draw, debug);
 
-	//タイトルボタン
-	title_button.Draw(draw, debug);
-
 	//リセットボタン
 	reset_button.Draw(draw, debug);
 
+	//タイトルボタン
+	if (in_game_flag_buffer == true)
+	{
+		title_button.Draw(draw, debug);
+	}
 
 	//フェードアウト用BOX
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
@@ -329,9 +347,10 @@ void OptionScene::Draw(bool draw, bool debug)
 }
 
 
-bool OptionScene::GetReturnFlag()
+int OptionScene::GetReturnFlag()
 {
-	if ((back_button.GetSelected() == 1) && (box_draw_flag == 3))
+	//ゲーム中でない、かつ戻るボタンを押したら
+	if ((back_button.GetSelected() == 1) && (box_draw_flag == 3) && (in_game_flag_buffer == false))
 	{
 		option_string_image.Reset();//Optionタイトル画像のアニメーションをリセット
 		display_string_image.Reset();//Option:Display画像のアニメーションをリセット
@@ -339,8 +358,35 @@ bool OptionScene::GetReturnFlag()
 
 		box_draw_flag = 0;//フェードアウトのflagを立てる
 		back_button.SetSelectedFlag(-1);//ボタンの選択状態を-1(初期化)にする。
-		return true;
+		title_button.SetSelectedFlag(-1);
+		return GAME_TITLE;//タイトルに戻る
 	}
 
-	return false;
+	//ゲーム中かつ戻るボタンを押したら
+	if ((back_button.GetSelected() == 1) && (box_draw_flag == 3) && (in_game_flag_buffer == true))
+	{
+		option_string_image.Reset();//Optionタイトル画像のアニメーションをリセット
+		display_string_image.Reset();//Option:Display画像のアニメーションをリセット
+		game_play_string_image.Reset();//Option:Display画像のアニメーションをリセット
+
+		box_draw_flag = 0;//フェードアウトのflagを立てる
+		back_button.SetSelectedFlag(-1);//ボタンの選択状態を-1(初期化)にする。
+		title_button.SetSelectedFlag(-1);
+		return GAME_START;//ゲームに戻る
+	}
+
+	//ゲーム中かつタイトルボタンを押したら
+	if ((title_button.GetSelected() == 1) && (box_draw_flag == 3) && (in_game_flag_buffer == true))
+	{
+		option_string_image.Reset();//Optionタイトル画像のアニメーションをリセット
+		display_string_image.Reset();//Option:Display画像のアニメーションをリセット
+		game_play_string_image.Reset();//Option:Display画像のアニメーションをリセット
+
+		box_draw_flag = 0;//フェードアウトのflagを立てる
+		back_button.SetSelectedFlag(-1);//ボタンの選択状態を-1(初期化)にする。
+		title_button.SetSelectedFlag(-1);
+		return GAME_TITLE;//タイトルに戻る
+	}
+
+	return GAME_NONE;
 }

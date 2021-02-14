@@ -21,6 +21,8 @@ void GameScene::Load()
 
 	auto_button.Load();
 	skip_button.Load();
+	option_button.Load();
+
 }
 
 void GameScene::Init(DiploidEngineSetting& setting)
@@ -29,6 +31,7 @@ void GameScene::Init(DiploidEngineSetting& setting)
 
 	auto_button.Init(VGet(setting.window_x - 64, setting.window_y - 16, 0));
 	skip_button.Init(VGet(setting.window_x - (64 * 2), setting.window_y - 16, 0));
+	option_button.Init(VGet(setting.window_x - (64 * 3), setting.window_y - 16, 0));
 
 	novel_scene.Init(VGet(0, 0, 0));
 
@@ -54,6 +57,10 @@ void GameScene::Updata(DiploidEngineInput& input)
 
 		//スキップ機能の更新
 		skip_button.Update(input);
+
+		//オプション機能の更新
+		option_button.Update(input);
+
 
 		//オート機能の進めflagがtrueだったら
 		if (auto_button.GetNextFlag() == true)
@@ -102,9 +109,16 @@ void GameScene::Updata(DiploidEngineInput& input)
 			}
 		}
 
+		//オプションボタンにカーソルが合わさっていてクリックされたなら
+		if ((option_button.GetHit() == true) && (option_button.GetClick() == true))
+		{
+			option_button.SetSelected(1);//オプションボタンの選択状態を維持
+			box_draw_flag = 2;//フェードアウトフラグを立てる
+		}
+
 
 		//全てのUIからカーソルが離れているとき
-		if ((auto_button.GetHit() == false) && (skip_button.GetHit() == false))
+		if ((auto_button.GetHit() == false) && (skip_button.GetHit() == false) && (option_button.GetHit() == false))
 		{
 			//左クリックしたとき
 			if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
@@ -153,7 +167,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 
 	if (box_draw_flag == 2)//フェードイン始め
 	{
-		alpha -= alpha_speed;//透過値を変更
+		alpha += alpha_speed;//透過値を変更
 
 		if (alpha > 255)//透過値フロー処理
 		{
@@ -199,9 +213,43 @@ void GameScene::Draw()
 	//スキップボタンの描画
 	skip_button.Draw();
 
+	//オプションボタンの描画
+	option_button.Draw();
+
 
 	//フェードアウト用BOX
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 	box.Draw();
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+}
+
+
+void GameScene::SetInGameFlag(bool new_flag)
+{
+	in_game = new_flag;
+}
+
+bool GameScene::GetInGameFlag()
+{
+	return in_game;
+}
+
+
+void GameScene::SetOptionButtonFlag(int new_flag)
+{
+	option_button.SetSelected(new_flag);
+}
+
+bool GameScene::GetOptionButtonFlag()
+{
+	if ((option_button.GetSelected() == 1) && (box_draw_flag == 3))
+	{
+		box_draw_flag = 0;//フェードアウトのflagを立てる
+		option_button.SetSelected(-1);//選択状態を解除
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

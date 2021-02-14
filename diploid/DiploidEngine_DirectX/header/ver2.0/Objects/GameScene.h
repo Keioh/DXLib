@@ -14,6 +14,7 @@
 
 #include "ver2.0/Objects/button/AutoNovel.h"
 #include "ver2.0/Objects/button/SkipNovel.h"
+#include "ver2.0/Objects/button/OptionNovel.h"
 
 #include "data/text_data/ja.h"
 
@@ -24,6 +25,7 @@ private:
 
 	AutoNovel auto_button;//オートボタン
 	SkipNovel skip_button;//スキップボタン
+	OptionNovel option_button;//オプションボタン
 
 	ja_text jp;//テキストデータ
 
@@ -43,6 +45,8 @@ private:
 
 	int click = 0;//現在のテキスト位置
 
+	bool in_game = false;//ゲーム中なのかのflag(trueでgame中)
+
 	//透過処理の変数
 	int alpha = 255;
 	int alpha_speed = 4;//透過速度
@@ -57,5 +61,12 @@ public:
 	void Updata(DiploidEngineInput& input);
 
 	void Draw();
+
+
+	void SetInGameFlag(bool new_flag);//ゲーム中かのフラグを変更します。
+	bool GetInGameFlag();//ゲーム中かのフラグを取得します
+
+	void SetOptionButtonFlag(int new_flag);//オプションボタンのflagを変更します
+	bool GetOptionButtonFlag();//オプションボタンの状態を取得します。
 
 };

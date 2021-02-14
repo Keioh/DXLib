@@ -4,7 +4,8 @@
 #include "system\DiploidEngineSetting.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
-#include "system\DiploidEngineMath.h"
+#include "system/DiploidEngineMath.h"
+#include "system/define.h"
 #include "ver2.0/Objects/DiploidSliderObject.h"
 #include "ver2.0/Objects/DiploidSlider.h"
 
@@ -73,12 +74,14 @@ private:
 
 	int box_draw_flag = 0;//0でフェードアウト、1でフェードアウト完了、2でフェードイン、3でフェードイン完了
 
+	bool in_game_flag_buffer;
+
 public:
 
 	void Load();
 	void Init(DiploidEngineSetting& setting);
-	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting);
+	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, bool in_game_flag);
 	void Draw(bool draw = true, bool debug = false);
 
-	bool GetReturnFlag();//戻るボタンが押されたらtrueが返る。
+	int GetReturnFlag();//戻るボタンが押されたらtrueが返る。
 };
