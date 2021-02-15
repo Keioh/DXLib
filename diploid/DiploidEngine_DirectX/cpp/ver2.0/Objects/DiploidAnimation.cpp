@@ -66,6 +66,7 @@ void DiploidAnimation::SetAnimationSpeed(int new_Speed)
 
 void DiploidAnimation::Reset()
 {
+	sheets_anime = 0;
 	animation_image_number = 1;
 	time = 0;
 }
@@ -89,6 +90,7 @@ void DiploidAnimation::OneCellDraw(int number, bool draw)
 
 void DiploidAnimation::Draw(bool debug)
 {
+	/*
 	if (!images.empty())
 	{
 		images[animation_image_number].Draw();
@@ -102,6 +104,26 @@ void DiploidAnimation::Draw(bool debug)
 			if ((images.size() + 1) <= animation_image_number)
 			{
 				animation_image_number = 1;
+			}
+
+			time = 0;
+		}
+	}
+	*/
+
+	if (!images.empty())
+	{
+		images[sheets_anime].Draw();
+
+		time += animation_speed;
+
+		if (next_time <= time)
+		{
+			sheets_anime++;
+
+			if ((images.size()) <= sheets_anime)
+			{
+				sheets_anime = 0;
 			}
 
 			time = 0;

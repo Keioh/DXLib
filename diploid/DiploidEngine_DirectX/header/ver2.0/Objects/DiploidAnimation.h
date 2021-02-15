@@ -17,6 +17,7 @@ private:
 	int next_time = 60;
 
 	int sheets;
+	int sheets_anime = 0;
 public:
 
 	void Load(const char* path);

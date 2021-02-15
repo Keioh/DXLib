@@ -71,14 +71,16 @@ void AutoNovel::Draw(bool draw, bool debug)
 		if (button.GetSelectedUI() == 1)//選択状態のとき
 		{
 			SetDrawBright(255, 255, 255);
-			anime.StackDraw();//アニメーションの描画(スタック描画)
+			anime.Draw();//アニメーションの描画
+			//anime.StackDraw();
 		}
 		else//選択状態じゃないとき
 		{
 			if (button.GetHit() == true)//カーソルがボタンに当たっている
 			{
 				SetDrawBright(255  * 0.9, 255 *  0.9, 255 * 0.9);
-				anime.StackDraw();//アニメーションの描画(スタック描画)
+				anime.Draw();//アニメーションの描画
+				//anime.StackDraw();//アニメーションの描画(スタック描画)
 				SetDrawBright(255, 255, 255);
 			}
 			else//当たっていない

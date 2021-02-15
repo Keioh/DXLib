@@ -49,7 +49,8 @@ void Save::Draw(bool draw, bool debug)
 			}
 
 			//アニメーションを再生
-			button_animation.StackDraw();
+			button_animation.Draw();
+			//button_animation.StackDraw();
 
 			SetDrawBright(255, 255, 255);
 

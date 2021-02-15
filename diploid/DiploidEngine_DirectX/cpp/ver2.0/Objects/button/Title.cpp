@@ -35,7 +35,9 @@ void Title::Draw(bool draw, bool debug)
 		{
 			SetDrawBright(255, 255, 255);
 			//アニメーションを再生
-			return_button_animation.StackDraw();
+			return_button_animation.Draw();
+			//return_button_animation.StackDraw();
+
 		}
 		else//ボタンに触れていなかったら
 		{
