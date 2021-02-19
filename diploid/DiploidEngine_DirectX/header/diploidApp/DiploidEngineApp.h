@@ -27,6 +27,7 @@
 #include "ver2.0/Objects/TitleScene.h"
 #include "ver2.0/Objects/GameScene.h"
 #include "ver2.0/Objects/OptionScene.h"
+#include "ver2.0/Objects/FileScene.h"
 
 using namespace std;
 
@@ -37,6 +38,7 @@ private:
 	TitleScene title_scene;
 	GameScene game_scene;
 	OptionScene option_scene;
+	FileScene file_scene;
 
 public:
 	void FileCreate(DiploidEngineApp* app);

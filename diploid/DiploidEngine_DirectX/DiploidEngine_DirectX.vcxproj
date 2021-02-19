@@ -216,6 +216,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSlider.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSliderObject.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\FileScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\OptionScene.cpp" />
@@ -300,6 +301,7 @@
     <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSlider.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSliderObject.h" />
+    <ClInclude Include="header\ver2.0\Objects\FileScene.h" />
     <ClInclude Include="header\ver2.0\Objects\GameScene.h" />
     <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
     <ClInclude Include="header\ver2.0\Objects\OptionScene.h" />

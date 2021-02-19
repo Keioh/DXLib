@@ -17,6 +17,7 @@ void DiploidEngineApp::GraphicsLoad(DiploidEngineApp* app)
 	title_scene.Load();
 	game_scene.Load();
 	option_scene.Load();
+	file_scene.Load();
 }
 
 void DiploidEngineApp::SoundInit(DiploidEngineApp* app)
@@ -30,11 +31,11 @@ void DiploidEngineApp::GraphicsInit(DiploidEngineApp* app)
 	title_scene.Init();
 	game_scene.Init(app->diploidEngineSetting);
 	option_scene.Init(app->diploidEngineSetting);
+	file_scene.Init();
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
 {	
-
 	if (logo_scene.GetFinalScene() == false)
 	{
 		logo_scene.Updata(app->diploidEngineScreen);
@@ -57,7 +58,12 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//ロードボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_LOAD)
 		{
+			file_scene.Updata();
 
+			if (file_scene.GetReturnButton() == GAME_TITLE)
+			{
+				title_scene.SetSecne(GAME_TITLE);//シーン変更
+			}
 		}
 
 		//オプションボタンを押したとき
@@ -121,7 +127,7 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		//ロードボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_LOAD)
 		{
-
+			file_scene.Draw();
 		}
 
 		//オプションボタンを押したとき

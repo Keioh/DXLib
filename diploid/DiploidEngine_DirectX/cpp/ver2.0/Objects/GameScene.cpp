@@ -50,17 +50,18 @@ void GameScene::Init(DiploidEngineSetting& setting)
 
 void GameScene::Updata(DiploidEngineInput& input)
 {
-	if (box_draw_flag == 1)//フェードアウト完了していたら
+	//オート機能の更新
+	auto_button.Update(input, jp.string[click].GetEnd());
+
+	//スキップ機能の更新
+	skip_button.Update(input);
+
+	//オプション機能の更新
+	option_button.Update(input);
+
+	//フェードアウト完了していたら
+	if (box_draw_flag == 1)
 	{
-		//オート機能の更新
-		auto_button.Update(input, jp.string[click].GetEnd());
-
-		//スキップ機能の更新
-		skip_button.Update(input);
-
-		//オプション機能の更新
-		option_button.Update(input);
-
 
 		//オート機能の進めflagがtrueだったら
 		if (auto_button.GetNextFlag() == true)
@@ -147,6 +148,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 			}
 		}
 	}
+
 
 	//場面の切り替え
 	novel_scene.SetDrawName(jp.string[click].GetSceneName());
