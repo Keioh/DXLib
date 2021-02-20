@@ -9,7 +9,10 @@
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "system/define.h"
 
+#include "ver2.0/Objects/string_image/load/load_string_image.h"
+
 #include "ver2.0/Objects/button/Back.h"
+
 
 class FileScene
 {
@@ -24,7 +27,11 @@ private:
 	DiploidImageV2 test_back;//テスト背景
 
 
-	Back back_button;
+
+	LoadStringImage load_string_image;
+
+	Back back_button;//戻るボタン
+
 
 
 	//透過値とそのスピード

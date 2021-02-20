@@ -220,6 +220,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\OptionScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\load\load_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\display_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\game_play_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\option_string_image.cpp" />
@@ -305,6 +306,7 @@
     <ClInclude Include="header\ver2.0\Objects\GameScene.h" />
     <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
     <ClInclude Include="header\ver2.0\Objects\OptionScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\load\load_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\display_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\game_play_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\option_string_image.h" />

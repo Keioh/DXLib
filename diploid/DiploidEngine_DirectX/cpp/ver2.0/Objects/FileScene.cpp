@@ -2,6 +2,8 @@
 
 void FileScene::Load()
 {
+	load_string_image.Load();
+
 	back_button.Load();
 }
 
@@ -11,6 +13,9 @@ void FileScene::Init()
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
+	load_string_image.Init(VGet(0, 0, 0));
+
+
 	//戻るボタン
 	back_button.Init(VGet(setting.window_x - (128 + 4), setting.window_y - (32 + 4), 0));
 }
@@ -18,6 +23,8 @@ void FileScene::Init()
 void FileScene::Updata()
 {
 	SetBackgroundColor(255, 255, 255);
+
+	load_string_image.Updata();
 
 	//戻るボタン
 	back_button.Update(input);
@@ -69,6 +76,8 @@ void FileScene::Updata()
 
 void FileScene::Draw()
 {
+	load_string_image.Draw();
+
 	//戻るボタン
 	back_button.Draw();
 
@@ -84,6 +93,8 @@ int FileScene::GetReturnButton()
 {
 	if ((back_button.GetSelected() == 1) && (box_draw_flag == 3))
 	{
+		load_string_image.Reset();
+
 		box_draw_flag = 0;//フェードアウトのflagを立てる
 		back_button.SetSelectedFlag(-1);
 		return GAME_TITLE;
