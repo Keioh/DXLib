@@ -18,7 +18,7 @@ void TextSpeedAutoSettingUI::Init(VECTOR pos)
 {
 	draw_speed_image.Init(VGet(pos.x, pos.y + 55 + (32 + 12), 0));
 	string_speed_slider.Init(VGet(pos.x, pos.y + 55 + (32 + 12), 0), VGet(200, 0, 0));
-	string_speed_slider.SetParameter(VGet(25, 0, 0));
+	string_speed_slider.SetParameter(VGet(100, 0, 0));
 
 	test_string.Init(pos.x, pos.y + (32 + 4));
 
@@ -38,7 +38,7 @@ void TextSpeedAutoSettingUI::Init(VECTOR pos)
 	string_background_box.SetFill(true);
 }
 
-void TextSpeedAutoSettingUI::Update()
+void TextSpeedAutoSettingUI::Update(DiploidEngineScreen& screen)
 {
 	string_speed_slider.Updata();
 	auto_speed_slider.Updata();
@@ -47,7 +47,7 @@ void TextSpeedAutoSettingUI::Update()
 
 	background_alpha = string_background_alpha_slider.GetParameter().x;
 
-	test_string.SetSpeed(string_speed_slider.GetParameter().x);//表示速度を反映
+	test_string.SetSpeed(string_speed_slider.GetParameter().x * 50);//表示速度を反映
 
 	if (next_flag == true)
 	{
@@ -65,7 +65,7 @@ void TextSpeedAutoSettingUI::Update()
 		else
 		{
 			next_flag = false;
-			time += auto_speed;//オートの時間を進める。
+			time += auto_speed * screen.GetFrameTime();//オートの時間を進める。
 		}
 	}
 	else
@@ -73,12 +73,12 @@ void TextSpeedAutoSettingUI::Update()
 		next_flag = false;
 	}
 
-	auto_speed = auto_speed_slider.GetParameter().x / 100.0f;//オート速度を変更
+	auto_speed = auto_speed_slider.GetParameter().x * 0.8f;//オート速度を変更
 
 	test_string_box.SetSize(VGet(time, 8, 0));//オートのtimeをビジュアルに反映
 }
 
-void TextSpeedAutoSettingUI::Draw(bool draw, bool debug)
+void TextSpeedAutoSettingUI::Draw(float frame_time, bool draw, bool debug)
 {
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, background_alpha);
 	string_background_box.Draw(draw);
@@ -86,7 +86,7 @@ void TextSpeedAutoSettingUI::Draw(bool draw, bool debug)
 
 
 	string_speed_slider.Draw(draw, debug);
-	test_string.Draw();
+	test_string.Draw(frame_time);
 	draw_speed_image.Draw(draw);
 
 	auto_speed_slider.Draw(draw, debug);
@@ -102,14 +102,14 @@ void TextSpeedAutoSettingUI::SetParameterAutoSpeed(float new_parameter)
 {
 	auto_speed_slider.SetParameter(VGet(new_parameter, 0, 0));
 
-	auto_speed = auto_speed_slider.GetParameter().x / 100.0f;//オート速度を変更
+	auto_speed = auto_speed_slider.GetParameter().x * 0.8f;//オート速度を変更
 }
 
 void TextSpeedAutoSettingUI::SetParameterDrawSpeed(float new_parameter)
 {
 	string_speed_slider.SetParameter(VGet(new_parameter, 0, 0));
 
-	test_string.SetSpeed(string_speed_slider.GetParameter().x);
+	test_string.SetSpeed(string_speed_slider.GetParameter().x * 50);
 }
 
 void TextSpeedAutoSettingUI::SetParameterBackGroundAlpha(float new_parameter)
@@ -187,3 +187,15 @@ float TextSpeedAutoSettingUI::GetParameterAbsoluteBackGroundAlpha()
 {
 	return string_background_alpha_slider.GetParameter().x;
 }
+
+
+float TextSpeedAutoSettingUI::GetParameterScaleAutoSpeed()
+{
+	return auto_speed_slider.GetParameter().x * 0.8f;
+}
+
+float TextSpeedAutoSettingUI::GetParameterScaleDrawSpeed()
+{
+	return string_speed_slider.GetParameter().x * 50;
+}
+

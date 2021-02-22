@@ -8,6 +8,7 @@
 #include "system/define.h"
 #include "ver2.0/Objects/DiploidSliderObject.h"
 #include "ver2.0/Objects/DiploidSlider.h"
+#include "diploidScreen\DiploidEngineScreen.h"
 
 #include "ver2.0/Objects/button/Back.h"
 #include "ver2.0/Objects/button/Save.h"
@@ -64,13 +65,13 @@ private:
 
 
 	//値の保存用
-	float draw_speed = 25.0f;//設定した現在の文字描画速度
-	float auto_speed = 95.0f;//設定した現在のオート速度
+	float draw_speed = 80.0f;//設定した現在の文字描画速度
+	float auto_speed = 50.0f;//設定した現在のオート速度
 	float background_alpha = 100.0f;//設定した現在の文字背景の透過度
 
 	//透過処理の変数
 	int alpha = 255;
-	int alpha_speed = 8;//透過速度
+	int alpha_speed = 500;//透過速度
 
 	int box_draw_flag = 0;//0でフェードアウト、1でフェードアウト完了、2でフェードイン、3でフェードイン完了
 
@@ -80,8 +81,8 @@ public:
 
 	void Load();
 	void Init(DiploidEngineSetting& setting);
-	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, bool in_game_flag);
-	void Draw(bool draw = true, bool debug = false);
+	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen, bool in_game_flag);
+	void Draw(DiploidEngineScreen& screen, bool draw = true, bool debug = false);
 
 	int GetReturnFlag();//戻るボタンが押されたらtrueが返る。
 };

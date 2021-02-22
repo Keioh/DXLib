@@ -33,12 +33,16 @@ void TitleScene::Init()
 	exit_button.Init(VGet(128, setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), 0), button_back_image.GetSize());//終了ボタンの初期化
 
 	start_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512, start_string.GetHandle());
+	start_string.SetSpeed(5000);
 	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + (button_back_image.GetSize().y + 20), start_string.GetHandle());
+	load_string.SetSpeed(5000);
 	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 2), start_string.GetHandle());
+	option_string.SetSpeed(5000);
 	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), start_string.GetHandle());
+	exit_string.SetSpeed(5000);
 }
 
-void TitleScene::Updata()
+void TitleScene::Updata(DiploidEngineScreen& screen)
 {
 	SetBackgroundColor(0, 0, 0);
 
@@ -83,7 +87,7 @@ void TitleScene::Updata()
 	//ボタンを押したら
 	if (button_click != GAME_TITLE)
 	{
-		alpha += alpha_speed;//透過値を変更
+		alpha += alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha > 255)//透過値フロー処理
 		{
@@ -97,7 +101,7 @@ void TitleScene::Updata()
 		{
 			alpha = 0;
 		}
-		alpha -= alpha_speed;//透過値を変更
+		alpha -= alpha_speed * screen.GetFrameTime();//透過値を変更
 	}
 
 
@@ -107,25 +111,25 @@ void TitleScene::Updata()
 	}
 	else
 	{
-		mosaic += mosaic_speed;//モザイク値を変更
+		mosaic += mosaic_speed * screen.GetFrameTime();//モザイク値を変更
 	}
 }
 
-void TitleScene::Draw()
+void TitleScene::Draw(DiploidEngineScreen& screen)
 {
 	test_back.Draw();
 
 	start_button.Draw();
-	start_string.Draw();
+	start_string.Draw(screen.GetFrameTime());
 
 	load_button.Draw();
-	load_string.Draw();
+	load_string.Draw(screen.GetFrameTime());
 
 	option_button.Draw();
-	option_string.Draw();
+	option_string.Draw(screen.GetFrameTime());
 
 	exit_button.Draw();
-	exit_string.Draw();
+	exit_string.Draw(screen.GetFrameTime());
 
 	//モザイク処理
 	//scr_gra.Draw(mosaic);

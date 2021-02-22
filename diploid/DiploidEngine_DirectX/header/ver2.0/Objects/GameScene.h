@@ -11,6 +11,8 @@
 #include "system/define.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
 #include "ver2.0/Objects/DiploidNovelScene.h"
+#include "diploidScreen\DiploidEngineScreen.h"
+
 
 #include "ver2.0/Objects/button/AutoNovel.h"
 #include "ver2.0/Objects/button/SkipNovel.h"
@@ -49,7 +51,7 @@ private:
 
 	//透過処理の変数
 	int alpha = 255;
-	int alpha_speed = 4;//透過速度
+	int alpha_speed = 500;//透過速度
 
 	int box_draw_flag = 0;//0でフェードアウト、1でフェードアウト完了、2でフェードイン、3でフェードイン完了
 
@@ -58,9 +60,9 @@ public:
 
 	void Init(DiploidEngineSetting& setting);
 
-	void Updata(DiploidEngineInput& input);
+	void Updata(DiploidEngineInput& input, DiploidEngineScreen& screen);
 
-	void Draw();
+	void Draw(DiploidEngineScreen& screen);
 
 	void Reset();//文字列データを最初から描画するように設定します。
 

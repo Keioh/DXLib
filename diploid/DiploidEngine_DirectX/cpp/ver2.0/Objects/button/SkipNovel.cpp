@@ -13,12 +13,13 @@ void SkipNovel::Init(VECTOR pos)
 {
 	button.Init(pos, VGet(64, 16, 0));//ボタンの初期化
 	anime.Init(pos, 4);//アニメーションの初期化
+	anime.SetAnimationSpeed(300);
 
 	box.Init(VGet(pos.x, pos.y - 10, pos.z), VGet(0, 8, 0), GetColor(250, 250, 250));
 	box.SetFill(true);
 }
 
-void SkipNovel::Update(DiploidEngineInput& input)
+void SkipNovel::Update(DiploidEngineInput& input, float frame_time)
 {
 	anime.Update();//アニメーションのアップデート
 	button.Updata(&input);//ボタンのアップデート
@@ -32,7 +33,7 @@ void SkipNovel::Update(DiploidEngineInput& input)
 		}
 		else
 		{
-			time += skip_speed;
+			time += skip_speed * frame_time;
 			next_flag = 0;
 		}
 	}
@@ -45,7 +46,7 @@ void SkipNovel::Update(DiploidEngineInput& input)
 	}	
 }
 
-void SkipNovel::Draw(bool draw, bool debug)
+void SkipNovel::Draw(float frame_time, bool draw, bool debug)
 {
 	if (draw == true)
 	{	
@@ -54,14 +55,14 @@ void SkipNovel::Draw(bool draw, bool debug)
 		if ((button.GetSelectedUI() == 1) && (next_flag >= 0))//選択状態のとき、かつnext_flagが０以上のとき
 		{
 			SetDrawBright(255, 255, 255);
-			anime.StackDraw();//アニメーションの描画(スタック描画)
+			anime.Draw(frame_time);//アニメーションの描画
 		}
 		else//選択状態じゃないとき
 		{
 			if (button.GetHit() == true)//カーソルがボタンに当たっている
 			{
 				SetDrawBright(255  * 0.9, 255 *  0.9, 255 * 0.9);
-				anime.StackDraw();//アニメーションの描画(スタック描画)
+				anime.Draw(frame_time);//アニメーションの描画
 				SetDrawBright(255, 255, 255);
 			}
 			else//当たっていない

@@ -88,7 +88,7 @@ void DiploidAnimation::OneCellDraw(int number, bool draw)
 	images[number].Draw();
 }
 
-void DiploidAnimation::Draw(bool debug)
+void DiploidAnimation::Draw(float frame_time, bool debug)
 {
 	/*
 	if (!images.empty())
@@ -115,7 +115,7 @@ void DiploidAnimation::Draw(bool debug)
 	{
 		images[sheets_anime].Draw();
 
-		time += animation_speed;
+		time += animation_speed * frame_time;
 
 		if (next_time <= time)
 		{
@@ -131,7 +131,7 @@ void DiploidAnimation::Draw(bool debug)
 	}
 }
 
-void DiploidAnimation::StackDraw(bool debug)
+void DiploidAnimation::StackDraw(float frame_time, bool debug)
 {	
 	if (!images.empty())
 	{
@@ -140,7 +140,7 @@ void DiploidAnimation::StackDraw(bool debug)
 			images[count].Draw();
 		}
 
-		time += animation_speed;
+		time += animation_speed * frame_time;
 
 		if (next_time <= time)
 		{

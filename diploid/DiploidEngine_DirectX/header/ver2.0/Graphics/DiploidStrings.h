@@ -3,7 +3,7 @@
 #include <vector>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
-
+#include "diploidScreen\DiploidEngineScreen.h"
 
 class DiploidStrings
 {
@@ -27,7 +27,7 @@ private:
 	int next_time = 100;//次の文字を表示する時間
 	int time;//時間保存用
 
-	int next_speed = 50;//文字送りの速度
+	float next_speed = 50;//文字送りの速度
 
 	bool complete = false;//既読済みかどうか(trueで既読)
 
@@ -54,8 +54,8 @@ public:
 	void SetCompleteFlag(bool new_flag);
 
 	void SetLineSpaceing(int space);
-	void SetSpeed(int speed);//文字送りの速度を設定します。
+	void SetSpeed(float speed);//文字送りの速度を設定します。
 	void SetColor(unsigned int new_color);//新しく文字の色を設定します。
 
-	void Draw();//Load関数で読み込んだ文字列を表示する。(1行512文字)
+	void Draw(float frame_time = 1.0f);//Load関数で読み込んだ文字列を表示する。(1行512文字)
 };

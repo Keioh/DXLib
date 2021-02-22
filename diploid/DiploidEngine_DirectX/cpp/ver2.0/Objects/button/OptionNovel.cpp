@@ -14,7 +14,7 @@ void OptionNovel::Init(VECTOR pos)
 {
 	button.Init(pos, VGet(64, 16, 0));//ボタンの初期化
 	anime.Init(pos, 5);//アニメーションの初期化
-	anime.SetAnimationSpeed(5);
+	anime.SetAnimationSpeed(300);
 }
 
 void OptionNovel::Update(DiploidEngineInput& input)
@@ -23,14 +23,14 @@ void OptionNovel::Update(DiploidEngineInput& input)
 	button.Updata(&input);//ボタンのアップデート
 }
 
-void OptionNovel::Draw(bool draw, bool debug)
+void OptionNovel::Draw(float frame_time, bool draw, bool debug)
 {
 	if (draw == true)
 	{	
 		if (button.GetSelectedUI() == 1)//選択状態のとき
 		{
 			SetDrawBright(255, 255, 255);
-			anime.Draw();//アニメーションの描画(スタック描画)
+			anime.Draw(frame_time);//アニメーションの描画(スタック描画)
 			//anime.StackDraw();//アニメーションの描画
 		}
 		else//選択状態じゃないとき
@@ -39,7 +39,7 @@ void OptionNovel::Draw(bool draw, bool debug)
 			{
 				SetDrawBright(255  * 0.9, 255 *  0.9, 255 * 0.9);
 				//anime.StackDraw();//アニメーションの描画(スタック描画)
-				anime.Draw();//アニメーションの描画
+				anime.Draw(frame_time);//アニメーションの描画
 				SetDrawBright(255, 255, 255);
 			}
 			else//当たっていない

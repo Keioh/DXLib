@@ -9,7 +9,7 @@ void FileScene::Load()
 	test.Load("texter/basic/file/0.png");
 }
 
-void FileScene::Init()
+void FileScene::Init(DiploidEngineSetting& setting)
 {
 	//フェード用BOX
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
@@ -25,7 +25,7 @@ void FileScene::Init()
 	test.Init(VGet(300, 100, 0));
 }
 
-void FileScene::Updata()
+void FileScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen)
 {
 	SetBackgroundColor(255, 255, 255);
 
@@ -48,7 +48,7 @@ void FileScene::Updata()
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
 	{
-		alpha -= alpha_speed;//透過値を変更
+		alpha -= alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha <= 0)//透過値フロー処理
 		{
@@ -59,7 +59,7 @@ void FileScene::Updata()
 
 	if (box_draw_flag == 2)//フェードイン始め
 	{
-		alpha += alpha_speed;//透過値を変更
+		alpha += alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha > 255)//透過値フロー処理
 		{
@@ -79,12 +79,12 @@ void FileScene::Updata()
 	}
 }
 
-void FileScene::Draw()
+void FileScene::Draw(DiploidEngineScreen& screen, bool draw, bool debug)
 {
 	load_string_image.Draw();//ロード画面のタイトル画像
 
 	//戻るボタン
-	back_button.Draw();
+	back_button.Draw(screen.GetFrameTime());
 
 	test.Draw();
 

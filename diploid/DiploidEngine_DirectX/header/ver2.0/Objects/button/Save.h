@@ -14,7 +14,7 @@ public:
 	void Load();
 	void Init(VECTOR pos);
 	void Update(DiploidEngineInput& input);
-	void Draw(bool draw = true, bool debug = false);
+	void Draw(float frame_time = 1.0f, bool draw = true, bool debug = false);
 
 	bool GetHit();//カーソルが当たっているか
 	bool GetClick();//クリックされたか

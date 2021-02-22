@@ -4,6 +4,7 @@
 #include "system/DiploidEngineMath.h"
 #include "diploidInput\DiploidEngineInput.h"
 #include "ver2.0/Graphics/DiploidTriangle.h"
+#include "diploidScreen\DiploidEngineScreen.h"
 
 //˜A‘±‚µ‚½ŽOŠpŒ`‚Ì•`‰æ
 class ContinuousTriangle
@@ -32,7 +33,7 @@ private:
 
 public:
 	void Init(VECTOR pos, float length,int size_x, int size_y);
-	void Updata(DiploidEngineInput& input);
+	void Updata(DiploidEngineInput& input, DiploidEngineScreen& screen);
 	void Draw(bool draw = true, bool debug = false);
 
 	void SetSize();

@@ -19,8 +19,8 @@ private:
 public:
 	void Load();
 	void Init(VECTOR pos);
-	void Update(DiploidEngineInput& input);
-	void Draw(bool draw = true,  bool debug = false);
+	void Update(DiploidEngineInput& input, float frame_time = 1.0f);
+	void Draw(float frame_time = 1.0f, bool draw = true,  bool debug = false);
 
 
 	void Reset();

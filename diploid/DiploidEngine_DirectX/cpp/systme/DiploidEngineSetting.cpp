@@ -10,7 +10,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.30)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.31)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;
@@ -32,7 +32,7 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {
-	SetWaitVSyncFlag(TRUE);//垂直同期信号を待つかのflag
+	SetWaitVSyncFlag(true);//垂直同期信号を待つかのflag
 	SetUseCharCodeFormat(DX_CHARCODEFORMAT_SHIFTJIS);
 	//SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//文字コード変更	
 	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//フォントの描画の仕方

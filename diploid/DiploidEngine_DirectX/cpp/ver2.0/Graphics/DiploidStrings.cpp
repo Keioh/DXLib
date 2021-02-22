@@ -47,7 +47,7 @@ void DiploidStrings::ChangeFont(int handle)
 }
 
 
-void DiploidStrings::SetSpeed(int speed)
+void DiploidStrings::SetSpeed(float speed)
 {
 	next_speed = speed;
 }
@@ -116,13 +116,13 @@ void DiploidStrings::SetSceneName(std::string name)
 
 
 
-void DiploidStrings::Draw()
+void DiploidStrings::Draw(float frame_time)
 {	
 	if (load_string[string_all] != '\0')
 	{
 		if (string_all != 512)
 		{
-			time += next_speed;
+			time += next_speed * frame_time;
 
 			if (time > next_time)
 			{

@@ -79,7 +79,7 @@ void ContinuousTriangle::Init(VECTOR pos, float length, int size_x, int size_y)
 	}
 }
 
-void ContinuousTriangle::Updata(DiploidEngineInput& input)
+void ContinuousTriangle::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 {
 	if (!triangle_vector.empty())
 	{
@@ -102,7 +102,7 @@ void ContinuousTriangle::Updata(DiploidEngineInput& input)
 			}
 		}
 
-		sin_add += 0.01f;
+		sin_add += 0.5f * screen.GetFrameTime();
 
 		if ((2 * DX_PI) < sin_add)
 		{

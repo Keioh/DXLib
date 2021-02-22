@@ -28,8 +28,10 @@ void GameScene::Load()
 void GameScene::Init(DiploidEngineSetting& setting)
 {
 	jp.Init(setting);
+	jp.SetSpeed(5000);
 
 	auto_button.Init(VGet(setting.window_x - 64, setting.window_y - 16, 0));
+	auto_button.SetSpeed(60);
 	skip_button.Init(VGet(setting.window_x - (64 * 2), setting.window_y - 16, 0));
 	option_button.Init(VGet(setting.window_x - (64 * 3), setting.window_y - 16, 0));
 
@@ -43,13 +45,14 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
-	jp.SetSpeed(100);
 
 	end_anime.Init(VGet(setting.window_x * 0.8f, setting.window_y - 64, 0), 4, 0.5f, 0.5f);
 }
 
-void GameScene::Updata(DiploidEngineInput& input)
-{
+void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
+{	
+	end_anime.SetAnimationSpeed(250 * screen.GetFrameTime());
+
 	//オプション機能の更新
 	option_button.Update(input);
 
@@ -57,10 +60,10 @@ void GameScene::Updata(DiploidEngineInput& input)
 	if (box_draw_flag == 1)
 	{
 		//オート機能の更新
-		auto_button.Update(input, jp.string[click].GetEnd());
+		auto_button.Update(input, jp.string[click].GetEnd(), screen.GetFrameTime());
 
 		//スキップ機能の更新
-		skip_button.Update(input);
+		skip_button.Update(input, screen.GetFrameTime());
 
 
 		//オート機能の進めflagがtrueだったら
@@ -153,12 +156,12 @@ void GameScene::Updata(DiploidEngineInput& input)
 	//場面の切り替え
 	novel_scene.SetDrawName(jp.string[click].GetSceneName());
 
-	novel_scene.Update();//場面切り替えのアップデート
+	novel_scene.Update(screen);//場面切り替えのアップデート
 
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
 	{
-		alpha -= alpha_speed;//透過値を変更
+		alpha -= alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha <= 0)//透過値フロー処理
 		{
@@ -169,7 +172,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 
 	if (box_draw_flag == 2)//フェードイン始め
 	{
-		alpha += alpha_speed;//透過値を変更
+		alpha += alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha > 255)//透過値フロー処理
 		{
@@ -179,7 +182,7 @@ void GameScene::Updata(DiploidEngineInput& input)
 	}
 }
 
-void GameScene::Draw()
+void GameScene::Draw(DiploidEngineScreen& screen)
 {
 	//背景の描画
 	novel_scene.Draw();
@@ -196,7 +199,7 @@ void GameScene::Draw()
 	//フェードアウトが完了したら
 	if (box_draw_flag == 1)
 	{
-		jp.string[click].Draw();//文字の描画
+		jp.string[click].Draw(screen.GetFrameTime());//文字の描画
 	}
 
 	//文が最後まで描画されていたら
@@ -210,13 +213,13 @@ void GameScene::Draw()
 	}
 
 	//オートボタンの描画
-	auto_button.Draw();
+	auto_button.Draw(screen.GetFrameTime());
 
 	//スキップボタンの描画
-	skip_button.Draw();
+	skip_button.Draw(screen.GetFrameTime());
 
 	//オプションボタンの描画
-	option_button.Draw();
+	option_button.Draw(screen.GetFrameTime());
 
 
 	//フェードアウト用BOX

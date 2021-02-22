@@ -13,7 +13,7 @@ void Reset::Load()
 void Reset::Init(VECTOR pos)
 {
 	return_button_animation.Init(pos, 6);
-	return_button_animation.SetAnimationSpeed(5);
+	return_button_animation.SetAnimationSpeed(300);
 
 	return_button.Init(pos, VGet(128, 32, 0));
 }
@@ -24,7 +24,7 @@ void Reset::Update(DiploidEngineInput& input)
 	return_button.Updata(&input);
 }
 
-void Reset::Draw(bool draw, bool debug)
+void Reset::Draw(float frame_time, bool draw, bool debug)
 {
 	if (draw == true)
 	{
@@ -33,7 +33,7 @@ void Reset::Draw(bool draw, bool debug)
 		{
 			SetDrawBright(255, 255, 255);
 			//アニメーションを再生
-			return_button_animation.Draw();
+			return_button_animation.Draw(frame_time);
 			//return_button_animation.StackDraw();
 		}
 		else//ボタンに触れていなかったら

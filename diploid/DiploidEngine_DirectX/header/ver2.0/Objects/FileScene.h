@@ -7,6 +7,7 @@
 #include "ver2.0/Graphics/DiploidScreenGraphics.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
+#include "diploidScreen\DiploidEngineScreen.h"
 #include "system/define.h"
 
 #include "ver2.0/Objects/string_image/load/load_string_image.h"
@@ -17,9 +18,6 @@
 class FileScene
 {
 private:
-	DiploidEngineInput input;//入力関連
-	DiploidEngineSetting setting;//WindowSize取得用
-
 	DiploidScreenGraphics scr_gra;//モザイク処理用
 
 	DiploidBoxV2 box;//フェードイン、アウト用BOX
@@ -34,7 +32,7 @@ private:
 
 
 	//透過値とそのスピード
-	int alpha = 255, alpha_speed = 10;
+	int alpha = 255, alpha_speed = 500;
 	int box_draw_flag = 0;
 
 	//モザイク値とそのスピードとモザイク最大値
@@ -47,11 +45,11 @@ public:
 
 	void Load();
 
-	void Init();
+	void Init(DiploidEngineSetting& setting);
 
-	void Updata();
+	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen);
 
-	void Draw();
+	void Draw(DiploidEngineScreen& screen, bool draw = true, bool debug = false);
 
 	int GetReturnButton();//最後に押したボタンがどれかを取得する。(値はdefine.hを参照)
 	void SetSecne(int scene_type);//defineファイルに記載されているマクロにしたがってシーンを変更します。(GAME_TITLEでタイトル画面)

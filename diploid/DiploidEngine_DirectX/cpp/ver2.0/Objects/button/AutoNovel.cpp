@@ -18,12 +18,13 @@ void AutoNovel::Init(VECTOR pos)
 {
 	button.Init(pos, VGet(64, 16, 0));//ボタンの初期化
 	anime.Init(pos, 8);//アニメーションの初期化
+	anime.SetAnimationSpeed(400);
 
 	box.Init(VGet(pos.x, pos.y - 10, pos.z), VGet(0, 8, 0), GetColor(250, 250, 250));
 	box.SetFill(true);
 }
 
-void AutoNovel::Update(DiploidEngineInput& input, int string_get_end_flag)
+void AutoNovel::Update(DiploidEngineInput& input, int string_get_end_flag, float frame_time)
 {
 	anime.Update();//アニメーションのアップデート
 	button.Updata(&input);//ボタンのアップデート
@@ -41,7 +42,7 @@ void AutoNovel::Update(DiploidEngineInput& input, int string_get_end_flag)
 			else
 			{
 				next_flag = false;
-				time += auto_speed;//オートの時間を進める。
+				time += auto_speed * frame_time;//オートの時間を進める。
 			}
 		}
 		else
@@ -62,7 +63,7 @@ void AutoNovel::Update(DiploidEngineInput& input, int string_get_end_flag)
 	box.SetSize(VGet(time, 8, 0));//オートのtimeをビジュアルに反映
 }
 
-void AutoNovel::Draw(bool draw, bool debug)
+void AutoNovel::Draw(float frame_time, bool draw, bool debug)
 {
 	if (draw == true)
 	{	
@@ -71,7 +72,7 @@ void AutoNovel::Draw(bool draw, bool debug)
 		if (button.GetSelectedUI() == 1)//選択状態のとき
 		{
 			SetDrawBright(255, 255, 255);
-			anime.Draw();//アニメーションの描画
+			anime.Draw(frame_time);//アニメーションの描画
 			//anime.StackDraw();
 		}
 		else//選択状態じゃないとき
@@ -79,7 +80,7 @@ void AutoNovel::Draw(bool draw, bool debug)
 			if (button.GetHit() == true)//カーソルがボタンに当たっている
 			{
 				SetDrawBright(255  * 0.9, 255 *  0.9, 255 * 0.9);
-				anime.Draw();//アニメーションの描画
+				anime.Draw(frame_time);//アニメーションの描画
 				//anime.StackDraw();//アニメーションの描画(スタック描画)
 				SetDrawBright(255, 255, 255);
 			}

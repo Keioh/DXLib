@@ -21,7 +21,7 @@ void Save::Load()
 void Save::Init(VECTOR pos)
 {
 	button_animation.Init(pos, 14);
-	button_animation.SetAnimationSpeed(8);
+	button_animation.SetAnimationSpeed(500);
 
 	button.Init(pos, VGet(128, 32, 0));
 }
@@ -32,7 +32,7 @@ void Save::Update(DiploidEngineInput& input)
 	button.Updata(&input);
 }
 
-void Save::Draw(bool draw, bool debug)
+void Save::Draw(float frame_time, bool draw, bool debug)
 {
 	if (draw == true)
 	{
@@ -49,7 +49,7 @@ void Save::Draw(bool draw, bool debug)
 			}
 
 			//アニメーションを再生
-			button_animation.Draw();
+			button_animation.Draw(frame_time);
 			//button_animation.StackDraw();
 
 			SetDrawBright(255, 255, 255);

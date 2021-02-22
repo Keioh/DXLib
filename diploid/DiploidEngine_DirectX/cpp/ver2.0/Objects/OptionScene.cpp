@@ -91,14 +91,14 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 }
 
-void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, bool in_game_flag)
+void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen, bool in_game_flag)
 {
 	SetBackgroundColor(0, 0, 0);//Window背景色を白色に変更
 
 	in_game_flag_buffer = in_game_flag;//ゲーム中かのフラグを保存
 
 	//三角形の動的背景
-	continuous_triangle.Updata(input);
+	continuous_triangle.Updata(input, screen);
 
 	//Optionのタイトル画像
 	option_string_image.Updata();
@@ -110,7 +110,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	game_play_string_image.Updata();
 
 	//文字表示速度とオート速度の変更UI群
-	text_speed_auto_setting_ui.Update();
+	text_speed_auto_setting_ui.Update(screen);
 
 
 	//ウィンドウサイズ変更ボタン(960_540)
@@ -265,7 +265,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	//シーンが始まったら
 	if (box_draw_flag == 0)//フェードアウト始め
 	{
-		alpha -= alpha_speed;//透過値を変更
+		alpha -= alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha <= 0)//透過値フロー処理
 		{
@@ -276,7 +276,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 	if (box_draw_flag == 2)//フェードイン始め
 	{
-		alpha += alpha_speed;//透過値を変更
+		alpha += alpha_speed * screen.GetFrameTime();//透過値を変更
 
 		if (alpha > 255)//透過値フロー処理
 		{
@@ -286,7 +286,7 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	}
 }
 
-void OptionScene::Draw(bool draw, bool debug)
+void OptionScene::Draw(DiploidEngineScreen& screen, bool draw, bool debug)
 {	
 	//三角形の動的背景
 	continuous_triangle.Draw(draw, debug);
@@ -314,22 +314,22 @@ void OptionScene::Draw(bool draw, bool debug)
 	window_resize_button_1920_1080.Draw(draw, debug);
 
 	//文字表示速度とオート速度の変更UI群
-	text_speed_auto_setting_ui.Draw(draw, debug);
+	text_speed_auto_setting_ui.Draw(screen.GetFrameTime(), draw, debug);
 
 
 	//保存ボタン
-	save_button.Draw(draw, debug);
+	save_button.Draw(screen.GetFrameTime(), draw, debug);
 
 	//戻るボタン
-	back_button.Draw(draw, debug);
+	back_button.Draw(screen.GetFrameTime(), draw, debug);
 
 	//リセットボタン
-	reset_button.Draw(draw, debug);
+	reset_button.Draw(screen.GetFrameTime(), draw, debug);
 
 	//タイトルボタン
 	if (in_game_flag_buffer == true)
 	{
-		title_button.Draw(draw, debug);
+		title_button.Draw(screen.GetFrameTime(), draw, debug);
 	}
 
 	//フェードアウト用BOX

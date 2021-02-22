@@ -8,6 +8,8 @@
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "system/define.h"
+#include "diploidScreen\DiploidEngineScreen.h"
+
 
 class TitleScene
 {
@@ -38,10 +40,10 @@ private:
 	DiploidSelectedUIV2 exit_button;
 
 	//透過値とそのスピード
-	int alpha = 255, alpha_speed = 10;
+	int alpha = 255, alpha_speed = 500;
 
 	//モザイク値とそのスピードとモザイク最大値
-	float mosaic = 0.0f, mosaic_speed = 0.01f, mosaic_max = 0.4f;
+	float mosaic = 0.0f, mosaic_speed = 2.0f, mosaic_max = 0.4f;
 
 	int secen_select = GAME_TITLE;//どのボタンを押したかのか
 	int button_click = 0;//各ボタンのどれかを押したら1が返る。
@@ -52,9 +54,9 @@ public:
 
 	void Init();
 
-	void Updata();
+	void Updata(DiploidEngineScreen& screen);
 
-	void Draw();
+	void Draw(DiploidEngineScreen& screen);
 
 	int GetFinalScene();//最後に押したボタンがどれかを取得する。(値はdefine.hを参照)
 	void SetSecne(int scene_type);//defineファイルに記載されているマクロにしたがってシーンを変更します。(GAME_TITLEでタイトル画面)

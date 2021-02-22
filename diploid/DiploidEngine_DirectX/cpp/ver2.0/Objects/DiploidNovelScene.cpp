@@ -47,7 +47,7 @@ void DiploidNovelScene::SetDrawName(std::string name)
 }
 
 
-void DiploidNovelScene::Update()
+void DiploidNovelScene::Update(DiploidEngineScreen& screen)
 {
 	//MAP˜A‘z”z—ñ‚ª‹ó‚Å‚È‚¢‚Æ‚«
 	if (!image_map.empty())
@@ -66,7 +66,7 @@ void DiploidNovelScene::Update()
 				}
 				else
 				{
-					map_alpha[object_name] += alpha_speed;
+					map_alpha[object_name] += alpha_speed * screen.GetFrameTime();
 				}
 			}
 		}
@@ -83,7 +83,7 @@ void DiploidNovelScene::Update()
 				}
 				else
 				{
-					map_alpha[obj_itr->second.GetName()] -= alpha_speed;
+					map_alpha[obj_itr->second.GetName()] -= alpha_speed * screen.GetFrameTime();
 				}
 			}
 		}

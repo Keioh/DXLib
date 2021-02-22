@@ -31,7 +31,7 @@ void DiploidEngineApp::GraphicsInit(DiploidEngineApp* app)
 	title_scene.Init();
 	game_scene.Init(app->diploidEngineSetting);
 	option_scene.Init(app->diploidEngineSetting);
-	file_scene.Init();
+	file_scene.Init(app->diploidEngineSetting);
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
@@ -46,7 +46,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		if (title_scene.GetFinalScene() == GAME_START)
 		{	
 			game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
-			game_scene.Updata(app->diploidEngineInput);//ゲーム画面を更新
+			game_scene.Updata(app->diploidEngineInput, app->diploidEngineScreen);//ゲーム画面を更新
 
 			//オプションボタンが押されていたら
 			if (game_scene.GetOptionButtonFlag() == true)
@@ -58,7 +58,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//ロードボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_LOAD)
 		{
-			file_scene.Updata();
+			file_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting, app->diploidEngineScreen);
 
 			if (file_scene.GetReturnButton() == GAME_TITLE)
 			{
@@ -69,7 +69,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//オプションボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_OPTION)
 		{
-			option_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting, game_scene.GetInGameFlag());//オプション画面を更新(最後の引数にはgame_sceneのInGameflagを入れる。)		
+			option_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting, app->diploidEngineScreen, game_scene.GetInGameFlag());//オプション画面を更新(最後の引数にはgame_sceneのInGameflagを入れる。)		
 
 			//戻るボタンを押していたら
 			switch (option_scene.GetReturnFlag())
@@ -98,7 +98,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//何も押していない時
 		if (title_scene.GetFinalScene() == GAME_TITLE)
 		{
-			title_scene.Updata();//タイトル画面を更新
+			title_scene.Updata(app->diploidEngineScreen);//タイトル画面を更新
 		}
 	}
 }
@@ -115,25 +115,25 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		//何も押していない時
 		if (title_scene.GetFinalScene() == GAME_TITLE)
 		{
-			title_scene.Draw();
+			title_scene.Draw(app->diploidEngineScreen);
 		}
 
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
 		{
-			game_scene.Draw();
+			game_scene.Draw(app->diploidEngineScreen);
 		}
 
 		//ロードボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_LOAD)
 		{
-			file_scene.Draw();
+			file_scene.Draw(app->diploidEngineScreen);
 		}
 
 		//オプションボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_OPTION)
 		{
-			option_scene.Draw();
+			option_scene.Draw(app->diploidEngineScreen);
 		}
 	}
 

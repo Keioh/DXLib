@@ -34,9 +34,9 @@ public:
 	int GetAnimationNumber();//描画しているコマが何番目なのかを調べます。
 	int GetAnimationSpeed();//現在のアニメーションのスピードを調べます。
 
-	void Draw(bool debug = false);//一枚づつ描画
+	void Draw(float frame_time = 1.0f, bool debug = false);//一枚づつ描画(frame_timeにはGetFrameTime()を入れると秒間計算になる(animation_speed * GetFrameTime()))
 	void OneCellDraw(int number = 0, bool draw = true);//一枚だけ描画
-	void StackDraw(bool debug = false);//重ねて描画
+	void StackDraw(float frame_time = 1.0f, bool debug = false);//重ねて描画(frame_timeにはGetFrameTime()を入れると秒間計算になる(animation_speed * GetFrameTime()))
 
 	void AllPop();
 

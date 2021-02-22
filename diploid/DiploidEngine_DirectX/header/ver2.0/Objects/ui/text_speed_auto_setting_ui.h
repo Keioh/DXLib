@@ -28,8 +28,8 @@ private:
 public:
 	void Load();
 	void Init(VECTOR pos);
-	void Update();
-	void Draw(bool draw = true, bool debug = false);
+	void Update(DiploidEngineScreen& screen);
+	void Draw(float frame_time = 1.0f, bool draw = true, bool debug = false);
 
 	bool GetHit();//カーソルが当たっているか
 	bool GetClick();//クリックされたか
@@ -47,5 +47,9 @@ public:
 	float GetParameterAbsoluteAutoSpeed();//スクリーン座標からの絶対値を得る。(オートスピード)
 	float GetParameterAbsoluteDrawSpeed();//スクリーン座標からの絶対値を得る。(描画スピード)
 	float GetParameterAbsoluteBackGroundAlpha();//スクリーン座標からの絶対値を得る。(文字背景の透過値)
+
+
+	float GetParameterScaleAutoSpeed();//１フレーム換算時に得られる値を取得する。(オートスピード)
+	float GetParameterScaleDrawSpeed();//１フレーム換算時に得られる値を取得する。(描画スピード)
 
 };
