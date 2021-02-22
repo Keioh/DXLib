@@ -24,11 +24,10 @@ private:
 
 	DiploidBoxV2 box;//フェードイン、アウト用BOX
 
-	DiploidImageV2 test_back;//テスト背景
+	DiploidImageV2 test;
 
 
-
-	LoadStringImage load_string_image;
+	LoadStringImage load_string_image;//ロード画面のタイトル画像
 
 	Back back_button;//戻るボタン
 

@@ -2,35 +2,18 @@
 
 void DiploidEngineScreen::FrameCount()
 {
-	SetAlwaysRunFlag(TRUE);	
 
-	flip_count = 0;
-	deltatime_start = GetNowCount();
+}
 
-	for(;;)
-	{
-		// ‰æ–ÊØ‚è‘Ö‚¦‚ğs‚Á‚Ä‚u‚x‚r‚m‚b‘Ò‚¿‚ğ‚·‚é
-		ScreenFlip();
-
-		// ‚P•bŒo‰ß‚µ‚Ä‚¢‚½‚çƒ‹[ƒv‚©‚ç”²‚¯‚é
-		if (GetNowCount() - StartTime >= 1000)
-			break;
-
-		// ScreenFlip ‚ğs‚Á‚½‰ñ”‚ğƒCƒ“ƒNƒŠƒƒ“ƒg
-		flip_count++;
-	}
-
-
-	SetAlwaysRunFlag(FALSE);
-
-	deltatime_complate = 1000 / flip_count;
+float DiploidEngineScreen::GetFrameTime()
+{
+	return 0.0f;
 }
 
 
 void DiploidEngineScreen::Init(int setting_fps)
 {
 	AvrSample = SettingFPS = setting_fps;
-
 }
 
 void DiploidEngineScreen::Update()
@@ -42,10 +25,10 @@ void DiploidEngineScreen::Update()
 
 	if (Count == AvrSample) //AvrSampleƒtƒŒ[ƒ€–Ú‚È‚ç•½‹Ï‚ğŒvZ‚·‚é
 	{
-		int t = GetNowCount();
-		Fps = 1000.f / ((t - StartTime) / (float)AvrSample);
+		//int t = GetNowCount();
+		Fps = 1000.f / ((GetNowCount() - StartTime) / (float)AvrSample);
 		Count = 0;
-		StartTime = t;
+		StartTime = GetNowCount();
 	}
 
 	Count++;
@@ -70,19 +53,11 @@ void DiploidEngineScreen::Wait()
 
 		Sleep(waitTime);	//‘Ò‹@
 	}
-		
-	deltatime_complate = (GetNowCount() - deltatime_start);
-
 }
 
 float DiploidEngineScreen::GetDeltaTime()
 {
-	deltatime = ((deltatime_complate)/1000.0f);
 
-	if (deltatime > 0.05f)
-	{
-		deltatime = 0.05f;
-	}
 
 	return deltatime;
 }

@@ -2,9 +2,11 @@
 
 void FileScene::Load()
 {
-	load_string_image.Load();
+	load_string_image.Load();//ロード画面のタイトル画像
 
 	back_button.Load();
+
+	test.Load("texter/basic/file/0.png");
 }
 
 void FileScene::Init()
@@ -13,18 +15,21 @@ void FileScene::Init()
 	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
-	load_string_image.Init(VGet(0, 0, 0));
+	load_string_image.Init(VGet(0, 0, 0));//ロード画面のタイトル画像
 
 
 	//戻るボタン
 	back_button.Init(VGet(setting.window_x - (128 + 4), setting.window_y - (32 + 4), 0));
+
+
+	test.Init(VGet(300, 100, 0));
 }
 
 void FileScene::Updata()
 {
 	SetBackgroundColor(255, 255, 255);
 
-	load_string_image.Updata();
+	load_string_image.Updata();//ロード画面のタイトル画像
 
 	//戻るボタン
 	back_button.Update(input);
@@ -76,10 +81,12 @@ void FileScene::Updata()
 
 void FileScene::Draw()
 {
-	load_string_image.Draw();
+	load_string_image.Draw();//ロード画面のタイトル画像
 
 	//戻るボタン
 	back_button.Draw();
+
+	test.Draw();
 
 	//モザイク処理
 	//scr_gra.Draw(mosaic);
