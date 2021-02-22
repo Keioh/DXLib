@@ -29,11 +29,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app->diploidEngineInput.Init();//入力機器初期化
 
-	diploid_engine_app->diploidEngineScreen.FrameCount();//1フレームの時間を計算
 
 
 	while ((ProcessMessage() == 0) && (diploid_engine_app->diploidEngineSetting.GetExit() == 0))
 	{	
+		diploid_engine_app->diploidEngineScreen.FrameCountStart();//1フレームの時間を計算を開始
+
 		//解像度が変更変更されたときにデータを再び読み込む
 		if (diploid_engine_app->diploidEngineSetting.GetReloadFlag() == true)
 		{	
@@ -82,7 +83,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		ScreenFlip();//表画面へ描写
 
-		//diploid_engine_app->diploidEngineScreen.FrameCountEnd();//60フレームの時間を計算
+		diploid_engine_app->diploidEngineScreen.FrameCountEnd();//1フレームの時間を計算を終了
 
 		diploid_engine_app->diploidEngineScreen.Wait();//FPS待機
 	}
