@@ -21,8 +21,8 @@ private:
 
 	float mosaic = 0.0f;
 
-	int alpha = 0;
-	int alpha_speed = 5;//透過スピード
+	float alpha = 0;
+	float alpha_speed = 50;//透過スピード
 
 	int scene_number = 0;
 

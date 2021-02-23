@@ -6,15 +6,15 @@ void DiploidEngineScreen::FrameCountStart()
 	if (deltatime_frame_count == 0)//1フレーム目なら時刻を記憶
 	{
 		deltatime_start = GetNowCount();
+
 	}
 
 	deltatime_frame_count++;
-
 }
 
 void DiploidEngineScreen::FrameCountEnd()
 {
-	if (deltatime_frame_count == 2) //1フレーム目なら平均を計算する
+	if (deltatime_frame_count == 1) //1フレーム目なら平均を計算する
 	{
 		deltatime_end = (GetNowCount() - deltatime_start);
 

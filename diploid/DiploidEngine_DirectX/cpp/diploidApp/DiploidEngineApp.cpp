@@ -137,7 +137,7 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		}
 	}
 
-	//DrawFormatString(100, 100, GetColor(150, 150, 150), "frame = %f", app->diploidEngineScreen.GetFrameTime());
+	DrawFormatString(100, 100, GetColor(150, 150, 150), "frame = %f", app->diploidEngineScreen.GetFrameTime());
 
 	//DrawFormatString(0, 200, GetColor(100, 100, 100), "scene = %d", title_scene.GetFinalScene());
 	//DrawFormatString(0, 220, GetColor(100, 100, 100), "%d", game_scene.GetOptionButtonFlag());

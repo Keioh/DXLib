@@ -29,12 +29,12 @@ void LogoScene::Updata(DiploidEngineScreen& screen)
 	if (main_log_time > main_logo_draw_time)
 	{
 		alpha -= alpha_speed;
-		mosaic -= 0.005f;
+		mosaic -= 0.3f * screen.GetFrameTime();
 	}
 	else
 	{
 		alpha += alpha_speed;
-		mosaic += 0.005f;
+		mosaic += 0.3f * screen.GetFrameTime();
 	}	
 
 	if (alpha == 0)
