@@ -140,9 +140,27 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 			box_draw_flag = 2;//フェードアウトフラグを立てる
 		}
 
+		//ロードボタンにカーソルが合わさっていてクリックされたなら
+		if ((load_button.GetHit() == true) && (load_button.GetClick() == true))
+		{
+			is_save_or_load = GAME_LOAD;//ロード画面へ行くフラグを立てる
+			load_button.SetSelected(1);//オプションボタンの選択状態を維持
+			box_draw_flag = 2;//フェードアウトフラグを立てる
+		}
+
+		//セーブボタンにカーソルが合わさっていてクリックされたなら
+		if ((save_button.GetHit() == true) && (save_button.GetClick() == true))
+		{
+			is_save_or_load = GAME_SAVE;//セーブ画面へ行くフラグを立てる
+			save_button.SetSelected(1);//オプションボタンの選択状態を維持
+			box_draw_flag = 2;//フェードアウトフラグを立てる
+		}
+
+
 
 		//全てのUIからカーソルが離れているとき
-		if ((auto_button.GetHit() == false) && (skip_button.GetHit() == false) && (option_button.GetHit() == false))
+		if ((auto_button.GetHit() == false) && (skip_button.GetHit() == false) && (option_button.GetHit() == false)
+			&& (load_button.GetHit() == false) && (save_button.GetHit() == false) && (quick_load_button.GetHit() == false) && (quick_save_button.GetHit() == false))
 		{
 			//左クリックしたとき
 			if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
@@ -266,6 +284,14 @@ void GameScene::Reset()
 	auto_button.Reset();
 	skip_button.Reset();
 	option_button.Reset();
+	load_button.Reset();
+	save_button.Reset();
+	quick_load_button.Reset();
+	quick_save_button.Reset();
+
+	//ロードかセーブかのフラグをリセット
+	is_save_or_load = GAME_LOAD;
+
 
 	//文字列データを最初からにする
 	click = 0;
@@ -301,4 +327,50 @@ bool GameScene::GetOptionButtonFlag()
 	{
 		return false;
 	}
+}
+
+
+void GameScene::SetLoadButtonFlag(int new_flag)
+{
+	load_button.SetSelected(new_flag);
+}
+
+bool GameScene::GetLoadButtonFlag()
+{
+	if ((load_button.GetSelected() == 1) && (box_draw_flag == 3))
+	{
+		box_draw_flag = 0;//フェードアウトのflagを立てる
+		load_button.SetSelected(-1);//選択状態を解除
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+void GameScene::SetSaveButtonFlag(int new_flag)
+{
+	save_button.SetSelected(new_flag);
+}
+
+bool GameScene::GetSaveButtonFlag()
+{
+	if ((save_button.GetSelected() == 1) && (box_draw_flag == 3))
+	{
+		box_draw_flag = 0;//フェードアウトのflagを立てる
+		save_button.SetSelected(-1);//選択状態を解除
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
+int GameScene::GetSelectedScene()
+{
+	return is_save_or_load;
 }

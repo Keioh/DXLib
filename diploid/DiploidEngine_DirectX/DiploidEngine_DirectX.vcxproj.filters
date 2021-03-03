@@ -181,6 +181,12 @@
     <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\string_image\load">
       <UniqueIdentifier>{dfd9bd6c-06d2-4277-b77b-8158b88d56fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\string_image\save">
+      <UniqueIdentifier>{b4438569-56cf-41e6-a78c-1f4b29b1e3f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Objects\string_image\save">
+      <UniqueIdentifier>{335791c5-e9fb-492f-b4ef-e5af506fa71a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -434,6 +440,9 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Objects\button\QuickSaveNovel.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\save\save_string_image.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\string_image\save</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -700,6 +709,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\button\QuickSaveNovel.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\string_image\save\save_string_image.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\string_image\save</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

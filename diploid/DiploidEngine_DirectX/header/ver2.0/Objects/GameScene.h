@@ -58,6 +58,8 @@ private:
 
 	bool in_game = false;//ゲーム中なのかのflag(trueでgame中)
 
+	int is_save_or_load = GAME_LOAD;
+
 	//透過処理の変数
 	int alpha = 255;
 	int alpha_speed = 500;//透過速度
@@ -81,4 +83,12 @@ public:
 	void SetOptionButtonFlag(int new_flag);//オプションボタンのflagを変更します
 	bool GetOptionButtonFlag();//オプションボタンの状態を取得します。
 
+	void SetLoadButtonFlag(int new_flag);//ロードボタンのflagを変更します
+	bool GetLoadButtonFlag();//ロードボタンの状態を取得します。
+
+	void SetSaveButtonFlag(int new_flag);//セーブボタンのflagを変更します
+	bool GetSaveButtonFlag();//セーブボタンの状態を取得します。
+
+
+	int GetSelectedScene();
 };

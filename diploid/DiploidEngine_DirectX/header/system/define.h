@@ -4,5 +4,7 @@
 #define GAME_START 1
 #define GAME_FILE 2
 #define GAME_SAVE 3
-#define GAME_OPTION 4
-#define GAME_EXIT 5
+#define GAME_LOAD 4
+#define GAME_OPTION 5
+#define GAME_EXIT 6
+

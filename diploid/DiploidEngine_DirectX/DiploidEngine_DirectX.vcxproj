@@ -228,6 +228,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\display_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\game_play_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\option_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\save\save_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\TitleScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\ui\text_speed_auto_setting_ui.cpp" />
     <ClCompile Include="WindowsMain.cpp" />
@@ -318,6 +319,7 @@
     <ClInclude Include="header\ver2.0\Objects\string_image\option\display_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\game_play_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\option_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\save\save_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\TitleScene.h" />
     <ClInclude Include="header\ver2.0\Objects\ui\text_speed_auto_setting_ui.h" />
     <ClInclude Include="resource.h" />

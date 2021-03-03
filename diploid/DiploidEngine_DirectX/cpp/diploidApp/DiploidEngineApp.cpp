@@ -53,16 +53,38 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 			{
 				title_scene.SetSecne(GAME_OPTION);//シーン変更
 			}
+
+			//ロードボタンが押されていたら
+			if (game_scene.GetLoadButtonFlag() == true)
+			{
+				title_scene.SetSecne(GAME_FILE);//シーン変更
+			}
+
+			//セーブボタンが押されていたら
+			if (game_scene.GetSaveButtonFlag() == true)
+			{
+				title_scene.SetSecne(GAME_FILE);//シーン変更
+			}
+
 		}
 
 		//ロードボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_FILE)
 		{
-			file_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting, app->diploidEngineScreen);
+			file_scene.Updata(app->diploidEngineInput, app->diploidEngineSetting, app->diploidEngineScreen, game_scene.GetInGameFlag(), game_scene.GetSelectedScene());
 
-			if (file_scene.GetReturnButton() == GAME_TITLE)
+			//戻るボタンを押していたら
+			switch (file_scene.GetReturnButton())
 			{
+			//タイトルに戻る。
+			case GAME_TITLE:
 				title_scene.SetSecne(GAME_TITLE);//シーン変更
+				break;
+			//ゲームに戻る。
+			case GAME_START:
+				title_scene.SetSecne(GAME_START);//シーン変更
+				break;
+			default:break;
 			}
 		}
 
