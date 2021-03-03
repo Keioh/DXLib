@@ -22,6 +22,10 @@ void GameScene::Load()
 	auto_button.Load();
 	skip_button.Load();
 	option_button.Load();
+	load_button.Load();
+	save_button.Load();
+	quick_load_button.Load();
+	quick_save_button.Load();
 
 }
 
@@ -34,6 +38,10 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	auto_button.SetSpeed(60);
 	skip_button.Init(VGet(setting.window_x - (64 * 2), setting.window_y - 16, 0));
 	option_button.Init(VGet(setting.window_x - (64 * 3), setting.window_y - 16, 0));
+	load_button.Init(VGet(setting.window_x - (64 * 4), setting.window_y - 16, 0));
+	save_button.Init(VGet(setting.window_x - (64 * 5), setting.window_y - 16, 0));
+	quick_load_button.Init(VGet(setting.window_x - (64 * 6), setting.window_y - 16, 0));
+	quick_save_button.Init(VGet(setting.window_x - (64 * 7), setting.window_y - 16, 0));
 
 	novel_scene.Init(VGet(0, 0, 0));
 
@@ -55,6 +63,18 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 
 	//オプション機能の更新
 	option_button.Update(input);
+
+	//ロード機能の更新
+	load_button.Update(input);
+
+	//セーブ機能の更新
+	save_button.Update(input);
+
+	//クイックロード機能の更新
+	quick_load_button.Update(input);
+
+	//クイックセーブ機能の更新
+	quick_save_button.Update(input);
 
 	//フェードアウト完了していたら
 	if (box_draw_flag == 1)
@@ -220,6 +240,18 @@ void GameScene::Draw(DiploidEngineScreen& screen)
 
 	//オプションボタンの描画
 	option_button.Draw(screen.GetFrameTime());
+
+	//ロードボタンの描画
+	load_button.Draw(screen.GetFrameTime());
+
+	//セーブボタンの描画
+	save_button.Draw(screen.GetFrameTime());
+
+	//クイックロードボタンの描画
+	quick_load_button.Draw(screen.GetFrameTime());
+
+	//クイックセーブボタンの描画
+	quick_save_button.Draw(screen.GetFrameTime());
 
 
 	//フェードアウト用BOX

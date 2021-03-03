@@ -3,14 +3,14 @@
 void AutoNovel::Load()
 {
 	//アニメーション画像の読み込み
-	anime.Load("texter/novel/button/auto/0.png");
-	anime.Load("texter/novel/button/auto/1.png");
-	anime.Load("texter/novel/button/auto/2.png");
-	anime.Load("texter/novel/button/auto/3.png");
-	anime.Load("texter/novel/button/auto/4.png");
-	anime.Load("texter/novel/button/auto/5.png");
-	anime.Load("texter/novel/button/auto/6.png");
-	anime.Load("texter/novel/button/auto/7.png");
+	anime.Load("texter/novel/button/auto_novel/0.png");
+	anime.Load("texter/novel/button/auto_novel/1.png");
+	anime.Load("texter/novel/button/auto_novel/2.png");
+	anime.Load("texter/novel/button/auto_novel/3.png");
+	anime.Load("texter/novel/button/auto_novel/4.png");
+	anime.Load("texter/novel/button/auto_novel/5.png");
+	anime.Load("texter/novel/button/auto_novel/6.png");
+	anime.Load("texter/novel/button/auto_novel/7.png");
 
 }
 

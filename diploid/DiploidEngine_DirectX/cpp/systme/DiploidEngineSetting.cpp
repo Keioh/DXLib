@@ -10,7 +10,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	refresh_rate = 60;
 	window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.31)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.34)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;
@@ -57,7 +57,6 @@ void DiploidEngineSetting::SetBegin()
 
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
-
 }
 
 void DiploidEngineSetting::SetEnd()
@@ -68,7 +67,6 @@ void DiploidEngineSetting::SetEnd()
 	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
 	SetCameraNearFar(0.1f, 10000.0f);
 	SetMouseDispFlag(TRUE);//マウスカーソルの表示
-
 }
 
 void DiploidEngineSetting::End()

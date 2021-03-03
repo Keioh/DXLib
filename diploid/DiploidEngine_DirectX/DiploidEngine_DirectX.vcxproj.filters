@@ -423,6 +423,18 @@
     <ClCompile Include="cpp\ver2.0\Objects\string_image\load\load_string_image.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\string_image\load</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\SaveNovel.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\LoadNovel.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\QuickLoadNovel.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\button\QuickSaveNovel.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\button</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -676,6 +688,18 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\string_image\load\load_string_image.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\string_image\load</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\SaveNovel.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\LoadNovel.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\QuickLoadNovel.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\button\QuickSaveNovel.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\button</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

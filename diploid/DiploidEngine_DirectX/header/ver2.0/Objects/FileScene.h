@@ -22,8 +22,8 @@ private:
 
 	DiploidBoxV2 box;//フェードイン、アウト用BOX
 
-	DiploidImageV2 test;
-
+	DiploidImageV2 save_load_object_image;
+	DiploidSelectedUIV2 save_load_object_button;
 
 	LoadStringImage load_string_image;//ロード画面のタイトル画像
 

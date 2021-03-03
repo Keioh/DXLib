@@ -103,7 +103,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameProject\diploid\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -136,7 +136,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameProject\diploid\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -203,9 +203,13 @@
     <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\AutoNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\Back.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\LoadNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\OptionNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\QuickLoadNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\QuickSaveNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\Reset.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\Save.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\SaveNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\SkipNovel.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\Title.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\button\WindowSize.cpp" />
@@ -289,9 +293,13 @@
     <ClInclude Include="header\ver2.0\Main\Transform.h" />
     <ClInclude Include="header\ver2.0\Objects\button\AutoNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\button\Back.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\LoadNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\button\OptionNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\QuickLoadNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\QuickSaveNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\button\Reset.h" />
     <ClInclude Include="header\ver2.0\Objects\button\Save.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\SaveNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\button\SkipNovel.h" />
     <ClInclude Include="header\ver2.0\Objects\button\Title.h" />
     <ClInclude Include="header\ver2.0\Objects\button\WindowSize.h" />

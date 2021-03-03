@@ -3,10 +3,10 @@
 void SkipNovel::Load()
 {
 	//アニメーション画像の読み込み
-	anime.Load("texter/novel/button/skip/0.png");
-	anime.Load("texter/novel/button/skip/1.png");
-	anime.Load("texter/novel/button/skip/2.png");
-	anime.Load("texter/novel/button/skip/3.png");
+	anime.Load("texter/novel/button/skip_novel/0.png");
+	anime.Load("texter/novel/button/skip_novel/1.png");
+	anime.Load("texter/novel/button/skip_novel/2.png");
+	anime.Load("texter/novel/button/skip_novel/3.png");
 }
 
 void SkipNovel::Init(VECTOR pos)

@@ -66,7 +66,7 @@ void TitleScene::Updata(DiploidEngineScreen& screen)
 		if (load_button.GetClick() == true)
 		{
 			load_button.SetSelectedUI(false);
-			button_click = GAME_LOAD;
+			button_click = GAME_FILE;
 		}
 
 		//オプションボタンを押した

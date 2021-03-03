@@ -17,6 +17,10 @@
 #include "ver2.0/Objects/button/AutoNovel.h"
 #include "ver2.0/Objects/button/SkipNovel.h"
 #include "ver2.0/Objects/button/OptionNovel.h"
+#include "ver2.0/Objects/button/SaveNovel.h"
+#include "ver2.0/Objects/button/LoadNovel.h"
+#include "ver2.0/Objects/button/QuickLoadNovel.h"
+#include "ver2.0/Objects/button/QuickSaveNovel.h"
 
 #include "data/text_data/ja.h"
 
@@ -28,6 +32,11 @@ private:
 	AutoNovel auto_button;//オートボタン
 	SkipNovel skip_button;//スキップボタン
 	OptionNovel option_button;//オプションボタン
+	SaveNovel save_button;//セーブボタン
+	LoadNovel load_button;//ロードボタン
+	QuickLoadNovel quick_load_button;//クイックロードボタン
+	QuickSaveNovel quick_save_button;//クイックセーブボタン
+
 
 	ja_text jp;//テキストデータ
 

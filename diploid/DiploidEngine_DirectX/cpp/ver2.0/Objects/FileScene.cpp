@@ -6,7 +6,8 @@ void FileScene::Load()
 
 	back_button.Load();
 
-	test.Load("texter/basic/file/0.png");
+	save_load_object_image.Load("texter/basic/file/0.png");
+	save_load_object_button.Load(save_load_object_image.GetGraphicsHandl());
 }
 
 void FileScene::Init(DiploidEngineSetting& setting)
@@ -22,12 +23,15 @@ void FileScene::Init(DiploidEngineSetting& setting)
 	back_button.Init(VGet(setting.window_x - (128 + 4), setting.window_y - (32 + 4), 0));
 
 
-	test.Init(VGet(300, 100, 0));
+	save_load_object_image.Init(VGet(300, 100, 0));
+	save_load_object_button.Init(VGet(300, 100, 0), save_load_object_image.GetSize());
 }
 
 void FileScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen)
 {
 	SetBackgroundColor(255, 255, 255);
+
+	save_load_object_button.Updata();
 
 	load_string_image.Updata();//ロード画面のタイトル画像
 
@@ -86,7 +90,8 @@ void FileScene::Draw(DiploidEngineScreen& screen, bool draw, bool debug)
 	//戻るボタン
 	back_button.Draw(screen.GetFrameTime());
 
-	test.Draw();
+	//test.Draw();
+	save_load_object_button.Draw();
 
 	//モザイク処理
 	//scr_gra.Draw(mosaic);

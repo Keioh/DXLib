@@ -1,45 +1,45 @@
-#include "ver2.0/Objects/button/OptionNovel.h"
+#include "ver2.0/Objects/button/QuickSaveNovel.h"
 
-void OptionNovel::Load()
+void QuickSaveNovel::Load()
 {
 	//アニメーション画像の読み込み
-	anime.Load("texter/novel/button/option_novel/0.png");
-	anime.Load("texter/novel/button/option_novel/1.png");
-	anime.Load("texter/novel/button/option_novel/2.png");
-	anime.Load("texter/novel/button/option_novel/3.png");
-	anime.Load("texter/novel/button/option_novel/4.png");
+	anime.Load("texter/novel/button/q_save_novel/0.png");
+	anime.Load("texter/novel/button/q_save_novel/1.png");
+	anime.Load("texter/novel/button/q_save_novel/2.png");
+	anime.Load("texter/novel/button/q_save_novel/3.png");
+	anime.Load("texter/novel/button/q_save_novel/4.png");
 }
 
-void OptionNovel::Init(VECTOR pos)
+void QuickSaveNovel::Init(VECTOR pos)
 {
 	button.Init(pos, VGet(64, 16, 0));//ボタンの初期化
 	anime.Init(pos, 5);//アニメーションの初期化
 	anime.SetAnimationSpeed(300);
 }
 
-void OptionNovel::Update(DiploidEngineInput& input)
+void QuickSaveNovel::Update(DiploidEngineInput& input, float frame_time)
 {
 	anime.Update();//アニメーションのアップデート
 	button.Updata(&input);//ボタンのアップデート
 }
 
-void OptionNovel::Draw(float frame_time, bool draw, bool debug)
+void QuickSaveNovel::Draw(float frame_time, bool draw, bool debug)
 {
 	if (draw == true)
 	{	
 		if (button.GetSelectedUI() == 1)//選択状態のとき
 		{
 			SetDrawBright(255, 255, 255);
-			anime.Draw(frame_time);//アニメーションの描画(スタック描画)
-			//anime.StackDraw();//アニメーションの描画
+			anime.Draw(frame_time);//アニメーションの描画
+			//anime.StackDraw();
 		}
 		else//選択状態じゃないとき
 		{
 			if (button.GetHit() == true)//カーソルがボタンに当たっている
 			{
 				SetDrawBright(255  * 0.9, 255 *  0.9, 255 * 0.9);
-				//anime.StackDraw();//アニメーションの描画(スタック描画)
 				anime.Draw(frame_time);//アニメーションの描画
+				//anime.StackDraw();//アニメーションの描画(スタック描画)
 				SetDrawBright(255, 255, 255);
 			}
 			else//当たっていない
@@ -59,29 +59,28 @@ void OptionNovel::Draw(float frame_time, bool draw, bool debug)
 }
 
 
-void OptionNovel::Reset()
+void QuickSaveNovel::Reset()
 {
 	button.SetSelectedUI(-1);
 }
 
-
-void OptionNovel::SetSelected(int new_flag)
+void QuickSaveNovel::SetSelected(int new_flag)
 {
 	button.SetSelectedUI(new_flag);
 }
 
 
-bool OptionNovel::GetHit()
+bool QuickSaveNovel::GetHit()
 {
 	return button.GetHit();
 }
 
-bool OptionNovel::GetClick()
+bool QuickSaveNovel::GetClick()
 {
 	return button.GetClick();
 }
 
-int OptionNovel::GetSelected()
+int QuickSaveNovel::GetSelected()
 {
 	return button.GetSelectedUI();
 }
