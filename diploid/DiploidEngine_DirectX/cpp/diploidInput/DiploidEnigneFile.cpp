@@ -1,32 +1,54 @@
 #include "diploidInput\DiploidEnigneFile.h"
 
 
-void DiploidEngineFile::Load(const char* path, unsigned int mode, size_t char_size)
+void DiploidEngineFile::Load(const char* path, unsigned int in_mode, unsigned int out_mode)
 {
-	file_in.open(path, mode);
+	file_in.open(path, in_mode);
 
-	while (!file_in.eof())
+	if (!file_in)
 	{
-		std::getline(file_in, strings);
+		file_out.open(path, out_mode);
+		//file_out.close();
 
-		//str_data.push_back(strings);
-
-		
-		for (int i = 0; i != (512 / char_size); i++)
-		{
-			buffer[i] = *strings.substr(i * char_size, char_size).c_str();
-		}
-
-		data.push_back(*buffer);
-		
+		file_in.open(path, in_mode);
 	}
-
-
-	file_in.close();
 }
 
+
+std::string DiploidEngineFile::GetLine()
+{
+	if (!file_in.eof())
+	{
+		std::string data;
+
+		std::getline(file_in, data);
+
+		return data;
+	}
+	else
+	{
+		file_in.close();
+		return "end_file";
+	}
+}
+
+void DiploidEngineFile::SetLine(std::string name, float data)
+{
+	file_out << name << "=" << data << std::endl;
+}
 
 void DiploidEngineFile::Close()
 {
 	file_in.close();
+	file_out.close();
+}
+
+void DiploidEngineFile::FileInClose()
+{
+	file_in.close();
+}
+
+void DiploidEngineFile::FileOutClose()
+{
+	file_out.close();
 }

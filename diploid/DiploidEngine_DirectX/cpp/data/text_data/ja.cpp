@@ -42,26 +42,6 @@ void ja_text::Load()
 	{
 		string.erase(string.begin(), string.begin() + 256);
 	}
-/*
-	//ÉtÉ@ÉCÉãì«Ç›çûÇ›	
-	file.Load("text/jp.txt");
-
-	SetUseASyncLoadFlag(FALSE);
-	//file_handle = FileRead_open("text/jp.txt");
-
-	for (int count = 0; count != file.data.size(); count++)
-	{
-		//FileRead_gets(string_data, 512, file_handle);
-
-		data[count].Load(&file.data[count]);
-		data[count].Init(setting.window_x * x_scale, setting.window_y * y_scale, font.GetHandle());
-		string.push_back(data[count]);
-	}
-
-	//FileRead_close(file_handle);
-	SetUseASyncLoadFlag(TRUE);
-*/
-
 }
 
 void ja_text::Init(DiploidEngineSetting& setting)
