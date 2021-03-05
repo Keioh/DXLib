@@ -14,7 +14,8 @@ private:
 public:
 
 	//ファイル読み込み時にファイルが無かった場合、自動的に作成されます。
-	void Load(const char* path, unsigned int in_mode = std::ios::in, unsigned int out_mode = std::ios::trunc);//1以上返ると成功(ファイルハンドルを返す)(modeはfstream参照)(新規ファイル作成時のファイルオープンモードはtrunc)
+	void ReadOpen(const char* path, unsigned int in_mode = std::ios::in);//1以上返ると成功(ファイルハンドルを返す)(modeはfstream参照)(新規ファイル作成時のファイルオープンモードはtrunc)
+	void WriteOpen(const char* path, unsigned int out_mode = std::ios::trunc);
 
 	std::string GetLine();//ファイルから1行だけ読み出す。(一行だけなのでfor文とかで連続して読み出す必要あり)(ファイル終端まで読み出した場合、自動で読み込み側のfstreamがcloseします。)
 	void SetLine(std::string name, float data);//データ=数値という表記で出力されます。
