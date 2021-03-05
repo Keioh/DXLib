@@ -17,13 +17,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	
 	diploid_engine_app->FileCreate(diploid_engine_app);//ゲーム起動時にファイルを作成
 
-	diploid_engine_app->SoundLoad(diploid_engine_app);//ゲーム起動時に音データを読み込む処理
+	diploid_engine_app->OnceLoad(diploid_engine_app);//ゲーム起動時に音データを読み込む処理
 
-	diploid_engine_app->SoundInit(diploid_engine_app);//エンジン初期化後一回だけ音の初期化する処理
+	diploid_engine_app->OnceInit(diploid_engine_app);//エンジン初期化後一回だけ音の初期化する処理
 
-	diploid_engine_app->GraphicsLoad(diploid_engine_app);//ゲーム起動時に画像データを読み込む処理
+	diploid_engine_app->Load(diploid_engine_app);//ゲーム起動時に画像データを読み込む処理
 
-	diploid_engine_app->GraphicsInit(diploid_engine_app);//エンジン初期化後一回だけ画像の初期化する処理
+	diploid_engine_app->Init(diploid_engine_app);//エンジン初期化後一回だけ画像の初期化する処理
 
 	diploid_engine_app->diploidEngineNetwork.Init();//ネット処理初期化
 
@@ -40,9 +40,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//解像度が変更変更されたときにデータを再び読み込む
 		if (diploid_engine_app->diploidEngineSetting.GetReloadFlag() == true)
 		{	
-			diploid_engine_app->GraphicsLoad(diploid_engine_app);//ゲーム起動時にデータを読み込む処理
+			diploid_engine_app->Load(diploid_engine_app);//ゲーム起動時にデータを読み込む処理
 
-			diploid_engine_app->GraphicsInit(diploid_engine_app);//画像の初期化する処理
+			diploid_engine_app->Init(diploid_engine_app);//画像の初期化する処理
 
 			SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
 

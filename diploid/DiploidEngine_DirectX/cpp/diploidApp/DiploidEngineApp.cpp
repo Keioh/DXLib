@@ -6,12 +6,12 @@ void DiploidEngineApp::FileCreate(DiploidEngineApp* app)
 
 }
 
-void DiploidEngineApp::SoundLoad(DiploidEngineApp* app)
+void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 {
 
 }
 
-void DiploidEngineApp::GraphicsLoad(DiploidEngineApp* app)
+void DiploidEngineApp::Load(DiploidEngineApp* app)
 {	
 	logo_scene.Load();
 	title_scene.Load();
@@ -20,12 +20,12 @@ void DiploidEngineApp::GraphicsLoad(DiploidEngineApp* app)
 	file_scene.Load();
 }
 
-void DiploidEngineApp::SoundInit(DiploidEngineApp* app)
+void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
 {
 
 }
 
-void DiploidEngineApp::GraphicsInit(DiploidEngineApp* app)
+void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
 	logo_scene.Init();
 	title_scene.Init();

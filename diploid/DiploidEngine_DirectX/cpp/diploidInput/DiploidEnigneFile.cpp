@@ -34,10 +34,10 @@ std::string DiploidEngineFile::GetLine()
 		else
 		{
 			file_in.close();
-			return "end_file";
+			return "no_data";
 		}
 	}
-	return "end_file";
+	return "no_data";
 }
 
 void DiploidEngineFile::SetLine(std::string name, float data)
@@ -47,16 +47,29 @@ void DiploidEngineFile::SetLine(std::string name, float data)
 
 void DiploidEngineFile::Close()
 {
-	file_in.close();
-	file_out.close();
+	if (file_in)
+	{
+		file_in.close();
+	}
+
+	if (file_out)
+	{
+		file_out.close();
+	}
 }
 
 void DiploidEngineFile::FileInClose()
 {
-	file_in.close();
+	if (file_in)
+	{
+		file_in.close();
+	}
 }
 
 void DiploidEngineFile::FileOutClose()
 {
-	file_out.close();
+	if (file_out)
+	{
+		file_out.close();
+	}
 }
