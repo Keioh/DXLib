@@ -73,3 +73,13 @@ void DiploidEngineFile::FileOutClose()
 		file_out.close();
 	}
 }
+
+std::ifstream& DiploidEngineFile::GetFileInAdr()
+{
+	return file_in;
+}
+
+std::ofstream& DiploidEngineFile::GetFileOutAdr()
+{
+	return file_out;
+}

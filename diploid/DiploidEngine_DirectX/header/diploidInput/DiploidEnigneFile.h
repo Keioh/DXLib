@@ -8,7 +8,7 @@
 class DiploidEngineFile
 {
 private:
-	std::fstream file_in;//読み込み用
+	std::ifstream file_in;//読み込み用
 	std::ofstream file_out;//書き込み用
 
 public:
@@ -23,4 +23,8 @@ public:
 	void Close();//読み込み用と書き込み用のファイルストリームを閉じます。(ファイル操作を完了したらこの関数を使ってファイルを閉じてください)
 	void FileInClose();//読み込み用のファイルストリームを閉じます。
 	void FileOutClose();//書き込み用のファイルストリームを閉じます。
+
+	std::ifstream& GetFileInAdr();
+	std::ofstream& GetFileOutAdr();
+
 };
