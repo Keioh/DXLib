@@ -1,6 +1,7 @@
 #pragma once
 #include <list>
 #include <memory>
+#include <string>
 #include <unordered_map>
 #include "DxLib.h"
 #include "diploidApp\DiploidEngineMain.h"
@@ -18,7 +19,8 @@
 #include "ver2.0/Graphics/DiploidSoftImage.h"
 #include "ver2.0/Graphics/DiploidScreenGraphics.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
-#include "diploidObject\DiploidCreator.h"
+#include "diploidObject/DiploidCreator.h"
+#include "diploidInput/DiploidEnigneFile.h"
 
 #include "diploidStandalone\standalone.h"
 
@@ -39,6 +41,11 @@ private:
 	GameScene game_scene;
 	OptionScene option_scene;
 	FileScene file_scene;
+
+	std::string data[3];
+
+	float float_data[3];
+	DiploidEngineFile test;
 
 public:
 	void FileCreate(DiploidEngineApp* app);

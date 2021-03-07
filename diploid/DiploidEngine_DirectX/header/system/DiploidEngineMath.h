@@ -16,9 +16,13 @@ class DiploidEngineMath
 private:
 
 public:
-	//aからbに加算減算等を行っています。
-	float VectorAdd(float a, float b);//ベクトル加算(一次式)
-	float VectorSub(float a, float b);//ベクトル減算(一次式)
+	//aからbに加算減算等を行っています。(a + b)
+	float VectorAdd(float a, float b);//ベクトル加算(一次元)
+	float VectorSub(float a, float b);//ベクトル減算(一次元)
+
+	//aからbに加算減算等を行っています。{(a.x + b.x),(a.y + b.y)} 
+	Vector2 Vector2Add(Vector2 a, Vector2 b);//ベクトル加算(二次元)
+	Vector2 Vector2Sub(Vector2 a, Vector2 b);//ベクトル減算(二次元)
 
 	float ThreeSquares(float a, float b);//直角三角形の斜辺の値を取得します。(aとbは直角に交わる。)
 

@@ -25,8 +25,6 @@ std::string DiploidEngineFile::GetLine()
 	{
 		if (!file_in.eof())
 		{
-			std::string data;
-
 			std::getline(file_in, data);
 
 			return data;
@@ -37,12 +35,18 @@ std::string DiploidEngineFile::GetLine()
 			return "no_data";
 		}
 	}
-	return "no_data";
+	else
+	{
+		return "no_data";
+	}
 }
 
-void DiploidEngineFile::SetLine(std::string name, float data)
+void DiploidEngineFile::SetLine(const char* name, float data)
 {
-	file_out << name << "=" << data << std::endl;
+	if (file_out)
+	{
+		file_out << name << "=" << data << std::endl;
+	}
 }
 
 void DiploidEngineFile::Close()

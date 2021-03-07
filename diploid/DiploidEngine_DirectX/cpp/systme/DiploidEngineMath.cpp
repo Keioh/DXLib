@@ -18,6 +18,27 @@ float DiploidEngineMath::VectorSub(float a, float b)
 	return vec;
 }
 
+Vector2 DiploidEngineMath::Vector2Add(Vector2 a, Vector2 b)
+{
+	Vector2 ans = { 0.0f,0.0f };
+
+	ans.x = a.x + b.x;
+	ans.y = a.y + b.y;
+
+	return ans;
+}
+
+Vector2 DiploidEngineMath::Vector2Sub(Vector2 a, Vector2 b)
+{
+	Vector2 ans = { 0.0f,0.0f };
+
+	ans.x = a.x + b.x;
+	ans.y = a.y + b.y;
+
+	return ans;
+}
+
+
 float DiploidEngineMath::ThreeSquares(float a, float b)
 {
 	float C = 0.0f, c = 0.0f;
@@ -46,6 +67,7 @@ float DiploidEngineMath::ToRadian(float degree_angle)
 
 	return ans;
 }
+
 
 float DiploidEngineMath::EquilateralTriangleHeight(float length)
 {
