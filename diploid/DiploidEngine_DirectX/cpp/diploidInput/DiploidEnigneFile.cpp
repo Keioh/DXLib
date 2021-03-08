@@ -24,7 +24,9 @@ std::string DiploidEngineFile::GetLine()
 	if (file_in)
 	{
 		if (!file_in.eof())
-		{
+		{	
+			std::string data;//•¶Žš—ñˆêŽž•Û‘¶—p
+
 			std::getline(file_in, data);
 
 			return data;

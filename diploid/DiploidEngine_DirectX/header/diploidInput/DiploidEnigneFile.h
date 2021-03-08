@@ -18,9 +18,6 @@ private:
 	std::ifstream file_in;//読み込み用
 	std::ofstream file_out;//書き込み用
 
-	std::string data;
-
-
 public:
 
 	//ファイル読み込み時にファイルが無かった場合、自動的に作成されます。
@@ -39,3 +36,12 @@ public:
 
 };
 
+class DiploidTranslate
+{
+private:
+
+public:
+	bool Find(std::string& string_data, std::string string_name);//string_dataには調べる文字列データ、string_nameには探したい文字列。文字列が見つかったらtrueを返す。
+	bool Find(std::vector<std::string>& string_data, std::string string_name);//上記関数のvector配列対応版
+
+};

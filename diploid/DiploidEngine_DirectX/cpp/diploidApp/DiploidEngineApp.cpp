@@ -7,7 +7,18 @@ void DiploidEngineApp::FileCreate(DiploidEngineApp* app)
 }
 
 void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
-{
+{	
+	test.WriteOpen("text/test.txt");
+	test.SetLine("test", 720);
+	test.SetLine("test1", 1230);
+	test.SetLine("test2", 740);
+	test.Close();
+
+	test.ReadOpen("text/test.txt");
+	data[0] = test.GetLine();
+	data[1] = test.GetLine();
+	data[2] = test.GetLine();
+	test.Close();
 }
 
 void DiploidEngineApp::Load(DiploidEngineApp* app)
@@ -21,18 +32,7 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 
 void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
 {	
-	test.WriteOpen("text/test.txt");
-	test.SetLine("test", 720);
-	test.SetLine("test1", 1230);
-	test.SetLine("test2", 740);
-	test.Close();
 
-	test.ReadOpen("text/test.txt");
-	data[0] = test.GetLine();
-	data[1] = test.GetLine();
-	data[2] = test.GetLine();
-
-	test.Close();
 }
 
 void DiploidEngineApp::Init(DiploidEngineApp* app)

@@ -444,6 +444,9 @@
     <ClCompile Include="cpp\ver2.0\Objects\string_image\save\save_string_image.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\string_image\save</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidInput\DiploidTranslate.cpp">
+      <Filter>ソース ファイル\cpp\diploidInput</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">

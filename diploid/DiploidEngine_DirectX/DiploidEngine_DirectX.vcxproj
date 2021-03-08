@@ -169,6 +169,7 @@
     <ClCompile Include="cpp\diploidImpact\DiploidEngineImpact.cpp" />
     <ClCompile Include="cpp\diploidInput\DiploidEngineInput.cpp" />
     <ClCompile Include="cpp\diploidInput\DiploidEnigneFile.cpp" />
+    <ClCompile Include="cpp\diploidInput\DiploidTranslate.cpp" />
     <ClCompile Include="cpp\diploidLayer\DiploidEngineLayer.cpp" />
     <ClCompile Include="cpp\diploidNetwork\DiploidEngineNetwork.cpp" />
     <ClCompile Include="cpp\diploidObject\DiploidCreator.cpp" />

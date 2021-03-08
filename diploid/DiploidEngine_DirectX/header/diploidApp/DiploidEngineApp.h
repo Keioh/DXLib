@@ -46,6 +46,7 @@ private:
 
 	float float_data[3];
 	DiploidEngineFile test;
+	DiploidTranslate trans;
 
 public:
 	void FileCreate(DiploidEngineApp* app);
