@@ -45,6 +45,8 @@ private:
 	std::string data[3];
 
 	float float_data[3];
+	bool bool_data[1];
+	int int_data[1];
 	DiploidEngineFile test;
 	DiploidTranslate trans;
 

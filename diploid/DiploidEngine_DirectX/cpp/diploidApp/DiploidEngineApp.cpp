@@ -9,9 +9,9 @@ void DiploidEngineApp::FileCreate(DiploidEngineApp* app)
 void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 {	
 	test.WriteOpen("text/test.txt");
-	test.SetLine("test", 720);
+	test.SetLine("test", 720.f);
 	test.SetLine("test1", 1230);
-	test.SetLine("test2", 740);
+	test.SetLine("test2", false);
 	test.Close();
 
 	test.ReadOpen("text/test.txt");
@@ -19,6 +19,11 @@ void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 	data[1] = test.GetLine();
 	data[2] = test.GetLine();
 	test.Close();
+
+	float_data[0] = trans.FindDataFloat(data[0], "test");
+	int_data[0] = trans.FindDataInt(data[1], "test1");
+	bool_data[0] = trans.FindDataBool(data[2], "test2");
+
 }
 
 void DiploidEngineApp::Load(DiploidEngineApp* app)
@@ -169,9 +174,9 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		}
 	}
 
-	DrawFormatString(0, 0, GetColor(150, 150, 150), "%s", data[0].c_str());
-	DrawFormatString(0, 20, GetColor(150, 150, 150), "%s", data[1].c_str());
-	DrawFormatString(0, 40, GetColor(150, 150, 150), "%s", data[2].c_str());
+	DrawFormatString(0, 0, GetColor(150, 150, 150), "%s = %f", data[0].c_str(), float_data[0]);
+	DrawFormatString(0, 20, GetColor(150, 150, 150), "%s = %d", data[1].c_str(), int_data[0]);
+	DrawFormatString(0, 40, GetColor(150, 150, 150), "%s = %s", data[2].c_str(), bool_data[0] ? "true" : "false");
 
 	//DrawFormatString(100, 100, GetColor(150, 150, 150), "frame = %f", app->diploidEngineScreen.GetFrameTime());
 	//DrawFormatString(0, 200, GetColor(100, 100, 100), "scene = %d", title_scene.GetFinalScene());

@@ -26,6 +26,8 @@ public:
 
 	std::string GetLine();//ファイルから1行だけ読み出す。(一行だけなのでfor文とかで連続して読み出す必要あり)(ファイル終端まで読み出した場合、自動で読み込み側のfstreamがcloseします。)
 	void SetLine(const char* name, float data);//データ=数値という表記で出力されます。
+	void SetLine(const char* name, int data);//データ=数値という表記で出力されます。
+	void SetLine(const char* name, bool data);//データ=数値という表記で出力されます。
 
 	void Close();//読み込み用と書き込み用のファイルストリームを閉じます。(ファイル操作を完了したらこの関数を使ってファイルを閉じてください)
 	void FileInClose();//読み込み用のファイルストリームを閉じます。
@@ -43,5 +45,9 @@ private:
 public:
 	bool Find(std::string& string_data, std::string string_name);//string_dataには調べる文字列データ、string_nameには探したい文字列。文字列が見つかったらtrueを返す。
 	bool Find(std::vector<std::string>& string_data, std::string string_name);//上記関数のvector配列対応版
+
+	float FindDataFloat(std::string& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
+	int FindDataInt(std::string& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
+	bool FindDataBool(std::string& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
 
 };

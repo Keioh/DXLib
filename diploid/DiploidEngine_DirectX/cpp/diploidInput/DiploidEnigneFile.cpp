@@ -51,6 +51,29 @@ void DiploidEngineFile::SetLine(const char* name, float data)
 	}
 }
 
+void DiploidEngineFile::SetLine(const char* name, int data)
+{
+	if (file_out)
+	{
+		file_out << name << "=" << data << std::endl;
+	}
+}
+
+void DiploidEngineFile::SetLine(const char* name, bool data)
+{
+	if (file_out)
+	{
+		if (data == true)
+		{
+			file_out << name << "=" << "true" << std::endl;
+		}
+		else
+		{
+			file_out << name << "=" << "false" << std::endl;
+		}
+	}
+}
+
 void DiploidEngineFile::Close()
 {
 	if (file_in)
