@@ -6,11 +6,6 @@
 #include <sstream>
 #include "DxLib.h"
 
-struct StringPair
-{
-	std::string first;
-	float second;
-};
 
 class DiploidEngineFile
 {
@@ -49,5 +44,9 @@ public:
 	float FindDataFloat(std::string& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
 	int FindDataInt(std::string& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
 	bool FindDataBool(std::string& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
+
+	float FindDataFloat(std::vector<std::string>& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
+	int FindDataInt(std::vector<std::string>& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
+	bool FindDataBool(std::vector<std::string>& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
 
 };

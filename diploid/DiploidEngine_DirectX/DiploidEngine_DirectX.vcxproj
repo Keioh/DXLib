@@ -246,6 +246,7 @@
     <ClInclude Include="header\data\sim_data\home_country_ui.h" />
     <ClInclude Include="header\data\sim_data\military_ui.h" />
     <ClInclude Include="header\data\sim_data\sim_define.h" />
+    <ClInclude Include="header\data\system_data\system_data.h" />
     <ClInclude Include="header\data\text_data\ja.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
     <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />

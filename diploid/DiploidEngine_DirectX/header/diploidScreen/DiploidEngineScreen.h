@@ -19,7 +19,6 @@ private:
 
 	float test = 0;
 
-
 public:
 	void FrameCountStart();
 	void FrameCountEnd();

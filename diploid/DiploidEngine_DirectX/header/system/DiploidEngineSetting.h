@@ -4,12 +4,24 @@
 //
 
 #pragma once
+#include <vector>
+#include <string>
 #include "DxLib.h"
+#include "diploidInput/DiploidEnigneFile.h"
+#include "data/system_data/system_data.h"
+
+using namespace std;
 
 class DiploidEngineSetting
 {
 private:
 	bool reload = false;//リロードflag(画面サイズ変更をしたときに変化)
+
+	DiploidEngineFile file;
+	DiploidTranslate translate;
+	vector<string> string_data;
+
+	SystemData system_data{};
 
 public:
 	DiploidEngineSetting();
@@ -18,6 +30,7 @@ public:
 	int window_x, window_y, window_bit, refresh_rate;//ウィンドウサイズとリフレッシュレート
 	int window_mode;//TRUEでウィンドウモード
 	const char* window_name;//アプリケーションの名前
+	bool vsync;
 
 	int screen_handle;
 	int sim_window_x, sim_window_y;//仮想ウィンドウサイズ

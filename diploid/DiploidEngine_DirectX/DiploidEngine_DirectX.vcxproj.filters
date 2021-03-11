@@ -187,6 +187,12 @@
     <Filter Include="ソース ファイル\cpp\ver2.0\Objects\string_image\save">
       <UniqueIdentifier>{335791c5-e9fb-492f-b4ef-e5af506fa71a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\data\system_data">
+      <UniqueIdentifier>{37622803-75d6-4712-83b2-3c2ff3ce1200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\data\system_data">
+      <UniqueIdentifier>{e94ecd2b-1bb6-4406-9790-a4dc0c22e8c1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -715,6 +721,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\string_image\save\save_string_image.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\string_image\save</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\system_data\system_data.h">
+      <Filter>ヘッダー ファイル\data\system_data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

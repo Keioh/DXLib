@@ -31,7 +31,8 @@ float DiploidEngineScreen::GetFrameTime()
 
 void DiploidEngineScreen::Init(int setting_fps)
 {
-	AvrSample = SettingFPS = setting_fps;
+	SettingFPS = setting_fps;
+	AvrSample = setting_fps;
 }
 
 void DiploidEngineScreen::Update()
@@ -65,10 +66,10 @@ void DiploidEngineScreen::Wait()
 	int tookTime = GetNowCount() - StartTime;	//‚©‚©‚Á‚½ŽžŠÔ
 
 	int waitTime = Count * 1000 / AvrSample - tookTime;	//‘Ò‚Â‚×‚«ŽžŠÔ
+	
 
 	if (waitTime > 0) 
-	{	
-
+	{
 		Sleep(waitTime);	//‘Ò‹@
 	}
 }
