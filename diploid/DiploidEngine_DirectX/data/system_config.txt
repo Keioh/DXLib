@@ -2,6 +2,6 @@ window_x=1280
 window_y=720
 simulation_window_x=640
 simulation_window_y=360
-refresh_rate=60
+refresh_rate=120
 window_mode=true
 vsync=true

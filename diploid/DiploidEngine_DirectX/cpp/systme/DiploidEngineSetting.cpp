@@ -4,6 +4,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 {	
 	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 
+	//システムセーブファイルを開く
 	file.ReadOpen("data/system_config.txt");
 	
 	while (file.GetFileInAdr())
@@ -14,21 +15,21 @@ DiploidEngineSetting::DiploidEngineSetting()
 	file.Close();
 
 
+	//window関連
 	window_x = translate.FindDataInt(string_data, "window_x");	
 	window_y = translate.FindDataInt(string_data, "window_y");	
-	//refresh_rate = translate.FindDataInt(string_data, "refresh_rate");
+	refresh_rate = translate.FindDataInt(string_data, "refresh_rate");
 	window_mode = translate.FindDataBool(string_data, "window_mode");
 	vsync = translate.FindDataBool(string_data, "vsync");
 	sim_window_x = translate.FindDataInt(string_data, "simulation_window_x");
 	sim_window_y = translate.FindDataInt(string_data, "simulation_window_y");
 
-	//window関連
 	//window_x = 1280;
 	//window_y = 720;
 	window_bit = 32;
-	refresh_rate = 60;
+	//refresh_rate = 60;
 	//window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.40)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.41)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;

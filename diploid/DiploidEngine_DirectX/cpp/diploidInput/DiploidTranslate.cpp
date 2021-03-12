@@ -102,7 +102,7 @@ float DiploidTranslate::FindDataFloat(std::vector<std::string>& string_data, std
 
 			ss << *count;
 
-			ss.ignore(string_data.size(), '=');
+			ss.ignore(count->size(), '=');
 
 			ss >> buffer;
 
@@ -124,7 +124,7 @@ int DiploidTranslate::FindDataInt(std::vector<std::string>& string_data, std::st
 
 			ss << *count;
 
-			ss.ignore(string_data.size(), '=');
+			ss.ignore(count->size(), '=');
 
 			ss >> buffer;
 
@@ -146,7 +146,7 @@ bool DiploidTranslate::FindDataBool(std::vector<std::string>& string_data, std::
 
 			ss << *count;
 
-			ss.ignore(string_data.size(), '=');
+			ss.ignore(count->size(), '=');
 
 			if (count->find("true") != -1)
 			{
