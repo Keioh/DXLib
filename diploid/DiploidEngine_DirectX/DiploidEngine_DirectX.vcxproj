@@ -191,6 +191,7 @@
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV3.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidCircleV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidImageV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp" />
@@ -282,6 +283,7 @@
     <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV3.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidCircleV2.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidImageV2.h" />
     <ClInclude Include="header\ver2.0\Graphics\DiploidScreenGraphics.h" />

@@ -2,7 +2,6 @@
 
 DiploidEngineSetting::DiploidEngineSetting()
 {	
-	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 
 	//システムセーブファイルを開く
 	file.ReadOpen("data/system_config.txt");
@@ -34,7 +33,9 @@ DiploidEngineSetting::DiploidEngineSetting()
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;
 	//sim_window_x = window_x / 2;
-	//sim_window_y = window_y / 2;
+	//sim_window_y = window_y / 2;	
+
+	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 }
 
 void DiploidEngineSetting::Init()
@@ -76,6 +77,8 @@ void DiploidEngineSetting::SetBegin()
 
 	SetUseZBuffer3D(TRUE);
 	SetWriteZBuffer3D(TRUE);
+
+	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 }
 
 void DiploidEngineSetting::SetEnd()

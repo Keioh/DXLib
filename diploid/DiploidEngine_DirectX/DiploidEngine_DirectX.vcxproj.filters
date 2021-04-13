@@ -453,6 +453,9 @@
     <ClCompile Include="cpp\diploidInput\DiploidTranslate.cpp">
       <Filter>ソース ファイル\cpp\diploidInput</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV3.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -724,6 +727,9 @@
     </ClInclude>
     <ClInclude Include="header\data\system_data\system_data.h">
       <Filter>ヘッダー ファイル\data\system_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV3.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

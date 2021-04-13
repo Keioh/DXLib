@@ -21,6 +21,7 @@
 #include "ver2.0/Graphics/DiploidStrings.h"
 #include "diploidObject/DiploidCreator.h"
 #include "diploidInput/DiploidEnigneFile.h"
+#include "ver2.0/Graphics/DiploidBoxV3.h"
 
 #include "diploidStandalone\standalone.h"
 
@@ -42,13 +43,7 @@ private:
 	OptionScene option_scene;
 	FileScene file_scene;
 
-	std::string data[3];
-
-	float float_data[3];
-	bool bool_data[1];
-	int int_data[1];
-	DiploidEngineFile test;
-	DiploidTranslate trans;
+	DiploidBoxV3 test;
 
 public:
 	void FileCreate(DiploidEngineApp* app);
