@@ -1,6 +1,6 @@
 #include "ver2.0/Objects/OptionScene.h"
 
-void OptionScene::Load(DiploidEngineSetting& setting)
+void OptionScene::Load()
 {
 	//戻るボタンの読み込み
 	back_button.Load();
@@ -31,14 +31,14 @@ void OptionScene::Load(DiploidEngineSetting& setting)
 	display_string_image.Load();
 	
 	//OptionのGamePlay画像
-	game_play_string_image.Load();	
-	
-	//エンジンから設定データを取得。
-	system_data = setting.GetSystemData();
+	game_play_string_image.Load();		
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
-{
+{	
+	//エンジンから設定データを取得。
+	system_data = setting.GetSystemData();
+
 	//三角形の動的背景
 	continuous_triangle.Init(VGet(0, 0, 0), 50, 100, 30);
 
@@ -87,9 +87,9 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 
 	//文字表示速度とオート速度の変更UI群
 	text_speed_auto_setting_ui.Init(VGet(string_speed_button_position_x, string_speed_button_position_y, 0));
-	text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
-	text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
-	text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
+	text_speed_auto_setting_ui.SetParameterDrawSpeed(system_data.string_draw_speed);//文字描画速度
+	text_speed_auto_setting_ui.SetParameterAutoSpeed(system_data.string_auto_speed);//オート速度
+	text_speed_auto_setting_ui.SetParameterBackGroundAlpha(system_data.string_background_alpha);//透過度
 
 }
 
@@ -208,6 +208,26 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		system_data.string_draw_speed = draw_speed;
 		system_data.string_auto_speed = auto_speed;
 		system_data.string_background_alpha = background_alpha;
+
+		//ファイルに書き込む(settingを書き込んでいる項目はこのオプション内で変更が無かった項目)
+		file.WriteOpen("data/system_config.txt");
+
+		if (file.GetFileOutAdr())
+		{
+			file.SetLine("window_x", system_data.window_x);
+			file.SetLine("window_y", system_data.window_y);
+			file.SetLine("simulation_window_x", setting.GetSystemData().simulation_window_x);
+			file.SetLine("simulation_window_y", setting.GetSystemData().simulation_window_y);
+			file.SetLine("refreshrate", setting.GetSystemData().refreshrate);
+			file.SetLine("window_mode", setting.GetSystemData().window_mode);
+			file.SetLine("vsync", setting.GetSystemData().vsync);
+
+			file.SetLine("string_draw_speed", system_data.string_draw_speed);
+			file.SetLine("string_auto_speed", system_data.string_auto_speed);
+			file.SetLine("string_background_alpha", system_data.string_background_alpha);
+		}
+
+		file.FileOutClose();
 	}
 
 
@@ -222,9 +242,9 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
 
 		//文字描画速度とオート速度を保存した設定に戻す。
-		text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
-		text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
-		text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
+		text_speed_auto_setting_ui.SetParameterDrawSpeed(system_data.string_draw_speed);//文字描画速度
+		text_speed_auto_setting_ui.SetParameterAutoSpeed(system_data.string_auto_speed);//オート速度
+		text_speed_auto_setting_ui.SetParameterBackGroundAlpha(system_data.string_background_alpha);//透過度
 
 		back_button.SetSelectedFlag(1);//選択状態を1を維持
 		box_draw_flag = 2;//フェードインを始める
@@ -236,9 +256,9 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 	if (reset_button.GetClick() == true)//リセットボタンがクリックされたら
 	{
 		//文字描画速度とオート速度を1つ前に保存した設定に戻す。
-		text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
-		text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
-		text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
+		text_speed_auto_setting_ui.SetParameterDrawSpeed(system_data.string_draw_speed);//文字描画速度
+		text_speed_auto_setting_ui.SetParameterAutoSpeed(system_data.string_auto_speed);//オート速度
+		text_speed_auto_setting_ui.SetParameterBackGroundAlpha(system_data.string_background_alpha);//透過度
 
 		//現在の解像度のボタンにチェックを付けなおす。
 		window_resize_button_960_540.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + (32 + 4), 0), setting);
@@ -352,7 +372,9 @@ void OptionScene::Draw(DiploidEngineScreen& screen, bool draw, bool debug)
 	//DrawFormatString(300, 40, GetColor(0, 0, 0), "%d", window_resize_button_1600_900.GetSelected());
 	//DrawFormatString(300, 60, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetHit());
 	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetClick());
-	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%f", test.GetParameter().x);
+	//DrawFormatString(300, 100, GetColor(0, 0, 0), "%f", test.GetParameter().x);
+	//DrawFormatString(3000, 120, GetColor(0, 0, 0), "%f", (float)system_data.string_auto_speed * 0.8f);
+
 }
 
 

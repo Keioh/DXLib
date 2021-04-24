@@ -32,4 +32,5 @@ public:
 	int GetSelected();//‘I‘ğó‘Ô‚©
 
 	bool GetNextFlag();
+	float GetAutoSpeed();
 };

@@ -54,6 +54,8 @@ private:
 
 	DiploidImageV2 image_00;//背景画像(仮)
 
+	SystemData system_data;
+
 	int click = 0;//現在のテキスト位置
 
 	bool in_game = false;//ゲーム中なのかのflag(trueでgame中)
@@ -89,6 +91,7 @@ public:
 	void SetSaveButtonFlag(int new_flag);//セーブボタンのflagを変更します
 	bool GetSaveButtonFlag();//セーブボタンの状態を取得します。
 
+	void SetSystemData(SystemData data);
 
 	int GetSelectedScene();
 };

@@ -174,3 +174,8 @@ void DiploidStrings::Draw(float frame_time)
 	//DrawFormatString(0, 60, GetColor(255, 255, 255), "all %d", string_all);
 
 }
+
+float DiploidStrings::GetDrawSpeed()
+{
+	return next_speed;
+}

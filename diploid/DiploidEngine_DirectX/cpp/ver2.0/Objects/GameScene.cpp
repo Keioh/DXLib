@@ -26,13 +26,14 @@ void GameScene::Load()
 	save_button.Load();
 	quick_load_button.Load();
 	quick_save_button.Load();
-
 }
 
 void GameScene::Init(DiploidEngineSetting& setting)
 {
+	system_data = setting.GetSystemData();
+
 	jp.Init(setting);
-	jp.SetSpeed(5000);
+	jp.SetSpeed(system_data.string_draw_speed);
 
 	auto_button.Init(VGet(setting.GetSystemData().window_x - 64, setting.GetSystemData().window_y - 16, 0));
 	auto_button.SetSpeed(60);
@@ -59,6 +60,25 @@ void GameScene::Init(DiploidEngineSetting& setting)
 
 void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 {	
+	//描画速度を設定しなおす。
+	if (jp.string[click].GetDrawSpeed() != (system_data.string_draw_speed * 50))
+	{
+		jp.string[click].SetSpeed(system_data.string_draw_speed * 50);
+	}
+
+	//オート速度を設定しなおす。
+	if (auto_button.GetAutoSpeed() != (system_data.string_auto_speed * 0.8f))
+	{
+		auto_button.SetSpeed(system_data.string_auto_speed * 0.8f);
+	}
+
+	//文字列の背景画像の透過度を設定しなおす。
+	if (string_back_wall.GetAplha() != system_data.string_background_alpha)
+	{
+		string_back_wall.SetAlpha(system_data.string_background_alpha);
+	}
+
+
 	end_anime.SetAnimationSpeed(250 * screen.GetFrameTime());
 
 	//オプション機能の更新
@@ -276,6 +296,9 @@ void GameScene::Draw(DiploidEngineScreen& screen)
 	SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha);
 	box.Draw();
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
+
+
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "speed = %f", (float)system_data.string_auto_speed * 0.8f);
 }
 
 void GameScene::Reset()
@@ -367,6 +390,12 @@ bool GameScene::GetSaveButtonFlag()
 	{
 		return false;
 	}
+}
+
+
+void GameScene::SetSystemData(SystemData data)
+{
+	system_data = data;
 }
 
 

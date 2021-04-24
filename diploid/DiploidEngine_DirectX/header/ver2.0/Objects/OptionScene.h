@@ -35,8 +35,7 @@ class OptionScene
 private:
 
 	DiploidEngineMath math;//数学関数
-
-	SystemData system_data;//設定したデータを一時保存する用
+	DiploidEngineFile file;
 
 	ContinuousTriangle continuous_triangle;//連続した三角形
 
@@ -67,6 +66,8 @@ private:
 	int string_speed_button_position_x = 300;
 	int string_speed_button_position_y = 100;
 
+	//設定したデータを一時保存する用
+	SystemData system_data;
 
 	//値の保存用
 	float draw_speed = 80.0f;//設定した現在の文字描画速度
@@ -83,7 +84,7 @@ private:
 
 public:
 
-	void Load(DiploidEngineSetting& setting);
+	void Load();
 	void Init(DiploidEngineSetting& setting);
 	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen, bool in_game_flag);
 	void Draw(DiploidEngineScreen& screen, bool draw = true, bool debug = false);

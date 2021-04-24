@@ -38,6 +38,7 @@ public:
 
 	int CreateFontData(int Size, int Thick, int FontType, char *FontName = NULL);//DXLIBを参照
 	int GetHandle();
+	float GetDrawSpeed();
 
 	void Load(const char* str = "");//\nで改行を表す。(1行512文字、５改行まで)
 	void Init(float x, float y, int new_font_handle);

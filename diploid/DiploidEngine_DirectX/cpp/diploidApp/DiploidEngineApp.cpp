@@ -16,7 +16,7 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 	logo_scene.Load();
 	title_scene.Load();
 	game_scene.Load();
-	option_scene.Load(app->diploidEngineSetting);
+	option_scene.Load();
 	file_scene.Load();
 }
 
@@ -46,6 +46,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
 		{	
+			game_scene.SetSystemData(option_scene.GetSystemData());//optionからのシステム設定を取得
 			game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
 			game_scene.Updata(app->diploidEngineInput, app->diploidEngineScreen);//ゲーム画面を更新
 

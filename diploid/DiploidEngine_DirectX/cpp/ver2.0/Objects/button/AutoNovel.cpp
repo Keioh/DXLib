@@ -139,3 +139,8 @@ bool AutoNovel::GetNextFlag()
 {
 	return next_flag;
 }
+
+float AutoNovel::GetAutoSpeed()
+{
+	return auto_speed;
+}

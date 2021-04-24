@@ -27,7 +27,7 @@ public:
 	DiploidEngineSetting();
 
 	int buffer_window_x, buffer_window_y, buffer_window_bit;
-	//int window_x, window_y, window_bit, refreshrate;//ウィンドウサイズとリフレッシュレート
+	//int window_x, window_y, refreshrate;//ウィンドウサイズとリフレッシュレート
 	//int window_mode;//TRUEでウィンドウモード
 	int window_bit;
 	const char* window_name;//アプリケーションの名前

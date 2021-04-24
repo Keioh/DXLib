@@ -1,8 +1,7 @@
 #include "system\DiploidEngineSetting.h"
 
 DiploidEngineSetting::DiploidEngineSetting()
-{	
-
+{
 	//システムセーブファイルを開く
 	file.ReadOpen("data/system_config.txt");
 	
@@ -17,18 +16,23 @@ DiploidEngineSetting::DiploidEngineSetting()
 	//window関連
 	system_data.window_x = translate.FindDataInt(string_data, "window_x");
 	system_data.window_y = translate.FindDataInt(string_data, "window_y");
-	system_data.refreshrate = translate.FindDataInt(string_data, "refresh_rate");
+	system_data.refreshrate = translate.FindDataInt(string_data, "refreshrate");
 	system_data.window_mode = translate.FindDataBool(string_data, "window_mode");
 	system_data.vsync = translate.FindDataBool(string_data, "vsync");
 	system_data.simulation_window_x = translate.FindDataInt(string_data, "simulation_window_x");
 	system_data.simulation_window_y = translate.FindDataInt(string_data, "simulation_window_y");
+
+	//game設定関連
+	system_data.string_draw_speed = translate.FindDataInt(string_data, "string_draw_speed");
+	system_data.string_auto_speed = translate.FindDataInt(string_data, "string_auto_speed");
+	system_data.string_background_alpha = translate.FindDataInt(string_data, "string_background_alpha");
 
 	//window_x = 1280;
 	//window_y = 720;
 	window_bit = 32;
 	//refresh_rate = 60;
 	//window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.41)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.42)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;
@@ -119,6 +123,8 @@ void DiploidEngineSetting::SetWindowSize(int new_window_x, int new_window_y)
 {
 	system_data.window_x = new_window_x;
 	system_data.window_y = new_window_y;
+
+	//GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 }
 
 

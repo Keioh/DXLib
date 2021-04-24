@@ -27,19 +27,22 @@ void TitleScene::Init(DiploidEngineSetting& setting)
 	box.SetFill(true);
 
 	//各種ボタンの配置位置を設定
-	start_button.Init(VGet(128, setting.GetSystemData().window_y - 512, 0), button_back_image.GetSize());//スタートボタンの初期化
-	load_button.Init(VGet(128, setting.GetSystemData().window_y - 512 + (button_back_image.GetSize().y + 20), 0), button_back_image.GetSize());//読み込みボタンの初期化
-	option_button.Init(VGet(128, setting.GetSystemData().window_y - 512 + (button_back_image.GetSize().y + 20) * 2, 0), button_back_image.GetSize());//オプションボタンの初期化
-	exit_button.Init(VGet(128, setting.GetSystemData().window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), 0), button_back_image.GetSize());//終了ボタンの初期化
+	start_button.Init(VGet(128, setting.GetSystemData().window_y - (72 * 4) - 64, 0), button_back_image.GetSize());//スタートボタンの初期化
+	load_button.Init(VGet(128, setting.GetSystemData().window_y - (72 * 3) - 64, 0), button_back_image.GetSize());//読み込みボタンの初期化
+	option_button.Init(VGet(128, setting.GetSystemData().window_y - (72 * 2) - 64, 0), button_back_image.GetSize());//オプションボタンの初期化
+	exit_button.Init(VGet(128, setting.GetSystemData().window_y - 72 - 64, 0), button_back_image.GetSize());//終了ボタンの初期化
 
-	start_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 512, start_string.GetHandle());
+	start_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - (72 * 4) - 64, start_string.GetHandle());
 	start_string.SetSpeed(5000);
-	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 512 + (button_back_image.GetSize().y + 20), start_string.GetHandle());
+	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - (72 * 3) - 64, start_string.GetHandle());
 	load_string.SetSpeed(5000);
-	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.GetSystemData().window_y - 512 + ((button_back_image.GetSize().y + 20) * 2), start_string.GetHandle());
+	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.GetSystemData().window_y - (72 * 2) - 64, start_string.GetHandle());
 	option_string.SetSpeed(5000);
-	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), start_string.GetHandle());
+	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 72 - 64, start_string.GetHandle());
 	exit_string.SetSpeed(5000);
+
+	//画面の大きさに合わせる
+	test_back.SetScale((float)setting.GetSystemData().window_x / test_back.GetSize().x, (float)setting.GetSystemData().window_y / test_back.GetSize().y);
 }
 
 void TitleScene::Updata(DiploidEngineScreen& screen)
