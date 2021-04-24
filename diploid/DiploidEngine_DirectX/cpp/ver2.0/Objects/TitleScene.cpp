@@ -20,25 +20,25 @@ void TitleScene::Load()
 	exit_string.Load("Exit");//終了ボタンの文字列の設定
 }
 
-void TitleScene::Init()
+void TitleScene::Init(DiploidEngineSetting& setting)
 {
 	//フェードイン、アウト用のBOXの初期化
-	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
+	box.Init(VGet(0, 0, 0), VGet(setting.GetSystemData().window_x, setting.GetSystemData().window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
 	//各種ボタンの配置位置を設定
-	start_button.Init(VGet(128, setting.window_y - 512, 0), button_back_image.GetSize());//スタートボタンの初期化
-	load_button.Init(VGet(128, setting.window_y - 512 + (button_back_image.GetSize().y + 20), 0), button_back_image.GetSize());//読み込みボタンの初期化
-	option_button.Init(VGet(128, setting.window_y - 512 + (button_back_image.GetSize().y + 20) * 2, 0), button_back_image.GetSize());//オプションボタンの初期化
-	exit_button.Init(VGet(128, setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), 0), button_back_image.GetSize());//終了ボタンの初期化
+	start_button.Init(VGet(128, setting.GetSystemData().window_y - 512, 0), button_back_image.GetSize());//スタートボタンの初期化
+	load_button.Init(VGet(128, setting.GetSystemData().window_y - 512 + (button_back_image.GetSize().y + 20), 0), button_back_image.GetSize());//読み込みボタンの初期化
+	option_button.Init(VGet(128, setting.GetSystemData().window_y - 512 + (button_back_image.GetSize().y + 20) * 2, 0), button_back_image.GetSize());//オプションボタンの初期化
+	exit_button.Init(VGet(128, setting.GetSystemData().window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), 0), button_back_image.GetSize());//終了ボタンの初期化
 
-	start_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512, start_string.GetHandle());
+	start_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 512, start_string.GetHandle());
 	start_string.SetSpeed(5000);
-	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + (button_back_image.GetSize().y + 20), start_string.GetHandle());
+	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 512 + (button_back_image.GetSize().y + 20), start_string.GetHandle());
 	load_string.SetSpeed(5000);
-	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 2), start_string.GetHandle());
+	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.GetSystemData().window_y - 512 + ((button_back_image.GetSize().y + 20) * 2), start_string.GetHandle());
 	option_string.SetSpeed(5000);
-	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), start_string.GetHandle());
+	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 512 + ((button_back_image.GetSize().y + 20) * 3), start_string.GetHandle());
 	exit_string.SetSpeed(5000);
 }
 

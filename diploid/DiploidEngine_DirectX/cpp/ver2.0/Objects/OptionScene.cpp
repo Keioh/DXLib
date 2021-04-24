@@ -1,6 +1,6 @@
 #include "ver2.0/Objects/OptionScene.h"
 
-void OptionScene::Load()
+void OptionScene::Load(DiploidEngineSetting& setting)
 {
 	//戻るボタンの読み込み
 	back_button.Load();
@@ -31,8 +31,10 @@ void OptionScene::Load()
 	display_string_image.Load();
 	
 	//OptionのGamePlay画像
-	game_play_string_image.Load();
-
+	game_play_string_image.Load();	
+	
+	//エンジンから設定データを取得。
+	system_data = setting.GetSystemData();
 }
 
 void OptionScene::Init(DiploidEngineSetting& setting)
@@ -50,20 +52,20 @@ void OptionScene::Init(DiploidEngineSetting& setting)
 	game_play_string_image.Init(VGet(string_speed_button_position_x, string_speed_button_position_y, 0));
 
 	//フェード用BOX
-	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
+	box.Init(VGet(0, 0, 0), VGet(setting.GetSystemData().window_x, setting.GetSystemData().window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
 	//戻るボタン
-	back_button.Init(VGet(setting.window_x - (128 + 4), setting.window_y - (32 + 4), 0));
+	back_button.Init(VGet(setting.GetSystemData().window_x - (128 + 4), setting.GetSystemData().window_y - (32 + 4), 0));
 
 	//保存ボタン
-	save_button.Init(VGet(setting.window_x - ((128 * 2) + 4), setting.window_y - (32 + 4), 0));
+	save_button.Init(VGet(setting.GetSystemData().window_x - ((128 * 2) + 4), setting.GetSystemData().window_y - (32 + 4), 0));
 
 	//タイトルボタン
-	title_button.Init(VGet(setting.window_x - ((128 * 3) + 4), setting.window_y - (32 + 4), 0));
+	title_button.Init(VGet(setting.GetSystemData().window_x - ((128 * 3) + 4), setting.GetSystemData().window_y - (32 + 4), 0));
 
 	//リセットボタン
-	reset_button.Init(VGet(4, setting.window_y - (32 + 4), 0));
+	reset_button.Init(VGet(4, setting.GetSystemData().window_y - (32 + 4), 0));
 
 
 
@@ -199,6 +201,13 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		draw_speed = text_speed_auto_setting_ui.GetParameterAbsoluteDrawSpeed();//文字描画速度
 		auto_speed = text_speed_auto_setting_ui.GetParameterAbsoluteAutoSpeed();//オート速度
 		background_alpha = text_speed_auto_setting_ui.GetParameterAbsoluteBackGroundAlpha();//透過度
+
+		//各値を一時設定データとして保存
+		system_data.window_x = setting.GetSystemData().window_x;
+		system_data.window_y = setting.GetSystemData().window_y;
+		system_data.string_draw_speed = draw_speed;
+		system_data.string_auto_speed = auto_speed;
+		system_data.string_background_alpha = background_alpha;
 	}
 
 
@@ -389,4 +398,9 @@ int OptionScene::GetReturnFlag()
 	}
 
 	return GAME_NONE;
+}
+
+SystemData OptionScene::GetSystemData()
+{
+	return system_data;
 }

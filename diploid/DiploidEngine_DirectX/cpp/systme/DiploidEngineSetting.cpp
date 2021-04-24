@@ -15,13 +15,13 @@ DiploidEngineSetting::DiploidEngineSetting()
 
 
 	//window関連
-	window_x = translate.FindDataInt(string_data, "window_x");	
-	window_y = translate.FindDataInt(string_data, "window_y");	
-	refresh_rate = translate.FindDataInt(string_data, "refresh_rate");
-	window_mode = translate.FindDataBool(string_data, "window_mode");
-	vsync = translate.FindDataBool(string_data, "vsync");
-	sim_window_x = translate.FindDataInt(string_data, "simulation_window_x");
-	sim_window_y = translate.FindDataInt(string_data, "simulation_window_y");
+	system_data.window_x = translate.FindDataInt(string_data, "window_x");
+	system_data.window_y = translate.FindDataInt(string_data, "window_y");
+	system_data.refreshrate = translate.FindDataInt(string_data, "refresh_rate");
+	system_data.window_mode = translate.FindDataBool(string_data, "window_mode");
+	system_data.vsync = translate.FindDataBool(string_data, "vsync");
+	system_data.simulation_window_x = translate.FindDataInt(string_data, "simulation_window_x");
+	system_data.simulation_window_y = translate.FindDataInt(string_data, "simulation_window_y");
 
 	//window_x = 1280;
 	//window_y = 720;
@@ -52,7 +52,7 @@ void DiploidEngineSetting::Init()
 
 void DiploidEngineSetting::SetBegin()
 {	
-	SetWaitVSyncFlag(vsync);//垂直同期信号を待つかのflag
+	SetWaitVSyncFlag(system_data.vsync);//垂直同期信号を待つかのflag
 	SetUseCharCodeFormat(DX_CHARCODEFORMAT_SHIFTJIS);
 	//SetUseCharCodeFormat(DX_CHARCODEFORMAT_UTF8);//文字コード変更	
 	ChangeFontType(DX_FONTTYPE_ANTIALIASING_8X8);//フォントの描画の仕方
@@ -61,8 +61,8 @@ void DiploidEngineSetting::SetBegin()
 	SetFontSize(15);//フォントの大きさを設定
 	SetBackgroundColor(255, 255, 255);
 	SetOutApplicationLogValidFlag(FALSE);//ログ出力関連
-	SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
-	ChangeWindowMode(window_mode);//ウィンドウモード変更
+	SetGraphMode(system_data.window_x, system_data.window_y, window_bit, system_data.refreshrate);//解像度変更
+	ChangeWindowMode(system_data.window_mode);//ウィンドウモード変更
 	SetMainWindowText(window_name);//アプリケーションの名前を変更
 
 	SetUseASyncLoadFlag(TRUE);//非同期読み込み
@@ -101,9 +101,9 @@ void DiploidEngineSetting::Updata()
 {
 	GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 
-	if ((buffer_window_x != window_x) || (buffer_window_y != window_y))
+	if ((buffer_window_x != system_data.window_x) || (buffer_window_y != system_data.window_y))
 	{
-		SetGraphMode(window_x, window_y, window_bit, refresh_rate);//解像度変更
+		SetGraphMode(system_data.window_x, system_data.window_y, window_bit, system_data.refreshrate);//解像度変更
 
 		reload = true;
 	}
@@ -117,8 +117,8 @@ void DiploidEngineSetting::SetExit(int flag)
 
 void DiploidEngineSetting::SetWindowSize(int new_window_x, int new_window_y)
 {
-	window_x = new_window_x;
-	window_y = new_window_y;
+	system_data.window_x = new_window_x;
+	system_data.window_y = new_window_y;
 }
 
 
@@ -136,4 +136,9 @@ bool DiploidEngineSetting::GetReloadFlag()
 void DiploidEngineSetting::SetReloadFlag(bool new_flag)
 {
 	reload = new_flag;
+}
+
+SystemData DiploidEngineSetting::GetSystemData()
+{
+	return system_data;
 }

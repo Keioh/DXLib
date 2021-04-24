@@ -193,6 +193,12 @@
     <Filter Include="ヘッダー ファイル\data\system_data">
       <UniqueIdentifier>{e94ecd2b-1bb6-4406-9790-a4dc0c22e8c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\data\novel_save_data">
+      <UniqueIdentifier>{b8cc2f99-e5d1-4b75-bad3-090490aa3012}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\data\novel_save_data">
+      <UniqueIdentifier>{c8c066ba-c82e-45cd-9dbb-a8afb9570c8e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -455,6 +461,9 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV3.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\LoadingScene.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -730,6 +739,12 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV3.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\LoadingScene.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\data\novel_save_data\novel_save_data.h">
+      <Filter>ヘッダー ファイル\data\novel_save_data</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

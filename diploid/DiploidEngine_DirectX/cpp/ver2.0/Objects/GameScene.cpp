@@ -34,14 +34,14 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	jp.Init(setting);
 	jp.SetSpeed(5000);
 
-	auto_button.Init(VGet(setting.window_x - 64, setting.window_y - 16, 0));
+	auto_button.Init(VGet(setting.GetSystemData().window_x - 64, setting.GetSystemData().window_y - 16, 0));
 	auto_button.SetSpeed(60);
-	skip_button.Init(VGet(setting.window_x - (64 * 2), setting.window_y - 16, 0));
-	option_button.Init(VGet(setting.window_x - (64 * 3), setting.window_y - 16, 0));
-	load_button.Init(VGet(setting.window_x - (64 * 4), setting.window_y - 16, 0));
-	save_button.Init(VGet(setting.window_x - (64 * 5), setting.window_y - 16, 0));
-	quick_load_button.Init(VGet(setting.window_x - (64 * 6), setting.window_y - 16, 0));
-	quick_save_button.Init(VGet(setting.window_x - (64 * 7), setting.window_y - 16, 0));
+	skip_button.Init(VGet(setting.GetSystemData().window_x - (64 * 2), setting.GetSystemData().window_y - 16, 0));
+	option_button.Init(VGet(setting.GetSystemData().window_x - (64 * 3), setting.GetSystemData().window_y - 16, 0));
+	load_button.Init(VGet(setting.GetSystemData().window_x - (64 * 4), setting.GetSystemData().window_y - 16, 0));
+	save_button.Init(VGet(setting.GetSystemData().window_x - (64 * 5), setting.GetSystemData().window_y - 16, 0));
+	quick_load_button.Init(VGet(setting.GetSystemData().window_x - (64 * 6), setting.GetSystemData().window_y - 16, 0));
+	quick_save_button.Init(VGet(setting.GetSystemData().window_x - (64 * 7), setting.GetSystemData().window_y - 16, 0));
 
 	novel_scene.Init(VGet(0, 0, 0));
 
@@ -50,11 +50,11 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	data_test.Init(VGet(0, 0, 0));
 	place_test.Init(VGet(0, 0, 0));
 
-	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
+	box.Init(VGet(0, 0, 0), VGet(setting.GetSystemData().window_x, setting.GetSystemData().window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
 
-	end_anime.Init(VGet(setting.window_x * 0.8f, setting.window_y - 64, 0), 4, 0.5f, 0.5f);
+	end_anime.Init(VGet(setting.GetSystemData().window_x * 0.8f, setting.GetSystemData().window_y - 64, 0), 4, 0.5f, 0.5f);
 }
 
 void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)

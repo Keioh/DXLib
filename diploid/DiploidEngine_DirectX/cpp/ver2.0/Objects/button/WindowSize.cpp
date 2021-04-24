@@ -16,7 +16,7 @@ void WindowSize::Init(VECTOR pos, DiploidEngineSetting& setting)
 	radio_button_off.Init(pos);
 	radio_button_on.Init(pos);	
 	
-	if ((setting.window_x == this->window_x) && (setting.window_y == this->window_y))
+	if ((setting.GetSystemData().window_x == this->window_x) && (setting.GetSystemData().window_y == this->window_y))
 	{
 		windows_size_button.SetSelectedUI(1);
 	}

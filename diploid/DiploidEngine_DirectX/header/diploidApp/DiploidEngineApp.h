@@ -43,8 +43,6 @@ private:
 	OptionScene option_scene;
 	FileScene file_scene;
 
-	DiploidBoxV3 test;
-
 public:
 	void FileCreate(DiploidEngineApp* app);
 	void OnceLoad(DiploidEngineApp* app);//ˆê‰ñ‚¾‚¯‰¹‚ğ“Ç‚İ‚Ş

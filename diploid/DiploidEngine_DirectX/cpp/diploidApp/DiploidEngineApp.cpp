@@ -16,7 +16,7 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 	logo_scene.Load();
 	title_scene.Load();
 	game_scene.Load();
-	option_scene.Load();
+	option_scene.Load(app->diploidEngineSetting);
 	file_scene.Load();
 }
 
@@ -28,14 +28,11 @@ void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
 void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
 	logo_scene.Init();
-	title_scene.Init();
+	title_scene.Init(app->diploidEngineSetting);
 	game_scene.Init(app->diploidEngineSetting);
 	option_scene.Init(app->diploidEngineSetting);
 	file_scene.Init(app->diploidEngineSetting);
 
-
-	test.Init(VGet(100, 100, 0), VGet(100, 50, 0), GetColor(200, 200, 200));
-	test.SetFill(false);
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
@@ -69,7 +66,6 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 			{
 				title_scene.SetSecne(GAME_FILE);//シーン変更
 			}
-
 		}
 
 		//ロードボタンを押したとき
@@ -162,8 +158,6 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 			option_scene.Draw(app->diploidEngineScreen);
 		}
 	}
-
-	test.Draw();
 
 	//DrawFormatString(100, 100, GetColor(150, 150, 150), "frame = %f", app->diploidEngineScreen.GetFrameTime());
 	//DrawFormatString(0, 200, GetColor(100, 100, 100), "scene = %d", title_scene.GetFinalScene());

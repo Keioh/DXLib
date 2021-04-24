@@ -48,7 +48,7 @@ void ja_text::Init(DiploidEngineSetting& setting)
 {
 	for (int count = 0; count != 256; count++)
 	{
-		string[count].Init(setting.window_x * x_scale, setting.window_y - y_scale, font.GetHandle());
+		string[count].Init(setting.GetSystemData().window_x * x_scale, setting.GetSystemData().window_y - y_scale, font.GetHandle());
 	}
 }
 

@@ -224,6 +224,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSliderObject.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\FileScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\LoadingScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\OptionScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\load\load_string_image.cpp" />
@@ -240,6 +241,7 @@
     <ClInclude Include="header\data\dice.h" />
     <ClInclude Include="header\data\dice_3d6n.h" />
     <ClInclude Include="header\data\dice_result_bord.h" />
+    <ClInclude Include="header\data\novel_save_data\novel_save_data.h" />
     <ClInclude Include="header\data\number.h" />
     <ClInclude Include="header\data\sim_data\ConditionalButton.h" />
     <ClInclude Include="header\data\sim_data\fild.h" />
@@ -317,6 +319,7 @@
     <ClInclude Include="header\ver2.0\Objects\DiploidSliderObject.h" />
     <ClInclude Include="header\ver2.0\Objects\FileScene.h" />
     <ClInclude Include="header\ver2.0\Objects\GameScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\LoadingScene.h" />
     <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
     <ClInclude Include="header\ver2.0\Objects\OptionScene.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\load\load_string_image.h" />

@@ -62,7 +62,6 @@ void DiploidImageV2::SetHandl(int new_handl)
 	//‰æ‘œ‚Ì‘å‚«‚³‚ð•Û‘¶
 	graphics_size.x = graphics_x;
 	graphics_size.y = graphics_y;
-
 }
 
 void DiploidImageV2::SetScale(float scale_x, float scale_y)

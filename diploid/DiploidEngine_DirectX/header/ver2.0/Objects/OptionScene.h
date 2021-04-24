@@ -27,12 +27,16 @@
 
 #include "ver2.0/Objects/ui/text_speed_auto_setting_ui.h"
 
+#include "data/system_data/system_data.h"
+
 
 class OptionScene
 {
 private:
 
 	DiploidEngineMath math;//数学関数
+
+	SystemData system_data;//設定したデータを一時保存する用
 
 	ContinuousTriangle continuous_triangle;//連続した三角形
 
@@ -79,10 +83,12 @@ private:
 
 public:
 
-	void Load();
+	void Load(DiploidEngineSetting& setting);
 	void Init(DiploidEngineSetting& setting);
 	void Updata(DiploidEngineInput& input, DiploidEngineSetting& setting, DiploidEngineScreen& screen, bool in_game_flag);
 	void Draw(DiploidEngineScreen& screen, bool draw = true, bool debug = false);
 
 	int GetReturnFlag();//戻るボタンが押されたらtrueが返る。
+
+	SystemData GetSystemData();//一時保存されている現在の設定を呼び出す。
 };

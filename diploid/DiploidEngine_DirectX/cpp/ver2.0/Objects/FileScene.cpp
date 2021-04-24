@@ -14,7 +14,7 @@ void FileScene::Load()
 void FileScene::Init(DiploidEngineSetting& setting)
 {
 	//フェード用BOX
-	box.Init(VGet(0, 0, 0), VGet(setting.window_x, setting.window_y, 0), GetColor(0, 0, 0));
+	box.Init(VGet(0, 0, 0), VGet(setting.GetSystemData().window_x, setting.GetSystemData().window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
 	load_string_image.Init(VGet(0, 0, 0));//ロード画面のタイトル画像
@@ -22,7 +22,7 @@ void FileScene::Init(DiploidEngineSetting& setting)
 
 
 	//戻るボタン
-	back_button.Init(VGet(setting.window_x - (128 + 4), setting.window_y - (32 + 4), 0));
+	back_button.Init(VGet(setting.GetSystemData().window_x - (128 + 4), setting.GetSystemData().window_y - (32 + 4), 0));
 
 	//セーブとロードのボタン
 	save_load_object_image.Init(VGet(300, 100, 0));

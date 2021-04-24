@@ -15,7 +15,7 @@ class TitleScene
 {
 private:
 	DiploidEngineInput input;//入力関連
-	DiploidEngineSetting setting;//WindowSize取得用
+	//DiploidEngineSetting setting;//WindowSize取得用
 
 	DiploidScreenGraphics scr_gra;//モザイク処理用
 
@@ -52,7 +52,7 @@ public:
 
 	void Load();
 
-	void Init();
+	void Init(DiploidEngineSetting& setting);
 
 	void Updata(DiploidEngineScreen& screen);
 
