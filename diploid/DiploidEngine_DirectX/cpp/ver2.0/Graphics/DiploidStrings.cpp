@@ -172,6 +172,54 @@ void DiploidStrings::Draw(float frame_time)
 	//DrawFormatString(0, 20, GetColor(255, 255, 255), "time %d", time);
 	//DrawFormatString(0, 40, GetColor(255, 255, 255), "speed %d", next_speed);
 	//DrawFormatString(0, 60, GetColor(255, 255, 255), "all %d", string_all);
+}
+
+void DiploidStrings::Draw(int width, float frame_time)
+{
+	if (load_string[string_all] != '\0')
+	{
+		if (string_all != 512)
+		{
+			time += next_speed * frame_time;
+
+			if (time > next_time)
+			{
+				string[string_all] = load_string[string_all];
+
+				if ((GetDrawStringWidthToHandle(&load_string[string_all], string_all, font_handle) >= width) && (new_line_flag == true))
+				{
+					for (int count = string_all; count != 512; count++)
+					{
+						load_string[string_all + 1] = load_string[string_all];
+					}	
+
+					load_string[string_all + 1] = '\n';
+
+					new_line_flag = false;
+				}
+
+
+				if (string[string_all] == '\0')
+				{
+					end_flag = 1;
+					//complete = true;
+				}
+
+				string_all++;
+				time = 0;
+			}
+		}
+	}
+	else
+	{
+		end_flag = 1;
+		//complete = true;
+	}
+
+	DrawStringToHandle(pos_x, pos_y, string, color, font_handle);
+
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "string_all = %d", string_all);
+	//DrawFormatString(0, 20, GetColor(255, 255, 255), "string_width = %d", GetDrawStringWidthToHandle(&load_string[512], string_all, font_handle));
 
 }
 

@@ -12,7 +12,7 @@ void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 }
 
 void DiploidEngineApp::Load(DiploidEngineApp* app)
-{	
+{		
 	logo_scene.Load();
 	title_scene.Load();
 	game_scene.Load();
@@ -32,7 +32,6 @@ void DiploidEngineApp::Init(DiploidEngineApp* app)
 	game_scene.Init(app->diploidEngineSetting);
 	option_scene.Init(app->diploidEngineSetting);
 	file_scene.Init(app->diploidEngineSetting);
-
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
@@ -42,7 +41,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		logo_scene.Updata(app->diploidEngineScreen);
 	}
 	else
-	{		
+	{
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
 		{	
@@ -105,7 +104,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 							break;
 			//ゲームに戻る。
 			case GAME_START:game_scene.SetOptionButtonFlag(-1);//game_sceneのオプションボタンの選択フラグを-1に変更(ボタンを初期化)	
-							game_scene.SetInGameFlag(true);//ゲーム中フラグをfalseにする
+							game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
 							title_scene.SetSecne(GAME_START);//シーン変更
 							break;
 			default:break;
@@ -130,14 +129,14 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 {
 	//ロゴシーンがまだ描画中なら
 	if (logo_scene.GetFinalScene() == false)
-	{
+	{	
 		logo_scene.Draw();
 	}
 	else//描画が完了していたら(タイトル画面の表示からの遷移)
 	{
 		//何も押していない時
 		if (title_scene.GetFinalScene() == GAME_TITLE)
-		{
+		{	
 			title_scene.Draw(app->diploidEngineScreen);
 		}
 
@@ -163,6 +162,15 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 	//DrawFormatString(100, 100, GetColor(150, 150, 150), "frame = %f", app->diploidEngineScreen.GetFrameTime());
 	//DrawFormatString(0, 200, GetColor(100, 100, 100), "scene = %d", title_scene.GetFinalScene());
 	//DrawFormatString(0, 220, GetColor(100, 100, 100), "%d", game_scene.GetOptionButtonFlag());
+}
+
+void DiploidEngineApp::CreateShadowModel(DiploidEngineApp* app)
+{
+
+}
+
+void DiploidEngineApp::CreateShadowPassiveModel(DiploidEngineApp* app)
+{
 
 }
 

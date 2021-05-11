@@ -199,6 +199,12 @@
     <Filter Include="ソース ファイル\data\novel_save_data">
       <UniqueIdentifier>{c8c066ba-c82e-45cd-9dbb-a8afb9570c8e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\ver2.0\Objects\string_image\prologue">
+      <UniqueIdentifier>{cc20f537-641e-4fd2-b794-2bf7eda18019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\string_image\prologue">
+      <UniqueIdentifier>{92027f26-94f2-4e6d-89f5-1fe1c75c568c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -464,6 +470,12 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Objects\LoadingScene.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSceneObject.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Objects\string_image\prologue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -745,6 +757,12 @@
     </ClInclude>
     <ClInclude Include="header\data\novel_save_data\novel_save_data.h">
       <Filter>ヘッダー ファイル\data\novel_save_data</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\DiploidSceneObject.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Objects\string_image\prologue</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

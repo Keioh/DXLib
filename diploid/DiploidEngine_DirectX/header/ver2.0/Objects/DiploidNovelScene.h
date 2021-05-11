@@ -6,7 +6,7 @@
 #include "DxLib.h"
 #include "ver2.0/Graphics/DiploidImageV2.h"
 #include "diploidScreen\DiploidEngineScreen.h"
-
+#include "system\DiploidEngineSetting.h"
 
 class DiploidNovelScene
 {
@@ -22,7 +22,7 @@ public:
 	void SetAlphaSpeed(int new_speed);
 
 	void Load(const char* path, std::string name);
-	void Init(VECTOR pos);
+	void Init(DiploidEngineSetting& setting, VECTOR pos);
 
 	void SetDrawName(std::string name);//名前による画像の変更。
 	void Update(DiploidEngineScreen& screen);//場面の切り替え処理
@@ -31,4 +31,6 @@ public:
 	void AlphaMax();//アルファ値を最大にします。
 
 	void NameDraw(std::string name, bool draw = true);//オブジェクトの名前を指定して描画(非推奨)
+
+	void Reset();
 };

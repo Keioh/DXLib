@@ -9,7 +9,7 @@ void GameScene::Load()
 	data_test.Load("texter/novel/date/test.png");
 	place_test.Load("texter/novel/place/test.png");
 
-	novel_scene.Load("texter/novel/clock.png", "clock");
+	novel_scene.Load("texter/novel/abandoned_road.png", "abandoned_road");
 	novel_scene.Load("texter/novel/00.png", "1");
 	novel_scene.Load("texter/novel/02.png", "2");
 
@@ -26,10 +26,15 @@ void GameScene::Load()
 	save_button.Load();
 	quick_load_button.Load();
 	quick_save_button.Load();
+
+
+	prologue.Load();
 }
 
 void GameScene::Init(DiploidEngineSetting& setting)
 {
+	prologue.Init(setting, VGet(0, 0, 0));
+
 	system_data = setting.GetSystemData();
 
 	jp.Init(setting);
@@ -44,7 +49,7 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	quick_load_button.Init(VGet(setting.GetSystemData().window_x - (64 * 6), setting.GetSystemData().window_y - 16, 0));
 	quick_save_button.Init(VGet(setting.GetSystemData().window_x - (64 * 7), setting.GetSystemData().window_y - 16, 0));
 
-	novel_scene.Init(VGet(0, 0, 0));
+	novel_scene.Init(setting, VGet(0, 0, 0));
 
 	string_back_wall.Init(VGet(0, 0, 0));
 	data_back_wall.Init(VGet(0, 0, 0));
@@ -54,12 +59,11 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	box.Init(VGet(0, 0, 0), VGet(setting.GetSystemData().window_x, setting.GetSystemData().window_y, 0), GetColor(0, 0, 0));
 	box.SetFill(true);
 
-
-	end_anime.Init(VGet(setting.GetSystemData().window_x * 0.8f, setting.GetSystemData().window_y - 64, 0), 4, 0.5f, 0.5f);
+	end_anime.Init(VGet(setting.GetSystemData().window_x - 50, setting.GetSystemData().window_y - 64, 0), 4, 0.5f, 0.5f);
 }
 
 void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
-{	
+{
 	//描画速度を設定しなおす。
 	if (jp.string[click].GetDrawSpeed() != (system_data.string_draw_speed * 50))
 	{
@@ -78,7 +82,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 		string_back_wall.SetAlpha(system_data.string_background_alpha);
 	}
 
-
+	//文字列を最後まで読み切った時にでる催促アニメーション
 	end_anime.SetAnimationSpeed(250 * screen.GetFrameTime());
 
 	//オプション機能の更新
@@ -99,33 +103,18 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 	//フェードアウト完了していたら
 	if (box_draw_flag == 1)
 	{
-		//オート機能の更新
-		auto_button.Update(input, jp.string[click].GetEnd(), screen.GetFrameTime());
-
-		//スキップ機能の更新
-		skip_button.Update(input, screen.GetFrameTime());
-
-
-		//オート機能の進めflagがtrueだったら
-		if (auto_button.GetNextFlag() == true)
+		//プロローグの表題の表示が終了していたら
+		if (prologue.GetFinish() == true)
 		{
-			if ((jp.string.size() - 1) != click)
-			{
-				jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
-				click++;//次の文
-			}
-		}
+			//オート機能の更新
+			auto_button.Update(input, jp.string[click].GetEnd(), screen.GetFrameTime());
 
-		//既読済みflagだったら
-		if (jp.string[click].GetCompleteFlag() == true)
-		{
-			//スキップ機能のflagが0だったら(選択状態なら)
-			if (skip_button.GetNextFlag() == 0)
-			{
-				jp.string[click].AllIn();//最後の文字まで表示
-				novel_scene.AlphaMax();//背景を完全表示			
-			}
-			else if (skip_button.GetNextFlag() == 1)//スキップ機能のflagが1だったら
+			//スキップ機能の更新
+			skip_button.Update(input, screen.GetFrameTime());
+
+
+			//オート機能の進めflagがtrueだったら
+			if (auto_button.GetNextFlag() == true)
 			{
 				if ((jp.string.size() - 1) != click)
 				{
@@ -133,83 +122,112 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 					click++;//次の文
 				}
 			}
-		}
 
-		//スキップボタンにカーソルがクリックされ、かつ選択状態なら
-		if (skip_button.GetClick() == true)
-		{
-			if (skip_button.GetSelected() == 1)
+			//既読済みflagだったら
+			if (jp.string[click].GetCompleteFlag() == true)
 			{
-				auto_button.SetSelected(-1);//オートボタンの選択状態を解除
+				//スキップ機能のflagが0だったら(選択状態なら)
+				if (skip_button.GetNextFlag() == 0)
+				{
+					jp.string[click].AllIn();//最後の文字まで表示
+					novel_scene.AlphaMax();//背景を完全表示			
+				}
+				else if (skip_button.GetNextFlag() == 1)//スキップ機能のflagが1だったら
+				{
+					if ((jp.string.size() - 1) != click)
+					{
+						jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
+						click++;//次の文
+					}
+				}
 			}
-		}
 
-		//オートボタンにカーソルがクリックされ、かつ選択状態なら
-		if (auto_button.GetClick() == true)
-		{
-			if (auto_button.GetSelected() == 1)
+			//スキップボタンにカーソルがクリックされ、かつ選択状態なら
+			if (skip_button.GetClick() == true)
 			{
-				skip_button.SetSelected(-1);//スキップボタンの選択状態を解除
-			}
-		}
-
-		//オプションボタンにカーソルが合わさっていてクリックされたなら
-		if ((option_button.GetHit() == true) && (option_button.GetClick() == true))
-		{
-			option_button.SetSelected(1);//オプションボタンの選択状態を維持
-			box_draw_flag = 2;//フェードアウトフラグを立てる
-		}
-
-		//ロードボタンにカーソルが合わさっていてクリックされたなら
-		if ((load_button.GetHit() == true) && (load_button.GetClick() == true))
-		{
-			is_save_or_load = GAME_LOAD;//ロード画面へ行くフラグを立てる
-			load_button.SetSelected(1);//オプションボタンの選択状態を維持
-			box_draw_flag = 2;//フェードアウトフラグを立てる
-		}
-
-		//セーブボタンにカーソルが合わさっていてクリックされたなら
-		if ((save_button.GetHit() == true) && (save_button.GetClick() == true))
-		{
-			is_save_or_load = GAME_SAVE;//セーブ画面へ行くフラグを立てる
-			save_button.SetSelected(1);//オプションボタンの選択状態を維持
-			box_draw_flag = 2;//フェードアウトフラグを立てる
-		}
-
-
-
-		//全てのUIからカーソルが離れているとき
-		if ((auto_button.GetHit() == false) && (skip_button.GetHit() == false) && (option_button.GetHit() == false)
-			&& (load_button.GetHit() == false) && (save_button.GetHit() == false) && (quick_load_button.GetHit() == false) && (quick_save_button.GetHit() == false))
-		{
-			//左クリックしたとき
-			if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
-			{
-				//スキップがオンならオフにする。
 				if (skip_button.GetSelected() == 1)
 				{
-					skip_button.SetSelected(-1);
+					auto_button.SetSelected(-1);//オートボタンの選択状態を解除
 				}
-				else//スキップがオフなら
+			}
+
+			//オートボタンにカーソルがクリックされ、かつ選択状態なら
+			if (auto_button.GetClick() == true)
+			{
+				if (auto_button.GetSelected() == 1)
 				{
-					if (jp.string[click].GetEnd() == 0)//最後まで表示されていなかったら
+					skip_button.SetSelected(-1);//スキップボタンの選択状態を解除
+				}
+			}
+
+			//オプションボタンにカーソルが合わさっていてクリックされたなら
+			if ((option_button.GetHit() == true) && (option_button.GetClick() == true))
+			{
+				option_button.SetSelected(1);//オプションボタンの選択状態を維持
+				box_draw_flag = 2;//フェードアウトフラグを立てる
+			}
+
+			//ロードボタンにカーソルが合わさっていてクリックされたなら
+			if ((load_button.GetHit() == true) && (load_button.GetClick() == true))
+			{
+				is_save_or_load = GAME_LOAD;//ロード画面へ行くフラグを立てる
+				load_button.SetSelected(1);//オプションボタンの選択状態を維持
+				box_draw_flag = 2;//フェードアウトフラグを立てる
+			}
+
+			//セーブボタンにカーソルが合わさっていてクリックされたなら
+			if ((save_button.GetHit() == true) && (save_button.GetClick() == true))
+			{
+				is_save_or_load = GAME_SAVE;//セーブ画面へ行くフラグを立てる
+				save_button.SetSelected(1);//オプションボタンの選択状態を維持
+				box_draw_flag = 2;//フェードアウトフラグを立てる
+			}
+
+
+			//全てのUIからカーソルが離れているとき
+			if ((auto_button.GetHit() == false) && (skip_button.GetHit() == false) && (option_button.GetHit() == false)
+				&& (load_button.GetHit() == false) && (save_button.GetHit() == false) && (quick_load_button.GetHit() == false) && (quick_save_button.GetHit() == false))
+			{
+				//左クリックしたとき
+				if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
+				{
+					//スキップがオンならオフにする。
+					if (skip_button.GetSelected() == 1)
 					{
-						jp.string[click].AllIn();//最後の文字まで表示
-						novel_scene.AlphaMax();//背景を完全表示
+						skip_button.SetSelected(-1);
 					}
-					else
+					else//スキップがオフなら
 					{
-						if ((jp.string.size() - 1) != click)
+						if (jp.string[click].GetEnd() == 0)//最後まで表示されていなかったら
 						{
-							jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
-							click++;//次の文を表示
+							jp.string[click].AllIn();//最後の文字まで表示
+							novel_scene.AlphaMax();//背景を完全表示
+						}
+						else
+						{
+							if ((jp.string.size() - 1) != click)
+							{
+								jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
+								click++;//次の文を表示
+							}
 						}
 					}
 				}
 			}
+
 		}
 	}
 
+	if (prologue.GetFinish() == false)
+	{
+		//プロローグ表題の更新
+		prologue.Updata();
+
+		if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
+		{
+			prologue.NextAnimation();
+		}
+	}
 
 	//場面の切り替え
 	novel_scene.SetDrawName(jp.string[click].GetSceneName());
@@ -242,54 +260,65 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 
 void GameScene::Draw(DiploidEngineScreen& screen)
 {
-	//背景の描画
-	novel_scene.Draw();
-
 	//data_back_wall.Draw();
 	//data_test.Draw();
 	//place_test.Draw();
 
 	//screen_graphics.Draw(0.1f);
 
-	//文字表示の背景の描画
-	string_back_wall.Draw();
+			//背景の描画
+	novel_scene.Draw();
 
-	//フェードアウトが完了したら
+	//フェードアウトが完了したら(かつプロローグの表題が完了していたら)
 	if (box_draw_flag == 1)
 	{
-		jp.string[click].Draw(screen.GetFrameTime());//文字の描画
+		if (prologue.GetFinish() == true)
+		{
+			//文字表示の背景の描画
+			string_back_wall.Draw();
+
+			//文字列の描画
+			jp.string[click].Draw(screen.GetFrameTime());
+
+			//文が最後まで描画されていたら
+			if (jp.string[click].GetEnd() == 1)
+			{
+				end_anime.StackDraw();//完了アイコンのアニメを描画
+			}
+			else
+			{
+				end_anime.Reset();//完了アイコンのアニメを最初からに設定
+			}
+
+			//オートボタンの描画
+			auto_button.Draw(screen.GetFrameTime());
+
+			//スキップボタンの描画
+			skip_button.Draw(screen.GetFrameTime());
+
+			//オプションボタンの描画
+			option_button.Draw(screen.GetFrameTime());
+
+			//ロードボタンの描画
+			load_button.Draw(screen.GetFrameTime());
+
+			//セーブボタンの描画
+			save_button.Draw(screen.GetFrameTime());
+
+			//クイックロードボタンの描画
+			quick_load_button.Draw(screen.GetFrameTime());
+
+			//クイックセーブボタンの描画
+			quick_save_button.Draw(screen.GetFrameTime());
+		}
 	}
 
-	//文が最後まで描画されていたら
-	if (jp.string[click].GetEnd() == 1)
+	if (prologue.GetFinish() == false)
 	{
-		end_anime.StackDraw();//完了アイコンのアニメを描画
-	}
-	else
-	{
-		end_anime.Reset();//完了アイコンのアニメを最初からに設定
+			//プロローグの表示が完了していないなら
+			prologue.Draw();//表示	
 	}
 
-	//オートボタンの描画
-	auto_button.Draw(screen.GetFrameTime());
-
-	//スキップボタンの描画
-	skip_button.Draw(screen.GetFrameTime());
-
-	//オプションボタンの描画
-	option_button.Draw(screen.GetFrameTime());
-
-	//ロードボタンの描画
-	load_button.Draw(screen.GetFrameTime());
-
-	//セーブボタンの描画
-	save_button.Draw(screen.GetFrameTime());
-
-	//クイックロードボタンの描画
-	quick_load_button.Draw(screen.GetFrameTime());
-
-	//クイックセーブボタンの描画
-	quick_save_button.Draw(screen.GetFrameTime());
 
 
 	//フェードアウト用BOX
@@ -298,7 +327,7 @@ void GameScene::Draw(DiploidEngineScreen& screen)
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 
 
-	//DrawFormatString(0, 0, GetColor(255, 255, 255), "speed = %f", (float)system_data.string_auto_speed * 0.8f);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "alpha = %d", alpha);
 }
 
 void GameScene::Reset()
@@ -315,10 +344,12 @@ void GameScene::Reset()
 	//ロードかセーブかのフラグをリセット
 	is_save_or_load = GAME_LOAD;
 
-
 	//文字列データを最初からにする
 	click = 0;
 	jp.Reset();
+
+	//プロローグのグラフィックをリセット
+	prologue.Reset();
 }
 
 

@@ -24,9 +24,14 @@
 
 #include "data/text_data/ja.h"
 
+#include "ver2.0/Objects/string_image/novel/prologue/prologue_string_image.h"
+
 class GameScene
 {
 private:
+	PrologueStringImage prologue;
+
+
 	DiploidScreenGraphics screen_graphics;//モザイク処理とか
 
 	AutoNovel auto_button;//オートボタン

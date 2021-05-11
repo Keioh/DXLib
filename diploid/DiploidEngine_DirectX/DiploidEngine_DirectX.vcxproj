@@ -219,6 +219,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidAnimation.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidNovelScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSceneObject.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSlider.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\DiploidSliderObject.cpp" />
@@ -228,6 +229,7 @@
     <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\OptionScene.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\load\load_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\display_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\game_play_string_image.cpp" />
     <ClCompile Include="cpp\ver2.0\Objects\string_image\option\option_string_image.cpp" />
@@ -314,6 +316,7 @@
     <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidAnimation.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidNovelScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidSceneObject.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSlider.h" />
     <ClInclude Include="header\ver2.0\Objects\DiploidSliderObject.h" />
@@ -323,6 +326,7 @@
     <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
     <ClInclude Include="header\ver2.0\Objects\OptionScene.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\load\load_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\display_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\game_play_string_image.h" />
     <ClInclude Include="header\ver2.0\Objects\string_image\option\option_string_image.h" />

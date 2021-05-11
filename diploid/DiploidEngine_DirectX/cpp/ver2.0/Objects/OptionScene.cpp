@@ -171,7 +171,8 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 
 	save_button.Update(input);//保存ボタンの更新処理
 
-	if ((save_button.GetClick() == true) && (save_button.GetHit() == true))//保存ボタンを押したとき
+	//保存ボタンを押したとき
+	if ((save_button.GetClick() == true) && (save_button.GetHit() == true))
 	{
 		//ウィンドウサイズ960_540が選択状態なら
 		if (window_resize_button_960_540.GetSelected() == 1)
@@ -210,10 +211,11 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 		system_data.string_background_alpha = background_alpha;
 
 		//ファイルに書き込む(settingを書き込んでいる項目はこのオプション内で変更が無かった項目)
-		file.WriteOpen("data/system_config.txt");
+		file.WriteOpen("data/system_config.txt");//ファイルを開く
 
 		if (file.GetFileOutAdr())
 		{
+			//ウィンドウ設定関連
 			file.SetLine("window_x", system_data.window_x);
 			file.SetLine("window_y", system_data.window_y);
 			file.SetLine("simulation_window_x", setting.GetSystemData().simulation_window_x);
@@ -222,12 +224,25 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 			file.SetLine("window_mode", setting.GetSystemData().window_mode);
 			file.SetLine("vsync", setting.GetSystemData().vsync);
 
+			//シャドウマップ関連
+			file.SetLine("shadow_map", setting.GetSystemData().shadow_map);
+			file.SetLine("shadow_map_size_x", setting.GetSystemData().shadow_map_size_x);
+			file.SetLine("shadow_map_size_y", setting.GetSystemData().shadow_map_size_y);
+			file.SetLine("shadow_map_min_area_x", setting.GetSystemData().shadow_map_min_area_x);
+			file.SetLine("shadow_map_min_area_y", setting.GetSystemData().shadow_map_min_area_y);
+			file.SetLine("shadow_map_min_area_z", setting.GetSystemData().shadow_map_min_area_z);
+			file.SetLine("shadow_map_max_area_x", setting.GetSystemData().shadow_map_max_area_x);
+			file.SetLine("shadow_map_max_area_y", setting.GetSystemData().shadow_map_max_area_y);
+			file.SetLine("shadow_map_max_area_z", setting.GetSystemData().shadow_map_max_area_z);
+
+
+			//文字描画関連
 			file.SetLine("string_draw_speed", system_data.string_draw_speed);
 			file.SetLine("string_auto_speed", system_data.string_auto_speed);
 			file.SetLine("string_background_alpha", system_data.string_background_alpha);
 		}
 
-		file.FileOutClose();
+		file.FileOutClose();//ファイルを閉じる
 	}
 
 
@@ -282,9 +297,9 @@ void OptionScene::Updata(DiploidEngineInput& input, DiploidEngineSetting& settin
 			window_resize_button_1920_1080.Init(VGet(window_resize_button_position_x, window_resize_button_position_y + ((32 + 4) * 4), 0), setting);
 
 			//文字描画速度とオート速度を保存した設定に戻す。
-			text_speed_auto_setting_ui.SetParameterDrawSpeed(draw_speed);//文字描画速度
-			text_speed_auto_setting_ui.SetParameterAutoSpeed(auto_speed);//オート速度
-			text_speed_auto_setting_ui.SetParameterBackGroundAlpha(background_alpha);//透過度
+			text_speed_auto_setting_ui.SetParameterDrawSpeed(system_data.string_draw_speed);//文字描画速度
+			text_speed_auto_setting_ui.SetParameterAutoSpeed(system_data.string_auto_speed);//オート速度
+			text_speed_auto_setting_ui.SetParameterBackGroundAlpha(system_data.string_background_alpha);//透過度
 
 			title_button.SetSelectedFlag(1);//選択状態を1を維持
 			box_draw_flag = 2;//フェードインを始める
@@ -374,7 +389,6 @@ void OptionScene::Draw(DiploidEngineScreen& screen, bool draw, bool debug)
 	//DrawFormatString(300, 80, GetColor(0, 0, 0), "%d", window_resize_button_960_540.GetClick());
 	//DrawFormatString(300, 100, GetColor(0, 0, 0), "%f", test.GetParameter().x);
 	//DrawFormatString(3000, 120, GetColor(0, 0, 0), "%f", (float)system_data.string_auto_speed * 0.8f);
-
 }
 
 

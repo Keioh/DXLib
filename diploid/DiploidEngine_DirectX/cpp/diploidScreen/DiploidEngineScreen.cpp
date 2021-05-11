@@ -2,11 +2,9 @@
 
 void DiploidEngineScreen::FrameCountStart()
 {
-
 	if (deltatime_frame_count == 0)//1ƒtƒŒ[ƒ€–Ú‚È‚ç‚ğ‹L‰¯
 	{
 		deltatime_start = GetNowCount();
-
 	}
 
 	deltatime_frame_count++;

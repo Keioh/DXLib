@@ -5,7 +5,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	//システムセーブファイルを開く
 	file.ReadOpen("data/system_config.txt");
 	
-	while (file.GetFileInAdr())
+	while ((file.GetFileInAdr()) && (ProcessMessage() == 0))
 	{
 		string_data.push_back(file.GetLine());
 	}
@@ -21,6 +21,18 @@ DiploidEngineSetting::DiploidEngineSetting()
 	system_data.vsync = translate.FindDataBool(string_data, "vsync");
 	system_data.simulation_window_x = translate.FindDataInt(string_data, "simulation_window_x");
 	system_data.simulation_window_y = translate.FindDataInt(string_data, "simulation_window_y");
+
+	//シャドウマップ関連
+	system_data.shadow_map = translate.FindDataBool(string_data, "shadow_map");
+	system_data.shadow_map_size_x = translate.FindDataInt(string_data, "shadow_map_size_x");
+	system_data.shadow_map_size_y = translate.FindDataInt(string_data, "shadow_map_size_y");
+	system_data.shadow_map_min_area_x = translate.FindDataFloat(string_data, "shadow_map_min_area_x");
+	system_data.shadow_map_min_area_y = translate.FindDataFloat(string_data, "shadow_map_min_area_y");
+	system_data.shadow_map_min_area_z = translate.FindDataFloat(string_data, "shadow_map_min_area_z");
+	system_data.shadow_map_max_area_x = translate.FindDataFloat(string_data, "shadow_map_max_area_x");
+	system_data.shadow_map_max_area_y = translate.FindDataFloat(string_data, "shadow_map_max_area_y");
+	system_data.shadow_map_max_area_z = translate.FindDataFloat(string_data, "shadow_map_max_area_z");
+
 
 	//game設定関連
 	system_data.string_draw_speed = translate.FindDataInt(string_data, "string_draw_speed");
@@ -91,8 +103,12 @@ void DiploidEngineSetting::SetEnd()
 	//SetDrawScreen(screen_handle);//裏画面処理をオン
 
 	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
-	SetCameraNearFar(0.1f, 10000.0f);
 	SetMouseDispFlag(TRUE);//マウスカーソルの表示
+
+	//3D関連
+	SetCameraNearFar(100.0f, 10000.0f);
+	SetupCamera_Perspective(1.054f);
+	ChangeLightTypePoint(VGet(1100.851f, 300.4314f, 1500.125f), 2000.0f, 0.0f, 0.0005f, 0.0f);
 }
 
 void DiploidEngineSetting::End()
@@ -108,6 +124,11 @@ void DiploidEngineSetting::Updata()
 	if ((buffer_window_x != system_data.window_x) || (buffer_window_y != system_data.window_y))
 	{
 		SetGraphMode(system_data.window_x, system_data.window_y, window_bit, system_data.refreshrate);//解像度変更
+
+		//3D関係の設定
+		SetCameraNearFar(100.0f, 10000.0f);
+		SetupCamera_Perspective(1.054f);
+		ChangeLightTypePoint(VGet(1100.851f, 300.4314f, 1500.125f), 2000.0f, 0.0f, 0.0005f, 0.0f);
 
 		reload = true;
 	}

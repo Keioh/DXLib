@@ -13,13 +13,14 @@ void DiploidNovelScene::Load(const char* path, std::string name)
 
 }
 
-void DiploidNovelScene::Init(VECTOR pos)
+void DiploidNovelScene::Init(DiploidEngineSetting& setting, VECTOR pos)
 {
 	if (!image_map.empty())
 	{
 		for (auto itr = image_map.begin(); itr != image_map.end(); ++itr)
 		{
 			itr->second.Init(pos);
+			itr->second.SetScale(setting.GetSystemData().window_x / itr->second.GetSize().x, setting.GetSystemData().window_y / itr->second.GetSize().y);
 		}
 	}
 }
@@ -139,6 +140,18 @@ void DiploidNovelScene::AlphaMax()
 		if (obj_itr->second.GetActiveFlag() == false)
 		{
 			map_alpha[obj_itr->second.GetName()] = 0;
+		}
+	}
+}
+
+void DiploidNovelScene::Reset()
+{
+	//MAP˜A‘z”z—ñ‚ª‹ó‚Å‚È‚¢‚Æ‚«
+	if (!image_map.empty())
+	{
+		for (auto obj_itr = image_map.begin(); obj_itr != image_map.end(); ++obj_itr)
+		{
+			map_alpha[obj_itr->second.GetName()] = 255;
 		}
 	}
 }

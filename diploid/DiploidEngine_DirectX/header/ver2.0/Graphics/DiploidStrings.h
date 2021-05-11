@@ -9,7 +9,7 @@ class DiploidStrings
 {
 private:
 	char string[512];//出力用
-	char load_string[512];//読み込み用
+	char load_string[524];//読み込み用
 
 	char font_name;
 	int size;
@@ -33,6 +33,7 @@ private:
 
 	std::string scene_number;
 
+	bool new_line_flag = true;
 
 public:
 
@@ -59,4 +60,7 @@ public:
 	void SetColor(unsigned int new_color);//新しく文字の色を設定します。
 
 	void Draw(float frame_time = 1.0f);//Load関数で読み込んだ文字列を表示する。(1行512文字)
+
+	void Draw(int width, float frame_time = 1.0f);//Load関数で読み込んだ文字列を表示する。(1行512文字)(表示幅指定版)
+
 };
