@@ -40,7 +40,7 @@ void PrologueStringImage::Init(DiploidEngineSetting& setting, VECTOR pos)
 
 }
 
-void PrologueStringImage::Updata()
+void PrologueStringImage::Updata(DiploidEngineScreen& screen)
 {
 	for (int count = 0; count != 13; count++)
 	{
@@ -53,10 +53,10 @@ void PrologueStringImage::Updata()
 	if (fead_flag == false)
 	{
 		zyo_images.SetAlpha(string_alpha[10]);
-		string_alpha[10] += alpha_speed / 2;
+		string_alpha[10] += (alpha_speed / 2) * screen.GetFrameTime();
 
 		prologue_images.SetAlpha(string_alpha[11]);
-		string_alpha[11] += alpha_speed / 2;
+		string_alpha[11] += (alpha_speed / 2) * screen.GetFrameTime();
 
 		black_back_images.SetAlpha(string_alpha[12]);
 		string_alpha[12] = 255;
@@ -64,56 +64,56 @@ void PrologueStringImage::Updata()
 
 		if (string_alpha[11] >= 255)
 		{
-			string_alpha[0] += alpha_speed;
+			string_alpha[0] += alpha_speed * screen.GetFrameTime();
 
 			if (string_alpha[0] > 100)
 			{
-				string_alpha[1] += alpha_speed * 2;
+				string_alpha[1] += (alpha_speed * 2) * screen.GetFrameTime();
 			}
 
 			if (string_alpha[1] > 100)
 			{
-				string_alpha[2] += alpha_speed * 2;
+				string_alpha[2] += (alpha_speed * 2) * screen.GetFrameTime();
 			}
 
 			if (string_alpha[2] > 100)
 			{
-				string_alpha[3] += alpha_speed * 2;
+				string_alpha[3] += (alpha_speed * 2) * screen.GetFrameTime();
 			}
 
 			if (string_alpha[3] > 100)
 			{
-				string_alpha[4] += alpha_speed * 2;
+				string_alpha[4] += (alpha_speed * 2) * screen.GetFrameTime();
 
 			}
 
 			if (string_alpha[4] > 100)
 			{
-				string_alpha[5] += alpha_speed * 2;
+				string_alpha[5] += (alpha_speed * 2) * screen.GetFrameTime();
 
 			}
 
 			if (string_alpha[5] > 100)
 			{
-				string_alpha[6] += alpha_speed * 2;
+				string_alpha[6] += (alpha_speed * 2) * screen.GetFrameTime();
 
 			}
 
 			if (string_alpha[6] > 100)
 			{
-				string_alpha[7] += alpha_speed * 2;
+				string_alpha[7] += (alpha_speed * 2) * screen.GetFrameTime();
 
 			}
 
 			if (string_alpha[7] > 100)
 			{
-				string_alpha[8] += alpha_speed * 2;
+				string_alpha[8] += (alpha_speed * 2) * screen.GetFrameTime();
 
 			}
 
 			if (string_alpha[8] > 100)
 			{
-				string_alpha[9] += alpha_speed * 2;
+				string_alpha[9] += (alpha_speed * 2) * screen.GetFrameTime();
 			}
 
 			//フェードアウトフラグを立てる
@@ -129,14 +129,14 @@ void PrologueStringImage::Updata()
 		{
 			for (int count = 0; count != 12; count++)
 			{
-				string_alpha[count] -= alpha_speed;
+				string_alpha[count] -= alpha_speed * screen.GetFrameTime();
 			}
 
 			//string_alpha[11]のアルファ値が０以下だったら
 			if (string_alpha[11] <= 0)
 			{
 				//string_alpha[12]のアルファ値を減らす
-				string_alpha[12] -= alpha_speed;
+				string_alpha[12] -= alpha_speed * screen.GetFrameTime();
 			}
 
 			//アルファ値が0以下だったらfinishフラグを立てる
@@ -147,7 +147,7 @@ void PrologueStringImage::Updata()
 		}
 		else
 		{
-			fead_count++;//カウントを進める
+			fead_count += 100 * screen.GetFrameTime();//カウントを進める
 		}
 	}
 }

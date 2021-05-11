@@ -27,7 +27,6 @@ void GameScene::Load()
 	quick_load_button.Load();
 	quick_save_button.Load();
 
-
 	prologue.Load();
 }
 
@@ -52,6 +51,8 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	novel_scene.Init(setting, VGet(0, 0, 0));
 
 	string_back_wall.Init(VGet(0, 0, 0));
+	string_back_wall.SetScale(setting.GetSystemData().window_x / string_back_wall.GetSize().x, setting.GetSystemData().window_y / string_back_wall.GetSize().y);
+
 	data_back_wall.Init(VGet(0, 0, 0));
 	data_test.Init(VGet(0, 0, 0));
 	place_test.Init(VGet(0, 0, 0));
@@ -221,7 +222,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 	if (prologue.GetFinish() == false)
 	{
 		//プロローグ表題の更新
-		prologue.Updata();
+		prologue.Updata(screen);
 
 		if (input.GetPressMouse(MOUSE_INPUT_LEFT) == true)
 		{
