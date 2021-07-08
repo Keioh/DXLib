@@ -68,6 +68,7 @@ void DiploidEngineScreen::Wait()
 
 	if (waitTime > 0) 
 	{
-		Sleep(waitTime);	//‘Ò‹@
+		//Sleep(waitTime);	//‘Ò‹@
+		WaitTimer(waitTime);
 	}
 }

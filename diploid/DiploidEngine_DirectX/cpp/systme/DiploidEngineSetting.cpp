@@ -5,7 +5,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	//システムセーブファイルを開く
 	file.ReadOpen("data/system_config.txt");
 	
-	while ((file.GetFileInAdr()) && (ProcessMessage() == 0))
+	while ((ProcessMessage() == 0) && (file.GetFileInAdr()))
 	{
 		string_data.push_back(file.GetLine());
 	}
