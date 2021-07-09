@@ -13,6 +13,9 @@ void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 
 void DiploidEngineApp::Load(DiploidEngineApp* app)
 {		
+	test.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	test.Create("なぜ自分はここにいるのか、どうやって来たのか、定かではない。ただ一つ、確かなことは目の前にいる少女の言葉に耳を傾ける事だけだった。");
+
 	logo_scene.Load();
 	title_scene.Load();
 	game_scene.Load();
@@ -21,12 +24,13 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 }
 
 void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
-{	
-	test.Load("あいうえお");
+{		
 }
 
 void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
+	test.Init(100, 100);
+
 	logo_scene.Init();
 	title_scene.Init(app->diploidEngineSetting);
 	game_scene.Init(app->diploidEngineSetting);
