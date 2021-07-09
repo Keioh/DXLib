@@ -477,6 +477,9 @@
     <ClCompile Include="cpp\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Objects\string_image\prologue</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidStringV2.cpp">
+      <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -763,6 +766,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Objects\string_image\prologue</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ver2.0\Graphics\DiploidStringV2.h">
+      <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

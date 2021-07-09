@@ -13,6 +13,7 @@ private:
 	std::ifstream file_in;//読み込み用
 	std::ofstream file_out;//書き込み用
 
+
 public:
 
 	//ファイル読み込み時にファイルが無かった場合、自動的に作成されます。

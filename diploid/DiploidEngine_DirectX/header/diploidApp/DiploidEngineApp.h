@@ -32,6 +32,10 @@
 #include "ver2.0/Objects/OptionScene.h"
 #include "ver2.0/Objects/FileScene.h"
 
+//test
+#include "ver2.0/Graphics/DiploidStringV2.h"
+
+
 using namespace std;
 
 class DiploidEngineApp : public DiploidEngineMain
@@ -42,6 +46,8 @@ private:
 	GameScene game_scene;
 	OptionScene option_scene;
 	FileScene file_scene;
+
+	DiploidStringV2  test;
 
 public:
 	void FileCreate(DiploidEngineApp* app);
