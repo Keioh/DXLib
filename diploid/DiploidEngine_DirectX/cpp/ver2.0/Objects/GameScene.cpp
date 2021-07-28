@@ -117,7 +117,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 			//オート機能の進めflagがtrueだったら
 			if (auto_button.GetNextFlag() == true)
 			{
-				if ((jp.string.size() - 1) != click)
+				if ((jp.size() - 1) != click)
 				{
 					jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
 					click++;//次の文
@@ -135,9 +135,9 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				}
 				else if (skip_button.GetNextFlag() == 1)//スキップ機能のflagが1だったら
 				{
-					if ((jp.string.size() - 1) != click)
+					if ((jp.size() - 1) != click)
 					{
-						jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
+						//jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
 						click++;//次の文
 					}
 				}
@@ -206,7 +206,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 						}
 						else
 						{
-							if ((jp.string.size() - 1) != click)
+							if ((jp.size() - 1) != click)
 							{
 								jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
 								click++;//次の文を表示

@@ -42,6 +42,7 @@ void TitleScene::Init(DiploidEngineSetting& setting)
 	exit_string.SetSpeed(5000);
 
 	//‰æ–Ê‚Ì‘å‚«‚³‚É‡‚í‚¹‚é
+	test_back.Init(VGet(0, 0, 0));
 	test_back.SetScale((float)setting.GetSystemData().window_x / test_back.GetSize().x, (float)setting.GetSystemData().window_y / test_back.GetSize().y);
 }
 

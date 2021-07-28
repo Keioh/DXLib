@@ -7,7 +7,7 @@
 #include "system\DiploidEngineSetting.h"
 #include "ver2.0/Graphics/DiploidScreenGraphics.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
-#include "ver2.0/Graphics/DiploidStrings.h"
+#include "ver2.0/Graphics/DiploidStringV2.h"
 #include "system/define.h"
 #include "ver2.0/Objects/DiploidAnimation.h"
 #include "ver2.0/Objects/DiploidNovelScene.h"

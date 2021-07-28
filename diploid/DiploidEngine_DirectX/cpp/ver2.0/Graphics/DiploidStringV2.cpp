@@ -114,6 +114,9 @@ void DiploidStringV2::Create(std::string str)
 
 		//string変換後の一文字データをプッシュ
 		character.at(0).push_back(non_wide_string_data);
+
+		//アルファ値のプッシュ
+		alpha.push_back(0);
 	}
 
 	wide_character.clear();
@@ -157,12 +160,51 @@ void DiploidStringV2::Draw(float frame_time)
 
 	if (!character.empty())
 	{
+		//文字のアルファ処理
+		for (int count = 0; count != alpha.size(); count++)
+		{
+			alpha.at(0) += next_speed * frame_time;
+
+			if (alpha.at(count) > (255 / 2))
+			{
+				if ((count + 1) >= alpha.size())
+				{
+					alpha.at(count) += next_speed * frame_time;
+				}
+				else
+				{
+					alpha.at(count + 1) += next_speed * frame_time;
+				}
+			}
+
+			//数値の上下限設定
+			if (alpha.at(count) > 255)
+			{
+				alpha.at(count) = 255;
+			}
+
+			if (alpha.at(count) < 0)
+			{
+				alpha.at(count) = 0;
+			}
+		}
+
+		//文字の表示
 		for (int count = 0; count != character.at(0).size(); count++)
 		{
 			width = GetDrawStringWidthToHandle(character.at(0).at(0).c_str(), strlen(character.at(0).at(count).c_str()), font_handle) + width;
 
+			SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha.at(count));
 			DrawStringToHandle(master_position.x + width, master_position.y, character.at(0).at(count).c_str(), GetColor(200, 200, 200), font_handle);
+			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
+		}
+
+		//描画終わりのフラグ処理
+		if (alpha.at(alpha.size() - 1) >= 255)
+		{
+			end_flag = 1;
+			complete = true;
 		}
 	}
 
@@ -171,7 +213,84 @@ void DiploidStringV2::Draw(float frame_time)
 
 void DiploidStringV2::Clear()
 {
-	character.clear();
-	wide_character.clear();
-	string_data.clear();
+	if (!character.empty())
+	{
+		character.clear();
+	}
+
+	if (!wide_character.empty())
+	{
+		wide_character.clear();
+	}
+
+	if (!string_data.empty())
+	{
+		string_data.clear();
+	}
+
+	if (!alpha.empty())
+	{
+		alpha.clear();
+	}
+}
+
+
+std::string DiploidStringV2::GetSceneName()
+{
+	return scene_number;
+}
+
+void DiploidStringV2::SetSceneName(std::string name)
+{
+	scene_number = name;
+}
+
+void DiploidStringV2::SetColor(unsigned int new_color)
+{
+	color = new_color;
+}
+
+float DiploidStringV2::GetDrawSpeed()
+{
+	return next_speed;
+}
+
+void DiploidStringV2::SetSpeed(float speed)
+{
+	next_speed = speed;
+}
+
+void DiploidStringV2::AllIn()
+{
+	for (int count = 0; count != alpha.size(); count++)
+	{
+		alpha.at(count) = 255;
+	}
+
+	end_flag = 1;
+}
+
+bool DiploidStringV2::GetCompleteFlag()
+{
+	return complete;
+}
+
+void DiploidStringV2::SetCompleteFlag(bool new_flag)
+{
+	complete = new_flag;
+}
+
+void DiploidStringV2::Reset()
+{
+	for (int count = 0; count != alpha.size(); count++)
+	{
+		alpha.at(count) = 0;
+	}
+
+	end_flag = 0;
+}
+
+int DiploidStringV2::GetEnd()
+{
+	return end_flag;
 }

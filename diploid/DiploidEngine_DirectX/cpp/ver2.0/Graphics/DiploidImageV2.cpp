@@ -22,6 +22,13 @@ void DiploidImageV2::Load(const char* path)
 
 void DiploidImageV2::Init(VECTOR pos, bool shift_flag)
 {
+	//GetGraphSize(graphics_handl, &graphics_x, &graphics_y);
+
+	//‰æ‘œ‚Ì‘å‚«‚³‚ğ•Û‘¶
+	//graphics_size.x = graphics_x;
+	//graphics_size.y = graphics_y;
+
+
 	if (shift_flag == true)//‰æ‘œ‚Ì’†S‚É‡‚í‚¹‚½•`‰æ‚Ì
 	{
 		position.x = pos.x - (graphics_x / 2);

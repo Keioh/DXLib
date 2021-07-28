@@ -4,8 +4,12 @@
 
 #include "diploidInput\DiploidEnigneFile.h"
 
+#include "ver2.0/Graphics/DiploidStringV2.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
+
 #include "system\DiploidEngineSetting.h"
+
+#define STRING_DATA_LINE 256
 
 class ja_text
 {
@@ -14,23 +18,28 @@ private:
 
 	//DiploidEngineSetting setting;
 
-	DiploidStrings font;
-	DiploidStrings data[256];
+	DiploidStringV2 font;
+	DiploidStringV2 base_data;
+
+	std::string data;
 
 	float x_scale = 0.225f;
 	float y_scale = 22 * 6;//暫定：文字サイズ*行数
 
 	int file_handle;
-	char string_data[512];
+	//char string_data[512];
 
-	int string_data_line = 256;//読み込みデータの総行数
+	int string_data_line = STRING_DATA_LINE;//読み込みデータの総行数
+	//int string_size = 10;
 
-public:
+public:	
+	DiploidStringV2 string[STRING_DATA_LINE];
+
 	void Load();
 	void Init(DiploidEngineSetting& setting);
 
 	void SetSpeed(int new_speed);
 	void Reset();
 
-	std::vector<DiploidStrings> string;
+	int size();//読み込みデータの総行数
 };
