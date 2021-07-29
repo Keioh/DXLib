@@ -26,7 +26,8 @@ void ja_text::Init(DiploidEngineSetting& setting)
 	{
 		for (int count = 0; count != string_data_line; count++)
 		{
-			string[count].Init(setting.GetSystemData().window_x * x_scale, setting.GetSystemData().window_y - y_scale, font.GetHandle());
+			string[count].Init(setting.GetSystemData().window_x * x_scale, setting.GetSystemData().window_y - y_scale, font.GetFontInfo());
+			string[count].SetWidth(720);//•\¦•‚ğİ’èB
 		}
 	}
 }

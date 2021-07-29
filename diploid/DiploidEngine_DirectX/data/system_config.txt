@@ -14,6 +14,6 @@ shadow_map_min_area_z=-1000
 shadow_map_max_area_x=1000
 shadow_map_max_area_y=1000
 shadow_map_max_area_z=1000
-string_draw_speed=50
+string_draw_speed=35
 string_auto_speed=35
 string_background_alpha=200

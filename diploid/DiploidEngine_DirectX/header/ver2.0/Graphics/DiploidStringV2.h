@@ -1,11 +1,21 @@
 #pragma once
 #include <string>
 #include <vector>
+//#include <climits>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
 #include "diploidScreen\DiploidEngineScreen.h"
 #include "diploidInput\DiploidEnigneFile.h"
 
+
+struct FONT_INFO
+{
+	int font_handle;
+	char font_name[32];
+	int size;
+	int thick;
+
+};
 
 class DiploidStringV2
 {
@@ -30,9 +40,14 @@ private:
 	int font_handle;
 
 	unsigned int color = GetColor(255, 255, 255);//文字の色
-	char font_name;
+	char font_name[32];
 	int size;
 	int thick;
+
+	//int string_width;//文字列の長さ(可変)
+	//int string_height;//文字列の高さ(可変)
+
+	int _width;//標示幅の値の保存用
 
 	std::string scene_number;
 
@@ -45,7 +60,11 @@ public:
 	void Create(std::string str);//テキストから描画用データの作成。
 	void Init(float x, float y, int new_font_handle);
 	void Init(float x, float y);
+	void Init(float x, float y, FONT_INFO font_info);//フォントハンドルから状態を取得できないのでその回避用
 
+	FONT_INFO GetFontInfo();
+
+	void SetWidth(int width);//描画する最大の文字列の横幅を指定
 	void ChangeFont(int handle);
 	void Reset();//文字配列の中を削除し、再び文字送り描画をします。
 	int GetEnd();//文字列の描画が終わったかのステータスを取得します。(1で描画終了、0で描画中)

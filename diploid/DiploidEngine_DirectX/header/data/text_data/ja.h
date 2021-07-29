@@ -9,7 +9,7 @@
 
 #include "system\DiploidEngineSetting.h"
 
-#define STRING_DATA_LINE 256
+#define STRING_DATA_LINE 3
 
 class ja_text
 {
@@ -31,6 +31,9 @@ private:
 
 	int string_data_line = STRING_DATA_LINE;//読み込みデータの総行数
 	//int string_size = 10;
+
+
+	int font_handle;
 
 public:	
 	DiploidStringV2 string[STRING_DATA_LINE];

@@ -4,6 +4,16 @@ int DiploidStringV2::CreateFontData(int Size, int Thick, int FontType, char* Fon
 {
 	font_handle = CreateFontToHandle(FontName, Size, Thick, FontType);
 
+	GetFontStateToHandle(font_name, &size, &thick, font_handle);
+
+	//size = Size;
+	//thick = Thick;
+
+	//font_name = *FontName;
+	size = Size;
+	thick = Thick;
+
+
 	return font_handle;
 }
 
@@ -126,21 +136,44 @@ void DiploidStringV2::ChangeFont(int handle)
 {
 	font_handle = handle;
 
-	GetFontStateToHandle(&font_name, &size, &thick, font_handle);
+	GetFontStateToHandle(font_name, &size, &thick, font_handle);
 }
 
 void DiploidStringV2::Init(float x, float y, int new_font_handle)
 {
+	int test_size;
+
 	master_position = VGet(x, y, 0);
+
+	_width = INT_MAX;
 
 	font_handle = new_font_handle;
 
-	GetFontStateToHandle(&font_name, &size, &thick, font_handle);
+	GetFontStateToHandle(font_name, &test_size, &thick, font_handle);
+
+	size = test_size;
+
+	//size = GetFontSizeToHandle(font_handle);
 }
 
 void DiploidStringV2::Init(float x, float y)
 {
 	master_position = VGet(x, y, 0);
+
+	_width = INT_MAX;
+}
+
+void DiploidStringV2::Init(float x, float y, FONT_INFO font_info)
+{
+	master_position = VGet(x, y, 0);
+
+	_width = INT_MAX;
+
+	font_handle = font_info.font_handle;
+	//*font_name = *font_info.font_name;
+	size = font_info.size;
+	thick = font_info.thick;
+
 }
 
 void DiploidStringV2::DrawFile(int line, float frame_time)
@@ -156,7 +189,10 @@ void DiploidStringV2::DrawFile(int line, float frame_time)
 
 void DiploidStringV2::Draw(float frame_time)
 {
-	int width = 0;
+	int string_width = -GetDrawStringWidthToHandle(character.at(0).at(0).c_str(), strlen(character.at(0).at(0).c_str()), font_handle);//1文字目の長さ分マイナス(可変)
+	int string_height = 0;//文字列の高さ(可変)
+
+	std::vector<VECTOR> char_pos;
 
 	if (!character.empty())
 	{
@@ -192,12 +228,19 @@ void DiploidStringV2::Draw(float frame_time)
 		//文字の表示
 		for (int count = 0; count != character.at(0).size(); count++)
 		{
-			width = GetDrawStringWidthToHandle(character.at(0).at(0).c_str(), strlen(character.at(0).at(count).c_str()), font_handle) + width;
+			string_width = GetDrawStringWidthToHandle(character.at(0).at(0).c_str(), strlen(character.at(0).at(count).c_str()), font_handle) + string_width;
+
+			if (string_width >= _width)
+			{
+				string_height = size + string_height;//一文字下にずらす
+				string_width = 0;//横幅をリセット
+			}
+
+			char_pos.push_back(VGet(string_width, string_height, 0.0f));
 
 			SetDrawBlendMode(DX_BLENDMODE_ALPHA, alpha.at(count));
-			DrawStringToHandle(master_position.x + width, master_position.y, character.at(0).at(count).c_str(), GetColor(200, 200, 200), font_handle);
+			DrawStringToHandle(master_position.x + char_pos.at(count).x, master_position.y + char_pos.at(count).y, character.at(0).at(count).c_str(), GetColor(200, 200, 200), font_handle);
 			SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-
 		}
 
 		//描画終わりのフラグ処理
@@ -208,7 +251,7 @@ void DiploidStringV2::Draw(float frame_time)
 		}
 	}
 
-	//DrawFormatString(0, 60, GetColor(0, 0, 0), "%d", GetDrawStringWidthToHandle(character.at(0).at(0).c_str(), strlen(character.at(0).at(0).c_str()), font_handle));
+	//DrawFormatString(0, 60, GetColor(0, 0, 0), "%d = size", size);
 }
 
 void DiploidStringV2::Clear()
@@ -234,6 +277,23 @@ void DiploidStringV2::Clear()
 	}
 }
 
+
+FONT_INFO DiploidStringV2::GetFontInfo()
+{
+	FONT_INFO info;
+
+	info.font_handle = font_handle;
+	//*info.font_name = *font_name;
+	info.size = size;
+	info.thick = thick;
+
+	return info;
+}
+
+void DiploidStringV2::SetWidth(int width)
+{
+	_width = width;
+}
 
 std::string DiploidStringV2::GetSceneName()
 {

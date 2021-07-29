@@ -7,7 +7,7 @@ void TextSpeedAutoSettingUI::Load()
 	string_background_alpha_slider.Load();
 
 	test_string.CreateFontData(20, 2, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	test_string.Load("現在の表示速度です。\nThis is Test.");
+	test_string.Create("現在の表示速度です。");
 
 	draw_speed_image.Load("texter/basic/option/game_play/draw_speed.png");
 	auto_speed_image.Load("texter/basic/option/game_play/auto_speed.png");
@@ -21,6 +21,7 @@ void TextSpeedAutoSettingUI::Init(VECTOR pos)
 	string_speed_slider.SetParameter(VGet(100, 0, 0));
 
 	test_string.Init(pos.x, pos.y + (32 + 4));
+	test_string.SetWidth(300);
 
 	test_string_box.Init(VGet(pos.x + 151, pos.y + 36 + (32 + 4), 0), VGet(0, 8, 0), GetColor(255, 255, 255));
 	test_string_box.SetFill(true);

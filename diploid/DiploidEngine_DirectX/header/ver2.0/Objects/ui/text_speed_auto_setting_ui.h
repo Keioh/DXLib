@@ -4,13 +4,14 @@
 //#include "ver2.0/Objects/DiploidAnimation.h"
 #include "ver2.0/Objects/DiploidSlider.h"
 #include "ver2.0/Graphics/DiploidStrings.h"
+#include "ver2.0/Graphics/DiploidStringV2.h"
 
 class TextSpeedAutoSettingUI
 {
 private:
 	DiploidSlider string_speed_slider;//文字速度変更スライダー
 	DiploidSlider auto_speed_slider;//オート速度変更スライダー
-	DiploidStrings test_string;//変更確認用文字
+	DiploidStringV2 test_string;//変更確認用文字
 	DiploidBoxV2 test_string_box;//オート速度確認用BOX
 	float auto_speed;//時間に加算する量
 	float time;//現在の加算された時間の保存用

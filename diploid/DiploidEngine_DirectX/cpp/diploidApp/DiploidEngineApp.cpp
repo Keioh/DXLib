@@ -13,8 +13,8 @@ void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 
 void DiploidEngineApp::Load(DiploidEngineApp* app)
 {		
-	test.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	test.Create("なぜ自分はここにいるのか、どうやって来たのか、定かではない。ただ一つ、確かなことは目の前にいる少女の言葉に耳を傾ける事だけだった。");
+	//test.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+	//test.Create("なぜ自分はここにいるのか、どうやって来たのか、定かではない。ただ一つ、確かなことは目の前にいる少女の言葉に耳を傾ける事だけだった。");
 
 	logo_scene.Load();
 	title_scene.Load();
@@ -29,7 +29,8 @@ void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
 
 void DiploidEngineApp::Init(DiploidEngineApp* app)
 {	
-	test.Init(100, 100);
+	//test.Init(100, 100);
+	//test.SetWidth(500);
 
 	logo_scene.Init();
 	title_scene.Init(app->diploidEngineSetting);
@@ -163,8 +164,8 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		}
 	}
 
-	test.Draw();
-	DrawFormatString(0, 0, GetColor(150, 150, 150), "Load = %d", GetASyncLoadNum());
+	//test.Draw();
+	//DrawFormatString(0, 0, GetColor(150, 150, 150), "size = %d", size);
 	//DrawFormatString(0, 200, GetColor(100, 100, 100), "scene = %d", title_scene.GetFinalScene());
 	//DrawFormatString(0, 220, GetColor(100, 100, 100), "%d", game_scene.GetOptionButtonFlag());
 }
