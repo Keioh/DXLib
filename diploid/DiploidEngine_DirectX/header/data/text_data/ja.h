@@ -36,7 +36,9 @@ private:
 	int font_handle;
 
 public:	
-	DiploidStringV2 string[STRING_DATA_LINE];
+	//DiploidStringV2 string[STRING_DATA_LINE];
+	std::vector<DiploidStringV2> string;
+
 
 	void Load();
 	void Init(DiploidEngineSetting& setting);

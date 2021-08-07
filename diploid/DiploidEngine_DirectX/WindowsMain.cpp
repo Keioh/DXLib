@@ -4,6 +4,29 @@
 #include "system\DiploidEngineSetting.h"
 #include "diploidApp\DiploidEngineApp.h"
 
+//int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+//{
+//	// ウインドウモードで起動
+//	ChangeWindowMode(TRUE);
+//
+//	// ＤＸライブラリの初期化
+//	if (DxLib_Init() < 0) return -1;
+//
+//	int font = 0, err = 0, size = 0;
+//	font = CreateFontToHandle(NULL, 20, 4, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
+//	err = GetFontStateToHandle(NULL, &size, NULL, font);
+//
+//	DrawFormatString(0, 0, GetColor(255, 255, 255), "font:0x%x  err:%d  size:%d", font, err, size);
+//
+//	WaitKey();
+//
+//	// ＤＸライブラリの後始末
+//	DxLib_End();
+//
+//	// ソフトの終了
+//	return 0;
+//}
+
 //debug情報ありと書かれている物はリリースするときにfalseにすること。
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -39,6 +62,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//解像度が変更変更されたときにデータを再び読み込む
 		if (diploid_engine_app->diploidEngineSetting.GetReloadFlag() == true)
 		{	
+			InitFontToHandle();//すべてのフォントハンドルを削除
+
 			diploid_engine_app->Load(diploid_engine_app);//ゲーム起動時にデータを読み込む処理
 
 			diploid_engine_app->Init(diploid_engine_app);//画像の初期化する処理
