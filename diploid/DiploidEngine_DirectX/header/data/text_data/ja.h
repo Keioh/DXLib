@@ -15,6 +15,7 @@ class ja_text
 {
 private:
 	DiploidEngineFile file;
+	DiploidTranslate trans;
 
 	//DiploidEngineSetting setting;
 

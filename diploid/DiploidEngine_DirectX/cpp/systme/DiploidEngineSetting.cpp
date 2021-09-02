@@ -33,7 +33,6 @@ DiploidEngineSetting::DiploidEngineSetting()
 	system_data.shadow_map_max_area_y = translate.FindDataFloat(string_data, "shadow_map_max_area_y");
 	system_data.shadow_map_max_area_z = translate.FindDataFloat(string_data, "shadow_map_max_area_z");
 
-
 	//game設定関連
 	system_data.string_draw_speed = translate.FindDataInt(string_data, "string_draw_speed");
 	system_data.string_auto_speed = translate.FindDataInt(string_data, "string_auto_speed");
@@ -44,7 +43,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	//refresh_rate = 60;
 	//window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.50)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.51)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;
@@ -148,12 +147,10 @@ void DiploidEngineSetting::SetWindowSize(int new_window_x, int new_window_y)
 	//GetScreenState(&buffer_window_x, &buffer_window_y, &buffer_window_bit);
 }
 
-
 int DiploidEngineSetting::GetExit()
 {
 	return exit;
 }
-
 
 bool DiploidEngineSetting::GetReloadFlag()
 {

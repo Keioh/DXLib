@@ -5,6 +5,7 @@ void ja_text::Load()
 	string.clear();
 
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
+
 		
 	string.push_back(DiploidStringV2::DiploidStringV2());
 	string[0].Create("なぜ自分はここにいるのか、どうやって来たのか、定かではない。ただ一つ、確かなことは目の前にいる少女の言葉に耳を傾ける事だけだった。");

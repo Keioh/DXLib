@@ -109,7 +109,6 @@ float DiploidTranslate::FindDataFloat(std::vector<std::string>& string_data, std
 			return buffer;
 		}
 	}
-
 	return 0.0f;
 }
 
@@ -162,4 +161,30 @@ bool DiploidTranslate::FindDataBool(std::vector<std::string>& string_data, std::
 	}
 
 	return false;
+}
+
+void DiploidTranslate::SplitString(std::string string_data, std::string& first, std::string& second)
+{
+	std::stringstream ss;
+	std::string one, two;
+
+	//first‚Ì•¶Žš—ñ‚ÌŽæ“¾
+	int count = 0;
+
+	while (string_data[count] != '=')
+	{
+		one += string_data[count];
+
+		count++;
+	}
+
+	first = one;
+
+
+	//second‚Ì•¶Žš—ñ‚ÌŽæ“¾
+	ss << string_data;
+
+	ss.ignore(512, '=');
+
+	ss >> second;
 }
