@@ -43,7 +43,7 @@ DiploidEngineSetting::DiploidEngineSetting()
 	window_bit = 32;
 	//refresh_rate = 60;
 	//window_mode = TRUE;
-	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.51)";
+	window_name = "NovelGame(DiploidEngine2 NovelSystemVersion 0.7.52)";
 
 	//シミュレーションスクリーン関連(標準設定は元の画面サイズ÷2)
 	screen_handle = -1;

@@ -53,4 +53,6 @@ public:
 	bool FindDataBool(std::vector<std::string>& string_data, std::string string_name);//string_dataからstring_nameに対応する数値を取得します。(string_name=〇〇形式の○○部分を取得)
 
 	void SplitString(std::string string_data, std::string& first, std::string& second);//「=」で繋いだstring_dataを｢=｣で分割し、firstとsecondで取得します。
+	void SplitStringMulti(std::string string_data, std::string& first, std::string& second, std::string& three);//「=」で繋いだstring_dataを｢=｣で分割し、firstとsecondとthreeで取得します。
+
 };

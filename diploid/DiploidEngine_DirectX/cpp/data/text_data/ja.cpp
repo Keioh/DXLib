@@ -2,23 +2,45 @@
 
 void ja_text::Load()
 {
+	line_count = 0;
 	string.clear();
+	name.clear();
 
 	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
 
-		
-	string.push_back(DiploidStringV2::DiploidStringV2());
-	string[0].Create("なぜ自分はここにいるのか、どうやって来たのか、定かではない。ただ一つ、確かなことは目の前にいる少女の言葉に耳を傾ける事だけだった。");
-	string[0].SetSceneName("abandoned_road");
 
-	string.push_back(DiploidStringV2::DiploidStringV2());
-	string[1].Create("「君は死後の世界を信じているかい？」");
-	string[1].SetSceneName("abandoned_road");
+	file.ReadOpen("text/jp/jp.txt");//ファイル読み込み
 
-	string.push_back(DiploidStringV2::DiploidStringV2());
-	string[2].Create("「」");
-	string[2].SetSceneName("abandoned_road");
+	while ((ProcessMessage() == 0) && (file.GetFileInAdr()))
+	{
+		string_data.push_back(file.GetLine());//ファイルから一行読み込みんで一時保存
+	}
 
+	file.Close();//ファイルを閉じる
+
+
+	for(int count = 0; count != string_data.size()-1; count++)
+	{	
+		std::string one, two;
+
+		trans.SplitString(string_data[count], one, two);//文字列データを分割
+
+
+		string.push_back(DiploidStringV2::DiploidStringV2());//空のデータを追加
+
+		name.push_back(DiploidStringV2::DiploidStringV2());//空のデータを追加
+
+
+		name[count].Create(one);//名前データの保存
+
+		string[count].Create(two);//名前に対する文字列データの保存
+
+		//string[line_count].SetSceneName("abandoned_road");	
+	}
+
+	line_count = string_data.size() - 1;//総行数-1(-1しないとエラーが出る)
+
+	string_data.clear();//データを削除
 }
 
 void ja_text::Init(DiploidEngineSetting& setting)
@@ -57,5 +79,5 @@ void ja_text::Reset()
 
 int ja_text::size()
 {
-	return string.size();
+	return line_count;
 }
