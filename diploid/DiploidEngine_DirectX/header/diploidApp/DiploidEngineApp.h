@@ -51,10 +51,10 @@ private:
 
 public:
 	void FileCreate(DiploidEngineApp* app);
-	void OnceLoad(DiploidEngineApp* app);//一回だけ音を読み込む
-	void Load(DiploidEngineApp* app);//一回だけ画像を読み込む(解像度を変更した際にも呼ばれます。)
-	void OnceInit(DiploidEngineApp* app);//一回だけ音を初期化
-	void Init(DiploidEngineApp* app);//一回だけ画像を初期化(解像度を変更した際にも呼ばれます。再読み込み時に値を変更したくない場合はUpdata()関数で処理をすること。)
+	void OnceLoad(DiploidEngineApp* app);//一回だけ読み込む
+	void Load(DiploidEngineApp* app);//一回だけ読み込む(解像度を変更した際にも呼ばれます。)
+	void OnceInit(DiploidEngineApp* app);//一回だけ初期化
+	void Init(DiploidEngineApp* app);//一回だけ初期化(解像度を変更した際にも呼ばれます。再読み込み時に値を変更したくない場合はUpdata()関数で処理をすること。)
 	void Updata(DiploidEngineApp* app);//ループ処理(fps依存)
 	void Draw(DiploidEngineApp* app);//描画
 	void CreateShadowModel(DiploidEngineApp* app);//影を動的に描画したい３Dmodelを追加。(光の方向や加減で影の形が変わる)

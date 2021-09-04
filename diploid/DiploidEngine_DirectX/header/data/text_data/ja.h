@@ -43,8 +43,10 @@ public:
 	std::vector<DiploidStringV2> string;//文字列データ保存、参照用
 	std::vector<DiploidStringV2> name;//文字列データに対するキャラの名前の保存、参照用
 
-	void Load();
-	void Init(DiploidEngineSetting& setting);
+	void OnceLoad();
+	void Create();
+	void StringInit(DiploidEngineSetting& setting);
+	void NameInit(DiploidEngineSetting& setting);
 
 	void SetSpeed(int new_speed);
 	void Reset();

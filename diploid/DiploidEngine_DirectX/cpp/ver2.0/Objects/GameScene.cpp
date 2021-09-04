@@ -1,8 +1,13 @@
 #include "ver2.0/Objects/GameScene.h"
 
+void GameScene::OnceLoad()
+{
+	jp.OnceLoad();
+}
+
 void GameScene::Load()
 {
-	jp.Load();
+	jp.Create();
 
 	string_back_wall.Load("texter/novel/basic/string_back_wall.png");
 	data_back_wall.Load("texter/novel/basic/data_ui.png");
@@ -36,7 +41,8 @@ void GameScene::Init(DiploidEngineSetting& setting)
 
 	system_data = setting.GetSystemData();
 
-	jp.Init(setting);
+	jp.StringInit(setting);
+	jp.NameInit(setting);
 	jp.SetSpeed(system_data.string_draw_speed);
 
 	auto_button.Init(VGet(setting.GetSystemData().window_x - 64, setting.GetSystemData().window_y - 16, 0));
@@ -69,6 +75,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 	if (jp.string[click].GetDrawSpeed() != (system_data.string_draw_speed * 50))
 	{
 		jp.string[click].SetSpeed(system_data.string_draw_speed * 50);
+		jp.name[click].SetSpeed(system_data.string_draw_speed * 50);
 	}
 
 	//ƒI[ƒg‘¬“x‚ğİ’è‚µ‚È‚¨‚·B
@@ -278,7 +285,10 @@ void GameScene::Draw(DiploidEngineScreen& screen)
 			//•¶š•\¦‚Ì”wŒi‚Ì•`‰æ
 			string_back_wall.Draw();
 
-			//•¶š—ñ‚Ì•`‰æ
+			//•¶š—ñ(ƒLƒƒƒ‰‚Ì–¼‘O)‚Ì•`‰æ
+			jp.name[click].Draw(screen.GetFrameTime());
+
+			//•¶š—ñ(‰ï˜b•¶)‚Ì•`‰æ
 			jp.string[click].Draw(screen.GetFrameTime());
 
 			//•¶‚ªÅŒã‚Ü‚Å•`‰æ‚³‚ê‚Ä‚¢‚½‚ç

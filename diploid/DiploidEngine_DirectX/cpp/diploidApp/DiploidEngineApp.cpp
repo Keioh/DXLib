@@ -8,7 +8,7 @@ void DiploidEngineApp::FileCreate(DiploidEngineApp* app)
 
 void DiploidEngineApp::OnceLoad(DiploidEngineApp* app)
 {	
-
+	game_scene.OnceLoad();
 }
 
 void DiploidEngineApp::Load(DiploidEngineApp* app)

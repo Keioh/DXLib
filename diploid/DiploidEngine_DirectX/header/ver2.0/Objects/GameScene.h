@@ -74,6 +74,7 @@ private:
 	int box_draw_flag = 0;//0でフェードアウト、1でフェードアウト完了、2でフェードイン、3でフェードイン完了
 
 public:
+	void OnceLoad();
 	void Load();
 
 	void Init(DiploidEngineSetting& setting);
