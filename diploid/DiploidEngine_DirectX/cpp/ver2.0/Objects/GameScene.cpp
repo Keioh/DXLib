@@ -338,7 +338,7 @@ void GameScene::Draw(DiploidEngineScreen& screen)
 	SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 255);
 
 
-	//DrawFormatString(0, 0, GetColor(255, 255, 255), "alpha = %d", alpha);
+	//DrawFormatString(0, 0, GetColor(255, 255, 255), "language = %s", system_data.language.c_str());
 }
 
 void GameScene::Reset()

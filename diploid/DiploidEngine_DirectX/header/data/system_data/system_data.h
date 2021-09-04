@@ -1,10 +1,14 @@
 #pragma once
+#include <string>
 #include "DxLib.h"
 
 //#include "data/system_data/system_data.h"
 
 struct SystemData
 {
+	//言語の設定
+	std::string language;//言語
+
 	//Window設定関連
 	int window_x;//実際のウィンドウサイズ(ｘ)
 	int window_y;//実際のウィンドウサイズ(ｙ)
