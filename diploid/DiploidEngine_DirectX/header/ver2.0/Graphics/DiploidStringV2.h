@@ -28,6 +28,7 @@ private:
 	std::string string_data;
 
 	std::vector<int>alpha;
+	std::vector<int>char_byte;
 
 	VECTOR master_position;//文字の基本位置
 
@@ -58,6 +59,7 @@ public:
 
 	void LoadFile(const char* str = "");//テキストデータのファイルパスを指定しそのデータから描画用データを作成。(二重配列として出力。DrawFile()で描画)
 	void Create(std::string str);//テキストから描画用データの作成。
+	void CreateDXLIB(std::string str, int char_code);//テキストから描画用データの作成。(DXLIB使用版。char_codeにはDXLIBの文字コードのマクロを使用すること。)
 	void Init(float x, float y, int new_font_handle);
 	void Init(float x, float y);
 	void Init(float x, float y, FONT_INFO font_info);//フォントハンドルから状態を取得できないのでその回避用

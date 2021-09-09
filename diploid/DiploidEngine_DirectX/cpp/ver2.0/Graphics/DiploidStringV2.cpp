@@ -125,11 +125,35 @@ void DiploidStringV2::Create(std::string str)
 		//string変換後の一文字データをプッシュ
 		character.at(0).push_back(non_wide_string_data);
 
-		//アルファ値のプッシュ
+		//アルファ値のプッシュ	
 		alpha.push_back(0);
 	}
 
 	wide_character.clear();
+}
+
+void DiploidStringV2::CreateDXLIB(std::string str, int char_code)
+{
+	int byte_buffer = 0;
+	int char_number = 0;
+
+	Clear();
+
+	character.push_back(std::vector<string>());//空のcharを追加
+
+	while (str[char_number] != '\0')
+	{
+		byte_buffer = GetCharBytes(char_code, &str[char_number]);
+
+		char_byte.push_back(byte_buffer);
+
+		character.at(0).push_back(str.substr(char_number, byte_buffer));
+
+		//アルファ値のプッシュ
+		alpha.push_back(0);
+
+		char_number += byte_buffer;
+	}
 }
 
 void DiploidStringV2::ChangeFont(int handle)
@@ -228,7 +252,7 @@ void DiploidStringV2::Draw(float frame_time)
 		//文字の表示
 		for (int count = 0; count != character.at(0).size(); count++)
 		{
-			string_width = GetDrawStringWidthToHandle(character.at(0).at(0).c_str(), strlen(character.at(0).at(count).c_str()), font_handle) + string_width;
+			string_width = GetDrawStringWidthToHandle(character.at(0).at(count).c_str(), strlen(character.at(0).at(count).c_str()), font_handle) + string_width;
 
 			if (string_width >= _width)
 			{
@@ -274,6 +298,11 @@ void DiploidStringV2::Clear()
 	if (!alpha.empty())
 	{
 		alpha.clear();
+	}
+
+	if (!char_byte.empty())
+	{
+		char_byte.clear();
 	}
 }
 

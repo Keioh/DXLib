@@ -35,9 +35,9 @@ void ja_text::Create()
 			name.push_back(DiploidStringV2::DiploidStringV2());//空のデータを追加
 
 
-			name[count].Create(one);//名前データの保存
+			name[count].CreateDXLIB(one, DX_CHARCODEFORMAT_SHIFTJIS);//名前データの保存
 
-			string[count].Create(two);//名前に対する文字列データの保存
+			string[count].CreateDXLIB(two, DX_CHARCODEFORMAT_SHIFTJIS);//名前に対する文字列データの保存
 
 
 			//背景画像の指定(将来はこの処理はコメントアウト)
