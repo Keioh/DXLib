@@ -95,7 +95,7 @@ void ja_text::Reset()
 	{
 		for (int count = 0; count != string.size(); count++)
 		{
-			name[count].Reset();
+			string[count].Reset();
 		}
 	}
 
