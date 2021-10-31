@@ -17,6 +17,8 @@ void GameScene::Load()
 	novel_scene.Load("texter/novel/abandoned_road.png", "abandoned_road");
 	novel_scene.Load("texter/novel/00.png", "1");
 	novel_scene.Load("texter/novel/02.png", "2");
+	novel_scene.Load("texter/novel/cafe.png", "cafe");
+
 
 	end_anime.Load("texter/novel/icon/64_64/0.png");
 	end_anime.Load("texter/novel/icon/64_64/1.png");

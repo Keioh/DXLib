@@ -41,7 +41,7 @@ void ja_text::Create()
 
 
 			//背景画像の指定(将来はこの処理はコメントアウト)
-			string[count].SetSceneName("abandoned_road");
+			string[count].SetSceneName("cafe");
 		}
 	}
 }

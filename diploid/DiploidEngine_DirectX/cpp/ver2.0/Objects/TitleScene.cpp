@@ -3,7 +3,7 @@
 void TitleScene::Load()
 {
 	button_back_image.Load("texter/title/button_back.png");//ボタンの背景画像の読み込み
-	test_back.Load("texter/hd.jpg");//testの背景画像の読み込み
+	test_back.Load("texter/novel/title/title.png");//testの背景画像の読み込み
 
 	start_button.Load(button_back_image.GetGraphicsHandl());//スタートボタンの画像ハンドルの読み込み
 	load_button.Load(button_back_image.GetGraphicsHandl());//セーブデータ読み込みボタンの画像ハンドルの読み込み
@@ -11,13 +11,13 @@ void TitleScene::Load()
 	exit_button.Load(button_back_image.GetGraphicsHandl());//終了ボタンの画像ハンドルの読み込み。
 
 
-	start_string.CreateFontData(50, 10, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォント作成
+	start_string.CreateFontData(40, 10, DX_FONTTYPE_ANTIALIASING_4X4);//フォント作成
 
 	//文字の読み込み
-	start_string.Load("Start");//スタートボタンの文字列の設定
-	load_string.Load("Load");
-	option_string.Load("Option");
-	exit_string.Load("Exit");//終了ボタンの文字列の設定
+	start_string.Load("はじめから");//スタートボタンの文字列の設定
+	load_string.Load("つづきから");
+	option_string.Load("設定");
+	exit_string.Load("終了");//終了ボタンの文字列の設定
 }
 
 void TitleScene::Init(DiploidEngineSetting& setting)
@@ -32,13 +32,13 @@ void TitleScene::Init(DiploidEngineSetting& setting)
 	option_button.Init(VGet(128, setting.GetSystemData().window_y - (72 * 2) - 64, 0), button_back_image.GetSize());//オプションボタンの初期化
 	exit_button.Init(VGet(128, setting.GetSystemData().window_y - 72 - 64, 0), button_back_image.GetSize());//終了ボタンの初期化
 
-	start_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - (72 * 4) - 64, start_string.GetHandle());
+	start_string.Init(128, setting.GetSystemData().window_y - (72 * 4) - 64, start_string.GetHandle());
 	start_string.SetSpeed(5000);
-	load_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - (72 * 3) - 64, start_string.GetHandle());
+	load_string.Init(128, setting.GetSystemData().window_y - (72 * 3) - 64, start_string.GetHandle());
 	load_string.SetSpeed(5000);
-	option_string.Init(128 + (button_back_image.GetSize().x / 4), setting.GetSystemData().window_y - (72 * 2) - 64, start_string.GetHandle());
+	option_string.Init(128, setting.GetSystemData().window_y - (72 * 2) - 64, start_string.GetHandle());
 	option_string.SetSpeed(5000);
-	exit_string.Init(128 + (button_back_image.GetSize().x / 3), setting.GetSystemData().window_y - 72 - 64, start_string.GetHandle());
+	exit_string.Init(128, setting.GetSystemData().window_y - 72 - 64, start_string.GetHandle());
 	exit_string.SetSpeed(5000);
 
 	//画面の大きさに合わせる

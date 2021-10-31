@@ -1,4 +1,3 @@
-language=japanese
 window_x=1280
 window_y=720
 simulation_window_x=640
