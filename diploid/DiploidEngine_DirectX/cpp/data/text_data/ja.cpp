@@ -40,7 +40,7 @@ void ja_text::Create()
 			string[count].CreateDXLIB(two, DX_CHARCODEFORMAT_SHIFTJIS);//名前に対する文字列データの保存
 
 
-			//背景画像の指定(将来はこの処理はコメントアウト)
+			//背景画像の指定(将来はこの処理は自動化する)
 			string[count].SetSceneName("cafe");
 		}
 	}

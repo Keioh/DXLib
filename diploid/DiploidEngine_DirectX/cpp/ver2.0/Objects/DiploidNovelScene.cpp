@@ -1,5 +1,60 @@
 #include "ver2.0/Objects/DiploidNovelScene.h"
 
+void DiploidNovelScene::OnceFileLoad(const char* path)
+{
+	//ファイルを開く
+	file.ReadOpen(path);
+
+	while ((ProcessMessage() == 0) && (file.GetFileInAdr()))
+	{			
+		//ファイルから一行読み込み
+		string_line_vector.push_back(file.GetLine());
+	}
+
+	file.Close();
+
+
+	//文字列の分割
+	if (!string_line_vector.empty())
+	{
+		//各文字列一時保存用
+		std::string name_buffer;
+		std::string path_buffer;
+
+		for (int count = 0; count != (string_line_vector.size() - 1); ++count)
+		{
+
+			//文字列分割
+			trans.SplitString(string_line_vector.at(count), name_buffer, path_buffer);
+
+			//各データをプッシュ
+			path_vector.push_back(path_buffer);
+
+			name_vector.push_back(name_buffer);
+		}
+	}
+}
+
+void DiploidNovelScene::Create()
+{
+	//初期化
+	image_map.clear();
+	map_alpha.clear();
+
+	//データを作成
+	for (int count = 0; count != string_line_vector.size() - 1; ++count)
+	{
+		image.Load(path_vector.at(count).c_str());//画像読み込み
+		image.SetName(name_vector.at(count));//オブジェクトの名前の設定
+		image.SetActive(false);//オブジェクトのアクティブフラグをfalseに設定。
+		image.SetAlpha(0);
+
+		map_alpha[name_vector.at(count)] = 0;
+
+		image_map[name_vector.at(count)] = image;
+	}
+}
+
 void DiploidNovelScene::Load(const char* path, std::string name)
 {
 	image.Load(path);//画像読み込み

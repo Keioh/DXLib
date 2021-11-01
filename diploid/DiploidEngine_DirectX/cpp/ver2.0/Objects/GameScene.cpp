@@ -3,22 +3,20 @@
 void GameScene::OnceLoad()
 {
 	jp.OnceLoad();
+
+	novel_scene.OnceFileLoad("texter/novel/image_file_path.txt");	
+
 }
 
 void GameScene::Load()
 {
-	jp.Create();
+	jp.Create();//日本語テキストデータの作成
+	novel_scene.Create();//シーン画像データの作成
 
 	string_back_wall.Load("texter/novel/basic/string_back_wall.png");
 	data_back_wall.Load("texter/novel/basic/data_ui.png");
 	data_test.Load("texter/novel/date/test.png");
 	place_test.Load("texter/novel/place/test.png");
-
-	novel_scene.Load("texter/novel/abandoned_road.png", "abandoned_road");
-	novel_scene.Load("texter/novel/00.png", "1");
-	novel_scene.Load("texter/novel/02.png", "2");
-	novel_scene.Load("texter/novel/cafe.png", "cafe");
-
 
 	end_anime.Load("texter/novel/icon/64_64/0.png");
 	end_anime.Load("texter/novel/icon/64_64/1.png");
