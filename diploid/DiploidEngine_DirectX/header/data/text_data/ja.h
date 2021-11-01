@@ -14,7 +14,9 @@
 class ja_text
 {
 private:
-	DiploidEngineFile file;
+	DiploidEngineFile file_string_data;
+	DiploidEngineFile file_scene_data;
+
 	DiploidTranslate trans;
 
 	//DiploidEngineSetting setting;
@@ -23,7 +25,12 @@ private:
 	DiploidStringV2 base_data;
 
 	std::string data;
-	std::vector<std::string> string_data;
+	std::vector<std::string> string_data;//会話データ(文字列分割前)
+	std::vector<std::string> scene_name_data;//会話データとシーンの紐づけデータ(文字列分割前)
+
+	std::vector<std::string> scene_name;//会話データとシーンの紐づけデータ(文字列分割後シーンの名前)
+	std::vector<int> scene_number;//会話データとシーンの紐づけデータ(文字列分割後、画像を変更する会話データの番号)
+
 
 	float x_scale = 0.225f;
 	float y_scale = 22 * 6;//暫定：文字サイズ*行数

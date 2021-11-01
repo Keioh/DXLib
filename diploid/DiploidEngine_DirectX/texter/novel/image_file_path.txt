@@ -1,1 +1,2 @@
 cafe=texter/novel/cafe.png
+intersection=texter/novel/intersection.png

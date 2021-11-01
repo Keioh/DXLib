@@ -231,6 +231,35 @@ void DiploidTranslate::SplitString(std::string string_data, std::string& first, 
 	ss >> second;
 }
 
+void DiploidTranslate::SplitString(std::string string_data, int& first, std::string& second)
+{
+	std::stringstream ss, ss_b;
+	std::string two;
+	//int one = 0;
+
+	//first‚Ì•¶Žš—ñ‚ÌŽæ“¾
+	int count = 0;
+
+	while ((ProcessMessage() == 0) && (string_data[count] != '='))
+	{
+		//one += string_data[count];
+
+		ss_b << string_data[count];
+
+		count++;
+	}
+
+	ss_b >> first;
+
+
+	//second‚Ì•¶Žš—ñ‚ÌŽæ“¾
+	ss << string_data;
+
+	ss.ignore(2048, '=');
+
+	ss >> second;
+}
+
 void DiploidTranslate::SplitStringMulti(std::string string_data, std::string& first, std::string& second, std::string& three)
 {
 
