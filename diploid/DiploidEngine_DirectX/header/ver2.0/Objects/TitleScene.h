@@ -6,7 +6,7 @@
 #include "system\DiploidEngineSetting.h"
 #include "ver2.0/Graphics/DiploidScreenGraphics.h"
 #include "ver2.0/Objects/DiploidSelectedUIV2.h"
-#include "ver2.0/Graphics/DiploidStrings.h"
+#include "ver2.0/Graphics/DiploidStringV2.h"
 #include "system/define.h"
 #include "diploidScreen\DiploidEngineScreen.h"
 
@@ -25,10 +25,10 @@ private:
 
 
 	//各種ボタンの文字列
-	DiploidStrings start_string;
-	DiploidStrings load_string;
-	DiploidStrings option_string;
-	DiploidStrings exit_string;
+	DiploidStringV2 start_string;
+	DiploidStringV2 load_string;
+	DiploidStringV2 option_string;
+	DiploidStringV2 exit_string;
 
 	//各種ボタンの画像
 	DiploidImageV2 button_back_image;

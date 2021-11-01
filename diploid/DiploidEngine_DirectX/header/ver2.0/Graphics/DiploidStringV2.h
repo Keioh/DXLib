@@ -53,7 +53,7 @@ private:
 	std::string scene_number;
 
 public:
-	int CreateFontData(int Size, int Thick, int FontType, char* FontName = NULL);//DXLIB‚ğQÆ
+	int CreateFontData(int Size, int Thick, int FontType, const char* FontName = NULL);//DXLIB‚ğQÆ
 	int GetHandle();
 	float GetDrawSpeed();
 

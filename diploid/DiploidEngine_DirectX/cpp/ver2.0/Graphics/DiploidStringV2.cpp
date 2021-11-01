@@ -1,6 +1,6 @@
 #include "ver2.0/Graphics/DiploidStringV2.h"
 
-int DiploidStringV2::CreateFontData(int Size, int Thick, int FontType, char* FontName)
+int DiploidStringV2::CreateFontData(int Size, int Thick, int FontType, const char* FontName)
 {
 	font_handle = CreateFontToHandle(FontName, Size, Thick, FontType);
 

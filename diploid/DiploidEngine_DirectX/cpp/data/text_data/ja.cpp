@@ -18,7 +18,7 @@ void ja_text::Create()
 	string.clear();
 	name.clear();
 
-	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4);//フォントを作成
+	font.CreateFontData(22, 1, DX_FONTTYPE_ANTIALIASING_EDGE_4X4, "メイリオ");//フォントを作成
 
 
 	if (!string_data.empty())

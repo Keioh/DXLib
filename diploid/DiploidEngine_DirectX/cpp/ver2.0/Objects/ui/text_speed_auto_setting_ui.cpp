@@ -6,8 +6,8 @@ void TextSpeedAutoSettingUI::Load()
 	auto_speed_slider.Load();
 	string_background_alpha_slider.Load();
 
-	test_string.CreateFontData(20, 2, DX_FONTTYPE_ANTIALIASING_EDGE_8X8);
-	test_string.Create("現在の表示速度です。");
+	test_string.CreateFontData(20, 2, DX_FONTTYPE_ANTIALIASING_EDGE_4X4, "メイリオ");
+	test_string.CreateDXLIB("現在の表示速度です。", DX_CHARCODEFORMAT_SHIFTJIS);
 
 	draw_speed_image.Load("texter/basic/option/game_play/draw_speed.png");
 	auto_speed_image.Load("texter/basic/option/game_play/auto_speed.png");

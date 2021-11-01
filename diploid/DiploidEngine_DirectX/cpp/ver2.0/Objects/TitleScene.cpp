@@ -11,13 +11,13 @@ void TitleScene::Load()
 	exit_button.Load(button_back_image.GetGraphicsHandl());//終了ボタンの画像ハンドルの読み込み。
 
 
-	start_string.CreateFontData(40, 10, DX_FONTTYPE_ANTIALIASING_4X4);//フォント作成
+	start_string.CreateFontData(40, 10, DX_FONTTYPE_ANTIALIASING_4X4, "メイリオ");//フォント作成
 
 	//文字の読み込み
-	start_string.Load("はじめから");//スタートボタンの文字列の設定
-	load_string.Load("つづきから");
-	option_string.Load("設定");
-	exit_string.Load("終了");//終了ボタンの文字列の設定
+	start_string.CreateDXLIB("はじめから", DX_CHARCODEFORMAT_SHIFTJIS);//スタートボタンの文字列の設定
+	load_string.CreateDXLIB("つづきから", DX_CHARCODEFORMAT_SHIFTJIS);
+	option_string.CreateDXLIB("設定", DX_CHARCODEFORMAT_SHIFTJIS);
+	exit_string.CreateDXLIB("終了", DX_CHARCODEFORMAT_SHIFTJIS);//終了ボタンの文字列の設定
 }
 
 void TitleScene::Init(DiploidEngineSetting& setting)
