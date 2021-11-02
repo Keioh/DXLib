@@ -4,12 +4,11 @@ void GameScene::OnceLoad()
 {
 	jp.OnceLoad();
 
-	novel_scene.OnceFileLoad("texter/novel/image_file_path.txt");	
-
+	novel_scene.OnceFileLoad("texter/novel/image_file_path.txt");
 }
 
 void GameScene::Load()
-{
+{	
 	jp.Create();//日本語テキストデータの作成
 	novel_scene.Create();//シーン画像データの作成
 
@@ -22,7 +21,6 @@ void GameScene::Load()
 	end_anime.Load("texter/novel/icon/64_64/1.png");
 	end_anime.Load("texter/novel/icon/64_64/2.png");
 	end_anime.Load("texter/novel/icon/64_64/3.png");
-
 
 	auto_button.Load();
 	skip_button.Load();
@@ -147,6 +145,14 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 						//jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
 						click++;//次の文
 					}
+				}
+			}
+			else
+			{
+				//スキップボタンの選択状態を解除
+				if (skip_button.GetSelected() == 1)
+				{
+					skip_button.SetSelected(-1);//スキップボタンの選択状態を解除
 				}
 			}
 
