@@ -1,9 +1,10 @@
+#define BOOST_PYTHON_STATIC_LIB
 #include "diploidApp\DiploidEngineMain.h"
 
 
 VECTOR DiploidEngineMain::GetWindowSize()
 {
-	VECTOR window_size;
+	VECTOR window_size = { 0,0,0 };
 
 	window_size.x = (float)diploidEngineSetting.GetSystemData().window_x;
 	window_size.y = (float)diploidEngineSetting.GetSystemData().window_y;
@@ -647,3 +648,4 @@ void DiploidEngineMain::LayerUI_ImapctLINE_Sync()
 		}
 	}
 }
+

@@ -1,6 +1,9 @@
 //このファイルですべての処理をまとめてDiploidEngineAppに渡す
 
 #pragma once
+#define BOOST_PYTHON_STATIC_LIB
+#include <boost/python.hpp>
+#include <string>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
 #include "diploidObject\DiploidEngineTag.h"
@@ -12,6 +15,8 @@
 #include "diploidInput\DiploidEngineInput.h"
 #include "diploidInput\DiploidEnigneFile.h"
 
+//Python関連
+namespace python = boost::python;
 
 class DiploidEngineMain
 {
@@ -37,8 +42,7 @@ private:
 	void LayerBOT_ImapctLINE_Sync();//線分とレイヤーBOTの処理
 	void LayerUI_ImapctLINE_Sync();//線分とレイヤーUIの処理
 
-
-public:	
+public:
 
 	DiploidEngineTag diploidEngineTag;//タグ名で使用
 
@@ -59,4 +63,5 @@ public:
 	VECTOR GetWindowSize();//windowサイズを取得(z値はBIT)
 
 	void DestorySync();//仮:衝突処理とレイヤー処理の削除同期処理(なくなる関数かもしれない)
+
 };

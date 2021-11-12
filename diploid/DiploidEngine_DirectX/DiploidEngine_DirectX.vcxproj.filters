@@ -205,6 +205,9 @@
     <Filter Include="ヘッダー ファイル\header\ver2.0\Objects\string_image\prologue">
       <UniqueIdentifier>{92027f26-94f2-4e6d-89f5-1fe1c75c568c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\python">
+      <UniqueIdentifier>{4c30b616-9389-4054-aab3-c1cf674e6dd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -783,5 +786,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="python\test.py">
+      <Filter>リソース ファイル\python</Filter>
+    </None>
   </ItemGroup>
 </Project>
