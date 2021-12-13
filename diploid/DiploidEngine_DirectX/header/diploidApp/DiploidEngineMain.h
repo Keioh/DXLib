@@ -14,6 +14,7 @@
 #include "diploidScreen\DiploidEngineScreen.h"
 #include "diploidInput\DiploidEngineInput.h"
 #include "diploidInput\DiploidEnigneFile.h"
+#include "diploidDebug\DiploidDebug.h"
 
 //Python関連
 namespace python = boost::python;
@@ -58,6 +59,8 @@ public:
 	DiploidEngineNetwork diploidEngineNetwork;//ネットワーク機能処理
 
 	DiploidEngineFile diploidEngineFile;//ファイル入出力
+
+	DiploidDebug diploidDebug;//デバッグ機能
 
 	//以下、よく使う変数を関数として登録
 	VECTOR GetWindowSize();//windowサイズを取得(z値はBIT)

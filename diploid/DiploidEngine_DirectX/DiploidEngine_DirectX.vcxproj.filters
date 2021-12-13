@@ -208,6 +208,18 @@
     <Filter Include="リソース ファイル\python">
       <UniqueIdentifier>{4c30b616-9389-4054-aab3-c1cf674e6dd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\Architecture">
+      <UniqueIdentifier>{70cb31a8-b601-4d1e-b1e1-37a8cfb1f533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\Architecture">
+      <UniqueIdentifier>{644fed87-d5ad-4d67-b13b-1cd79311c66f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidDebug">
+      <UniqueIdentifier>{bfae11bb-d2c0-498b-b6b1-a23831689981}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidDebug">
+      <UniqueIdentifier>{e2dbaaad-88f3-4f2a-ad64-35ce65ac5de3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -482,6 +494,21 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidStringV2.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Architecture\ArchitectureLaw.cpp">
+      <Filter>ソース ファイル\cpp\Architecture</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Architecture\ArchitectureMath.cpp">
+      <Filter>ソース ファイル\cpp\Architecture</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidDebug\DiploidConsole.cpp">
+      <Filter>ソース ファイル\cpp\diploidDebug</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidDebug\DiploidDebug.cpp">
+      <Filter>ソース ファイル\cpp\diploidDebug</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidDebug\DiploidLog.cpp">
+      <Filter>ソース ファイル\cpp\diploidDebug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -773,6 +800,21 @@
     <ClInclude Include="header\ver2.0\Graphics\DiploidStringV2.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="header\Architecture\ArchitectureLaw.h">
+      <Filter>ヘッダー ファイル\header\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Architecture\ArchitectureMath.h">
+      <Filter>ヘッダー ファイル\header\Architecture</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidDebug\DiploidConsole.h">
+      <Filter>ヘッダー ファイル\header\diploidDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidDebug\DiploidDebug.h">
+      <Filter>ヘッダー ファイル\header\diploidDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidDebug\DiploidLog.h">
+      <Filter>ヘッダー ファイル\header\diploidDebug</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DiploidEngine_DirectX.rc">
@@ -786,7 +828,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="python\test.py">
+    <None Include="python\DiploidEnginePythonBase.py">
+      <Filter>リソース ファイル\python</Filter>
+    </None>
+    <None Include="python\DiploidEnginePythonApp.py">
       <Filter>リソース ファイル\python</Filter>
     </None>
   </ItemGroup>

@@ -56,6 +56,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app->diploidEngineInput.Init();//入力機器初期化
 
+	diploid_engine_app->diploidDebug.Init();//デバッグ機能の初期化
 
 	while ((ProcessMessage() == 0) && (diploid_engine_app->diploidEngineSetting.GetExit() == 0))
 	{	
@@ -110,6 +111,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		diploid_engine_app->diploidEngineScreen.Update();//FPSをアップデート
 
 		diploid_engine_app->diploidEngineScreen.Draw(800, 0, true);//FPSを表示(debug情報あり)
+
+		diploid_engine_app->diploidDebug.Update();//デバッグ機能の更新
+
+		diploid_engine_app->diploidDebug.Draw();//デバッグ機能の描画
 
 		ScreenFlip();//表画面へ描写
 

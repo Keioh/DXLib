@@ -49,8 +49,6 @@ private:
 	OptionScene option_scene;
 	FileScene file_scene;
 
-	//DiploidStringV2  test;
-
 public:
 	void FileCreate(DiploidEngineApp* app);
 	void OnceLoad(DiploidEngineApp* app);//ˆê‰ñ‚¾‚¯“Ç‚İ‚Ş
