@@ -5,9 +5,11 @@
 
 ## DiploidEnigneの始め方
 0. VC++の[DXライブラリ](https://dxlib.xsrv.jp/index.html) をCドライブ直下に入れる。(C:/DxLib_VC)
-1. Cドライブ直下にGameProjectフォルダを作成する。(C:/GameProject)
-2. 上記で作成したGameProjectフォルダにdiploidフォルダを入れる。(C:/GameProject/diploid)
-3. DiploidEngine_DirectX.slnをダブルクリック。
+1. C++の拡張ライブラリ、Boostを入れる。
+2. Pythonの実行環境を構築する。
+3. Cドライブ直下にGameProjectフォルダを作成する。(C:/GameProject)
+4. 上記で作成したGameProjectフォルダにdiploidフォルダを入れる。(C:/GameProject/diploid)
+5. DiploidEngine_DirectX.slnをダブルクリック。
 
 ## DiploidEnigneの使い方
 - cppフォルダ内のDiploidEnigneApp.cppとheaderフォルダ内のDiploidEnigneApp.hを開きます。
