@@ -16,10 +16,10 @@
 - 基本はヘッダー内のprivateに変数などを宣言していきます。
 - privateで宣言した変数などをDiploidEnigneApp.cppの各関数内で処理をしていきます。
 - DiploidEnigneApp.hで最も重要なpublic関数は４つです。
-- ・void GraphicsLoad(DiploidEngineApp* app)
+- ・void OnceLoad(DiploidEngineApp* app)
   - 画像などを１回だけ読み込みます。
 - 画面解像度を変更した際に再び一度だけこの関数が呼ばれます。
-- ・void GraphicsInit(DiploidEngineApp* app)
+- ・void OnceInit(DiploidEngineApp* app)
   - 画像などのオブジェクトを１回だけ初期化します。
 - 画面解像度を変更した際に再び一度だけこの関数が呼ばれます。
 - ・void Updata(DiploidEngineApp* app)
