@@ -157,6 +157,8 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 			option_scene.Draw(app->diploidEngineScreen);
 		}
 	}
+
+	DrawFormatString(0, 0, GetColor(100, 100, 100), "In Game Time : %d", app->diploidDebug.GetInGameTime() / 1000);
 }
 
 void DiploidEngineApp::CreateShadowModel(DiploidEngineApp* app)
