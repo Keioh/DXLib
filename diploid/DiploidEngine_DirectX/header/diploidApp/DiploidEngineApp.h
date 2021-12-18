@@ -43,6 +43,10 @@ using namespace std;
 class DiploidEngineApp : public DiploidEngineMain
 {
 private:
+
+	//int count = 0;
+	//int time = 0;
+
 	LogoScene logo_scene;
 	TitleScene title_scene;
 	GameScene game_scene;

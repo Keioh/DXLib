@@ -39,7 +39,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//std::shared_ptr<DiploidEngineApp> diploid_engine_app;
 
 	//DiploidEngineApp diploid_engine_app;
-
+	diploid_engine_app->diploidDebug.Init();//デバッグ機能の初期化
+	
 	diploid_engine_app->diploidEngineSetting.Init();//エンジン初期化
 	
 	diploid_engine_app->FileCreate(diploid_engine_app);//ゲーム起動時にファイルを作成
@@ -56,7 +57,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app->diploidEngineInput.Init();//入力機器初期化
 
-	diploid_engine_app->diploidDebug.Init();//デバッグ機能の初期化
 
 	while ((ProcessMessage() == 0) && (diploid_engine_app->diploidEngineSetting.GetExit() == 0))
 	{	
@@ -112,7 +112,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		diploid_engine_app->diploidEngineScreen.Draw(800, 0, true);//FPSを表示(debug情報あり)
 
-		diploid_engine_app->diploidDebug.Update();//デバッグ機能の更新
+		diploid_engine_app->diploidDebug.Update(diploid_engine_app->diploidEngineSetting);//デバッグ機能の更新
 
 		diploid_engine_app->diploidDebug.Draw();//デバッグ機能の描画
 

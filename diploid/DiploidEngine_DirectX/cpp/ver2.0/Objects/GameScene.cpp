@@ -67,7 +67,7 @@ void GameScene::Init(DiploidEngineSetting& setting)
 	end_anime.Init(VGet(setting.GetSystemData().window_x - 50, setting.GetSystemData().window_y - 64, 0), 4, 0.5f, 0.5f);
 }
 
-void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
+void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen, DiploidDebug& debug)
 {
 	//描画速度を設定しなおす。
 	if (jp.string[click].GetDrawSpeed() != (system_data.string_draw_speed * 50))
@@ -125,6 +125,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				if ((jp.size() - 1) != click)
 				{
 					jp.string[click].SetCompleteFlag(true);//既読済みflagを立てる
+
 					click++;//次の文
 				}
 			}
@@ -134,7 +135,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 			{
 				//スキップ機能のflagが0だったら(選択状態なら)
 				if (skip_button.GetNextFlag() == 0)
-				{
+				{		
 					jp.string[click].AllIn();//最後の文字まで表示
 					novel_scene.AlphaMax();//背景を完全表示			
 				}
@@ -153,6 +154,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				if (skip_button.GetSelected() == 1)
 				{
 					skip_button.SetSelected(-1);//スキップボタンの選択状態を解除
+					debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Skip機能をoffにしました。");//デバッグ出力
 				}
 			}
 
@@ -162,6 +164,12 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				if (skip_button.GetSelected() == 1)
 				{
 					auto_button.SetSelected(-1);//オートボタンの選択状態を解除
+					debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Auto機能をoffにしました。");//デバッグ出力
+					debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Skip機能をonにしました。");//デバッグ出力
+				}
+				else
+				{
+					debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Skip機能をoffにしました。");//デバッグ出力
 				}
 			}
 
@@ -171,6 +179,12 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				if (auto_button.GetSelected() == 1)
 				{
 					skip_button.SetSelected(-1);//スキップボタンの選択状態を解除
+					debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Auto機能をonにしました。");//デバッグ出力
+
+				}
+				else
+				{
+					debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Auto機能をoffにしました。");//デバッグ出力
 				}
 			}
 
@@ -179,6 +193,9 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 			{
 				option_button.SetSelected(1);//オプションボタンの選択状態を維持
 				box_draw_flag = 2;//フェードアウトフラグを立てる
+
+				debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Option画面へ移動します。");//デバッグ出力
+
 			}
 
 			//ロードボタンにカーソルが合わさっていてクリックされたなら
@@ -187,6 +204,8 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				is_save_or_load = GAME_LOAD;//ロード画面へ行くフラグを立てる
 				load_button.SetSelected(1);//オプションボタンの選択状態を維持
 				box_draw_flag = 2;//フェードアウトフラグを立てる
+
+				debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Load画面へ移動します。");//デバッグ出力
 			}
 
 			//セーブボタンにカーソルが合わさっていてクリックされたなら
@@ -195,6 +214,8 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 				is_save_or_load = GAME_SAVE;//セーブ画面へ行くフラグを立てる
 				save_button.SetSelected(1);//オプションボタンの選択状態を維持
 				box_draw_flag = 2;//フェードアウトフラグを立てる
+
+				debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Save画面へ移動します。");//デバッグ出力
 			}
 
 
@@ -208,7 +229,8 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 					//スキップがオンならオフにする。
 					if (skip_button.GetSelected() == 1)
 					{
-						skip_button.SetSelected(-1);
+						skip_button.SetSelected(-1);	
+						debug.log.Push(std::to_string(debug.GetInGameTime() / 1000) + "s:Skip機能をオフにしました。");//デバッグ出力
 					}
 					else//スキップがオフなら
 					{
@@ -216,6 +238,7 @@ void GameScene::Updata(DiploidEngineInput& input, DiploidEngineScreen& screen)
 						{
 							jp.string[click].AllIn();//最後の文字まで表示
 							novel_scene.AlphaMax();//背景を完全表示
+
 						}
 						else
 						{

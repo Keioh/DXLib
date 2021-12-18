@@ -114,6 +114,7 @@ void DiploidEngineSetting::SetEnd()
 	//SetDrawScreen(screen_handle);//裏画面処理をオン
 
 	SetDrawScreen(DX_SCREEN_BACK);//裏画面処理をオン
+
 	SetMouseDispFlag(TRUE);//マウスカーソルの表示
 
 	//3D関連

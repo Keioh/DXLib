@@ -35,6 +35,17 @@ void DiploidEngineApp::Init(DiploidEngineApp* app)
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
 {
+	//if (time > 10)
+	//{
+	//	app->diploidDebug.log.Push(std::to_string(app->diploidDebug.GetInGameTime()) + "ms:テスト" + std::to_string(count));
+
+	//	count++;
+
+	//	time = 0;
+	//}
+
+	//time++;
+
 	if (logo_scene.GetFinalScene() == false)
 	{
 		logo_scene.Updata(app->diploidEngineScreen);
@@ -46,7 +57,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 		{	
 			game_scene.SetSystemData(option_scene.GetSystemData());//optionからのシステム設定を取得
 			game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
-			game_scene.Updata(app->diploidEngineInput, app->diploidEngineScreen);//ゲーム画面を更新
+			game_scene.Updata(app->diploidEngineInput, app->diploidEngineScreen, app->diploidDebug);//ゲーム画面を更新
 
 			//オプションボタンが押されていたら
 			if (game_scene.GetOptionButtonFlag() == true)

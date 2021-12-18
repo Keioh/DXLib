@@ -2,19 +2,20 @@
 #include "DxLib.h"
 #include "diploidDebug/DiploidLog.h"
 #include "diploidDebug/DiploidConsole.h"
+#include "system\DiploidEngineSetting.h"
 
 class DiploidDebug
 {
 private:
-	int now_game_time;
-	int in_game_time;
+	int now_game_time = 0;
+	int in_game_time = 0;
 
 public:
 	DiploidLog log;
 
 	void Init();
 
-	void Update();
+	void Update(DiploidEngineSetting& setting);
 
 	void Draw(bool draw = true);
 

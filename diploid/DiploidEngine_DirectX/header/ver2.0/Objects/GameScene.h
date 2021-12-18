@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 //#include "diploidApp\DiploidEngineApp.h"
+#include "diploidDebug/DiploidDebug.h"
 #include "diploidInput\DiploidEngineInput.h"
 #include "ver2.0/Graphics/DiploidImageV2.h"
 #include "ver2.0/Graphics/DiploidSoftImage.h"
@@ -30,7 +31,6 @@ class GameScene
 {
 private:
 	PrologueStringImage prologue;
-
 
 	DiploidScreenGraphics screen_graphics;//ÉÇÉUÉCÉNèàóùÇ∆Ç©
 
@@ -79,7 +79,7 @@ public:
 
 	void Init(DiploidEngineSetting& setting);
 
-	void Updata(DiploidEngineInput& input, DiploidEngineScreen& screen);
+	void Updata(DiploidEngineInput& input, DiploidEngineScreen& screen, DiploidDebug& debug);
 
 	void Draw(DiploidEngineScreen& screen);
 

@@ -4,6 +4,7 @@
 //
 
 #pragma once
+#include <iostream>
 #include <vector>
 #include <string>
 #include "DxLib.h"
@@ -22,6 +23,7 @@ private:
 	vector<string> string_data;
 
 	SystemData system_data{};
+
 
 public:
 	DiploidEngineSetting();
