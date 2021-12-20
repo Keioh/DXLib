@@ -41,7 +41,10 @@ void DiploidLog::Update(int pos_x, int pos_y)
 
 		if (input_two.GetPressKey(KEY_INPUT_END) == true)
 		{
-			shift_scroll_y = (log_list.size() - 1) * -20;
+			if (!log_list.empty())
+			{
+				shift_scroll_y = (log_list.size() - 1) * -20;
+			}
 		}
 	}
 }
