@@ -77,6 +77,7 @@ public:
 	bool GetCompleteFlag();//既読かどうかのフラグを得ます。
 	void SetCompleteFlag(bool new_flag);
 
+
 	//void SetLineSpaceing(int space);
 	void SetSpeed(float speed);//文字送りの速度を設定します。
 	void SetColor(unsigned int new_color);//新しく文字の色を設定します。
@@ -86,5 +87,7 @@ public:
 
 	//void Draw(int width, float frame_time = 1.0f);//Load関数で読み込んだ文字列を表示する。(表示幅指定版)
 
-	void Clear();
+	void Clear();	
+	
+	int GetSize();//文字列の大きさ(長さ)
 };

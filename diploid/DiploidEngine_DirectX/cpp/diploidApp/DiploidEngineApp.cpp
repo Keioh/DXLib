@@ -22,6 +22,15 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 
 void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
 {		
+	ui.Init(VGet(0, 20, 0), VGet(100, 20, 0));
+	uiGroup.Push(ui);
+
+	ui.Init(VGet(0, 40, 0), VGet(100, 20, 0));
+	uiGroup.Push(ui);
+
+	ui.Init(VGet(0, 60, 0), VGet(100, 20, 0));
+	uiGroup.Push(ui);
+
 }
 
 void DiploidEngineApp::Init(DiploidEngineApp* app)
@@ -45,6 +54,8 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 	//}
 
 	//time++;
+
+	uiGroup.Update();
 
 	if (logo_scene.GetFinalScene() == false)
 	{
@@ -169,7 +180,14 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 		}
 	}
 
+	uiGroup.Draw();
+
 	DrawFormatString(0, 0, GetColor(100, 100, 100), "In Game Time : %d", app->diploidDebug.GetInGameTime() / 1000);
+
+	DrawFormatString(0, 20, GetColor(100, 100, 100), "UI1 : %d", uiGroup.VectorPointer().at(0).GetSelectedUI());
+	DrawFormatString(0, 40, GetColor(100, 100, 100), "UI2 : %d", uiGroup.VectorPointer().at(1).GetSelectedUI());
+	DrawFormatString(0, 60, GetColor(100, 100, 100), "UI3 : %d", uiGroup.VectorPointer().at(2).GetSelectedUI());
+
 }
 
 void DiploidEngineApp::CreateShadowModel(DiploidEngineApp* app)

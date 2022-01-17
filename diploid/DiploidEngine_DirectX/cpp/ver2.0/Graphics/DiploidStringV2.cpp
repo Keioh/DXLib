@@ -383,3 +383,8 @@ int DiploidStringV2::GetEnd()
 {
 	return end_flag;
 }
+
+int DiploidStringV2::GetSize()
+{
+	return character.size();
+}

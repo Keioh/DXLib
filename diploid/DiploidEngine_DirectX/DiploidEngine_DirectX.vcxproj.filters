@@ -510,6 +510,9 @@
     <ClCompile Include="cpp\diploidDebug\DiploidLog.cpp">
       <Filter>ソース ファイル\cpp\diploidDebug</Filter>
     </ClCompile>
+    <ClCompile Include="cpp\diploidUI\DiploidGroupingUI.cpp">
+      <Filter>ソース ファイル\cpp\diploidUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\system\DiploidEngineSetting.h">
@@ -814,6 +817,9 @@
     </ClInclude>
     <ClInclude Include="header\diploidDebug\DiploidLog.h">
       <Filter>ヘッダー ファイル\header\diploidDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidUI\DiploidGroupingUI.h">
+      <Filter>ヘッダー ファイル\header\diploidUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
