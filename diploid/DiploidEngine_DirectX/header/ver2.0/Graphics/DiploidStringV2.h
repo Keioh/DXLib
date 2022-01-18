@@ -89,5 +89,5 @@ public:
 
 	void Clear();	
 	
-	int GetSize();//•¶š—ñ‚Ì‘å‚«‚³(’·‚³)
+	int GetSize();//•¶š—ñ‚Ì‘å‚«‚³(’·‚³)‚ğæ“¾‚µ‚Ü‚·B
 };
