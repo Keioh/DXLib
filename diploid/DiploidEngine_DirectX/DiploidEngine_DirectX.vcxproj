@@ -192,7 +192,7 @@
     <ClCompile Include="cpp\diploidStandalone\graphics\diploidGraphicsSA.cpp" />
     <ClCompile Include="cpp\diploidStandalone\impact\diploidImpactSA.cpp" />
     <ClCompile Include="cpp\diploidSystem\diploidSystem.cpp" />
-    <ClCompile Include="cpp\diploidUI\DiploidGroupingUI.cpp" />
+    <ClCompile Include="cpp\diploidUI\DiploidSwitchingGroupUI.cpp" />
     <ClCompile Include="cpp\diploidUI\diploidUI.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
@@ -294,7 +294,7 @@
     <ClInclude Include="header\diploidStandalone\impact\diploidImpactSA.h" />
     <ClInclude Include="header\diploidStandalone\standalone.h" />
     <ClInclude Include="header\diploidSystem\diploidSystem.h" />
-    <ClInclude Include="header\diploidUI\DiploidGroupingUI.h" />
+    <ClInclude Include="header\diploidUI\DiploidSwitchingGroupUI.h" />
     <ClInclude Include="header\diploidUI\diploidUI.h" />
     <ClInclude Include="header\system\define.h" />
     <ClInclude Include="header\system\DiploidEngineMath.h" />

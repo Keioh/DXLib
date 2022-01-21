@@ -36,7 +36,7 @@
 
 //test
 #include "ver2.0/Graphics/DiploidStringV2.h"
-#include "diploidUI/DiploidGroupingUI.h"
+#include "diploidUI/DiploidSwitchingGroupUI.h"
 
 
 using namespace std;
@@ -47,7 +47,7 @@ private:
 
 	//int count = 0;
 	//int time = 0;
-	DiploidGroupingUI uiGroup;
+	DiploidSwitchingGroupUI uiGroup;
 	DiploidSelectedUIV2 ui;
 
 	LogoScene logo_scene;
