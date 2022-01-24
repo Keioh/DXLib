@@ -39,6 +39,7 @@ public:
 	void SetSize(int size_x, int size_y);//新しく大きさを設定します。(バグ)
 	void SetScale(float new_scale);//新しくスケール値を設定します。(バグ)
 	void SetSelectedUI(int new_flag);
+	void SetName(std::string new_name);
 
 	VECTOR GetPosition();//現在のUIの位置(左上)の座標を取得します。
 	VECTOR GetSize();//現在のUIの大きさを取得します。
@@ -47,4 +48,5 @@ public:
 	bool GetHit();//現在、UIにマウスがヒットしているかのフラグを取得します。(ヒットしていればtrue)
 	bool GetClick();//UIがクリックされたかのフラグを取得します。(クリックされるとtrue)
 	int GetSelectedUI();//UIが選択されているかのフラグを取得します。(選択されていればtrue)
+	std::string GetName();
 };

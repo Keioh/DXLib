@@ -39,9 +39,39 @@ void DiploidSwitchingGroupUI::Draw(bool draw)
 	}
 }
 
-
-void DiploidSwitchingGroupUI::Push(DiploidSelectedUIV2 data)
+std::string DiploidSwitchingGroupUI::GetName()
 {
+	if (!selectedUI_list.empty())
+	{
+		for (int count = 0; count != selectedUI_list.size(); count++)
+		{
+			if (selectedUI_list[count].GetSelectedUI() == 1)
+			{
+				return selectedUI_list[count].GetName();
+			}
+		}
+	}
+}
+
+DiploidSelectedUIV2 DiploidSwitchingGroupUI::GetObjectInfo()
+{
+	if (!selectedUI_list.empty())
+	{
+		for (int count = 0; count != selectedUI_list.size(); count++)
+		{
+			if (selectedUI_list[count].GetSelectedUI() == 1)
+			{
+				return selectedUI_list[count];
+			}
+		}
+	}
+}
+
+
+void DiploidSwitchingGroupUI::Push(DiploidSelectedUIV2 data, std::string name)
+{
+	data.SetName(name);
+
 	selectedUI_list.push_back(data);
 }
 

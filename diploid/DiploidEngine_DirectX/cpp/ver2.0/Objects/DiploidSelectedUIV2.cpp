@@ -140,6 +140,12 @@ void DiploidSelectedUIV2::SetSelectedUI(int new_flag)
 	selected = new_flag;
 }
 
+void DiploidSelectedUIV2::SetName(std::string new_name)
+{
+	box.SetName(new_name);
+	image.SetName(new_name);
+}
+
 
 VECTOR DiploidSelectedUIV2::GetPosition()
 {
@@ -174,4 +180,9 @@ bool DiploidSelectedUIV2::GetClick()
 int DiploidSelectedUIV2::GetSelectedUI()
 {
 	return selected;
+}
+
+std::string DiploidSelectedUIV2::GetName()
+{
+	return box.GetName();
 }
