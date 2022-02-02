@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{BFB6E473-2F1D-4909-B399-BB56B7CCACD1}</ProjectGuid>
+    <RootNamespace>DiploidEngineDirectX</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\GameProject\DiploidEngine\DiploidEngine_DirectX\header;C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\GameProject\DiploidEngine\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\kou20\AppData\Local\Programs\Python\Python310\include;C:\boost_1_77_0;C:\GameProject\DiploidEngine\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\kou20\AppData\Local\Programs\Python\Python310\libs;C:\boost_1_77_0\stage\lib\x64;C:\GameProject\DiploidEngine\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\GameProject\DiploidEngine_DirectX\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\kou20\AppData\Local\Programs\Python\Python310\include;C:\boost_1_77_0;C:\GameProject\DiploidEngine\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\kou20\AppData\Local\Programs\Python\Python310\libs;C:\boost_1_77_0\stage\lib\x64;C:\GameProject\DiploidEngine\DiploidEngine_DirectX\header;C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp\Architecture\ArchitectureLaw.cpp" />
+    <ClCompile Include="cpp\Architecture\ArchitectureMath.cpp" />
+    <ClCompile Include="cpp\data\custom_number.cpp" />
+    <ClCompile Include="cpp\data\dice.cpp" />
+    <ClCompile Include="cpp\data\dice_3d6n.cpp" />
+    <ClCompile Include="cpp\data\dice_result_bord.cpp" />
+    <ClCompile Include="cpp\data\number.cpp" />
+    <ClCompile Include="cpp\data\sim_data\ConditionalButton.cpp" />
+    <ClCompile Include="cpp\data\sim_data\fild.cpp" />
+    <ClCompile Include="cpp\data\sim_data\fild_map.cpp" />
+    <ClCompile Include="cpp\data\sim_data\home_country_ui.cpp" />
+    <ClCompile Include="cpp\data\sim_data\military_ui.cpp" />
+    <ClCompile Include="cpp\data\text_data\ja.cpp" />
+    <ClCompile Include="cpp\diploidApp\DiploidEngineApp.cpp" />
+    <ClCompile Include="cpp\diploidApp\DiploidEngineMain.cpp" />
+    <ClCompile Include="cpp\diploidDebug\DiploidConsole.cpp" />
+    <ClCompile Include="cpp\diploidDebug\DiploidDebug.cpp" />
+    <ClCompile Include="cpp\diploidDebug\DiploidLog.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidBox.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidCircle.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidImage.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidLine.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidPanel.cpp" />
+    <ClCompile Include="cpp\diploidGraphics\diploidPoint.cpp" />
+    <ClCompile Include="cpp\diploidImpact\DiploidEngineImpact.cpp" />
+    <ClCompile Include="cpp\diploidInput\DiploidEngineInput.cpp" />
+    <ClCompile Include="cpp\diploidInput\DiploidEnigneFile.cpp" />
+    <ClCompile Include="cpp\diploidInput\DiploidTranslate.cpp" />
+    <ClCompile Include="cpp\diploidLayer\DiploidEngineLayer.cpp" />
+    <ClCompile Include="cpp\diploidNetwork\DiploidEngineNetwork.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidCreator.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidEngineObject.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidEngineObjectInformation.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidEngineTag.cpp" />
+    <ClCompile Include="cpp\diploidObject\DiploidMap.cpp" />
+    <ClCompile Include="cpp\diploidPhysics\diploidPhysics.cpp" />
+    <ClCompile Include="cpp\diploidScreen\DiploidEngineScene.cpp" />
+    <ClCompile Include="cpp\diploidScreen\DiploidEngineScreen.cpp" />
+    <ClCompile Include="cpp\diploidSound\diploidEngineSoundLoader.cpp" />
+    <ClCompile Include="cpp\diploidSound\diploidEnigneSound.cpp" />
+    <ClCompile Include="cpp\diploidStandalone\base_standalone.cpp" />
+    <ClCompile Include="cpp\diploidStandalone\graphics\diploidBoxSA.cpp" />
+    <ClCompile Include="cpp\diploidStandalone\graphics\diploidGraphicsSA.cpp" />
+    <ClCompile Include="cpp\diploidStandalone\impact\diploidImpactSA.cpp" />
+    <ClCompile Include="cpp\diploidSystem\diploidSystem.cpp" />
+    <ClCompile Include="cpp\diploidUI\DiploidSwitchingGroupUI.cpp" />
+    <ClCompile Include="cpp\diploidUI\diploidUI.cpp" />
+    <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
+    <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV3.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidCircleV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidImageV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidScreenGraphics.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidSoftImage.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidStrings.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidStringV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Graphics\DiploidTriangle.cpp" />
+    <ClCompile Include="cpp\ver2.0\Main\Camera.cpp" />
+    <ClCompile Include="cpp\ver2.0\Main\Collision.cpp" />
+    <ClCompile Include="cpp\ver2.0\Main\Layer.cpp" />
+    <ClCompile Include="cpp\ver2.0\Main\Object.cpp" />
+    <ClCompile Include="cpp\ver2.0\Main\Transform.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\AutoNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Back.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\LoadNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\OptionNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\QuickLoadNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\QuickSaveNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Reset.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Save.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\SaveNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\SkipNovel.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\Title.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\button\WindowSize.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\ContinuousTriangle.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidAll.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidAnimation.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidNovelScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSceneObject.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSelectedUIV2.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSlider.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\DiploidSliderObject.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\FileScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\GameScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\LoadingScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\LogoScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\OptionScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\load\load_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\option\display_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\option\game_play_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\option\option_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\string_image\save\save_string_image.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\TitleScene.cpp" />
+    <ClCompile Include="cpp\ver2.0\Objects\ui\text_speed_auto_setting_ui.cpp" />
+    <ClCompile Include="WindowsMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\Architecture\ArchitectureLaw.h" />
+    <ClInclude Include="header\Architecture\ArchitectureMath.h" />
+    <ClInclude Include="header\data\custom_number.h" />
+    <ClInclude Include="header\data\dice.h" />
+    <ClInclude Include="header\data\dice_3d6n.h" />
+    <ClInclude Include="header\data\dice_result_bord.h" />
+    <ClInclude Include="header\data\novel_save_data\novel_save_data.h" />
+    <ClInclude Include="header\data\number.h" />
+    <ClInclude Include="header\data\sim_data\ConditionalButton.h" />
+    <ClInclude Include="header\data\sim_data\fild.h" />
+    <ClInclude Include="header\data\sim_data\fild_map.h" />
+    <ClInclude Include="header\data\sim_data\home_country_ui.h" />
+    <ClInclude Include="header\data\sim_data\military_ui.h" />
+    <ClInclude Include="header\data\sim_data\sim_define.h" />
+    <ClInclude Include="header\data\system_data\system_data.h" />
+    <ClInclude Include="header\data\text_data\ja.h" />
+    <ClInclude Include="header\diploidApp\DiploidEngineApp.h" />
+    <ClInclude Include="header\diploidApp\DiploidEngineMain.h" />
+    <ClInclude Include="header\diploidDebug\DiploidConsole.h" />
+    <ClInclude Include="header\diploidDebug\DiploidDebug.h" />
+    <ClInclude Include="header\diploidDebug\DiploidLog.h" />
+    <ClInclude Include="header\diploidGraphics\diploidBox.h" />
+    <ClInclude Include="header\diploidGraphics\diploidCircle.h" />
+    <ClInclude Include="header\diploidGraphics\diploidImage.h" />
+    <ClInclude Include="header\diploidGraphics\diploidLine.h" />
+    <ClInclude Include="header\diploidGraphics\diploidPanel.h" />
+    <ClInclude Include="header\diploidGraphics\diploidPoint.h" />
+    <ClInclude Include="header\diploidImpact\DiploidEngineImpact.h" />
+    <ClInclude Include="header\diploidInput\DiploidEngineInput.h" />
+    <ClInclude Include="header\diploidInput\DiploidEnigneFile.h" />
+    <ClInclude Include="header\diploidLayer\DiploidEngineLayer.h" />
+    <ClInclude Include="header\diploidNetwork\DiploidEngineNetwork.h" />
+    <ClInclude Include="header\diploidObject\DiploidCreator.h" />
+    <ClInclude Include="header\diploidObject\DiploidEngineObject.h" />
+    <ClInclude Include="header\diploidObject\DiploidEngineObjectInformation.h" />
+    <ClInclude Include="header\diploidObject\DiploidEngineTag.h" />
+    <ClInclude Include="header\diploidObject\DiploidMap.h" />
+    <ClInclude Include="header\diploidPhysics\diploidPhysics.h" />
+    <ClInclude Include="header\diploidScreen\DiploidEngineScene.h" />
+    <ClInclude Include="header\diploidScreen\DiploidEngineScreen.h" />
+    <ClInclude Include="header\diploidSound\diploidEngineSoundLoader.h" />
+    <ClInclude Include="header\diploidSound\diploidEnigneSound.h" />
+    <ClInclude Include="header\diploidStandalone\base_standalone.h" />
+    <ClInclude Include="header\diploidStandalone\graphics\diploidBoxSA.h" />
+    <ClInclude Include="header\diploidStandalone\graphics\diploidGraphicsSA.h" />
+    <ClInclude Include="header\diploidStandalone\impact\diploidImpactSA.h" />
+    <ClInclude Include="header\diploidStandalone\standalone.h" />
+    <ClInclude Include="header\diploidSystem\diploidSystem.h" />
+    <ClInclude Include="header\diploidUI\DiploidSwitchingGroupUI.h" />
+    <ClInclude Include="header\diploidUI\diploidUI.h" />
+    <ClInclude Include="header\system\define.h" />
+    <ClInclude Include="header\system\DiploidEngineMath.h" />
+    <ClInclude Include="header\system\DiploidEngineSetting.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV2.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidBoxV3.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidCircleV2.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidImageV2.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidScreenGraphics.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImage.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidSoftImageDraw.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidStrings.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidStringV2.h" />
+    <ClInclude Include="header\ver2.0\Graphics\DiploidTriangle.h" />
+    <ClInclude Include="header\ver2.0\Main\Camera.h" />
+    <ClInclude Include="header\ver2.0\Main\Collision.h" />
+    <ClInclude Include="header\ver2.0\Main\Layer.h" />
+    <ClInclude Include="header\ver2.0\Main\Object.h" />
+    <ClInclude Include="header\ver2.0\Main\Transform.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\AutoNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Back.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\LoadNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\OptionNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\QuickLoadNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\QuickSaveNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Reset.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Save.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\SaveNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\SkipNovel.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\Title.h" />
+    <ClInclude Include="header\ver2.0\Objects\button\WindowSize.h" />
+    <ClInclude Include="header\ver2.0\Objects\ContinuousTriangle.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidAll.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidAnimation.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidNovelScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidSceneObject.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidSelectedUIV2.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidSlider.h" />
+    <ClInclude Include="header\ver2.0\Objects\DiploidSliderObject.h" />
+    <ClInclude Include="header\ver2.0\Objects\FileScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\GameScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\LoadingScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\LogoScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\OptionScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\load\load_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\novel\prologue\prologue_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\option\display_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\option\game_play_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\option\option_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\string_image\save\save_string_image.h" />
+    <ClInclude Include="header\ver2.0\Objects\TitleScene.h" />
+    <ClInclude Include="header\ver2.0\Objects\ui\text_speed_auto_setting_ui.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DiploidEngine_DirectX.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="python\DiploidEnginePythonApp.py" />
+    <None Include="python\DiploidEnginePythonBase.py" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
