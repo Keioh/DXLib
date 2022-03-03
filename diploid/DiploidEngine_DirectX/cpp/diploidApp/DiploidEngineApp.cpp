@@ -23,13 +23,16 @@ void DiploidEngineApp::Load(DiploidEngineApp* app)
 void DiploidEngineApp::OnceInit(DiploidEngineApp* app)
 {		
 	ui.Init(VGet(0, 20, 0), VGet(100, 20, 0));
-	uiGroup.Push(ui);
+	uiGroup.Push(ui, "test1");
 
 	ui.Init(VGet(0, 40, 0), VGet(100, 20, 0));
-	uiGroup.Push(ui);
+	uiGroup.Push(ui, "test2");
 
 	ui.Init(VGet(0, 60, 0), VGet(100, 20, 0));
-	uiGroup.Push(ui);
+	uiGroup.Push(ui, "test3");
+
+
+	ui.Init(VGet(100, 100, 0), VGet(100, 100, 0));
 
 }
 
@@ -40,10 +43,62 @@ void DiploidEngineApp::Init(DiploidEngineApp* app)
 	game_scene.Init(app->diploidEngineSetting);
 	option_scene.Init(app->diploidEngineSetting);
 	file_scene.Init(app->diploidEngineSetting);
+
+	r_box.Init(VGet(100, 100, 0), VGet(100, 100, 0), GetColor(200, 200, 200));
 }
 
 void DiploidEngineApp::Updata(DiploidEngineApp* app)
 {
+	ui.Updata();
+
+	if (ui.GetSelectedUI() == 1)
+	{
+		r_box.SetColor(GetColor(240, 240, 240));
+
+		if (r < 30)
+		{
+			r += 1.5f;
+		}
+	}
+	else
+	{
+		r_box.SetColor(GetColor(220, 220, 220));
+
+		if (r > 20)
+		{
+			r -= 1.5f;
+		}
+	}
+
+	if (ui.GetSelectedUI() != 1)
+	{
+		if (ui.GetHit() == true)
+		{
+			r_box.SetColor(GetColor(220, 220, 220));
+
+			if (r < 20)
+			{
+				r += 1.5f;
+			}
+		}
+		else
+		{
+			r_box.SetColor(GetColor(180, 180, 180));
+
+			if (r > 5)
+			{
+				r -= 1.5f;
+			}
+		}
+	}
+
+	//r_box.SetSize(VGet(x, y, 0));
+	r_box.SetRoundness(r);
+	ui.SetSize(r_box.GetSize().x, r_box.GetSize().y);
+
+	//x++;
+	//y++;
+
 	//if (time > 10)
 	//{
 	//	app->diploidDebug.log.Push(std::to_string(app->diploidDebug.GetInGameTime()) + "ms:テスト" + std::to_string(count));
@@ -65,7 +120,7 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 	{
 		//スタートボタンを押したとき
 		if (title_scene.GetFinalScene() == GAME_START)
-		{	
+		{
 			game_scene.SetSystemData(option_scene.GetSystemData());//optionからのシステム設定を取得
 			game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
 			game_scene.Updata(app->diploidEngineInput, app->diploidEngineScreen, app->diploidDebug);//ゲーム画面を更新
@@ -97,11 +152,11 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 			//戻るボタンを押していたら
 			switch (file_scene.GetReturnButton())
 			{
-			//タイトルに戻る。
+				//タイトルに戻る。
 			case GAME_TITLE:
 				title_scene.SetSecne(GAME_TITLE);//シーン変更
 				break;
-			//ゲームに戻る。
+				//ゲームに戻る。
 			case GAME_START:
 				title_scene.SetSecne(GAME_START);//シーン変更
 				break;
@@ -117,17 +172,17 @@ void DiploidEngineApp::Updata(DiploidEngineApp* app)
 			//戻るボタンを押していたら
 			switch (option_scene.GetReturnFlag())
 			{
-			//タイトルに戻る。
+				//タイトルに戻る。
 			case GAME_TITLE:game_scene.SetOptionButtonFlag(-1);//game_sceneのオプションボタンの選択フラグを-1に変更(ボタンを初期化)	
-							game_scene.SetInGameFlag(false);//ゲーム中フラグをfalseにする
-							game_scene.Reset();//ゲームをリセットする。
-							title_scene.SetSecne(GAME_TITLE);//シーン変更
-							break;
-			//ゲームに戻る。
+				game_scene.SetInGameFlag(false);//ゲーム中フラグをfalseにする
+				game_scene.Reset();//ゲームをリセットする。
+				title_scene.SetSecne(GAME_TITLE);//シーン変更
+				break;
+				//ゲームに戻る。
 			case GAME_START:game_scene.SetOptionButtonFlag(-1);//game_sceneのオプションボタンの選択フラグを-1に変更(ボタンを初期化)	
-							game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
-							title_scene.SetSecne(GAME_START);//シーン変更
-							break;
+				game_scene.SetInGameFlag(true);//ゲーム中フラグをtrueにする
+				title_scene.SetSecne(GAME_START);//シーン変更
+				break;
 			default:break;
 			}
 		}
@@ -181,6 +236,8 @@ void DiploidEngineApp::Draw(DiploidEngineApp* app)
 	}
 
 	uiGroup.Draw();
+	r_box.Draw();
+	ui.Draw(true);
 
 	DrawFormatString(0, 0, GetColor(100, 100, 100), "In Game Time : %d", app->diploidDebug.GetInGameTime() / 1000);
 

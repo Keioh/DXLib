@@ -68,7 +68,7 @@ DiploidSelectedUIV2 DiploidSwitchingGroupUI::GetObjectInfo()
 }
 
 
-void DiploidSwitchingGroupUI::Push(DiploidSelectedUIV2 data, std::string name)
+void DiploidSwitchingGroupUI::Push(DiploidSelectedUIV2 data, std::string name)//name‚Í”í‚ç‚È‚¢‚æ‚¤‚É
 {
 	data.SetName(name);
 

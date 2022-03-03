@@ -38,6 +38,8 @@
 #include "ver2.0/Graphics/DiploidStringV2.h"
 #include "diploidUI/DiploidSwitchingGroupUI.h"
 
+#include "ver2.0/Graphics/DiploidRoundedBox.h"
+
 
 using namespace std;
 
@@ -45,10 +47,14 @@ class DiploidEngineApp : public DiploidEngineMain
 {
 private:
 
+	float x, y, r;
+
 	//int count = 0;
 	//int time = 0;
 	DiploidSwitchingGroupUI uiGroup;
 	DiploidSelectedUIV2 ui;
+
+	DiploidRoundedBox r_box;
 
 	LogoScene logo_scene;
 	TitleScene title_scene;
