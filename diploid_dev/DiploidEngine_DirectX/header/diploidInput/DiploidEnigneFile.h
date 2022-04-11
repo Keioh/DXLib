@@ -25,6 +25,7 @@ public:
 	void SetLine(const char* name, float data);//データ=数値という表記で出力されます。
 	void SetLine(const char* name, int data);//データ=数値という表記で出力されます。
 	void SetLine(const char* name, bool data);//データ=数値という表記で出力されます。
+	void SetLine(std::string data);//データという表記で出力されます。
 
 	void Close();//読み込み用と書き込み用のファイルストリームを閉じます。(ファイル操作を完了したらこの関数を使ってファイルを閉じてください)
 	void FileInClose();//読み込み用のファイルストリームを閉じます。

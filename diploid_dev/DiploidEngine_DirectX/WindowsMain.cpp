@@ -57,6 +57,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	diploid_engine_app->diploidEngineInput.Init();//“ü—Í‹@Ší‰Šú‰»
 
+	diploid_engine_app->WebConversion(diploid_engine_app);
 
 	while ((ProcessMessage() == 0) && (diploid_engine_app->diploidEngineSetting.GetExit() == 0))
 	{	

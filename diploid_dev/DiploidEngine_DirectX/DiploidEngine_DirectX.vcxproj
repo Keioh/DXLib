@@ -28,26 +28,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
     <CLRSupport>false</CLRSupport>
@@ -194,6 +194,7 @@
     <ClCompile Include="cpp\diploidSystem\diploidSystem.cpp" />
     <ClCompile Include="cpp\diploidUI\DiploidSwitchingGroupUI.cpp" />
     <ClCompile Include="cpp\diploidUI\diploidUI.cpp" />
+    <ClCompile Include="cpp\diploidWebConversion\diploidWebConversion.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineMath.cpp" />
     <ClCompile Include="cpp\systme\DiploidEngineSetting.cpp" />
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidBoxV2.cpp" />
@@ -297,6 +298,7 @@
     <ClInclude Include="header\diploidSystem\diploidSystem.h" />
     <ClInclude Include="header\diploidUI\DiploidSwitchingGroupUI.h" />
     <ClInclude Include="header\diploidUI\diploidUI.h" />
+    <ClInclude Include="header\diploidWebConversion\diploidWebConversion.h" />
     <ClInclude Include="header\system\define.h" />
     <ClInclude Include="header\system\DiploidEngineMath.h" />
     <ClInclude Include="header\system\DiploidEngineSetting.h" />

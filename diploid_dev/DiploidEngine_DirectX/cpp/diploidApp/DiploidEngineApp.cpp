@@ -257,6 +257,20 @@ void DiploidEngineApp::CreateShadowPassiveModel(DiploidEngineApp* app)
 
 }
 
+void DiploidEngineApp::WebConversion(DiploidEngineApp* app)
+{
+	box.Init(VGet(50, 25, 0), VGet(100, 50, 0), GetColor(255, 255, 255));
+	box.SetName("TestBox");
+
+	conv.toWebCode(box, 100, 100, 100);
+
+	box.Init(VGet(60, 18, 0), VGet(80, 30, 0), GetColor(255, 255, 255));
+	box.SetName("TestBox2");
+
+	conv.toWebCode(box, 100, 100, 100);
+
+}
+
 void DiploidEngineApp::Destory(DiploidEngineApp* app)
 {
 

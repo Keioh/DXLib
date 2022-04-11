@@ -74,6 +74,14 @@ void DiploidEngineFile::SetLine(const char* name, bool data)
 	}
 }
 
+void DiploidEngineFile::SetLine(std::string data)
+{
+	if (file_out)
+	{
+		file_out << data << std::endl;
+	}
+}
+
 void DiploidEngineFile::Close()
 {
 	if (file_in)

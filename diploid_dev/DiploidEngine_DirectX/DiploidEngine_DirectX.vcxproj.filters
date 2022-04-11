@@ -220,6 +220,12 @@
     <Filter Include="ヘッダー ファイル\header\diploidDebug">
       <UniqueIdentifier>{e2dbaaad-88f3-4f2a-ad64-35ce65ac5de3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\cpp\diploidWebConversion">
+      <UniqueIdentifier>{646fc5aa-4a43-4894-bded-89ca1de8d71b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\header\diploidWebConversion">
+      <UniqueIdentifier>{0ec88474-23b2-49f9-b5b1-98666960501c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsMain.cpp">
@@ -515,6 +521,9 @@
     </ClCompile>
     <ClCompile Include="cpp\ver2.0\Graphics\DiploidRoundedBox.cpp">
       <Filter>ソース ファイル\cpp\ver2.0\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\diploidWebConversion\diploidWebConversion.cpp">
+      <Filter>ソース ファイル\cpp\diploidWebConversion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -826,6 +835,9 @@
     </ClInclude>
     <ClInclude Include="header\ver2.0\Graphics\DiploidRoundedBox.h">
       <Filter>ヘッダー ファイル\header\ver2.0\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="header\diploidWebConversion\diploidWebConversion.h">
+      <Filter>ヘッダー ファイル\header\diploidWebConversion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

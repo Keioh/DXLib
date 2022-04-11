@@ -26,6 +26,7 @@
 #include "ver2.0/Graphics/DiploidBoxV3.h"
 
 #include "diploidStandalone\standalone.h"
+#include "diploidWebConversion/diploidWebConversion.h"
 
 
 #include "ver2.0/Objects/LogoScene.h"
@@ -48,6 +49,9 @@ class DiploidEngineApp : public DiploidEngineMain
 private:
 
 	float x, y, r;
+
+	DiploidBoxV2 box;
+	DiploidWebConversion conv;
 
 	//int count = 0;
 	//int time = 0;
@@ -72,6 +76,8 @@ public:
 	void Draw(DiploidEngineApp* app);//描画
 	void CreateShadowModel(DiploidEngineApp* app);//影を動的に描画したい３Dmodelを追加。(光の方向や加減で影の形が変わる)
 	void CreateShadowPassiveModel(DiploidEngineApp* app);//影を静的描画したい３Dmodelを追加。(光の方向や加減で影の形が変わらない)
+
+	void WebConversion(DiploidEngineApp* app);
 
 	void Destory(DiploidEngineApp* app);//ver1.0の機能でのオブジェクト削除
 	void End(DiploidEngineApp* app);//ゲーム終了時の処理
