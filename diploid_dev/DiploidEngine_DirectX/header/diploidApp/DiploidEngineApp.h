@@ -1,6 +1,6 @@
 #pragma once
-#define BOOST_PYTHON_STATIC_LIB
-#include <boost/python.hpp>//boost‚Ìpython.h
+//#define BOOST_PYTHON_STATIC_LIB
+//#include <boost/python.hpp>//boost‚Ìpython.h
 #include <list>
 #include <memory>
 #include <string>

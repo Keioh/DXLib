@@ -1,6 +1,6 @@
 #pragma once
-#define BOOST_PYTHON_STATIC_LIB
-#include <boost/python.hpp>
+//#define BOOST_PYTHON_STATIC_LIB
+//#include <boost/python.hpp>
 #include <memory>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
@@ -34,7 +34,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	DiploidEngineApp *diploid_engine_app = new DiploidEngineApp();//ƒ‹[ƒv‚È‚Ç‚Ìˆ—‚à‚ë‚à‚ë
 
-	Py_Initialize();//Python‚Ì‰Šú‰»
+	//Py_Initialize();//Python‚Ì‰Šú‰»
 
 	//std::shared_ptr<DiploidEngineApp> diploid_engine_app;
 

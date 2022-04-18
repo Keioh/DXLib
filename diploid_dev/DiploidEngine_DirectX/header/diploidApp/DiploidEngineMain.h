@@ -1,8 +1,8 @@
 //このファイルですべての処理をまとめてDiploidEngineAppに渡す
 
 #pragma once
-#define BOOST_PYTHON_STATIC_LIB
-#include <boost/python.hpp>
+//#define BOOST_PYTHON_STATIC_LIB
+//#include <boost/python.hpp>
 #include <string>
 #include "DxLib.h"
 #include "system\DiploidEngineSetting.h"
@@ -17,7 +17,7 @@
 #include "diploidDebug\DiploidDebug.h"
 
 //Python関連
-namespace python = boost::python;
+//namespace python = boost::python;
 
 class DiploidEngineMain
 {
